@@ -1106,6 +1106,81 @@
 <h2 id="introduction">📝 Introduction</h2>
 <p>Brief overview of why fundamentals is important in Android interviews.</p>
 <h2 id="key-questions">🚀 Key Questions</h2>
+<div class="admonition question">
+<p class="admonition-title">What is the Activity Lifecycle?</p>
+<p><strong>Standard Answer:</strong> The Activity lifecycle is a set of 7 core methods (<code>onCreate</code> through <code>onDestroy</code>) that the system calls as a user navigates into, out of, and back to your app. It allows the app to manage resources efficiently and preserve UI state.</p>
+<details class="info">
+<summary>🚀 View Detailed Deep Dive</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Detailed Explanation</label><label for="__tabbed_1_2">Internal Functions</label><label for="__tabbed_1_3">Follow-up Questions</label><label for="__tabbed_1_4">Interviewer Traps</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The lifecycle ensures that your app doesn't crash during a phone call, consume battery when not in use, or lose the user's progress.</p>
+<ul>
+<li><strong><code>onCreate()</code></strong>: Mandatory. Fired when the system first creates the activity. Perform one-time setup here (binding data, inflating UI).</li>
+<li><strong><code>onStart()</code></strong>: The activity is becoming visible to the user but is not yet in the foreground.</li>
+<li><strong><code>onResume()</code></strong>: The activity is now in the "top" position and the user can interact with it. </li>
+<li><strong><code>onPause()</code></strong>: Used to pause ongoing actions (like animations) that shouldn't consume CPU while semi-visible (e.g., in Multi-window mode).</li>
+<li><strong><code>onStop()</code></strong>: The activity is no longer visible. Good place to release heavy resources.</li>
+<li><strong><code>onRestart()</code></strong>: Called after <code>onStop()</code> when the user navigates back to the activity.</li>
+<li><strong><code>onDestroy()</code></strong>: Final call before the activity is removed from memory.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>The lifecycle isn't just magic; it's a orchestration between the <strong>ActivityManagerService (AMS)</strong> and the <strong>ActivityThread</strong>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Logic inside ActivityThread.java (Simplified)</span>
+<span class="n">private</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="n">handleStartActivity</span><span class="p">(</span><span class="n">ActivityClientRecord</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Instrumentation calls the Activity&#39;s performStart</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="na">activity</span><span class="p">.</span><span class="na">performStart</span><span class="p">(</span><span class="s">&quot;handleStartActivity&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 2. Which eventually triggers the developer&#39;s override</span>
+<span class="w">    </span><span class="n">final</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="n">performStart</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mCalled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">        </span><span class="n">onStart</span><span class="p">();</span><span class="w"> </span><span class="c1">// Developer code runs here</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mCalled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">SuperNotCalledException</span><span class="p">(</span>
+<span class="w">                </span><span class="s">&quot;Activity &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mComponent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; did not call through to super.onStart()&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<strong>Key Internal:</strong> The <code>mCalled</code> boolean is why you MUST call <code>super.onCreate()</code>. If it's false after the method returns, the app crashes.</p>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>Q: What happens if <code>super.onCreate()</code> is not called?</strong><ul>
+<li><strong>A:</strong> The app will throw a <code>SuperNotCalledException</code>. The system uses this flag to ensure necessary internal setup is completed.</li>
+</ul>
+</li>
+<li><strong>Q: Difference between <code>onStart()</code> and <code>onResume()</code>?</strong><ul>
+<li><strong>A:</strong> <code>onStart()</code> makes the Activity visible; <code>onResume()</code> makes it interactive. You can be in <code>onStart()</code> but have a dialog or system overlay preventing interaction (keeping you from <code>onResume()</code>).</li>
+</ul>
+</li>
+<li><strong>Q: What is the only method where the Bundle is NOT null after process death?</strong><ul>
+<li><strong>A:</strong> Both <code>onCreate(savedInstanceState)</code> and <code>onRestoreInstanceState(bundle)</code> receive the data, but <code>onRestoreInstanceState</code> is only called if the bundle is definitely not null.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>The Multi-Window Trap:</strong> "If I open my app in split-screen, am I always in <code>onResume()</code>?"<ul>
+<li><strong>Fact:</strong> No. Only the app the user last touched is <code>onResume()</code>. The other visible app is in <code>onPause()</code>.</li>
+</ul>
+</li>
+<li><strong>The Memory Trap:</strong> "Can I rely on <code>onDestroy()</code> to save my data?"<ul>
+<li><strong>Fact:</strong> <strong>Never.</strong> If the system is low on memory, it may kill your process directly after <code>onStop()</code> without ever calling <code>onDestroy()</code>. Always save persistent data in <code>onStop()</code> or <code>onPause()</code>.</li>
+</ul>
+</li>
+<li><strong>The Finish Trap:</strong> "If I call <code>finish()</code> in <code>onCreate()</code>, which methods are called?"<ul>
+<li><strong>Fact:</strong> The system immediately skips to <code>onDestroy()</code>. <code>onStart</code> and <code>onResume</code> are never reached.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</details>
+</div>
 
 
 
