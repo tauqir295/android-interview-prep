@@ -1,0 +1,14 @@
+site_name: Android Interview Prep
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+nav:
+  - Home: index.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.superfences
