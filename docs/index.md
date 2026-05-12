@@ -1,213 +1,85 @@
-# Android Interview Questions
+# 📱 Android Interview Prep (2026 Edition)
 
-Android interview preparation for beginners, intermediate, and senior developers.
-
----
-
-# About
-
-This website contains Android interview questions and answers covering core Android development topics.
-
-Topics range from:
-- Android fundamentals
-- Kotlin
-- Jetpack libraries
-- Architecture
-- Performance
-- Debugging
-- System design
-- Advanced Android concepts
-
-The goal is to help developers prepare for:
-- Android developer interviews
-- senior Android interviews
-- architecture discussions
-- system design rounds
+Welcome to the ultimate preparation guide for Android Developers. This resource is designed to take you from **Junior** to **Senior/Staff** level by covering everything from core fundamentals to complex system design and CI/CD pipelines.
 
 ---
 
-# Android Fundamentals
+## 🚀 Navigation Roadmap
 
-- Activity lifecycle
-- Fragment lifecycle
-- Intents
-- Services
-- Broadcast Receivers
-- Content Providers
-- AndroidManifest
-- Context
-- Application class
+### [📱 Fundamentals](./fundamentals.md)
+Master the core building blocks of the Android OS. 
+* **Lifecycle:** Deep dives into Activity and Fragment states.
+* **Components:** Services, Broadcast Receivers, and Content Providers.
+* **Manifest & Context:** Understanding the app's blueprint and memory-safe context usage.
 
----
+### [🧠 Kotlin](./kotlin.md)
+Modern Android is Kotlin-first. We cover language internals and idiomatic usage.
+* **Core:** Null safety, Extension functions, and Higher-order functions.
+* **Advanced:** Inline functions, Reified types, and Sealed Class hierarchies.
+* **Asynchronous:** Coroutines and Flow (StateFlow/SharedFlow).
 
-# Kotlin
+### [🛠️ Jetpack Compose](./compose.md)
+The declarative UI standard for Android.
+* **State:** `remember`, `rememberSaveable`, and State Hoisting.
+* **Internals:** Recomposition cycles and stability.
+* **Effects:** Managing side effects with `LaunchedEffect` and `DisposableEffect`.
 
-- Variables and data types
-- Null safety
-- Extension functions
-- Higher-order functions
-- inline functions
-- reified types
-- Coroutines
-- Flow
-- Sealed classes
+### [🏗️ Architecture](./architecture.md)
+Design patterns that define professional, scalable apps.
+* **Patterns:** MVVM, MVI, and Clean Architecture.
+* **DI:** Hilt, Dagger2, and Koin.
+* **Scalability:** Modularization strategies and the Repository pattern.
 
----
+### [⚡ Concurrency](./concurrency.md)
+Efficient background processing.
+* **Coroutines:** Dispatchers, Scopes, and Structured Concurrency.
+* **Flow vs LiveData:** Migration strategies and use cases.
+* **Threading:** Handlers, Loopers, and the Main Thread.
 
-# Jetpack Compose
+### [🌐 Networking & Offline](./networking-db.md)
+Data persistence and API communication.
+* **Networking:** Retrofit, OkHttp, and Interceptors.
+* **Database:** Room, Migrations, and Relationships.
+* **Strategy:** [Offline-First Architecture](./offline-first.md) and data synchronization.
 
-- Composables
-- State management
-- Recomposition
-- remember
-- rememberSaveable
-- LazyColumn
-- Side effects
-- Navigation
+### [🚀 Performance & Vitals](./performance-debug.md)
+Building "buttery smooth" experiences.
+* **Optimization:** Memory leaks (LeakCanary), ANRs, and App Startup time.
+* **Metrics:** [App Vitals](./app-vitals.md) and Play Console performance tracking.
+* **Debugging:** Profilers, Logcat, and StrictMode.
 
----
+### [⚙️ CI/CD & Release](./cicd-pipelines.md)
+The "DevOps" of Android.
+* **Pipelines:** GitHub Actions and automated workflows.
+* **Management:** [Release Strategies](./release-management.md), App Bundles, and Gradual Rollouts.
 
-# Architecture
+### [🏗️ System Design](./system-design.md)
+Senior-level discussions on building complex systems.
+* Designing Image Loaders (Glide/Coil).
+* Real-time Chat and Feed systems.
+* Analytics and Logging SDKs.
 
-- MVC
-- MVP
-- MVVM
-- Clean Architecture
-- Repository pattern
-- Dependency Injection
-- Modularization
-
----
-
-# Jetpack Libraries
-
-- ViewModel
-- LiveData
-- Room
-- Navigation Component
-- WorkManager
-- Paging
-- DataStore
+### [🎓 Advanced & Security](./advanced.md)
+Going deep into the OS.
+* **Internals:** [AOSP basics](./aosp-internals.md) and Binder IPC.
+* **Security:** [Keystore, ProGuard, and R8](./security.md).
+* **Form Factors:** [Foldables and Tablets](./foldables.md).
 
 ---
 
-# Networking
-
-- Retrofit
-- OkHttp
-- REST APIs
-- JSON parsing
-- Error handling
-- Pagination
-- Authentication
-
----
-
-# Database
-
-- SQLite
-- Room Database
-- Migrations
-- Relationships
-- Indexing
-- Transactions
-
----
-
-# Concurrency
-
-- Threads
-- Handlers
-- Executors
-- Coroutines
-- Dispatchers
-- suspend functions
-- async and await
-- Flow vs LiveData
-
----
-
-# Performance Optimization
-
-- Memory leaks
-- ANR
-- App startup optimization
-- RecyclerView optimization
-- Bitmap optimization
-- Battery optimization
-
----
-
-# Debugging
-
-- Logcat
-- Android Profiler
-- LeakCanary
-- StrictMode
-- Crash analysis
-- Network debugging
-
----
-
-# Testing
-
-- Unit Testing
-- UI Testing
-- Espresso
-- JUnit
-- Mockito
-- Fake repositories
-
----
-
-# Advanced Android Topics
-
-- Binder IPC
-- AOSP basics
-- Foreground services
-- Background execution limits
-- Deep links
-- App links
-- Security
-- ProGuard and R8
-
----
-
-# Common Interview Questions
-
-- Difference between Fragment and Activity
-- What is Context?
-- What is ViewModel?
-- Difference between LiveData and Flow
-- How does RecyclerView work?
-- What is CoroutineScope?
-- What causes memory leaks?
-- How does WorkManager work?
-- Difference between Serializable and Parcelable
-- What is ANR?
-
----
-
-# Goal of This Website
-
+## 🎯 Goal of This Project
 This project aims to create a practical Android interview preparation resource with:
-- easy explanations
-- interview-focused answers
-- real examples
-- beginner to advanced topics
-- production-oriented discussions
+- **Interview-Focused Answers:** Not just documentation, but how to explain it to an interviewer.
+- **2026 Standards:** Focused on Compose, KMP, and On-device AI.
+- **Real Examples:** Code snippets that actually work in production.
+
+## 🚧 Upcoming Content
+- [ ] RecyclerView Performance Deep Dive
+- [ ] On-Device AI (Gemini Nano) Integration
+- [ ] Staff-Level Behavioral Interview Guide
+- [ ] Mock System Design Interviews
 
 ---
 
-# Upcoming Content
-
-- RecyclerView Deep Dive
-- Coroutines Interview Questions
-- Compose Interview Questions
-- MVVM Architecture Guide
-- WorkManager Internals
-- Room Database Questions
-- Android System Design
-- Memory Leak Debugging
-- Offline-First Architecture
-- AOSP Basics
+!!! tip "Contribute"
+    This is a public project! If you find a bug or want to add a question, feel free to open a Pull Request.

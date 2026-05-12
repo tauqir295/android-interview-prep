@@ -4,9 +4,33 @@ theme:
   name: material
   palette:
     scheme: slate
+  icon:
+    repo: fontawesome/brands/github
 
 nav:
-  - Home: index.md
+  - 🏠 Home: index.md
+  - 📱 Fundamentals: fundamentals.md
+  - 🧠 Kotlin: kotlin.md
+  - 🛠️ Jetpack Compose: compose.md
+  - 🏗️ Architecture: architecture.md
+  - ⚡ Concurrency: concurrency.md
+  - 🌐 Networking & Offline: 
+      - Retrofit & Room: networking-db.md
+      - Offline-First: offline-first.md
+  - 🚀 Performance & Vitals: 
+      - Debugging: performance-debug.md
+      - App Vitals: app-vitals.md
+  - ⚙️ CI/CD & Release:
+      - Pipelines: cicd-pipelines.md
+      - Release Strategy: release-management.md
+  - 🎓 Advanced & Internals: 
+      - AOSP & OS: aosp-internals.md
+      - Security: security.md
+  - 🤖 2026 Tech:
+      - AI & Foldables: ai-integration.md
+  - 🏗️ System Design: system-design.md
+  - 🧪 Testing: testing.md
+  - 💬 Behavioral: behavioral.md
 
 markdown_extensions:
   - admonition
