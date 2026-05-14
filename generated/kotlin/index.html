@@ -1371,14 +1371,1093 @@
 </script>
 
 <hr />
-<div id="sample-question"></div>
+<div id="kotlin-language-features"></div>
 
-<h1 id="sample-question">Sample Question<a class="headerlink" href="#sample-question" title="Permanent link">&para;</a></h1>
+<h1 id="what-makes-kotlin-a-good-language-for-android-development">What makes Kotlin a good language for Android development?<a class="headerlink" href="#what-makes-kotlin-a-good-language-for-android-development" title="Permanent link">&para;</a></h1>
 <p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code></p>
+<code>kotlin</code>
+<code>android</code>
+<code>fundamentals</code></p>
 <details class="question">
-<summary>Sample Question</summary>
-<p>Add a short answer here.</p>
+<summary>What makes Kotlin a good language for Android development?</summary>
+<p>Kotlin is a modern JVM language designed to improve safety,
+readability, and developer productivity.
+Key advantages for Android:
+- null safety support
+- concise syntax
+- strong IDE tooling
+- Java interoperability
+- coroutine support
+In interviews, mention that Kotlin reduces boilerplate while still
+compiling to JVM bytecode and working well with existing Java code.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#kotlin-language-features">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="val-vs-var"></div>
+
+<h1 id="what-is-the-difference-between-val-and-var-in-kotlin">What is the difference between val and var in Kotlin?<a class="headerlink" href="#what-is-the-difference-between-val-and-var-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>basics</code>
+<code>immutability</code></p>
+<details class="question">
+<summary>What is the difference between val and var in Kotlin?</summary>
+<p><code>val</code> defines a read-only reference.
+<code>var</code> defines a mutable reference.
+Key distinction:
+- <code>val</code> cannot be reassigned after initialization
+- <code>var</code> can be reassigned
+Important interview nuance:
+- <code>val</code> does NOT make the object itself immutable
+- it only makes the reference stable
+Prefer <code>val</code> by default and use <code>var</code> only when mutation is required.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#val-vs-var">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="data-classes"></div>
+
+<h1 id="what-is-a-data-class-in-kotlin">What is a data class in Kotlin?<a class="headerlink" href="#what-is-a-data-class-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>data-classes</code>
+<code>basics</code></p>
+<details class="question">
+<summary>What is a data class in Kotlin?</summary>
+<p>A data class is a class optimized for holding data.
+Kotlin automatically generates:
+- <code>equals()</code>
+- <code>hashCode()</code>
+- <code>toString()</code>
+- <code>copy()</code>
+- <code>componentN()</code> functions
+Use data classes for:
+- UI models
+- DTOs
+- state holders
+- domain values
+They are ideal when value equality matters more than identity.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-classes">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="data-class-generated-members"></div>
+
+<h1 id="what-methods-does-kotlin-generate-for-a-data-class">What methods does Kotlin generate for a data class?<a class="headerlink" href="#what-methods-does-kotlin-generate-for-a-data-class" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>data-classes</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>What methods does Kotlin generate for a data class?</summary>
+<p>Kotlin generates several members from primary constructor properties:
+- <code>equals()</code> and <code>hashCode()</code>
+- <code>toString()</code>
+- <code>copy()</code>
+- <code>componentN()</code> destructuring functions
+Interview detail:
+- only properties in the primary constructor participate
+- body properties are excluded from generated equality/copy behavior
+This is important for state modeling and JVM behavior discussions.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-class-generated-members">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="object-keyword"></div>
+
+<h1 id="what-does-the-object-keyword-do-in-kotlin">What does the object keyword do in Kotlin?<a class="headerlink" href="#what-does-the-object-keyword-do-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>object</code>
+<code>language-features</code></p>
+<details class="question">
+<summary>What does the object keyword do in Kotlin?</summary>
+<p>The <code>object</code> keyword has multiple uses in Kotlin:
+- object declaration → singleton
+- object expression → anonymous object
+- companion object → class-level members
+Interview point:
+Kotlin uses one keyword for several object creation patterns,
+but each compiles differently on the JVM.
+Always clarify which form of <code>object</code> you mean.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-keyword">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="companion-objects"></div>
+
+<h1 id="what-is-a-companion-object-in-kotlin">What is a companion object in Kotlin?<a class="headerlink" href="#what-is-a-companion-object-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>object</code>
+<code>jvm</code></p>
+<details class="question">
+<summary>What is a companion object in Kotlin?</summary>
+<p>A companion object is an object tied to a class definition.
+It is commonly used for:
+- factory methods
+- constants
+- static-like APIs
+- interface implementations
+Important interview nuance:
+- Kotlin has no true <code>static</code> keyword
+- companion objects are regular objects with special syntax support
+On the JVM, they are not identical to Java static members.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#companion-objects">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="object-declaration-vs-object-expression"></div>
+
+<h1 id="what-is-the-difference-between-an-object-declaration-and-an-object-expression">What is the difference between an object declaration and an object expression?<a class="headerlink" href="#what-is-the-difference-between-an-object-declaration-and-an-object-expression" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>object</code>
+<code>internals</code></p>
+<details class="question">
+<summary>What is the difference between an object declaration and an object expression?</summary>
+<p>Object declaration:
+- defines a named singleton
+- initialized lazily on first access
+Object expression:
+- creates an anonymous object immediately
+- often used for one-off implementations
+Use declaration for shared singleton behavior.
+Use expression for local, ad-hoc object creation.
+Interview detail: visibility and inferred type behavior differ,
+especially when returning anonymous objects from APIs.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-declaration-vs-object-expression">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="sealed-classes"></div>
+
+<h1 id="what-is-a-sealed-class-in-kotlin">What is a sealed class in Kotlin?<a class="headerlink" href="#what-is-a-sealed-class-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>sealed</code>
+<code>modeling</code></p>
+<details class="question">
+<summary>What is a sealed class in Kotlin?</summary>
+<p>A sealed class restricts inheritance to a known set of subclasses.
+It is useful for:
+- UI state modeling
+- result wrappers
+- finite state machines
+- exhaustive <code>when</code> expressions
+Key benefit:
+the compiler knows all valid subtypes at compile time.
+This makes sealed hierarchies safer than open inheritance for
+closed-domain modeling.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-classes">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="sealed-vs-enum"></div>
+
+<h1 id="when-should-you-use-a-sealed-class-instead-of-an-enum">When should you use a sealed class instead of an enum?<a class="headerlink" href="#when-should-you-use-a-sealed-class-instead-of-an-enum" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>sealed</code>
+<code>enums</code></p>
+<details class="question">
+<summary>When should you use a sealed class instead of an enum?</summary>
+<p>Use an enum when you need a fixed set of simple constants.
+Use a sealed class when each case may carry different data
+or behavior.
+Quick comparison:
+- enum → single instance per constant
+- sealed class → richer subtype hierarchy
+- enum → good for flags/statuses
+- sealed class → good for UI states/results/events
+In interviews, emphasize flexibility vs simplicity.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-vs-enum">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="enum-class-use-cases"></div>
+
+<h1 id="what-are-enum-classes-useful-for-in-kotlin">What are enum classes useful for in Kotlin?<a class="headerlink" href="#what-are-enum-classes-useful-for-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>enums</code>
+<code>basics</code></p>
+<details class="question">
+<summary>What are enum classes useful for in Kotlin?</summary>
+<p>Enum classes represent a fixed set of named constants.
+Common uses:
+- screen modes
+- status values
+- sorting types
+- feature flags with limited states
+They can also contain:
+- properties
+- functions
+- interface implementations
+Use enums when the domain is fixed and each value is conceptually
+a singleton.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#enum-class-use-cases">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="class-delegation"></div>
+
+<h1 id="what-is-delegation-in-kotlin">What is delegation in Kotlin?<a class="headerlink" href="#what-is-delegation-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>delegation</code>
+<code>composition</code></p>
+<details class="question">
+<summary>What is delegation in Kotlin?</summary>
+<p>Kotlin supports class delegation using the <code>by</code> keyword.
+It lets one class forward interface implementation to another object.
+Benefits:
+- reduces boilerplate
+- favors composition over inheritance
+- keeps behavior reusable
+Interview angle:
+delegation is language-level support for composition patterns that
+would be more verbose in Java.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#class-delegation">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="delegated-properties"></div>
+
+<h1 id="what-are-delegated-properties-in-kotlin">What are delegated properties in Kotlin?<a class="headerlink" href="#what-are-delegated-properties-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>delegation</code>
+<code>properties</code></p>
+<details class="question">
+<summary>What are delegated properties in Kotlin?</summary>
+<p>Delegated properties outsource getter/setter logic to another object.
+Common delegates:
+- <code>lazy</code>
+- <code>observable</code>
+- <code>vetoable</code>
+- custom delegates
+This is useful when property behavior includes:
+- caching
+- validation
+- logging
+- lifecycle-aware initialization
+Delegation is one of Kotlin's most practical language features.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#delegated-properties">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="lazy-delegation"></div>
+
+<h1 id="how-does-lazy-initialization-work-in-kotlin">How does lazy initialization work in Kotlin?<a class="headerlink" href="#how-does-lazy-initialization-work-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>lazy</code>
+<code>delegation</code></p>
+<details class="question">
+<summary>How does lazy initialization work in Kotlin?</summary>
+<p><code>lazy</code> delays object creation until first access.
+Benefits:
+- avoids unnecessary work
+- reduces startup cost
+- makes expensive initialization demand-driven
+Interview nuance:
+Kotlin offers thread-safety modes for <code>lazy</code>, and behavior differs
+depending on synchronization strategy.
+Use <code>lazy</code> when initialization is expensive and not always needed.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#lazy-delegation">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="extension-functions"></div>
+
+<h1 id="what-are-extension-functions-in-kotlin">What are extension functions in Kotlin?<a class="headerlink" href="#what-are-extension-functions-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>extensions</code>
+<code>api-design</code></p>
+<details class="question">
+<summary>What are extension functions in Kotlin?</summary>
+<p>Extension functions let you add callable functions to an existing type
+without modifying its source code.
+They are useful for:
+- utility APIs
+- cleaner call sites
+- DSL-like helpers
+- Android-specific convenience methods
+Important interview point:
+extensions do not actually modify the class.
+They are resolved statically by the compiler.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-functions">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="extension-function-resolution"></div>
+
+<h1 id="how-are-extension-functions-resolved-in-kotlin">How are extension functions resolved in Kotlin?<a class="headerlink" href="#how-are-extension-functions-resolved-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>extensions</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>How are extension functions resolved in Kotlin?</summary>
+<p>Extension functions are resolved statically.
+That means dispatch is based on the compile-time type,
+not the runtime type.
+Implications:
+- they do not truly override members
+- member functions always win over extensions
+- polymorphism does not work like normal virtual dispatch
+This is a common Kotlin interview trap.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-function-resolution">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="scope-functions"></div>
+
+<h1 id="what-are-kotlin-scope-functions">What are Kotlin scope functions?<a class="headerlink" href="#what-are-kotlin-scope-functions" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>scope-functions</code>
+<code>idioms</code></p>
+<details class="question">
+<summary>What are Kotlin scope functions?</summary>
+<p>Scope functions execute a block in the context of an object.
+The main ones are:
+- <code>let</code>
+- <code>run</code>
+- <code>with</code>
+- <code>apply</code>
+- <code>also</code>
+They help with:
+- object configuration
+- null-safe chaining
+- side effects
+- expression-style code
+Use them carefully; overuse can reduce readability.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/scope-functions/#scope-functions">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="let-vs-run-vs-apply-vs-also"></div>
+
+<h1 id="what-is-the-difference-between-let-run-apply-also-and-with">What is the difference between let, run, apply, also, and with?<a class="headerlink" href="#what-is-the-difference-between-let-run-apply-also-and-with" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>scope-functions</code>
+<code>readability</code></p>
+<details class="question">
+<summary>What is the difference between let, run, apply, also, and with?</summary>
+<p>The main differences are:
+- receiver name (<code>this</code> vs <code>it</code>)
+- return value (context object vs lambda result)
+Quick guide:
+- <code>let</code> → null-safe transforms
+- <code>run</code> → compute result with receiver
+- <code>apply</code> → configure object, return object
+- <code>also</code> → side effects, return object
+- <code>with</code> → grouped calls on receiver
+Interviewers care more about when to use them than memorizing a table.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/scope-functions/#let-vs-run-vs-apply-vs-also">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="higher-order-functions"></div>
+
+<h1 id="what-is-a-higher-order-function-in-kotlin">What is a higher-order function in Kotlin?<a class="headerlink" href="#what-is-a-higher-order-function-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>functional</code>
+<code>lambdas</code></p>
+<details class="question">
+<summary>What is a higher-order function in Kotlin?</summary>
+<p>A higher-order function is a function that:
+- takes another function as a parameter, or
+- returns a function
+They are heavily used in Kotlin APIs such as:
+- collection operators
+- coroutines
+- Flow
+- DSL builders
+This style enables concise, reusable, expressive APIs.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#higher-order-functions">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="lambdas-with-receiver"></div>
+
+<h1 id="what-is-a-lambda-with-receiver-in-kotlin">What is a lambda with receiver in Kotlin?<a class="headerlink" href="#what-is-a-lambda-with-receiver-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>lambdas</code>
+<code>dsl</code></p>
+<details class="question">
+<summary>What is a lambda with receiver in Kotlin?</summary>
+<p>A lambda with receiver gives the lambda an implicit receiver object,
+so members can be called without qualification.
+This powers:
+- builders
+- DSLs
+- <code>apply</code>-style APIs
+- Compose-style declarative patterns
+Interview point:
+it improves fluency, but can make scope and receiver resolution harder
+to follow if overused.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#lambdas-with-receiver">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="inline-functions"></div>
+
+<h1 id="what-is-an-inline-function-in-kotlin">What is an inline function in Kotlin?<a class="headerlink" href="#what-is-an-inline-function-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>inline</code>
+<code>performance</code></p>
+<details class="question">
+<summary>What is an inline function in Kotlin?</summary>
+<p>An inline function asks the compiler to copy the function body to the
+call site instead of generating a normal call.
+Benefits:
+- reduces lambda allocation overhead
+- enables non-local returns in some cases
+- works well for higher-order utility APIs
+Tradeoff:
+too much inlining can increase bytecode size.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-functions">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="crossinline-vs-noinline"></div>
+
+<h1 id="what-are-crossinline-and-noinline-in-kotlin">What are crossinline and noinline in Kotlin?<a class="headerlink" href="#what-are-crossinline-and-noinline-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>inline</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>What are crossinline and noinline in Kotlin?</summary>
+<p>These modifiers control lambda behavior inside inline functions.
+- <code>noinline</code> → do not inline this lambda
+- <code>crossinline</code> → inline it, but forbid non-local return
+Use them when an inline function mixes:
+- direct invocation
+- storage/passing of lambdas
+- callback wrapping
+This is a common advanced Kotlin interview topic.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/inline-functions/#crossinline-vs-noinline">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="inline-performance-considerations"></div>
+
+<h1 id="when-do-inline-functions-help-or-hurt-performance">When do inline functions help or hurt performance?<a class="headerlink" href="#when-do-inline-functions-help-or-hurt-performance" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>inline</code>
+<code>performance</code></p>
+<details class="question">
+<summary>When do inline functions help or hurt performance?</summary>
+<p>Inline functions help when they remove overhead from small,
+frequently-called higher-order functions.
+They can hurt when:
+- function bodies are large
+- too much code is duplicated
+- bytecode size grows significantly
+Interview takeaway:
+inline is a targeted optimization, not something to apply everywhere.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-performance-considerations">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="reified-generics"></div>
+
+<h1 id="what-are-reified-type-parameters-in-kotlin">What are reified type parameters in Kotlin?<a class="headerlink" href="#what-are-reified-type-parameters-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>generics</code>
+<code>inline</code></p>
+<details class="question">
+<summary>What are reified type parameters in Kotlin?</summary>
+<p>Reified type parameters let inline functions access generic type
+information at runtime.
+Normally, JVM type erasure removes generic type details.
+Reified types work because the function is inlined at the call site.
+This is useful for:
+- type-safe factories
+- serialization helpers
+- navigation/util APIs
+- reflection-light APIs
+Reified works only in inline functions.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/reified-generics/#reified-generics">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="null-safety"></div>
+
+<h1 id="how-does-null-safety-work-in-kotlin">How does null safety work in Kotlin?<a class="headerlink" href="#how-does-null-safety-work-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>null-safety</code>
+<code>type-system</code></p>
+<details class="question">
+<summary>How does null safety work in Kotlin?</summary>
+<p>Kotlin separates nullable and non-nullable types.
+Example:
+- <code>String</code> → cannot hold null
+- <code>String?</code> → can hold null
+Core null-safety tools:
+- safe call <code>?.</code>
+- Elvis operator <code>?:</code>
+- smart casts
+- not-null assertion <code>!!</code>
+Kotlin reduces null bugs, but interop and unsafe operators can still
+reintroduce them.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#null-safety">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="safe-call-elvis-not-null"></div>
+
+<h1 id="what-are-the-safe-call-elvis-operator-and-not-null-assertion-in-kotlin">What are the safe call, Elvis operator, and not-null assertion in Kotlin?<a class="headerlink" href="#what-are-the-safe-call-elvis-operator-and-not-null-assertion-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>null-safety</code>
+<code>operators</code></p>
+<details class="question">
+<summary>What are the safe call, Elvis operator, and not-null assertion in Kotlin?</summary>
+<p>Common null-safety operators:
+- <code>?.</code> → call only if value is non-null
+- <code>?:</code> → provide fallback when value is null
+- <code>!!</code> → assert non-null and throw if wrong
+Interview advice:
+- prefer <code>?.</code> and <code>?:</code>
+- avoid <code>!!</code> unless failure is truly acceptable
+Overuse of <code>!!</code> is often treated as a code smell.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#safe-call-elvis-not-null">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="smart-casts"></div>
+
+<h1 id="what-are-smart-casts-in-kotlin">What are smart casts in Kotlin?<a class="headerlink" href="#what-are-smart-casts-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>type-system</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>What are smart casts in Kotlin?</summary>
+<p>Smart casts let the compiler automatically cast a value after a
+successful type or null check.
+Example cases:
+- <code>if (x is String)</code>
+- <code>if (value != null)</code>
+They work when the compiler can prove the reference is stable.
+They may fail for:
+- mutable properties
+- custom getters
+- shared state with uncertain mutation
+This reflects Kotlin's flow-sensitive type analysis.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#smart-casts">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="generics-in-kotlin"></div>
+
+<h1 id="how-do-generics-work-in-kotlin">How do generics work in Kotlin?<a class="headerlink" href="#how-do-generics-work-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>generics</code>
+<code>type-system</code></p>
+<details class="question">
+<summary>How do generics work in Kotlin?</summary>
+<p>Generics let classes and functions operate on types abstractly while
+preserving type safety.
+Common uses:
+- collections
+- repositories
+- wrappers like <code>Result&lt;T&gt;</code>
+- API abstractions
+On the JVM, Kotlin generics are mostly erased at runtime,
+just like Java generics.
+That is why some runtime generic checks are limited.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#generics-in-kotlin">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="variance-in-out"></div>
+
+<h1 id="what-do-in-and-out-mean-in-kotlin-variance">What do in and out mean in Kotlin variance?<a class="headerlink" href="#what-do-in-and-out-mean-in-kotlin-variance" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>generics</code>
+<code>variance</code></p>
+<details class="question">
+<summary>What do in and out mean in Kotlin variance?</summary>
+<p>Variance controls how generic types relate to each other.
+- <code>out</code> = producer / covariance
+- <code>in</code> = consumer / contravariance
+Use them to express safe subtype substitution.
+Interview tip:
+explain variance in terms of whether the type only produces values,
+consumes values, or does both.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#variance-in-out">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="star-projection"></div>
+
+<h1 id="what-is-a-star-projection-in-kotlin">What is a star projection in Kotlin?<a class="headerlink" href="#what-is-a-star-projection-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>generics</code>
+<code>variance</code></p>
+<details class="question">
+<summary>What is a star projection in Kotlin?</summary>
+<p>A star projection (<code>*</code>) represents an unknown type argument while still
+preserving safe usage rules.
+It is Kotlin's safer alternative to raw types.
+Use it when:
+- the exact generic type is irrelevant
+- you only need read-safe access
+- API flexibility matters more than precision
+It is useful in reflection-heavy or framework-style code.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#star-projection">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="collections-api"></div>
+
+<h1 id="what-is-important-about-kotlins-collections-api-in-interviews">What is important about Kotlin's collections API in interviews?<a class="headerlink" href="#what-is-important-about-kotlins-collections-api-in-interviews" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>collections</code>
+<code>api</code></p>
+<details class="question">
+<summary>What is important about Kotlin's collections API in interviews?</summary>
+<p>Kotlin's collections API is expressive and functional in style.
+Common operations:
+- <code>map</code>
+- <code>filter</code>
+- <code>flatMap</code>
+- <code>groupBy</code>
+- <code>associate</code>
+Interview focus:
+- readability vs performance
+- eager evaluation of collections
+- choosing the right operator chain
+It is powerful, but misuse can create unnecessary allocations.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#collections-api">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="immutable-vs-mutable-collections"></div>
+
+<h1 id="what-is-the-difference-between-read-only-and-mutable-collections-in-kotlin">What is the difference between read-only and mutable collections in Kotlin?<a class="headerlink" href="#what-is-the-difference-between-read-only-and-mutable-collections-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>collections</code>
+<code>immutability</code></p>
+<details class="question">
+<summary>What is the difference between read-only and mutable collections in Kotlin?</summary>
+<p>Kotlin distinguishes read-only collection interfaces from mutable ones.
+Important nuance:
+- read-only does not always mean truly immutable
+- it may only restrict mutation through that reference
+Interviewers often want you to understand the difference between:
+- API-level immutability
+- actual object immutability
+This matters when sharing state across layers or threads.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#immutable-vs-mutable-collections">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="sequences-vs-collections"></div>
+
+<h1 id="when-should-you-use-sequence-instead-of-a-regular-collection-chain">When should you use Sequence instead of a regular collection chain?<a class="headerlink" href="#when-should-you-use-sequence-instead-of-a-regular-collection-chain" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>collections</code>
+<code>performance</code></p>
+<details class="question">
+<summary>When should you use Sequence instead of a regular collection chain?</summary>
+<p><code>Sequence</code> evaluates operations lazily.
+Use it when:
+- processing large datasets
+- chaining many transformations
+- avoiding intermediate collection allocations matters
+Regular collections are often simpler and faster for small datasets.
+Interview answer:
+choose <code>Sequence</code> for allocation-sensitive pipelines,
+not automatically for every chain.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#sequences-vs-collections">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="coroutines-what-are"></div>
+
+<h1 id="what-are-kotlin-coroutines">What are Kotlin Coroutines?<a class="headerlink" href="#what-are-kotlin-coroutines" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>concurrency</code></p>
+<details class="question">
+<summary>What are Kotlin Coroutines?</summary>
+<p>Kotlin Coroutines are lightweight concurrency primitives for writing
+asynchronous code in a sequential style.
+They help simplify:
+- background work
+- async operations
+- structured concurrency
+- cancellation-aware code
+Core concepts:
+- <code>suspend</code> functions
+- <code>CoroutineScope</code>
+- <code>Dispatcher</code>
+- <code>Job</code>
+Coroutines are cheaper than threads but still require careful design.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#coroutines-what-are">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="suspend-functions"></div>
+
+<h1 id="what-is-a-suspend-function-in-kotlin">What is a suspend function in Kotlin?<a class="headerlink" href="#what-is-a-suspend-function-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>suspend</code></p>
+<details class="question">
+<summary>What is a suspend function in Kotlin?</summary>
+<p>A <code>suspend</code> function can pause and resume without blocking the thread.
+Important clarification:
+- <code>suspend</code> does not automatically mean background thread
+- it means the function can cooperate with coroutine suspension
+Suspend functions are the building blocks of coroutine-based APIs.
+They usually compose with:
+- structured concurrency
+- cancellation
+- dispatcher switching</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#suspend-functions">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="continuation-and-cps"></div>
+
+<h1 id="how-do-suspend-functions-work-internally-in-kotlin">How do suspend functions work internally in Kotlin?<a class="headerlink" href="#how-do-suspend-functions-work-internally-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>How do suspend functions work internally in Kotlin?</summary>
+<p>Suspend functions are compiled into continuation-passing style (CPS).
+Internally, the compiler:
+- adds a <code>Continuation</code> parameter
+- rewrites code into resumable steps
+- builds a state machine for suspension points
+Interview takeaway:
+coroutines look sequential in source code, but compile into a very
+different lower-level form.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#continuation-and-cps">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="dispatchers"></div>
+
+<h1 id="what-are-dispatchers-in-kotlin-coroutines">What are Dispatchers in Kotlin Coroutines?<a class="headerlink" href="#what-are-dispatchers-in-kotlin-coroutines" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>dispatchers</code></p>
+<details class="question">
+<summary>What are Dispatchers in Kotlin Coroutines?</summary>
+<p>Dispatchers decide what thread or thread pool a coroutine runs on.
+Common ones:
+- <code>Dispatchers.Main</code>
+- <code>Dispatchers.IO</code>
+- <code>Dispatchers.Default</code>
+- <code>Dispatchers.Unconfined</code> (special case)
+Interview point:
+dispatchers affect execution context, scheduling, and performance.
+Choosing the wrong dispatcher can hurt responsiveness or waste threads.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#dispatchers">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="coroutine-scope"></div>
+
+<h1 id="what-is-coroutinescope-and-why-does-it-matter">What is CoroutineScope and why does it matter?<a class="headerlink" href="#what-is-coroutinescope-and-why-does-it-matter" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>scope</code></p>
+<details class="question">
+<summary>What is CoroutineScope and why does it matter?</summary>
+<p><code>CoroutineScope</code> defines the lifecycle boundary for launched coroutines.
+It matters because it controls:
+- cancellation ownership
+- structured concurrency
+- parent-child relationships
+- leak prevention
+Android examples:
+- <code>viewModelScope</code>
+- <code>lifecycleScope</code>
+A coroutine without the right scope is often a lifecycle bug.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#coroutine-scope">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="structured-concurrency"></div>
+
+<h1 id="what-is-structured-concurrency-in-kotlin">What is structured concurrency in Kotlin?<a class="headerlink" href="#what-is-structured-concurrency-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>structured-concurrency</code></p>
+<details class="question">
+<summary>What is structured concurrency in Kotlin?</summary>
+<p>Structured concurrency means coroutines are launched within a scope that
+defines ownership and lifetime.
+Benefits:
+- child coroutines are tracked
+- cancellation propagates predictably
+- errors are easier to manage
+- work does not leak silently
+Interview summary:
+concurrency should be tied to a parent lifecycle, not launched freely.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#structured-concurrency">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="job-vs-supervisorjob"></div>
+
+<h1 id="what-is-the-difference-between-job-and-supervisorjob">What is the difference between Job and SupervisorJob?<a class="headerlink" href="#what-is-the-difference-between-job-and-supervisorjob" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>jobs</code></p>
+<details class="question">
+<summary>What is the difference between Job and SupervisorJob?</summary>
+<p><code>Job</code> and <code>SupervisorJob</code> both manage coroutine lifecycle,
+but failure propagation differs.
+- <code>Job</code> → child failure cancels siblings/parent hierarchy
+- <code>SupervisorJob</code> → child failure is isolated
+Use <code>SupervisorJob</code> when independent child tasks should not take each
+other down.
+This is a common senior-level coroutine interview question.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-vs-supervisorjob">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="async-vs-launch"></div>
+
+<h1 id="what-is-the-difference-between-launch-and-async-in-coroutines">What is the difference between launch and async in coroutines?<a class="headerlink" href="#what-is-the-difference-between-launch-and-async-in-coroutines" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>concurrency</code></p>
+<details class="question">
+<summary>What is the difference between launch and async in coroutines?</summary>
+<p><code>launch</code> starts a coroutine that returns <code>Job</code>.
+<code>async</code> starts a coroutine that returns <code>Deferred&lt;T&gt;</code>.
+Use:
+- <code>launch</code> for fire-and-join style work
+- <code>async</code> when a result is needed
+Interview nuance:
+<code>async</code> is not automatically better for parallelism.
+It should be used when structured result handling is needed.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#async-vs-launch">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="job-hierarchy"></div>
+
+<h1 id="how-does-coroutine-job-hierarchy-work">How does coroutine job hierarchy work?<a class="headerlink" href="#how-does-coroutine-job-hierarchy-work" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>jobs</code></p>
+<details class="question">
+<summary>How does coroutine job hierarchy work?</summary>
+<p>Every coroutine has a <code>Job</code> in its context.
+Parent-child hierarchy controls:
+- cancellation propagation
+- completion waiting
+- exception handling behavior
+In structured concurrency:
+- parent waits for children
+- child cancellation can affect parent depending on job type
+Understanding job hierarchy is key to debugging coroutine behavior.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-hierarchy">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="coroutine-cancellation"></div>
+
+<h1 id="how-does-cancellation-work-in-kotlin-coroutines">How does cancellation work in Kotlin Coroutines?<a class="headerlink" href="#how-does-cancellation-work-in-kotlin-coroutines" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>cancellation</code></p>
+<details class="question">
+<summary>How does cancellation work in Kotlin Coroutines?</summary>
+<p>Coroutine cancellation is cooperative.
+That means code must reach suspension points or explicitly check for
+cancellation to stop promptly.
+Common tools:
+- <code>isActive</code>
+- <code>ensureActive()</code>
+- <code>yield()</code>
+- cancellable suspending functions
+Blocking code that ignores cancellation is a common production bug.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-cancellation">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="coroutine-exception-handling"></div>
+
+<h1 id="how-are-exceptions-handled-in-kotlin-coroutines">How are exceptions handled in Kotlin Coroutines?<a class="headerlink" href="#how-are-exceptions-handled-in-kotlin-coroutines" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>exceptions</code></p>
+<details class="question">
+<summary>How are exceptions handled in Kotlin Coroutines?</summary>
+<p>Exception handling depends on coroutine builder type and hierarchy.
+Key ideas:
+- <code>launch</code> surfaces failures differently than <code>async</code>
+- parent-child structure matters
+- <code>CoroutineExceptionHandler</code> only handles uncaught exceptions
+- supervisor-style scopes isolate failures
+Interview answer should focus on propagation rules, not just try/catch.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-exception-handling">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="flow-what-is"></div>
+
+<h1 id="what-is-flow-in-kotlin">What is Flow in Kotlin?<a class="headerlink" href="#what-is-flow-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>flow</code>
+<code>async-streams</code></p>
+<details class="question">
+<summary>What is Flow in Kotlin?</summary>
+<p>Flow is Kotlin's cold asynchronous stream API.
+It is used for:
+- reactive pipelines
+- database observation
+- UI state transformation
+- incremental async values
+Important properties:
+- cold by default
+- sequential by default
+- coroutine-based
+- cancellation-aware
+Flow is central to modern Android state handling.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#flow-what-is">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="cold-vs-hot-flow"></div>
+
+<h1 id="what-is-the-difference-between-cold-and-hot-streams-in-kotlin">What is the difference between cold and hot streams in Kotlin?<a class="headerlink" href="#what-is-the-difference-between-cold-and-hot-streams-in-kotlin" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>flow</code>
+<code>reactive</code></p>
+<details class="question">
+<summary>What is the difference between cold and hot streams in Kotlin?</summary>
+<p>Cold streams start producing values per collector.
+Hot streams can emit independently of collectors.
+In Kotlin:
+- <code>Flow</code> is usually cold
+- <code>StateFlow</code> and <code>SharedFlow</code> are hot
+Interview framing:
+the difference is about producer lifecycle and sharing behavior,
+not just API names.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#cold-vs-hot-flow">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="stateflow-vs-sharedflow"></div>
+
+<h1 id="what-is-the-difference-between-stateflow-and-sharedflow">What is the difference between StateFlow and SharedFlow?<a class="headerlink" href="#what-is-the-difference-between-stateflow-and-sharedflow" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>flow</code>
+<code>stateflow</code></p>
+<details class="question">
+<summary>What is the difference between StateFlow and SharedFlow?</summary>
+<p><code>StateFlow</code> is for holding and exposing current state.
+<code>SharedFlow</code> is for broadcasting events or shared emissions.
+Quick comparison:
+- <code>StateFlow</code> always has a current value
+- <code>SharedFlow</code> can be configured for replay/buffering
+- <code>StateFlow</code> is state-oriented
+- <code>SharedFlow</code> is event/broadcast-oriented
+Choosing the wrong one often causes UI event bugs.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#stateflow-vs-sharedflow">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="channels-vs-sharedflow"></div>
+
+<h1 id="when-should-you-use-a-channel-instead-of-sharedflow">When should you use a Channel instead of SharedFlow?<a class="headerlink" href="#when-should-you-use-a-channel-instead-of-sharedflow" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>channels</code>
+<code>flow</code></p>
+<details class="question">
+<summary>When should you use a Channel instead of SharedFlow?</summary>
+<p>Channels are point-to-point communication primitives.
+SharedFlow is a broadcast-style hot stream.
+Use Channel when:
+- send/receive semantics matter
+- backpressure and buffering behavior are central
+- you need queue-like communication
+Use SharedFlow when multiple collectors should observe emissions.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#channels-vs-sharedflow">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="mutex-in-kotlin"></div>
+
+<h1 id="what-is-mutex-in-kotlin-coroutines-and-when-should-you-use-it">What is Mutex in Kotlin Coroutines and when should you use it?<a class="headerlink" href="#what-is-mutex-in-kotlin-coroutines-and-when-should-you-use-it" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>synchronization</code></p>
+<details class="question">
+<summary>What is Mutex in Kotlin Coroutines and when should you use it?</summary>
+<p><code>Mutex</code> is a coroutine-friendly mutual exclusion primitive.
+It is used to protect shared mutable state without blocking a thread.
+Use it when:
+- multiple coroutines update shared data
+- atomic updates are needed
+- thread-safe state transitions matter
+Interview detail:
+<code>Mutex</code> suspends waiting coroutines instead of blocking a thread.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#mutex-in-kotlin">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="kotlin-jvm-interoperability"></div>
+
+<h1 id="how-does-kotlin-interoperate-with-java-on-the-jvm">How does Kotlin interoperate with Java on the JVM?<a class="headerlink" href="#how-does-kotlin-interoperate-with-java-on-the-jvm" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>jvm</code>
+<code>interop</code></p>
+<details class="question">
+<summary>How does Kotlin interoperate with Java on the JVM?</summary>
+<p>Kotlin is designed for strong Java interoperability.
+It supports:
+- calling Java code directly
+- exposing Kotlin APIs to Java
+- sharing JVM libraries and tooling
+Common interop concerns:
+- nullability
+- checked exceptions
+- default arguments
+- static-like APIs
+- SAM conversions
+Good Kotlin interview answers usually mention both syntax and JVM impact.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-jvm-interoperability">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="kotlin-bytecode-basics"></div>
+
+<h1 id="what-should-you-know-about-kotlin-bytecode-for-interviews">What should you know about Kotlin bytecode for interviews?<a class="headerlink" href="#what-should-you-know-about-kotlin-bytecode-for-interviews" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>bytecode</code>
+<code>jvm</code></p>
+<details class="question">
+<summary>What should you know about Kotlin bytecode for interviews?</summary>
+<p>Kotlin source compiles to JVM bytecode, often with generated helper
+classes and methods that do not appear in source code.
+Important interview topics:
+- null-check generation
+- synthetic/default helper methods
+- lambda class generation
+- inline call-site expansion
+- suspend state machine generation
+Bytecode knowledge helps explain performance and interoperability.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-bytecode-basics">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="suspend-state-machine"></div>
+
+<h1 id="how-are-coroutines-compiled-into-a-state-machine">How are coroutines compiled into a state machine?<a class="headerlink" href="#how-are-coroutines-compiled-into-a-state-machine" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
+<code>kotlin</code>
+<code>coroutines</code>
+<code>bytecode</code></p>
+<details class="question">
+<summary>How are coroutines compiled into a state machine?</summary>
+<p>The compiler rewrites suspend code into a state machine that tracks the
+current execution label and continuation.
+At each suspension point:
+- local state may be stored
+- execution label is updated
+- continuation resumes later from the right state
+This explains how coroutines appear sequential while remaining resumable.</p>
+<p><a href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#suspend-state-machine">🚀 See Full Deep Dive</a></p>
 </details>
 
 

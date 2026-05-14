@@ -1744,9 +1744,9 @@ Always provide proper flags when creating.</p>
 <p>Fragment back stack is managed by FragmentManager.</p>
 <p>When you call:
 fragmentManager.beginTransaction()
-  .replace(R.id.container, newFragment)
-  .addToBackStack(null)
-  .commit()</p>
+.replace(R.id.container, newFragment)
+.addToBackStack(null)
+.commit()</p>
 <p>Steps:
 1. Current fragment state saved
 2. New fragment created and added
@@ -1776,12 +1776,12 @@ fragmentManager.beginTransaction()
 <p>BEST PRACTICE: Use Bundle with constants</p>
 <p>Recommended pattern:
 companion object {
-  private const val ARG_USER_ID = "user_id"</p>
+private const val ARG_USER_ID = "user_id"</p>
 <p>fun newInstance(userId: Int) = MyFragment().apply {
-    arguments = Bundle().apply {
-      putInt(ARG_USER_ID, userId)
-    }
-  }
+arguments = Bundle().apply {
+putInt(ARG_USER_ID, userId)
+}
+}
 }</p>
 <p>In onCreate():
 val userId = arguments?.getInt(ARG_USER_ID) ?: 0</p>
@@ -1840,26 +1840,18 @@ and system services.</p>
 <p>Context memory leaks occur when Activity Context is referenced
 by long-lived objects.</p>
 <p>PROBLEMATIC PATTERNS:</p>
-<ol>
-<li>
-<p>Activity context in singletons:
-object MySingleton {
-  var context: Context? = null // WRONG!
+<h3 id="activity-context-in-singletons">Activity context in singletons<a class="headerlink" href="#activity-context-in-singletons" title="Permanent link">&para;</a></h3>
+<p>object MySingleton {
+var context: Context? = null // WRONG!
 }</p>
-</li>
-<li>
-<p>Inner class references Activity:
-class MyInnerClass { // Holds Activity ref
-  fun doWork() {}
+<h3 id="inner-class-references-activity">Inner class references Activity<a class="headerlink" href="#inner-class-references-activity" title="Permanent link">&para;</a></h3>
+<p>class MyInnerClass { // Holds Activity ref
+fun doWork() {}
 }</p>
-</li>
-<li>
-<p>Static references to Activity:
-companion object {
-  var activity: Activity? = null // WRONG!
+<h3 id="static-references-to-activity">Static references to Activity<a class="headerlink" href="#static-references-to-activity" title="Permanent link">&para;</a></h3>
+<p>companion object {
+var activity: Activity? = null // WRONG!
 }</p>
-</li>
-</ol>
 <p>SOLUTIONS:
 - Use application context for singletons
 - Use static inner class + WeakReference
@@ -1918,12 +1910,12 @@ when UI operation is tied to current Activity.</p>
 - Data loss (operations interrupted)</p>
 <p>EXAMPLE - Wrong:
 class Manager(val context: Activity) { // Holds Activity ref
-  fun work() { /<em> does work </em>/ }
+fun work() { /<em> does work </em>/ }
 }
 // Activity destroyed but Manager still referenced → leak</p>
 <p>CORRECT - Right:
 class Manager(val context: Context) { // Use generic Context
-  fun work() { /<em> does work </em>/ }
+fun work() { /<em> does work </em>/ }
 }
 val manager = Manager(applicationContext) // App context</p>
 <p>Key principle:
@@ -1975,27 +1967,23 @@ referenced, preventing garbage collection.</p>
 <details class="question">
 <summary>How do you detect memory leaks?</summary>
 <p>TOOLS:</p>
-<ol>
-<li>LeakCanary library:</li>
+<h3 id="leakcanary-library">LeakCanary library<a class="headerlink" href="#leakcanary-library" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Automatically detects leaks</li>
 <li>Shows leak chain</li>
-<li>
-<p>Most practical tool</p>
-</li>
-<li>
-<p>Android Studio Memory Profiler:</p>
-</li>
+<li>Most practical tool</li>
+</ul>
+<h3 id="android-studio-memory-profiler">Android Studio Memory Profiler<a class="headerlink" href="#android-studio-memory-profiler" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Record heap allocations</li>
 <li>Take heap dumps</li>
-<li>
-<p>Inspect object references</p>
-</li>
-<li>
-<p>Logcat:</p>
-</li>
+<li>Inspect object references</li>
+</ul>
+<h3 id="logcat">Logcat<a class="headerlink" href="#logcat" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Watch for OOM errors</li>
 <li>Monitor memory growth</li>
-</ol>
+</ul>
 <p>PROCESS:
 1. Run app with LeakCanary/Profiler
 2. Perform action multiple times (navigate, rotate, etc)
@@ -2019,12 +2007,12 @@ after they're no longer needed.</p>
 <summary>What are common memory leak patterns in Android?</summary>
 <p>PATTERN 1: Static Activity Reference
 companion object {
-  var activity: Activity? = null // WRONG!
+var activity: Activity? = null // WRONG!
 }
 Fix: Don't store Activity references as static.</p>
 <p>PATTERN 2: Inner Class Holding Activity
 inner class MyThread : Thread() { // Holds Activity ref
-  override fun run() { doWork() }
+override fun run() { doWork() }
 }
 Fix: Use static inner class + WeakReference</p>
 <p>PATTERN 3: Unregistered Listeners
@@ -2148,43 +2136,31 @@ for too long, preventing UI updates or input handling.</p>
 - Maximum 100-200ms for user-facing operations
 - Don't do I/O, network, or heavy computation on main thread</p>
 <p>SOLUTIONS:</p>
-<ol>
-<li>
-<p>Use threads for heavy work:
-Thread { heavyWork() }.start()</p>
-</li>
-<li>
-<p>Use coroutines (modern approach):
-viewModelScope.launch(Dispatchers.Default) {
-  heavyWork() // Off main thread
+<h3 id="use-threads-for-heavy-work">Use threads for heavy work<a class="headerlink" href="#use-threads-for-heavy-work" title="Permanent link">&para;</a></h3>
+<p>Thread { heavyWork() }.start()</p>
+<h3 id="use-coroutines-modern-approach">Use coroutines (modern approach)<a class="headerlink" href="#use-coroutines-modern-approach" title="Permanent link">&para;</a></h3>
+<p>viewModelScope.launch(Dispatchers.Default) {
+heavyWork() // Off main thread
 }</p>
-</li>
-<li>
-<p>AsyncTask (legacy):
-AsyncTask.execute { heavyWork() }</p>
-</li>
-<li>
-<p>Optimize database queries:</p>
-</li>
+<h3 id="asynctask-legacy">AsyncTask (legacy)<a class="headerlink" href="#asynctask-legacy" title="Permanent link">&para;</a></h3>
+<p>AsyncTask.execute { heavyWork() }</p>
+<h3 id="optimize-database-queries">Optimize database queries<a class="headerlink" href="#optimize-database-queries" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Index frequently queried columns</li>
 <li>Avoid complex queries on main thread</li>
-<li>
-<p>Use query optimization</p>
-</li>
-<li>
-<p>Lazy load data:</p>
-</li>
+<li>Use query optimization</li>
+</ul>
+<h3 id="lazy-load-data">Lazy load data<a class="headerlink" href="#lazy-load-data" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Load progressively</li>
 <li>Show skeleton/placeholder</li>
-<li>
-<p>Fetch full data in background</p>
-</li>
-<li>
-<p>Profile with Profiler:</p>
-</li>
+<li>Fetch full data in background</li>
+</ul>
+<h3 id="profile-with-profiler">Profile with Profiler<a class="headerlink" href="#profile-with-profiler" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Find slow operations</li>
 <li>Optimize hotspots</li>
-</ol>
+</ul>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#preventing-anr">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2241,33 +2217,27 @@ val data = withContext(Dispatchers.IO) { fetchData() }
 - Animation/scroll stutters visibly
 - User sees jank</p>
 <p>Measurement tools:</p>
-<ol>
-<li>Profile GPU Rendering (dev options):</li>
+<h3 id="profile-gpu-rendering-dev-options">Profile GPU Rendering (dev options)<a class="headerlink" href="#profile-gpu-rendering-dev-options" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Visual graph on screen</li>
 <li>Shows frame times</li>
-<li>
-<p>Green = good, yellow/red = jank</p>
-</li>
-<li>
-<p>Android Studio Profiler:</p>
-</li>
+<li>Green = good, yellow/red = jank</li>
+</ul>
+<h3 id="android-studio-profiler">Android Studio Profiler<a class="headerlink" href="#android-studio-profiler" title="Permanent link">&para;</a></h3>
+<ul>
 <li>CPU, Memory, Network profiling</li>
-<li>
-<p>See main thread operations</p>
-</li>
-<li>
-<p>FrameMetrics API:</p>
-</li>
+<li>See main thread operations</li>
+</ul>
+<h3 id="framemetrics-api">FrameMetrics API<a class="headerlink" href="#framemetrics-api" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Programmatically measure frame times</li>
-<li>
-<p>Real user monitoring</p>
-</li>
-<li>
-<p>Firebase Performance Monitoring:</p>
-</li>
+<li>Real user monitoring</li>
+</ul>
+<h3 id="firebase-performance-monitoring">Firebase Performance Monitoring<a class="headerlink" href="#firebase-performance-monitoring" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Production monitoring</li>
 <li>Real user metrics</li>
-</ol>
+</ul>
 <p>Prevention: Keep main thread responsive (&lt;5ms per operation).</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#jank-dropped-frames">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2293,12 +2263,12 @@ val data = withContext(Dispatchers.IO) { fetchData() }
 - Created automatically by Android system
 - Processes UI messages, events</p>
 <p>Background threads:
-- No Looper by default
-- Create manually if needed:
-Thread {
-  Looper.prepare()
-  // ... do work ...
-  Looper.loop() // Start looping
+- No Looper by default</p>
+<h3 id="create-manually-if-needed">Create manually if needed<a class="headerlink" href="#create-manually-if-needed" title="Permanent link">&para;</a></h3>
+<p>Thread {
+Looper.prepare()
+// ... do work ...
+Looper.loop() // Start looping
 }.start()</p>
 <p>Why Looper matters:
 - Thread-safe message passing
@@ -2332,10 +2302,10 @@ handler.postDelayed(Runnable, delay) // Delayed execution
 handler.sendMessage(Message) // Send message</p>
 <p>Example - Update UI after background work:
 Thread {
-  val result = doHeavyWork()
-  mainHandler.post {
-    updateUI(result) // Runs on main thread
-  }
+val result = doHeavyWork()
+mainHandler.post {
+updateUI(result) // Runs on main thread
+}
 }.start()</p>
 <p>Key: Handler provides thread-safe way to run code on specific thread.</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-what-is">🚀 See Full Deep Dive</a></p>
@@ -2383,7 +2353,7 @@ val handler = Handler(handlerThread.looper)</p>
 <p>Handler with delayed messages can leak Activity context.</p>
 <p>Problem scenario:
 handler.postDelayed(Runnable {
-  // Runnable holds implicit 'this' reference (Activity)
+// Runnable holds implicit 'this' reference (Activity)
 }, 60000)
 // If Activity destroyed before delay ends: leak</p>
 <p>Memory leak chain:
@@ -2395,15 +2365,15 @@ handler.postDelayed(Runnable {
 6. After 60 seconds, message executed (too late)</p>
 <p>SOLUTION 1: Use Handler with WeakReference
 class MyActivity : AppCompatActivity() {
-  private val handler = Handler(Looper.getMainLooper())</p>
+private val handler = Handler(Looper.getMainLooper())</p>
 <p>private inner class MyRunnable : Runnable {
-    override fun run() { /<em> ... </em>/ }
-  }
+override fun run() { /<em> ... </em>/ }
+}
 }</p>
 <p>SOLUTION 2: Remove messages in onDestroy
 override fun onDestroy() {
-  handler.removeCallbacks(myRunnable)
-  super.onDestroy()
+handler.removeCallbacks(myRunnable)
+super.onDestroy()
 }</p>
 <p>MODERN: Use coroutines instead (automatic cleanup).</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-memory-leak">🚀 See Full Deep Dive</a></p>
@@ -2498,36 +2468,26 @@ Process priority:
 <summary>What is a bound service and how do you use it?</summary>
 <p>Bound Service: Service offering interface for IPC to clients.</p>
 <p>Steps to implement:</p>
-<ol>
-<li>
-<p>Create Service with Binder:
-class MyBoundService : Service() {
-  inner class LocalBinder : Binder() {
-    fun getService() = this@MyBoundService
-  }
+<h3 id="create-service-with-binder">Create Service with Binder<a class="headerlink" href="#create-service-with-binder" title="Permanent link">&para;</a></h3>
+<p>class MyBoundService : Service() {
+inner class LocalBinder : Binder() {
+fun getService() = this@MyBoundService
+}
 }</p>
-</li>
-<li>
-<p>Override onBind():
-override fun onBind(intent: Intent?): IBinder {
-  return LocalBinder()
+<h3 id="override-onbind">Override onBind()<a class="headerlink" href="#override-onbind" title="Permanent link">&para;</a></h3>
+<p>override fun onBind(intent: Intent?): IBinder {
+return LocalBinder()
 }</p>
-</li>
-<li>
-<p>Bind from Activity:
-bindService(Intent(...), connection,
-  Context.BIND_AUTO_CREATE)</p>
-</li>
-<li>
-<p>Use ServiceConnection:
-object : ServiceConnection {
-  override fun onServiceConnected(...) {
-    val binder = service as Binder
-    val service = binder.getService()
-  }
+<h3 id="bind-from-activity">Bind from Activity<a class="headerlink" href="#bind-from-activity" title="Permanent link">&para;</a></h3>
+<p>bindService(Intent(...), connection,
+Context.BIND_AUTO_CREATE)</p>
+<h3 id="use-serviceconnection">Use ServiceConnection<a class="headerlink" href="#use-serviceconnection" title="Permanent link">&para;</a></h3>
+<p>object : ServiceConnection {
+override fun onServiceConnected(...) {
+val binder = service as Binder
+val service = binder.getService()
+}
 }</p>
-</li>
-</ol>
 <p>Lifecycle:
 - onBind() when first client binds
 - onUnbind() when last client unbinds
@@ -2561,10 +2521,10 @@ Unbind in onDestroy/onStop to prevent leaks.</p>
 5. Auto-stops after processing</p>
 <p>Example:
 class DownloadService : IntentService("Download") {
-  override fun onHandleIntent(intent: Intent?) {
-    // Background thread, won't block UI
-    val file = downloadFile() // Network call OK
-  }
+override fun onHandleIntent(intent: Intent?) {
+// Background thread, won't block UI
+val file = downloadFile() // Network call OK
+}
 }</p>
 <p>Problems (Android 8.0+):
 - Background execution restrictions
@@ -2607,9 +2567,9 @@ persistence, backoff policy).</p>
 - Better for app-specific broadcasts</p>
 <p>Example:
 class MyReceiver : BroadcastReceiver() {
-  override fun onReceive(context, intent) {
-    // Process broadcast
-  }
+override fun onReceive(context, intent) {
+// Process broadcast
+}
 }</p>
 <p>Use cases: Battery level, connectivity, SMS, time changes.</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-receiver">🚀 See Full Deep Dive</a></p>
@@ -2625,54 +2585,36 @@ class MyReceiver : BroadcastReceiver() {
 <details class="question">
 <summary>How do you register broadcast receivers securely?</summary>
 <p>DYNAMIC REGISTRATION (Recommended):</p>
-<ol>
-<li>
-<p>Register in onCreate/onStart:
-registerReceiver(myReceiver, IntentFilter(ACTION))</p>
-</li>
-<li>
-<p>Unregister in onDestroy/onStop:
-unregisterReceiver(myReceiver)</p>
-</li>
-</ol>
+<h3 id="register-in-oncreateonstart">Register in onCreate/onStart<a class="headerlink" href="#register-in-oncreateonstart" title="Permanent link">&para;</a></h3>
+<p>registerReceiver(myReceiver, IntentFilter(ACTION))</p>
+<h3 id="unregister-in-ondestroyonstop">Unregister in onDestroy/onStop<a class="headerlink" href="#unregister-in-ondestroyonstop" title="Permanent link">&para;</a></h3>
+<p>unregisterReceiver(myReceiver)</p>
 <p>STATIC REGISTRATION (Manifest):
 <receiver android:name=".MyReceiver"
-  android:permission="com.example.PERM" >
-  <intent-filter>
-    <action android:name="..." />
-  </intent-filter>
+android:permission="com.example.PERM" >
+<intent-filter>
+<action android:name="..." />
+</intent-filter>
 </receiver></p>
 <p>SECURITY BEST PRACTICES:</p>
 <ol>
-<li>
-<p>Use specific intent filters (not catch-all)
-Only catch broadcasts you need</p>
-</li>
-<li>
-<p>Check sender permissions:
-In onReceive(), verify sender is trusted</p>
-</li>
-<li>
-<p>Require permissions for safety:
-android:permission="my.permission"</p>
-</li>
-<li>
-<p>Limit receiving broadcasts:
-Use specific actions, not generic patterns</p>
-</li>
-<li>
-<p>Android 8.0+ restrictions:</p>
-</li>
+<li>Use specific intent filters (not catch-all)
+Only catch broadcasts you need</li>
+</ol>
+<h3 id="check-sender-permissions">Check sender permissions<a class="headerlink" href="#check-sender-permissions" title="Permanent link">&para;</a></h3>
+<p>In onReceive(), verify sender is trusted</p>
+<h3 id="require-permissions-for-safety">Require permissions for safety<a class="headerlink" href="#require-permissions-for-safety" title="Permanent link">&para;</a></h3>
+<p>android:permission="my.permission"</p>
+<h3 id="limit-receiving-broadcasts">Limit receiving broadcasts<a class="headerlink" href="#limit-receiving-broadcasts" title="Permanent link">&para;</a></h3>
+<p>Use specific actions, not generic patterns</p>
+<h3 id="android-80-restrictions">Android 8.0+ restrictions<a class="headerlink" href="#android-80-restrictions" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Static receivers limited (battery optimization)</li>
 <li>Use dynamic registration</li>
-<li>
-<p>Or use JobScheduler/WorkManager</p>
-</li>
-<li>
-<p>Always unregister dynamic receivers:
-Prevents memory leaks and battery drain</p>
-</li>
-</ol>
+<li>Or use JobScheduler/WorkManager</li>
+</ul>
+<h3 id="always-unregister-dynamic-receivers">Always unregister dynamic receivers<a class="headerlink" href="#always-unregister-dynamic-receivers" title="Permanent link">&para;</a></h3>
+<p>Prevents memory leaks and battery drain</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-permissions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2702,8 +2644,8 @@ Prevents memory leaks and battery drain</p>
 - Caused security/memory issues</p>
 <p>Example ordered broadcast:
 sendOrderedBroadcast(intent, null,
-  resultReceiver, handler, resultCode,
-  resultData, resultExtras)</p>
+resultReceiver, handler, resultCode,
+resultData, resultExtras)</p>
 <p>Receiver can:
 - setResultCode(newCode)
 - setResultData(newData)
@@ -2765,46 +2707,36 @@ LocalBroadcastManager is deprecated.</p>
 <details class="question">
 <summary>How do you implement runtime permissions?</summary>
 <p>STEPS:</p>
-<ol>
-<li>
-<p>Declare in manifest:
-<uses-permission android:name="android.permission.CAMERA" /></p>
-</li>
-<li>
-<p>Check permission at runtime:
-if (ContextCompat.checkSelfPermission(this,
-    Manifest.permission.CAMERA) 
-    != PackageManager.PERMISSION_GRANTED) {
-  // Request permission
+<h3 id="declare-in-manifest">Declare in manifest<a class="headerlink" href="#declare-in-manifest" title="Permanent link">&para;</a></h3>
+<p><uses-permission android:name="android.permission.CAMERA" /></p>
+<h3 id="check-permission-at-runtime">Check permission at runtime<a class="headerlink" href="#check-permission-at-runtime" title="Permanent link">&para;</a></h3>
+<p>if (ContextCompat.checkSelfPermission(this,
+Manifest.permission.CAMERA)
+!= PackageManager.PERMISSION_GRANTED) {
+// Request permission
 } else {
-  // Use camera
+// Use camera
 }</p>
-</li>
-<li>
-<p>Request permission:
-ActivityCompat.requestPermissions(this,
-  arrayOf(Manifest.permission.CAMERA), 100)</p>
-</li>
-<li>
-<p>Handle response:
-override fun onRequestPermissionsResult(
-    requestCode: Int, permissions: Array<out String>,
-    grantResults: IntArray) {
-  if (requestCode == 100) {
-    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-      useCamera()
-    } else {
-      showPermissionDeniedMessage()
-    }
-  }
+<h3 id="request-permission">Request permission<a class="headerlink" href="#request-permission" title="Permanent link">&para;</a></h3>
+<p>ActivityCompat.requestPermissions(this,
+arrayOf(Manifest.permission.CAMERA), 100)</p>
+<h3 id="handle-response">Handle response<a class="headerlink" href="#handle-response" title="Permanent link">&para;</a></h3>
+<p>override fun onRequestPermissionsResult(
+requestCode: Int, permissions: Array<out String>,
+grantResults: IntArray) {
+if (requestCode == 100) {
+if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+useCamera()
+} else {
+showPermissionDeniedMessage()
+}
+}
 }</p>
-</li>
-</ol>
 <p>MODERN APPROACH (Activity Result Contract):
 val cameraPermission = registerForActivityResult(
-  ActivityResultContracts.RequestPermission()) { isGranted -&gt;
-  if (isGranted) useCamera()
-  else showDeniedMessage()
+ActivityResultContracts.RequestPermission()) { isGranted -&gt;
+if (isGranted) useCamera()
+else showDeniedMessage()
 }
 cameraPermission.launch(CAMERA)</p>
 <p>Always handle permission denials gracefully.</p>
@@ -2857,65 +2789,51 @@ PHOTOS: READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO</p>
 <summary>What is AndroidManifest.xml and what does it contain?</summary>
 <p>AndroidManifest.xml: Main configuration file for Android app.</p>
 <p>Contains:</p>
-<ol>
-<li>
-<p>PACKAGE NAME:
-package="com.example.myapp"</p>
-</li>
-<li>
-<p>COMPONENTS:</p>
-</li>
+<h3 id="package-name">PACKAGE NAME<a class="headerlink" href="#package-name" title="Permanent link">&para;</a></h3>
+<p>package="com.example.myapp"</p>
+<h3 id="components">COMPONENTS<a class="headerlink" href="#components" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Activities</li>
 <li>Services</li>
 <li>Broadcast receivers</li>
-<li>
-<p>Content providers</p>
-</li>
-<li>
-<p>PERMISSIONS:</p>
-</li>
+<li>Content providers</li>
+</ul>
+<h3 id="permissions">PERMISSIONS<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Required permissions</li>
-<li>
-<p>Custom permissions</p>
-</li>
-<li>
-<p>FEATURES:</p>
-</li>
+<li>Custom permissions</li>
+</ul>
+<h3 id="features">FEATURES<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Hardware features (camera, GPS)</li>
-<li>
-<p>Software features</p>
-</li>
-<li>
-<p>VERSION INFO:</p>
-</li>
+<li>Software features</li>
+</ul>
+<h3 id="version-info">VERSION INFO<a class="headerlink" href="#version-info" title="Permanent link">&para;</a></h3>
+<ul>
 <li>versionCode, versionName</li>
-<li>
-<p>targetSdkVersion, minSdkVersion</p>
-</li>
-<li>
-<p>APPLICATION METADATA:</p>
-</li>
+<li>targetSdkVersion, minSdkVersion</li>
+</ul>
+<h3 id="application-metadata">APPLICATION METADATA<a class="headerlink" href="#application-metadata" title="Permanent link">&para;</a></h3>
+<ul>
 <li>App icon, label, theme</li>
 <li>Backup agent</li>
-<li>
-<p>Hardware acceleration flags</p>
-</li>
-<li>
-<p>INTENT FILTERS:</p>
-</li>
+<li>Hardware acceleration flags</li>
+</ul>
+<h3 id="intent-filters">INTENT FILTERS<a class="headerlink" href="#intent-filters" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Which implicit intents components handle</li>
 <li>Which apps can start component</li>
-</ol>
+</ul>
 <p>Example:
 <manifest package="com.example.app" ...>
-  <uses-permission android:name="..." />
-  <application>
-    <activity android:name=".MainActivity">
-      <intent-filter>
-        <action android:name="..." />
-      </intent-filter>
-    </activity>
-  </application>
+<uses-permission android:name="..." />
+<application>
+<activity android:name=".MainActivity">
+<intent-filter>
+<action android:name="..." />
+</intent-filter>
+</activity>
+</application>
 </manifest></p>
 <p>Note: Some settings now in build.gradle (build tools).</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-what-is">🚀 See Full Deep Dive</a></p>
@@ -2933,11 +2851,11 @@ package="com.example.myapp"</p>
 <p>Intent filters declare which implicit intents a component accepts.</p>
 <p>STRUCTURE:
 <activity android:name=".MainActivity">
-  <intent-filter>
-    <action android:name="android.intent.action.MAIN" />
-    <category android:name=
-      "android.intent.category.LAUNCHER" />
-  </intent-filter>
+<intent-filter>
+<action android:name="android.intent.action.MAIN" />
+<category android:name=
+"android.intent.category.LAUNCHER" />
+</intent-filter>
 </activity></p>
 <p>COMPONENTS:</p>
 <p>ACTION: What the component does
@@ -2945,27 +2863,27 @@ package="com.example.myapp"</p>
 <action android:name="android.intent.action.SEND" /></p>
 <p>CATEGORY: Additional info about component
 <category android:name=
-  "android.intent.category.DEFAULT" />
+"android.intent.category.DEFAULT" />
 <category
-  android:name=
-  "android.intent.category.LAUNCHER" /></p>
+android:name=
+"android.intent.category.LAUNCHER" /></p>
 <p>DATA: URI/MIME type patterns
 <data android:scheme="https"
-      android:host="example.com"
-      android:mimeType="text/*" /></p>
+android:host="example.com"
+android:mimeType="text/*" /></p>
 <p>MATCHING RULES:
 - Implicit intent must match ALL declared filters
 - If multiple matches: chooser shown</p>
 <p>EXAMPLE - Web link handler:
 <intent-filter>
-  <action android:name="
-    android.intent.action.VIEW" />
-  <category android:name="
-    android.intent.category.DEFAULT" />
-  <category android:name="
-    android.intent.category.BROWSABLE" />
-  <data android:scheme="https"
-        android:host="example.com" />
+<action android:name="
+android.intent.action.VIEW" />
+<category android:name="
+android.intent.category.DEFAULT" />
+<category android:name="
+android.intent.category.BROWSABLE" />
+<data android:scheme="https"
+android:host="example.com" />
 </intent-filter></p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-intent-filters">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3029,24 +2947,20 @@ but Binder is underlying mechanism.</p>
 <li>Boot: Zygote process starts</li>
 <li>Loads Android framework</li>
 <li>Pre-initializes VM</li>
-<li>
-<p>Enters listening mode</p>
-</li>
-<li>
-<p>App launch requested:</p>
-</li>
+<li>Enters listening mode</li>
+</ol>
+<h3 id="app-launch-requested">App launch requested<a class="headerlink" href="#app-launch-requested" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Activity Manager requests process from Zygote</li>
 <li>Zygote forks itself (fork = copy entire process)</li>
-<li>
-<p>Child process = new app process</p>
-</li>
-<li>
-<p>App process:</p>
-</li>
+<li>Child process = new app process</li>
+</ul>
+<h3 id="app-process">App process<a class="headerlink" href="#app-process" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Inherits Zygote's loaded framework</li>
 <li>Minimal initialization time</li>
 <li>Ready to run app code</li>
-</ol>
+</ul>
 <p>Benefits:
 - App launch much faster
 - Less memory per app (shared framework)
@@ -3133,30 +3047,26 @@ Install time: ART slower (compilation)</p>
 <li>Activity rendered on screen</li>
 </ol>
 <p>OPTIMIZATION OPPORTUNITIES:</p>
-<ol>
-<li>App startup time stages:</li>
+<h3 id="app-startup-time-stages">App startup time stages<a class="headerlink" href="#app-startup-time-stages" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Cold start: No process exists (slowest)</li>
 <li>Warm start: Process exists but Activity not (medium)</li>
-<li>
-<p>Hot start: Activity in memory but paused (fastest)</p>
-</li>
-<li>
-<p>Optimize for cold start:</p>
-</li>
+<li>Hot start: Activity in memory but paused (fastest)</li>
+</ul>
+<h3 id="optimize-for-cold-start">Optimize for cold start<a class="headerlink" href="#optimize-for-cold-start" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Lazy load modules</li>
 <li>Don't block Application.onCreate()</li>
 <li>Defer non-essential initialization</li>
 <li>Use StartupManager library</li>
-<li>
-<p>Profiling: Use startup profiler</p>
-</li>
-<li>
-<p>Improve perceived performance:</p>
-</li>
+<li>Profiling: Use startup profiler</li>
+</ul>
+<h3 id="improve-perceived-performance">Improve perceived performance<a class="headerlink" href="#improve-perceived-performance" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Show splash screen</li>
 <li>Load skeleton/placeholder</li>
 <li>Progressive content loading</li>
-</ol>
+</ul>
 <p>System captures startup metrics:
 - first frame (visible)
 - fully drawn (interactive)</p>
@@ -3222,71 +3132,57 @@ Fragment initialization.</p>
 <details class="question">
 <summary>How does Android render UI frames?</summary>
 <p>RENDERING PIPELINE (per frame):</p>
-<ol>
-<li>MEASURE:</li>
+<h3 id="measure">MEASURE<a class="headerlink" href="#measure" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Layout system calculates view dimensions</li>
 <li>ViewGroup measures children</li>
-<li>
-<p>Recursive: child measures own children</p>
-</li>
-<li>
-<p>LAYOUT:</p>
-</li>
+<li>Recursive: child measures own children</li>
+</ul>
+<h3 id="layout">LAYOUT<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h3>
+<ul>
 <li>System positions views using measured sizes</li>
-<li>
-<p>ViewGroup places children at x,y coordinates</p>
-</li>
-<li>
-<p>DRAW:</p>
-</li>
+<li>ViewGroup places children at x,y coordinates</li>
+</ul>
+<h3 id="draw">DRAW<a class="headerlink" href="#draw" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Canvas API draws views</li>
 <li>Each View.onDraw() paints content</li>
-<li>
-<p>Composited into single frame buffer</p>
-</li>
-<li>
-<p>COMPOSITE:</p>
-</li>
+<li>Composited into single frame buffer</li>
+</ul>
+<h3 id="composite">COMPOSITE<a class="headerlink" href="#composite" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Hardware accelerator combines layers</li>
-<li>
-<p>Handles transparency, transformations</p>
-</li>
-<li>
-<p>DISPLAY:</p>
-</li>
+<li>Handles transparency, transformations</li>
+</ul>
+<h3 id="display">DISPLAY<a class="headerlink" href="#display" title="Permanent link">&para;</a></h3>
+<ul>
 <li>GPU sends frame to display</li>
 <li>Vsync synchronized (60/90/120 fps)</li>
-</ol>
+</ul>
 <p>TIMING BUDGET (60 fps):
 - 16.67 milliseconds per frame
 - Measure/Layout/Draw/Composite: &lt;16.67ms
 - Miss budget: Frame dropped, jank visible</p>
 <p>OPTIMIZATION:</p>
-<ol>
-<li>Reduce View hierarchy:</li>
+<h3 id="reduce-view-hierarchy">Reduce View hierarchy<a class="headerlink" href="#reduce-view-hierarchy" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Fewer views = faster measure/layout</li>
-<li>
-<p>Use merge, include, ViewStub</p>
-</li>
-<li>
-<p>Use ViewHolder pattern:</p>
-</li>
-<li>
-<p>Avoid repeated findViewById</p>
-</li>
-<li>
-<p>Avoid layout thrashing:</p>
-</li>
+<li>Use merge, include, ViewStub</li>
+</ul>
+<h3 id="use-viewholder-pattern">Use ViewHolder pattern<a class="headerlink" href="#use-viewholder-pattern" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Avoid repeated findViewById</li>
+</ul>
+<h3 id="avoid-layout-thrashing">Avoid layout thrashing<a class="headerlink" href="#avoid-layout-thrashing" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Don't measure in layout</li>
-<li>
-<p>Batch layout updates</p>
-</li>
-<li>
-<p>Use hardware acceleration:</p>
-</li>
+<li>Batch layout updates</li>
+</ul>
+<h3 id="use-hardware-acceleration">Use hardware acceleration<a class="headerlink" href="#use-hardware-acceleration" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Enabled by default</li>
 <li>Use Layer types for animations</li>
-</ol>
+</ul>
 <p>Profiling: GPU rendering debug, Layout Inspector.</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/rendering-pipeline/#rendering-pipeline">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3300,58 +3196,48 @@ Fragment initialization.</p>
 <code>data</code></p>
 <details class="question">
 <summary>What are the different storage options in Android?</summary>
-<ol>
-<li>SHARED PREFERENCES:</li>
+<h3 id="shared-preferences">SHARED PREFERENCES<a class="headerlink" href="#shared-preferences" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Key-value store</li>
 <li>SharedPreferences.getSharedPreferences()</li>
 <li>Best for small data (settings, flags)</li>
 <li>Lightweight</li>
-<li>
-<p>NOT encrypted</p>
-</li>
-<li>
-<p>INTERNAL STORAGE:</p>
-</li>
+<li>NOT encrypted</li>
+</ul>
+<h3 id="internal-storage">INTERNAL STORAGE<a class="headerlink" href="#internal-storage" title="Permanent link">&para;</a></h3>
+<ul>
 <li>App-private directory</li>
 <li>Deleted when app uninstalled</li>
 <li>Default choice for app data</li>
-<li>
-<p>Secure (not accessible by other apps)</p>
-</li>
-<li>
-<p>EXTERNAL STORAGE:</p>
-</li>
+<li>Secure (not accessible by other apps)</li>
+</ul>
+<h3 id="external-storage">EXTERNAL STORAGE<a class="headerlink" href="#external-storage" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Public folders (/DCIM, /Pictures, /Documents)</li>
 <li>Shared with other apps</li>
 <li>Requires permissions</li>
-<li>
-<p>May not exist on all devices</p>
-</li>
-<li>
-<p>DATABASE (SQLite):</p>
-</li>
+<li>May not exist on all devices</li>
+</ul>
+<h3 id="database-sqlite">DATABASE (SQLite)<a class="headerlink" href="#database-sqlite" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Structured data</li>
 <li>Room library (ORM)</li>
 <li>Relational queries</li>
-<li>
-<p>Good for complex data</p>
-</li>
-<li>
-<p>CONTENT PROVIDERS:</p>
-</li>
+<li>Good for complex data</li>
+</ul>
+<h3 id="content-providers">CONTENT PROVIDERS<a class="headerlink" href="#content-providers" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Expose data to other apps</li>
 <li>Standardized data access interface</li>
-<li>
-<p>Used for contacts, photos, etc</p>
-</li>
-<li>
-<p>CACHE:</p>
-</li>
+<li>Used for contacts, photos, etc</li>
+</ul>
+<h3 id="cache">CACHE<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h3>
+<ul>
 <li>context.getCacheDir()</li>
 <li>Temporary data</li>
 <li>Can be cleared by system</li>
 <li>Don't expect data persistence</li>
-</ol>
+</ul>
 <p>Rules:
 - Small settings: SharedPreferences
 - Complex data: Room Database
@@ -3427,49 +3313,47 @@ Fragment initialization.</p>
 - No cleanup callbacks possible
 - In-memory state lost
 - No warning given</p>
-<p>ON USER RETURN:
-- If Activity saved state:
-  - OS recreates process
-  - onCreate(savedInstanceState) called
-  - App can restore Bundle data
-- If no saved state:
-  - Activity restarted fresh
-  - UI reset</p>
+<p>ON USER RETURN:</p>
+<h3 id="if-activity-saved-state">If Activity saved state<a class="headerlink" href="#if-activity-saved-state" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OS recreates process</li>
+<li>onCreate(savedInstanceState) called</li>
+<li>App can restore Bundle data</li>
+</ul>
+<h3 id="if-no-saved-state">If no saved state<a class="headerlink" href="#if-no-saved-state" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Activity restarted fresh</li>
+<li>UI reset</li>
+</ul>
 <p>DATA LOSS:
 - In-memory variables lost
 - Unsaved changes lost
 - ViewModels destroyed
 - Connections closed</p>
 <p>PRESERVATION STRATEGIES:</p>
-<ol>
-<li>savedInstanceState:</li>
+<h3 id="savedinstancestate">savedInstanceState<a class="headerlink" href="#savedinstancestate" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Light data (Bundles, primitives)</li>
 <li>~100KB limit</li>
-<li>
-<p>Configuration changes + process death</p>
-</li>
-<li>
-<p>ViewModel:</p>
-</li>
+<li>Configuration changes + process death</li>
+</ul>
+<h3 id="viewmodel">ViewModel<a class="headerlink" href="#viewmodel" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Survives configuration changes</li>
 <li>Lost on process death</li>
-<li>
-<p>Use with savedInstanceState</p>
-</li>
-<li>
-<p>Database:</p>
-</li>
+<li>Use with savedInstanceState</li>
+</ul>
+<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Persistent storage</li>
 <li>Survives everything</li>
-<li>
-<p>Use for critical data</p>
-</li>
-<li>
-<p>Preferences:</p>
-</li>
+<li>Use for critical data</li>
+</ul>
+<h3 id="preferences">Preferences<a class="headerlink" href="#preferences" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Settings persistence</li>
 <li>Survives everything</li>
-</ol>
+</ul>
 <p>Best practice: ViewModel + Room Database + savedInstanceState
 for robust state management.</p>
 <p><a href="/android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/#process-death-lifecycle">🚀 See Full Deep Dive</a></p>
@@ -3485,31 +3369,27 @@ for robust state management.</p>
 <details class="question">
 <summary>How does multitasking affect activity lifecycle?</summary>
 <p>MULTITASKING SCENARIOS:</p>
-<ol>
-<li>SPLIT SCREEN:</li>
+<h3 id="split-screen">SPLIT SCREEN<a class="headerlink" href="#split-screen" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Two apps visible simultaneously</li>
 <li>Both in foreground state</li>
 <li>Both receive onResume()</li>
-<li>
-<p>Top activity interactive, other visible</p>
-</li>
-<li>
-<p>PICTURE-IN-PICTURE:</p>
-</li>
+<li>Top activity interactive, other visible</li>
+</ul>
+<h3 id="picture-in-picture">PICTURE-IN-PICTURE<a class="headerlink" href="#picture-in-picture" title="Permanent link">&para;</a></h3>
+<ul>
 <li>App playing video in small window</li>
 <li>onPause() called (not visible)</li>
 <li>Continues running</li>
-<li>
-<p>User can interact with background</p>
-</li>
-<li>
-<p>APP SWITCHING (Recents):</p>
-</li>
+<li>User can interact with background</li>
+</ul>
+<h3 id="app-switching-recents">APP SWITCHING (Recents)<a class="headerlink" href="#app-switching-recents" title="Permanent link">&para;</a></h3>
+<ul>
 <li>Swipe from other app</li>
 <li>Current Activity: onPause → onStop</li>
 <li>Switched app: onStart → onResume</li>
 <li>Current app not destroyed (still in memory)</li>
-</ol>
+</ul>
 <p>LIFECYCLE IMPACT:</p>
 <p>Old app (going background):
 onPause() → onStop()</p>
