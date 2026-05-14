@@ -5,14 +5,16 @@ Current state:
 - Fundamentals mapping: complete
 - Kotlin mapping: complete
 - Compose mapping: complete
+- Concurrency mapping: complete
 - Architecture mapping: complete
-- Deep dive files for fundamentals, Kotlin, Compose, and Architecture: created
+- Deep dive files for fundamentals, Kotlin, Compose, Concurrency, and Architecture: created
 ---
 ## Mapping Documents
 Use these as the source of truth:
 - `DEEP_DIVE_MAPPING.md` (this file, fundamentals + architecture status)
 - `KOTLIN_DEEP_DIVE_MAPPING.md` (full Kotlin mapping)
 - `COMPOSE_DEEP_DIVE_MAPPING.md` (full Compose mapping)
+- `CONCURRENCY_DEEP_DIVE_MAPPING.md` (full Concurrency mapping)
 - `ARCHITECTURE_DEEP_DIVE_MAPPING.md` (full Architecture mapping)
 ---
 ## Fundamentals Mapping
@@ -96,6 +98,34 @@ Compose deep-dive files are planned under `docs/deep-dives/compose/`:
 
 **Total:** 50 Compose questions -> 20 Compose deep dives
 ---
+## Concurrency Mapping
+Concurrency mapping and per-topic sections are maintained in:
+- `CONCURRENCY_DEEP_DIVE_MAPPING.md`
+
+Concurrency deep-dive files currently present under `docs/deep-dives/concurrency/`:
+1. `coroutine-internals.md`
+2. `threads-dispatchers-context.md`
+3. `structured-scope-and-jobs.md`
+4. `cancellation-exception-supervision.md`
+5. `launch-async-parallelism.md`
+6. `scheduler-thread-pools.md`
+7. `parallelism-and-scheduling.md`
+8. `flow-fundamentals.md`
+9. `flow-operators-and-backpressure.md`
+10. `stateflow-sharedflow-and-channels.md`
+11. `flow-sharing-and-hot-streams.md`
+12. `callbackflow-and-channelflow.md`
+13. `synchronization-and-mutex.md`
+14. `shared-state-and-race-conditions.md`
+15. `deadlocks-and-contention.md`
+16. `coroutine-testing-and-virtual-time.md`
+17. `coroutine-debugging-and-observability.md`
+18. `android-lifecycle-and-flow-collection.md`
+19. `android-lifecycle-and-main-safety.md`
+20. `production-concurrency-patterns-and-tuning.md`
+
+**Total:** 50 Concurrency questions -> 20 Concurrency deep dives
+---
 ## Architecture Mapping
 Architecture mapping and per-topic sections are maintained in:
 - `ARCHITECTURE_DEEP_DIVE_MAPPING.md`
@@ -171,10 +201,12 @@ Implemented globally:
 | Fundamentals YAML | ✅ complete |
 | Kotlin YAML | ✅ complete |
 | Compose YAML | ✅ complete |
+| Concurrency YAML | ✅ complete |
 | Architecture YAML | ✅ complete |
 | Fundamentals deep dives | ✅ complete |
 | Kotlin deep dives | ✅ complete |
 | Compose mapping doc | ✅ complete |
+| Concurrency mapping doc | ✅ complete |
 | Architecture mapping doc | ✅ complete |
 | Generated docs pages | ✅ generated |
 | Combined question index (`ALL_QUESTIONS.md`) | ✅ updated |

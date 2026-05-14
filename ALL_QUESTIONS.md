@@ -1,5 +1,5 @@
 # Complete Question List - Android Interview Prep
-Generated: 205 interview questions across 81 deep dive topics
+Generated: 255 interview questions across 101 deep dive topics
 ---
 ## Fundamentals Questions
 ## Activity Lifecycle (6 questions -> 1 deep dive)
@@ -229,90 +229,165 @@ Generated: 205 interview questions across 81 deep dive topics
 
 ---
 
+## Concurrency Questions
+## Coroutine Internals (4 questions -> 1 deep dive)
+156. `structured-concurrency` - What is structured concurrency?
+157. `suspend-functions` - What is a suspend function?
+158. `continuation-and-cps` - What is a Continuation in Kotlin coroutines?
+159. `coroutine-state-machine` - How does coroutine suspension work internally?
+## Threads Vs Coroutines (1 questions -> 1 deep dive)
+160. `threads-vs-coroutines` - What is the difference between threads and coroutines?
+## Threads Dispatchers Context (2 questions -> 1 deep dive)
+161. `dispatchers-overview` - What are Dispatchers in Kotlin Coroutines?
+162. `withcontext-purpose` - What does `withContext` do and why is it important?
+## Structured Scope And Jobs (4 questions -> 1 deep dive)
+163. `coroutine-scope` - What is `CoroutineScope` and why does it matter?
+164. `job-hierarchy` - How does coroutine job hierarchy work?
+165. `supervisorjob` - What is the difference between `Job` and `SupervisorJob`?
+166. `supervisorScope` - What does `supervisorScope` do?
+## Cancellation Exception Supervision (4 questions -> 1 deep dive)
+167. `coroutine-cancellation` - How does coroutine cancellation work?
+168. `cooperative-cancellation` - What is cooperative cancellation?
+169. `coroutine-exception-handling` - How are exceptions handled in coroutines?
+170. `coroutineexceptionhandler` - What is `CoroutineExceptionHandler` used for?
+## Launch Async Parallelism (3 questions -> 1 deep dive)
+171. `launch-vs-async` - What is the difference between `launch` and `async`?
+172. `lazy-async` - What is lazy async?
+173. `parallelism-limit` - How do you limit coroutine parallelism?
+## Scheduler Thread Pools (2 questions -> 1 deep dive)
+174. `thread-pools` - What are coroutine thread pools?
+175. `thread-starvation` - What is thread starvation in concurrency?
+## Parallelism And Scheduling (1 questions -> 1 deep dive)
+176. `limited-parallelism` - What is `limitedParallelism` in coroutines?
+## Flow Fundamentals (3 questions -> 1 deep dive)
+177. `flow-what-is` - What is Flow in Kotlin?
+178. `cold-vs-hot-flow` - What is the difference between cold and hot flows?
+179. `backpressure` - What is backpressure in Flow?
+## Flow Operators And Backpressure (3 questions -> 1 deep dive)
+180. `collectLatest` - When should you use `collectLatest`?
+181. `flatMapLatest` - When should you use `flatMapLatest`?
+182. `buffering-conflation` - What is buffering and conflation in Flow?
+## Stateflow Sharedflow And Channels (2 questions -> 1 deep dive)
+183. `stateflow-vs-sharedflow` - What is the difference between StateFlow and SharedFlow?
+184. `channels-vs-sharedflow` - When should you use a Channel instead of SharedFlow?
+## Flow Sharing And Hot Streams (2 questions -> 1 deep dive)
+185. `statein-sharein` - What are `stateIn` and `shareIn` used for?
+186. `one-off-events-with-sharedflow` - How do you model one-off events with SharedFlow?
+## Callbackflow And Channelflow (3 questions -> 1 deep dive)
+187. `callbackflow` - What is `callbackFlow`?
+188. `channelflow` - What is `channelFlow`?
+189. `flow-callback-interop` - How do you bridge callbacks into Flow safely?
+## Synchronization And Mutex (4 questions -> 1 deep dive)
+190. `mutex` - What is `Mutex` in Kotlin coroutines?
+191. `synchronization-strategies` - What are common synchronization strategies in concurrent code?
+192. `shared-mutable-state` - Why is shared mutable state dangerous?
+193. `atomic-operations` - What are atomic operations used for?
+## Thread Confinement And Race Conditions (3 questions -> 1 deep dive)
+194. `thread-confinement` - What is thread confinement?
+195. `race-conditions` - What is a race condition?
+196. `deadlocks` - What is a deadlock?
+## Coroutine Testing And Virtual Time (3 questions -> 1 deep dive)
+197. `coroutine-testing` - How do you test coroutines?
+198. `virtual-time-testing` - How does virtual time testing work?
+199. `test-dispatchers` - Why use test dispatchers for coroutine tests?
+## Coroutine Debugging And Observability (2 questions -> 1 deep dive)
+200. `coroutine-debugging` - How do you debug coroutines in production?
+201. `trace-and-observability` - How should you observe coroutine and Flow behavior?
+## Android Lifecycle And Flow Collection (1 questions -> 1 deep dive)
+202. `repeatOnLifecycle-flow-collection` - How should Flow be collected with Android lifecycle?
+## Android Lifecycle And Main Safety (2 questions -> 1 deep dive)
+203. `main-safety` - What does main-safety mean?
+204. `anr-and-main-thread` - Why do blocking calls on the main thread cause ANRs?
+## Production Concurrency Patterns And Tuning (1 questions -> 1 deep dive)
+205. `concurrency-performance-optimization` - How do you optimize concurrency performance in production?
+
+---
+
 ## Architecture Questions
 ## Mvvm And Viewmodel (3 questions -> 1 deep dive)
-156. `mvvm-basics` - What is MVVM in Android architecture?
-157. `viewmodel-role` - What is the role of a ViewModel in scalable Android apps?
-158. `savedstatehandle-usage` - When should you use SavedStateHandle in architecture design?
+206. `mvvm-basics` - What is MVVM in Android architecture?
+207. `viewmodel-role` - What is the role of a ViewModel in scalable Android apps?
+208. `savedstatehandle-usage` - When should you use SavedStateHandle in architecture design?
 ## Mvi And Udf (3 questions -> 1 deep dive)
-159. `mvi-what-is` - What is MVI architecture?
-160. `mvi-vs-mvvm` - MVVM vs MVI - how do you choose?
-161. `udf-principles` - What are the key principles of Unidirectional Data Flow?
+209. `mvi-what-is` - What is MVI architecture?
+210. `mvi-vs-mvvm` - MVVM vs MVI - how do you choose?
+211. `udf-principles` - What are the key principles of Unidirectional Data Flow?
 ## Clean Architecture Layering (3 questions -> 1 deep dive)
-162. `clean-architecture-overview` - What is Clean Architecture in Android?
-163. `layer-dependency-rule` - What is the dependency rule in layered architecture?
-164. `dependency-inversion-android` - How does dependency inversion apply to Android app architecture?
+212. `clean-architecture-overview` - What is Clean Architecture in Android?
+213. `layer-dependency-rule` - What is the dependency rule in layered architecture?
+214. `dependency-inversion-android` - How does dependency inversion apply to Android app architecture?
 ## Repository Pattern And Data Sources (3 questions -> 1 deep dive)
-165. `repository-pattern-purpose` - Why use the Repository pattern?
-166. `repository-single-source-truth` - How does a repository support a Single Source of Truth model?
-167. `multiple-data-sources-orchestration` - How should repositories orchestrate network, cache, and database sources?
+215. `repository-pattern-purpose` - Why use the Repository pattern?
+216. `repository-single-source-truth` - How does a repository support a Single Source of Truth model?
+217. `multiple-data-sources-orchestration` - How should repositories orchestrate network, cache, and database sources?
 ## Use Cases And Domain Layer (3 questions -> 1 deep dive)
-168. `use-case-purpose` - What problem do use cases solve in architecture?
-169. `use-case-granularity` - How granular should use cases be?
-170. `domain-layer-when-to-add` - When is a dedicated domain layer worth adding?
+218. `use-case-purpose` - What problem do use cases solve in architecture?
+219. `use-case-granularity` - How granular should use cases be?
+220. `domain-layer-when-to-add` - When is a dedicated domain layer worth adding?
 ## Dependency Injection Strategies (3 questions -> 1 deep dive)
-171. `dependency-injection-what-why` - Why is dependency injection important in Android architecture?
-172. `constructor-injection-vs-field-injection` - Constructor injection vs field injection - which is preferred?
-173. `di-scope-management` - How do DI scopes affect memory and lifecycle behavior?
+221. `dependency-injection-what-why` - Why is dependency injection important in Android architecture?
+222. `constructor-injection-vs-field-injection` - Constructor injection vs field injection - which is preferred?
+223. `di-scope-management` - How do DI scopes affect memory and lifecycle behavior?
 ## Hilt In Production (2 questions -> 1 deep dive)
-174. `hilt-benefits` - What architectural advantages does Hilt provide?
-175. `hilt-component-lifetimes` - What Hilt component lifetimes should senior engineers know?
+224. `hilt-benefits` - What architectural advantages does Hilt provide?
+225. `hilt-component-lifetimes` - What Hilt component lifetimes should senior engineers know?
 ## Dagger And Component Graph (3 questions -> 1 deep dive)
-176. `dagger-vs-hilt` - Dagger vs Hilt - what is the architectural tradeoff?
-177. `dagger-component-subcomponent` - What should you understand about Dagger components and subcomponents?
-178. `dagger-performance-tradeoffs` - What are Dagger/Hilt build and runtime tradeoffs at scale?
+226. `dagger-vs-hilt` - Dagger vs Hilt - what is the architectural tradeoff?
+227. `dagger-component-subcomponent` - What should you understand about Dagger components and subcomponents?
+228. `dagger-performance-tradeoffs` - What are Dagger/Hilt build and runtime tradeoffs at scale?
 ## Service Locator And Anti Patterns (2 questions -> 1 deep dive)
-179. `service-locator-what-is` - What is a Service Locator pattern?
-180. `service-locator-vs-di` - Service Locator vs DI - why does this matter in interviews?
+229. `service-locator-what-is` - What is a Service Locator pattern?
+230. `service-locator-vs-di` - Service Locator vs DI - why does this matter in interviews?
 ## Modularization Strategies (3 questions -> 1 deep dive)
-181. `modularization-why` - Why modularize Android apps?
-182. `multi-module-architecture-shapes` - What multi-module structures are common in Android?
-183. `api-vs-implementation-modules` - How do API vs implementation module boundaries improve architecture?
+231. `modularization-why` - Why modularize Android apps?
+232. `multi-module-architecture-shapes` - What multi-module structures are common in Android?
+233. `api-vs-implementation-modules` - How do API vs implementation module boundaries improve architecture?
 ## Feature Modules And Boundaries (3 questions -> 1 deep dive)
-184. `feature-module-boundaries` - What defines a good feature module boundary?
-185. `dynamic-feature-modules-when` - When should you use dynamic feature modules?
-186. `dependency-direction-between-modules` - How should dependency direction work between feature modules?
+234. `feature-module-boundaries` - What defines a good feature module boundary?
+235. `dynamic-feature-modules-when` - When should you use dynamic feature modules?
+236. `dependency-direction-between-modules` - How should dependency direction work between feature modules?
 ## State Management And Ssot (3 questions -> 1 deep dive)
-187. `state-management-android-architecture` - What is a strong state management approach in Android architecture?
-188. `single-source-of-truth` - What does Single Source of Truth mean in practice?
-189. `immutable-ui-state-models` - Why model UI state as immutable data classes?
+237. `state-management-android-architecture` - What is a strong state management approach in Android architecture?
+238. `single-source-of-truth` - What does Single Source of Truth mean in practice?
+239. `immutable-ui-state-models` - Why model UI state as immutable data classes?
 ## Offline First And Sync (3 questions -> 1 deep dive)
-190. `offline-first-principles` - What is offline-first architecture?
-191. `sync-strategies-pull-push` - Push, pull, and hybrid sync strategies - when to use each?
-192. `conflict-resolution-sync` - How should architecture handle sync conflicts?
+240. `offline-first-principles` - What is offline-first architecture?
+241. `sync-strategies-pull-push` - Push, pull, and hybrid sync strategies - when to use each?
+242. `conflict-resolution-sync` - How should architecture handle sync conflicts?
 ## Caching And Pagination Architecture (2 questions -> 1 deep dive)
-193. `caching-strategies` - What caching strategies are common in Android architecture?
-194. `pagination-architecture` - What does a robust pagination architecture look like?
+243. `caching-strategies` - What caching strategies are common in Android architecture?
+244. `pagination-architecture` - What does a robust pagination architecture look like?
 ## Reactive Architecture With Flows (2 questions -> 1 deep dive)
-195. `stateflow-architecture` - How does StateFlow fit Android architecture design?
-196. `event-handling-one-off-events` - How should one-off events be handled in reactive architecture?
+245. `stateflow-architecture` - How does StateFlow fit Android architecture design?
+246. `event-handling-one-off-events` - How should one-off events be handled in reactive architecture?
 ## Ui State And Event Modeling (3 questions -> 1 deep dive)
-197. `error-handling-architecture` - What is a good error handling architecture for Android apps?
-198. `retry-strategies-architecture` - How do retry strategies fit architecture decisions?
-199. `ui-state-modeling-architecture` - How should complex UI state be modeled architecturally?
+247. `error-handling-architecture` - What is a good error handling architecture for Android apps?
+248. `retry-strategies-architecture` - How do retry strategies fit architecture decisions?
+249. `ui-state-modeling-architecture` - How should complex UI state be modeled architecturally?
 ## Navigation And Deep Link Architecture (2 questions -> 1 deep dive)
-200. `navigation-architecture` - What are key principles of navigation architecture?
-201. `deep-link-architecture` - How should deep links be designed in modular Android apps?
+250. `navigation-architecture` - What are key principles of navigation architecture?
+251. `deep-link-architecture` - How should deep links be designed in modular Android apps?
 ## Testing Architecture And Testability (1 questions -> 1 deep dive)
-202. `architecture-testability` - How do you design Android architecture for high testability?
+252. `architecture-testability` - How do you design Android architecture for high testability?
 ## Scalability And Team Topologies (1 questions -> 1 deep dive)
-203. `scaling-architecture-for-team` - How does architecture impact team scalability?
+253. `scaling-architecture-for-team` - How does architecture impact team scalability?
 ## Production Tradeoffs And Decision Making (2 questions -> 1 deep dive)
-204. `architecture-governance` - What is architecture governance in large Android codebases?
-205. `production-architecture-tradeoffs` - How should senior engineers discuss architecture tradeoffs in interviews?
+254. `architecture-governance` - What is architecture governance in large Android codebases?
+255. `production-architecture-tradeoffs` - How should senior engineers discuss architecture tradeoffs in interviews?
 
 ---
 ## Statistics
-- **Total Questions:** 205
-- **Total Deep Dives:** 81
+- **Total Questions:** 255
+- **Total Deep Dives:** 101
 - **Fundamentals:** 54 questions
 - **Kotlin:** 51 questions
 - **Compose:** 50 questions
+- **Concurrency:** 50 questions
 - **Architecture:** 50 questions
-- **Beginner:** 32 questions
-- **Intermediate:** 108 questions
+- **Beginner:** 37 questions
+- **Intermediate:** 127 questions
 - **Advanced:** 17 questions
-- **Senior:** 41 questions
+- **Senior:** 67 questions
 - **Staff:** 7 questions
 
 ## By Category Difficulty
@@ -332,6 +407,11 @@ Generated: 205 interview questions across 81 deep dive topics
 - Senior: 17
 - Staff: 3
 
+### Concurrency
+- Beginner: 5
+- Intermediate: 19
+- Senior: 26
+
 ### Architecture
 - Beginner: 5
 - Intermediate: 17
@@ -339,16 +419,19 @@ Generated: 205 interview questions across 81 deep dive topics
 - Staff: 4
 
 ## Quick Tags Reference
-- **architecture:** 61 questions
-- **android:** 56 questions
-- **kotlin:** 51 questions
+- **android:** 63 questions
+- **architecture:** 62 questions
+- **kotlin:** 55 questions
 - **compose:** 50 questions
-- **state:** 19 questions
-- **performance:** 17 questions
-- **lifecycle:** 16 questions
-- **coroutines:** 15 questions
-- **runtime:** 11 questions
-- **compiler:** 8 questions
+- **coroutines:** 42 questions
+- **performance:** 26 questions
+- **state:** 23 questions
+- **flow:** 20 questions
+- **concurrency:** 19 questions
+- **lifecycle:** 17 questions
+- **threading:** 13 questions
+- **runtime:** 12 questions
+- **compiler:** 9 questions
 - **recomposition:** 7 questions
 - **side-effects:** 7 questions
 - **di:** 7 questions
@@ -356,18 +439,15 @@ Generated: 205 interview questions across 81 deep dive topics
 - **intents:** 6 questions
 - **memory:** 6 questions
 - **ui:** 6 questions
+- **testing:** 6 questions
 - **modularization:** 6 questions
 - **fragments:** 5 questions
-- **threading:** 5 questions
 - **data:** 5 questions
 - **navigation:** 5 questions
-- **flow:** 5 questions
+- **cancellation:** 5 questions
+- **synchronization:** 5 questions
+- **events:** 5 questions
 - **scalability:** 5 questions
-- **ipc:** 4 questions
-- **context:** 4 questions
-- **rendering:** 4 questions
-- **service:** 4 questions
-- **inline:** 4 questions
-- **generics:** 4 questions
+- **callbacks:** 4 questions
 ---
-**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Architecture sections.
+**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Concurrency, Architecture sections.

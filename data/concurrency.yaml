@@ -1,26 +1,941 @@
 questions:
-  - id: sample-question
+  - id: structured-concurrency
+    title: What is structured concurrency?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - concurrency
+      - kotlin
+    standard_answer: |
+      Structured concurrency is a coroutine design principle
+      where child coroutines are tied to a parent scope.
 
-    title: Sample Question
+      This ensures:
 
+      - automatic cancellation
+      - lifecycle-aware execution
+      - proper error propagation
+      - prevention of coroutine leaks
+
+      Core concepts:
+
+      - CoroutineScope
+      - Job hierarchy
+      - parent-child relationships
+      - cooperative cancellation
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-internals/
+
+  - id: suspend-functions
+    title: What is a suspend function?
     difficulty: beginner
+    tags:
+      - coroutines
+      - kotlin
+      - concurrency
+    standard_answer: |
+      A suspend function can suspend execution without blocking a thread.
 
+      It can only be called from another suspend function or coroutine.
+
+      Key points:
+
+      - not necessarily asynchronous by itself
+      - compiled into coroutine machinery
+      - can resume later after suspension
+      - used for non-blocking async work
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-internals/
+
+  - id: continuation-and-cps
+    title: What is a Continuation in Kotlin coroutines?
+    difficulty: senior
+    tags:
+      - coroutines
+      - runtime
+      - kotlin
+    standard_answer: |
+      A Continuation represents the rest of a suspended computation.
+
+      When a suspend function pauses, Kotlin stores state in a continuation
+      so it can resume later from the correct point.
+
+      Interview points:
+
+      - coroutine state is captured in the continuation
+      - used by suspend functions and builders
+      - enables non-blocking suspension/resumption
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-internals/
+
+  - id: coroutine-state-machine
+    title: How does coroutine suspension work internally?
+    difficulty: senior
+    tags:
+      - coroutines
+      - compiler
+      - internals
+    standard_answer: |
+      The Kotlin compiler rewrites suspend code into a resumable state machine.
+
+      This transformation adds labels/state transitions and continuation handling
+      around each suspension point.
+
+      Why it matters:
+
+      - explains how suspend functions resume
+      - helps reason about allocation and debugging
+      - is the basis for coroutine CPS transformation
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-internals/
+
+  - id: threads-vs-coroutines
+    title: What is the difference between threads and coroutines?
+    difficulty: beginner
+    tags:
+      - threading
+      - coroutines
+      - concurrency
+    standard_answer: |
+      Threads are OS-level execution units; coroutines are lightweight
+      units of suspended work scheduled on threads.
+
+      Practical distinction:
+
+      - threads are heavier to create/switch
+      - coroutines are cheaper and structured
+      - multiple coroutines can share a small thread pool
+      - coroutines do not replace threads for every use case
+    deep_dive: /android-interview-prep/deep-dives/concurrency/threads-vs-coroutines/
+
+  - id: dispatchers-overview
+    title: What are Dispatchers in Kotlin Coroutines?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - dispatchers
+      - threading
+    standard_answer: |
+      Dispatchers decide where coroutine code runs.
+
+      Common dispatchers:
+
+      - `Main` for UI work
+      - `IO` for blocking I/O
+      - `Default` for CPU-heavy work
+
+      Good interview answer: dispatchers are a scheduling policy,
+      not a background-thread guarantee by themselves.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/threads-dispatchers-context/
+
+  - id: withcontext-purpose
+    title: What does `withContext` do and why is it important?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - threading
+      - kotlin
+    standard_answer: |
+      `withContext` switches coroutine execution to another dispatcher
+      for a scoped block of work.
+
+      It is useful for:
+
+      - moving blocking work off the main thread
+      - returning results back to the original coroutine
+      - keeping context switching explicit and readable
+    deep_dive: /android-interview-prep/deep-dives/concurrency/threads-dispatchers-context/
+
+
+  - id: coroutine-scope
+    title: What is `CoroutineScope` and why does it matter?
+    difficulty: beginner
+    tags:
+      - coroutines
+      - scope
+      - android
+    standard_answer: |
+      `CoroutineScope` defines the lifetime boundary for launching coroutines.
+
+      It matters because it controls:
+
+      - cancellation ownership
+      - structured concurrency behavior
+      - leak prevention
+      - lifecycle alignment in Android
+    deep_dive: /android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/
+
+  - id: job-hierarchy
+    title: How does coroutine job hierarchy work?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - job
+      - structure
+    standard_answer: |
+      Coroutine jobs form a parent-child hierarchy.
+
+      When a parent job is cancelled, its children are cancelled too.
+      Child failure can also propagate upward depending on scope type.
+
+      Interview points:
+
+      - explicit ownership tree
+      - cooperative cancellation
+      - failure propagation rules
+    deep_dive: /android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/
+
+  - id: supervisorjob
+    title: What is the difference between `Job` and `SupervisorJob`?
+    difficulty: senior
+    tags:
+      - coroutines
+      - job
+      - failure
+    standard_answer: |
+      A regular `Job` propagates child failure to the parent and can cancel siblings.
+
+      `SupervisorJob` isolates child failures so one child can fail
+      without automatically cancelling others.
+
+      Use it when:
+
+      - sibling tasks are independent
+      - partial failure should not bring down the whole scope
+    deep_dive: /android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/
+
+  - id: supervisorScope
+    title: What does `supervisorScope` do?
+    difficulty: senior
+    tags:
+      - coroutines
+      - scope
+      - failure
+    standard_answer: |
+      `supervisorScope` creates a scoped region where child failures are isolated.
+
+      It is useful when you want to launch multiple related tasks and tolerate
+      failure in one child while handling its result explicitly.
+
+      Difference from `coroutineScope`:
+
+      - failure isolation vs fail-fast cancellation
+      - localized supervision boundary
+    deep_dive: /android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/
+
+  - id: coroutine-cancellation
+    title: How does coroutine cancellation work?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - cancellation
+      - concurrency
+    standard_answer: |
+      Coroutine cancellation is cooperative.
+
+      A coroutine stops when it checks for cancellation or reaches a cancellable
+      suspension point.
+
+      Important ideas:
+
+      - `Job.cancel()` requests cancellation
+      - suspension functions often detect it automatically
+      - non-cooperative work must check manually
+    deep_dive: /android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/
+
+  - id: cooperative-cancellation
+    title: What is cooperative cancellation?
+    difficulty: beginner
+    tags:
+      - coroutines
+      - cancellation
+      - performance
+    standard_answer: |
+      Cooperative cancellation means coroutines must periodically observe cancellation
+      and stop themselves instead of being forcefully killed.
+
+      This is important because it keeps cleanup predictable and avoids
+      abrupt state corruption.
+
+      Common tools:
+
+      - `isActive`
+      - `ensureActive()`
+      - cancellable suspending functions
+    deep_dive: /android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/
+
+  - id: coroutine-exception-handling
+    title: How are exceptions handled in coroutines?
+    difficulty: senior
+    tags:
+      - coroutines
+      - exceptions
+      - supervision
+    standard_answer: |
+      Coroutine exception handling depends on the coroutine builder and scope.
+
+      Key points:
+
+      - `launch` propagates exceptions to its parent
+      - `async` stores exceptions until awaited
+      - failures can cancel sibling children in regular scopes
+      - supervision changes propagation behavior
+    deep_dive: /android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/
+
+  - id: coroutineexceptionhandler
+    title: What is `CoroutineExceptionHandler` used for?
+    difficulty: senior
+    tags:
+      - coroutines
+      - exceptions
+      - android
+    standard_answer: |
+      `CoroutineExceptionHandler` handles uncaught exceptions in root coroutines
+      launched with `launch`.
+
+      It is not a replacement for try/catch in suspend code.
+
+      Use it to:
+
+      - log/report uncaught failures
+      - provide a last-resort safety net
+      - centralize crash telemetry in root scopes
+    deep_dive: /android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/
+
+  - id: launch-vs-async
+    title: What is the difference between `launch` and `async`?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - builders
+      - concurrency
+    standard_answer: |
+      `launch` is for fire-and-forget work; `async` is for concurrent work that
+      produces a result.
+
+      Interview framing:
+
+      - `launch` returns `Job`
+      - `async` returns `Deferred`
+      - `async` exceptions are observed on `await()`
+      - prefer the simplest builder that matches the need
+    deep_dive: /android-interview-prep/deep-dives/concurrency/launch-async-parallelism/
+
+  - id: lazy-async
+    title: What is lazy async?
+    difficulty: senior
+    tags:
+      - coroutines
+      - async
+      - scheduling
+    standard_answer: |
+      Lazy async defers coroutine start until the result is actually awaited
+      or explicitly started.
+
+      It can be useful when you want to create a deferred task graph but
+      avoid doing work until the result is needed.
+
+      Tradeoff: lazy start can make control flow harder to reason about.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/launch-async-parallelism/
+
+  - id: parallelism-limit
+    title: How do you limit coroutine parallelism?
+    difficulty: senior
+    tags:
+      - coroutines
+      - performance
+      - parallelism
+    standard_answer: |
+      Limit parallelism by controlling dispatcher usage and the number of
+      concurrently active jobs.
+
+      Common approaches:
+
+      - semaphore-style gating
+      - dispatcher `limitedParallelism`
+      - batching work into controlled chunks
+
+      This prevents resource saturation and tail-latency spikes.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/launch-async-parallelism/
+
+  - id: thread-pools
+    title: What are coroutine thread pools?
+    difficulty: intermediate
+    tags:
+      - coroutines
+      - threading
+      - scheduler
+    standard_answer: |
+      Coroutine dispatchers usually run on top of shared thread pools.
+
+      These pools multiplex many coroutines onto fewer OS threads,
+      improving efficiency compared with one-thread-per-task models.
+
+      Interview points:
+
+      - pools are shared resources
+      - pool saturation affects latency
+      - CPU and blocking work should be separated carefully
+    deep_dive: /android-interview-prep/deep-dives/concurrency/scheduler-thread-pools/
+
+  - id: thread-starvation
+    title: What is thread starvation in concurrency?
+    difficulty: senior
+    tags:
+      - threading
+      - scheduler
+      - performance
+    standard_answer: |
+      Thread starvation happens when tasks cannot get scheduled time on a thread
+      or thread pool because resources are monopolized by other work.
+
+      In Android apps it often appears when:
+
+      - blocking code occupies shared pools
+      - parallelism is unbounded
+      - main-thread work is overloaded
+    deep_dive: /android-interview-prep/deep-dives/concurrency/scheduler-thread-pools/
+
+  - id: limited-parallelism
+    title: What is `limitedParallelism` in coroutines?
+    difficulty: senior
+    tags:
+      - coroutines
+      - parallelism
+      - performance
+    standard_answer: |
+      `limitedParallelism` constrains the amount of concurrent work scheduled
+      through a dispatcher view.
+
+      It is useful for:
+
+      - protecting shared downstream resources
+      - preventing resource thrash
+      - balancing throughput and fairness
+
+      Good interview answer: it is a concurrency control tool, not just an optimization.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/parallelism-and-scheduling/
+
+  - id: flow-what-is
+    title: What is Flow in Kotlin?
+    difficulty: beginner
+    tags:
+      - flow
+      - coroutines
+      - streams
+    standard_answer: |
+      Flow is Kotlin's asynchronous stream API.
+
+      It is used to represent values that arrive over time while remaining
+      cancellation-aware and coroutine-based.
+
+      Key traits:
+
+      - declarative stream pipeline
+      - cold by default
+      - integrates with coroutines and operators
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-fundamentals/
+
+  - id: cold-vs-hot-flow
+    title: What is the difference between cold and hot flows?
+    difficulty: intermediate
+    tags:
+      - flow
+      - coroutines
+      - state
+    standard_answer: |
+      Cold flows start producing values per collector.
+      Hot flows can emit independently of collectors.
+
+      In interviews, explain:
+
+      - cold = collector drives execution
+      - hot = producer exists independently
+      - StateFlow and SharedFlow are hot stream primitives
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-fundamentals/
+
+  - id: backpressure
+    title: What is backpressure in Flow?
+    difficulty: senior
+    tags:
+      - flow
+      - performance
+      - buffering
+    standard_answer: |
+      Backpressure is what happens when upstream produces data faster than
+      downstream can consume it.
+
+      Flow handles this through suspension, buffering, conflation,
+      or explicit operator choices.
+
+      Why it matters:
+
+      - protects memory and responsiveness
+      - affects latency and throughput
+      - can change user-visible behavior
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-fundamentals/
+
+  - id: collectLatest
+    title: When should you use `collectLatest`?
+    difficulty: intermediate
+    tags:
+      - flow
+      - cancellation
+      - operators
+    standard_answer: |
+      Use `collectLatest` when new emissions should cancel the previous collector
+      work and only the newest value matters.
+
+      Common use cases:
+
+      - search suggestions
+      - rapid UI updates
+      - debounced rendering pipelines
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-operators-and-backpressure/
+
+  - id: flatMapLatest
+    title: When should you use `flatMapLatest`?
+    difficulty: senior
+    tags:
+      - flow
+      - operators
+      - cancellation
+    standard_answer: |
+      `flatMapLatest` switches to a new inner flow whenever the outer value changes,
+      cancelling the previous inner stream.
+
+      This is ideal for:
+
+      - query-driven network search
+      - live UI filters
+      - state pipelines where only the newest source matters
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-operators-and-backpressure/
+
+  - id: buffering-conflation
+    title: What is buffering and conflation in Flow?
+    difficulty: senior
+    tags:
+      - flow
+      - buffering
+      - performance
+    standard_answer: |
+      Buffering allows upstream and downstream to proceed with some decoupling.
+      Conflation drops intermediate values and keeps the latest one.
+
+      Use cases:
+
+      - buffering for throughput
+      - conflation for UI state that only needs the latest value
+
+      Tradeoff: speed vs completeness of intermediate emissions.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-operators-and-backpressure/
+
+  - id: stateflow-vs-sharedflow
+    title: What is the difference between StateFlow and SharedFlow?
+    difficulty: intermediate
+    tags:
+      - flow
+      - state
+      - events
+    standard_answer: |
+      StateFlow represents state with a current value.
+      SharedFlow represents shared emissions/events without a required initial state.
+
+      Good interview framing:
+
+      - StateFlow for persistent UI state
+      - SharedFlow for one-off events or broadcasts
+      - both are hot and coroutine-friendly
+    deep_dive: /android-interview-prep/deep-dives/concurrency/stateflow-sharedflow-and-channels/
+
+  - id: channels-vs-sharedflow
+    title: When should you use a Channel instead of SharedFlow?
+    difficulty: senior
+    tags:
+      - flow
+      - channels
+      - events
+    standard_answer: |
+      Use a Channel when you want point-to-point handoff semantics or a queue-like
+      one-consumer model.
+
+      Use SharedFlow when you want multicasting or multiple subscribers.
+
+      Interview nuance:
+
+      - Channel = delivery semantics and backpressure control
+      - SharedFlow = broadcast-style hot stream
+    deep_dive: /android-interview-prep/deep-dives/concurrency/stateflow-sharedflow-and-channels/
+
+  - id: statein-sharein
+    title: What are `stateIn` and `shareIn` used for?
+    difficulty: senior
+    tags:
+      - flow
+      - sharing
+      - state
+    standard_answer: |
+      `stateIn` converts a Flow into a hot StateFlow-like state holder.
+      `shareIn` shares upstream work among multiple collectors.
+
+      They are useful when:
+
+      - expensive upstream work should be shared
+      - UI needs lifecycle-friendly hot stream behavior
+      - a cold stream should become reusable across collectors
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-sharing-and-hot-streams/
+
+  - id: one-off-events-with-sharedflow
+    title: How do you model one-off events with SharedFlow?
+    difficulty: intermediate
+    tags:
+      - flow
+      - events
+      - android
+    standard_answer: |
+      SharedFlow is often used to emit transient UI events such as navigation,
+      toast messages, or snackbar actions.
+
+      Good practice:
+
+      - keep replay small or zero for one-off events
+      - collect from lifecycle-aware UI scopes
+      - avoid encoding events as sticky state
+    deep_dive: /android-interview-prep/deep-dives/concurrency/flow-sharing-and-hot-streams/
+
+  - id: callbackflow
+    title: What is `callbackFlow`?
+    difficulty: intermediate
+    tags:
+      - flow
+      - callbacks
+      - interop
+    standard_answer: |
+      `callbackFlow` bridges callback-based APIs into a Flow.
+
+      It is useful when an API delivers values through listeners,
+      observers, or callbacks rather than suspend/Flow primitives.
+
+      Key concerns:
+
+      - close resources in awaitClose
+      - avoid leaking listeners
+      - respect backpressure and cancellation
+    deep_dive: /android-interview-prep/deep-dives/concurrency/callbackflow-and-channelflow/
+
+  - id: channelflow
+    title: What is `channelFlow`?
+    difficulty: senior
+    tags:
+      - flow
+      - channels
+      - concurrency
+    standard_answer: |
+      `channelFlow` is a builder for producing Flow values from multiple
+      concurrent senders inside a coroutine scope.
+
+      It is useful when emissions come from several concurrent sources and you
+      need a single Flow channel to merge them safely.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/callbackflow-and-channelflow/
+
+  - id: flow-callback-interop
+    title: How do you bridge callbacks into Flow safely?
+    difficulty: senior
+    tags:
+      - flow
+      - callbacks
+      - android
+    standard_answer: |
+      Bridge callbacks into Flow with a lifecycle-aware, cancellable adapter.
+
+      Practical rules:
+
+      - register listener when collection starts
+      - unregister in awaitClose or equivalent cleanup
+      - avoid blocking callback threads
+      - keep backpressure and cancellation in mind
+    deep_dive: /android-interview-prep/deep-dives/concurrency/callbackflow-and-channelflow/
+
+  - id: mutex
+    title: What is `Mutex` in Kotlin coroutines?
+    difficulty: intermediate
+    tags:
+      - synchronization
+      - coroutines
+      - concurrency
+    standard_answer: |
+      `Mutex` is a coroutine-friendly mutual exclusion primitive.
+
+      It protects critical sections without blocking a thread the way a JVM
+      lock might.
+
+      Interview points:
+
+      - suspending lock acquisition
+      - cooperative with coroutines
+      - useful for protecting shared mutable state
+    deep_dive: /android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/
+
+  - id: synchronization-strategies
+    title: What are common synchronization strategies in concurrent code?
+    difficulty: senior
+    tags:
+      - synchronization
+      - threading
+      - performance
+    standard_answer: |
+      Synchronization strategies include mutexes, atomics, thread confinement,
+      immutable data, and message passing.
+
+      Good interview answer:
+
+      - choose the simplest strategy that preserves correctness
+      - prefer immutability when practical
+      - use locks only around real shared mutable state
+    deep_dive: /android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/
+
+  - id: shared-mutable-state
+    title: Why is shared mutable state dangerous?
+    difficulty: intermediate
+    tags:
+      - concurrency
+      - state
+      - race-conditions
+    standard_answer: |
+      Shared mutable state is hard to reason about because concurrent reads and
+      writes can interleave unpredictably.
+
+      Risks include:
+
+      - race conditions
+      - inconsistent reads
+      - deadlocks and contention
+      - difficult debugging
+    deep_dive: /android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/
+
+  - id: atomic-operations
+    title: What are atomic operations used for?
+    difficulty: senior
+    tags:
+      - concurrency
+      - atomic
+      - synchronization
+    standard_answer: |
+      Atomic operations allow safe lock-free updates for certain shared values.
+
+      They are useful when you need:
+
+      - simple counters or flags
+      - high-throughput coordination
+      - predictable low-overhead synchronization
+
+      They are not a universal replacement for locks.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/
+
+  - id: thread-confinement
+    title: What is thread confinement?
+    difficulty: senior
+    tags:
+      - threading
+      - concurrency
+      - architecture
+    standard_answer: |
+      Thread confinement means restricting access to mutable state to a single thread
+      or dispatcher.
+
+      This simplifies correctness because only one execution context
+      can mutate the state at a time.
+
+      Common Android examples:
+
+      - main-thread UI ownership
+      - single-threaded executors for caches
+    deep_dive: /android-interview-prep/deep-dives/concurrency/thread-confinement-and-race-conditions/
+
+  - id: race-conditions
+    title: What is a race condition?
+    difficulty: intermediate
+    tags:
+      - concurrency
+      - bugs
+      - threading
+    standard_answer: |
+      A race condition happens when the behavior depends on the timing/order of
+      concurrent operations.
+
+      In practice it appears as:
+
+      - inconsistent UI or state
+      - flaky tests
+      - intermittent crashes or stale data
+    deep_dive: /android-interview-prep/deep-dives/concurrency/thread-confinement-and-race-conditions/
+
+  - id: deadlocks
+    title: What is a deadlock?
+    difficulty: senior
+    tags:
+      - concurrency
+      - deadlocks
+      - synchronization
+    standard_answer: |
+      A deadlock occurs when two or more tasks are waiting on each other
+      and none can continue.
+
+      Avoid deadlocks by:
+
+      - minimizing lock scope
+      - using consistent lock ordering
+      - preferring non-blocking coordination when possible
+    deep_dive: /android-interview-prep/deep-dives/concurrency/thread-confinement-and-race-conditions/
+
+  - id: coroutine-testing
+    title: How do you test coroutines?
+    difficulty: intermediate
+    tags:
+      - testing
+      - coroutines
+      - concurrency
+    standard_answer: |
+      Test coroutines with a controlled test dispatcher and coroutine test scope.
+
+      Good practices:
+
+      - replace real dispatchers with test dispatchers
+      - assert state transitions deterministically
+      - avoid real delays and sleeps in tests
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-testing-and-virtual-time/
+
+  - id: virtual-time-testing
+    title: How does virtual time testing work?
+    difficulty: senior
+    tags:
+      - testing
+      - coroutines
+      - time
+    standard_answer: |
+      Virtual time testing advances coroutine-scheduled time without waiting in real time.
+
+      This makes delay-based and timeout-based tests fast and deterministic.
+
+      It is especially useful for:
+
+      - retry logic
+      - debounce behavior
+      - cancellation timing
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-testing-and-virtual-time/
+
+  - id: test-dispatchers
+    title: Why use test dispatchers for coroutine tests?
+    difficulty: intermediate
+    tags:
+      - testing
+      - dispatchers
+      - concurrency
+    standard_answer: |
+      Test dispatchers let you control coroutine execution in tests.
+
+      This helps you:
+
+      - avoid flaky scheduler-dependent behavior
+      - make execution deterministic
+      - verify concurrency logic without real threads or delays
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-testing-and-virtual-time/
+
+  - id: coroutine-debugging
+    title: How do you debug coroutines in production?
+    difficulty: senior
+    tags:
+      - debugging
+      - coroutines
+      - observability
+    standard_answer: |
+      Debugging coroutines in production requires good tracing and context naming.
+
+      Helpful techniques:
+
+      - name coroutine jobs meaningfully
+      - log structured context and cancellation events
+      - correlate coroutine lifecycles with user actions and requests
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-debugging-and-observability/
+
+  - id: trace-and-observability
+    title: How should you observe coroutine and Flow behavior?
+    difficulty: senior
+    tags:
+      - observability
+      - flow
+      - concurrency
+    standard_answer: |
+      Observe coroutines and flows by adding tracing around launch/collection,
+      measuring latency, and tracking cancellations/failures.
+
+      Useful signals:
+
+      - collection duration
+      - emission count and rate
+      - cancellation and error frequency
+    deep_dive: /android-interview-prep/deep-dives/concurrency/coroutine-debugging-and-observability/
+
+  - id: repeatOnLifecycle-flow-collection
+    title: How should Flow be collected with Android lifecycle?
+    difficulty: intermediate
     tags:
       - android
+      - flow
+      - lifecycle
+    standard_answer: |
+      Collect Flow with lifecycle awareness so UI stops observing when the screen
+      is not active.
 
-    standard_answer: >
-      Add a short answer here.
+      This prevents wasted work and leaks.
 
-    detailed_explanation: |
-      Add detailed explanation here.
+      In Android, the common guidance is to tie collection to a lifecycle scope
+      or repeat collection when the lifecycle is active.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/android-lifecycle-and-flow-collection/
 
-    internals: |
-      Add framework internals here.
+  - id: main-safety
+    title: What does main-safety mean?
+    difficulty: intermediate
+    tags:
+      - android
+      - main-thread
+      - concurrency
+    standard_answer: |
+      Main-safety means code can be called from the main thread without blocking
+      it for long periods.
 
-    followups:
-      - question: Sample follow-up?
-        answer: Sample answer.
+      A main-safe API internally shifts blocking work off the UI thread,
+      keeping UI responsive.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/android-lifecycle-and-main-safety/
 
-    traps:
-      - title: Common trap
-        content: Add interviewer trap here.
+  - id: anr-and-main-thread
+    title: Why do blocking calls on the main thread cause ANRs?
+    difficulty: senior
+    tags:
+      - android
+      - anr
+      - performance
+    standard_answer: |
+      Blocking the main thread prevents input, rendering, and lifecycle work from
+      progressing on time.
+
+      If the app cannot respond within the system's expected window, it can trigger
+      an ANR.
+
+      The fix is to keep blocking work off the main thread and make APIs main-safe.
+    deep_dive: /android-interview-prep/deep-dives/concurrency/android-lifecycle-and-main-safety/
+
+  - id: concurrency-performance-optimization
+    title: How do you optimize concurrency performance in production?
+    difficulty: senior
+    tags:
+      - performance
+      - concurrency
+      - coroutines
+    standard_answer: |
+      Optimize concurrency by reducing contention, limiting parallelism,
+      and minimizing blocking work.
+
+      Practical steps:
+
+      - measure before tuning
+      - keep main-thread work minimal
+      - share expensive upstream work
+      - use bounded pools and backpressure-aware flows
+    deep_dive: /android-interview-prep/deep-dives/concurrency/production-concurrency-patterns-and-tuning/

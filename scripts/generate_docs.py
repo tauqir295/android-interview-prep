@@ -12,6 +12,7 @@ PREFERRED_CATEGORY_ORDER = [
     "fundamentals",
     "kotlin",
     "compose",
+    "concurrency",
     "architecture",
 ]
 
