@@ -1,5 +1,5 @@
 # Complete Question List - Android Interview Prep
-Generated: 255 interview questions across 101 deep dive topics
+Generated: 331 interview questions across 154 deep dive topics
 ---
 ## Fundamentals Questions
 ## Activity Lifecycle (6 questions -> 1 deep dive)
@@ -376,17 +376,156 @@ Generated: 255 interview questions across 101 deep dive topics
 255. `production-architecture-tradeoffs` - How should senior engineers discuss architecture tradeoffs in interviews?
 
 ---
+
+## Networking Questions
+## Retrofit Fundamentals (2 questions -> 1 deep dive)
+256. `retrofit-fundamentals` - What is Retrofit?
+257. `coroutines-retrofit` - How does Retrofit work with Kotlin Coroutines?
+## Serialization Strategies (2 questions -> 1 deep dive)
+258. `retrofit-converters` - How do Retrofit converters work?
+259. `json-serialization` - What are differences between Gson, Moshi, and Kotlin Serialization?
+## Okhttp Internals (2 questions -> 1 deep dive)
+260. `okhttp-interceptors` - What is an OkHttp Interceptor?
+261. `okhttp-connection-pooling` - How does OkHttp connection pooling work?
+## Rest Api Principles (2 questions -> 1 deep dive)
+262. `rest-principles` - What are REST API principles?
+263. `http-methods` - When should you use HTTP PUT vs PATCH?
+## Authentication Security (2 questions -> 1 deep dive)
+264. `authentication` - How should you implement authentication in mobile apps?
+265. `https-tls` - What is HTTPS and TLS?
+## Certificate Pinning (1 questions -> 1 deep dive)
+266. `certificate-pinning` - What is certificate pinning?
+## Retry Exponential Backoff (2 questions -> 1 deep dive)
+267. `retry-strategies` - How should you implement retry logic?
+268. `exponential-backoff` - What is exponential backoff?
+## Pagination Architecture (2 questions -> 1 deep dive)
+269. `pagination` - How does pagination work in REST APIs?
+270. `paging-3` - What is Paging 3 library?
+## Caching Strategies (2 questions -> 1 deep dive)
+271. `http-caching` - How does HTTP caching work?
+272. `etags-conditional` - What are ETags and conditional requests?
+## Offline First Architecture (2 questions -> 1 deep dive)
+273. `offline-first` - What is offline-first architecture?
+274. `sync-engine` - How do you implement a sync engine?
+## Conflict Resolution (1 questions -> 1 deep dive)
+275. `conflict-resolution` - How should you handle sync conflicts?
+## Websockets Streaming (2 questions -> 1 deep dive)
+276. `websockets` - What are WebSockets?
+277. `streaming-downloads` - How do you handle streaming and large file downloads?
+## Error Handling Resilience (2 questions -> 1 deep dive)
+278. `network-error-handling` - How should you handle network errors?
+279. `resiliency-patterns` - What are network resiliency patterns?
+## Compression Optimization (2 questions -> 1 deep dive)
+280. `compression` - How does request/response compression work?
+281. `battery-optimization` - How do you optimize for battery usage in networking?
+## Graphql Advanced (2 questions -> 1 deep dive)
+282. `graphql-rest` - What are differences between GraphQL and REST?
+283. `grpc-basics` - What is gRPC?
+## Network Monitoring Debugging (1 questions -> 1 deep dive)
+284. `network-monitoring` - How do you monitor and debug network traffic?
+## Rate Limiting Idempotency (3 questions -> 1 deep dive)
+285. `rate-limiting` - How do you handle rate limiting?
+286. `idempotency` - What is idempotency in APIs?
+287. `request-cancellation` - How do you cancel network requests?
+## Multipart Uploads (1 questions -> 1 deep dive)
+288. `multipart-uploads` - How do you implement multipart file uploads?
+## Api Versioning Scalability (2 questions -> 1 deep dive)
+289. `api-versioning` - How should you version your APIs?
+290. `scalability-cdn` - What is CDN and when to use it?
+## Production Networking Patterns (3 questions -> 1 deep dive)
+291. `network-security-config` - What is Network Security Configuration?
+292. `timeouts` - How should you configure network timeouts?
+293. `performance-monitoring` - How do you monitor API performance?
+
+---
+
+## Performance Questions
+## Performance Metrics (1 questions -> 1 deep dive)
+294. `android-performance-fundamentals` - What are the main performance metrics in Android?
+## Jank And Frame Drops (1 questions -> 1 deep dive)
+295. `jank-and-ui-drops` - What causes jank and how do you fix it?
+## Memory Leaks (1 questions -> 1 deep dive)
+296. `memory-leaks` - What is a memory leak and how do you find them?
+## Memory Management (3 questions -> 1 deep dive)
+297. `garbage-collection` - How does garbage collection work in Android?
+298. `memory-pressure` - How do you handle memory pressure?
+299. `graphics-memory` - How much memory do graphics consume?
+## Battery Optimization (1 questions -> 1 deep dive)
+300. `battery-optimization` - How do you optimize battery usage?
+## Rendering Pipeline (1 questions -> 1 deep dive)
+301. `rendering-pipeline` - What is Android rendering pipeline?
+## Rendering Optimization (1 questions -> 1 deep dive)
+302. `overdraw` - What is overdraw and how do you detect it?
+## App Startup (1 questions -> 1 deep dive)
+303. `app-startup-time` - How do you reduce app startup time?
+## Memory Profiling (1 questions -> 1 deep dive)
+304. `memory-profiling` - How do you profile memory usage?
+## Cpu Profiling (1 questions -> 1 deep dive)
+305. `cpu-profiling` - How do you profile CPU usage?
+## Layout Optimization (1 questions -> 1 deep dive)
+306. `layout-inflation` - How does layout inflation work?
+## Anr Prevention (1 questions -> 1 deep dive)
+307. `anr-prevention` - What causes ANR and how do you prevent it?
+## Bitmap Optimization (1 questions -> 1 deep dive)
+308. `bitmap-optimization` - How do you optimize bitmap memory usage?
+## Database Optimization (1 questions -> 1 deep dive)
+309. `database-performance` - How do you optimize database queries?
+## Network Optimization (1 questions -> 1 deep dive)
+310. `network-performance` - How do you optimize network requests?
+## Allocation Optimization (2 questions -> 1 deep dive)
+311. `string-formatting` - What's the performance impact of string formatting?
+312. `object-pooling` - What is object pooling?
+## Reflection Optimization (1 questions -> 1 deep dive)
+313. `reflection-performance` - What's the performance cost of reflection?
+## Recyclerview Optimization (1 questions -> 1 deep dive)
+314. `view-recycling` - How does RecyclerView recycling work?
+## Initialization Patterns (1 questions -> 1 deep dive)
+315. `lazy-initialization` - What is lazy initialization?
+## Profiling Tools (3 questions -> 1 deep dive)
+316. `perfetto-tracing` - What is Perfetto and how do you use it?
+317. `systrace-analysis` - How do you use systrace?
+318. `benchmark-tools` - Differences between profiling tools?
+## Frame Stability (1 questions -> 1 deep dive)
+319. `frame-rate-stability` - How do you ensure stable frame rates?
+## Startup Optimization (1 questions -> 1 deep dive)
+320. `cold-start-optimization` - What causes slow cold starts?
+## Caching Strategies (1 questions -> 1 deep dive)
+321. `warm-cache` - How do you keep a warm cache?
+## Compose Performance (1 questions -> 1 deep dive)
+322. `composition-performance` - How does Compose performance differ from Views?
+## Graphics Optimization (1 questions -> 1 deep dive)
+323. `shader-compilation` - What is shader compilation?
+## Battery Profiling (1 questions -> 1 deep dive)
+324. `power-consumption-profiling` - How do you profile power consumption?
+## Monitoring Implementation (1 questions -> 1 deep dive)
+325. `custom-performance-monitoring` - How do implement custom monitoring?
+## Performance Testing (1 questions -> 1 deep dive)
+326. `performance-testing` - How do you write performance tests?
+## Ux Perception (1 questions -> 1 deep dive)
+327. `responsiveness-perception` - Perceived responsiveness vs actual performance?
+## Performance Strategy (1 questions -> 1 deep dive)
+328. `performance-budgets` - What is a performance budget?
+## Gpu Optimization (1 questions -> 1 deep dive)
+329. `gpu-rendering-cost` - What is the cost of GPU rendering?
+## System Internals (1 questions -> 1 deep dive)
+330. `kernel-linux-performance` - How does Linux kernel impact performance?
+## Compilation Optimization (1 questions -> 1 deep dive)
+331. `ahead-of-time-compilation` - What is AoT compilation?
+
+---
 ## Statistics
-- **Total Questions:** 255
-- **Total Deep Dives:** 101
+- **Total Questions:** 331
+- **Total Deep Dives:** 154
 - **Fundamentals:** 54 questions
 - **Kotlin:** 51 questions
 - **Compose:** 50 questions
 - **Concurrency:** 50 questions
 - **Architecture:** 50 questions
-- **Beginner:** 37 questions
-- **Intermediate:** 127 questions
-- **Advanced:** 17 questions
+- **Networking:** 38 questions
+- **Performance:** 38 questions
+- **Beginner:** 45 questions
+- **Intermediate:** 178 questions
+- **Advanced:** 34 questions
 - **Senior:** 67 questions
 - **Staff:** 7 questions
 
@@ -418,36 +557,46 @@ Generated: 255 interview questions across 101 deep dive topics
 - Senior: 24
 - Staff: 4
 
+### Networking
+- Beginner: 4
+- Intermediate: 30
+- Advanced: 4
+
+### Performance
+- Beginner: 4
+- Intermediate: 21
+- Advanced: 13
+
 ## Quick Tags Reference
-- **android:** 63 questions
-- **architecture:** 62 questions
+- **architecture:** 66 questions
+- **android:** 65 questions
 - **kotlin:** 55 questions
-- **compose:** 50 questions
-- **coroutines:** 42 questions
-- **performance:** 26 questions
+- **compose:** 51 questions
+- **performance:** 49 questions
+- **coroutines:** 44 questions
+- **networking:** 31 questions
 - **state:** 23 questions
 - **flow:** 20 questions
 - **concurrency:** 19 questions
+- **optimization:** 18 questions
 - **lifecycle:** 17 questions
-- **threading:** 13 questions
-- **runtime:** 12 questions
+- **threading:** 14 questions
+- **runtime:** 14 questions
+- **memory:** 13 questions
 - **compiler:** 9 questions
+- **rendering:** 8 questions
+- **ui:** 8 questions
 - **recomposition:** 7 questions
 - **side-effects:** 7 questions
+- **testing:** 7 questions
 - **di:** 7 questions
+- **resilience:** 7 questions
 - **fundamentals:** 6 questions
 - **intents:** 6 questions
-- **memory:** 6 questions
-- **ui:** 6 questions
-- **testing:** 6 questions
+- **security:** 6 questions
+- **api-design:** 6 questions
+- **cancellation:** 6 questions
+- **scalability:** 6 questions
 - **modularization:** 6 questions
-- **fragments:** 5 questions
-- **data:** 5 questions
-- **navigation:** 5 questions
-- **cancellation:** 5 questions
-- **synchronization:** 5 questions
-- **events:** 5 questions
-- **scalability:** 5 questions
-- **callbacks:** 4 questions
 ---
-**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Concurrency, Architecture sections.
+**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Performance sections.

@@ -1,26 +1,1252 @@
 questions:
-  - id: sample-question
-
-    title: Sample Question
-
+  - id: retrofit-fundamentals
+    title: What is Retrofit?
     difficulty: beginner
-
     tags:
+      - networking
+      - retrofit
+      - http
+    standard_answer: |
+      Retrofit is a type-safe HTTP client for Android built on top of OkHttp.
+
+      Retrofit simplifies:
+
+      - REST API integration
+      - request creation
+      - response parsing
+      - serialization/deserialization
+
+      Core concepts:
+
+      - interface-based APIs
+      - annotations
+      - converters
+      - coroutine support
+
+    deep_dive: /android-interview-prep/deep-dives/networking/retrofit-fundamentals/
+
+  - id: retrofit-converters
+    title: How do Retrofit converters work?
+    difficulty: intermediate
+    tags:
+      - retrofit
+      - serialization
+      - networking
+    standard_answer: |
+      Retrofit converters handle serialization/deserialization between
+      JSON and Kotlin objects.
+
+      Popular converters:
+
+      - GsonConverterFactory
+      - MoshiConverterFactory
+      - kotlinx.serialization
+
+      Converter responsibility:
+
+      - parse response body to objects
+      - serialize objects to request body
+      - handle content types
+      - raise parsing exceptions
+
+    deep_dive: /android-interview-prep/deep-dives/networking/serialization-strategies/
+
+  - id: coroutines-retrofit
+    title: How does Retrofit work with Kotlin Coroutines?
+    difficulty: intermediate
+    tags:
+      - retrofit
+      - coroutines
+      - networking
+    standard_answer: |
+      Retrofit provides suspend function support for coroutines,
+      eliminating the need for Callback-based APIs.
+
+      Advantages:
+
+      - no callback hell
+      - structured concurrency
+      - cancellation support
+      - exception propagation
+
+      Under the hood:
+
+      - adapters convert suspend to Call
+      - Retrofit wraps in coroutine adapters
+      - exceptions throw to caller
+      - automatic cancellation on scope exit
+
+    deep_dive: /android-interview-prep/deep-dives/networking/retrofit-fundamentals/
+
+  - id: okhttp-interceptors
+    title: What is an OkHttp Interceptor?
+    difficulty: intermediate
+    tags:
+      - okhttp
+      - networking
+      - interceptors
+    standard_answer: |
+      Interceptors are OkHttp components that observe/modify HTTP requests/responses.
+
+      Two types:
+
+      - Application interceptors: see application code logic
+      - Network interceptors: see actual network traffic
+
+      Common uses:
+
+      - logging
+      - authentication (token injection)
+      - request modification
+      - response transformation
+      - error handling
+
+    deep_dive: /android-interview-prep/deep-dives/networking/okhttp-internals/
+
+  - id: okhttp-connection-pooling
+    title: How does OkHttp connection pooling work?
+    difficulty: intermediate
+    tags:
+      - okhttp
+      - networking
+      - optimization
+    standard_answer: |
+      OkHttp maintains a pool of reusable HTTP connections to avoid
+      expensive reconnections.
+
+      Benefits:
+
+      - reduced latency
+      - better throughput
+      - lower CPU/battery usage
+      - automatic reuse
+
+      How it works:
+
+      - connections cached by host:port:scheme
+      - TTL enforced by keep-alive timeout
+      - stale connections pruned
+      - pool size configurable
+
+    deep_dive: /android-interview-prep/deep-dives/networking/okhttp-internals/
+
+  - id: rest-principles
+    title: What are REST API principles?
+    difficulty: beginner
+    tags:
+      - rest
+      - api-design
+      - networking
+    standard_answer: |
+      REST (Representational State Transfer) is an architectural style
+      for building scalable web services.
+
+      Core principles:
+
+      - resource-oriented URLs
+      - standard HTTP methods
+      - stateless communication
+      - cacheable representations
+      - client-server separation
+
+      HTTP methods:
+
+      - GET: retrieve
+      - POST: create
+      - PUT: replace
+      - PATCH: partial update
+      - DELETE: remove
+
+    deep_dive: /android-interview-prep/deep-dives/networking/rest-api-principles/
+
+  - id: http-methods
+    title: When should you use HTTP PUT vs PATCH?
+    difficulty: intermediate
+    tags:
+      - rest
+      - api-design
+      - http
+    standard_answer: |
+      PUT and PATCH both modify resources but behave differently.
+
+      PUT (complete replacement):
+
+      - replaces entire resource
+      - requires full new state
+      - idempotent
+      - typically 200/204 response
+
+      PATCH (partial update):
+
+      - modifies only specified fields
+      - doesn't require full state
+      - idempotent (with conditionals)
+      - more bandwidth-efficient
+      - typically 200/204 response
+
+      Generally: use PATCH for Android to save bandwidth.
+
+    deep_dive: /android-interview-prep/deep-dives/networking/rest-api-principles/
+
+  - id: json-serialization
+    title: What are differences between Gson, Moshi, and Kotlin Serialization?
+    difficulty: intermediate
+    tags:
+      - serialization
+      - json
+      - performance
+    standard_answer: |
+      Three popular JSON serialization libraries for Android.
+
+      Gson:
+
+      - reflection-based (slower)
+      - no compile-time checks
+      - flexible with malformed JSON
+      - mature ecosystem
+
+      Moshi:
+
+      - reflection + adapters
+      - customizable
+      - faster than Gson
+      - better error messages
+
+      Kotlin Serialization:
+
+      - compiler plugin (fastest)
+      - compile-time safety
+      - no reflection needed
+      - newer but growing adoption
+
+    deep_dive: /android-interview-prep/deep-dives/networking/serialization-strategies/
+
+  - id: authentication
+    title: How should you implement authentication in mobile apps?
+    difficulty: intermediate
+    tags:
+      - authentication
+      - security
+      - networking
+    standard_answer: |
+      Authentication secures API access. Common strategies:
+
+      JWT (JSON Web Tokens):
+
+      - token-based (not session-based)
+      - include in Authorization header
+      - exp claim for expiration
+      - refresh token for renewal
+
+      OAuth 2.0:
+
+      - delegated access
+      - third-party sign-in
+      - symmetric exchange flows
+      - authorization code flow (mobile)
+
+      Best practices:
+
+      - store tokens securely (EncryptedSharedPreferences)
+      - use refresh mechanism
+      - never hardcode secrets
+      - use interceptors for injection
+
+    deep_dive: /android-interview-prep/deep-dives/networking/authentication-security/
+
+  - id: https-tls
+    title: What is HTTPS and TLS?
+    difficulty: beginner
+    tags:
+      - security
+      - https
+      - networking
+    standard_answer: |
+      HTTPS encrypts HTTP traffic using TLS (Transport Layer Security).
+
+      Benefits:
+
+      - confidentiality (data cannot be read)
+      - integrity (data cannot be modified)
+      - authentication (server verified)
+      - prevents man-in-the-middle attacks
+
+      How it works:
+
+      - client initiates TLS handshake
+      - server shares certificate
+      - symmetric key negotiated
+      - encrypted connection established
+
+      On Android:
+
+      - HTTPS enforced by default (Network Security Config)
+      - certificate validation automatic
+
+    deep_dive: /android-interview-prep/deep-dives/networking/authentication-security/
+
+  - id: certificate-pinning
+    title: What is certificate pinning?
+    difficulty: intermediate
+    tags:
+      - security
+      - networking
+      - okhttp
+    standard_answer: |
+      Certificate pinning is a security technique that roots trust
+      in a specific certificate rather than the entire CA hierarchy.
+
+      Benefits:
+
+      - prevents compromised CAs
+      - blocks rogue certificates
+      - cryptographic trust anchoring
+
+      How it works:
+
+      - app stores certificate public key
+      - validates server cert against pinned key
+      - fails if mismatch
+
+      OkHttp implementation:
+
+      - CertificatePinner class
+      - configure pins in build
+      - specify host(s) to pin
+      - use wildcard domains if needed
+
+    deep_dive: /android-interview-prep/deep-dives/networking/certificate-pinning/
+
+  - id: retry-strategies
+    title: How should you implement retry logic?
+    difficulty: intermediate
+    tags:
+      - networking
+      - resilience
+      - error-handling
+    standard_answer: |
+      Retry logic handles transient network failures automatically.
+
+      When to retry:
+
+      - network timeouts
+      - 5xx server errors
+      - connection resets
+      - DNS failures
+
+      Do NOT retry:
+
+      - 4xx client errors (except 429 rate limit)
+      - authentication failures
+      - payload errors
+
+      Implementation patterns:
+
+      - simple retry with delay
+      - exponential backoff
+      - jitter to prevent thundering herd
+      - max retry limit
+
+    deep_dive: /android-interview-prep/deep-dives/networking/retry-exponential-backoff/
+
+  - id: exponential-backoff
+    title: What is exponential backoff?
+    difficulty: intermediate
+    tags:
+      - networking
+      - optimization
+      - resilience
+    standard_answer: |
+      Exponential backoff increases delay between retries
+      to prevent server overload.
+
+      Formula:
+
+      delay = base * (2 ^ attempt) + jitter
+
+      Benefits:
+
+      - reduces server load
+      - prevents thundering herd
+      - increases success rate
+      - network stabilization
+
+      Example:
+
+      - attempt 1: 1s
+      - attempt 2: 2s
+      - attempt 3: 4s
+      - attempt 4: 8s
+
+      Best practices:
+
+      - add random jitter
+      - set maximum delay
+      - set maximum retries
+      - respect Retry-After header
+
+    deep_dive: /android-interview-prep/deep-dives/networking/retry-exponential-backoff/
+
+  - id: pagination
+    title: How does pagination work in REST APIs?
+    difficulty: beginner
+    tags:
+      - pagination
+      - rest
+      - networking
+    standard_answer: |
+      Pagination splits large result sets into smaller pages
+      to reduce memory/bandwidth.
+
+      Common approaches:
+
+      - Offset/Limit: offset + limit query params
+      - Cursor-based: opaque cursor token
+      - Keyset: last ID from previous page
+
+      Pagination parameters:
+
+      - page or offset
+      - limit or pageSize
+      - cursor or pageToken
+      - totalCount (optional)
+
+      Response:
+
+      - items array
+      - hasMore boolean
+      - nextPageToken
+      - totalCount (optional)
+
+      When to use:
+
+      - offset/limit: simple, not ideal for real-time
+      - cursor: recommended, handles inserts/deletes
+
+    deep_dive: /android-interview-prep/deep-dives/networking/pagination-architecture/
+
+  - id: paging-3
+    title: What is Paging 3 library?
+    difficulty: intermediate
+    tags:
+      - pagination
+      - paging3
       - android
+    standard_answer: |
+      Paging 3 is Android's best-practice pagination library
+      built on Flow for seamless list loading.
 
-    standard_answer: >
-      Add a short answer here.
+      Core components:
 
-    detailed_explanation: |
-      Add detailed explanation here.
+      - PagingSource: provides page data
+      - Pager: creates PagingData Flow
+      - PagingDataAdapter: RecyclerView adapter
 
-    internals: |
-      Add framework internals here.
+      Benefits:
 
-    followups:
-      - question: Sample follow-up?
-        answer: Sample answer.
+      - automatic caching
+      - cancellation support
+      - separation of concerns
+      - Flow-based reactive
+      - handles duplicate loads
 
-    traps:
-      - title: Common trap
-        content: Add interviewer trap here.
+      Architecture:
+
+      - repository provides PagingSource
+      - viewmodel exposes Pager.flow
+      - UI subscribes and displays
+
+    deep_dive: /android-interview-prep/deep-dives/networking/pagination-architecture/
+
+  - id: http-caching
+    title: How does HTTP caching work?
+    difficulty: intermediate
+    tags:
+      - caching
+      - http
+      - networking
+    standard_answer: |
+      HTTP caching reduces bandwidth by reusing responses.
+
+      Cache control headers:
+
+      - Cache-Control: max-age (seconds)
+      - Expires: absolute time
+      - ETag: version identifier
+      - Last-Modified: resource timestamp
+
+      Caching types:
+
+      - private (browser cache only)
+      - public (shared cache)
+      - no-cache (validate always)
+      - no-store (never cache)
+
+      OkHttp caching:
+
+      - automatic by default
+      - configurable cache size
+      - respects Cache-Control headers
+      - offline page fallback possible
+
+    deep_dive: /android-interview-prep/deep-dives/networking/caching-strategies/
+
+  - id: etags-conditional
+    title: What are ETags and conditional requests?
+    difficulty: intermediate
+    tags:
+      - caching
+      - http
+      - optimization
+    standard_answer: |
+      ETags and conditional requests minimize bandwidth
+      by validating cached responses.
+
+      ETags:
+
+      - unique identifier for resource version
+      - server sends with response
+      - client includes in future requests
+      - server returns 304 Not Modified if unchanged
+
+      Conditional requests:
+
+      - If-None-Match: ETag validation
+      - If-Modified-Since: timestamp validation
+      - server responds 304 Not Modified
+      - client reuses cached response
+
+      Benefits:
+
+      - save bandwidth
+      - validate without full transfer
+      - handle resource updates
+      - prevent stale data
+
+    deep_dive: /android-interview-prep/deep-dives/networking/caching-strategies/
+
+  - id: offline-first
+    title: What is offline-first architecture?
+    difficulty: intermediate
+    tags:
+      - offline
+      - architecture
+      - networking
+    standard_answer: |
+      Offline-first prioritizes local-first operation,
+      syncing when network available.
+
+      Principles:
+
+      - always use local database first
+      - sync to server when connected
+      - seamless online/offline transitions
+      - user experience consistency
+
+      Architecture:
+
+      - local Room database
+      - repository handles sync
+      - background sync workers
+      - conflict resolution
+
+      Benefits:
+
+      - instant UI responsiveness
+      - works without network
+      - resilient to connection loss
+      - better battery life
+
+    deep_dive: /android-interview-prep/deep-dives/networking/offline-first-architecture/
+
+  - id: sync-engine
+    title: How do you implement a sync engine?
+    difficulty: advanced
+    tags:
+      - offline
+      - sync
+      - architecture
+    standard_answer: |
+      A sync engine keeps local and remote data consistent.
+
+      Components:
+
+      - sync worker: runs on schedule
+      - local database: source of truth
+      - remote API: server state
+      - conflict resolver: handles mismatches
+
+      Sync flow:
+
+      - fetch remote changes (pull)
+      - apply to local database
+      - upload local changes (push)
+      - resolve conflicts
+      - mark synced
+
+      Challenges:
+
+      - conflict resolution
+      - duplicate prevention
+      - partial sync recovery
+      - offline queue management
+
+    deep_dive: /android-interview-prep/deep-dives/networking/offline-first-architecture/
+
+  - id: conflict-resolution
+    title: How should you handle sync conflicts?
+    difficulty: advanced
+    tags:
+      - sync
+      - offline
+      - architecture
+    standard_answer: |
+      Conflict resolution determines which data wins when
+      both local and remote changes exist.
+
+      Strategies:
+
+      - last-write-wins: use timestamp
+      - remote-wins: server always correct
+      - local-wins: device always correct
+      - merge: combine changes intelligently
+      - manual: show UI for user choice
+
+      Implementation:
+
+      - version vectors: track causality
+      - timestamps: simple but flawed
+      - operation-based: log changes
+      - state-based: full state comparison
+
+      Production patterns:
+
+      - merge non-conflicting fields
+      - use timestamps wisely
+      - log conflicts for debugging
+      - expose unresolved conflicts in UI
+
+    deep_dive: /android-interview-prep/deep-dives/networking/conflict-resolution/
+
+  - id: websockets
+    title: What are WebSockets?
+    difficulty: intermediate
+    tags:
+      - websockets
+      - networking
+      - real-time
+    standard_answer: |
+      WebSockets provide full-duplex communication over TCP,
+      enabling real-time bidirectional messaging.
+
+      Benefits:
+
+      - persistent connection
+      - low latency
+      - bidirectional messaging
+      - event-driven
+      - better than polling
+
+      Use cases:
+
+      - chat applications
+      - live notifications
+      - real-time dashboards
+      - multiplayer games
+
+      Libraries:
+
+      - OkHttp WebSocket support
+      - Scarlet library
+      - Kotlin Flows for events
+
+    deep_dive: /android-interview-prep/deep-dives/networking/websockets-streaming/
+
+  - id: streaming-downloads
+    title: How do you handle streaming and large file downloads?
+    difficulty: intermediate
+    tags:
+      - networking
+      - streaming
+      - optimization
+    standard_answer: |
+      Streaming and downloads require special handling to avoid
+      memory issues and provide progress feedback.
+
+      Streaming approaches:
+
+      - ResponseBody streaming
+      - byte[] chunking
+      - reactive publishers
+      - progress callbacks
+
+      Best practices:
+
+      - write to disk, not memory
+      - implement progress listener
+      - handle pause/resume
+      - validate downloaded file
+      - use download manager
+
+      Implementation:
+
+      - Retrofit ResponseBody
+      - OkHttp interceptors for progress
+      - WorkManager for background jobs
+      - MediaStore for saved files
+
+    deep_dive: /android-interview-prep/deep-dives/networking/websockets-streaming/
+
+  - id: network-error-handling
+    title: How should you handle network errors?
+    difficulty: intermediate
+    tags:
+      - error-handling
+      - networking
+      - resilience
+    standard_answer: |
+      Network error handling ensures app gracefully handles
+      connectivity issues and API errors.
+
+      Error types:
+
+      - no connectivity
+      - timeouts
+      - 4xx client errors
+      - 5xx server errors
+      - parsing errors
+
+      Handling strategies:
+
+      - retry transient errors
+      - show user-friendly errors
+      - log for debugging
+      - fallback to cached data
+      - offline queue for sync
+
+      Response codes:
+
+      - 401: authentication failure
+      - 403: permission denied
+      - 429: rate limited
+      - 5xx: server error (retry)
+
+    deep_dive: /android-interview-prep/deep-dives/networking/error-handling-resilience/
+
+  - id: resiliency-patterns
+    title: What are network resiliency patterns?
+    difficulty: advanced
+    tags:
+      - resilience
+      - networking
+      - patterns
+    standard_answer: |
+      Resiliency patterns make apps robust to network failures.
+
+      Patterns:
+
+      - Circuit breaker: stop retries on repeated failure
+      - Bulkhead: isolate failures
+      - Timeout: prevent hanging requests
+      - Retry: automatic failure recovery
+      - Fallback: use cached/default data
+
+      Implementation:
+
+      - OkHttp timeouts
+      - exponential backoff
+      - health checks
+      - circuit breaker library (Resilience4j)
+
+      Benefits:
+
+      - improved user experience
+      - reduced server load
+      - cascading failure prevention
+      - automatic recovery
+
+    deep_dive: /android-interview-prep/deep-dives/networking/error-handling-resilience/
+
+  - id: compression
+    title: How does request/response compression work?
+    difficulty: intermediate
+    tags:
+      - optimization
+      - networking
+      - compression
+    standard_answer: |
+      Compression reduces bandwidth by encoding data.
+
+      HTTP compression:
+
+      - gzip: most common
+      - deflate: less common
+      - brotli: newer, better ratio
+
+      How it works:
+
+      - client sends Accept-Encoding header
+      - server compresses with matching algorithm
+      - server sends Content-Encoding header
+      - client decompresses
+
+      OkHttp:
+
+      - automatic by default
+      - transparent to application
+      - reduces bandwidth 60-80%
+      - minimal CPU overhead
+
+    deep_dive: /android-interview-prep/deep-dives/networking/compression-optimization/
+
+  - id: battery-optimization
+    title: How do you optimize for battery usage in networking?
+    difficulty: intermediate
+    tags:
+      - optimization
+      - battery
+      - networking
+    standard_answer: |
+      Battery optimization reduces networking's power consumption.
+
+      Techniques:
+
+      - batch requests (not individual)
+      - use connection pooling
+      - compress responses
+      - avoid polling
+      - use WorkManager
+      - sync intelligently
+
+      DON'Ts:
+
+      - frequent network requests
+      - polling background services
+      - large uncompressed payloads
+      - excessive logging
+
+      Tools:
+
+      - Battery Historian
+      - Perfetto for tracing
+      - NetworkProfiler in Studio
+
+    deep_dive: /android-interview-prep/deep-dives/networking/compression-optimization/
+
+  - id: graphql-rest
+    title: What are differences between GraphQL and REST?
+    difficulty: intermediate
+    tags:
+      - graphql
+      - rest
+      - api-design
+    standard_answer: |
+      GraphQL and REST are different API design philosophies.
+
+      REST:
+
+      - resource-oriented
+      - multiple endpoints per domain
+      - fixed response structures
+      - over/under fetching common
+
+      GraphQL:
+
+      - query-oriented
+      - single endpoint
+      - client specifies fields
+      - exact data fetching
+      - supports subscriptions
+
+      Trade-offs:
+
+      REST: simpler caching, broader tooling
+      GraphQL: flexible queries, reduced over-fetching
+
+      For Android:
+
+      - REST simpler for mobile
+      - GraphQL better for diverse clients
+      - Apollo Kotlin library for GraphQL
+
+    deep_dive: /android-interview-prep/deep-dives/networking/graphql-advanced/
+
+  - id: grpc-basics
+    title: What is gRPC?
+    difficulty: intermediate
+    tags:
+      - grpc
+      - networking
+      - protocols
+    standard_answer: |
+      gRPC is a modern RPC framework using Protocol Buffers
+      and HTTP/2 for efficient communication.
+
+      Benefits:
+
+      - faster than JSON/REST
+      - strongly typed via protobuf
+      - multiplexing with HTTP/2
+      - streaming support
+      - language-independent
+
+      Use cases:
+
+      - microservices
+      - high-performance APIs
+      - streaming data
+      - real-time communication
+
+      Complexity:
+
+      - steeper learning curve
+      - less browser-friendly
+      - newer ecosystem
+
+    deep_dive: /android-interview-prep/deep-dives/networking/graphql-advanced/
+
+  - id: network-monitoring
+    title: How do you monitor and debug network traffic?
+    difficulty: intermediate
+    tags:
+      - debugging
+      - monitoring
+      - networking
+    standard_answer: |
+      Network debugging reveals actual traffic and helps diagnose issues.
+
+      Tools:
+
+      - OkHttp logging interceptor
+      - Android Studio Network Profiler
+      - Chucker library
+      - Stetho library
+      - Charles proxy
+      - Wireshark
+
+      What to log:
+
+      - URL and method
+      - request headers
+      - response status
+      - response time
+      - response size
+      - errors
+
+      Chucker features:
+
+      - intercepts HTTP requests
+      - in-app notification
+      - request/response inspection
+      - replay requests
+
+    deep_dive: /android-interview-prep/deep-dives/networking/network-monitoring-debugging/
+
+  - id: rate-limiting
+    title: How do you handle rate limiting?
+    difficulty: intermediate
+    tags:
+      - rate-limiting
+      - networking
+      - resilience
+    standard_answer: |
+      Rate limiting controls request frequency per API.
+
+      Server communicates limits via headers:
+
+      - X-RateLimit-Limit: max requests
+      - X-RateLimit-Remaining: quota left
+      - X-RateLimit-Reset: reset timestamp
+      - Retry-After: wait before retry
+
+      Client-side handling:
+
+      - predict when limit reached
+      - queue requests
+      - exponential backoff
+      - respect Retry-After
+      - show user feedback
+
+      Implementation:
+
+      - track rate-limit headers
+      - use CircuitBreaker pattern
+      - queue strategy (FIFO/priority)
+
+    deep_dive: /android-interview-prep/deep-dives/networking/rate-limiting-idempotency/
+
+  - id: idempotency
+    title: What is idempotency in APIs?
+    difficulty: intermediate
+    tags:
+      - rest
+      - api-design
+      - networking
+    standard_answer: |
+      Idempotency ensures repeated requests have same effect
+      as single request, crucial for reliability.
+
+      Idempotent methods:
+
+      - GET: always safe
+      - DELETE: delete again = 204
+      - PUT: replace again = same result
+
+      Non-idempotent:
+
+      - POST: create again = duplicate
+      - PATCH: sometimes idempotent
+
+      Implementation:
+
+      - Idempotency-Key header (UUID)
+      - server deduplicates by key
+      - caches result with key
+      - returns cached on retry
+
+      Benefits:
+
+      - safe retries
+      - conflict prevention
+      - exactly-once semantics
+
+    deep_dive: /android-interview-prep/deep-dives/networking/rate-limiting-idempotency/
+
+  - id: multipart-uploads
+    title: How do you implement multipart file uploads?
+    difficulty: intermediate
+    tags:
+      - networking
+      - file-upload
+      - retrofit
+    standard_answer: |
+      Multipart uploads handle mixed binary/text data
+      in single request.
+
+      Retrofit multipart:
+
+      - @Multipart annotation
+      - @Part for file field
+      - @Part for text fields
+      - RequestBody wrapping
+
+      Best practices:
+
+      - compress before upload
+      - show progress indicator
+      - handle upload resume
+      - validate after upload
+      - background worker for large
+
+      Chunks:
+
+      - upload in chunks
+      - resumable upload
+      - verify integrity
+      - range requests
+
+    deep_dive: /android-interview-prep/deep-dives/networking/multipart-uploads/
+
+  - id: api-versioning
+    title: How should you version your APIs?
+    difficulty: intermediate
+    tags:
+      - api-design
+      - networking
+      - architecture
+    standard_answer: |
+      API versioning enables evolution without breaking clients.
+
+      Strategies:
+
+      - URL path: /v1/users /v2/users
+      - header: Accept: application/vnd.api+v2+json
+      - query param: /users?version=2
+      - custom header: X-API-Version: 2
+
+      Best practices:
+
+      - support 2-3 versions simultaneously
+      - provide migration guide
+      - deprecate with warning
+      - sunset timeline
+      - clear documentation
+
+      Client-side:
+
+      - respect API version
+      - handle version changes
+      - migrate gradually
+      - test against versions
+
+    deep_dive: /android-interview-prep/deep-dives/networking/api-versioning-scalability/
+
+  - id: scalability-cdn
+    title: What is CDN and when to use it?
+    difficulty: intermediate
+    tags:
+      - scalability
+      - networking
+      - cdn
+    standard_answer: |
+      CDN (Content Delivery Network) caches content globally
+      for lower latency and bandwidth savings.
+
+      Benefits:
+
+      - geographically distributed
+      - reduced latency
+      - bandwidth savings
+      - offload server load
+      - DDoS protection
+
+      Use cases:
+
+      - static assets (images, JS)
+      - video/media streaming
+      - mobile app updates
+      - download packages
+
+      For Android:
+
+      - CDN for APK/updates
+      - asset CDN for images
+      - API gateway CDN
+
+    deep_dive: /android-interview-prep/deep-dives/networking/api-versioning-scalability/
+
+  - id: request-cancellation
+    title: How do you cancel network requests?
+    difficulty: intermediate
+    tags:
+      - networking
+      - cancellation
+      - coroutines
+    standard_answer: |
+      Request cancellation prevents unnecessary network usage
+      and improves responsiveness.
+
+      Retrofit with coroutines:
+
+      - automatic cancellation on scope exit
+      - respects job.cancel()
+      - cleans up OkHttp Call
+
+      OkHttp Call:
+
+      - .cancel() method
+      - prevents further progress
+      - saves bandwidth
+      - closes connections
+
+      Use cases:
+
+      - navigation away (view destroyed)
+      - user explicitly cancels
+      - timeout exceeded
+      - parent scope cancelled
+
+    deep_dive: /android-interview-prep/deep-dives/networking/rate-limiting-idempotency/
+
+  - id: network-security-config
+    title: What is Network Security Configuration?
+    difficulty: intermediate
+    tags:
+      - security
+      - networking
+      - android
+    standard_answer: |
+      Network Security Configuration declaratively specifies
+      HTTPS/TLS settings per domain.
+
+      Features:
+
+      - enforce HTTPS
+      - certificate pinning
+      - custom CA certificates
+      - domain-specific rules
+      - development vs production
+
+      Configuration:
+
+      - XML file in res/xml/
+      - applied system-wide
+      - per-domain override
+      - certificate pins
+
+      Benefits:
+
+      - prevents MITM attacks
+      - gradual certificate migration
+      - dev shortcuts (cleartext HTTP)
+      - centralized security policy
+
+    deep_dive: /android-interview-prep/deep-dives/networking/production-networking-patterns/
+
+  - id: timeouts
+    title: How should you configure network timeouts?
+    difficulty: intermediate
+    tags:
+      - networking
+      - optimization
+      - okhttp
+    standard_answer: |
+      Timeouts prevent indefinite waiting for network responses.
+
+      OkHttp timeout types:
+
+      - connectTimeout: TCP connection
+      - readTimeout: data arrival
+      - writeTimeout: data upload
+      - callTimeout: entire call
+
+      Configuration:
+
+      - HttpClient.newBuilder().connectTimeout(30, SECONDS)
+      - per-request overrides possible
+      - consider network conditions
+      - balance UX vs resource usage
+
+      Android best practices:
+
+      - connection: 10-30 seconds
+      - read: 20-60 seconds
+      - write: 20-60 seconds
+      - retry on timeout
+
+    deep_dive: /android-interview-prep/deep-dives/networking/production-networking-patterns/
+
+  - id: performance-monitoring
+    title: How do you monitor API performance?
+    difficulty: advanced
+    tags:
+      - monitoring
+      - performance
+      - networking
+    standard_answer: |
+      Performance monitoring tracks latency, success rates,
+      and resource usage.
+
+      Metrics to track:
+
+      - response time distribution
+      - success/failure rates
+      - error types
+      - payload sizes
+      - request throughput
+
+      Tools:
+
+      - Firebase Performance Monitoring
+      - Crashlytics for errors
+      - custom analytics
+      - server logs
+
+      Implementation:
+
+      - timing instrumentation
+      - error categorization
+      - network state detection
+      - batch reporting
+
+    deep_dive: /android-interview-prep/deep-dives/networking/production-networking-patterns/

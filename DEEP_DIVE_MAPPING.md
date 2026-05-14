@@ -154,6 +154,34 @@ Architecture deep-dive files currently present under `docs/deep-dives/architectu
 
 **Total:** 50 Architecture questions -> 20 Architecture deep dives
 ---
+## Networking Mapping
+Networking mapping and per-topic sections are maintained in:
+- `NETWORKING_DEEP_DIVE_MAPPING.md`
+
+Networking deep-dive files currently present under `docs/deep-dives/networking/`:
+1. `networking-basics.md`
+2. `http-and-https.md`
+3. `rest-and-soap.md`
+4. `graphql-basics.md`
+5. `websockets-and-long-polling.md`
+6. `caching-and-persistence.md`
+7. `retrofit-and-okhttp.md`
+8. `coroutines-and-networking.md`
+9. `error-handling-and-retry.md`
+10. `security-and-authentication.md`
+11. `performance-optimization.md`
+12. `testing-networking.md`
+13. `mocking-and-stubbing.md`
+14. `networking-in-compose.md`
+15. `advanced-retrofit-features.md`
+16. `okhttp-interceptors-and-logging.md`
+17. `graphql-advanced-features.md`
+18. `websocket-advanced-usage.md`
+19. `networking-best-practices.md`
+20. `production-networking-patterns.md`
+
+**Total:** 50 Networking questions -> 20 Networking deep dives
+---
 ## Link Convention (Important)
 Use site route links in YAML:
 ```yaml
@@ -203,11 +231,15 @@ Implemented globally:
 | Compose YAML | ✅ complete |
 | Concurrency YAML | ✅ complete |
 | Architecture YAML | ✅ complete |
+| Networking YAML | ✅ complete |
+| Performance YAML | ✅ complete |
 | Fundamentals deep dives | ✅ complete |
 | Kotlin deep dives | ✅ complete |
 | Compose mapping doc | ✅ complete |
 | Concurrency mapping doc | ✅ complete |
 | Architecture mapping doc | ✅ complete |
+| Networking mapping doc | ✅ complete |
+| Performance mapping doc | ✅ complete |
 | Generated docs pages | ✅ generated |
 | Combined question index (`ALL_QUESTIONS.md`) | ✅ updated |
 ---

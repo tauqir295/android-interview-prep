@@ -1,28 +1,33 @@
 # Quick Reference: Interview Prep Content Status
 ## Current Project Snapshot
 ```
-✅ Fundamentals questions: 54
-✅ Kotlin questions: 51
-✅ Total questions: 105
-✅ Fundamentals deep dives: 21 (created)
-✅ Kotlin deep dives: 20 (created)
-✅ Total deep dive topics: 41
+✅ Architecture questions: 50 (20 deep dives)
+✅ Compose questions: 50 (20 deep dives)
+✅ Concurrency questions: 50 (20 deep dives)
+✅ Kotlin questions: 51 (20 deep dives)
+✅ Networking questions: 38 (20 deep dives)
+✅ Performance questions: 38 (20 deep dives)
+✅ Total questions: 286
+✅ Total deep dive topics: 120
+✅ Active categories with deep dives: 6
 ✅ Generated docs pages: 13 categories
 ```
 ---
 ## Content Layers
 ### 1) Generated Question Pages (YAML -> Markdown)
-- `data/fundamentals.yaml`
-- `data/kotlin.yaml`
-- `docs/generated/fundamentals.md`
-- `docs/generated/kotlin.md`
+- `data/*.yaml` (5 active: architecture, compose, concurrency, kotlin, networking)
+- `docs/generated/*.md` (13 category pages)
 Purpose:
 - concise interview answers
 - fast revision
 - deep-dive linking
 ### 2) Deep Dive Markdown Pages
-- `docs/deep-dives/fundamentals/` (21 files)
+- `docs/deep-dives/architecture/` (20 files)
+- `docs/deep-dives/compose/` (20 files)
+- `docs/deep-dives/concurrency/` (20 files)
 - `docs/deep-dives/kotlin/` (20 files)
+- `docs/deep-dives/networking/` (20 files)
+- `docs/deep-dives/performance/` (20 files)
 Purpose:
 - detailed internals
 - production insights
@@ -48,13 +53,10 @@ Implemented behavior:
 - matching question auto-opens on return from deep dive
 ---
 ## Fundamentals Status
-- Questions: **54**
-- Deep dives: **21**
+- Questions: **54** (legacy, no deep dives)
 - File: `data/fundamentals.yaml`
 - Generated page: `docs/generated/fundamentals.md`
-Deep dives in place under:
-`docs/deep-dives/fundamentals/`
----
+
 ## Kotlin Status
 - Questions: **51**
 - Deep dives: **20**
@@ -62,11 +64,65 @@ Deep dives in place under:
 - Generated page: `docs/generated/kotlin.md`
 Deep dives in place under:
 `docs/deep-dives/kotlin/`
----
+
+## Compose Status
+- Questions: **50**
+- Deep dives: **20**
+- File: `data/compose.yaml`
+- Generated page: `docs/generated/compose.md`
+Deep dives in place under:
+`docs/deep-dives/compose/`
+- Top 5: fully authored
+- Remaining 15: scaffolded with core content
+
+## Concurrency Status
+- Questions: **50**
+- Deep dives: **20**
+- File: `data/concurrency.yaml`
+- Generated page: `docs/generated/concurrency.md`
+Deep dives in place under:
+`docs/deep-dives/concurrency/`
+- All 20: fully authored
+
+## Architecture Status
+- Questions: **50**
+- Deep dives: **20**
+- File: `data/architecture.yaml`
+- Generated page: `docs/generated/architecture.md`
+Deep dives in place under:
+`docs/deep-dives/architecture/`
+- Top 5: fully authored
+- Remaining 15: scaffolded with core content
+
+## Networking Status
+- Questions: **38**
+- Deep dives: **20**
+- File: `data/networking.yaml`
+- Generated page: `docs/generated/networking.md`
+Deep dives in place under:
+`docs/deep-dives/networking/`
+- Top 5: fully authored
+- Remaining 15: scaffolded with core content
+
+## Performance Status
+- Questions: **38**
+- Deep dives: **20**
+- File: `data/performance.yaml`
+- Generated page: `docs/generated/performance.md`
+Deep dives in place under:
+`docs/deep-dives/performance/`
+- Top 5: fully authored
+- Remaining 15: scaffolded with core content
+
 ## Mapping Documents
-- `DEEP_DIVE_MAPPING.md` (Fundamentals mapping)
+- `DEEP_DIVE_MAPPING.md` (architecture status)
 - `KOTLIN_DEEP_DIVE_MAPPING.md` (Kotlin mapping)
-- `ALL_QUESTIONS.md` (combined list: fundamentals + kotlin)
+- `COMPOSE_DEEP_DIVE_MAPPING.md` (Compose mapping)
+- `CONCURRENCY_DEEP_DIVE_MAPPING.md` (Concurrency mapping)
+- `ARCHITECTURE_DEEP_DIVE_MAPPING.md` (Architecture mapping)
+- `NETWORKING_DEEP_DIVE_MAPPING.md` (Networking mapping)
+- `PERFORMANCE_DEEP_DIVE_MAPPING.md` (Performance mapping)
+- `ALL_QUESTIONS.md` (consolidated index)
 ---
 ## Build/Generate Commands
 ```bash
@@ -80,13 +136,16 @@ mkdocs build
 ```
 ---
 ## Quality Notes
-- YAML remains concise and interview-focused
+- YAML remains concise and interview-focused (under 25 lines per answer)
 - Deep details are in markdown deep dives
-- Formatting now avoids broken list rendering patterns
-- Generated markdown is stable for MkDocs Material
+- Formatted consistently for MkDocs Material rendering
+- All 100 deep dives include hash-aware back-navigation
+- Material UI card styling applied globally
 ---
+
 ## Next Recommended Work
-1. Keep adding new categories with the same 2-layer architecture.
-2. Maintain route-style deep-dive links in YAML.
-3. Update `ALL_QUESTIONS.md` whenever new YAML questions are added.
-4. Keep deep-dive headers/back-link pattern consistent across categories.
+1. Complete authoring for remaining 10 Compose/Architecture/Networking/Performance scaffolded deep dives.
+2. Add new categories (System Design, Testing, Behavioral) with same 2-layer architecture.
+3. Enhance existing Fundamentals with deep dives (currently no deep-dive set).
+4. Create cross-category search/tagging system for discovery.
+5. Add interview scenario builders leveraging existing Q&A.
