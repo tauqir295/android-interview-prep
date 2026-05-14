@@ -6,64 +6,85 @@ Welcome to the ultimate preparation guide for Android Developers. This resource 
 
 ## 🚀 Navigation Roadmap
 
-### [📱 Fundamentals](./fundamentals.md)
+### [📱 Fundamentals](./generated/fundamentals.md)
 Master the core building blocks of the Android OS. 
 * **Lifecycle:** Deep dives into Activity and Fragment states.
 * **Components:** Services, Broadcast Receivers, and Content Providers.
 * **Manifest & Context:** Understanding the app's blueprint and memory-safe context usage.
 
-### [🧠 Kotlin](./kotlin.md)
+### [🧠 Kotlin](./generated/kotlin.md)
 Modern Android is Kotlin-first. We cover language internals and idiomatic usage.
 * **Core:** Null safety, Extension functions, and Higher-order functions.
 * **Advanced:** Inline functions, Reified types, and Sealed Class hierarchies.
 * **Asynchronous:** Coroutines and Flow (StateFlow/SharedFlow).
 
-### [🛠️ Jetpack Compose](./compose.md)
+### [🛠️ Jetpack Compose](./generated/compose.md)
 The declarative UI standard for Android.
 * **State:** `remember`, `rememberSaveable`, and State Hoisting.
 * **Internals:** Recomposition cycles and stability.
 * **Effects:** Managing side effects with `LaunchedEffect` and `DisposableEffect`.
 
-### [🏗️ Architecture](./architecture.md)
+### [🏗️ Architecture](./generated/architecture.md)
 Design patterns that define professional, scalable apps.
 * **Patterns:** MVVM, MVI, and Clean Architecture.
 * **DI:** Hilt, Dagger2, and Koin.
 * **Scalability:** Modularization strategies and the Repository pattern.
 
-### [⚡ Concurrency](./concurrency.md)
+### [⚡ Concurrency](./generated/concurrency.md)
 Efficient background processing.
 * **Coroutines:** Dispatchers, Scopes, and Structured Concurrency.
 * **Flow vs LiveData:** Migration strategies and use cases.
 * **Threading:** Handlers, Loopers, and the Main Thread.
 
-### [🌐 Networking & Offline](./networking-db.md)
+### [🌐 Networking & Offline](./generated/networking.md)
 Data persistence and API communication.
 * **Networking:** Retrofit, OkHttp, and Interceptors.
 * **Database:** Room, Migrations, and Relationships.
-* **Strategy:** [Offline-First Architecture](./offline-first.md) and data synchronization.
+* **Strategy:** Offline-First Architecture and data synchronization.
 
-### [🚀 Performance & Vitals](./performance-debug.md)
+### [🚀 Performance & Vitals](./generated/performance.md)
 Building "buttery smooth" experiences.
 * **Optimization:** Memory leaks (LeakCanary), ANRs, and App Startup time.
-* **Metrics:** [App Vitals](./app-vitals.md) and Play Console performance tracking.
+* **Metrics:** Play Console performance tracking and vitals.
 * **Debugging:** Profilers, Logcat, and StrictMode.
 
-### [⚙️ CI/CD & Release](./cicd-pipelines.md)
+### [⚙️ CI/CD & Release](./generated/cicd.md)
 The "DevOps" of Android.
 * **Pipelines:** GitHub Actions and automated workflows.
-* **Management:** [Release Strategies](./release-management.md), App Bundles, and Gradual Rollouts.
+* **Management:** Release strategies, App Bundles, and Gradual Rollouts.
 
-### [🏗️ System Design](./system-design.md)
+### [🏗️ System Design](./generated/system-design.md)
 Senior-level discussions on building complex systems.
 * Designing Image Loaders (Glide/Coil).
 * Real-time Chat and Feed systems.
 * Analytics and Logging SDKs.
 
-### [🎓 Advanced & Security](./advanced.md)
+### [🧪 Testing](./generated/testing.md)
+Comprehensive testing strategies from unit to system tests.
+* **Strategy:** Test pyramid, risk-based testing, and CI/CD integration.
+* **Unit & Integration:** ViewModels, repositories, and use cases.
+* **UI & E2E:** Compose testing, Espresso, and release gates.
+* **Advanced:** Flaky test diagnostics, performance benchmarks, and mutation testing.
+
+### [🎓 Advanced & Security](./generated/advanced.md)
 Going deep into the OS.
-* **Internals:** [AOSP basics](./aosp-internals.md) and Binder IPC.
-* **Security:** [Keystore, ProGuard, and R8](./security.md).
-* **Form Factors:** [Foldables and Tablets](./foldables.md).
+* **Internals:** AOSP basics and Binder IPC.
+* **Security:** Keystore, ProGuard, and R8.
+* **Form Factors:** Foldables and Tablets.
+
+### [🤖 Future Tech](./generated/future-tech.md)
+Emerging technologies shaping Android's future.
+* **AI & ML:** On-device inference, edge AI, and federated learning.
+* **Form Factors:** Foldables, large screens, wearables, and XR/AR/VR.
+* **Platforms:** KMP, ambient computing, and multimodal interfaces.
+* **Strategy:** Future-proofing and emerging product experimentation.
+
+### [💬 Behavioral & Soft Skills](./generated/behavioral.md)
+Answering the "why you" and "how you work" questions.
+* **Interview Prep:** STAR method, story selection, and anti-patterns.
+* **Execution:** Ownership, accountability, prioritization, and tradeoffs.
+* **Leadership:** Mentorship, conflict resolution, and cross-functional collaboration.
+* **At Scale:** Staff-level behavioral signals, ethical decision-making, and impact.
 
 ---
 
