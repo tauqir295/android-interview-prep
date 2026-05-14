@@ -8,25 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/services/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/android-interview-prep/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Android Interview Prep</title>
+        <title>Services - Android Interview Prep</title>
       
     
     
-      <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("/android-interview-prep/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#services-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Services
             
           </span>
         </div>
@@ -168,6 +175,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -177,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -195,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -269,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/fundamentals/" class="md-nav__link">
+      <a href="../../../generated/fundamentals/" class="md-nav__link">
         
   
   
@@ -351,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/kotlin/" class="md-nav__link">
+      <a href="../../../generated/kotlin/" class="md-nav__link">
         
   
   
@@ -433,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/compose/" class="md-nav__link">
+      <a href="../../../generated/compose/" class="md-nav__link">
         
   
   
@@ -515,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/architecture/" class="md-nav__link">
+      <a href="../../../generated/architecture/" class="md-nav__link">
         
   
   
@@ -597,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/concurrency/" class="md-nav__link">
+      <a href="../../../generated/concurrency/" class="md-nav__link">
         
   
   
@@ -679,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/networking/" class="md-nav__link">
+      <a href="../../../generated/networking/" class="md-nav__link">
         
   
   
@@ -761,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/performance/" class="md-nav__link">
+      <a href="../../../generated/performance/" class="md-nav__link">
         
   
   
@@ -843,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/cicd/" class="md-nav__link">
+      <a href="../../../generated/cicd/" class="md-nav__link">
         
   
   
@@ -925,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/advanced/" class="md-nav__link">
+      <a href="../../../generated/advanced/" class="md-nav__link">
         
   
   
@@ -1007,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/future-tech/" class="md-nav__link">
+      <a href="../../../generated/future-tech/" class="md-nav__link">
         
   
   
@@ -1089,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/system-design/" class="md-nav__link">
+      <a href="../../../generated/system-design/" class="md-nav__link">
         
   
   
@@ -1171,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/testing/" class="md-nav__link">
+      <a href="../../../generated/testing/" class="md-nav__link">
         
   
   
@@ -1253,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/behavioral/" class="md-nav__link">
+      <a href="../../../generated/behavioral/" class="md-nav__link">
         
   
   
@@ -1289,7 +1298,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1298,6 +1309,171 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Service Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#started-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Started Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bound-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bound Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreground-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foreground Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#started-service-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Started Service Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restart Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-vs-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service vs Thread
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bound-service-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bound Service Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-8-background-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 8+ Background Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1310,8 +1486,155 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
+  
 
+
+
+
+<div class="admonition abstract">
+<p><a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a></p>
+</div>
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
+      return;
+    }
+
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default fundamentals link if URL parsing fails.
+  }
+})();
+</script>
+
+<h1 id="services-deep-dive">Services Deep Dive<a class="headerlink" href="#services-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A Service is an Android component used for background work that should continue independently of UI screens. Services do not provide UI and are managed by the system with their own lifecycle.</p>
+<hr />
+<h2 id="service-types">Service Types<a class="headerlink" href="#service-types" title="Permanent link">&para;</a></h2>
+<h3 id="started-service">Started Service<a class="headerlink" href="#started-service" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Started with <code>startService()</code> or <code>startForegroundService()</code>.</li>
+<li>Runs until <code>stopSelf()</code>/<code>stopService()</code> is called.</li>
+<li>Good for one-off background tasks.</li>
+</ul>
+<h3 id="bound-service">Bound Service<a class="headerlink" href="#bound-service" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Started with <code>bindService()</code>.</li>
+<li>Exposes APIs via <code>IBinder</code>.</li>
+<li>Runs while clients are bound (unless also started).</li>
+<li>Useful for in-process or cross-process IPC.</li>
+</ul>
+<h3 id="foreground-service">Foreground Service<a class="headerlink" href="#foreground-service" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Must show persistent notification.</li>
+<li>Higher priority, less likely to be killed.</li>
+<li>Required for user-visible long-running tasks.</li>
+</ul>
+<hr />
+<h2 id="lifecycle">Lifecycle<a class="headerlink" href="#lifecycle" title="Permanent link">&para;</a></h2>
+<h3 id="started-service-flow">Started Service Flow<a class="headerlink" href="#started-service-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onStartCommand</span><span class="p">(</span><span class="n">intent</span><span class="p">:</span><span class="w"> </span><span class="n">Intent?,</span><span class="w"> </span><span class="n">flags</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span><span class="w"> </span><span class="n">startId</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Do work off main thread</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">START_NOT_STICKY</span>
+<span class="p">}</span>
+
+<span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="restart-modes">Restart Modes<a class="headerlink" href="#restart-modes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>START_NOT_STICKY</code>: Do not recreate after kill.</li>
+<li><code>START_STICKY</code>: Recreate service, intent may be null.</li>
+<li><code>START_REDELIVER_INTENT</code>: Recreate and redeliver last intent.</li>
+</ul>
+<hr />
+<h2 id="service-vs-thread">Service vs Thread<a class="headerlink" href="#service-vs-thread" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Thread</strong>: execution unit, tied to process lifetime.</li>
+<li><strong>Service</strong>: component managed by Android lifecycle.</li>
+<li>Service work still needs threading (<code>Dispatchers.IO</code>, <code>Executor</code>, etc).</li>
+</ul>
+<hr />
+<h2 id="bound-service-example">Bound Service Example<a class="headerlink" href="#bound-service-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">PlayerService</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Service</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">binder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocalBinder</span><span class="p">()</span>
+
+<span class="w">    </span><span class="kd">inner</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">LocalBinder</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Binder</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">fun</span><span class="w"> </span><span class="nf">getService</span><span class="p">():</span><span class="w"> </span><span class="n">PlayerService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="nd">@PlayerService</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onBind</span><span class="p">(</span><span class="n">intent</span><span class="p">:</span><span class="w"> </span><span class="n">Intent?)</span><span class="p">:</span><span class="w"> </span><span class="n">IBinder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binder</span>
+
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">play</span><span class="p">(</span><span class="n">trackId</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// business logic</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">ServiceConnection</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onServiceConnected</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">ComponentName?,</span><span class="w"> </span><span class="n">service</span><span class="p">:</span><span class="w"> </span><span class="n">IBinder?)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">binder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">PlayerService</span><span class="p">.</span><span class="na">LocalBinder</span>
+<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">playerService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binder</span><span class="p">.</span><span class="na">getService</span><span class="p">()</span>
+<span class="w">        </span><span class="n">playerService</span><span class="p">.</span><span class="na">play</span><span class="p">(</span><span class="s">&quot;track_1&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onServiceDisconnected</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">ComponentName?)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Unit</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="android-8-background-limits">Android 8+ Background Limits<a class="headerlink" href="#android-8-background-limits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Background service starts are restricted.</li>
+<li>Use <code>startForegroundService()</code> when required.</li>
+<li>Prefer <code>WorkManager</code> for deferrable background work.</li>
+</ul>
+<hr />
+<h2 id="interview-traps">Interview Traps<a class="headerlink" href="#interview-traps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Service does <strong>not</strong> run on a separate thread by default.</li>
+<li>Foreground service requires notification promptly.</li>
+<li><code>IntentService</code> is deprecated; use <code>WorkManager</code>.</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Services represent background-capable components, not threading primitives.</li>
+<li>Choose started, bound, or foreground based on interaction and visibility.</li>
+<li>Use modern background APIs (<code>WorkManager</code>) for resilient scheduling.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
               </article>
             </div>
           
@@ -1348,10 +1671,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/android-interview-prep/", "features": [], "search": "/android-interview-prep/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/android-interview-prep/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

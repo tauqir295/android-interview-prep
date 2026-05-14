@@ -8,25 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/android-interview-prep/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Android Interview Prep</title>
+        <title>Broadcast receivers - Android Interview Prep</title>
       
     
     
-      <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("/android-interview-prep/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#broadcast-receivers-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Broadcast receivers
             
           </span>
         </div>
@@ -168,6 +175,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -177,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -195,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -269,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/fundamentals/" class="md-nav__link">
+      <a href="../../../generated/fundamentals/" class="md-nav__link">
         
   
   
@@ -351,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/kotlin/" class="md-nav__link">
+      <a href="../../../generated/kotlin/" class="md-nav__link">
         
   
   
@@ -433,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/compose/" class="md-nav__link">
+      <a href="../../../generated/compose/" class="md-nav__link">
         
   
   
@@ -515,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/architecture/" class="md-nav__link">
+      <a href="../../../generated/architecture/" class="md-nav__link">
         
   
   
@@ -597,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/concurrency/" class="md-nav__link">
+      <a href="../../../generated/concurrency/" class="md-nav__link">
         
   
   
@@ -679,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/networking/" class="md-nav__link">
+      <a href="../../../generated/networking/" class="md-nav__link">
         
   
   
@@ -761,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/performance/" class="md-nav__link">
+      <a href="../../../generated/performance/" class="md-nav__link">
         
   
   
@@ -843,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/cicd/" class="md-nav__link">
+      <a href="../../../generated/cicd/" class="md-nav__link">
         
   
   
@@ -925,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/advanced/" class="md-nav__link">
+      <a href="../../../generated/advanced/" class="md-nav__link">
         
   
   
@@ -1007,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/future-tech/" class="md-nav__link">
+      <a href="../../../generated/future-tech/" class="md-nav__link">
         
   
   
@@ -1089,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/system-design/" class="md-nav__link">
+      <a href="../../../generated/system-design/" class="md-nav__link">
         
   
   
@@ -1171,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/testing/" class="md-nav__link">
+      <a href="../../../generated/testing/" class="md-nav__link">
         
   
   
@@ -1253,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/behavioral/" class="md-nav__link">
+      <a href="../../../generated/behavioral/" class="md-nav__link">
         
   
   
@@ -1289,7 +1298,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1298,6 +1309,149 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registration Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manifest-static-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manifest (Static) Receiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-dynamic-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime (Dynamic) Receiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordered-vs-normal-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordered vs Normal Broadcast
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordered vs Normal Broadcast">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordered
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1310,8 +1464,130 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
+  
 
+
+
+
+<div class="admonition abstract">
+<p><a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a></p>
+</div>
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
+      return;
+    }
+
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default fundamentals link if URL parsing fails.
+  }
+})();
+</script>
+
+<h1 id="broadcast-receivers-deep-dive">Broadcast Receivers Deep Dive<a class="headerlink" href="#broadcast-receivers-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Broadcast Receivers let apps react to system-wide or app-defined events delivered as intents. They are lightweight event handlers and should complete quickly.</p>
+<hr />
+<h2 id="registration-models">Registration Models<a class="headerlink" href="#registration-models" title="Permanent link">&para;</a></h2>
+<h3 id="manifest-static-receiver">Manifest (Static) Receiver<a class="headerlink" href="#manifest-static-receiver" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;receiver</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;.BootReceiver&quot;</span><span class="w"> </span><span class="na">android:exported=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;intent-filter&gt;</span>
+<span class="w">        </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.BOOT_COMPLETED&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</code></pre></div>
+<ul>
+<li>Works even when app process is not running.</li>
+<li>Limited by newer Android background policies.</li>
+</ul>
+<h3 id="runtime-dynamic-receiver">Runtime (Dynamic) Receiver<a class="headerlink" href="#runtime-dynamic-receiver" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">receiver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">BroadcastReceiver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onReceive</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">,</span><span class="w"> </span><span class="n">intent</span><span class="p">:</span><span class="w"> </span><span class="n">Intent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Quick handling</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">registerReceiver</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="n">IntentFilter</span><span class="p">(</span><span class="s">&quot;com.example.ACTION_SYNC&quot;</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li>Active only while process/context is alive.</li>
+<li>Safer for in-app events and lifecycle control.</li>
+</ul>
+<hr />
+<h2 id="ordered-vs-normal-broadcast">Ordered vs Normal Broadcast<a class="headerlink" href="#ordered-vs-normal-broadcast" title="Permanent link">&para;</a></h2>
+<h3 id="normal">Normal<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Delivered to all matching receivers without strict order.</li>
+<li>Receivers cannot stop propagation.</li>
+</ul>
+<h3 id="ordered">Ordered<a class="headerlink" href="#ordered" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Delivered by priority sequence.</li>
+<li>Receiver can change result and abort (legacy behavior nuances apply by API level).</li>
+</ul>
+<hr />
+<h2 id="performance-rules">Performance Rules<a class="headerlink" href="#performance-rules" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>onReceive()</code> runs on main thread.</li>
+<li>Keep work short (&lt; 10s, ideally much less).</li>
+<li>Offload long work to <code>WorkManager</code> or foreground service.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onReceive</span><span class="p">(</span><span class="n">context</span><span class="p">:</span><span class="w"> </span><span class="n">Context</span><span class="p">,</span><span class="w"> </span><span class="n">intent</span><span class="p">:</span><span class="w"> </span><span class="n">Intent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">work</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OneTimeWorkRequestBuilder</span><span class="o">&lt;</span><span class="n">SyncWorker</span><span class="o">&gt;</span><span class="p">().</span><span class="na">build</span><span class="p">()</span>
+<span class="w">    </span><span class="n">WorkManager</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">context</span><span class="p">).</span><span class="na">enqueue</span><span class="p">(</span><span class="n">work</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="security-practices">Security Practices<a class="headerlink" href="#security-practices" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Set <code>android:exported</code> explicitly.</li>
+<li>Use custom permissions for sensitive broadcasts.</li>
+<li>Prefer explicit package targeting when possible.</li>
+<li>Validate intent extras before processing.</li>
+</ul>
+<hr />
+<h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Why avoid long work in <code>onReceive()</code>?</li>
+<li>Static vs dynamic registration differences?</li>
+<li>How Android 8+ changed implicit broadcast behavior?</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Broadcast Receivers are event listeners, not long-running workers.</li>
+<li>Choose registration type based on lifecycle and reliability needs.</li>
+<li>Use modern background APIs for heavy work.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
               </article>
             </div>
           
@@ -1348,10 +1624,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/android-interview-prep/", "features": [], "search": "/android-interview-prep/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/android-interview-prep/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

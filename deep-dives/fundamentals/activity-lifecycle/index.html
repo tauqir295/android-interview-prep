@@ -8,25 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/android-interview-prep/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Android Interview Prep</title>
+        <title>Activity lifecycle - Android Interview Prep</title>
       
     
     
-      <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("/android-interview-prep/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#activity-lifecycle-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Activity lifecycle
             
           </span>
         </div>
@@ -168,6 +175,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -177,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -195,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -269,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/fundamentals/" class="md-nav__link">
+      <a href="../../../generated/fundamentals/" class="md-nav__link">
         
   
   
@@ -351,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/kotlin/" class="md-nav__link">
+      <a href="../../../generated/kotlin/" class="md-nav__link">
         
   
   
@@ -433,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/compose/" class="md-nav__link">
+      <a href="../../../generated/compose/" class="md-nav__link">
         
   
   
@@ -515,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/architecture/" class="md-nav__link">
+      <a href="../../../generated/architecture/" class="md-nav__link">
         
   
   
@@ -597,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/concurrency/" class="md-nav__link">
+      <a href="../../../generated/concurrency/" class="md-nav__link">
         
   
   
@@ -679,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/networking/" class="md-nav__link">
+      <a href="../../../generated/networking/" class="md-nav__link">
         
   
   
@@ -761,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/performance/" class="md-nav__link">
+      <a href="../../../generated/performance/" class="md-nav__link">
         
   
   
@@ -843,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/cicd/" class="md-nav__link">
+      <a href="../../../generated/cicd/" class="md-nav__link">
         
   
   
@@ -925,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/advanced/" class="md-nav__link">
+      <a href="../../../generated/advanced/" class="md-nav__link">
         
   
   
@@ -1007,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/future-tech/" class="md-nav__link">
+      <a href="../../../generated/future-tech/" class="md-nav__link">
         
   
   
@@ -1089,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/system-design/" class="md-nav__link">
+      <a href="../../../generated/system-design/" class="md-nav__link">
         
   
   
@@ -1171,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/testing/" class="md-nav__link">
+      <a href="../../../generated/testing/" class="md-nav__link">
         
   
   
@@ -1253,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/behavioral/" class="md-nav__link">
+      <a href="../../../generated/behavioral/" class="md-nav__link">
         
   
   
@@ -1289,7 +1298,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1298,6 +1309,132 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-lifecycle-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Lifecycle States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Lifecycle States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-created-oncreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Created (onCreate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-started-onstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Started (onStart)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resumed-onresume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resumed (onResume)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-paused-onpause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Paused (onPause)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-stopped-onstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Stopped (onStop)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-destroyed-ondestroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Destroyed (onDestroy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-lifecycle-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Lifecycle Triggers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-lifecycle-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Lifecycle Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1310,8 +1447,131 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
+  
 
+
+
+
+<div class="admonition abstract">
+<p><a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a></p>
+</div>
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
+      return;
+    }
+
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default fundamentals link if URL parsing fails.
+  }
+})();
+</script>
+
+<h1 id="activity-lifecycle-deep-dive">Activity Lifecycle Deep Dive<a class="headerlink" href="#activity-lifecycle-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The Activity lifecycle is the set of states an Activity moves through, managed by the Android OS to optimize:
+- <strong>Memory Management:</strong> Reclaiming RAM from background apps.
+- <strong>Battery Usage:</strong> Stopping sensors/animations when not visible.
+- <strong>UI Restoration:</strong> Preserving user input during interruptions.
+- <strong>Multitasking:</strong> Handling seamless transitions between apps.
+- <strong>Process Recovery:</strong> Recreating the UI after the system kills a task.</p>
+<hr />
+<h2 id="core-lifecycle-states">Core Lifecycle States<a class="headerlink" href="#core-lifecycle-states" title="Permanent link">&para;</a></h2>
+<h3 id="1-created-oncreate">1. Created (<code>onCreate</code>)<a class="headerlink" href="#1-created-oncreate" title="Permanent link">&para;</a></h3>
+<p>The entry point. Perform one-time setup here: inflate UI, initialize ViewModels, and bind data.
+- <strong>State:</strong> The activity exists but is not visible.</p>
+<h3 id="2-started-onstart">2. Started (<code>onStart</code>)<a class="headerlink" href="#2-started-onstart" title="Permanent link">&para;</a></h3>
+<p>The activity becomes visible to the user. The app prepares to enter the foreground.
+- <strong>State:</strong> Visible, but not yet interactive.</p>
+<h3 id="3-resumed-onresume">3. Resumed (<code>onResume</code>)<a class="headerlink" href="#3-resumed-onresume" title="Permanent link">&para;</a></h3>
+<p>The activity is in the foreground and has user focus. 
+- <strong>Action:</strong> Start animations, camera previews, or high-frequency updates.
+- <strong>State:</strong> <strong>Interactive.</strong></p>
+<h3 id="4-paused-onpause">4. Paused (<code>onPause</code>)<a class="headerlink" href="#4-paused-onpause" title="Permanent link">&para;</a></h3>
+<p>The activity is partially obscured (e.g., by a dialog or multi-window mode).
+- <strong>Critical:</strong> Keep this lightweight. The next activity cannot start until this finishes.
+- <strong>State:</strong> Partially visible, losing focus.</p>
+<h3 id="5-stopped-onstop">5. Stopped (<code>onStop</code>)<a class="headerlink" href="#5-stopped-onstop" title="Permanent link">&para;</a></h3>
+<p>The activity is no longer visible. 
+- <strong>Action:</strong> Save persistent data (database/network), stop heavy CPU tasks.
+- <strong>State:</strong> Hidden, resides in the backstack.</p>
+<h3 id="6-destroyed-ondestroy">6. Destroyed (<code>onDestroy</code>)<a class="headerlink" href="#6-destroyed-ondestroy" title="Permanent link">&para;</a></h3>
+<p>The final cleanup. Occurs when the user finishes the activity or the system needs space.
+- <strong>State:</strong> Removed from memory.</p>
+<hr />
+<h2 id="common-lifecycle-triggers">Common Lifecycle Triggers<a class="headerlink" href="#common-lifecycle-triggers" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Screen Rotation:</strong> Destroys and recreates the activity (Configuration Change).</li>
+<li><strong>Incoming Calls:</strong> Moves activity to <code>onPause</code> or <code>onStop</code>.</li>
+<li><strong>Split-Screen Mode:</strong> Triggers lifecycle changes as focus shifts between windows.</li>
+<li><strong>App Switching:</strong> Moves the current app to <code>onStop</code>.</li>
+<li><strong>Process Death:</strong> The OS kills a <code>Stopped</code> activity to free RAM.</li>
+</ul>
+<hr />
+<h2 id="typical-lifecycle-implementation">Typical Lifecycle Implementation<a class="headerlink" href="#typical-lifecycle-implementation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;Lifecycle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onCreate: Activity created&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onStart</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onStart</span><span class="p">()</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;Lifecycle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onStart: Activity visible&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onResume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onResume</span><span class="p">()</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;Lifecycle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onResume: Activity interactive&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onPause</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onPause</span><span class="p">()</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;Lifecycle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onPause: Focus lost&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onStop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onStop</span><span class="p">()</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;Lifecycle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onStop: No longer visible&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onDestroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onDestroy</span><span class="p">()</span>
+<span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;Lifecycle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onDestroy: Activity destroyed&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
               </article>
             </div>
           
@@ -1348,10 +1608,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/android-interview-prep/", "features": [], "search": "/android-interview-prep/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/android-interview-prep/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

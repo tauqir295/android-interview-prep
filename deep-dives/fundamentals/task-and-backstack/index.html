@@ -8,25 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/task-and-backstack/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/android-interview-prep/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Android Interview Prep</title>
+        <title>Task and backstack - Android Interview Prep</title>
       
     
     
-      <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("/android-interview-prep/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#task-and-back-stack-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Task and backstack
             
           </span>
         </div>
@@ -168,6 +175,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -177,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -195,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -269,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/fundamentals/" class="md-nav__link">
+      <a href="../../../generated/fundamentals/" class="md-nav__link">
         
   
   
@@ -351,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/kotlin/" class="md-nav__link">
+      <a href="../../../generated/kotlin/" class="md-nav__link">
         
   
   
@@ -433,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/compose/" class="md-nav__link">
+      <a href="../../../generated/compose/" class="md-nav__link">
         
   
   
@@ -515,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/architecture/" class="md-nav__link">
+      <a href="../../../generated/architecture/" class="md-nav__link">
         
   
   
@@ -597,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/concurrency/" class="md-nav__link">
+      <a href="../../../generated/concurrency/" class="md-nav__link">
         
   
   
@@ -679,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/networking/" class="md-nav__link">
+      <a href="../../../generated/networking/" class="md-nav__link">
         
   
   
@@ -761,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/performance/" class="md-nav__link">
+      <a href="../../../generated/performance/" class="md-nav__link">
         
   
   
@@ -843,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/cicd/" class="md-nav__link">
+      <a href="../../../generated/cicd/" class="md-nav__link">
         
   
   
@@ -925,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/advanced/" class="md-nav__link">
+      <a href="../../../generated/advanced/" class="md-nav__link">
         
   
   
@@ -1007,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/future-tech/" class="md-nav__link">
+      <a href="../../../generated/future-tech/" class="md-nav__link">
         
   
   
@@ -1089,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/system-design/" class="md-nav__link">
+      <a href="../../../generated/system-design/" class="md-nav__link">
         
   
   
@@ -1171,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/testing/" class="md-nav__link">
+      <a href="../../../generated/testing/" class="md-nav__link">
         
   
   
@@ -1253,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/behavioral/" class="md-nav__link">
+      <a href="../../../generated/behavioral/" class="md-nav__link">
         
   
   
@@ -1289,7 +1298,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1298,6 +1309,93 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Concepts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-and-back-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch and Back Behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-modes-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch Modes (high level)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1310,8 +1408,100 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
+  
 
+
+
+
+<div class="admonition abstract">
+<p><a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a></p>
+</div>
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
+      return;
+    }
+
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default fundamentals link if URL parsing fails.
+  }
+})();
+</script>
+
+<h1 id="task-and-back-stack-deep-dive">Task and Back Stack Deep Dive<a class="headerlink" href="#task-and-back-stack-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A task is a collection of activities arranged in a back stack. Back navigation pops activities in LIFO order and task/intent flags can significantly change behavior.</p>
+<hr />
+<h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Task</strong>: logical user journey container.</li>
+<li><strong>Back stack</strong>: activity stack inside task.</li>
+<li><strong>Recents screen</strong>: task-level entry point.</li>
+</ul>
+<hr />
+<h2 id="launch-and-back-behavior">Launch and Back Behavior<a class="headerlink" href="#launch-and-back-behavior" title="Permanent link">&para;</a></h2>
+<ul>
+<li>New activity usually pushed to current task stack.</li>
+<li>Back pops top activity.</li>
+<li>If root popped, task leaves foreground.</li>
+</ul>
+<hr />
+<h2 id="important-flags">Important Flags<a class="headerlink" href="#important-flags" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>FLAG_ACTIVITY_NEW_TASK</code>: launch in new or existing task by affinity.</li>
+<li><code>FLAG_ACTIVITY_CLEAR_TOP</code>: pop above target if already in stack.</li>
+<li><code>FLAG_ACTIVITY_SINGLE_TOP</code>: reuse top instance via <code>onNewIntent()</code>.</li>
+</ul>
+<hr />
+<h2 id="launch-modes-high-level">Launch Modes (high level)<a class="headerlink" href="#launch-modes-high-level" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>standard</code></li>
+<li><code>singleTop</code></li>
+<li><code>singleTask</code></li>
+<li><code>singleInstance</code> / <code>singleInstancePerTask</code></li>
+</ul>
+<p>Use sparingly; prefer Navigation Component defaults unless specific behavior needed.</p>
+<hr />
+<h2 id="interview-traps">Interview Traps<a class="headerlink" href="#interview-traps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Mixing launch modes and flags can create unexpected UX.</li>
+<li>Deep links may create parallel task flows if misconfigured.</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Understand default stack behavior first, then add flags intentionally.</li>
+<li>Validate navigation with real back/recents testing.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
               </article>
             </div>
           
@@ -1348,10 +1538,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/android-interview-prep/", "features": [], "search": "/android-interview-prep/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/android-interview-prep/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

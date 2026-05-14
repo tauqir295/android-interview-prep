@@ -8,25 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/recyclerview-efficiency/">
+      
       
       
       
         
       
       
-      <link rel="icon" href="/android-interview-prep/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Android Interview Prep</title>
+        <title>Recyclerview efficiency - Android Interview Prep</title>
       
     
     
-      <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/android-interview-prep/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -45,7 +47,7 @@
       
     
     
-    <script>__md_scope=new URL("/android-interview-prep/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#recyclerview-efficiency-deep-dive" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -79,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-header__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -99,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Recyclerview efficiency
             
           </span>
         </div>
@@ -168,6 +175,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -177,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/android-interview-prep/." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
+    <a href="../../.." title="Android Interview Prep" class="md-nav__button md-logo" aria-label="Android Interview Prep" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -195,7 +204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -269,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/fundamentals/" class="md-nav__link">
+      <a href="../../../generated/fundamentals/" class="md-nav__link">
         
   
   
@@ -351,7 +360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/kotlin/" class="md-nav__link">
+      <a href="../../../generated/kotlin/" class="md-nav__link">
         
   
   
@@ -433,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/compose/" class="md-nav__link">
+      <a href="../../../generated/compose/" class="md-nav__link">
         
   
   
@@ -515,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/architecture/" class="md-nav__link">
+      <a href="../../../generated/architecture/" class="md-nav__link">
         
   
   
@@ -597,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/concurrency/" class="md-nav__link">
+      <a href="../../../generated/concurrency/" class="md-nav__link">
         
   
   
@@ -679,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/networking/" class="md-nav__link">
+      <a href="../../../generated/networking/" class="md-nav__link">
         
   
   
@@ -761,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/performance/" class="md-nav__link">
+      <a href="../../../generated/performance/" class="md-nav__link">
         
   
   
@@ -843,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/cicd/" class="md-nav__link">
+      <a href="../../../generated/cicd/" class="md-nav__link">
         
   
   
@@ -925,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/advanced/" class="md-nav__link">
+      <a href="../../../generated/advanced/" class="md-nav__link">
         
   
   
@@ -1007,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/future-tech/" class="md-nav__link">
+      <a href="../../../generated/future-tech/" class="md-nav__link">
         
   
   
@@ -1089,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/system-design/" class="md-nav__link">
+      <a href="../../../generated/system-design/" class="md-nav__link">
         
   
   
@@ -1171,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/testing/" class="md-nav__link">
+      <a href="../../../generated/testing/" class="md-nav__link">
         
   
   
@@ -1253,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/android-interview-prep/generated/behavioral/" class="md-nav__link">
+      <a href="../../../generated/behavioral/" class="md-nav__link">
         
   
   
@@ -1289,7 +1298,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1298,6 +1309,82 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-recyclerview-beats-listview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why RecyclerView Beats ListView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-traps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Traps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1310,8 +1397,105 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
+  
 
+
+
+
+<div class="admonition abstract">
+<p><a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a></p>
+</div>
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
+      return;
+    }
+
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default fundamentals link if URL parsing fails.
+  }
+})();
+</script>
+
+<h1 id="recyclerview-efficiency-deep-dive">RecyclerView Efficiency Deep Dive<a class="headerlink" href="#recyclerview-efficiency-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>RecyclerView is efficient because it reuses view holders, minimizes view inflation, and delegates layout/animations to specialized components.</p>
+<hr />
+<h2 id="why-recyclerview-beats-listview">Why RecyclerView Beats ListView<a class="headerlink" href="#why-recyclerview-beats-listview" title="Permanent link">&para;</a></h2>
+<ul>
+<li>ViewHolder pattern is first-class.</li>
+<li>Better recycling and pooling.</li>
+<li>Flexible <code>LayoutManager</code> implementations.</li>
+<li>Built-in animation and diff-friendly update patterns.</li>
+</ul>
+<hr />
+<h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>RecyclerView</code></li>
+<li><code>Adapter</code></li>
+<li><code>ViewHolder</code></li>
+<li><code>LayoutManager</code></li>
+<li>Optional <code>ItemAnimator</code> and <code>ItemDecoration</code></li>
+</ul>
+<hr />
+<h2 id="performance-practices">Performance Practices<a class="headerlink" href="#performance-practices" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use <code>ListAdapter</code> + <code>DiffUtil</code>.</li>
+<li>Keep <code>onBindViewHolder()</code> lightweight.</li>
+<li>Avoid nested heavy layouts in item XML.</li>
+<li>Use stable IDs when appropriate.</li>
+<li>Pre-size image requests and cache aggressively.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">UserAdapter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ListAdapter</span><span class="o">&lt;</span><span class="n">User</span><span class="p">,</span><span class="w"> </span><span class="n">UserVH</span><span class="o">&gt;</span><span class="p">(</span><span class="n">UserDiff</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreateViewHolder</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span><span class="w"> </span><span class="n">ViewGroup</span><span class="p">,</span><span class="w"> </span><span class="n">viewType</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">):</span><span class="w"> </span><span class="n">UserVH</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">UserVH</span><span class="p">(</span><span class="n">ItemUserBinding</span><span class="p">.</span><span class="na">inflate</span><span class="p">(</span><span class="n">LayoutInflater</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">context</span><span class="p">),</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">))</span>
+
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onBindViewHolder</span><span class="p">(</span><span class="n">holder</span><span class="p">:</span><span class="w"> </span><span class="n">UserVH</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">holder</span><span class="p">.</span><span class="na">bind</span><span class="p">(</span><span class="n">getItem</span><span class="p">(</span><span class="n">position</span><span class="p">))</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="interview-traps">Interview Traps<a class="headerlink" href="#interview-traps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Calling <code>notifyDataSetChanged()</code> too often hurts performance.</li>
+<li>Doing expensive formatting or image decoding in bind causes jank.</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>RecyclerView performance is mostly about efficient bind work and diffed updates.</li>
+<li>Good item layout design matters as much as adapter logic.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
               </article>
             </div>
           
@@ -1348,10 +1532,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/android-interview-prep/", "features": [], "search": "/android-interview-prep/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/android-interview-prep/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

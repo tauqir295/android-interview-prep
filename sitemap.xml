@@ -2,86 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://tauqir295.github.io/android-interview-prep/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/advanced/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/ai-integration/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/androidmanifest/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/aosp-internals/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/anr-and-performance/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/app-vitals/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/app-startup-flow/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/architecture/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/art-vs-dalvik/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/behavioral/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/binder-ipc/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/cicd-pipelines/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/compose/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/context/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/concurrency/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/fragments/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/foldables/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/intents/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/fundamentals/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/looper-and-handler/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/kotlin/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/memory-leaks/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/libraries/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/multitasking-window-focus/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/networking-db/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/permissions/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/offline-first/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/performance-debug/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/recyclerview-efficiency/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/release-management/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/rendering-pipeline/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/security/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/services/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/system-design/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/storage-types/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
     <url>
-         <loc>https://tauqir295.github.io/android-interview-prep/testing/</loc>
-         <lastmod>2026-05-12</lastmod>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/task-and-backstack/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/fundamentals/zygote-process-creation/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/advanced/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/architecture/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/behavioral/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/cicd/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/compose/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/concurrency/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/fundamentals/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/future-tech/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/kotlin/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/networking/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/performance/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/system-design/</loc>
+         <lastmod>2026-05-14</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/testing/</loc>
+         <lastmod>2026-05-14</lastmod>
     </url>
 </urlset>
