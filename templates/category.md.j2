@@ -1,0 +1,24 @@
+# {{ category_title }}
+
+{% for q in questions %}
+
+---
+
+# {{ q.title }}
+
+{% if q.difficulty or q.tags %}
+**Difficulty:** `{{ q.difficulty }}` • **Tags:**
+{% for tag in q.tags %}
+`{{ tag }}`
+{% endfor %}
+{% endif %}
+
+???+ question "{{ q.title }}"
+
+    {{ q.standard_answer | indent(4) }}
+
+    {% if q.deep_dive %}
+    [🚀 See Full Deep Dive]({{ q.deep_dive }})
+    {% endif %}
+
+{% endfor %}

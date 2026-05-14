@@ -9,33 +9,55 @@ theme:
 
 nav:
   - 🏠 Home: index.md
-  - 📱 Fundamentals: fundamentals.md
-  - 🧠 Kotlin: kotlin.md
-  - 🛠️ Jetpack Compose: compose.md
-  - 🏗️ Architecture: architecture.md
-  - ⚡ Concurrency: concurrency.md
-  - 🌐 Networking & Offline: 
-      - Retrofit & Room: networking-db.md
-      - Offline-First: offline-first.md
-  - 🚀 Performance & Vitals: 
-      - Debugging: performance-debug.md
-      - App Vitals: app-vitals.md
+
+  - 📱 Fundamentals:
+      - Overview: generated/fundamentals.md
+
+  - 🧠 Kotlin:
+      - Overview: generated/kotlin.md
+
+  - 🛠️ Jetpack Compose:
+      - Overview: generated/compose.md
+
+  - 🏗️ Architecture:
+      - Overview: generated/architecture.md
+
+  - ⚡ Concurrency:
+      - Overview: generated/concurrency.md
+
+  - 🌐 Networking & Offline:
+      - Overview: generated/networking.md
+
+  - 🚀 Performance & Vitals:
+      - Overview: generated/performance.md
+
   - ⚙️ CI/CD & Release:
-      - Pipelines: cicd-pipelines.md
-      - Release Strategy: release-management.md
-  - 🎓 Advanced & Internals: 
-      - AOSP & OS: aosp-internals.md
-      - Security: security.md
+      - Overview: generated/cicd.md
+
+  - 🎓 Advanced & Internals:
+      - Overview: generated/advanced.md
+
   - 🤖 2026 Tech:
-      - AI & Foldables: ai-integration.md
-  - 🏗️ System Design: system-design.md
-  - 🧪 Testing: testing.md
-  - 💬 Behavioral: behavioral.md
+      - Overview: generated/future-tech.md
+
+  - 🏗️ System Design:
+      - Overview: generated/system-design.md
+
+  - 🧪 Testing:
+      - Overview: generated/testing.md
+
+  - 💬 Behavioral:
+      - Overview: generated/behavioral.md
 
 markdown_extensions:
   - admonition
   - codehilite
+  - pymdownx.highlight  
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.details
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid

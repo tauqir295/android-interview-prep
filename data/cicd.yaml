@@ -1,0 +1,26 @@
+questions:
+  - id: sample-question
+
+    title: Sample Question
+
+    difficulty: beginner
+
+    tags:
+      - android
+
+    standard_answer: >
+      Add a short answer here.
+
+    detailed_explanation: |
+      Add detailed explanation here.
+
+    internals: |
+      Add framework internals here.
+
+    followups:
+      - question: Sample follow-up?
+        answer: Sample answer.
+
+    traps:
+      - title: Common trap
+        content: Add interviewer trap here.
