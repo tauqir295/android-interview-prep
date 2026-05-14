@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Compose Basics and Composable Contract Deep Dive
+## Compose Basics and Composable Contract Deep Dive
 
 ## Overview
 

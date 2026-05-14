@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# ART vs Dalvik Deep Dive
+## ART vs Dalvik Deep Dive
 
 ## Overview
 

@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Navigation in Compose Deep Dive
+## Navigation in Compose Deep Dive
 
 ## Overview
 

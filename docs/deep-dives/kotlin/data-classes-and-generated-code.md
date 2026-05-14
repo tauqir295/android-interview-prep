@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Data Classes and Generated Code Deep Dive
+## Data Classes and Generated Code Deep Dive
 
 ## Overview
 

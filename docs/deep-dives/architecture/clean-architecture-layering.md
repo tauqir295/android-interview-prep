@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Clean Architecture Layering Deep Dive
+## Clean Architecture Layering Deep Dive
 
 ## Overview
 

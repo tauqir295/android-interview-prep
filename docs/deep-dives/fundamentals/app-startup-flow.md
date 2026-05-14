@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# App Startup Flow Deep Dive
+## App Startup Flow Deep Dive
 
 ## Overview
 

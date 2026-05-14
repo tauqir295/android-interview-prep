@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Derived State and rememberUpdatedState Deep Dive
+## Derived State and rememberUpdatedState Deep Dive
 
 ## Overview
 

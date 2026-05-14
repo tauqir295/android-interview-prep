@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Delegation and Delegated Properties Deep Dive
+## Delegation and Delegated Properties Deep Dive
 
 ## Overview
 

@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Object and Companion Objects Deep Dive
+## Object and Companion Objects Deep Dive
 
 ## Overview
 

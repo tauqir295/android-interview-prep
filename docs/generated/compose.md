@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Compose
 
 <script>
@@ -35,14 +40,16 @@
 
 <div id="compose-declarative-ui"></div>
 
-# What makes Jetpack Compose a declarative UI toolkit?
+## What makes Jetpack Compose a declarative UI toolkit?
 
-**Difficulty:** `beginner` • **Tags:**
-`compose`
-`fundamentals`
-`ui`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+  <span class="question-badge question-badge--tag">ui</span>
+</div>
 
-??? question "What makes Jetpack Compose a declarative UI toolkit?"
+??? question "View Answer"
 
     Compose is declarative because UI is a function of state.
 
@@ -57,21 +64,23 @@
     - easier unidirectional data flow patterns
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#compose-declarative-ui)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#compose-declarative-ui">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="composable-function"></div>
 
-# What is a composable function?
+## What is a composable function?
 
-**Difficulty:** `beginner` • **Tags:**
-`compose`
-`composables`
-`ui`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">composables</span>
+  <span class="question-badge question-badge--tag">ui</span>
+</div>
 
-??? question "What is a composable function?"
+??? question "View Answer"
 
     A composable function is a Kotlin function annotated with `@Composable`
     that emits UI into the Compose tree.
@@ -84,21 +93,23 @@
     - participates in recomposition and skipping
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-function)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-function">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="composable-lifecycle"></div>
 
-# How should you think about composable lifecycle compared to Activity lifecycle?
+## How should you think about composable lifecycle compared to Activity lifecycle?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`lifecycle`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "How should you think about composable lifecycle compared to Activity lifecycle?"
+??? question "View Answer"
 
     Composables do not have a lifecycle identical to Activities or Fragments.
 
@@ -112,21 +123,23 @@
     - business state should live in ViewModel/domain layers
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-lifecycle)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-lifecycle">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="previews-in-compose"></div>
 
-# What are Compose previews and their limitations?
+## What are Compose previews and their limitations?
 
-**Difficulty:** `beginner` • **Tags:**
-`compose`
-`tooling`
-`previews`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">tooling</span>
+  <span class="question-badge question-badge--tag">previews</span>
+</div>
 
-??? question "What are Compose previews and their limitations?"
+??? question "View Answer"
 
     Previews render composables in Android Studio without running full app flow.
 
@@ -140,21 +153,23 @@
     - not a replacement for UI tests
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#previews-in-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#previews-in-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="mutable-state-in-compose"></div>
 
-# What is `MutableState` in Compose?
+## What is `MutableState` in Compose?
 
-**Difficulty:** `beginner` • **Tags:**
-`compose`
-`state`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "What is `MutableState` in Compose?"
+??? question "View Answer"
 
     `MutableState<T>` is an observable state holder integrated with Compose snapshots.
 
@@ -168,21 +183,23 @@
     - avoid mutating nested mutable objects without state wrappers
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-and-remember/#mutable-state-in-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-and-remember/#mutable-state-in-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="remember-vs-rememberSaveable"></div>
 
-# What is the difference between `remember` and `rememberSaveable`?
+## What is the difference between `remember` and `rememberSaveable`?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`state`
-`configuration`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">configuration</span>
+</div>
 
-??? question "What is the difference between `remember` and `rememberSaveable`?"
+??? question "View Answer"
 
     `remember` keeps state across recompositions while the composable stays in composition.
 
@@ -196,21 +213,23 @@
     - long-lived/business state still belongs in ViewModel
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-and-remember/#remember-vs-rememberSaveable)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-and-remember/#remember-vs-rememberSaveable">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="remember-key-parameter"></div>
 
-# Why do keys matter in `remember`?
+## Why do keys matter in `remember`?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`remember`
-`recomposition`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">remember</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+</div>
 
-??? question "Why do keys matter in `remember`?"
+??? question "View Answer"
 
     Keys control when remembered value should be recreated.
 
@@ -224,21 +243,23 @@
     - same concept appears in list item keys
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-and-remember/#remember-key-parameter)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-and-remember/#remember-key-parameter">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="state-hoisting"></div>
 
-# What is state hoisting in Compose?
+## What is state hoisting in Compose?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`state`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "What is state hoisting in Compose?"
+??? question "View Answer"
 
     State hoisting means moving state ownership to a higher-level composable
     and passing state + events down.
@@ -251,21 +272,23 @@
     - simplifies screen-level orchestration with ViewModel
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#state-hoisting)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#state-hoisting">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="unidirectional-data-flow-compose"></div>
 
-# How does unidirectional data flow apply in Compose UI architecture?
+## How does unidirectional data flow apply in Compose UI architecture?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`architecture`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "How does unidirectional data flow apply in Compose UI architecture?"
+??? question "View Answer"
 
     In UDF, state flows downward and events flow upward.
 
@@ -279,21 +302,23 @@
     This reduces hidden mutations and makes behavior predictable.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#unidirectional-data-flow-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#unidirectional-data-flow-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="ui-state-modeling-compose"></div>
 
-# How should UI state be modeled for complex Compose screens?
+## How should UI state be modeled for complex Compose screens?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`architecture`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "How should UI state be modeled for complex Compose screens?"
+??? question "View Answer"
 
     Model screen state as immutable data classes with explicit sub-states
     (loading, content, error, empty).
@@ -306,21 +331,23 @@
     - design state to match rendering branches
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#ui-state-modeling-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#ui-state-modeling-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="event-handling-compose"></div>
 
-# What are best practices for event handling in Compose?
+## What are best practices for event handling in Compose?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`architecture`
-`events`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">events</span>
+</div>
 
-??? question "What are best practices for event handling in Compose?"
+??? question "View Answer"
 
     Events should be explicit callbacks from UI to state owner.
 
@@ -332,21 +359,23 @@
     - keep event handling idempotent when possible
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#event-handling-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#event-handling-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="recomposition-definition"></div>
 
-# What is recomposition in Jetpack Compose?
+## What is recomposition in Jetpack Compose?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`recomposition`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "What is recomposition in Jetpack Compose?"
+??? question "View Answer"
 
     Recomposition is re-execution of composable functions whose observed state changed.
 
@@ -360,21 +389,23 @@
     - skip optimization for unchanged inputs
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#recomposition-definition)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#recomposition-definition">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="what-triggers-recomposition"></div>
 
-# What triggers recomposition?
+## What triggers recomposition?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`recomposition`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "What triggers recomposition?"
+??? question "View Answer"
 
     Recomposition is triggered when snapshot-observed state used by a composable changes.
 
@@ -388,21 +419,23 @@
     Not every state change causes full-screen recomposition.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#what-triggers-recomposition)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#what-triggers-recomposition">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="smart-recomposition"></div>
 
-# What is smart recomposition?
+## What is smart recomposition?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`recomposition`
-`optimization`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+  <span class="question-badge question-badge--tag">optimization</span>
+</div>
 
-??? question "What is smart recomposition?"
+??? question "View Answer"
 
     Smart recomposition means Compose re-runs only invalidated scopes,
     not the entire UI tree.
@@ -415,21 +448,23 @@
     - skipping groups when inputs are stable and unchanged
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#smart-recomposition)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#smart-recomposition">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="skip-optimization"></div>
 
-# What is skip optimization in Compose?
+## What is skip optimization in Compose?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`recomposition`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "What is skip optimization in Compose?"
+??? question "View Answer"
 
     Skip optimization lets Compose avoid re-running a composable group
     when its inputs are considered unchanged.
@@ -442,21 +477,23 @@
     - metrics/tools can reveal skip behavior
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#skip-optimization)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#skip-optimization">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="unstable-parameter-recomposition"></div>
 
-# Why do unstable parameters often cause extra recomposition?
+## Why do unstable parameters often cause extra recomposition?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`stability`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">stability</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "Why do unstable parameters often cause extra recomposition?"
+??? question "View Answer"
 
     Unstable types are assumed to potentially change in ways Compose cannot safely infer,
     so groups become less skippable.
@@ -469,21 +506,23 @@
     - pressure on frame budget
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#unstable-parameter-recomposition)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#unstable-parameter-recomposition">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="prevent-unnecessary-recomposition"></div>
 
-# How do you reduce unnecessary recomposition in production apps?
+## How do you reduce unnecessary recomposition in production apps?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`recomposition`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "How do you reduce unnecessary recomposition in production apps?"
+??? question "View Answer"
 
     Reduce recomposition by improving state boundaries and input stability.
 
@@ -496,21 +535,23 @@
     - profile with layout inspector and tracing
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#prevent-unnecessary-recomposition)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#prevent-unnecessary-recomposition">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="snapshot-system"></div>
 
-# What is the Compose snapshot system?
+## What is the Compose snapshot system?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`snapshot`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">snapshot</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "What is the Compose snapshot system?"
+??? question "View Answer"
 
     Snapshots are Compose runtime's state consistency mechanism.
 
@@ -525,21 +566,23 @@
     - foundation for automatic UI reactivity
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-system)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-system">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="snapshot-state-read-write"></div>
 
-# How are state reads and writes observed by Compose runtime?
+## How are state reads and writes observed by Compose runtime?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`snapshot`
-`recomposition`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">snapshot</span>
+  <span class="question-badge question-badge--tag">recomposition</span>
+</div>
 
-??? question "How are state reads and writes observed by Compose runtime?"
+??? question "View Answer"
 
     During composition, runtime records state reads per scope.
 
@@ -554,21 +597,23 @@
     - better performance than coarse full-tree updates
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-state-read-write)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-state-read-write">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="side-effects-overview"></div>
 
-# Why does Compose provide side-effect APIs?
+## Why does Compose provide side-effect APIs?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`side-effects`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "Why does Compose provide side-effect APIs?"
+??? question "View Answer"
 
     Composables should describe UI, but apps still need imperative work
     (coroutines, listeners, analytics, cleanup).
@@ -582,21 +627,23 @@
     - keep effects scoped and cancelable
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/side-effects-overview/#side-effects-overview)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/side-effects-overview/#side-effects-overview">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="sideeffect-usage"></div>
 
-# When should `SideEffect` be used?
+## When should `SideEffect` be used?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`side-effects`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "When should `SideEffect` be used?"
+??? question "View Answer"
 
     `SideEffect` runs after every successful recomposition commit.
 
@@ -610,21 +657,23 @@
     - prefer `LaunchedEffect` for suspend work
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/side-effects-overview/#sideeffect-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/side-effects-overview/#sideeffect-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="produceState-usage"></div>
 
-# What problem does `produceState` solve?
+## What problem does `produceState` solve?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`state`
-`side-effects`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+</div>
 
-??? question "What problem does `produceState` solve?"
+??? question "View Answer"
 
     `produceState` bridges external async sources into Compose `State<T>`.
 
@@ -637,21 +686,23 @@
     - lifecycle-scoped loading without manual job wiring
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/side-effects-overview/#produceState-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/side-effects-overview/#produceState-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="launchedeffect-usage"></div>
 
-# How does `LaunchedEffect` work and when should you use it?
+## How does `LaunchedEffect` work and when should you use it?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`side-effects`
-`coroutines`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+</div>
 
-??? question "How does `LaunchedEffect` work and when should you use it?"
+??? question "View Answer"
 
     `LaunchedEffect(keys...)` starts a coroutine when entering composition,
     and restarts it when keys change.
@@ -666,21 +717,23 @@
     - avoid using unstable/changing keys unintentionally
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#launchedeffect-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#launchedeffect-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="disposableeffect-usage"></div>
 
-# When do you use `DisposableEffect`?
+## When do you use `DisposableEffect`?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`side-effects`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "When do you use `DisposableEffect`?"
+??? question "View Answer"
 
     `DisposableEffect(keys...)` is for registering something that needs cleanup,
     such as listeners or observers.
@@ -694,21 +747,23 @@
     - resource attach/detach tied to composition
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#disposableeffect-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#disposableeffect-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="rememberCoroutineScope-usage"></div>
 
-# What is `rememberCoroutineScope` used for?
+## What is `rememberCoroutineScope` used for?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`coroutines`
-`side-effects`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+</div>
 
-??? question "What is `rememberCoroutineScope` used for?"
+??? question "View Answer"
 
     `rememberCoroutineScope` returns a composition-aware `CoroutineScope`
     you can use from callbacks like button clicks.
@@ -721,21 +776,23 @@
     - still keep business logic in ViewModel when appropriate
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#rememberCoroutineScope-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#rememberCoroutineScope-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="derivedStateOf-purpose"></div>
 
-# What is `derivedStateOf` and when does it help?
+## What is `derivedStateOf` and when does it help?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`state`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "What is `derivedStateOf` and when does it help?"
+??? question "View Answer"
 
     `derivedStateOf` memoizes derived values from other state objects
     and recalculates only when dependencies change.
@@ -748,21 +805,23 @@
     - computed value is consumed by multiple UI branches
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#derivedStateOf-purpose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#derivedStateOf-purpose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="rememberUpdatedState-purpose"></div>
 
-# Why is `rememberUpdatedState` important in long-lived effects?
+## Why is `rememberUpdatedState` important in long-lived effects?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`side-effects`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">side-effects</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "Why is `rememberUpdatedState` important in long-lived effects?"
+??? question "View Answer"
 
     `rememberUpdatedState` gives effects access to the latest lambda/value
     without restarting the effect.
@@ -776,21 +835,23 @@
     - effect reads latest callback safely
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#rememberUpdatedState-purpose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#rememberUpdatedState-purpose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="compositionlocal-purpose"></div>
 
-# What is `CompositionLocal` and when should it be used?
+## What is `CompositionLocal` and when should it be used?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`architecture`
-`compositionlocal`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">compositionlocal</span>
+</div>
 
-??? question "What is `CompositionLocal` and when should it be used?"
+??? question "View Answer"
 
     `CompositionLocal` passes values implicitly down the composition tree
     without threading parameters through each layer.
@@ -804,21 +865,23 @@
     - overuse can hurt readability and testability
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/compositionlocal-and-context-propagation/#compositionlocal-purpose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compositionlocal-and-context-propagation/#compositionlocal-purpose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="stateflow-with-compose"></div>
 
-# How do you integrate `StateFlow` with Compose UI?
+## How do you integrate `StateFlow` with Compose UI?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`stateflow`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">stateflow</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "How do you integrate `StateFlow` with Compose UI?"
+??? question "View Answer"
 
     Expose UI state from ViewModel as `StateFlow<UiState>` and collect in UI.
 
@@ -832,21 +895,23 @@
     - events flow back via callbacks
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#stateflow-with-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#stateflow-with-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="collectAsState-vs-collectAsStateWithLifecycle"></div>
 
-# `collectAsState` vs `collectAsStateWithLifecycle` - what is the difference?
+## `collectAsState` vs `collectAsStateWithLifecycle` - what is the difference?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`stateflow`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">stateflow</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "`collectAsState` vs `collectAsStateWithLifecycle` - what is the difference?"
+??? question "View Answer"
 
     Both convert Flow emissions to Compose `State`.
 
@@ -860,21 +925,23 @@
     - prevents background collection leaks/waste
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#collectAsState-vs-collectAsStateWithLifecycle)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#collectAsState-vs-collectAsStateWithLifecycle">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="snapshotFlow-usage"></div>
 
-# What is `snapshotFlow` and when would you use it?
+## What is `snapshotFlow` and when would you use it?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`flow`
-`snapshot`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">flow</span>
+  <span class="question-badge question-badge--tag">snapshot</span>
+</div>
 
-??? question "What is `snapshotFlow` and when would you use it?"
+??? question "View Answer"
 
     `snapshotFlow` converts reads of Compose snapshot state into a cold Flow.
 
@@ -887,21 +954,23 @@
     - bridge Compose state to repository/analytics layers
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#snapshotFlow-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#snapshotFlow-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="stability-in-compose"></div>
 
-# What does stability mean in Compose?
+## What does stability mean in Compose?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`stability`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">stability</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "What does stability mean in Compose?"
+??? question "View Answer"
 
     Stability describes whether a type can be reliably checked for meaningful change
     to support skipping recomposition.
@@ -915,21 +984,23 @@
     - mutable public properties often hurt stability
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stability-in-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stability-in-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="stable-vs-immutable"></div>
 
-# What is the difference between `@Stable` and `@Immutable`?
+## What is the difference between `@Stable` and `@Immutable`?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`stability`
-`annotations`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">stability</span>
+  <span class="question-badge question-badge--tag">annotations</span>
+</div>
 
-??? question "What is the difference between `@Stable` and `@Immutable`?"
+??? question "View Answer"
 
     `@Immutable` indicates object state does not change after construction.
 
@@ -942,21 +1013,23 @@
     - misuse can lead to stale UI or incorrect assumptions
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stable-vs-immutable)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stable-vs-immutable">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="compose-compiler-role"></div>
 
-# What is the role of the Compose compiler?
+## What is the role of the Compose compiler?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`compiler`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "What is the role of the Compose compiler?"
+??? question "View Answer"
 
     The Compose compiler transforms composable code into runtime calls
     that manage composition, recomposition, and skipping.
@@ -969,21 +1042,23 @@
     - enables tooling metrics for analysis
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#compose-compiler-role)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#compose-compiler-role">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="slot-table-purpose"></div>
 
-# What is the Slot Table in Compose runtime?
+## What is the Slot Table in Compose runtime?
 
-**Difficulty:** `staff` • **Tags:**
-`compose`
-`runtime`
-`slot-table`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+  <span class="question-badge question-badge--tag">slot-table</span>
+</div>
 
-??? question "What is the Slot Table in Compose runtime?"
+??? question "View Answer"
 
     Slot Table is the runtime data structure that stores composition groups,
     remembered values, and positional metadata.
@@ -997,21 +1072,23 @@
     - powers `remember` and node reuse behavior
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/slot-table-and-runtime-internals/#slot-table-purpose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/slot-table-and-runtime-internals/#slot-table-purpose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="composer-and-applier"></div>
 
-# What are `Composer` and `Applier` in Compose internals?
+## What are `Composer` and `Applier` in Compose internals?
 
-**Difficulty:** `staff` • **Tags:**
-`compose`
-`internals`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">internals</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "What are `Composer` and `Applier` in Compose internals?"
+??? question "View Answer"
 
     `Composer` records and reconciles composition operations.
     `Applier` applies resulting tree changes to target UI tree implementation.
@@ -1023,21 +1100,23 @@
     - separation supports different tree backends
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#composer-and-applier)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#composer-and-applier">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="compose-runtime-phases"></div>
 
-# What are the major runtime phases in Compose frame updates?
+## What are the major runtime phases in Compose frame updates?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`runtime`
-`rendering`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+</div>
 
-??? question "What are the major runtime phases in Compose frame updates?"
+??? question "View Answer"
 
     Compose update pipeline can be framed as:
 
@@ -1049,21 +1128,23 @@
     when only size/visual invalidations occur.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#compose-runtime-phases)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#compose-runtime-phases">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="modifier-chain-order"></div>
 
-# Why does modifier order matter in Compose?
+## Why does modifier order matter in Compose?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`modifier`
-`ui`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">modifier</span>
+  <span class="question-badge question-badge--tag">ui</span>
+</div>
 
-??? question "Why does modifier order matter in Compose?"
+??? question "View Answer"
 
     Modifiers are applied in sequence, and each step wraps or transforms behavior.
 
@@ -1077,21 +1158,23 @@
     Explain with simple examples like `padding` before vs after `clickable`.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/modifier-chain-and-node-graph/#modifier-chain-order)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/modifier-chain-and-node-graph/#modifier-chain-order">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="custom-layout-basics"></div>
 
-# What should you know before writing custom layouts in Compose?
+## What should you know before writing custom layouts in Compose?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`layout`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">layout</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "What should you know before writing custom layouts in Compose?"
+??? question "View Answer"
 
     Understand constraints-driven measurement and explicit placement APIs.
 
@@ -1103,21 +1186,23 @@
     - preserve predictable intrinsic sizing behavior
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#custom-layout-basics)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#custom-layout-basics">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="measure-layout-draw-phases"></div>
 
-# Explain measure, layout, and draw phases in Compose.
+## Explain measure, layout, and draw phases in Compose.
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`layout`
-`rendering`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">layout</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+</div>
 
-??? question "Explain measure, layout, and draw phases in Compose."
+??? question "View Answer"
 
     Measure determines child sizes under constraints.
     Layout places children in parent coordinates.
@@ -1129,21 +1214,23 @@
     - phase-specific invalidations are key for performance
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#measure-layout-draw-phases)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#measure-layout-draw-phases">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="lazycolumn-performance"></div>
 
-# How do you optimize `LazyColumn` performance?
+## How do you optimize `LazyColumn` performance?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`lazycolumn`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">lazycolumn</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "How do you optimize `LazyColumn` performance?"
+??? question "View Answer"
 
     Optimize item stability, keys, and per-item work.
 
@@ -1156,21 +1243,23 @@
     - profile jank with real datasets
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#lazycolumn-performance)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#lazycolumn-performance">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="keys-in-lazycolumn"></div>
 
-# Why are keys important in `LazyColumn` items?
+## Why are keys important in `LazyColumn` items?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`lazycolumn`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">lazycolumn</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "Why are keys important in `LazyColumn` items?"
+??? question "View Answer"
 
     Keys preserve item identity across insertions, deletions, and moves.
 
@@ -1182,21 +1271,23 @@
     - scroll position behavior may degrade
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#keys-in-lazycolumn)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#keys-in-lazycolumn">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="navigation-compose-basics"></div>
 
-# What are core principles of navigation in Compose?
+## What are core principles of navigation in Compose?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`navigation`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">navigation</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "What are core principles of navigation in Compose?"
+??? question "View Answer"
 
     Use a route graph with explicit destinations and argument contracts.
 
@@ -1208,21 +1299,23 @@
     - support deep links and back stack predictability
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-compose-basics)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-compose-basics">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="navigation-single-source-of-truth"></div>
 
-# How do you keep navigation maintainable at scale in Compose apps?
+## How do you keep navigation maintainable at scale in Compose apps?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`navigation`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">navigation</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "How do you keep navigation maintainable at scale in Compose apps?"
+??? question "View Answer"
 
     Treat destinations as typed contracts and centralize route definitions.
 
@@ -1234,21 +1327,23 @@
     - make back stack and result passing explicit
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-single-source-of-truth)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-single-source-of-truth">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="theming-material3-compose"></div>
 
-# How does theming work in Compose with Material 3?
+## How does theming work in Compose with Material 3?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`theming`
-`material3`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">theming</span>
+  <span class="question-badge question-badge--tag">material3</span>
+</div>
 
-??? question "How does theming work in Compose with Material 3?"
+??? question "View Answer"
 
     Material theme is provided via composition locals (color scheme,
     typography, shapes) and consumed by Material components.
@@ -1261,21 +1356,23 @@
     - avoid hardcoded colors in feature UI
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/theming-and-material3/#theming-material3-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/theming-and-material3/#theming-material3-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="animations-compose"></div>
 
-# What animation APIs should you discuss in Compose interviews?
+## What animation APIs should you discuss in Compose interviews?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`animation`
-`ui`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">animation</span>
+  <span class="question-badge question-badge--tag">ui</span>
+</div>
 
-??? question "What animation APIs should you discuss in Compose interviews?"
+??? question "View Answer"
 
     Focus on choosing API by use case complexity.
 
@@ -1287,21 +1384,23 @@
     - infinite/repeatable animations for decorative motion
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/animation-in-compose/#animations-compose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/animation-in-compose/#animations-compose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="compose-testing-strategy"></div>
 
-# What is a strong testing strategy for Compose UI?
+## What is a strong testing strategy for Compose UI?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`testing`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">testing</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "What is a strong testing strategy for Compose UI?"
+??? question "View Answer"
 
     Use a testing pyramid: state logic tests, composable behavior tests,
     and targeted integration/end-to-end flows.
@@ -1314,21 +1413,23 @@
     - keep UI tests focused on high-value user journeys
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-testing-strategy)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-testing-strategy">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="semantics-and-test-tags"></div>
 
-# How do semantics and test tags help Compose testing?
+## How do semantics and test tags help Compose testing?
 
-**Difficulty:** `intermediate` • **Tags:**
-`compose`
-`testing`
-`semantics`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">testing</span>
+  <span class="question-badge question-badge--tag">semantics</span>
+</div>
 
-??? question "How do semantics and test tags help Compose testing?"
+??? question "View Answer"
 
     Compose tests query semantics tree, not view IDs.
 
@@ -1341,21 +1442,23 @@
     - keep tags unique within test scope
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#semantics-and-test-tags)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#semantics-and-test-tags">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="androidview-interop"></div>
 
-# When and how should you use `AndroidView` interop?
+## When and how should you use `AndroidView` interop?
 
-**Difficulty:** `senior` • **Tags:**
-`compose`
-`interoperability`
-`views`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">interoperability</span>
+  <span class="question-badge question-badge--tag">views</span>
+</div>
 
-??? question "When and how should you use `AndroidView` interop?"
+??? question "View Answer"
 
     `AndroidView` embeds legacy View-based UI inside Compose.
 
@@ -1368,21 +1471,23 @@
     - keep interop boundaries explicit and temporary when possible
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#androidview-interop)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#androidview-interop">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="compose-performance-checklist"></div>
 
-# What is your practical Compose performance checklist?
+## What is your practical Compose performance checklist?
 
-**Difficulty:** `staff` • **Tags:**
-`compose`
-`performance`
-`optimization`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">optimization</span>
+</div>
 
-??? question "What is your practical Compose performance checklist?"
+??? question "View Answer"
 
     A strong answer balances architecture and runtime-level tuning.
 
@@ -1395,5 +1500,5 @@
     - measure with tracing, profiler, and macrobenchmark
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-performance-checklist)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-performance-checklist">🚀 See Full Deep Dive</a>
 

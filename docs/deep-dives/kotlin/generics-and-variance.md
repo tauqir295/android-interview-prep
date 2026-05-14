@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Generics and Variance Deep Dive
+## Generics and Variance Deep Dive
 
 ## Overview
 

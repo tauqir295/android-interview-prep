@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Slot Table and Runtime Internals Deep Dive
+## Slot Table and Runtime Internals Deep Dive
 
 ## Overview
 

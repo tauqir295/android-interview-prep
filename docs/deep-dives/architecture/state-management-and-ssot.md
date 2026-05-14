@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# State Management and SSOT Deep Dive
+## State Management and SSOT Deep Dive
 
 ## Overview
 

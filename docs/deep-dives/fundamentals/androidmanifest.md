@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# AndroidManifest Deep Dive
+## AndroidManifest Deep Dive
 
 ## Overview
 

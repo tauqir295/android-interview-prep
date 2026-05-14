@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Higher-Order Functions and Lambdas Deep Dive
+## Higher-Order Functions and Lambdas Deep Dive
 
 ## Overview
 

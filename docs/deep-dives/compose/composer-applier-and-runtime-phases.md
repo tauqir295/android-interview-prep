@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Composer, Applier, and Runtime Phases Deep Dive
+## Composer, Applier, and Runtime Phases Deep Dive
 
 ## Overview
 

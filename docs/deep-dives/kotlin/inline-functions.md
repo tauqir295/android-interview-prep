@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Inline Functions Deep Dive
+## Inline Functions Deep Dive
 
 ## Overview
 

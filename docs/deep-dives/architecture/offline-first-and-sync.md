@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Offline-First and Sync Deep Dive
+## Offline-First and Sync Deep Dive
 
 ## Overview
 

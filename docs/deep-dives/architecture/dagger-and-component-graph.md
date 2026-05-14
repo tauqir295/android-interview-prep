@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Dagger and Component Graph Deep Dive
+## Dagger and Component Graph Deep Dive
 
 ## Overview
 

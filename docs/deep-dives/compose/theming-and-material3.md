@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Theming and Material 3 Deep Dive
+## Theming and Material 3 Deep Dive
 
 ## Overview
 

@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Service Locator and Anti-Patterns Deep Dive
+## Service Locator and Anti-Patterns Deep Dive
 
 ## Overview
 

@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Binder IPC Deep Dive
+## Binder IPC Deep Dive
 
 ## Overview
 

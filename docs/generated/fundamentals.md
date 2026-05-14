@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Fundamentals
 
 <script>
@@ -35,14 +40,16 @@
 
 <div id="activity-lifecycle-overview"></div>
 
-# What is the Activity Lifecycle?
+## What is the Activity Lifecycle?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`lifecycle`
-`fundamentals`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
 
-??? question "What is the Activity Lifecycle?"
+??? question "View Answer"
 
     The Activity Lifecycle is the sequence of states an Android Activity
     transitions through from creation to destruction.
@@ -62,21 +69,23 @@
     - onDestroy()
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#activity-lifecycle-overview)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#activity-lifecycle-overview">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="onstart-vs-onresume"></div>
 
-# What's the difference between onStart() and onResume()?
+## What's the difference between onStart() and onResume()?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`lifecycle`
-`callbacks`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">callbacks</span>
+</div>
 
-??? question "What's the difference between onStart() and onResume()?"
+??? question "View Answer"
 
     onStart(): Called when Activity becomes visible to user.
     - Window not yet in focus
@@ -91,21 +100,23 @@
     Simple rule: onStart = visible, onResume = interactive.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onstart-vs-onresume)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onstart-vs-onresume">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="onsaved-instance-state"></div>
 
-# What is savedInstanceState and when is it called?
+## What is savedInstanceState and when is it called?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`lifecycle`
-`state-preservation`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">state-preservation</span>
+</div>
 
-??? question "What is savedInstanceState and when is it called?"
+??? question "View Answer"
 
     savedInstanceState is a Bundle used to preserve Activity state during
     predictable destruction (rotation, low memory).
@@ -124,21 +135,23 @@
     Note: NOT called during activity finish() or user back press.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onsaved-instance-state)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onsaved-instance-state">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="onconfig-change"></div>
 
-# What happens during configuration changes (rotation)?
+## What happens during configuration changes (rotation)?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`lifecycle`
-`configuration`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">configuration</span>
+</div>
 
-??? question "What happens during configuration changes (rotation)?"
+??? question "View Answer"
 
     When device is rotated or configuration changes:
     1. onPause() → onSaveInstanceState() → onStop() → onDestroy()
@@ -155,21 +168,23 @@
     Best practice: Use ViewModel for non-UI state.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onconfig-change)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onconfig-change">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="process-death-handling"></div>
 
-# How does Android handle process death?
+## How does Android handle process death?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`lifecycle`
-`process-management`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">process-management</span>
+</div>
 
-??? question "How does Android handle process death?"
+??? question "View Answer"
 
     Process death occurs when Android kills app to free memory
     (no warning, no lifecycle callbacks).
@@ -188,21 +203,23 @@
     - Use Hilt for dependency injection
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#process-death-handling)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#process-death-handling">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="lifecycle-callbacks-order"></div>
 
-# What is the exact order of lifecycle callbacks?
+## What is the exact order of lifecycle callbacks?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`lifecycle`
-`callbacks`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">callbacks</span>
+</div>
 
-??? question "What is the exact order of lifecycle callbacks?"
+??? question "View Answer"
 
     NORMAL SEQUENCE:
     onCreate() → onStart() → onResume() → (user interaction) →
@@ -222,21 +239,23 @@
     onDestroy() → onCreate() → onStart() → onResume()
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#lifecycle-callbacks-order)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#lifecycle-callbacks-order">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="intent-explicit-implicit"></div>
 
-# What's the difference between explicit and implicit intents?
+## What's the difference between explicit and implicit intents?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`intents`
-`ipc`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+</div>
 
-??? question "What's the difference between explicit and implicit intents?"
+??? question "View Answer"
 
     EXPLICIT INTENT:
     - Specifies exact component (Activity/Service)
@@ -257,21 +276,23 @@
     Intent(Intent.ACTION_VIEW, Uri.parse("https://..."))
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/intents/#intent-explicit-implicit)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-explicit-implicit">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="intent-filters"></div>
 
-# How do intent filters work?
+## How do intent filters work?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`intents`
-`manifest`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">manifest</span>
+</div>
 
-??? question "How do intent filters work?"
+??? question "View Answer"
 
     Intent filters declare which implicit intents a component can handle.
 
@@ -293,21 +314,23 @@
     - ACTION_VIEW + image/* MIME → Gallery
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/intents/#intent-filters)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-filters">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="intent-resolution"></div>
 
-# How does intent resolution work?
+## How does intent resolution work?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`intents`
-`ipc`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+</div>
 
-??? question "How does intent resolution work?"
+??? question "View Answer"
 
     Intent resolution is Android's process of finding the target
     component for an implicit intent.
@@ -329,21 +352,23 @@
     Optimization: Use explicit intents for internal communication.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/intents/#intent-resolution)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-resolution">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="intent-flags"></div>
 
-# What are common intent flags and their purposes?
+## What are common intent flags and their purposes?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`intents`
-`backstack`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">backstack</span>
+</div>
 
-??? question "What are common intent flags and their purposes?"
+??? question "View Answer"
 
     FLAG_ACTIVITY_NEW_TASK:
     - Starts activity in new task
@@ -365,21 +390,23 @@
     - Clears entire task when new activity starts
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/intents/#intent-flags)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-flags">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="pending-intent"></div>
 
-# What is a PendingIntent and when should you use it?
+## What is a PendingIntent and when should you use it?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`intents`
-`notifications`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">notifications</span>
+</div>
 
-??? question "What is a PendingIntent and when should you use it?"
+??? question "View Answer"
 
     PendingIntent wraps an intent to be executed later by another app.
 
@@ -401,21 +428,23 @@
     Always provide proper flags when creating.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/intents/#pending-intent)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#pending-intent">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="fragment-lifecycle"></div>
 
-# What is the Fragment lifecycle?
+## What is the Fragment lifecycle?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`fragments`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "What is the Fragment lifecycle?"
+??? question "View Answer"
 
     Fragment lifecycle is similar to Activity but with additional callbacks.
 
@@ -436,21 +465,23 @@
     - Dependent on host Activity
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-lifecycle)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-lifecycle">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="fragment-vs-activity"></div>
 
-# What are the differences between Fragments and Activities?
+## What are the differences between Fragments and Activities?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`fragments`
-`architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
 
-??? question "What are the differences between Fragments and Activities?"
+??? question "View Answer"
 
     ACTIVITY:
     - Screen-level UI component
@@ -478,21 +509,23 @@
     - Navigation between major app sections
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-vs-activity)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-vs-activity">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="fragment-communication"></div>
 
-# How do fragments communicate with each other?
+## How do fragments communicate with each other?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`fragments`
-`communication`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">communication</span>
+</div>
 
-??? question "How do fragments communicate with each other?"
+??? question "View Answer"
 
     APPROACH 1: Shared ViewModel (BEST PRACTICE)
     - Both fragments access same ViewModel
@@ -518,21 +551,23 @@
     Modern approach: Use ViewModel + LiveData.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-communication)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-communication">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="fragment-back-stack"></div>
 
-# How does fragment back stack work?
+## How does fragment back stack work?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`fragments`
-`backstack`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">backstack</span>
+</div>
 
-??? question "How does fragment back stack work?"
+??? question "View Answer"
 
     Fragment back stack is managed by FragmentManager.
 
@@ -561,21 +596,23 @@
     Each Activity has own FragmentManager back stack.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-back-stack)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-back-stack">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="fragment-arguments"></div>
 
-# What's the best way to pass data to a Fragment?
+## What's the best way to pass data to a Fragment?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`fragments`
-`data-passing`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">data-passing</span>
+</div>
 
-??? question "What's the best way to pass data to a Fragment?"
+??? question "View Answer"
 
     BEST PRACTICE: Use Bundle with constants
 
@@ -605,21 +642,23 @@
     - Access fragments without factory method
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-arguments)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-arguments">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="context-what-is"></div>
 
-# What is Context and what are its types?
+## What is Context and what are its types?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`context`
-`fundamentals`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
 
-??? question "What is Context and what are its types?"
+??? question "View Answer"
 
     Context is an abstract class that provides access to app resources
     and system services.
@@ -647,21 +686,23 @@
     - Show toasts, dialogs
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/context/#context-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#context-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="context-memory-leaks"></div>
 
-# How can Context cause memory leaks?
+## How can Context cause memory leaks?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`context`
-`memory`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">memory</span>
+</div>
 
-??? question "How can Context cause memory leaks?"
+??? question "View Answer"
 
     Context memory leaks occur when Activity Context is referenced
     by long-lived objects.
@@ -695,21 +736,23 @@
     Memory leak chain: Activity → thread → singleton → leak
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/context/#context-memory-leaks)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#context-memory-leaks">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="application-context-vs-activity-context"></div>
 
-# When should you use Application Context vs Activity Context?
+## When should you use Application Context vs Activity Context?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`context`
-`best-practices`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">best-practices</span>
+</div>
 
-??? question "When should you use Application Context vs Activity Context?"
+??? question "View Answer"
 
     USE APPLICATION CONTEXT:
     - Get SharedPreferences
@@ -739,21 +782,23 @@
     when UI operation is tied to current Activity.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/context/#application-context-vs-activity-context)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#application-context-vs-activity-context">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="context-lifecycle-awareness"></div>
 
-# Why is it important to match Context lifetime with usage?
+## Why is it important to match Context lifetime with usage?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`context`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "Why is it important to match Context lifetime with usage?"
+??? question "View Answer"
 
     Mismatching Context lifetime with usage causes:
     - Memory leaks (Activity never garbage collected)
@@ -779,21 +824,23 @@
     If code tied to Activity: safe to use Activity context.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/context/#context-lifecycle-awareness)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#context-lifecycle-awareness">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="memory-leak-what-is"></div>
 
-# What is a memory leak in Android?
+## What is a memory leak in Android?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`memory`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "What is a memory leak in Android?"
+??? question "View Answer"
 
     A memory leak occurs when an object is no longer needed but remains
     referenced, preventing garbage collection.
@@ -820,21 +867,23 @@
     - Inner classes retaining Activity
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="memory-detection"></div>
 
-# How do you detect memory leaks?
+## How do you detect memory leaks?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`memory`
-`debugging`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">debugging</span>
+</div>
 
-??? question "How do you detect memory leaks?"
+??? question "View Answer"
 
     TOOLS:
 
@@ -867,21 +916,23 @@
     after they're no longer needed.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-detection)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-detection">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="common-leak-patterns"></div>
 
-# What are common memory leak patterns in Android?
+## What are common memory leak patterns in Android?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`memory`
-`patterns`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">patterns</span>
+</div>
 
-??? question "What are common memory leak patterns in Android?"
+??? question "View Answer"
 
     PATTERN 1: Static Activity Reference
     companion object {
@@ -909,21 +960,23 @@
     Fix: Use app context or WeakReference
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/memory-leaks/#common-leak-patterns)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#common-leak-patterns">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="memory-leak-fixes"></div>
 
-# What are best practices to prevent memory leaks?
+## What are best practices to prevent memory leaks?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`memory`
-`best-practices`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">best-practices</span>
+</div>
 
-??? question "What are best practices to prevent memory leaks?"
+??? question "View Answer"
 
     1. Prefer application context over Activity context
     - Singletons, databases, shared preferences
@@ -956,21 +1009,23 @@
     - Part of development workflow
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-fixes)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-fixes">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="anr-what-is"></div>
 
-# What is an ANR (Application Not Responding)?
+## What is an ANR (Application Not Responding)?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`performance`
-`anr`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">anr</span>
+</div>
 
-??? question "What is an ANR (Application Not Responding)?"
+??? question "View Answer"
 
     ANR (Application Not Responding) occurs when main thread blocks
     for too long, preventing UI updates or input handling.
@@ -1000,21 +1055,23 @@
     - Unoptimized database queries
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#anr-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#anr-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="preventing-anr"></div>
 
-# How do you prevent ANRs?
+## How do you prevent ANRs?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`performance`
-`anr`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">anr</span>
+</div>
 
-??? question "How do you prevent ANRs?"
+??? question "View Answer"
 
     RULE 1: Keep main thread operations quick
     - Maximum 100-200ms for user-facing operations
@@ -1054,21 +1111,23 @@
     - Optimize hotspots
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#preventing-anr)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#preventing-anr">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="main-thread-vs-background"></div>
 
-# Why shouldn't you do network/I/O on main thread?
+## Why shouldn't you do network/I/O on main thread?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`threading`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "Why shouldn't you do network/I/O on main thread?"
+??? question "View Answer"
 
     Main thread responsibilities:
     - Handle user input (taps, scrolls)
@@ -1097,21 +1156,23 @@
     // Automatically switches context
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#main-thread-vs-background)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#main-thread-vs-background">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="jank-dropped-frames"></div>
 
-# What's jank and how do you measure it?
+## What's jank and how do you measure it?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`performance`
-`rendering`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+</div>
 
-??? question "What's jank and how do you measure it?"
+??? question "View Answer"
 
     JANK: Visible stutter in UI animations/scrolling.
 
@@ -1153,21 +1214,23 @@
     Prevention: Keep main thread responsive (<5ms per operation).
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#jank-dropped-frames)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#jank-dropped-frames">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="looper-what-is"></div>
 
-# What is Looper and how does it work?
+## What is Looper and how does it work?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`threading`
-`looper`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">looper</span>
+</div>
 
-??? question "What is Looper and how does it work?"
+??? question "View Answer"
 
     Looper: Thread mechanism for processing messages in a queue.
 
@@ -1202,21 +1265,23 @@
     - UI updates only on main thread (main Looper)
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#looper-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#looper-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="handler-what-is"></div>
 
-# What is Handler and how does it relate to Looper?
+## What is Handler and how does it relate to Looper?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`threading`
-`handler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">handler</span>
+</div>
 
-??? question "What is Handler and how does it relate to Looper?"
+??? question "View Answer"
 
     Handler: Interface for sending messages to a Thread's message queue.
 
@@ -1246,21 +1311,23 @@
     Key: Handler provides thread-safe way to run code on specific thread.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="handler-thread"></div>
 
-# What is HandlerThread and when should you use it?
+## What is HandlerThread and when should you use it?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`threading`
-`handler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">handler</span>
+</div>
 
-??? question "What is HandlerThread and when should you use it?"
+??? question "View Answer"
 
     HandlerThread: Thread with built-in Looper for handling messages.
 
@@ -1288,21 +1355,23 @@
     Remember: Always call quit() when done to avoid thread leaks.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-thread)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-thread">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="handler-memory-leak"></div>
 
-# How can Handler cause memory leaks?
+## How can Handler cause memory leaks?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`handler`
-`memory`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">handler</span>
+  <span class="question-badge question-badge--tag">memory</span>
+</div>
 
-??? question "How can Handler cause memory leaks?"
+??? question "View Answer"
 
     Handler with delayed messages can leak Activity context.
 
@@ -1338,21 +1407,23 @@
     MODERN: Use coroutines instead (automatic cleanup).
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-memory-leak)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-memory-leak">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="service-what-is"></div>
 
-# What is a Service in Android?
+## What is a Service in Android?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`service`
-`fundamentals`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
 
-??? question "What is a Service in Android?"
+??? question "View Answer"
 
     Service: Component for long-running operations in background.
 
@@ -1391,21 +1462,23 @@
     Use threads inside service for heavy work.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/services/#service-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#service-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="service-vs-thread"></div>
 
-# What's the difference between Service and Thread?
+## What's the difference between Service and Thread?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`service`
-`threading`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">threading</span>
+</div>
 
-??? question "What's the difference between Service and Thread?"
+??? question "View Answer"
 
     THREAD:
     - Tied to single process/app
@@ -1441,21 +1514,23 @@
     - Thread: Not managed by system
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/services/#service-vs-thread)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#service-vs-thread">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="bound-service"></div>
 
-# What is a bound service and how do you use it?
+## What is a bound service and how do you use it?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`service`
-`ipc`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+</div>
 
-??? question "What is a bound service and how do you use it?"
+??? question "View Answer"
 
     Bound Service: Service offering interface for IPC to clients.
 
@@ -1498,21 +1573,23 @@
     Unbind in onDestroy/onStop to prevent leaks.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/services/#bound-service)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#bound-service">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="intent-service"></div>
 
-# What is IntentService and when should you use it?
+## What is IntentService and when should you use it?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`service`
-`background-work`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">background-work</span>
+</div>
 
-??? question "What is IntentService and when should you use it?"
+??? question "View Answer"
 
     IntentService (deprecated): Subclass of Service handling asynchronous requests.
 
@@ -1549,21 +1626,23 @@
     Legacy but useful for understanding architecture.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/services/#intent-service)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#intent-service">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="broadcast-receiver"></div>
 
-# What is a Broadcast Receiver?
+## What is a Broadcast Receiver?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`broadcasting`
-`messaging`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">broadcasting</span>
+  <span class="question-badge question-badge--tag">messaging</span>
+</div>
 
-??? question "What is a Broadcast Receiver?"
+??? question "View Answer"
 
     Broadcast Receiver: Component for receiving system/app messages.
 
@@ -1601,21 +1680,23 @@
     Use cases: Battery level, connectivity, SMS, time changes.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-receiver)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-receiver">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="broadcast-permissions"></div>
 
-# How do you register broadcast receivers securely?
+## How do you register broadcast receivers securely?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`broadcasting`
-`security`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">broadcasting</span>
+  <span class="question-badge question-badge--tag">security</span>
+</div>
 
-??? question "How do you register broadcast receivers securely?"
+??? question "View Answer"
 
     DYNAMIC REGISTRATION (Recommended):
 
@@ -1663,21 +1744,23 @@
     Prevents memory leaks and battery drain
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-permissions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-permissions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="ordered-vs-sticky-broadcast"></div>
 
-# What are ordered and sticky broadcasts?
+## What are ordered and sticky broadcasts?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`broadcasting`
-`messaging`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">broadcasting</span>
+  <span class="question-badge question-badge--tag">messaging</span>
+</div>
 
-??? question "What are ordered and sticky broadcasts?"
+??? question "View Answer"
 
     NORMAL BROADCAST:
     - Sent to all matching receivers simultaneously
@@ -1717,21 +1800,23 @@
     LocalBroadcastManager is deprecated.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#ordered-vs-sticky-broadcast)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#ordered-vs-sticky-broadcast">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="permissions-model"></div>
 
-# What is the Android permission model?
+## What is the Android permission model?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`permissions`
-`security`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">permissions</span>
+  <span class="question-badge question-badge--tag">security</span>
+</div>
 
-??? question "What is the Android permission model?"
+??? question "View Answer"
 
     ANDROID 5.0 (API 21) and below:
     - All permissions granted at install time
@@ -1767,21 +1852,23 @@
     Best practice: Request permissions only when needed (ask on usage).
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/permissions/#permissions-model)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/permissions/#permissions-model">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="runtime-permissions"></div>
 
-# How do you implement runtime permissions?
+## How do you implement runtime permissions?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`permissions`
-`runtime`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">permissions</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
 
-??? question "How do you implement runtime permissions?"
+??? question "View Answer"
 
     STEPS:
 
@@ -1829,21 +1916,23 @@
     Always handle permission denials gracefully.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/permissions/#runtime-permissions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/permissions/#runtime-permissions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="permission-groups"></div>
 
-# What are permission groups and how do they work?
+## What are permission groups and how do they work?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`permissions`
-`groups`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">permissions</span>
+  <span class="question-badge question-badge--tag">groups</span>
+</div>
 
-??? question "What are permission groups and how do they work?"
+??? question "View Answer"
 
     Permission Groups: Dangerous permissions organized by functional groups.
 
@@ -1876,21 +1965,23 @@
     - Handle denials gracefully (skip feature)
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/permissions/#permission-groups)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/permissions/#permission-groups">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="manifest-what-is"></div>
 
-# What is AndroidManifest.xml and what does it contain?
+## What is AndroidManifest.xml and what does it contain?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`manifest`
-`fundamentals`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">manifest</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
 
-??? question "What is AndroidManifest.xml and what does it contain?"
+??? question "View Answer"
 
     AndroidManifest.xml: Main configuration file for Android app.
 
@@ -1948,21 +2039,23 @@
     Note: Some settings now in build.gradle (build tools).
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="manifest-intent-filters"></div>
 
-# How do you declare intent filters in manifest?
+## How do you declare intent filters in manifest?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`manifest`
-`intents`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">manifest</span>
+  <span class="question-badge question-badge--tag">intents</span>
+</div>
 
-??? question "How do you declare intent filters in manifest?"
+??? question "View Answer"
 
     Intent filters declare which implicit intents a component accepts.
 
@@ -2010,21 +2103,23 @@
     </intent-filter>
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-intent-filters)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-intent-filters">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="binder-ipc"></div>
 
-# What is Binder and how does IPC work in Android?
+## What is Binder and how does IPC work in Android?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`ipc`
-`binder`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+  <span class="question-badge question-badge--tag">binder</span>
+</div>
 
-??? question "What is Binder and how does IPC work in Android?"
+??? question "View Answer"
 
     Binder: Android's Inter-Process Communication (IPC) mechanism.
 
@@ -2062,21 +2157,23 @@
     but Binder is underlying mechanism.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/binder-ipc/#binder-ipc)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/binder-ipc/#binder-ipc">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="zygote-process-creation"></div>
 
-# What is Zygote and how does it create app processes?
+## What is Zygote and how does it create app processes?
 
-**Difficulty:** `advanced` • **Tags:**
-`android`
-`internals`
-`process`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">internals</span>
+  <span class="question-badge question-badge--tag">process</span>
+</div>
 
-??? question "What is Zygote and how does it create app processes?"
+??? question "View Answer"
 
     Zygote: Special system process that launches all app processes.
 
@@ -2121,21 +2218,23 @@
     - Android 12+: Secondary Zygote for compatibility
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/zygote-process-creation/#zygote-process-creation)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/zygote-process-creation/#zygote-process-creation">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="art-vs-dalvik"></div>
 
-# What is the difference between ART and Dalvik?
+## What is the difference between ART and Dalvik?
 
-**Difficulty:** `advanced` • **Tags:**
-`android`
-`runtime`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "What is the difference between ART and Dalvik?"
+??? question "View Answer"
 
     DALVIK (Android 2.2 - 4.4):
     - JIT (Just-In-Time) compilation
@@ -2179,21 +2278,23 @@
     - Combines both benefits
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/art-vs-dalvik/#art-vs-dalvik)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/art-vs-dalvik/#art-vs-dalvik">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="app-startup-flow"></div>
 
-# What happens when you launch an app?
+## What happens when you launch an app?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`startup`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">startup</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "What happens when you launch an app?"
+??? question "View Answer"
 
     APP STARTUP FLOW:
 
@@ -2240,21 +2341,23 @@
     Fragment initialization.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/app-startup-flow/#app-startup-flow)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/app-startup-flow/#app-startup-flow">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="recyclerview-efficiency"></div>
 
-# Why is RecyclerView more efficient than ListView?
+## Why is RecyclerView more efficient than ListView?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`ui`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">ui</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "Why is RecyclerView more efficient than ListView?"
+??? question "View Answer"
 
     LISTVIEW DRAWBACKS:
     - Creates View for each list item
@@ -2298,21 +2401,23 @@
     - Use DiffUtil for updates
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/recyclerview-efficiency/#recyclerview-efficiency)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/recyclerview-efficiency/#recyclerview-efficiency">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="rendering-pipeline"></div>
 
-# How does Android render UI frames?
+## How does Android render UI frames?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`rendering`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "How does Android render UI frames?"
+??? question "View Answer"
 
     RENDERING PIPELINE (per frame):
 
@@ -2372,21 +2477,23 @@
     Profiling: GPU rendering debug, Layout Inspector.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/rendering-pipeline/#rendering-pipeline)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/rendering-pipeline/#rendering-pipeline">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="storage-types"></div>
 
-# What are the different storage options in Android?
+## What are the different storage options in Android?
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
-`storage`
-`data`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">storage</span>
+  <span class="question-badge question-badge--tag">data</span>
+</div>
 
-??? question "What are the different storage options in Android?"
+??? question "View Answer"
 
     ### SHARED PREFERENCES
 
@@ -2440,21 +2547,23 @@
     Best practice: Use Room for structured data.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/storage-types/#storage-types)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/storage-types/#storage-types">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="task-and-backstack"></div>
 
-# What is a Task and back stack in Android?
+## What is a Task and back stack in Android?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`backstack`
-`navigation`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">backstack</span>
+  <span class="question-badge question-badge--tag">navigation</span>
+</div>
 
-??? question "What is a Task and back stack in Android?"
+??? question "View Answer"
 
     TASK: Collection of activities arranged in backstack.
 
@@ -2502,21 +2611,23 @@
     - Use flags appropriately
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/task-and-backstack/#task-and-backstack)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/task-and-backstack/#task-and-backstack">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="process-death-lifecycle"></div>
 
-# What happens to app state when process is killed?
+## What happens to app state when process is killed?
 
-**Difficulty:** `advanced` • **Tags:**
-`android`
-`lifecycle`
-`process`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">process</span>
+</div>
 
-??? question "What happens to app state when process is killed?"
+??? question "View Answer"
 
     PROCESS DEATH: OS kills app process to free memory (no warning).
 
@@ -2579,21 +2690,23 @@
     for robust state management.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/#process-death-lifecycle)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/#process-death-lifecycle">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="multitasking-window-focus"></div>
 
-# How does multitasking affect activity lifecycle?
+## How does multitasking affect activity lifecycle?
 
-**Difficulty:** `intermediate` • **Tags:**
-`android`
-`lifecycle`
-`multitasking`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">multitasking</span>
+</div>
 
-??? question "How does multitasking affect activity lifecycle?"
+??? question "View Answer"
 
     MULTITASKING SCENARIOS:
 
@@ -2644,5 +2757,5 @@
     - Resume in onResume()
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/fundamentals/multitasking-window-focus/#multitasking-window-focus)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/multitasking-window-focus/#multitasking-window-focus">🚀 See Full Deep Dive</a>
 

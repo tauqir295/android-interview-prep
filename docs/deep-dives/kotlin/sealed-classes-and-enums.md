@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Sealed Classes and Enums Deep Dive
+## Sealed Classes and Enums Deep Dive
 
 ## Overview
 

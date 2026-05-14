@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Caching and Pagination Architecture Deep Dive
+## Caching and Pagination Architecture Deep Dive
 
 ## Overview
 

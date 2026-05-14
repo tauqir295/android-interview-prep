@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# RecyclerView Efficiency Deep Dive
+## RecyclerView Efficiency Deep Dive
 
 ## Overview
 

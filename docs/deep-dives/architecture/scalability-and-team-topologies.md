@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Scalability and Team Topologies Deep Dive
+## Scalability and Team Topologies Deep Dive
 
 ## Overview
 

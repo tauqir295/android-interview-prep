@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Architecture
 
 <script>
@@ -35,14 +40,16 @@
 
 <div id="mvvm-basics"></div>
 
-# What is MVVM in Android architecture?
+## What is MVVM in Android architecture?
 
-**Difficulty:** `beginner` • **Tags:**
-`architecture`
-`mvvm`
-`android`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">mvvm</span>
+  <span class="question-badge question-badge--tag">android</span>
+</div>
 
-??? question "What is MVVM in Android architecture?"
+??? question "View Answer"
 
     MVVM separates UI rendering from business/data orchestration.
 
@@ -59,21 +66,23 @@
     - easier lifecycle-safe state handling
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/#mvvm-basics)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/#mvvm-basics">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="viewmodel-role"></div>
 
-# What is the role of a ViewModel in scalable Android apps?
+## What is the role of a ViewModel in scalable Android apps?
 
-**Difficulty:** `beginner` • **Tags:**
-`architecture`
-`viewmodel`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">viewmodel</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "What is the role of a ViewModel in scalable Android apps?"
+??? question "View Answer"
 
     ViewModel owns screen-level state and survives configuration changes.
 
@@ -87,21 +96,23 @@
     It should avoid direct Android UI references.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/#viewmodel-role)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/#viewmodel-role">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="savedstatehandle-usage"></div>
 
-# When should you use SavedStateHandle in architecture design?
+## When should you use SavedStateHandle in architecture design?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`viewmodel`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">viewmodel</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "When should you use SavedStateHandle in architecture design?"
+??? question "View Answer"
 
     Use `SavedStateHandle` for small, restorable screen state
     tied to process recreation.
@@ -115,21 +126,23 @@
     Avoid storing large objects or domain caches in it.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/#savedstatehandle-usage)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/#savedstatehandle-usage">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="mvi-what-is"></div>
 
-# What is MVI architecture?
+## What is MVI architecture?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`mvi`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">mvi</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "What is MVI architecture?"
+??? question "View Answer"
 
     MVI models UI as a loop: intent -> reducer -> new immutable state.
 
@@ -142,21 +155,23 @@
     Tradeoff: can introduce boilerplate if over-applied.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/mvi-and-udf/#mvi-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/mvi-and-udf/#mvi-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="mvi-vs-mvvm"></div>
 
-# MVVM vs MVI - how do you choose?
+## MVVM vs MVI - how do you choose?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`mvvm`
-`mvi`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">mvvm</span>
+  <span class="question-badge question-badge--tag">mvi</span>
+</div>
 
-??? question "MVVM vs MVI - how do you choose?"
+??? question "View Answer"
 
     Choose by complexity and team needs, not trend preference.
 
@@ -173,21 +188,23 @@
     Many teams use MVVM + UDF patterns as a middle ground.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/mvi-and-udf/#mvi-vs-mvvm)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/mvi-and-udf/#mvi-vs-mvvm">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="udf-principles"></div>
 
-# What are the key principles of Unidirectional Data Flow?
+## What are the key principles of Unidirectional Data Flow?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`udf`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">udf</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "What are the key principles of Unidirectional Data Flow?"
+??? question "View Answer"
 
     UDF means state flows down, events flow up.
 
@@ -201,21 +218,23 @@
     This reduces hidden mutation bugs.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/mvi-and-udf/#udf-principles)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/mvi-and-udf/#udf-principles">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="clean-architecture-overview"></div>
 
-# What is Clean Architecture in Android?
+## What is Clean Architecture in Android?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`clean-architecture`
-`layers`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">clean-architecture</span>
+  <span class="question-badge question-badge--tag">layers</span>
+</div>
 
-??? question "What is Clean Architecture in Android?"
+??? question "View Answer"
 
     Clean Architecture organizes code by responsibility and dependency direction.
 
@@ -228,21 +247,23 @@
     Main rule: inner layers should not depend on outer framework details.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#clean-architecture-overview)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#clean-architecture-overview">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="layer-dependency-rule"></div>
 
-# What is the dependency rule in layered architecture?
+## What is the dependency rule in layered architecture?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`clean-architecture`
-`dependency-inversion`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">clean-architecture</span>
+  <span class="question-badge question-badge--tag">dependency-inversion</span>
+</div>
 
-??? question "What is the dependency rule in layered architecture?"
+??? question "View Answer"
 
     Dependencies must point inward toward stable policy layers.
 
@@ -255,21 +276,23 @@
     This improves portability and test isolation.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#layer-dependency-rule)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#layer-dependency-rule">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dependency-inversion-android"></div>
 
-# How does dependency inversion apply to Android app architecture?
+## How does dependency inversion apply to Android app architecture?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`solid`
-`dependency-inversion`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">solid</span>
+  <span class="question-badge question-badge--tag">dependency-inversion</span>
+</div>
 
-??? question "How does dependency inversion apply to Android app architecture?"
+??? question "View Answer"
 
     High-level policies should depend on abstractions, not concrete SDK/data details.
 
@@ -282,21 +305,23 @@
     It keeps business logic resilient to infrastructure changes.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#dependency-inversion-android)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#dependency-inversion-android">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="repository-pattern-purpose"></div>
 
-# Why use the Repository pattern?
+## Why use the Repository pattern?
 
-**Difficulty:** `beginner` • **Tags:**
-`architecture`
-`repository`
-`data`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">repository</span>
+  <span class="question-badge question-badge--tag">data</span>
+</div>
 
-??? question "Why use the Repository pattern?"
+??? question "View Answer"
 
     Repository abstracts data origin and provides a clean API to higher layers.
 
@@ -308,21 +333,23 @@
     - enables caching/sync orchestration
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/#repository-pattern-purpose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/#repository-pattern-purpose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="repository-single-source-truth"></div>
 
-# How does a repository support a Single Source of Truth model?
+## How does a repository support a Single Source of Truth model?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`repository`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">repository</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "How does a repository support a Single Source of Truth model?"
+??? question "View Answer"
 
     Repository enforces one authoritative read path for consumers.
 
@@ -335,21 +362,23 @@
     This avoids competing data sources in UI.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/#repository-single-source-truth)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/#repository-single-source-truth">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="multiple-data-sources-orchestration"></div>
 
-# How should repositories orchestrate network, cache, and database sources?
+## How should repositories orchestrate network, cache, and database sources?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`repository`
-`caching`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">repository</span>
+  <span class="question-badge question-badge--tag">caching</span>
+</div>
 
-??? question "How should repositories orchestrate network, cache, and database sources?"
+??? question "View Answer"
 
     Define explicit policies for freshness, fallback, and write ordering.
 
@@ -363,21 +392,23 @@
     Keep these rules in repository, not UI.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/#multiple-data-sources-orchestration)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/#multiple-data-sources-orchestration">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="use-case-purpose"></div>
 
-# What problem do use cases solve in architecture?
+## What problem do use cases solve in architecture?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`use-cases`
-`domain`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">use-cases</span>
+  <span class="question-badge question-badge--tag">domain</span>
+</div>
 
-??? question "What problem do use cases solve in architecture?"
+??? question "View Answer"
 
     Use cases encapsulate business actions independent of UI and data frameworks.
 
@@ -389,21 +420,23 @@
     - reducing ViewModel complexity
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/#use-case-purpose)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/#use-case-purpose">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="use-case-granularity"></div>
 
-# How granular should use cases be?
+## How granular should use cases be?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`use-cases`
-`design`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">use-cases</span>
+  <span class="question-badge question-badge--tag">design</span>
+</div>
 
-??? question "How granular should use cases be?"
+??? question "View Answer"
 
     Use cases should represent coherent business actions, not tiny wrappers.
 
@@ -416,21 +449,23 @@
     Granularity is a context-based design decision.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/#use-case-granularity)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/#use-case-granularity">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="domain-layer-when-to-add"></div>
 
-# When is a dedicated domain layer worth adding?
+## When is a dedicated domain layer worth adding?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`domain`
-`clean-architecture`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">domain</span>
+  <span class="question-badge question-badge--tag">clean-architecture</span>
+</div>
 
-??? question "When is a dedicated domain layer worth adding?"
+??? question "View Answer"
 
     Add domain layer when business rules are non-trivial or reused.
 
@@ -443,21 +478,23 @@
     For simple apps, extra layers can be unnecessary overhead.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/#domain-layer-when-to-add)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/#domain-layer-when-to-add">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dependency-injection-what-why"></div>
 
-# Why is dependency injection important in Android architecture?
+## Why is dependency injection important in Android architecture?
 
-**Difficulty:** `beginner` • **Tags:**
-`architecture`
-`di`
-`testability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">di</span>
+  <span class="question-badge question-badge--tag">testability</span>
+</div>
 
-??? question "Why is dependency injection important in Android architecture?"
+??? question "View Answer"
 
     DI manages object creation/wiring outside business logic.
 
@@ -469,21 +506,23 @@
     - clearer dependency graph at scale
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/dependency-injection-strategies/#dependency-injection-what-why)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/dependency-injection-strategies/#dependency-injection-what-why">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="constructor-injection-vs-field-injection"></div>
 
-# Constructor injection vs field injection - which is preferred?
+## Constructor injection vs field injection - which is preferred?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`di`
-`design`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">di</span>
+  <span class="question-badge question-badge--tag">design</span>
+</div>
 
-??? question "Constructor injection vs field injection - which is preferred?"
+??? question "View Answer"
 
     Constructor injection is usually preferred.
 
@@ -496,21 +535,23 @@
     Field injection is useful in framework-controlled classes but less explicit.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/dependency-injection-strategies/#constructor-injection-vs-field-injection)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/dependency-injection-strategies/#constructor-injection-vs-field-injection">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="di-scope-management"></div>
 
-# How do DI scopes affect memory and lifecycle behavior?
+## How do DI scopes affect memory and lifecycle behavior?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`di`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">di</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "How do DI scopes affect memory and lifecycle behavior?"
+??? question "View Answer"
 
     Scopes define object lifetime and reuse boundaries.
 
@@ -523,21 +564,23 @@
     Align scopes with Activity/Fragment/ViewModel/app lifetimes.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/dependency-injection-strategies/#di-scope-management)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/dependency-injection-strategies/#di-scope-management">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="hilt-benefits"></div>
 
-# What architectural advantages does Hilt provide?
+## What architectural advantages does Hilt provide?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`hilt`
-`di`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">hilt</span>
+  <span class="question-badge question-badge--tag">di</span>
+</div>
 
-??? question "What architectural advantages does Hilt provide?"
+??? question "View Answer"
 
     Hilt standardizes DI setup for Android component lifecycles.
 
@@ -549,21 +592,23 @@
     - strong integration with ViewModel/WorkManager
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/hilt-in-production/#hilt-benefits)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/hilt-in-production/#hilt-benefits">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="hilt-component-lifetimes"></div>
 
-# What Hilt component lifetimes should senior engineers know?
+## What Hilt component lifetimes should senior engineers know?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`hilt`
-`lifecycle`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">hilt</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
 
-??? question "What Hilt component lifetimes should senior engineers know?"
+??? question "View Answer"
 
     Senior interviews expect understanding of scope boundaries.
 
@@ -577,21 +622,23 @@
     Wrong scope choices create subtle bugs.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/hilt-in-production/#hilt-component-lifetimes)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/hilt-in-production/#hilt-component-lifetimes">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dagger-vs-hilt"></div>
 
-# Dagger vs Hilt - what is the architectural tradeoff?
+## Dagger vs Hilt - what is the architectural tradeoff?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`dagger`
-`hilt`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">dagger</span>
+  <span class="question-badge question-badge--tag">hilt</span>
+</div>
 
-??? question "Dagger vs Hilt - what is the architectural tradeoff?"
+??? question "View Answer"
 
     Hilt is Dagger with Android-focused conventions and generated glue code.
 
@@ -603,21 +650,23 @@
     Choose based on customization needs and team productivity.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/dagger-and-component-graph/#dagger-vs-hilt)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/dagger-and-component-graph/#dagger-vs-hilt">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dagger-component-subcomponent"></div>
 
-# What should you understand about Dagger components and subcomponents?
+## What should you understand about Dagger components and subcomponents?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`dagger`
-`di`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">dagger</span>
+  <span class="question-badge question-badge--tag">di</span>
+</div>
 
-??? question "What should you understand about Dagger components and subcomponents?"
+??? question "View Answer"
 
     Components define object graph roots; subcomponents model child lifecycles.
 
@@ -630,21 +679,23 @@
     Avoid overly complex graph hierarchies.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/dagger-and-component-graph/#dagger-component-subcomponent)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/dagger-and-component-graph/#dagger-component-subcomponent">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dagger-performance-tradeoffs"></div>
 
-# What are Dagger/Hilt build and runtime tradeoffs at scale?
+## What are Dagger/Hilt build and runtime tradeoffs at scale?
 
-**Difficulty:** `staff` • **Tags:**
-`architecture`
-`dagger`
-`scalability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">dagger</span>
+  <span class="question-badge question-badge--tag">scalability</span>
+</div>
 
-??? question "What are Dagger/Hilt build and runtime tradeoffs at scale?"
+??? question "View Answer"
 
     DI frameworks improve structure but add compile-time and graph complexity costs.
 
@@ -656,21 +707,23 @@
     - balancing explicitness vs velocity
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/dagger-and-component-graph/#dagger-performance-tradeoffs)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/dagger-and-component-graph/#dagger-performance-tradeoffs">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="service-locator-what-is"></div>
 
-# What is a Service Locator pattern?
+## What is a Service Locator pattern?
 
-**Difficulty:** `beginner` • **Tags:**
-`architecture`
-`service-locator`
-`di`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">service-locator</span>
+  <span class="question-badge question-badge--tag">di</span>
+</div>
 
-??? question "What is a Service Locator pattern?"
+??? question "View Answer"
 
     Service Locator is a registry that provides dependencies on demand.
 
@@ -683,21 +736,23 @@
     - can reduce testability if overused
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/#service-locator-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/#service-locator-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="service-locator-vs-di"></div>
 
-# Service Locator vs DI - why does this matter in interviews?
+## Service Locator vs DI - why does this matter in interviews?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`service-locator`
-`di`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">service-locator</span>
+  <span class="question-badge question-badge--tag">di</span>
+</div>
 
-??? question "Service Locator vs DI - why does this matter in interviews?"
+??? question "View Answer"
 
     DI makes dependencies explicit in constructors; Service Locator hides them at call sites.
 
@@ -710,21 +765,23 @@
     Prefer DI for medium/large apps.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/#service-locator-vs-di)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/#service-locator-vs-di">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="modularization-why"></div>
 
-# Why modularize Android apps?
+## Why modularize Android apps?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`modularization`
-`scalability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+  <span class="question-badge question-badge--tag">scalability</span>
+</div>
 
-??? question "Why modularize Android apps?"
+??? question "View Answer"
 
     Modularization separates code by ownership and change boundaries.
 
@@ -736,21 +793,23 @@
     - safer refactoring and release isolation
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/modularization-strategies/#modularization-why)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/modularization-strategies/#modularization-why">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="multi-module-architecture-shapes"></div>
 
-# What multi-module structures are common in Android?
+## What multi-module structures are common in Android?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`modularization`
-`multi-module`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+  <span class="question-badge question-badge--tag">multi-module</span>
+</div>
 
-??? question "What multi-module structures are common in Android?"
+??? question "View Answer"
 
     Common structures include layered modules and feature-first modules.
 
@@ -763,21 +822,23 @@
     Choose structure based on team and product complexity.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/modularization-strategies/#multi-module-architecture-shapes)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/modularization-strategies/#multi-module-architecture-shapes">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="api-vs-implementation-modules"></div>
 
-# How do API vs implementation module boundaries improve architecture?
+## How do API vs implementation module boundaries improve architecture?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`modularization`
-`dependencies`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+  <span class="question-badge question-badge--tag">dependencies</span>
+</div>
 
-??? question "How do API vs implementation module boundaries improve architecture?"
+??? question "View Answer"
 
     Expose only stable contracts and keep internals hidden.
 
@@ -791,21 +852,23 @@
     Public surface area should stay intentionally small.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/modularization-strategies/#api-vs-implementation-modules)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/modularization-strategies/#api-vs-implementation-modules">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="feature-module-boundaries"></div>
 
-# What defines a good feature module boundary?
+## What defines a good feature module boundary?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`feature-modules`
-`modularization`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">feature-modules</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+</div>
 
-??? question "What defines a good feature module boundary?"
+??? question "View Answer"
 
     A good boundary aligns with user-facing capabilities and team ownership.
 
@@ -817,21 +880,23 @@
     - clear domain language per feature
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/#feature-module-boundaries)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/#feature-module-boundaries">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dynamic-feature-modules-when"></div>
 
-# When should you use dynamic feature modules?
+## When should you use dynamic feature modules?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`feature-modules`
-`scalability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">feature-modules</span>
+  <span class="question-badge question-badge--tag">scalability</span>
+</div>
 
-??? question "When should you use dynamic feature modules?"
+??? question "View Answer"
 
     Use dynamic delivery when features are optional, heavy, or region-specific.
 
@@ -844,21 +909,23 @@
     Evaluate product value against operational cost.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/#dynamic-feature-modules-when)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/#dynamic-feature-modules-when">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dependency-direction-between-modules"></div>
 
-# How should dependency direction work between feature modules?
+## How should dependency direction work between feature modules?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`modularization`
-`dependency-inversion`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+  <span class="question-badge question-badge--tag">dependency-inversion</span>
+</div>
 
-??? question "How should dependency direction work between feature modules?"
+??? question "View Answer"
 
     Features should depend on shared contracts, not each other's internals.
 
@@ -871,21 +938,23 @@
     This preserves build and team independence.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/#dependency-direction-between-modules)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/#dependency-direction-between-modules">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="state-management-android-architecture"></div>
 
-# What is a strong state management approach in Android architecture?
+## What is a strong state management approach in Android architecture?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`state`
-`ui`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">ui</span>
+</div>
 
-??? question "What is a strong state management approach in Android architecture?"
+??? question "View Answer"
 
     Keep state ownership explicit and state models immutable where possible.
 
@@ -898,21 +967,23 @@
     Avoid scattered mutable flags across layers.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/state-management-and-ssot/#state-management-android-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/state-management-and-ssot/#state-management-android-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="single-source-of-truth"></div>
 
-# What does Single Source of Truth mean in practice?
+## What does Single Source of Truth mean in practice?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`state`
-`repository`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">repository</span>
+</div>
 
-??? question "What does Single Source of Truth mean in practice?"
+??? question "View Answer"
 
     One authoritative state source should drive reads for a given data set.
 
@@ -925,21 +996,23 @@
     This reduces inconsistency and race conditions.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/state-management-and-ssot/#single-source-of-truth)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/state-management-and-ssot/#single-source-of-truth">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="immutable-ui-state-models"></div>
 
-# Why model UI state as immutable data classes?
+## Why model UI state as immutable data classes?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`state`
-`testability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">state</span>
+  <span class="question-badge question-badge--tag">testability</span>
+</div>
 
-??? question "Why model UI state as immutable data classes?"
+??? question "View Answer"
 
     Immutable state makes transitions explicit and easier to test.
 
@@ -951,21 +1024,23 @@
     - clearer reducer-style updates
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/state-management-and-ssot/#immutable-ui-state-models)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/state-management-and-ssot/#immutable-ui-state-models">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="offline-first-principles"></div>
 
-# What is offline-first architecture?
+## What is offline-first architecture?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`offline-first`
-`data`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">offline-first</span>
+  <span class="question-badge question-badge--tag">data</span>
+</div>
 
-??? question "What is offline-first architecture?"
+??? question "View Answer"
 
     Offline-first treats local storage as primary read path,
     syncing with network opportunistically.
@@ -978,21 +1053,23 @@
     - sync observability/telemetry
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/offline-first-and-sync/#offline-first-principles)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/offline-first-and-sync/#offline-first-principles">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="sync-strategies-pull-push"></div>
 
-# Push, pull, and hybrid sync strategies - when to use each?
+## Push, pull, and hybrid sync strategies - when to use each?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`sync`
-`offline-first`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">sync</span>
+  <span class="question-badge question-badge--tag">offline-first</span>
+</div>
 
-??? question "Push, pull, and hybrid sync strategies - when to use each?"
+??? question "View Answer"
 
     Choose strategy by freshness needs, battery budget, and backend capability.
 
@@ -1005,21 +1082,23 @@
     Design for retries and backoff from day one.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/offline-first-and-sync/#sync-strategies-pull-push)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/offline-first-and-sync/#sync-strategies-pull-push">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="conflict-resolution-sync"></div>
 
-# How should architecture handle sync conflicts?
+## How should architecture handle sync conflicts?
 
-**Difficulty:** `staff` • **Tags:**
-`architecture`
-`sync`
-`data-consistency`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">sync</span>
+  <span class="question-badge question-badge--tag">data-consistency</span>
+</div>
 
-??? question "How should architecture handle sync conflicts?"
+??? question "View Answer"
 
     Conflict policy must be explicit and domain-aware.
 
@@ -1033,21 +1112,23 @@
     Track conflict metrics to tune policy.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/offline-first-and-sync/#conflict-resolution-sync)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/offline-first-and-sync/#conflict-resolution-sync">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="caching-strategies"></div>
 
-# What caching strategies are common in Android architecture?
+## What caching strategies are common in Android architecture?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`caching`
-`data`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">caching</span>
+  <span class="question-badge question-badge--tag">data</span>
+</div>
 
-??? question "What caching strategies are common in Android architecture?"
+??? question "View Answer"
 
     Choose cache strategy per data volatility and UX expectations.
 
@@ -1059,21 +1140,23 @@
     - cache-aside or network-bound-resource style
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/#caching-strategies)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/#caching-strategies">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="pagination-architecture"></div>
 
-# What does a robust pagination architecture look like?
+## What does a robust pagination architecture look like?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`pagination`
-`data`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">pagination</span>
+  <span class="question-badge question-badge--tag">data</span>
+</div>
 
-??? question "What does a robust pagination architecture look like?"
+??? question "View Answer"
 
     Robust pagination handles loading state, errors, deduplication, and persistence.
 
@@ -1085,21 +1168,23 @@
     - refresh invalidation strategy
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/#pagination-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/#pagination-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="stateflow-architecture"></div>
 
-# How does StateFlow fit Android architecture design?
+## How does StateFlow fit Android architecture design?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`stateflow`
-`reactive`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">stateflow</span>
+  <span class="question-badge question-badge--tag">reactive</span>
+</div>
 
-??? question "How does StateFlow fit Android architecture design?"
+??? question "View Answer"
 
     `StateFlow` is a lifecycle-friendly state stream for UI layers.
 
@@ -1112,21 +1197,23 @@
     Keep one-off events separate from persistent state.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/reactive-architecture-with-flows/#stateflow-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/reactive-architecture-with-flows/#stateflow-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="event-handling-one-off-events"></div>
 
-# How should one-off events be handled in reactive architecture?
+## How should one-off events be handled in reactive architecture?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`events`
-`reactive`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">events</span>
+  <span class="question-badge question-badge--tag">reactive</span>
+</div>
 
-??? question "How should one-off events be handled in reactive architecture?"
+??? question "View Answer"
 
     Model state and events as different channels.
 
@@ -1139,21 +1226,23 @@
     Avoid encoding transient events as sticky state flags.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/reactive-architecture-with-flows/#event-handling-one-off-events)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/reactive-architecture-with-flows/#event-handling-one-off-events">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="error-handling-architecture"></div>
 
-# What is a good error handling architecture for Android apps?
+## What is a good error handling architecture for Android apps?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`error-handling`
-`resilience`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">error-handling</span>
+  <span class="question-badge question-badge--tag">resilience</span>
+</div>
 
-??? question "What is a good error handling architecture for Android apps?"
+??? question "View Answer"
 
     Handle errors by layer and map them to domain/UI semantics.
 
@@ -1165,21 +1254,23 @@
     - log structured diagnostics for operations
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/#error-handling-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/#error-handling-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="retry-strategies-architecture"></div>
 
-# How do retry strategies fit architecture decisions?
+## How do retry strategies fit architecture decisions?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`retry`
-`resilience`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">retry</span>
+  <span class="question-badge question-badge--tag">resilience</span>
+</div>
 
-??? question "How do retry strategies fit architecture decisions?"
+??? question "View Answer"
 
     Retry policy should be explicit, bounded, and context-aware.
 
@@ -1191,21 +1282,23 @@
     - circuit-breaker style guardrails for unstable backends
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/#retry-strategies-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/#retry-strategies-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="ui-state-modeling-architecture"></div>
 
-# How should complex UI state be modeled architecturally?
+## How should complex UI state be modeled architecturally?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`ui-state`
-`state`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">ui-state</span>
+  <span class="question-badge question-badge--tag">state</span>
+</div>
 
-??? question "How should complex UI state be modeled architecturally?"
+??? question "View Answer"
 
     Use explicit immutable state models with clear sub-states.
 
@@ -1218,21 +1311,23 @@
     Prefer readability and deterministic transitions over cleverness.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/#ui-state-modeling-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/#ui-state-modeling-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="navigation-architecture"></div>
 
-# What are key principles of navigation architecture?
+## What are key principles of navigation architecture?
 
-**Difficulty:** `intermediate` • **Tags:**
-`architecture`
-`navigation`
-`modularization`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">navigation</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+</div>
 
-??? question "What are key principles of navigation architecture?"
+??? question "View Answer"
 
     Navigation should use explicit destination contracts and clear ownership.
 
@@ -1244,21 +1339,23 @@
     - test back stack behavior for critical flows
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/#navigation-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/#navigation-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="deep-link-architecture"></div>
 
-# How should deep links be designed in modular Android apps?
+## How should deep links be designed in modular Android apps?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`deep-links`
-`navigation`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">deep-links</span>
+  <span class="question-badge question-badge--tag">navigation</span>
+</div>
 
-??? question "How should deep links be designed in modular Android apps?"
+??? question "View Answer"
 
     Treat deep links as stable external API contracts.
 
@@ -1270,21 +1367,23 @@
     - backward compatibility strategy
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/#deep-link-architecture)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/#deep-link-architecture">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="architecture-testability"></div>
 
-# How do you design Android architecture for high testability?
+## How do you design Android architecture for high testability?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`testing`
-`testability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">testing</span>
+  <span class="question-badge question-badge--tag">testability</span>
+</div>
 
-??? question "How do you design Android architecture for high testability?"
+??? question "View Answer"
 
     Testability improves when dependencies and state transitions are explicit.
 
@@ -1296,21 +1395,23 @@
     - contract tests at module boundaries
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/testing-architecture-and-testability/#architecture-testability)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/testing-architecture-and-testability/#architecture-testability">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="scaling-architecture-for-team"></div>
 
-# How does architecture impact team scalability?
+## How does architecture impact team scalability?
 
-**Difficulty:** `staff` • **Tags:**
-`architecture`
-`scalability`
-`team`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">scalability</span>
+  <span class="question-badge question-badge--tag">team</span>
+</div>
 
-??? question "How does architecture impact team scalability?"
+??? question "View Answer"
 
     Architecture defines ownership boundaries, release independence, and coordination cost.
 
@@ -1322,21 +1423,23 @@
     - standards for observability and quality gates
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/scalability-and-team-topologies/#scaling-architecture-for-team)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/scalability-and-team-topologies/#scaling-architecture-for-team">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="architecture-governance"></div>
 
-# What is architecture governance in large Android codebases?
+## What is architecture governance in large Android codebases?
 
-**Difficulty:** `staff` • **Tags:**
-`architecture`
-`governance`
-`scalability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--staff">staff</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">governance</span>
+  <span class="question-badge question-badge--tag">scalability</span>
+</div>
 
-??? question "What is architecture governance in large Android codebases?"
+??? question "View Answer"
 
     Governance is how teams enforce architectural direction without blocking delivery.
 
@@ -1348,21 +1451,23 @@
     - review standards and architecture forums
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/#architecture-governance)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/#architecture-governance">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="production-architecture-tradeoffs"></div>
 
-# How should senior engineers discuss architecture tradeoffs in interviews?
+## How should senior engineers discuss architecture tradeoffs in interviews?
 
-**Difficulty:** `senior` • **Tags:**
-`architecture`
-`tradeoffs`
-`senior`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">tradeoffs</span>
+  <span class="question-badge question-badge--tag">senior</span>
+</div>
 
-??? question "How should senior engineers discuss architecture tradeoffs in interviews?"
+??? question "View Answer"
 
     Frame tradeoffs by context, constraints, and measurable outcomes.
 
@@ -1377,5 +1482,5 @@
     Avoid presenting architecture as one-size-fits-all.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/#production-architecture-tradeoffs)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/#production-architecture-tradeoffs">🚀 See Full Deep Dive</a>
 

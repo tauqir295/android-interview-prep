@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# CompositionLocal and Context Propagation Deep Dive
+## CompositionLocal and Context Propagation Deep Dive
 
 ## Overview
 

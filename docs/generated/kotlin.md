@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Kotlin
 
 <script>
@@ -35,14 +40,16 @@
 
 <div id="kotlin-language-features"></div>
 
-# What makes Kotlin a good language for Android development?
+## What makes Kotlin a good language for Android development?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`android`
-`fundamentals`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
 
-??? question "What makes Kotlin a good language for Android development?"
+??? question "View Answer"
 
     Kotlin is a modern JVM language designed to improve safety,
     readability, and developer productivity.
@@ -56,21 +63,23 @@
     compiling to JVM bytecode and working well with existing Java code.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/kotlin-basics/#kotlin-language-features)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#kotlin-language-features">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="val-vs-var"></div>
 
-# What is the difference between val and var in Kotlin?
+## What is the difference between val and var in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`basics`
-`immutability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">basics</span>
+  <span class="question-badge question-badge--tag">immutability</span>
+</div>
 
-??? question "What is the difference between val and var in Kotlin?"
+??? question "View Answer"
 
     `val` defines a read-only reference.
     `var` defines a mutable reference.
@@ -83,21 +92,23 @@
     Prefer `val` by default and use `var` only when mutation is required.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/kotlin-basics/#val-vs-var)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#val-vs-var">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="data-classes"></div>
 
-# What is a data class in Kotlin?
+## What is a data class in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`data-classes`
-`basics`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">data-classes</span>
+  <span class="question-badge question-badge--tag">basics</span>
+</div>
 
-??? question "What is a data class in Kotlin?"
+??? question "View Answer"
 
     A data class is a class optimized for holding data.
     Kotlin automatically generates:
@@ -114,21 +125,23 @@
     They are ideal when value equality matters more than identity.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-classes)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-classes">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="data-class-generated-members"></div>
 
-# What methods does Kotlin generate for a data class?
+## What methods does Kotlin generate for a data class?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`data-classes`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">data-classes</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "What methods does Kotlin generate for a data class?"
+??? question "View Answer"
 
     Kotlin generates several members from primary constructor properties:
     - `equals()` and `hashCode()`
@@ -141,21 +154,23 @@
     This is important for state modeling and JVM behavior discussions.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-class-generated-members)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-class-generated-members">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="object-keyword"></div>
 
-# What does the object keyword do in Kotlin?
+## What does the object keyword do in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`object`
-`language-features`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">object</span>
+  <span class="question-badge question-badge--tag">language-features</span>
+</div>
 
-??? question "What does the object keyword do in Kotlin?"
+??? question "View Answer"
 
     The `object` keyword has multiple uses in Kotlin:
     - object declaration → singleton
@@ -167,21 +182,23 @@
     Always clarify which form of `object` you mean.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-keyword)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-keyword">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="companion-objects"></div>
 
-# What is a companion object in Kotlin?
+## What is a companion object in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`object`
-`jvm`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">object</span>
+  <span class="question-badge question-badge--tag">jvm</span>
+</div>
 
-??? question "What is a companion object in Kotlin?"
+??? question "View Answer"
 
     A companion object is an object tied to a class definition.
     It is commonly used for:
@@ -195,21 +212,23 @@
     On the JVM, they are not identical to Java static members.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#companion-objects)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#companion-objects">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="object-declaration-vs-object-expression"></div>
 
-# What is the difference between an object declaration and an object expression?
+## What is the difference between an object declaration and an object expression?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`object`
-`internals`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">object</span>
+  <span class="question-badge question-badge--tag">internals</span>
+</div>
 
-??? question "What is the difference between an object declaration and an object expression?"
+??? question "View Answer"
 
     Object declaration:
     - defines a named singleton
@@ -223,21 +242,23 @@
     especially when returning anonymous objects from APIs.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-declaration-vs-object-expression)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-declaration-vs-object-expression">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="sealed-classes"></div>
 
-# What is a sealed class in Kotlin?
+## What is a sealed class in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`sealed`
-`modeling`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">sealed</span>
+  <span class="question-badge question-badge--tag">modeling</span>
+</div>
 
-??? question "What is a sealed class in Kotlin?"
+??? question "View Answer"
 
     A sealed class restricts inheritance to a known set of subclasses.
     It is useful for:
@@ -251,21 +272,23 @@
     closed-domain modeling.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-classes)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-classes">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="sealed-vs-enum"></div>
 
-# When should you use a sealed class instead of an enum?
+## When should you use a sealed class instead of an enum?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`sealed`
-`enums`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">sealed</span>
+  <span class="question-badge question-badge--tag">enums</span>
+</div>
 
-??? question "When should you use a sealed class instead of an enum?"
+??? question "View Answer"
 
     Use an enum when you need a fixed set of simple constants.
     Use a sealed class when each case may carry different data
@@ -278,21 +301,23 @@
     In interviews, emphasize flexibility vs simplicity.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-vs-enum)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-vs-enum">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="enum-class-use-cases"></div>
 
-# What are enum classes useful for in Kotlin?
+## What are enum classes useful for in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`enums`
-`basics`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">enums</span>
+  <span class="question-badge question-badge--tag">basics</span>
+</div>
 
-??? question "What are enum classes useful for in Kotlin?"
+??? question "View Answer"
 
     Enum classes represent a fixed set of named constants.
     Common uses:
@@ -308,21 +333,23 @@
     a singleton.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#enum-class-use-cases)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#enum-class-use-cases">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="class-delegation"></div>
 
-# What is delegation in Kotlin?
+## What is delegation in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`delegation`
-`composition`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">delegation</span>
+  <span class="question-badge question-badge--tag">composition</span>
+</div>
 
-??? question "What is delegation in Kotlin?"
+??? question "View Answer"
 
     Kotlin supports class delegation using the `by` keyword.
     It lets one class forward interface implementation to another object.
@@ -335,21 +362,23 @@
     would be more verbose in Java.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#class-delegation)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#class-delegation">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="delegated-properties"></div>
 
-# What are delegated properties in Kotlin?
+## What are delegated properties in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`delegation`
-`properties`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">delegation</span>
+  <span class="question-badge question-badge--tag">properties</span>
+</div>
 
-??? question "What are delegated properties in Kotlin?"
+??? question "View Answer"
 
     Delegated properties outsource getter/setter logic to another object.
     Common delegates:
@@ -365,21 +394,23 @@
     Delegation is one of Kotlin's most practical language features.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#delegated-properties)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#delegated-properties">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="lazy-delegation"></div>
 
-# How does lazy initialization work in Kotlin?
+## How does lazy initialization work in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`lazy`
-`delegation`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">lazy</span>
+  <span class="question-badge question-badge--tag">delegation</span>
+</div>
 
-??? question "How does lazy initialization work in Kotlin?"
+??? question "View Answer"
 
     `lazy` delays object creation until first access.
     Benefits:
@@ -392,21 +423,23 @@
     Use `lazy` when initialization is expensive and not always needed.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#lazy-delegation)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#lazy-delegation">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="extension-functions"></div>
 
-# What are extension functions in Kotlin?
+## What are extension functions in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`extensions`
-`api-design`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">extensions</span>
+  <span class="question-badge question-badge--tag">api-design</span>
+</div>
 
-??? question "What are extension functions in Kotlin?"
+??? question "View Answer"
 
     Extension functions let you add callable functions to an existing type
     without modifying its source code.
@@ -420,21 +453,23 @@
     They are resolved statically by the compiler.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-functions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-functions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="extension-function-resolution"></div>
 
-# How are extension functions resolved in Kotlin?
+## How are extension functions resolved in Kotlin?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`extensions`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">extensions</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "How are extension functions resolved in Kotlin?"
+??? question "View Answer"
 
     Extension functions are resolved statically.
     That means dispatch is based on the compile-time type,
@@ -446,21 +481,23 @@
     This is a common Kotlin interview trap.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-function-resolution)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-function-resolution">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="scope-functions"></div>
 
-# What are Kotlin scope functions?
+## What are Kotlin scope functions?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`scope-functions`
-`idioms`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">scope-functions</span>
+  <span class="question-badge question-badge--tag">idioms</span>
+</div>
 
-??? question "What are Kotlin scope functions?"
+??? question "View Answer"
 
     Scope functions execute a block in the context of an object.
     The main ones are:
@@ -477,21 +514,23 @@
     Use them carefully; overuse can reduce readability.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/scope-functions/#scope-functions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/scope-functions/#scope-functions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="let-vs-run-vs-apply-vs-also"></div>
 
-# What is the difference between let, run, apply, also, and with?
+## What is the difference between let, run, apply, also, and with?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`scope-functions`
-`readability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">scope-functions</span>
+  <span class="question-badge question-badge--tag">readability</span>
+</div>
 
-??? question "What is the difference between let, run, apply, also, and with?"
+??? question "View Answer"
 
     The main differences are:
     - receiver name (`this` vs `it`)
@@ -505,21 +544,23 @@
     Interviewers care more about when to use them than memorizing a table.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/scope-functions/#let-vs-run-vs-apply-vs-also)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/scope-functions/#let-vs-run-vs-apply-vs-also">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="higher-order-functions"></div>
 
-# What is a higher-order function in Kotlin?
+## What is a higher-order function in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`functional`
-`lambdas`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">functional</span>
+  <span class="question-badge question-badge--tag">lambdas</span>
+</div>
 
-??? question "What is a higher-order function in Kotlin?"
+??? question "View Answer"
 
     A higher-order function is a function that:
     - takes another function as a parameter, or
@@ -532,21 +573,23 @@
     This style enables concise, reusable, expressive APIs.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#higher-order-functions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#higher-order-functions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="lambdas-with-receiver"></div>
 
-# What is a lambda with receiver in Kotlin?
+## What is a lambda with receiver in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`lambdas`
-`dsl`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">lambdas</span>
+  <span class="question-badge question-badge--tag">dsl</span>
+</div>
 
-??? question "What is a lambda with receiver in Kotlin?"
+??? question "View Answer"
 
     A lambda with receiver gives the lambda an implicit receiver object,
     so members can be called without qualification.
@@ -560,21 +603,23 @@
     to follow if overused.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#lambdas-with-receiver)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#lambdas-with-receiver">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="inline-functions"></div>
 
-# What is an inline function in Kotlin?
+## What is an inline function in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`inline`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">inline</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "What is an inline function in Kotlin?"
+??? question "View Answer"
 
     An inline function asks the compiler to copy the function body to the
     call site instead of generating a normal call.
@@ -586,21 +631,23 @@
     too much inlining can increase bytecode size.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-functions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-functions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="crossinline-vs-noinline"></div>
 
-# What are crossinline and noinline in Kotlin?
+## What are crossinline and noinline in Kotlin?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`inline`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">inline</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "What are crossinline and noinline in Kotlin?"
+??? question "View Answer"
 
     These modifiers control lambda behavior inside inline functions.
     - `noinline` → do not inline this lambda
@@ -612,21 +659,23 @@
     This is a common advanced Kotlin interview topic.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/inline-functions/#crossinline-vs-noinline)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/inline-functions/#crossinline-vs-noinline">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="inline-performance-considerations"></div>
 
-# When do inline functions help or hurt performance?
+## When do inline functions help or hurt performance?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`inline`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">inline</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "When do inline functions help or hurt performance?"
+??? question "View Answer"
 
     Inline functions help when they remove overhead from small,
     frequently-called higher-order functions.
@@ -638,21 +687,23 @@
     inline is a targeted optimization, not something to apply everywhere.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-performance-considerations)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-performance-considerations">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="reified-generics"></div>
 
-# What are reified type parameters in Kotlin?
+## What are reified type parameters in Kotlin?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`generics`
-`inline`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">generics</span>
+  <span class="question-badge question-badge--tag">inline</span>
+</div>
 
-??? question "What are reified type parameters in Kotlin?"
+??? question "View Answer"
 
     Reified type parameters let inline functions access generic type
     information at runtime.
@@ -666,21 +717,23 @@
     Reified works only in inline functions.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/reified-generics/#reified-generics)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/reified-generics/#reified-generics">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="null-safety"></div>
 
-# How does null safety work in Kotlin?
+## How does null safety work in Kotlin?
 
-**Difficulty:** `beginner` • **Tags:**
-`kotlin`
-`null-safety`
-`type-system`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">null-safety</span>
+  <span class="question-badge question-badge--tag">type-system</span>
+</div>
 
-??? question "How does null safety work in Kotlin?"
+??? question "View Answer"
 
     Kotlin separates nullable and non-nullable types.
     Example:
@@ -695,21 +748,23 @@
     reintroduce them.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#null-safety)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#null-safety">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="safe-call-elvis-not-null"></div>
 
-# What are the safe call, Elvis operator, and not-null assertion in Kotlin?
+## What are the safe call, Elvis operator, and not-null assertion in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`null-safety`
-`operators`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">null-safety</span>
+  <span class="question-badge question-badge--tag">operators</span>
+</div>
 
-??? question "What are the safe call, Elvis operator, and not-null assertion in Kotlin?"
+??? question "View Answer"
 
     Common null-safety operators:
     - `?.` → call only if value is non-null
@@ -721,21 +776,23 @@
     Overuse of `!!` is often treated as a code smell.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#safe-call-elvis-not-null)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#safe-call-elvis-not-null">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="smart-casts"></div>
 
-# What are smart casts in Kotlin?
+## What are smart casts in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`type-system`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">type-system</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "What are smart casts in Kotlin?"
+??? question "View Answer"
 
     Smart casts let the compiler automatically cast a value after a
     successful type or null check.
@@ -750,21 +807,23 @@
     This reflects Kotlin's flow-sensitive type analysis.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#smart-casts)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#smart-casts">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="generics-in-kotlin"></div>
 
-# How do generics work in Kotlin?
+## How do generics work in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`generics`
-`type-system`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">generics</span>
+  <span class="question-badge question-badge--tag">type-system</span>
+</div>
 
-??? question "How do generics work in Kotlin?"
+??? question "View Answer"
 
     Generics let classes and functions operate on types abstractly while
     preserving type safety.
@@ -778,21 +837,23 @@
     That is why some runtime generic checks are limited.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/generics-and-variance/#generics-in-kotlin)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#generics-in-kotlin">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="variance-in-out"></div>
 
-# What do in and out mean in Kotlin variance?
+## What do in and out mean in Kotlin variance?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`generics`
-`variance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">generics</span>
+  <span class="question-badge question-badge--tag">variance</span>
+</div>
 
-??? question "What do in and out mean in Kotlin variance?"
+??? question "View Answer"
 
     Variance controls how generic types relate to each other.
     - `out` = producer / covariance
@@ -803,21 +864,23 @@
     consumes values, or does both.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/generics-and-variance/#variance-in-out)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#variance-in-out">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="star-projection"></div>
 
-# What is a star projection in Kotlin?
+## What is a star projection in Kotlin?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`generics`
-`variance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">generics</span>
+  <span class="question-badge question-badge--tag">variance</span>
+</div>
 
-??? question "What is a star projection in Kotlin?"
+??? question "View Answer"
 
     A star projection (`*`) represents an unknown type argument while still
     preserving safe usage rules.
@@ -829,21 +892,23 @@
     It is useful in reflection-heavy or framework-style code.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/generics-and-variance/#star-projection)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#star-projection">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="collections-api"></div>
 
-# What is important about Kotlin's collections API in interviews?
+## What is important about Kotlin's collections API in interviews?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`collections`
-`api`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">collections</span>
+  <span class="question-badge question-badge--tag">api</span>
+</div>
 
-??? question "What is important about Kotlin's collections API in interviews?"
+??? question "View Answer"
 
     Kotlin's collections API is expressive and functional in style.
     Common operations:
@@ -859,21 +924,23 @@
     It is powerful, but misuse can create unnecessary allocations.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#collections-api)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#collections-api">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="immutable-vs-mutable-collections"></div>
 
-# What is the difference between read-only and mutable collections in Kotlin?
+## What is the difference between read-only and mutable collections in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`collections`
-`immutability`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">collections</span>
+  <span class="question-badge question-badge--tag">immutability</span>
+</div>
 
-??? question "What is the difference between read-only and mutable collections in Kotlin?"
+??? question "View Answer"
 
     Kotlin distinguishes read-only collection interfaces from mutable ones.
     Important nuance:
@@ -885,21 +952,23 @@
     This matters when sharing state across layers or threads.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#immutable-vs-mutable-collections)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#immutable-vs-mutable-collections">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="sequences-vs-collections"></div>
 
-# When should you use Sequence instead of a regular collection chain?
+## When should you use Sequence instead of a regular collection chain?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`collections`
-`performance`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">collections</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
 
-??? question "When should you use Sequence instead of a regular collection chain?"
+??? question "View Answer"
 
     `Sequence` evaluates operations lazily.
     Use it when:
@@ -912,21 +981,23 @@
     not automatically for every chain.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#sequences-vs-collections)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#sequences-vs-collections">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="coroutines-what-are"></div>
 
-# What are Kotlin Coroutines?
+## What are Kotlin Coroutines?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`concurrency`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">concurrency</span>
+</div>
 
-??? question "What are Kotlin Coroutines?"
+??? question "View Answer"
 
     Kotlin Coroutines are lightweight concurrency primitives for writing
     asynchronous code in a sequential style.
@@ -943,21 +1014,23 @@
     Coroutines are cheaper than threads but still require careful design.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#coroutines-what-are)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#coroutines-what-are">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="suspend-functions"></div>
 
-# What is a suspend function in Kotlin?
+## What is a suspend function in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`suspend`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">suspend</span>
+</div>
 
-??? question "What is a suspend function in Kotlin?"
+??? question "View Answer"
 
     A `suspend` function can pause and resume without blocking the thread.
     Important clarification:
@@ -970,21 +1043,23 @@
     - dispatcher switching
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#suspend-functions)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#suspend-functions">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="continuation-and-cps"></div>
 
-# How do suspend functions work internally in Kotlin?
+## How do suspend functions work internally in Kotlin?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`coroutines`
-`compiler`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">compiler</span>
+</div>
 
-??? question "How do suspend functions work internally in Kotlin?"
+??? question "View Answer"
 
     Suspend functions are compiled into continuation-passing style (CPS).
     Internally, the compiler:
@@ -996,21 +1071,23 @@
     different lower-level form.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#continuation-and-cps)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#continuation-and-cps">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="dispatchers"></div>
 
-# What are Dispatchers in Kotlin Coroutines?
+## What are Dispatchers in Kotlin Coroutines?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`dispatchers`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">dispatchers</span>
+</div>
 
-??? question "What are Dispatchers in Kotlin Coroutines?"
+??? question "View Answer"
 
     Dispatchers decide what thread or thread pool a coroutine runs on.
     Common ones:
@@ -1023,21 +1100,23 @@
     Choosing the wrong dispatcher can hurt responsiveness or waste threads.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#dispatchers)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#dispatchers">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="coroutine-scope"></div>
 
-# What is CoroutineScope and why does it matter?
+## What is CoroutineScope and why does it matter?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`scope`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">scope</span>
+</div>
 
-??? question "What is CoroutineScope and why does it matter?"
+??? question "View Answer"
 
     `CoroutineScope` defines the lifecycle boundary for launched coroutines.
     It matters because it controls:
@@ -1051,21 +1130,23 @@
     A coroutine without the right scope is often a lifecycle bug.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#coroutine-scope)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#coroutine-scope">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="structured-concurrency"></div>
 
-# What is structured concurrency in Kotlin?
+## What is structured concurrency in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`structured-concurrency`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">structured-concurrency</span>
+</div>
 
-??? question "What is structured concurrency in Kotlin?"
+??? question "View Answer"
 
     Structured concurrency means coroutines are launched within a scope that
     defines ownership and lifetime.
@@ -1078,21 +1159,23 @@
     concurrency should be tied to a parent lifecycle, not launched freely.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#structured-concurrency)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#structured-concurrency">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="job-vs-supervisorjob"></div>
 
-# What is the difference between Job and SupervisorJob?
+## What is the difference between Job and SupervisorJob?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`coroutines`
-`jobs`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">jobs</span>
+</div>
 
-??? question "What is the difference between Job and SupervisorJob?"
+??? question "View Answer"
 
     `Job` and `SupervisorJob` both manage coroutine lifecycle,
     but failure propagation differs.
@@ -1103,21 +1186,23 @@
     This is a common senior-level coroutine interview question.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-vs-supervisorjob)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-vs-supervisorjob">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="async-vs-launch"></div>
 
-# What is the difference between launch and async in coroutines?
+## What is the difference between launch and async in coroutines?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`concurrency`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">concurrency</span>
+</div>
 
-??? question "What is the difference between launch and async in coroutines?"
+??? question "View Answer"
 
     `launch` starts a coroutine that returns `Job`.
     `async` starts a coroutine that returns `Deferred<T>`.
@@ -1129,21 +1214,23 @@
     It should be used when structured result handling is needed.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#async-vs-launch)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#async-vs-launch">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="job-hierarchy"></div>
 
-# How does coroutine job hierarchy work?
+## How does coroutine job hierarchy work?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`coroutines`
-`jobs`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">jobs</span>
+</div>
 
-??? question "How does coroutine job hierarchy work?"
+??? question "View Answer"
 
     Every coroutine has a `Job` in its context.
     Parent-child hierarchy controls:
@@ -1156,21 +1243,23 @@
     Understanding job hierarchy is key to debugging coroutine behavior.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-hierarchy)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-hierarchy">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="coroutine-cancellation"></div>
 
-# How does cancellation work in Kotlin Coroutines?
+## How does cancellation work in Kotlin Coroutines?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`coroutines`
-`cancellation`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">cancellation</span>
+</div>
 
-??? question "How does cancellation work in Kotlin Coroutines?"
+??? question "View Answer"
 
     Coroutine cancellation is cooperative.
     That means code must reach suspension points or explicitly check for
@@ -1183,21 +1272,23 @@
     Blocking code that ignores cancellation is a common production bug.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-cancellation)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-cancellation">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="coroutine-exception-handling"></div>
 
-# How are exceptions handled in Kotlin Coroutines?
+## How are exceptions handled in Kotlin Coroutines?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`coroutines`
-`exceptions`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">exceptions</span>
+</div>
 
-??? question "How are exceptions handled in Kotlin Coroutines?"
+??? question "View Answer"
 
     Exception handling depends on coroutine builder type and hierarchy.
     Key ideas:
@@ -1208,21 +1299,23 @@
     Interview answer should focus on propagation rules, not just try/catch.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-exception-handling)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-exception-handling">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="flow-what-is"></div>
 
-# What is Flow in Kotlin?
+## What is Flow in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`flow`
-`async-streams`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">flow</span>
+  <span class="question-badge question-badge--tag">async-streams</span>
+</div>
 
-??? question "What is Flow in Kotlin?"
+??? question "View Answer"
 
     Flow is Kotlin's cold asynchronous stream API.
     It is used for:
@@ -1238,21 +1331,23 @@
     Flow is central to modern Android state handling.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#flow-what-is)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#flow-what-is">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="cold-vs-hot-flow"></div>
 
-# What is the difference between cold and hot streams in Kotlin?
+## What is the difference between cold and hot streams in Kotlin?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`flow`
-`reactive`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">flow</span>
+  <span class="question-badge question-badge--tag">reactive</span>
+</div>
 
-??? question "What is the difference between cold and hot streams in Kotlin?"
+??? question "View Answer"
 
     Cold streams start producing values per collector.
     Hot streams can emit independently of collectors.
@@ -1264,21 +1359,23 @@
     not just API names.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#cold-vs-hot-flow)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#cold-vs-hot-flow">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="stateflow-vs-sharedflow"></div>
 
-# What is the difference between StateFlow and SharedFlow?
+## What is the difference between StateFlow and SharedFlow?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`flow`
-`stateflow`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">flow</span>
+  <span class="question-badge question-badge--tag">stateflow</span>
+</div>
 
-??? question "What is the difference between StateFlow and SharedFlow?"
+??? question "View Answer"
 
     `StateFlow` is for holding and exposing current state.
     `SharedFlow` is for broadcasting events or shared emissions.
@@ -1290,21 +1387,23 @@
     Choosing the wrong one often causes UI event bugs.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#stateflow-vs-sharedflow)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#stateflow-vs-sharedflow">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="channels-vs-sharedflow"></div>
 
-# When should you use a Channel instead of SharedFlow?
+## When should you use a Channel instead of SharedFlow?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`channels`
-`flow`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">channels</span>
+  <span class="question-badge question-badge--tag">flow</span>
+</div>
 
-??? question "When should you use a Channel instead of SharedFlow?"
+??? question "View Answer"
 
     Channels are point-to-point communication primitives.
     SharedFlow is a broadcast-style hot stream.
@@ -1315,21 +1414,23 @@
     Use SharedFlow when multiple collectors should observe emissions.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#channels-vs-sharedflow)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#channels-vs-sharedflow">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="mutex-in-kotlin"></div>
 
-# What is Mutex in Kotlin Coroutines and when should you use it?
+## What is Mutex in Kotlin Coroutines and when should you use it?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`coroutines`
-`synchronization`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">synchronization</span>
+</div>
 
-??? question "What is Mutex in Kotlin Coroutines and when should you use it?"
+??? question "View Answer"
 
     `Mutex` is a coroutine-friendly mutual exclusion primitive.
     It is used to protect shared mutable state without blocking a thread.
@@ -1341,21 +1442,23 @@
     `Mutex` suspends waiting coroutines instead of blocking a thread.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#mutex-in-kotlin)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#mutex-in-kotlin">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="kotlin-jvm-interoperability"></div>
 
-# How does Kotlin interoperate with Java on the JVM?
+## How does Kotlin interoperate with Java on the JVM?
 
-**Difficulty:** `intermediate` • **Tags:**
-`kotlin`
-`jvm`
-`interop`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">jvm</span>
+  <span class="question-badge question-badge--tag">interop</span>
+</div>
 
-??? question "How does Kotlin interoperate with Java on the JVM?"
+??? question "View Answer"
 
     Kotlin is designed for strong Java interoperability.
     It supports:
@@ -1371,21 +1474,23 @@
     Good Kotlin interview answers usually mention both syntax and JVM impact.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-jvm-interoperability)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-jvm-interoperability">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="kotlin-bytecode-basics"></div>
 
-# What should you know about Kotlin bytecode for interviews?
+## What should you know about Kotlin bytecode for interviews?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`bytecode`
-`jvm`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">bytecode</span>
+  <span class="question-badge question-badge--tag">jvm</span>
+</div>
 
-??? question "What should you know about Kotlin bytecode for interviews?"
+??? question "View Answer"
 
     Kotlin source compiles to JVM bytecode, often with generated helper
     classes and methods that do not appear in source code.
@@ -1398,21 +1503,23 @@
     Bytecode knowledge helps explain performance and interoperability.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-bytecode-basics)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-bytecode-basics">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="suspend-state-machine"></div>
 
-# How are coroutines compiled into a state machine?
+## How are coroutines compiled into a state machine?
 
-**Difficulty:** `advanced` • **Tags:**
-`kotlin`
-`coroutines`
-`bytecode`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">kotlin</span>
+  <span class="question-badge question-badge--tag">coroutines</span>
+  <span class="question-badge question-badge--tag">bytecode</span>
+</div>
 
-??? question "How are coroutines compiled into a state machine?"
+??? question "View Answer"
 
     The compiler rewrites suspend code into a state machine that tracks the
     current execution label and continuation.
@@ -1423,5 +1530,5 @@
     This explains how coroutines appear sequential while remaining resumable.
 
 
-    [🚀 See Full Deep Dive](/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#suspend-state-machine)
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#suspend-state-machine">🚀 See Full Deep Dive</a>
 

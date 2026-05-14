@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Recomposition and Skip Optimization Deep Dive
+## Recomposition and Skip Optimization Deep Dive
 
 ## Overview
 

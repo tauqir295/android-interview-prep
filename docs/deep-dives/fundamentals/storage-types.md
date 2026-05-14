@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Storage Types Deep Dive
+## Storage Types Deep Dive
 
 ## Overview
 

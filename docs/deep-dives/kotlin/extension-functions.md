@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Extension Functions Deep Dive
+## Extension Functions Deep Dive
 
 ## Overview
 

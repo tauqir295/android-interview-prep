@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Effects, Coroutines, and Lifecycle Deep Dive
+## Effects, Coroutines, and Lifecycle Deep Dive
 
 ## Overview
 

@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Modularization Strategies Deep Dive
+## Modularization Strategies Deep Dive
 
 ## Overview
 

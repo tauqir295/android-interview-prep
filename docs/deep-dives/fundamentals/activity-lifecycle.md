@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Activity Lifecycle Deep Dive
+## Activity Lifecycle Deep Dive
 
 ## Overview
 The Activity lifecycle is the set of states an Activity moves through, managed by the Android OS to optimize:

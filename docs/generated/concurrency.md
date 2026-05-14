@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Concurrency
 
 <script>
@@ -35,12 +40,14 @@
 
 <div id="sample-question"></div>
 
-# Sample Question
+## Sample Question
 
-**Difficulty:** `beginner` • **Tags:**
-`android`
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+</div>
 
-??? question "Sample Question"
+??? question "View Answer"
 
     Add a short answer here.
 

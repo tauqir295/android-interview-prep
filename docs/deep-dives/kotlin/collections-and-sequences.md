@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Collections and Sequences Deep Dive
+## Collections and Sequences Deep Dive
 
 ## Overview
 

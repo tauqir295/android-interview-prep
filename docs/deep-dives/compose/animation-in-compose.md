@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Animation in Compose Deep Dive
+## Animation in Compose Deep Dive
 
 ## Overview
 

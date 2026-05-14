@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Side Effects Overview Deep Dive
+## Side Effects Overview Deep Dive
 
 ## Overview
 

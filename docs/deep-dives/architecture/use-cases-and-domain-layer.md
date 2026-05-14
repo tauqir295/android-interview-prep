@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Use Cases and Domain Layer Deep Dive
+## Use Cases and Domain Layer Deep Dive
 
 ## Overview
 

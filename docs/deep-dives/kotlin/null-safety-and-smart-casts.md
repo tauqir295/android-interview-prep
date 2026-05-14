@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Null Safety and Smart Casts Deep Dive
+## Null Safety and Smart Casts Deep Dive
 
 ## Overview
 

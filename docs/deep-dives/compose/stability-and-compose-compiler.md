@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Stability and Compose Compiler Deep Dive
+## Stability and Compose Compiler Deep Dive
 
 ## Overview
 

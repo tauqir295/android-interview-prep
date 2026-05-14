@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Scope Functions Deep Dive
+## Scope Functions Deep Dive
 
 ## Overview
 

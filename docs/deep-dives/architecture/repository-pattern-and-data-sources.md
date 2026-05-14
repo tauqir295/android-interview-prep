@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Repository Pattern and Data Sources Deep Dive
+## Repository Pattern and Data Sources Deep Dive
 
 ## Overview
 

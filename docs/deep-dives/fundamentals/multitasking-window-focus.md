@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Multitasking and Window Focus Deep Dive
+## Multitasking and Window Focus Deep Dive
 
 ## Overview
 

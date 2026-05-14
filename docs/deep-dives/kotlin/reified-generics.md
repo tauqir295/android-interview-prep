@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Reified Generics Deep Dive
+## Reified Generics Deep Dive
 
 ## Overview
 

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # {{ category_title }}
 
 <script>
@@ -36,21 +41,25 @@
 
 <div id="{{ q.id }}"></div>
 
-# {{ q.title }}
+## {{ q.title }}
 
 {% if q.difficulty or q.tags %}
-**Difficulty:** `{{ q.difficulty }}` • **Tags:**
-{% for tag in q.tags %}
-`{{ tag }}`
-{% endfor %}
+<div class="question-meta">
+  {% if q.difficulty %}
+  <span class="question-badge question-badge--difficulty question-badge--{{ q.difficulty | lower }}">{{ q.difficulty }}</span>
+  {% endif %}
+  {% for tag in q.tags %}
+  <span class="question-badge question-badge--tag">{{ tag }}</span>
+  {% endfor %}
+</div>
 {% endif %}
 
-??? question "{{ q.title }}"
+??? question "View Answer"
 
     {{ q.standard_answer | indent(4) }}
 
     {% if q.deep_dive %}
-    [🚀 See Full Deep Dive]({{ q.deep_dive }}#{{ q.id }})
+    <a class="question-dive-link" href="{{ q.deep_dive }}#{{ q.id }}">🚀 See Full Deep Dive</a>
     {% endif %}
 
 {% endfor %}

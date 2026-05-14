@@ -29,7 +29,7 @@ hide:
 })();
 </script>
 
-# Dependency Injection Strategies Deep Dive
+## Dependency Injection Strategies Deep Dive
 
 ## Overview
 

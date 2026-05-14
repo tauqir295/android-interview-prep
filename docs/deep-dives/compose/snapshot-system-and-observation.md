@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Snapshot System and Observation Deep Dive
+## Snapshot System and Observation Deep Dive
 
 ## Overview
 

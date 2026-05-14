@@ -23,7 +23,7 @@ hide:
   }
 })();
 </script>
-# Broadcast Receivers Deep Dive
+## Broadcast Receivers Deep Dive
 
 ## Overview
 
