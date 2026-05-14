@@ -47,6 +47,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1309,14 +1311,23 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intents-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intents Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
@@ -1665,6 +1676,8 @@
 
 
 
+  <h1>Intents</h1>
+
 <div class="admonition abstract">
 <p><a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a></p>
 </div>
@@ -1687,7 +1700,7 @@
   }
 })();
 </script>
-<h1 id="intents-deep-dive">Intents Deep Dive<a class="headerlink" href="#intents-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="intents-deep-dive">Intents Deep Dive<a class="headerlink" href="#intents-deep-dive" title="Permanent link">&para;</a></h2>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Intents are Android's primary mechanism for inter-component communication. An Intent encapsulates the "request" to perform some action, and can be used to start Activities, Services, or deliver Broadcasts. They're fundamental to Android's loose coupling philosophy.</p>
 <hr />

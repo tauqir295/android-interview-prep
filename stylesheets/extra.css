@@ -1,0 +1,193 @@
+/* Question card styling for MkDocs Material */
+.md-typeset details.question {
+  margin: 1rem 0 1.15rem;
+  border: 1px solid rgba(76, 175, 80, 0.22);
+  border-radius: 14px;
+  background: rgba(76, 175, 80, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.md-typeset details.question:hover {
+  background: rgba(76, 175, 80, 0.09);
+  border-color: rgba(76, 175, 80, 0.32);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.md-typeset details.question[open] {
+  background: rgba(76, 175, 80, 0.08);
+  border-color: rgba(76, 175, 80, 0.38);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+.md-typeset details.question summary {
+  padding: 0.95rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.md-typeset details.question summary::-webkit-details-marker {
+  display: none;
+}
+
+.md-typeset details.question summary::before {
+  display: none;
+}
+
+.md-typeset details.question summary:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset details.question[open] summary {
+  border-bottom: 1px solid rgba(76, 175, 80, 0.16);
+  background: rgba(76, 175, 80, 0.06);
+}
+
+.md-typeset details.question .admonition-content,
+.md-typeset details.question .tabbed-content {
+  padding: 1rem 1rem 1.05rem;
+}
+
+.md-typeset .question-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.25rem 0 0.85rem;
+}
+
+.md-typeset .question-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(76, 175, 80, 0.28);
+  background: rgba(76, 175, 80, 0.08);
+  color: var(--md-default-fg-color);
+  font-size: 0.74rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.md-typeset .question-badge--difficulty {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.md-typeset .question-badge--beginner {
+  background: rgba(76, 175, 80, 0.12);
+  border-color: rgba(76, 175, 80, 0.34);
+}
+
+.md-typeset .question-badge--intermediate {
+  background: rgba(76, 175, 80, 0.10);
+  border-color: rgba(76, 175, 80, 0.30);
+}
+
+.md-typeset .question-badge--advanced {
+  background: rgba(76, 175, 80, 0.14);
+  border-color: rgba(76, 175, 80, 0.36);
+}
+
+.md-typeset .question-badge--senior {
+  background: rgba(76, 175, 80, 0.16);
+  border-color: rgba(76, 175, 80, 0.40);
+}
+
+.md-typeset .question-badge--staff {
+  background: rgba(76, 175, 80, 0.18);
+  border-color: rgba(76, 175, 80, 0.44);
+}
+
+.md-typeset .question-badge--tag {
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .question-badge:hover {
+  background: rgba(76, 175, 80, 0.16);
+}
+
+.md-typeset .question-dive-link {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset .question-dive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.65rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(76, 175, 80, 0.24);
+  background: rgba(76, 175, 80, 0.06);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .question-dive-link:hover {
+  background: rgba(76, 175, 80, 0.12);
+  border-color: rgba(76, 175, 80, 0.38);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.md-typeset details.question code,
+.md-typeset details.question pre,
+.md-typeset details.question .highlight,
+.md-typeset details.question .codehilite {
+  border-radius: 10px;
+}
+
+.md-typeset details.question pre,
+.md-typeset details.question .highlight > pre,
+.md-typeset details.question .codehilite > pre {
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.md-typeset details.question p,
+.md-typeset details.question li {
+  line-height: 1.65;
+}
+
+@media screen and (max-width: 768px) {
+  .md-typeset details.question {
+    margin: 0.85rem 0 1rem;
+    border-radius: 12px;
+  }
+
+  .md-typeset details.question summary {
+    padding: 0.9rem 0.95rem;
+    font-size: 0.98rem;
+  }
+
+  .md-typeset details.question .admonition-content,
+  .md-typeset details.question .tabbed-content {
+    padding: 0.9rem 0.95rem 1rem;
+  }
+
+  .md-typeset .question-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset details.question,
+  .md-typeset .question-dive-link,
+  .md-typeset .question-badge,
+  .md-typeset details.question summary {
+    transition: none;
+  }
+}
+

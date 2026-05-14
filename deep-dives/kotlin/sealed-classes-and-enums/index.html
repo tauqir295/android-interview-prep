@@ -47,6 +47,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1309,14 +1311,23 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sealed-classes-and-enums-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sealed Classes and Enums Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
@@ -1520,6 +1531,8 @@
 
 
 
+  <h1>Sealed classes and enums</h1>
+
 <div class="admonition abstract">
 <p><a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a></p>
 </div>
@@ -1542,7 +1555,7 @@
   }
 })();
 </script>
-<h1 id="sealed-classes-and-enums-deep-dive">Sealed Classes and Enums Deep Dive<a class="headerlink" href="#sealed-classes-and-enums-deep-dive" title="Permanent link">&para;</a></h1>
+<h2 id="sealed-classes-and-enums-deep-dive">Sealed Classes and Enums Deep Dive<a class="headerlink" href="#sealed-classes-and-enums-deep-dive" title="Permanent link">&para;</a></h2>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Sealed classes and enum classes both model limited domains, but they solve different problems.</p>
 <hr />

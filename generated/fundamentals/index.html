@@ -51,6 +51,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -179,6 +181,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -291,6 +295,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -307,6 +329,1457 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-activity-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Activity Lifecycle?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-difference-between-onstart-and-onresume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between onStart() and onResume()?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-savedinstancestate-and-when-is-it-called" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is savedInstanceState and when is it called?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-during-configuration-changes-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens during configuration changes (rotation)?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-android-handle-process-death" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does Android handle process death?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-exact-order-of-lifecycle-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the exact order of lifecycle callbacks?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-difference-between-explicit-and-implicit-intents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between explicit and implicit intents?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-intent-filters-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do intent filters work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-intent-resolution-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does intent resolution work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-common-intent-flags-and-their-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are common intent flags and their purposes?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pendingintent-and-when-should-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a PendingIntent and when should you use it?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-fragment-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Fragment lifecycle?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-differences-between-fragments-and-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the differences between Fragments and Activities?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-fragments-communicate-with-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do fragments communicate with each other?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-fragment-back-stack-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does fragment back stack work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-best-way-to-pass-data-to-a-fragment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the best way to pass data to a Fragment?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-context-and-what-are-its-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Context and what are its types?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-context-cause-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can Context cause memory leaks?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How can Context cause memory leaks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-context-in-singletons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity context in singletons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-class-references-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inner class references Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-references-to-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static references to Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-should-you-use-application-context-vs-activity-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When should you use Application Context vs Activity Context?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-it-important-to-match-context-lifetime-with-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is it important to match Context lifetime with usage?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-memory-leak-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a memory leak in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-detect-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you detect memory leaks?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you detect memory leaks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leakcanary-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeakCanary library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-studio-memory-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Studio Memory Profiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logcat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-common-memory-leak-patterns-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are common memory leak patterns in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-best-practices-to-prevent-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are best practices to prevent memory leaks?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-anr-application-not-responding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an ANR (Application Not Responding)?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-prevent-anrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you prevent ANRs?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you prevent ANRs?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-threads-for-heavy-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use threads for heavy work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-coroutines-modern-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use coroutines (modern approach)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynctask-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsyncTask (legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize database queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazy-load-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lazy load data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile-with-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile with Profiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-shouldnt-you-do-networkio-on-main-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why shouldn't you do network/I/O on main thread?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-jank-and-how-do-you-measure-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's jank and how do you measure it?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s jank and how do you measure it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profile-gpu-rendering-dev-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile GPU Rendering (dev options)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-studio-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Studio Profiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framemetrics-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrameMetrics API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firebase-performance-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Performance Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-looper-and-how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Looper and how does it work?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Looper and how does it work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-manually-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create manually if needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-handler-and-how-does-it-relate-to-looper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Handler and how does it relate to Looper?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-handlerthread-and-when-should-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is HandlerThread and when should you use it?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-handler-cause-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can Handler cause memory leaks?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-service-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Service in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-difference-between-service-and-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between Service and Thread?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-bound-service-and-how-do-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a bound service and how do you use it?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a bound service and how do you use it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-service-with-binder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Service with Binder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-onbind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Override onBind()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-from-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bind from Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-serviceconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use ServiceConnection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-intentservice-and-when-should-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is IntentService and when should you use it?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-broadcast-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Broadcast Receiver?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-register-broadcast-receivers-securely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you register broadcast receivers securely?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you register broadcast receivers securely?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-in-oncreateonstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register in onCreate/onStart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregister-in-ondestroyonstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unregister in onDestroy/onStop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-sender-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check sender permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#require-permissions-for-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Require permissions for safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-receiving-broadcasts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit receiving broadcasts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-80-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 8.0+ restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-unregister-dynamic-receivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always unregister dynamic receivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-ordered-and-sticky-broadcasts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are ordered and sticky broadcasts?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-android-permission-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Android permission model?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-runtime-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you implement runtime permissions?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you implement runtime permissions?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declare-in-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declare in manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-permission-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check permission at runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request permission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handle response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-permission-groups-and-how-do-they-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are permission groups and how do they work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-androidmanifestxml-and-what-does-it-contain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is AndroidManifest.xml and what does it contain?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is AndroidManifest.xml and what does it contain?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PACKAGE NAME
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPONENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERMISSIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FEATURES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VERSION INFO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APPLICATION METADATA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intent-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTENT FILTERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-declare-intent-filters-in-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you declare intent filters in manifest?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-binder-and-how-does-ipc-work-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Binder and how does IPC work in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-zygote-and-how-does-it-create-app-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Zygote and how does it create app processes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Zygote and how does it create app processes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-launch-requested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App launch requested
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-art-and-dalvik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between ART and Dalvik?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-when-you-launch-an-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens when you launch an app?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What happens when you launch an app?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-startup-time-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App startup time stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-for-cold-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize for cold start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improve-perceived-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improve perceived performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-recyclerview-more-efficient-than-listview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is RecyclerView more efficient than ListView?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-android-render-ui-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does Android render UI frames?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does Android render UI frames?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEASURE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LAYOUT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DRAW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPOSITE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DISPLAY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-view-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduce View hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-viewholder-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use ViewHolder pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-layout-thrashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoid layout thrashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-hardware-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use hardware acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-different-storage-options-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the different storage options in Android?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What are the different storage options in Android?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHARED PREFERENCES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTERNAL STORAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTERNAL STORAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATABASE (SQLite)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTENT PROVIDERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CACHE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-task-and-back-stack-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Task and back stack in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-to-app-state-when-process-is-killed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens to app state when process is killed?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What happens to app state when process is killed?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-activity-saved-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If Activity saved state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-no-saved-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If no saved state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savedinstancestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        savedInstanceState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ViewModel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-multitasking-affect-activity-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does multitasking affect activity lifecycle?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does multitasking affect activity lifecycle?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPLIT SCREEN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picture-in-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PICTURE-IN-PICTURE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-switching-recents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APP SWITCHING (Recents)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1312,7 +2785,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1323,6 +2798,1446 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-activity-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Activity Lifecycle?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-difference-between-onstart-and-onresume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between onStart() and onResume()?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-savedinstancestate-and-when-is-it-called" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is savedInstanceState and when is it called?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-during-configuration-changes-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens during configuration changes (rotation)?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-android-handle-process-death" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does Android handle process death?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-exact-order-of-lifecycle-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the exact order of lifecycle callbacks?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-difference-between-explicit-and-implicit-intents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between explicit and implicit intents?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-intent-filters-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do intent filters work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-intent-resolution-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does intent resolution work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-common-intent-flags-and-their-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are common intent flags and their purposes?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-pendingintent-and-when-should-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a PendingIntent and when should you use it?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-fragment-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Fragment lifecycle?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-differences-between-fragments-and-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the differences between Fragments and Activities?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-fragments-communicate-with-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do fragments communicate with each other?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-fragment-back-stack-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does fragment back stack work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-best-way-to-pass-data-to-a-fragment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the best way to pass data to a Fragment?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-context-and-what-are-its-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Context and what are its types?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-context-cause-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can Context cause memory leaks?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How can Context cause memory leaks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-context-in-singletons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity context in singletons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inner-class-references-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inner class references Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-references-to-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static references to Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-should-you-use-application-context-vs-activity-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When should you use Application Context vs Activity Context?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-it-important-to-match-context-lifetime-with-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is it important to match Context lifetime with usage?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-memory-leak-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a memory leak in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-detect-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you detect memory leaks?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you detect memory leaks?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leakcanary-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LeakCanary library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-studio-memory-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Studio Memory Profiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logcat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-common-memory-leak-patterns-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are common memory leak patterns in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-best-practices-to-prevent-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are best practices to prevent memory leaks?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-anr-application-not-responding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an ANR (Application Not Responding)?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-prevent-anrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you prevent ANRs?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you prevent ANRs?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-threads-for-heavy-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use threads for heavy work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-coroutines-modern-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use coroutines (modern approach)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynctask-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsyncTask (legacy)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize database queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lazy-load-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lazy load data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile-with-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile with Profiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-shouldnt-you-do-networkio-on-main-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why shouldn't you do network/I/O on main thread?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-jank-and-how-do-you-measure-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's jank and how do you measure it?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s jank and how do you measure it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profile-gpu-rendering-dev-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile GPU Rendering (dev options)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-studio-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android Studio Profiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#framemetrics-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrameMetrics API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firebase-performance-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Performance Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-looper-and-how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Looper and how does it work?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Looper and how does it work?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-manually-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create manually if needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-handler-and-how-does-it-relate-to-looper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Handler and how does it relate to Looper?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-handlerthread-and-when-should-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is HandlerThread and when should you use it?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-handler-cause-memory-leaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can Handler cause memory leaks?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-service-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Service in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-the-difference-between-service-and-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the difference between Service and Thread?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-bound-service-and-how-do-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a bound service and how do you use it?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is a bound service and how do you use it?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-service-with-binder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create Service with Binder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-onbind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Override onBind()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bind-from-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bind from Activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-serviceconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use ServiceConnection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-intentservice-and-when-should-you-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is IntentService and when should you use it?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-broadcast-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Broadcast Receiver?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-register-broadcast-receivers-securely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you register broadcast receivers securely?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you register broadcast receivers securely?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-in-oncreateonstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register in onCreate/onStart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregister-in-ondestroyonstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unregister in onDestroy/onStop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-sender-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check sender permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#require-permissions-for-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Require permissions for safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit-receiving-broadcasts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit receiving broadcasts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-80-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Android 8.0+ restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-unregister-dynamic-receivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always unregister dynamic receivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-ordered-and-sticky-broadcasts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are ordered and sticky broadcasts?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-android-permission-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Android permission model?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-implement-runtime-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you implement runtime permissions?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do you implement runtime permissions?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declare-in-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declare in manifest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-permission-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check permission at runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-permission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request permission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handle-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handle response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-permission-groups-and-how-do-they-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are permission groups and how do they work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-androidmanifestxml-and-what-does-it-contain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is AndroidManifest.xml and what does it contain?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is AndroidManifest.xml and what does it contain?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PACKAGE NAME
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPONENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PERMISSIONS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FEATURES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VERSION INFO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APPLICATION METADATA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intent-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTENT FILTERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-declare-intent-filters-in-manifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do you declare intent filters in manifest?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-binder-and-how-does-ipc-work-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Binder and how does IPC work in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-zygote-and-how-does-it-create-app-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Zygote and how does it create app processes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What is Zygote and how does it create app processes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-launch-requested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App launch requested
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App process
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-art-and-dalvik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the difference between ART and Dalvik?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-when-you-launch-an-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens when you launch an app?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What happens when you launch an app?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-startup-time-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App startup time stages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-for-cold-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimize for cold start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improve-perceived-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improve perceived performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-recyclerview-more-efficient-than-listview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is RecyclerView more efficient than ListView?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-android-render-ui-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does Android render UI frames?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does Android render UI frames?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MEASURE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LAYOUT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DRAW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMPOSITE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DISPLAY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-view-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduce View hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-viewholder-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use ViewHolder pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avoid-layout-thrashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avoid layout thrashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-hardware-acceleration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use hardware acceleration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-different-storage-options-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are the different storage options in Android?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What are the different storage options in Android?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SHARED PREFERENCES
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INTERNAL STORAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTERNAL STORAGE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-sqlite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DATABASE (SQLite)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CONTENT PROVIDERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CACHE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-task-and-back-stack-in-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Task and back stack in Android?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-to-app-state-when-process-is-killed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens to app state when process is killed?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What happens to app state when process is killed?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-activity-saved-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If Activity saved state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-no-saved-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If no saved state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savedinstancestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        savedInstanceState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ViewModel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-multitasking-affect-activity-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How does multitasking affect activity lifecycle?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How does multitasking affect activity lifecycle?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#split-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SPLIT SCREEN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picture-in-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PICTURE-IN-PICTURE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-switching-recents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APP SWITCHING (Recents)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1336,6 +4251,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
 
@@ -1373,13 +4290,16 @@
 <hr />
 <div id="activity-lifecycle-overview"></div>
 
-<h1 id="what-is-the-activity-lifecycle">What is the Activity Lifecycle?<a class="headerlink" href="#what-is-the-activity-lifecycle" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>fundamentals</code></p>
+<h2 id="what-is-the-activity-lifecycle">What is the Activity Lifecycle?<a class="headerlink" href="#what-is-the-activity-lifecycle" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
+
 <details class="question">
-<summary>What is the Activity Lifecycle?</summary>
+<summary>View Answer</summary>
 <p>The Activity Lifecycle is the sequence of states an Android Activity
 transitions through from creation to destruction.</p>
 <p>Android manages lifecycle callbacks automatically to:
@@ -1394,18 +4314,21 @@ transitions through from creation to destruction.</p>
 - onPause()
 - onStop()
 - onDestroy()</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#activity-lifecycle-overview">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#activity-lifecycle-overview">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="onstart-vs-onresume"></div>
 
-<h1 id="whats-the-difference-between-onstart-and-onresume">What's the difference between onStart() and onResume()?<a class="headerlink" href="#whats-the-difference-between-onstart-and-onresume" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>callbacks</code></p>
+<h2 id="whats-the-difference-between-onstart-and-onresume">What's the difference between onStart() and onResume()?<a class="headerlink" href="#whats-the-difference-between-onstart-and-onresume" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">callbacks</span>
+</div>
+
 <details class="question">
-<summary>What's the difference between onStart() and onResume()?</summary>
+<summary>View Answer</summary>
 <p>onStart(): Called when Activity becomes visible to user.
 - Window not yet in focus
 - Activity cannot receive user input
@@ -1415,18 +4338,21 @@ transitions through from creation to destruction.</p>
 - Can receive user input
 - Use for animations, camera, location updates</p>
 <p>Simple rule: onStart = visible, onResume = interactive.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onstart-vs-onresume">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onstart-vs-onresume">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="onsaved-instance-state"></div>
 
-<h1 id="what-is-savedinstancestate-and-when-is-it-called">What is savedInstanceState and when is it called?<a class="headerlink" href="#what-is-savedinstancestate-and-when-is-it-called" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>state-preservation</code></p>
+<h2 id="what-is-savedinstancestate-and-when-is-it-called">What is savedInstanceState and when is it called?<a class="headerlink" href="#what-is-savedinstancestate-and-when-is-it-called" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">state-preservation</span>
+</div>
+
 <details class="question">
-<summary>What is savedInstanceState and when is it called?</summary>
+<summary>View Answer</summary>
 <p>savedInstanceState is a Bundle used to preserve Activity state during
 predictable destruction (rotation, low memory).</p>
 <p>Called in order:
@@ -1439,18 +4365,21 @@ predictable destruction (rotation, low memory).</p>
 - Save form data
 - Save UI state</p>
 <p>Note: NOT called during activity finish() or user back press.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onsaved-instance-state">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onsaved-instance-state">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="onconfig-change"></div>
 
-<h1 id="what-happens-during-configuration-changes-rotation">What happens during configuration changes (rotation)?<a class="headerlink" href="#what-happens-during-configuration-changes-rotation" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>configuration</code></p>
+<h2 id="what-happens-during-configuration-changes-rotation">What happens during configuration changes (rotation)?<a class="headerlink" href="#what-happens-during-configuration-changes-rotation" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">configuration</span>
+</div>
+
 <details class="question">
-<summary>What happens during configuration changes (rotation)?</summary>
+<summary>View Answer</summary>
 <p>When device is rotated or configuration changes:
 1. onPause() → onSaveInstanceState() → onStop() → onDestroy()
 2. onCreate() → onStart() → onResume()</p>
@@ -1461,18 +4390,21 @@ predictable destruction (rotation, low memory).</p>
 - Use retained fragments
 - Add android:configChanges to manifest</p>
 <p>Best practice: Use ViewModel for non-UI state.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onconfig-change">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#onconfig-change">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="process-death-handling"></div>
 
-<h1 id="how-does-android-handle-process-death">How does Android handle process death?<a class="headerlink" href="#how-does-android-handle-process-death" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>process-management</code></p>
+<h2 id="how-does-android-handle-process-death">How does Android handle process death?<a class="headerlink" href="#how-does-android-handle-process-death" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">process-management</span>
+</div>
+
 <details class="question">
-<summary>How does Android handle process death?</summary>
+<summary>View Answer</summary>
 <p>Process death occurs when Android kills app to free memory
 (no warning, no lifecycle callbacks).</p>
 <p>Recovery steps when user returns:
@@ -1485,18 +4417,21 @@ predictable destruction (rotation, low memory).</p>
 - Use ViewModel + Room
 - Persist critical data to disk/database
 - Use Hilt for dependency injection</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#process-death-handling">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#process-death-handling">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="lifecycle-callbacks-order"></div>
 
-<h1 id="what-is-the-exact-order-of-lifecycle-callbacks">What is the exact order of lifecycle callbacks?<a class="headerlink" href="#what-is-the-exact-order-of-lifecycle-callbacks" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>callbacks</code></p>
+<h2 id="what-is-the-exact-order-of-lifecycle-callbacks">What is the exact order of lifecycle callbacks?<a class="headerlink" href="#what-is-the-exact-order-of-lifecycle-callbacks" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">callbacks</span>
+</div>
+
 <details class="question">
-<summary>What is the exact order of lifecycle callbacks?</summary>
+<summary>View Answer</summary>
 <p>NORMAL SEQUENCE:
 onCreate() → onStart() → onResume() → (user interaction) →
 onPause() → onStop() → onDestroy()</p>
@@ -1509,18 +4444,21 @@ onStart() → onResume()</p>
 <p>DEVICE ROTATION:
 onPause() → onSaveInstanceState() → onStop() →
 onDestroy() → onCreate() → onStart() → onResume()</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#lifecycle-callbacks-order">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle/#lifecycle-callbacks-order">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="intent-explicit-implicit"></div>
 
-<h1 id="whats-the-difference-between-explicit-and-implicit-intents">What's the difference between explicit and implicit intents?<a class="headerlink" href="#whats-the-difference-between-explicit-and-implicit-intents" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>intents</code>
-<code>ipc</code></p>
+<h2 id="whats-the-difference-between-explicit-and-implicit-intents">What's the difference between explicit and implicit intents?<a class="headerlink" href="#whats-the-difference-between-explicit-and-implicit-intents" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+</div>
+
 <details class="question">
-<summary>What's the difference between explicit and implicit intents?</summary>
+<summary>View Answer</summary>
 <p>EXPLICIT INTENT:
 - Specifies exact component (Activity/Service)
 - Requires package name and class name
@@ -1535,18 +4473,21 @@ onDestroy() → onCreate() → onStart() → onResume()</p>
 Intent(this, MainActivity::class.java)</p>
 <p>Example implicit:
 Intent(Intent.ACTION_VIEW, Uri.parse("https://..."))</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-explicit-implicit">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-explicit-implicit">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="intent-filters"></div>
 
-<h1 id="how-do-intent-filters-work">How do intent filters work?<a class="headerlink" href="#how-do-intent-filters-work" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>intents</code>
-<code>manifest</code></p>
+<h2 id="how-do-intent-filters-work">How do intent filters work?<a class="headerlink" href="#how-do-intent-filters-work" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">manifest</span>
+</div>
+
 <details class="question">
-<summary>How do intent filters work?</summary>
+<summary>View Answer</summary>
 <p>Intent filters declare which implicit intents a component can handle.</p>
 <p>Defined in AndroidManifest.xml inside activity/service/broadcast receiver.</p>
 <p>Components:
@@ -1561,18 +4502,21 @@ Intent(Intent.ACTION_VIEW, Uri.parse("https://..."))</p>
 <p>Example:
 - ACTION_VIEW + http:// MIME → Browser
 - ACTION_VIEW + image/* MIME → Gallery</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-filters">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-filters">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="intent-resolution"></div>
 
-<h1 id="how-does-intent-resolution-work">How does intent resolution work?<a class="headerlink" href="#how-does-intent-resolution-work" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>intents</code>
-<code>ipc</code></p>
+<h2 id="how-does-intent-resolution-work">How does intent resolution work?<a class="headerlink" href="#how-does-intent-resolution-work" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+</div>
+
 <details class="question">
-<summary>How does intent resolution work?</summary>
+<summary>View Answer</summary>
 <p>Intent resolution is Android's process of finding the target
 component for an implicit intent.</p>
 <p>Steps:
@@ -1587,18 +4531,21 @@ component for an implicit intent.</p>
 <p>If no matches:
 - ActivityNotFoundException thrown</p>
 <p>Optimization: Use explicit intents for internal communication.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-resolution">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-resolution">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="intent-flags"></div>
 
-<h1 id="what-are-common-intent-flags-and-their-purposes">What are common intent flags and their purposes?<a class="headerlink" href="#what-are-common-intent-flags-and-their-purposes" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>intents</code>
-<code>backstack</code></p>
+<h2 id="what-are-common-intent-flags-and-their-purposes">What are common intent flags and their purposes?<a class="headerlink" href="#what-are-common-intent-flags-and-their-purposes" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">backstack</span>
+</div>
+
 <details class="question">
-<summary>What are common intent flags and their purposes?</summary>
+<summary>View Answer</summary>
 <p>FLAG_ACTIVITY_NEW_TASK:
 - Starts activity in new task
 - Used with contexts without activity (Services)</p>
@@ -1613,18 +4560,21 @@ component for an implicit intent.</p>
 - Never appears in back button</p>
 <p>FLAG_ACTIVITY_CLEAR_TASK:
 - Clears entire task when new activity starts</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-flags">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#intent-flags">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="pending-intent"></div>
 
-<h1 id="what-is-a-pendingintent-and-when-should-you-use-it">What is a PendingIntent and when should you use it?<a class="headerlink" href="#what-is-a-pendingintent-and-when-should-you-use-it" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>intents</code>
-<code>notifications</code></p>
+<h2 id="what-is-a-pendingintent-and-when-should-you-use-it">What is a PendingIntent and when should you use it?<a class="headerlink" href="#what-is-a-pendingintent-and-when-should-you-use-it" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">intents</span>
+  <span class="question-badge question-badge--tag">notifications</span>
+</div>
+
 <details class="question">
-<summary>What is a PendingIntent and when should you use it?</summary>
+<summary>View Answer</summary>
 <p>PendingIntent wraps an intent to be executed later by another app.</p>
 <p>Key property: Grants permission to foreign app to execute intent
 with YOUR app's identity and permissions.</p>
@@ -1639,18 +4589,21 @@ with YOUR app's identity and permissions.</p>
 - PendingIntent.getBroadcast()</p>
 <p>Important: Use FLAG_IMMUTABLE (Android 12+) for security.
 Always provide proper flags when creating.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/intents/#pending-intent">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/intents/#pending-intent">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="fragment-lifecycle"></div>
 
-<h1 id="what-is-the-fragment-lifecycle">What is the Fragment lifecycle?<a class="headerlink" href="#what-is-the-fragment-lifecycle" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>fragments</code>
-<code>lifecycle</code></p>
+<h2 id="what-is-the-fragment-lifecycle">What is the Fragment lifecycle?<a class="headerlink" href="#what-is-the-fragment-lifecycle" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
+
 <details class="question">
-<summary>What is the Fragment lifecycle?</summary>
+<summary>View Answer</summary>
 <p>Fragment lifecycle is similar to Activity but with additional callbacks.</p>
 <p>Key lifecycle methods:
 - onCreate(): Fragment created
@@ -1666,18 +4619,21 @@ Always provide proper flags when creating.</p>
 - Fragments can be added/removed without destroying
 - UI lifecycle separate (onCreateView, onDestroyView)
 - Dependent on host Activity</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-lifecycle">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-lifecycle">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="fragment-vs-activity"></div>
 
-<h1 id="what-are-the-differences-between-fragments-and-activities">What are the differences between Fragments and Activities?<a class="headerlink" href="#what-are-the-differences-between-fragments-and-activities" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>fragments</code>
-<code>architecture</code></p>
+<h2 id="what-are-the-differences-between-fragments-and-activities">What are the differences between Fragments and Activities?<a class="headerlink" href="#what-are-the-differences-between-fragments-and-activities" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+</div>
+
 <details class="question">
-<summary>What are the differences between Fragments and Activities?</summary>
+<summary>View Answer</summary>
 <p>ACTIVITY:
 - Screen-level UI component
 - Entry point in manifest
@@ -1699,18 +4655,21 @@ Always provide proper flags when creating.</p>
 - Screen entry points
 - Standalone screens
 - Navigation between major app sections</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-vs-activity">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-vs-activity">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="fragment-communication"></div>
 
-<h1 id="how-do-fragments-communicate-with-each-other">How do fragments communicate with each other?<a class="headerlink" href="#how-do-fragments-communicate-with-each-other" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>fragments</code>
-<code>communication</code></p>
+<h2 id="how-do-fragments-communicate-with-each-other">How do fragments communicate with each other?<a class="headerlink" href="#how-do-fragments-communicate-with-each-other" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">communication</span>
+</div>
+
 <details class="question">
-<summary>How do fragments communicate with each other?</summary>
+<summary>View Answer</summary>
 <p>APPROACH 1: Shared ViewModel (BEST PRACTICE)
 - Both fragments access same ViewModel
 - ViewModel lives in Activity scope
@@ -1729,18 +4688,21 @@ Always provide proper flags when creating.</p>
 - Only during fragment creation
 - Not for ongoing communication</p>
 <p>Modern approach: Use ViewModel + LiveData.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-communication">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-communication">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="fragment-back-stack"></div>
 
-<h1 id="how-does-fragment-back-stack-work">How does fragment back stack work?<a class="headerlink" href="#how-does-fragment-back-stack-work" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>fragments</code>
-<code>backstack</code></p>
+<h2 id="how-does-fragment-back-stack-work">How does fragment back stack work?<a class="headerlink" href="#how-does-fragment-back-stack-work" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">backstack</span>
+</div>
+
 <details class="question">
-<summary>How does fragment back stack work?</summary>
+<summary>View Answer</summary>
 <p>Fragment back stack is managed by FragmentManager.</p>
 <p>When you call:
 fragmentManager.beginTransaction()
@@ -1761,18 +4723,21 @@ fragmentManager.beginTransaction()
 - Replaces new fragment with old one
 - Restores previous fragment state</p>
 <p>Each Activity has own FragmentManager back stack.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-back-stack">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-back-stack">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="fragment-arguments"></div>
 
-<h1 id="whats-the-best-way-to-pass-data-to-a-fragment">What's the best way to pass data to a Fragment?<a class="headerlink" href="#whats-the-best-way-to-pass-data-to-a-fragment" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>fragments</code>
-<code>data-passing</code></p>
+<h2 id="whats-the-best-way-to-pass-data-to-a-fragment">What's the best way to pass data to a Fragment?<a class="headerlink" href="#whats-the-best-way-to-pass-data-to-a-fragment" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">fragments</span>
+  <span class="question-badge question-badge--tag">data-passing</span>
+</div>
+
 <details class="question">
-<summary>What's the best way to pass data to a Fragment?</summary>
+<summary>View Answer</summary>
 <p>BEST PRACTICE: Use Bundle with constants</p>
 <p>Recommended pattern:
 companion object {
@@ -1794,18 +4759,21 @@ val userId = arguments?.getInt(ARG_USER_ID) ?: 0</p>
 - Pass large or non-Parcelable objects as arguments
 - Use constructors with parameters
 - Access fragments without factory method</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-arguments">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/fragments/#fragment-arguments">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="context-what-is"></div>
 
-<h1 id="what-is-context-and-what-are-its-types">What is Context and what are its types?<a class="headerlink" href="#what-is-context-and-what-are-its-types" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>context</code>
-<code>fundamentals</code></p>
+<h2 id="what-is-context-and-what-are-its-types">What is Context and what are its types?<a class="headerlink" href="#what-is-context-and-what-are-its-types" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
+
 <details class="question">
-<summary>What is Context and what are its types?</summary>
+<summary>View Answer</summary>
 <p>Context is an abstract class that provides access to app resources
 and system services.</p>
 <p>Think of it as: "Reference to the current application state."</p>
@@ -1825,18 +4793,21 @@ and system services.</p>
 - Access resources (strings, drawables)
 - Create databases, SharedPreferences
 - Show toasts, dialogs</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/context/#context-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#context-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="context-memory-leaks"></div>
 
-<h1 id="how-can-context-cause-memory-leaks">How can Context cause memory leaks?<a class="headerlink" href="#how-can-context-cause-memory-leaks" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>context</code>
-<code>memory</code></p>
+<h2 id="how-can-context-cause-memory-leaks">How can Context cause memory leaks?<a class="headerlink" href="#how-can-context-cause-memory-leaks" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">memory</span>
+</div>
+
 <details class="question">
-<summary>How can Context cause memory leaks?</summary>
+<summary>View Answer</summary>
 <p>Context memory leaks occur when Activity Context is referenced
 by long-lived objects.</p>
 <p>PROBLEMATIC PATTERNS:</p>
@@ -1858,18 +4829,21 @@ var activity: Activity? = null // WRONG!
 - Use dependency injection
 - Never store Activity in long-lived objects</p>
 <p>Memory leak chain: Activity → thread → singleton → leak</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/context/#context-memory-leaks">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#context-memory-leaks">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="application-context-vs-activity-context"></div>
 
-<h1 id="when-should-you-use-application-context-vs-activity-context">When should you use Application Context vs Activity Context?<a class="headerlink" href="#when-should-you-use-application-context-vs-activity-context" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>context</code>
-<code>best-practices</code></p>
+<h2 id="when-should-you-use-application-context-vs-activity-context">When should you use Application Context vs Activity Context?<a class="headerlink" href="#when-should-you-use-application-context-vs-activity-context" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">best-practices</span>
+</div>
+
 <details class="question">
-<summary>When should you use Application Context vs Activity Context?</summary>
+<summary>View Answer</summary>
 <p>USE APPLICATION CONTEXT:
 - Get SharedPreferences
 - Create global singletons
@@ -1892,18 +4866,21 @@ var activity: Activity? = null // WRONG!
 - Static references</p>
 <p>Simple rule: Use app context if possible, activity context only
 when UI operation is tied to current Activity.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/context/#application-context-vs-activity-context">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#application-context-vs-activity-context">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="context-lifecycle-awareness"></div>
 
-<h1 id="why-is-it-important-to-match-context-lifetime-with-usage">Why is it important to match Context lifetime with usage?<a class="headerlink" href="#why-is-it-important-to-match-context-lifetime-with-usage" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>context</code>
-<code>lifecycle</code></p>
+<h2 id="why-is-it-important-to-match-context-lifetime-with-usage">Why is it important to match Context lifetime with usage?<a class="headerlink" href="#why-is-it-important-to-match-context-lifetime-with-usage" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">context</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
+
 <details class="question">
-<summary>Why is it important to match Context lifetime with usage?</summary>
+<summary>View Answer</summary>
 <p>Mismatching Context lifetime with usage causes:
 - Memory leaks (Activity never garbage collected)
 - Crashes (UI operation on destroyed context)
@@ -1922,18 +4899,21 @@ val manager = Manager(applicationContext) // App context</p>
 Lifetime of Context &gt;= Lifetime of code referencing it</p>
 <p>If code runs longer than Activity: use app context.
 If code tied to Activity: safe to use Activity context.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/context/#context-lifecycle-awareness">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/context/#context-lifecycle-awareness">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="memory-leak-what-is"></div>
 
-<h1 id="what-is-a-memory-leak-in-android">What is a memory leak in Android?<a class="headerlink" href="#what-is-a-memory-leak-in-android" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>memory</code>
-<code>performance</code></p>
+<h2 id="what-is-a-memory-leak-in-android">What is a memory leak in Android?<a class="headerlink" href="#what-is-a-memory-leak-in-android" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
+
 <details class="question">
-<summary>What is a memory leak in Android?</summary>
+<summary>View Answer</summary>
 <p>A memory leak occurs when an object is no longer needed but remains
 referenced, preventing garbage collection.</p>
 <p>Memory leak chain:
@@ -1954,18 +4934,21 @@ referenced, preventing garbage collection.</p>
 - Unregistered listeners/callbacks
 - Handler messages with Activity context
 - Inner classes retaining Activity</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="memory-detection"></div>
 
-<h1 id="how-do-you-detect-memory-leaks">How do you detect memory leaks?<a class="headerlink" href="#how-do-you-detect-memory-leaks" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>memory</code>
-<code>debugging</code></p>
+<h2 id="how-do-you-detect-memory-leaks">How do you detect memory leaks?<a class="headerlink" href="#how-do-you-detect-memory-leaks" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">debugging</span>
+</div>
+
 <details class="question">
-<summary>How do you detect memory leaks?</summary>
+<summary>View Answer</summary>
 <p>TOOLS:</p>
 <h3 id="leakcanary-library">LeakCanary library<a class="headerlink" href="#leakcanary-library" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1993,18 +4976,21 @@ referenced, preventing garbage collection.</p>
 6. Trace back to root reference</p>
 <p>Key: Always check that objects can be garbage collected
 after they're no longer needed.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-detection">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-detection">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="common-leak-patterns"></div>
 
-<h1 id="what-are-common-memory-leak-patterns-in-android">What are common memory leak patterns in Android?<a class="headerlink" href="#what-are-common-memory-leak-patterns-in-android" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>memory</code>
-<code>patterns</code></p>
+<h2 id="what-are-common-memory-leak-patterns-in-android">What are common memory leak patterns in Android?<a class="headerlink" href="#what-are-common-memory-leak-patterns-in-android" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">patterns</span>
+</div>
+
 <details class="question">
-<summary>What are common memory leak patterns in Android?</summary>
+<summary>View Answer</summary>
 <p>PATTERN 1: Static Activity Reference
 companion object {
 var activity: Activity? = null // WRONG!
@@ -2025,18 +5011,21 @@ Fix: Remove messages in onDestroy</p>
 <p>PATTERN 5: Long-Lived Objects Holding Context
 singleton.context = this // Long-lived singleton
 Fix: Use app context or WeakReference</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#common-leak-patterns">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#common-leak-patterns">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="memory-leak-fixes"></div>
 
-<h1 id="what-are-best-practices-to-prevent-memory-leaks">What are best practices to prevent memory leaks?<a class="headerlink" href="#what-are-best-practices-to-prevent-memory-leaks" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>memory</code>
-<code>best-practices</code></p>
+<h2 id="what-are-best-practices-to-prevent-memory-leaks">What are best practices to prevent memory leaks?<a class="headerlink" href="#what-are-best-practices-to-prevent-memory-leaks" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">best-practices</span>
+</div>
+
 <details class="question">
-<summary>What are best practices to prevent memory leaks?</summary>
+<summary>View Answer</summary>
 <ol>
 <li>Prefer application context over Activity context</li>
 <li>Singletons, databases, shared preferences</li>
@@ -2086,18 +5075,21 @@ Fix: Use app context or WeakReference</p>
 <li>Catches leaks automatically</li>
 <li>Part of development workflow</li>
 </ol>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-fixes">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/memory-leaks/#memory-leak-fixes">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="anr-what-is"></div>
 
-<h1 id="what-is-an-anr-application-not-responding">What is an ANR (Application Not Responding)?<a class="headerlink" href="#what-is-an-anr-application-not-responding" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>performance</code>
-<code>anr</code></p>
+<h2 id="what-is-an-anr-application-not-responding">What is an ANR (Application Not Responding)?<a class="headerlink" href="#what-is-an-anr-application-not-responding" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">anr</span>
+</div>
+
 <details class="question">
-<summary>What is an ANR (Application Not Responding)?</summary>
+<summary>View Answer</summary>
 <p>ANR (Application Not Responding) occurs when main thread blocks
 for too long, preventing UI updates or input handling.</p>
 <p>Timeout thresholds:
@@ -2120,18 +5112,21 @@ for too long, preventing UI updates or input handling.</p>
 - Infinite loops
 - Deadlock situations
 - Unoptimized database queries</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#anr-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#anr-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="preventing-anr"></div>
 
-<h1 id="how-do-you-prevent-anrs">How do you prevent ANRs?<a class="headerlink" href="#how-do-you-prevent-anrs" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>performance</code>
-<code>anr</code></p>
+<h2 id="how-do-you-prevent-anrs">How do you prevent ANRs?<a class="headerlink" href="#how-do-you-prevent-anrs" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">anr</span>
+</div>
+
 <details class="question">
-<summary>How do you prevent ANRs?</summary>
+<summary>View Answer</summary>
 <p>RULE 1: Keep main thread operations quick
 - Maximum 100-200ms for user-facing operations
 - Don't do I/O, network, or heavy computation on main thread</p>
@@ -2161,18 +5156,21 @@ heavyWork() // Off main thread
 <li>Find slow operations</li>
 <li>Optimize hotspots</li>
 </ul>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#preventing-anr">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#preventing-anr">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="main-thread-vs-background"></div>
 
-<h1 id="why-shouldnt-you-do-networkio-on-main-thread">Why shouldn't you do network/I/O on main thread?<a class="headerlink" href="#why-shouldnt-you-do-networkio-on-main-thread" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>threading</code>
-<code>performance</code></p>
+<h2 id="why-shouldnt-you-do-networkio-on-main-thread">Why shouldn't you do network/I/O on main thread?<a class="headerlink" href="#why-shouldnt-you-do-networkio-on-main-thread" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
+
 <details class="question">
-<summary>Why shouldn't you do network/I/O on main thread?</summary>
+<summary>View Answer</summary>
 <p>Main thread responsibilities:
 - Handle user input (taps, scrolls)
 - Update UI views
@@ -2194,18 +5192,21 @@ heavyWork() // Off main thread
 <p>Modern approach: Coroutines
 val data = withContext(Dispatchers.IO) { fetchData() }
 // Automatically switches context</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#main-thread-vs-background">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#main-thread-vs-background">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="jank-dropped-frames"></div>
 
-<h1 id="whats-jank-and-how-do-you-measure-it">What's jank and how do you measure it?<a class="headerlink" href="#whats-jank-and-how-do-you-measure-it" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>performance</code>
-<code>rendering</code></p>
+<h2 id="whats-jank-and-how-do-you-measure-it">What's jank and how do you measure it?<a class="headerlink" href="#whats-jank-and-how-do-you-measure-it" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+</div>
+
 <details class="question">
-<summary>What's jank and how do you measure it?</summary>
+<summary>View Answer</summary>
 <p>JANK: Visible stutter in UI animations/scrolling.</p>
 <p>Cause: Dropping frames due to main thread blocking.</p>
 <p>Expected frame rate:
@@ -2239,18 +5240,21 @@ val data = withContext(Dispatchers.IO) { fetchData() }
 <li>Real user metrics</li>
 </ul>
 <p>Prevention: Keep main thread responsive (&lt;5ms per operation).</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#jank-dropped-frames">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/anr-and-performance/#jank-dropped-frames">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="looper-what-is"></div>
 
-<h1 id="what-is-looper-and-how-does-it-work">What is Looper and how does it work?<a class="headerlink" href="#what-is-looper-and-how-does-it-work" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>threading</code>
-<code>looper</code></p>
+<h2 id="what-is-looper-and-how-does-it-work">What is Looper and how does it work?<a class="headerlink" href="#what-is-looper-and-how-does-it-work" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">looper</span>
+</div>
+
 <details class="question">
-<summary>What is Looper and how does it work?</summary>
+<summary>View Answer</summary>
 <p>Looper: Thread mechanism for processing messages in a queue.</p>
 <p>How it works:
 1. Thread has message queue
@@ -2275,18 +5279,21 @@ Looper.loop() // Start looping
 - Ordered message processing
 - Foundation for Handler/HandlerThread
 - UI updates only on main thread (main Looper)</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#looper-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#looper-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="handler-what-is"></div>
 
-<h1 id="what-is-handler-and-how-does-it-relate-to-looper">What is Handler and how does it relate to Looper?<a class="headerlink" href="#what-is-handler-and-how-does-it-relate-to-looper" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>threading</code>
-<code>handler</code></p>
+<h2 id="what-is-handler-and-how-does-it-relate-to-looper">What is Handler and how does it relate to Looper?<a class="headerlink" href="#what-is-handler-and-how-does-it-relate-to-looper" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">handler</span>
+</div>
+
 <details class="question">
-<summary>What is Handler and how does it relate to Looper?</summary>
+<summary>View Answer</summary>
 <p>Handler: Interface for sending messages to a Thread's message queue.</p>
 <p>Relationship with Looper:
 1. Handler posts messages to queue
@@ -2308,18 +5315,21 @@ updateUI(result) // Runs on main thread
 }
 }.start()</p>
 <p>Key: Handler provides thread-safe way to run code on specific thread.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="handler-thread"></div>
 
-<h1 id="what-is-handlerthread-and-when-should-you-use-it">What is HandlerThread and when should you use it?<a class="headerlink" href="#what-is-handlerthread-and-when-should-you-use-it" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>threading</code>
-<code>handler</code></p>
+<h2 id="what-is-handlerthread-and-when-should-you-use-it">What is HandlerThread and when should you use it?<a class="headerlink" href="#what-is-handlerthread-and-when-should-you-use-it" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">threading</span>
+  <span class="question-badge question-badge--tag">handler</span>
+</div>
+
 <details class="question">
-<summary>What is HandlerThread and when should you use it?</summary>
+<summary>View Answer</summary>
 <p>HandlerThread: Thread with built-in Looper for handling messages.</p>
 <p>Benefits over plain Thread:
 - Looper automatically created and started
@@ -2338,18 +5348,21 @@ val handler = Handler(handlerThread.looper)</p>
 <p>Best practice: Combine with Handler for thread-safe updates.</p>
 <p>Handler posts work → HandlerThread queue → Looper processes</p>
 <p>Remember: Always call quit() when done to avoid thread leaks.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-thread">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-thread">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="handler-memory-leak"></div>
 
-<h1 id="how-can-handler-cause-memory-leaks">How can Handler cause memory leaks?<a class="headerlink" href="#how-can-handler-cause-memory-leaks" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>handler</code>
-<code>memory</code></p>
+<h2 id="how-can-handler-cause-memory-leaks">How can Handler cause memory leaks?<a class="headerlink" href="#how-can-handler-cause-memory-leaks" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">handler</span>
+  <span class="question-badge question-badge--tag">memory</span>
+</div>
+
 <details class="question">
-<summary>How can Handler cause memory leaks?</summary>
+<summary>View Answer</summary>
 <p>Handler with delayed messages can leak Activity context.</p>
 <p>Problem scenario:
 handler.postDelayed(Runnable {
@@ -2376,18 +5389,21 @@ handler.removeCallbacks(myRunnable)
 super.onDestroy()
 }</p>
 <p>MODERN: Use coroutines instead (automatic cleanup).</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-memory-leak">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/looper-and-handler/#handler-memory-leak">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="service-what-is"></div>
 
-<h1 id="what-is-a-service-in-android">What is a Service in Android?<a class="headerlink" href="#what-is-a-service-in-android" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>service</code>
-<code>fundamentals</code></p>
+<h2 id="what-is-a-service-in-android">What is a Service in Android?<a class="headerlink" href="#what-is-a-service-in-android" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
+
 <details class="question">
-<summary>What is a Service in Android?</summary>
+<summary>View Answer</summary>
 <p>Service: Component for long-running operations in background.</p>
 <p>Key characteristics:
 - No UI (unlike Activity)
@@ -2416,18 +5432,21 @@ super.onDestroy()
 - Used for user-aware background work</p>
 <p>Important: Services run on main thread by default.
 Use threads inside service for heavy work.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/services/#service-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#service-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="service-vs-thread"></div>
 
-<h1 id="whats-the-difference-between-service-and-thread">What's the difference between Service and Thread?<a class="headerlink" href="#whats-the-difference-between-service-and-thread" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>service</code>
-<code>threading</code></p>
+<h2 id="whats-the-difference-between-service-and-thread">What's the difference between Service and Thread?<a class="headerlink" href="#whats-the-difference-between-service-and-thread" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">threading</span>
+</div>
+
 <details class="question">
-<summary>What's the difference between Service and Thread?</summary>
+<summary>View Answer</summary>
 <p>THREAD:
 - Tied to single process/app
 - Dies when app killed
@@ -2454,18 +5473,21 @@ Process priority:
 <p>System Management:
 - Service: Managed by system
 - Thread: Not managed by system</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/services/#service-vs-thread">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#service-vs-thread">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="bound-service"></div>
 
-<h1 id="what-is-a-bound-service-and-how-do-you-use-it">What is a bound service and how do you use it?<a class="headerlink" href="#what-is-a-bound-service-and-how-do-you-use-it" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>service</code>
-<code>ipc</code></p>
+<h2 id="what-is-a-bound-service-and-how-do-you-use-it">What is a bound service and how do you use it?<a class="headerlink" href="#what-is-a-bound-service-and-how-do-you-use-it" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+</div>
+
 <details class="question">
-<summary>What is a bound service and how do you use it?</summary>
+<summary>View Answer</summary>
 <p>Bound Service: Service offering interface for IPC to clients.</p>
 <p>Steps to implement:</p>
 <h3 id="create-service-with-binder">Create Service with Binder<a class="headerlink" href="#create-service-with-binder" title="Permanent link">&para;</a></h3>
@@ -2494,18 +5516,21 @@ val service = binder.getService()
 - Service stops if no clients bound and not started</p>
 <p>Key: Bound service tied to client lifecycle.
 Unbind in onDestroy/onStop to prevent leaks.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/services/#bound-service">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#bound-service">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="intent-service"></div>
 
-<h1 id="what-is-intentservice-and-when-should-you-use-it">What is IntentService and when should you use it?<a class="headerlink" href="#what-is-intentservice-and-when-should-you-use-it" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>service</code>
-<code>background-work</code></p>
+<h2 id="what-is-intentservice-and-when-should-you-use-it">What is IntentService and when should you use it?<a class="headerlink" href="#what-is-intentservice-and-when-should-you-use-it" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">service</span>
+  <span class="question-badge question-badge--tag">background-work</span>
+</div>
+
 <details class="question">
-<summary>What is IntentService and when should you use it?</summary>
+<summary>View Answer</summary>
 <p>IntentService (deprecated): Subclass of Service handling asynchronous requests.</p>
 <p>Benefits:
 - Background thread automatically created
@@ -2533,18 +5558,21 @@ val file = downloadFile() // Network call OK
 Use WorkManager for background work (better lifecycle management,
 persistence, backoff policy).</p>
 <p>Legacy but useful for understanding architecture.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/services/#intent-service">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/services/#intent-service">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="broadcast-receiver"></div>
 
-<h1 id="what-is-a-broadcast-receiver">What is a Broadcast Receiver?<a class="headerlink" href="#what-is-a-broadcast-receiver" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>broadcasting</code>
-<code>messaging</code></p>
+<h2 id="what-is-a-broadcast-receiver">What is a Broadcast Receiver?<a class="headerlink" href="#what-is-a-broadcast-receiver" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">broadcasting</span>
+  <span class="question-badge question-badge--tag">messaging</span>
+</div>
+
 <details class="question">
-<summary>What is a Broadcast Receiver?</summary>
+<summary>View Answer</summary>
 <p>Broadcast Receiver: Component for receiving system/app messages.</p>
 <p>Characteristics:
 - Listens for broadcast intents
@@ -2572,18 +5600,21 @@ override fun onReceive(context, intent) {
 }
 }</p>
 <p>Use cases: Battery level, connectivity, SMS, time changes.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-receiver">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-receiver">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="broadcast-permissions"></div>
 
-<h1 id="how-do-you-register-broadcast-receivers-securely">How do you register broadcast receivers securely?<a class="headerlink" href="#how-do-you-register-broadcast-receivers-securely" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>broadcasting</code>
-<code>security</code></p>
+<h2 id="how-do-you-register-broadcast-receivers-securely">How do you register broadcast receivers securely?<a class="headerlink" href="#how-do-you-register-broadcast-receivers-securely" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">broadcasting</span>
+  <span class="question-badge question-badge--tag">security</span>
+</div>
+
 <details class="question">
-<summary>How do you register broadcast receivers securely?</summary>
+<summary>View Answer</summary>
 <p>DYNAMIC REGISTRATION (Recommended):</p>
 <h3 id="register-in-oncreateonstart">Register in onCreate/onStart<a class="headerlink" href="#register-in-oncreateonstart" title="Permanent link">&para;</a></h3>
 <p>registerReceiver(myReceiver, IntentFilter(ACTION))</p>
@@ -2615,18 +5646,21 @@ Only catch broadcasts you need</li>
 </ul>
 <h3 id="always-unregister-dynamic-receivers">Always unregister dynamic receivers<a class="headerlink" href="#always-unregister-dynamic-receivers" title="Permanent link">&para;</a></h3>
 <p>Prevents memory leaks and battery drain</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-permissions">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#broadcast-permissions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="ordered-vs-sticky-broadcast"></div>
 
-<h1 id="what-are-ordered-and-sticky-broadcasts">What are ordered and sticky broadcasts?<a class="headerlink" href="#what-are-ordered-and-sticky-broadcasts" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>broadcasting</code>
-<code>messaging</code></p>
+<h2 id="what-are-ordered-and-sticky-broadcasts">What are ordered and sticky broadcasts?<a class="headerlink" href="#what-are-ordered-and-sticky-broadcasts" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">broadcasting</span>
+  <span class="question-badge question-badge--tag">messaging</span>
+</div>
+
 <details class="question">
-<summary>What are ordered and sticky broadcasts?</summary>
+<summary>View Answer</summary>
 <p>NORMAL BROADCAST:
 - Sent to all matching receivers simultaneously
 - No guaranteed order
@@ -2657,18 +5691,21 @@ resultData, resultExtras)</p>
 <p>Best practice: Prefer explicit app-scoped communication
 (shared ViewModel/Flow or explicit broadcasts).
 LocalBroadcastManager is deprecated.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#ordered-vs-sticky-broadcast">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/broadcast-receivers/#ordered-vs-sticky-broadcast">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="permissions-model"></div>
 
-<h1 id="what-is-the-android-permission-model">What is the Android permission model?<a class="headerlink" href="#what-is-the-android-permission-model" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>permissions</code>
-<code>security</code></p>
+<h2 id="what-is-the-android-permission-model">What is the Android permission model?<a class="headerlink" href="#what-is-the-android-permission-model" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">permissions</span>
+  <span class="question-badge question-badge--tag">security</span>
+</div>
+
 <details class="question">
-<summary>What is the Android permission model?</summary>
+<summary>View Answer</summary>
 <p>ANDROID 5.0 (API 21) and below:
 - All permissions granted at install time
 - User reviews app's permission list pre-install
@@ -2694,18 +5731,21 @@ LocalBroadcastManager is deprecated.</p>
 <p>CUSTOM PERMISSIONS:
 - App-defined permissions</p>
 <p>Best practice: Request permissions only when needed (ask on usage).</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/permissions/#permissions-model">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/permissions/#permissions-model">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="runtime-permissions"></div>
 
-<h1 id="how-do-you-implement-runtime-permissions">How do you implement runtime permissions?<a class="headerlink" href="#how-do-you-implement-runtime-permissions" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>permissions</code>
-<code>runtime</code></p>
+<h2 id="how-do-you-implement-runtime-permissions">How do you implement runtime permissions?<a class="headerlink" href="#how-do-you-implement-runtime-permissions" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">permissions</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+</div>
+
 <details class="question">
-<summary>How do you implement runtime permissions?</summary>
+<summary>View Answer</summary>
 <p>STEPS:</p>
 <h3 id="declare-in-manifest">Declare in manifest<a class="headerlink" href="#declare-in-manifest" title="Permanent link">&para;</a></h3>
 <p><uses-permission android:name="android.permission.CAMERA" /></p>
@@ -2740,18 +5780,21 @@ else showDeniedMessage()
 }
 cameraPermission.launch(CAMERA)</p>
 <p>Always handle permission denials gracefully.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/permissions/#runtime-permissions">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/permissions/#runtime-permissions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="permission-groups"></div>
 
-<h1 id="what-are-permission-groups-and-how-do-they-work">What are permission groups and how do they work?<a class="headerlink" href="#what-are-permission-groups-and-how-do-they-work" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>permissions</code>
-<code>groups</code></p>
+<h2 id="what-are-permission-groups-and-how-do-they-work">What are permission groups and how do they work?<a class="headerlink" href="#what-are-permission-groups-and-how-do-they-work" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">permissions</span>
+  <span class="question-badge question-badge--tag">groups</span>
+</div>
+
 <details class="question">
-<summary>What are permission groups and how do they work?</summary>
+<summary>View Answer</summary>
 <p>Permission Groups: Dangerous permissions organized by functional groups.</p>
 <p>System shows one prompt per group.</p>
 <p>Example groups:</p>
@@ -2775,18 +5818,21 @@ PHOTOS: READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO</p>
 - Request least required permissions
 - Explain why permission needed (context)
 - Handle denials gracefully (skip feature)</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/permissions/#permission-groups">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/permissions/#permission-groups">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="manifest-what-is"></div>
 
-<h1 id="what-is-androidmanifestxml-and-what-does-it-contain">What is AndroidManifest.xml and what does it contain?<a class="headerlink" href="#what-is-androidmanifestxml-and-what-does-it-contain" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>manifest</code>
-<code>fundamentals</code></p>
+<h2 id="what-is-androidmanifestxml-and-what-does-it-contain">What is AndroidManifest.xml and what does it contain?<a class="headerlink" href="#what-is-androidmanifestxml-and-what-does-it-contain" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">manifest</span>
+  <span class="question-badge question-badge--tag">fundamentals</span>
+</div>
+
 <details class="question">
-<summary>What is AndroidManifest.xml and what does it contain?</summary>
+<summary>View Answer</summary>
 <p>AndroidManifest.xml: Main configuration file for Android app.</p>
 <p>Contains:</p>
 <h3 id="package-name">PACKAGE NAME<a class="headerlink" href="#package-name" title="Permanent link">&para;</a></h3>
@@ -2836,18 +5882,21 @@ PHOTOS: READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO</p>
 </application>
 </manifest></p>
 <p>Note: Some settings now in build.gradle (build tools).</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-what-is">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="manifest-intent-filters"></div>
 
-<h1 id="how-do-you-declare-intent-filters-in-manifest">How do you declare intent filters in manifest?<a class="headerlink" href="#how-do-you-declare-intent-filters-in-manifest" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>manifest</code>
-<code>intents</code></p>
+<h2 id="how-do-you-declare-intent-filters-in-manifest">How do you declare intent filters in manifest?<a class="headerlink" href="#how-do-you-declare-intent-filters-in-manifest" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">manifest</span>
+  <span class="question-badge question-badge--tag">intents</span>
+</div>
+
 <details class="question">
-<summary>How do you declare intent filters in manifest?</summary>
+<summary>View Answer</summary>
 <p>Intent filters declare which implicit intents a component accepts.</p>
 <p>STRUCTURE:
 <activity android:name=".MainActivity">
@@ -2885,18 +5934,21 @@ android.intent.category.BROWSABLE" />
 <data android:scheme="https"
 android:host="example.com" />
 </intent-filter></p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-intent-filters">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/androidmanifest/#manifest-intent-filters">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="binder-ipc"></div>
 
-<h1 id="what-is-binder-and-how-does-ipc-work-in-android">What is Binder and how does IPC work in Android?<a class="headerlink" href="#what-is-binder-and-how-does-ipc-work-in-android" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>ipc</code>
-<code>binder</code></p>
+<h2 id="what-is-binder-and-how-does-ipc-work-in-android">What is Binder and how does IPC work in Android?<a class="headerlink" href="#what-is-binder-and-how-does-ipc-work-in-android" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">ipc</span>
+  <span class="question-badge question-badge--tag">binder</span>
+</div>
+
 <details class="question">
-<summary>What is Binder and how does IPC work in Android?</summary>
+<summary>View Answer</summary>
 <p>Binder: Android's Inter-Process Communication (IPC) mechanism.</p>
 <p>Architecture:
 - Client process passes data to kernel
@@ -2925,18 +5977,21 @@ android:host="example.com" />
 4. Bind and call methods</p>
 <p>Most apps use high-level APIs (Intent, services)
 but Binder is underlying mechanism.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/binder-ipc/#binder-ipc">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/binder-ipc/#binder-ipc">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="zygote-process-creation"></div>
 
-<h1 id="what-is-zygote-and-how-does-it-create-app-processes">What is Zygote and how does it create app processes?<a class="headerlink" href="#what-is-zygote-and-how-does-it-create-app-processes" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>internals</code>
-<code>process</code></p>
+<h2 id="what-is-zygote-and-how-does-it-create-app-processes">What is Zygote and how does it create app processes?<a class="headerlink" href="#what-is-zygote-and-how-does-it-create-app-processes" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">internals</span>
+  <span class="question-badge question-badge--tag">process</span>
+</div>
+
 <details class="question">
-<summary>What is Zygote and how does it create app processes?</summary>
+<summary>View Answer</summary>
 <p>Zygote: Special system process that launches all app processes.</p>
 <p>Problem it solves:
 - Android apps need Android runtime (VM, libraries)
@@ -2973,18 +6028,21 @@ init → Zygote → ActivityManager → App processes</p>
 - System services communicate via Binder</p>
 <p>Multiple Zygotes:
 - Android 12+: Secondary Zygote for compatibility</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/zygote-process-creation/#zygote-process-creation">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/zygote-process-creation/#zygote-process-creation">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="art-vs-dalvik"></div>
 
-<h1 id="what-is-the-difference-between-art-and-dalvik">What is the difference between ART and Dalvik?<a class="headerlink" href="#what-is-the-difference-between-art-and-dalvik" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>runtime</code>
-<code>performance</code></p>
+<h2 id="what-is-the-difference-between-art-and-dalvik">What is the difference between ART and Dalvik?<a class="headerlink" href="#what-is-the-difference-between-art-and-dalvik" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">runtime</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
+
 <details class="question">
-<summary>What is the difference between ART and Dalvik?</summary>
+<summary>View Answer</summary>
 <p>DALVIK (Android 2.2 - 4.4):
 - JIT (Just-In-Time) compilation
 - Compiles bytecode to native during app execution
@@ -3019,18 +6077,21 @@ Install time: ART slower (compilation)</p>
 - Base app compiled AOT at install
 - JIT during app execution
 - Combines both benefits</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/art-vs-dalvik/#art-vs-dalvik">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/art-vs-dalvik/#art-vs-dalvik">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="app-startup-flow"></div>
 
-<h1 id="what-happens-when-you-launch-an-app">What happens when you launch an app?<a class="headerlink" href="#what-happens-when-you-launch-an-app" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>startup</code>
-<code>lifecycle</code></p>
+<h2 id="what-happens-when-you-launch-an-app">What happens when you launch an app?<a class="headerlink" href="#what-happens-when-you-launch-an-app" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">startup</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+</div>
+
 <details class="question">
-<summary>What happens when you launch an app?</summary>
+<summary>View Answer</summary>
 <p>APP STARTUP FLOW:</p>
 <ol>
 <li>User taps app icon</li>
@@ -3072,18 +6133,21 @@ Install time: ART slower (compilation)</p>
 - fully drawn (interactive)</p>
 <p>Modern approach: Activity Result API, lazy
 Fragment initialization.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/app-startup-flow/#app-startup-flow">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/app-startup-flow/#app-startup-flow">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="recyclerview-efficiency"></div>
 
-<h1 id="why-is-recyclerview-more-efficient-than-listview">Why is RecyclerView more efficient than ListView?<a class="headerlink" href="#why-is-recyclerview-more-efficient-than-listview" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>ui</code>
-<code>performance</code></p>
+<h2 id="why-is-recyclerview-more-efficient-than-listview">Why is RecyclerView more efficient than ListView?<a class="headerlink" href="#why-is-recyclerview-more-efficient-than-listview" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">ui</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
+
 <details class="question">
-<summary>Why is RecyclerView more efficient than ListView?</summary>
+<summary>View Answer</summary>
 <p>LISTVIEW DRAWBACKS:
 - Creates View for each list item
 - Never destroys views when scrolled off
@@ -3119,18 +6183,21 @@ Fragment initialization.</p>
 - Avoid heavy operations in onBindViewHolder
 - Load images asynchronously
 - Use DiffUtil for updates</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/recyclerview-efficiency/#recyclerview-efficiency">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/recyclerview-efficiency/#recyclerview-efficiency">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="rendering-pipeline"></div>
 
-<h1 id="how-does-android-render-ui-frames">How does Android render UI frames?<a class="headerlink" href="#how-does-android-render-ui-frames" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>rendering</code>
-<code>performance</code></p>
+<h2 id="how-does-android-render-ui-frames">How does Android render UI frames?<a class="headerlink" href="#how-does-android-render-ui-frames" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+  <span class="question-badge question-badge--tag">performance</span>
+</div>
+
 <details class="question">
-<summary>How does Android render UI frames?</summary>
+<summary>View Answer</summary>
 <p>RENDERING PIPELINE (per frame):</p>
 <h3 id="measure">MEASURE<a class="headerlink" href="#measure" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3184,18 +6251,21 @@ Fragment initialization.</p>
 <li>Use Layer types for animations</li>
 </ul>
 <p>Profiling: GPU rendering debug, Layout Inspector.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/rendering-pipeline/#rendering-pipeline">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/rendering-pipeline/#rendering-pipeline">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="storage-types"></div>
 
-<h1 id="what-are-the-different-storage-options-in-android">What are the different storage options in Android?<a class="headerlink" href="#what-are-the-different-storage-options-in-android" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>storage</code>
-<code>data</code></p>
+<h2 id="what-are-the-different-storage-options-in-android">What are the different storage options in Android?<a class="headerlink" href="#what-are-the-different-storage-options-in-android" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">storage</span>
+  <span class="question-badge question-badge--tag">data</span>
+</div>
+
 <details class="question">
-<summary>What are the different storage options in Android?</summary>
+<summary>View Answer</summary>
 <h3 id="shared-preferences">SHARED PREFERENCES<a class="headerlink" href="#shared-preferences" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Key-value store</li>
@@ -3245,18 +6315,21 @@ Fragment initialization.</p>
 - Temporary: Cache
 - Media: External storage</p>
 <p>Best practice: Use Room for structured data.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/storage-types/#storage-types">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/storage-types/#storage-types">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="task-and-backstack"></div>
 
-<h1 id="what-is-a-task-and-back-stack-in-android">What is a Task and back stack in Android?<a class="headerlink" href="#what-is-a-task-and-back-stack-in-android" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>backstack</code>
-<code>navigation</code></p>
+<h2 id="what-is-a-task-and-back-stack-in-android">What is a Task and back stack in Android?<a class="headerlink" href="#what-is-a-task-and-back-stack-in-android" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">backstack</span>
+  <span class="question-badge question-badge--tag">navigation</span>
+</div>
+
 <details class="question">
-<summary>What is a Task and back stack in Android?</summary>
+<summary>View Answer</summary>
 <p>TASK: Collection of activities arranged in backstack.</p>
 <p>Each task has:
 - One backstack
@@ -3291,18 +6364,21 @@ Fragment initialization.</p>
 - Use Navigation Component (handles backstack)
 - Understand task management
 - Use flags appropriately</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/task-and-backstack/#task-and-backstack">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/task-and-backstack/#task-and-backstack">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="process-death-lifecycle"></div>
 
-<h1 id="what-happens-to-app-state-when-process-is-killed">What happens to app state when process is killed?<a class="headerlink" href="#what-happens-to-app-state-when-process-is-killed" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>advanced</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>process</code></p>
+<h2 id="what-happens-to-app-state-when-process-is-killed">What happens to app state when process is killed?<a class="headerlink" href="#what-happens-to-app-state-when-process-is-killed" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">process</span>
+</div>
+
 <details class="question">
-<summary>What happens to app state when process is killed?</summary>
+<summary>View Answer</summary>
 <p>PROCESS DEATH: OS kills app process to free memory (no warning).</p>
 <p>BEFORE KILL (chance to save):
 - onSaveInstanceState() called
@@ -3356,18 +6432,21 @@ Fragment initialization.</p>
 </ul>
 <p>Best practice: ViewModel + Room Database + savedInstanceState
 for robust state management.</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/#process-death-lifecycle">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/#process-death-lifecycle">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
 <div id="multitasking-window-focus"></div>
 
-<h1 id="how-does-multitasking-affect-activity-lifecycle">How does multitasking affect activity lifecycle?<a class="headerlink" href="#how-does-multitasking-affect-activity-lifecycle" title="Permanent link">&para;</a></h1>
-<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
-<code>android</code>
-<code>lifecycle</code>
-<code>multitasking</code></p>
+<h2 id="how-does-multitasking-affect-activity-lifecycle">How does multitasking affect activity lifecycle?<a class="headerlink" href="#how-does-multitasking-affect-activity-lifecycle" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">lifecycle</span>
+  <span class="question-badge question-badge--tag">multitasking</span>
+</div>
+
 <details class="question">
-<summary>How does multitasking affect activity lifecycle?</summary>
+<summary>View Answer</summary>
 <p>MULTITASKING SCENARIOS:</p>
 <h3 id="split-screen">SPLIT SCREEN<a class="headerlink" href="#split-screen" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3409,7 +6488,7 @@ onStart() → onResume() (if was paused)</p>
 - visible but onPause() called
 - Should pause playback in onPause()
 - Resume in onResume()</p>
-<p><a href="/android-interview-prep/deep-dives/fundamentals/multitasking-window-focus/#multitasking-window-focus">🚀 See Full Deep Dive</a></p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/multitasking-window-focus/#multitasking-window-focus">🚀 See Full Deep Dive</a></p>
 </details>
 
 
@@ -3418,8 +6497,13 @@ onStart() → onResume() (if was paused)</p>
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
