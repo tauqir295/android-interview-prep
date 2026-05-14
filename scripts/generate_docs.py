@@ -14,6 +14,11 @@ PREFERRED_CATEGORY_ORDER = [
     "compose",
     "concurrency",
     "architecture",
+    "networking",
+    "performance",
+    "system-design",
+    "testing",
+    "behavioral",
 ]
 
 DIFFICULTY_ORDER = ["beginner", "intermediate", "advanced", "senior", "staff"]

@@ -7,7 +7,10 @@ Current state:
 - Compose mapping: complete
 - Concurrency mapping: complete
 - Architecture mapping: complete
-- Deep dive files for fundamentals, Kotlin, Compose, Concurrency, and Architecture: created
+- System Design mapping: complete
+- Testing mapping: complete
+- Behavioral mapping: complete
+- Deep dive files for fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Performance, System Design, Testing, and Behavioral: created
 ---
 ## Mapping Documents
 Use these as the source of truth:
@@ -16,6 +19,9 @@ Use these as the source of truth:
 - `COMPOSE_DEEP_DIVE_MAPPING.md` (full Compose mapping)
 - `CONCURRENCY_DEEP_DIVE_MAPPING.md` (full Concurrency mapping)
 - `ARCHITECTURE_DEEP_DIVE_MAPPING.md` (full Architecture mapping)
+- `SYSTEM_DESIGN_DEEP_DIVE_MAPPING.md` (full System Design mapping)
+- `TESTING_DEEP_DIVE_MAPPING.md` (full Testing mapping)
+- `BEHAVIORAL_DEEP_DIVE_MAPPING.md` (full Behavioral mapping)
 ---
 ## Fundamentals Mapping
 ### Files and Question Coverage
@@ -233,6 +239,9 @@ Implemented globally:
 | Architecture YAML | ✅ complete |
 | Networking YAML | ✅ complete |
 | Performance YAML | ✅ complete |
+| System Design YAML | ✅ complete |
+| Testing YAML | ✅ complete |
+| Behavioral YAML | ✅ complete |
 | Fundamentals deep dives | ✅ complete |
 | Kotlin deep dives | ✅ complete |
 | Compose mapping doc | ✅ complete |
@@ -240,6 +249,9 @@ Implemented globally:
 | Architecture mapping doc | ✅ complete |
 | Networking mapping doc | ✅ complete |
 | Performance mapping doc | ✅ complete |
+| System Design mapping doc | ✅ complete |
+| Testing mapping doc | ✅ complete |
+| Behavioral mapping doc | ✅ complete |
 | Generated docs pages | ✅ generated |
 | Combined question index (`ALL_QUESTIONS.md`) | ✅ updated |
 ---

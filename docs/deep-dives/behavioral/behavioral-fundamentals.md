@@ -1,0 +1,58 @@
+---
+hide:
+  - toc
+---
+!!! abstract ""
+    <a id="back-to-questions" href="/android-interview-prep/generated/behavioral/">← Back to Behavioral</a>
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/behavioral/${hash}`);
+      return;
+    }
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
+})();
+</script>
+
+## Behavioral Fundamentals Deep Dive
+## Overview
+Behavioral rounds evaluate how you create outcomes with people, not just how well you code.
+## Core Concepts
+- Clarity, ownership, collaboration, and learning velocity.
+- Evidence-based storytelling over vague claims.
+## Communication Framework
+- Lead with a one-line summary.
+- Use STAR structure with concrete metrics.
+- End with what you learned and changed.
+## Leadership and Ownership
+- Show end-to-end responsibility, including incidents and follow-through.
+- Demonstrate impact beyond your direct task.
+## Conflict Resolution
+- Focus on problem framing and alignment, not blame.
+- Explain compromise and final decision logic.
+## Example Answers
+```text
+Situation: Checkout failures spiked after release.
+Task: Restore stability within SLA.
+Action: Rolled back safely, led RCA, added release guardrails.
+Result: Error rate dropped 82%, no repeat incident in next quarter.
+```
+## Common Interview Questions
+- What do interviewers want to hear in behavioral rounds?
+- How do you avoid generic answers?
+## Production Considerations
+- Behavioral quality directly affects delivery speed and reliability.
+## Interview Signals
+- Ownership, composure, accountability, and systems thinking.
+## Senior-Level Insights
+- Strong candidates show repeatable leadership behaviors, not one-off heroics.

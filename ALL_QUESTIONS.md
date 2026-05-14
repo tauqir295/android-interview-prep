@@ -1,5 +1,5 @@
 # Complete Question List - Android Interview Prep
-Generated: 331 interview questions across 154 deep dive topics
+Generated: 481 interview questions across 214 deep dive topics
 ---
 ## Fundamentals Questions
 ## Activity Lifecycle (6 questions -> 1 deep dive)
@@ -513,9 +513,231 @@ Generated: 331 interview questions across 154 deep dive topics
 331. `ahead-of-time-compilation` - What is AoT compilation?
 
 ---
+
+## System Design Questions
+## System Design Fundamentals (2 questions -> 1 deep dive)
+332. `system-design` - What is Android system design in interviews?
+333. `design-round-structure` - What is a strong structure for solving design rounds?
+## Requirements And Scope (2 questions -> 1 deep dive)
+334. `functional-vs-nonfunctional-requirements` - How do you separate functional vs non-functional requirements?
+335. `scope-definition` - How do you define scope for a system design round?
+## Scalability And Capacity Planning (2 questions -> 1 deep dive)
+336. `estimations` - How do you do quick capacity estimations?
+337. `horizontal-scaling` - How do you scale a system horizontally?
+## High Level Architecture (3 questions -> 1 deep dive)
+338. `high-level-components` - How do you structure high-level components?
+339. `service-boundaries` - How do you define service boundaries?
+340. `load-balancing` - How do load balancers fit into architecture design?
+## Data Modeling And Storage (2 questions -> 1 deep dive)
+341. `data-modeling` - How do you approach data modeling in system design?
+342. `sql-vs-nosql` - When do you choose SQL vs NoSQL?
+## Search And Indexing (3 questions -> 1 deep dive)
+343. `indexing-strategy` - How do indexes affect read and write performance?
+344. `search-architecture` - How do you design search for low-latency queries?
+345. `eventual-consistency-search` - Why is search often eventually consistent?
+## Consistency And Transactions (2 questions -> 1 deep dive)
+346. `consistency-models` - What consistency models should you discuss in interviews?
+347. `transactions-and-sagas` - When should you use transactions vs sagas?
+## Caching Strategies (2 questions -> 1 deep dive)
+348. `cache-aside` - What is cache-aside and when is it useful?
+349. `cache-invalidation` - Why is cache invalidation hard?
+## Queueing And Async Processing (3 questions -> 1 deep dive)
+350. `message-queues` - When do you add a message queue?
+351. `event-driven-design` - What are event-driven architecture tradeoffs?
+352. `backpressure-in-systems` - What is backpressure in distributed systems?
+## Api Design And Gateways (4 questions -> 1 deep dive)
+353. `api-gateway` - What role does an API gateway play?
+354. `rest-vs-grpc-design` - How do you choose REST vs gRPC for internal APIs?
+355. `versioning-strategy` - How do you version APIs safely?
+356. `rate-limiting` - How do you design rate limiting?
+## Security And Compliance (4 questions -> 1 deep dive)
+357. `authn-vs-authz` - How do you model authentication vs authorization?
+358. `security-hardening` - What security hardening do you mention in interviews?
+359. `tenant-isolation` - How do you design multi-tenant isolation?
+360. `data-retention` - How do retention policies affect architecture?
+## Observability And Slos (2 questions -> 1 deep dive)
+361. `slos-and-slas` - How do SLOs/SLAs shape architecture decisions?
+362. `logging-metrics-tracing` - Why are logs, metrics, and traces all needed?
+## Resilience And Failure Handling (3 questions -> 1 deep dive)
+363. `circuit-breaker` - What is a circuit breaker and why use it?
+364. `bulkheads-and-timeouts` - How do timeouts, retries, and bulkheads work together?
+365. `idempotency` - Why is idempotency important in distributed systems?
+## Multi Region And Disaster Recovery (2 questions -> 1 deep dive)
+366. `multi-region` - When do you move to multi-region architecture?
+367. `disaster-recovery-rpo-rto` - How do RPO and RTO influence disaster recovery design?
+## Cost Optimization (2 questions -> 1 deep dive)
+368. `cost-vs-latency` - How do you balance cost vs latency?
+369. `capacity-headroom` - How much capacity headroom should a production system keep?
+## Mobile Backend For Frontend (2 questions -> 1 deep dive)
+370. `bff-pattern` - What is Backend-for-Frontend (BFF) and when should Android use it?
+371. `edge-caching-mobile` - How does edge caching improve mobile user experience?
+## Real Time Systems (2 questions -> 1 deep dive)
+372. `realtime-chat-design` - How would you design a real-time chat backend?
+373. `fanout-problem` - How do you handle fan-out at scale?
+## Analytics Pipeline Design (2 questions -> 1 deep dive)
+374. `analytics-pipeline` - How do you design analytics ingestion pipelines?
+375. `batch-vs-stream` - When do you choose batch vs stream processing?
+## Migration And Evolution Strategies (2 questions -> 1 deep dive)
+376. `migration-strangler` - What is the strangler pattern for migrations?
+377. `schema-evolution` - How do you manage schema evolution safely?
+## Tradeoffs And Decision Frameworks (4 questions -> 1 deep dive)
+378. `tradeoff-framework` - How do you present tradeoffs clearly in interviews?
+379. `cap-theorem-practical` - How do you explain CAP theorem pragmatically?
+380. `read-heavy-vs-write-heavy` - How does workload shape architecture choices?
+381. `availability-vs-consistency` - How do you choose availability vs consistency?
+
+---
+
+## Testing Questions
+## Testing Fundamentals (2 questions -> 1 deep dive)
+382. `testing-strategy` - How do you define an Android testing strategy?
+383. `qa-dev-collaboration` - How should QA and dev collaborate on automation?
+## Test Pyramid And Strategy (4 questions -> 1 deep dive)
+384. `test-pyramid` - What is the test pyramid and why does it matter?
+385. `unit-vs-integration` - What is the difference between unit and integration tests?
+386. `hermetic-tests` - What are hermetic tests and why are they valuable?
+387. `risk-based-testing` - What is risk-based testing?
+## Unit Testing Viewmodel (3 questions -> 1 deep dive)
+388. `viewmodel-unit-tests` - How do you unit test a ViewModel?
+389. `usecase-tests` - How should use cases be tested?
+390. `clock-abstraction` - How does clock abstraction improve test reliability?
+## Repository And Data Layer Testing (2 questions -> 1 deep dive)
+391. `repository-tests` - How do you test repository logic with multiple data sources?
+392. `datasource-tests` - How do you test remote and local data sources?
+## Integration Testing (1 questions -> 1 deep dive)
+393. `integration-boundary` - When should you add integration tests?
+## Ui Testing With Compose (2 questions -> 1 deep dive)
+394. `compose-ui-tests` - How do Compose UI tests differ from View UI tests?
+395. `semantics-testing` - Why are semantics important in Compose tests?
+## Espresso And Ui Automation (3 questions -> 1 deep dive)
+396. `espresso-basics` - When do you still use Espresso?
+397. `idling-resources` - What are idling resources and when are they needed?
+398. `android-test-runner` - How do you structure instrumentation test modules?
+## Mocking Fakes And Stubs (3 questions -> 1 deep dive)
+399. `mocks-vs-fakes` - When should you use mocks vs fakes?
+400. `stub-vs-spy` - What is the difference between stubs and spies?
+401. `test-data-builders` - Why use test data builders?
+## Coroutine And Flow Testing (3 questions -> 1 deep dive)
+402. `coroutine-test` - How do you test coroutines deterministically?
+403. `virtual-time` - Why is virtual time important for async tests?
+404. `flow-test-patterns` - How do you test Flow emissions?
+## Stateflow Sharedflow Testing (2 questions -> 1 deep dive)
+405. `stateflow-testing` - How do you test StateFlow UI state?
+406. `sharedflow-events-testing` - How do you test one-off SharedFlow events?
+## Network Testing And Mockwebserver (1 questions -> 1 deep dive)
+407. `mockwebserver` - Why use MockWebServer for networking tests?
+## Contract Testing (3 questions -> 1 deep dive)
+408. `api-contract-tests` - How do you keep API tests resilient to server changes?
+409. `consumer-contract` - What is consumer-driven contract testing?
+410. `contract-mocks` - How do contracts reduce mock drift?
+## Database Testing Room (2 questions -> 1 deep dive)
+411. `room-inmemory-tests` - How do you test Room with in-memory databases?
+412. `migration-tests` - Why are Room migration tests critical?
+## Testability And Architecture (3 questions -> 1 deep dive)
+413. `testable-architecture` - What makes Android architecture testable?
+414. `dependency-injection-testing` - How does DI improve testability?
+415. `test-maintenance-cost` - How do you manage long-term test maintenance cost?
+## Flaky Test Diagnostics (3 questions -> 1 deep dive)
+416. `flaky-tests` - What causes flaky tests?
+417. `stabilize-ui-tests` - How do you stabilize flaky UI tests?
+418. `retry-in-tests` - Should flaky tests be fixed with retries?
+## Performance And Benchmark Testing (2 questions -> 1 deep dive)
+419. `benchmark-tests` - When should you add benchmark tests?
+420. `macrobenchmark` - What does Macrobenchmark validate?
+## Snapshot And Golden Testing (2 questions -> 1 deep dive)
+421. `golden-tests` - What are snapshot or golden tests?
+422. `visual-regression` - How do visual regression tests fit release safety?
+## E2E Testing And Release Gates (2 questions -> 1 deep dive)
+423. `e2e-tests` - What are good use cases for end-to-end tests?
+424. `release-gates` - How should tests gate production releases?
+## Ci Cd Test Pipelines (3 questions -> 1 deep dive)
+425. `ci-pipeline` - How do you design a fast CI test pipeline?
+426. `sharding-tests` - When should you shard test suites?
+427. `test-environments` - How do you manage test environments across teams?
+## Test Metrics And Quality Governance (4 questions -> 1 deep dive)
+428. `test-reporting` - What metrics should test reports include?
+429. `quality-gates` - How do quality gates prevent regressions?
+430. `mutation-testing` - Where does mutation testing fit in Android?
+431. `postmortem-regression-tests` - How do you turn incidents into regression tests?
+
+---
+
+## Behavioral Questions
+## Behavioral Fundamentals (1 questions -> 1 deep dive)
+432. `behavioral-interviews` - What do interviewers evaluate in behavioral rounds?
+## Interview Story Frameworks (2 questions -> 1 deep dive)
+433. `star-method` - How should you use STAR effectively?
+434. `story-selection` - How do you select strong interview stories quickly?
+## Ownership And Accountability (2 questions -> 1 deep dive)
+435. `ownership-example` - How do you present a strong ownership story?
+436. `accountability-vs-ownership` - What is the difference between accountability and ownership?
+## Conflict Resolution (2 questions -> 1 deep dive)
+437. `handling-conflict` - How do you discuss conflict with a teammate?
+438. `disagree-and-commit` - How do you answer "tell me about a disagreement"?
+## Stakeholder Management (2 questions -> 1 deep dive)
+439. `stakeholder-alignment` - How do you align engineering and product stakeholders?
+440. `influence-roadmap` - How do you influence roadmap decisions?
+## Prioritization And Tradeoffs (3 questions -> 1 deep dive)
+441. `tradeoff-prioritization` - How do you prioritize under tight deadlines?
+442. `saying-no` - How do you say no to low-impact requests?
+443. `tradeoff-communication` - How do you communicate tradeoffs to non-technical stakeholders?
+## Mentorship And Team Growth (3 questions -> 1 deep dive)
+444. `mentoring-juniors` - How do you describe mentoring junior engineers?
+445. `growing-senior-engineers` - How do you grow senior engineers on your team?
+446. `dealing-with-low-performer` - How do you support a struggling teammate?
+## Leadership Without Authority (2 questions -> 1 deep dive)
+447. `lead-without-authority` - How do you lead without formal authority?
+448. `driving-adoption` - How do you drive adoption of technical standards?
+## Incident Management And Postmortems (3 questions -> 1 deep dive)
+449. `incident-response-story` - How do you explain your role during a production incident?
+450. `blameless-postmortem` - What makes a postmortem blameless and actionable?
+451. `production-accountability` - How do you show accountability after production issues?
+## Delivery And Execution (2 questions -> 1 deep dive)
+452. `execution-under-pressure` - How do you deliver under pressure without burnout?
+453. `missed-deadline` - How do you answer questions about missing deadlines?
+## Decision Making Under Ambiguity (3 questions -> 1 deep dive)
+454. `ambiguity` - How do you make decisions under ambiguity?
+455. `insufficient-data-decisions` - How do you decide with incomplete data?
+456. `unpopular-decision` - How do you defend an unpopular decision?
+## Feedback Culture (3 questions -> 1 deep dive)
+457. `giving-feedback` - How do you give difficult feedback?
+458. `receiving-feedback` - How do you respond to critical feedback?
+459. `upward-feedback` - How do you give respectful upward feedback?
+## Cross Functional Collaboration (3 questions -> 1 deep dive)
+460. `cross-functional-collab` - How do you collaborate with design and QA?
+461. `product-engineering-partnership` - How do you build trust with product managers?
+462. `partner-with-ops` - How do you partner with SRE/ops teams effectively?
+## Career Growth And Self Reflection (3 questions -> 1 deep dive)
+463. `career-growth-plan` - How do you discuss your growth plan?
+464. `failure-story` - How do you tell a failure story well?
+465. `self-awareness` - How do you demonstrate self-awareness in interviews?
+## Managing Up (3 questions -> 1 deep dive)
+466. `manage-up` - How do you manage up effectively?
+467. `escalation` - When and how should you escalate issues?
+468. `expectation-alignment-manager` - How do you align expectations with your manager?
+## Staff Level Behavioral Signals (3 questions -> 1 deep dive)
+469. `staff-scope` - What behavioral signals are expected at staff level?
+470. `org-impact` - How do you show organization-level impact?
+471. `staff-cross-team-conflict` - How do staff engineers resolve cross-team conflict?
+## Ethical Decision Making (3 questions -> 1 deep dive)
+472. `ethical-tradeoff` - How do you handle ethical tradeoffs in product decisions?
+473. `privacy-vs-growth` - How do you discuss privacy vs growth tension?
+474. `ethical-escalation` - When should ethical concerns be escalated?
+## Remote And Distributed Teams (3 questions -> 1 deep dive)
+475. `remote-collaboration` - How do you maintain alignment in remote teams?
+476. `async-communication` - What does strong async communication look like?
+477. `remote-trust-building` - How do you build trust in distributed teams?
+## Behavioral Anti Patterns (2 questions -> 1 deep dive)
+478. `behavioral-red-flags` - What behavioral anti-patterns hurt candidates?
+479. `blame-language` - Why is blame language risky in interviews?
+## Communication And Clarity (2 questions -> 1 deep dive)
+480. `clarity-structure` - How do you keep answers concise and structured?
+481. `executive-summary` - How do you open answers with an executive summary?
+
+---
 ## Statistics
-- **Total Questions:** 331
-- **Total Deep Dives:** 154
+- **Total Questions:** 481
+- **Total Deep Dives:** 214
 - **Fundamentals:** 54 questions
 - **Kotlin:** 51 questions
 - **Compose:** 50 questions
@@ -523,11 +745,14 @@ Generated: 331 interview questions across 154 deep dive topics
 - **Architecture:** 50 questions
 - **Networking:** 38 questions
 - **Performance:** 38 questions
-- **Beginner:** 45 questions
-- **Intermediate:** 178 questions
+- **System Design:** 50 questions
+- **Testing:** 50 questions
+- **Behavioral:** 50 questions
+- **Beginner:** 54 questions
+- **Intermediate:** 240 questions
 - **Advanced:** 34 questions
-- **Senior:** 67 questions
-- **Staff:** 7 questions
+- **Senior:** 127 questions
+- **Staff:** 26 questions
 
 ## By Category Difficulty
 ### Fundamentals
@@ -567,36 +792,54 @@ Generated: 331 interview questions across 154 deep dive topics
 - Intermediate: 21
 - Advanced: 13
 
+### System Design
+- Beginner: 2
+- Intermediate: 16
+- Senior: 23
+- Staff: 9
+
+### Testing
+- Beginner: 2
+- Intermediate: 26
+- Senior: 18
+- Staff: 4
+
+### Behavioral
+- Beginner: 5
+- Intermediate: 20
+- Senior: 19
+- Staff: 6
+
 ## Quick Tags Reference
-- **architecture:** 66 questions
-- **android:** 65 questions
-- **kotlin:** 55 questions
-- **compose:** 51 questions
-- **performance:** 49 questions
-- **coroutines:** 44 questions
-- **networking:** 31 questions
+- **architecture:** 75 questions
+- **android:** 67 questions
+- **testing:** 57 questions
+- **kotlin:** 56 questions
+- **compose:** 53 questions
+- **performance:** 52 questions
+- **system-design:** 50 questions
+- **behavioral:** 50 questions
+- **coroutines:** 47 questions
+- **networking:** 34 questions
 - **state:** 23 questions
-- **flow:** 20 questions
+- **flow:** 21 questions
 - **concurrency:** 19 questions
 - **optimization:** 18 questions
 - **lifecycle:** 17 questions
 - **threading:** 14 questions
 - **runtime:** 14 questions
+- **communication:** 13 questions
 - **memory:** 13 questions
+- **scalability:** 13 questions
+- **security:** 9 questions
 - **compiler:** 9 questions
+- **resilience:** 9 questions
 - **rendering:** 8 questions
 - **ui:** 8 questions
+- **di:** 8 questions
+- **data:** 7 questions
+- **api:** 7 questions
 - **recomposition:** 7 questions
-- **side-effects:** 7 questions
-- **testing:** 7 questions
-- **di:** 7 questions
-- **resilience:** 7 questions
-- **fundamentals:** 6 questions
-- **intents:** 6 questions
-- **security:** 6 questions
-- **api-design:** 6 questions
-- **cancellation:** 6 questions
-- **scalability:** 6 questions
-- **modularization:** 6 questions
+- **events:** 7 questions
 ---
-**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Performance sections.
+**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Performance, System Design, Testing, Behavioral sections.

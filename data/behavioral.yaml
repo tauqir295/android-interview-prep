@@ -1,26 +1,1100 @@
 questions:
-  - id: sample-question
-
-    title: Sample Question
-
+  - id: behavioral-interviews
+    title: What do interviewers evaluate in behavioral rounds?
     difficulty: beginner
-
     tags:
-      - android
+      - behavioral
+      - interview
+      - communication
+    standard_answer: |
+      What do interviewers evaluate in behavioral rounds? is primarily about making clear, practical decisions.
 
-    standard_answer: >
-      Add a short answer here.
+      In interviews, cover:
 
-    detailed_explanation: |
-      Add detailed explanation here.
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
 
-    internals: |
-      Add framework internals here.
+      Strong answer tip:
 
-    followups:
-      - question: Sample follow-up?
-        answer: Sample answer.
+      - connect `behavioral` choices to measurable outcomes in `interview`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/behavioral-fundamentals/
 
-    traps:
-      - title: Common trap
-        content: Add interviewer trap here.
+  - id: star-method
+    title: How should you use STAR effectively?
+    difficulty: beginner
+    tags:
+      - behavioral
+      - star
+      - interview
+    standard_answer: |
+      How should you use STAR effectively? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `star`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/interview-story-frameworks/
+
+  - id: ownership-example
+    title: How do you present a strong ownership story?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - ownership
+      - leadership
+    standard_answer: |
+      How do you present a strong ownership story? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `ownership`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/ownership-and-accountability/
+
+  - id: handling-conflict
+    title: How do you discuss conflict with a teammate?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - conflict
+      - communication
+    standard_answer: |
+      How do you discuss conflict with a teammate? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `conflict`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/conflict-resolution/
+
+  - id: disagree-and-commit
+    title: How do you answer "tell me about a disagreement"?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - conflict
+      - decision-making
+    standard_answer: |
+      How do you answer "tell me about a disagreement"? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `conflict`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/conflict-resolution/
+
+  - id: stakeholder-alignment
+    title: How do you align engineering and product stakeholders?
+    difficulty: senior
+    tags:
+      - behavioral
+      - stakeholders
+      - collaboration
+    standard_answer: |
+      How do you align engineering and product stakeholders? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `stakeholders`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/stakeholder-management/
+
+  - id: tradeoff-prioritization
+    title: How do you prioritize under tight deadlines?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - prioritization
+      - execution
+    standard_answer: |
+      How do you prioritize under tight deadlines? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `prioritization`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/prioritization-and-tradeoffs/
+
+  - id: saying-no
+    title: How do you say no to low-impact requests?
+    difficulty: senior
+    tags:
+      - behavioral
+      - prioritization
+      - communication
+    standard_answer: |
+      How do you say no to low-impact requests? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `prioritization`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/prioritization-and-tradeoffs/
+
+  - id: mentoring-juniors
+    title: How do you describe mentoring junior engineers?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - mentorship
+      - leadership
+    standard_answer: |
+      How do you describe mentoring junior engineers? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `mentorship`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/mentorship-and-team-growth/
+
+  - id: growing-senior-engineers
+    title: How do you grow senior engineers on your team?
+    difficulty: staff
+    tags:
+      - behavioral
+      - mentorship
+      - staff
+    standard_answer: |
+      How do you grow senior engineers on your team? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `mentorship`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/mentorship-and-team-growth/
+
+  - id: lead-without-authority
+    title: How do you lead without formal authority?
+    difficulty: senior
+    tags:
+      - behavioral
+      - leadership
+      - influence
+    standard_answer: |
+      How do you lead without formal authority? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `leadership`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/leadership-without-authority/
+
+  - id: driving-adoption
+    title: How do you drive adoption of technical standards?
+    difficulty: senior
+    tags:
+      - behavioral
+      - influence
+      - architecture
+    standard_answer: |
+      How do you drive adoption of technical standards? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `influence`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/leadership-without-authority/
+
+  - id: incident-response-story
+    title: How do you explain your role during a production incident?
+    difficulty: senior
+    tags:
+      - behavioral
+      - incident
+      - operations
+    standard_answer: |
+      How do you explain your role during a production incident? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `incident`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/incident-management-and-postmortems/
+
+  - id: blameless-postmortem
+    title: What makes a postmortem blameless and actionable?
+    difficulty: senior
+    tags:
+      - behavioral
+      - incident
+      - learning
+    standard_answer: |
+      What makes a postmortem blameless and actionable? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `incident`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/incident-management-and-postmortems/
+
+  - id: execution-under-pressure
+    title: How do you deliver under pressure without burnout?
+    difficulty: senior
+    tags:
+      - behavioral
+      - execution
+      - team-health
+    standard_answer: |
+      How do you deliver under pressure without burnout? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `execution`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/delivery-and-execution/
+
+  - id: missed-deadline
+    title: How do you answer questions about missing deadlines?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - execution
+      - accountability
+    standard_answer: |
+      How do you answer questions about missing deadlines? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `execution`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/delivery-and-execution/
+
+  - id: ambiguity
+    title: How do you make decisions under ambiguity?
+    difficulty: senior
+    tags:
+      - behavioral
+      - decision-making
+      - ambiguity
+    standard_answer: |
+      How do you make decisions under ambiguity? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `decision-making`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/decision-making-under-ambiguity/
+
+  - id: insufficient-data-decisions
+    title: How do you decide with incomplete data?
+    difficulty: senior
+    tags:
+      - behavioral
+      - decision-making
+      - risk
+    standard_answer: |
+      How do you decide with incomplete data? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `decision-making`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/decision-making-under-ambiguity/
+
+  - id: giving-feedback
+    title: How do you give difficult feedback?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - feedback
+      - communication
+    standard_answer: |
+      How do you give difficult feedback? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `feedback`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/feedback-culture/
+
+  - id: receiving-feedback
+    title: How do you respond to critical feedback?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - feedback
+      - growth
+    standard_answer: |
+      How do you respond to critical feedback? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `feedback`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/feedback-culture/
+
+  - id: cross-functional-collab
+    title: How do you collaborate with design and QA?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - collaboration
+      - cross-functional
+    standard_answer: |
+      How do you collaborate with design and QA? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `collaboration`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/cross-functional-collaboration/
+
+  - id: product-engineering-partnership
+    title: How do you build trust with product managers?
+    difficulty: senior
+    tags:
+      - behavioral
+      - stakeholders
+      - collaboration
+    standard_answer: |
+      How do you build trust with product managers? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `stakeholders`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/cross-functional-collaboration/
+
+  - id: career-growth-plan
+    title: How do you discuss your growth plan?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - career
+      - self-reflection
+    standard_answer: |
+      How do you discuss your growth plan? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `career`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/career-growth-and-self-reflection/
+
+  - id: failure-story
+    title: How do you tell a failure story well?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - self-reflection
+      - learning
+    standard_answer: |
+      How do you tell a failure story well? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `self-reflection`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/career-growth-and-self-reflection/
+
+  - id: manage-up
+    title: How do you manage up effectively?
+    difficulty: senior
+    tags:
+      - behavioral
+      - management
+      - communication
+    standard_answer: |
+      How do you manage up effectively? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `management`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/managing-up/
+
+  - id: escalation
+    title: When and how should you escalate issues?
+    difficulty: senior
+    tags:
+      - behavioral
+      - escalation
+      - leadership
+    standard_answer: |
+      When and how should you escalate issues? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `escalation`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/managing-up/
+
+  - id: story-selection
+    title: How do you select strong interview stories quickly?
+    difficulty: beginner
+    tags:
+      - behavioral
+      - interview
+      - star
+    standard_answer: |
+      How do you select strong interview stories quickly? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `interview`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/interview-story-frameworks/
+
+  - id: staff-scope
+    title: What behavioral signals are expected at staff level?
+    difficulty: staff
+    tags:
+      - behavioral
+      - staff
+      - leadership
+    standard_answer: |
+      What behavioral signals are expected at staff level? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `staff`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/staff-level-behavioral-signals/
+
+  - id: org-impact
+    title: How do you show organization-level impact?
+    difficulty: staff
+    tags:
+      - behavioral
+      - staff
+      - impact
+    standard_answer: |
+      How do you show organization-level impact? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `staff`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/staff-level-behavioral-signals/
+
+  - id: ethical-tradeoff
+    title: How do you handle ethical tradeoffs in product decisions?
+    difficulty: senior
+    tags:
+      - behavioral
+      - ethics
+      - decision-making
+    standard_answer: |
+      How do you handle ethical tradeoffs in product decisions? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `ethics`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/ethical-decision-making/
+
+  - id: privacy-vs-growth
+    title: How do you discuss privacy vs growth tension?
+    difficulty: staff
+    tags:
+      - behavioral
+      - ethics
+      - privacy
+    standard_answer: |
+      How do you discuss privacy vs growth tension? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `ethics`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/ethical-decision-making/
+
+  - id: remote-collaboration
+    title: How do you maintain alignment in remote teams?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - remote
+      - collaboration
+    standard_answer: |
+      How do you maintain alignment in remote teams? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `remote`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/remote-and-distributed-teams/
+
+  - id: async-communication
+    title: What does strong async communication look like?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - remote
+      - communication
+    standard_answer: |
+      What does strong async communication look like? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `remote`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/remote-and-distributed-teams/
+
+  - id: behavioral-red-flags
+    title: What behavioral anti-patterns hurt candidates?
+    difficulty: beginner
+    tags:
+      - behavioral
+      - interview
+      - anti-patterns
+    standard_answer: |
+      What behavioral anti-patterns hurt candidates? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `interview`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/behavioral-anti-patterns/
+
+  - id: blame-language
+    title: Why is blame language risky in interviews?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - communication
+      - anti-patterns
+    standard_answer: |
+      Why is blame language risky in interviews? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `communication`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/behavioral-anti-patterns/
+
+  - id: clarity-structure
+    title: How do you keep answers concise and structured?
+    difficulty: beginner
+    tags:
+      - behavioral
+      - communication
+      - clarity
+    standard_answer: |
+      How do you keep answers concise and structured? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `communication`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/communication-and-clarity/
+
+  - id: executive-summary
+    title: How do you open answers with an executive summary?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - communication
+      - storytelling
+    standard_answer: |
+      How do you open answers with an executive summary? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `communication`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/communication-and-clarity/
+
+  - id: accountability-vs-ownership
+    title: What is the difference between accountability and ownership?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - ownership
+      - leadership
+    standard_answer: |
+      What is the difference between accountability and ownership? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `ownership`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/ownership-and-accountability/
+
+  - id: dealing-with-low-performer
+    title: How do you support a struggling teammate?
+    difficulty: senior
+    tags:
+      - behavioral
+      - mentorship
+      - teamwork
+    standard_answer: |
+      How do you support a struggling teammate? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `mentorship`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/mentorship-and-team-growth/
+
+  - id: influence-roadmap
+    title: How do you influence roadmap decisions?
+    difficulty: senior
+    tags:
+      - behavioral
+      - influence
+      - stakeholders
+    standard_answer: |
+      How do you influence roadmap decisions? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `influence`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/stakeholder-management/
+
+  - id: tradeoff-communication
+    title: How do you communicate tradeoffs to non-technical stakeholders?
+    difficulty: senior
+    tags:
+      - behavioral
+      - communication
+      - tradeoffs
+    standard_answer: |
+      How do you communicate tradeoffs to non-technical stakeholders? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `communication`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/prioritization-and-tradeoffs/
+
+  - id: production-accountability
+    title: How do you show accountability after production issues?
+    difficulty: senior
+    tags:
+      - behavioral
+      - incident
+      - ownership
+    standard_answer: |
+      How do you show accountability after production issues? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `incident`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/incident-management-and-postmortems/
+
+  - id: unpopular-decision
+    title: How do you defend an unpopular decision?
+    difficulty: senior
+    tags:
+      - behavioral
+      - decision-making
+      - leadership
+    standard_answer: |
+      How do you defend an unpopular decision? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `decision-making`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/decision-making-under-ambiguity/
+
+  - id: upward-feedback
+    title: How do you give respectful upward feedback?
+    difficulty: senior
+    tags:
+      - behavioral
+      - feedback
+      - management
+    standard_answer: |
+      How do you give respectful upward feedback? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `feedback`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/feedback-culture/
+
+  - id: partner-with-ops
+    title: How do you partner with SRE/ops teams effectively?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - collaboration
+      - operations
+    standard_answer: |
+      How do you partner with SRE/ops teams effectively? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `collaboration`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/cross-functional-collaboration/
+
+  - id: self-awareness
+    title: How do you demonstrate self-awareness in interviews?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - self-reflection
+      - growth
+    standard_answer: |
+      How do you demonstrate self-awareness in interviews? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `self-reflection`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/career-growth-and-self-reflection/
+
+  - id: expectation-alignment-manager
+    title: How do you align expectations with your manager?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - management
+      - communication
+    standard_answer: |
+      How do you align expectations with your manager? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `management`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/managing-up/
+
+  - id: staff-cross-team-conflict
+    title: How do staff engineers resolve cross-team conflict?
+    difficulty: staff
+    tags:
+      - behavioral
+      - staff
+      - conflict
+    standard_answer: |
+      How do staff engineers resolve cross-team conflict? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `staff`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/staff-level-behavioral-signals/
+
+  - id: ethical-escalation
+    title: When should ethical concerns be escalated?
+    difficulty: staff
+    tags:
+      - behavioral
+      - ethics
+      - escalation
+    standard_answer: |
+      When should ethical concerns be escalated? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `ethics`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/ethical-decision-making/
+
+  - id: remote-trust-building
+    title: How do you build trust in distributed teams?
+    difficulty: intermediate
+    tags:
+      - behavioral
+      - remote
+      - trust
+    standard_answer: |
+      How do you build trust in distributed teams? is primarily about making clear, practical decisions.
+
+      In interviews, cover:
+
+      - definition in one sentence
+      - when to use it and when not to
+      - tradeoffs (latency, reliability, complexity, cost)
+      - a production example from your team
+
+      Strong answer tip:
+
+      - connect `behavioral` choices to measurable outcomes in `remote`
+    deep_dive: /android-interview-prep/deep-dives/behavioral/remote-and-distributed-teams/
