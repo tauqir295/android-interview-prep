@@ -141,7 +141,7 @@ Deep dives in place under: `docs/deep-dives/behavioral/`
 - `SYSTEM_DESIGN_DEEP_DIVE_MAPPING.md`
 - `TESTING_DEEP_DIVE_MAPPING.md`
 - `BEHAVIORAL_DEEP_DIVE_MAPPING.md`
-- `ALL_QUESTIONS.md` (consolidated index)
+- `project-docs/ALL_QUESTIONS.md` (consolidated index)
 ---
 ## Build/Generate Commands
 ```bash
@@ -164,5 +164,5 @@ mkdocs build
 ## Next Recommended Work
 1. Finish full authoring pass for any scaffold-style deep dives.
 2. Keep new categories on the same 2-layer architecture.
-3. Keep `ALL_QUESTIONS.md` generated from YAML only.
+3. Keep `project-docs/ALL_QUESTIONS.md` generated from YAML only.
 4. Add lint checks for deep-dive back-navigation snippet presence.

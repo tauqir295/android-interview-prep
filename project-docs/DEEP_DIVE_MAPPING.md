@@ -253,7 +253,7 @@ Implemented globally:
 | Testing mapping doc | ✅ complete |
 | Behavioral mapping doc | ✅ complete |
 | Generated docs pages | ✅ generated |
-| Combined question index (`ALL_QUESTIONS.md`) | ✅ updated |
+| Combined question index (`project-docs/ALL_QUESTIONS.md`) | ✅ updated |
 ---
 ## Next Step
 Continue adding new categories with the same architecture:

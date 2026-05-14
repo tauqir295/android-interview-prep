@@ -6,7 +6,8 @@ from collections import Counter, OrderedDict
 DATA_DIR = Path("data")
 DOCS_DIR = Path("docs/generated")
 TEMPLATE_DIR = Path("templates")
-ALL_QUESTIONS_FILE = Path("ALL_QUESTIONS.md")
+PROJECT_DOCS_DIR = Path("project-docs")
+ALL_QUESTIONS_FILE = PROJECT_DOCS_DIR / "ALL_QUESTIONS.md"
 
 PREFERRED_CATEGORY_ORDER = [
     "fundamentals",
@@ -24,6 +25,7 @@ PREFERRED_CATEGORY_ORDER = [
 DIFFICULTY_ORDER = ["beginner", "intermediate", "advanced", "senior", "staff"]
 
 DOCS_DIR.mkdir(parents=True, exist_ok=True)
+PROJECT_DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
 env = Environment(
     loader=FileSystemLoader(TEMPLATE_DIR),

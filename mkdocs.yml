@@ -3,7 +3,16 @@ site_url: https://tauqir295.github.io/android-interview-prep/
 theme:
   name: material
   palette:
-    scheme: slate
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   icon:
     repo: fontawesome/brands/github
 
@@ -13,44 +22,31 @@ extra_css:
 nav:
   - 🏠 Home: index.md
 
-  - 📱 Fundamentals:
-      - Overview: generated/fundamentals.md
+  - 📱 Fundamentals: generated/fundamentals.md
 
-  - 🧠 Kotlin:
-      - Overview: generated/kotlin.md
+  - 🧠 Kotlin: generated/kotlin.md
 
-  - 🛠️ Jetpack Compose:
-      - Overview: generated/compose.md
+  - 🛠️ Jetpack Compose: generated/compose.md
 
-  - 🏗️ Architecture:
-      - Overview: generated/architecture.md
+  - 🏗️ Architecture: generated/architecture.md
 
-  - ⚡ Concurrency:
-      - Overview: generated/concurrency.md
+  - ⚡ Concurrency: generated/concurrency.md
 
-  - 🌐 Networking & Offline:
-      - Overview: generated/networking.md
+  - 🌐 Networking & Offline: generated/networking.md
 
-  - 🚀 Performance & Vitals:
-      - Overview: generated/performance.md
+  - 🚀 Performance & Vitals: generated/performance.md
 
-  - ⚙️ CI/CD & Release:
-      - Overview: generated/cicd.md
+  - ⚙️ CI/CD & Release: generated/cicd.md
 
-  - 🎓 Advanced & Internals:
-      - Overview: generated/advanced.md
+  - 🎓 Advanced & Internals: generated/advanced.md
 
-  - 🤖 2026 Tech:
-      - Overview: generated/future-tech.md
+  - 🤖 2026 Tech: generated/future-tech.md
 
-  - 🏗️ System Design:
-      - Overview: generated/system-design.md
+  - 🏗️ System Design: generated/system-design.md
 
-  - 🧪 Testing:
-      - Overview: generated/testing.md
+  - 🧪 Testing: generated/testing.md
 
-  - 💬 Behavioral:
-      - Overview: generated/behavioral.md
+  - 💬 Behavioral: generated/behavioral.md
 
 markdown_extensions:
   - admonition
