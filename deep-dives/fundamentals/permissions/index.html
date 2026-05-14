@@ -1421,24 +1421,21 @@
 (function () {
   const link = document.getElementById("back-to-questions");
   if (!link) return;
-
   try {
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
       link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
       return;
     }
-
     const referrer = document.referrer || "";
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
   } catch (_) {
-    // Keep default fundamentals link if URL parsing fails.
+    // Keep default generated page link if URL parsing fails.
   }
 })();
 </script>
-
 <h1 id="permissions-deep-dive">Permissions Deep Dive<a class="headerlink" href="#permissions-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Android permissions protect user data and sensitive device capabilities. Modern Android uses runtime permission prompts for dangerous permissions.</p>

@@ -1477,24 +1477,21 @@
 (function () {
   const link = document.getElementById("back-to-questions");
   if (!link) return;
-
   try {
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
       link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
       return;
     }
-
     const referrer = document.referrer || "";
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
   } catch (_) {
-    // Keep default fundamentals link if URL parsing fails.
+    // Keep default generated page link if URL parsing fails.
   }
 })();
 </script>
-
 <h1 id="broadcast-receivers-deep-dive">Broadcast Receivers Deep Dive<a class="headerlink" href="#broadcast-receivers-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Broadcast Receivers let apps react to system-wide or app-defined events delivered as intents. They are lightweight event handlers and should complete quickly.</p>

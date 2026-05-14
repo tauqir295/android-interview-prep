@@ -1460,24 +1460,21 @@
 (function () {
   const link = document.getElementById("back-to-questions");
   if (!link) return;
-
   try {
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
       link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
       return;
     }
-
     const referrer = document.referrer || "";
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
   } catch (_) {
-    // Keep default fundamentals link if URL parsing fails.
+    // Keep default generated page link if URL parsing fails.
   }
 })();
 </script>
-
 <h1 id="activity-lifecycle-deep-dive">Activity Lifecycle Deep Dive<a class="headerlink" href="#activity-lifecycle-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The Activity lifecycle is the set of states an Activity moves through, managed by the Android OS to optimize:

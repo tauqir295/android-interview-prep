@@ -1481,10 +1481,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="inline-functions-deep-dive">Inline Functions Deep Dive<a class="headerlink" href="#inline-functions-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Inline functions are a compiler-level optimization and language feature used heavily with Kotlin lambdas and reified generics.</p>

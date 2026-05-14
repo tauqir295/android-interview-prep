@@ -1503,10 +1503,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="stateflow-sharedflow-and-channels-deep-dive">StateFlow, SharedFlow, and Channels Deep Dive<a class="headerlink" href="#stateflow-sharedflow-and-channels-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>These primitives solve different streaming and coordination problems in coroutine-based systems.</p>

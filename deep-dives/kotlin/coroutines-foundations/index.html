@@ -1453,10 +1453,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="coroutines-foundations-deep-dive">Coroutines Foundations Deep Dive<a class="headerlink" href="#coroutines-foundations-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Kotlin coroutines provide a structured, lightweight way to write asynchronous code in a sequential style.</p>

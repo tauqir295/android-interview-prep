@@ -1453,10 +1453,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="scope-functions-deep-dive">Scope Functions Deep Dive<a class="headerlink" href="#scope-functions-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Scope functions help structure object-centric code, but their real interview value is understanding tradeoffs, not memorizing a chart.</p>

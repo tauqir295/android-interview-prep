@@ -1453,10 +1453,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="null-safety-and-smart-casts-deep-dive">Null Safety and Smart Casts Deep Dive<a class="headerlink" href="#null-safety-and-smart-casts-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Null safety is one of Kotlin's biggest value propositions. It moves many null-related problems from runtime into the type system.</p>

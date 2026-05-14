@@ -1371,14 +1371,1044 @@
 </script>
 
 <hr />
-<div id="sample-question"></div>
+<div id="compose-declarative-ui"></div>
 
-<h1 id="sample-question">Sample Question<a class="headerlink" href="#sample-question" title="Permanent link">&para;</a></h1>
+<h1 id="what-makes-jetpack-compose-a-declarative-ui-toolkit">What makes Jetpack Compose a declarative UI toolkit?<a class="headerlink" href="#what-makes-jetpack-compose-a-declarative-ui-toolkit" title="Permanent link">&para;</a></h1>
 <p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
-<code>android</code></p>
+<code>compose</code>
+<code>fundamentals</code>
+<code>ui</code></p>
 <details class="question">
-<summary>Sample Question</summary>
-<p>Add a short answer here.</p>
+<summary>What makes Jetpack Compose a declarative UI toolkit?</summary>
+<p>Compose is declarative because UI is a function of state.</p>
+<p>You describe what UI should look like for current state,
+and Compose updates it when state changes.</p>
+<p>Key interview points:</p>
+<ul>
+<li>no manual view mutation for most updates</li>
+<li>composables are state-driven functions</li>
+<li>runtime handles incremental UI updates</li>
+<li>easier unidirectional data flow patterns</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#compose-declarative-ui">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="composable-function"></div>
+
+<h1 id="what-is-a-composable-function">What is a composable function?<a class="headerlink" href="#what-is-a-composable-function" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>composables</code>
+<code>ui</code></p>
+<details class="question">
+<summary>What is a composable function?</summary>
+<p>A composable function is a Kotlin function annotated with <code>@Composable</code>
+that emits UI into the Compose tree.</p>
+<p>Important details:</p>
+<ul>
+<li>called from other composables</li>
+<li>can read state and react to changes</li>
+<li>should be side-effect free in the UI phase</li>
+<li>participates in recomposition and skipping</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-function">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="composable-lifecycle"></div>
+
+<h1 id="how-should-you-think-about-composable-lifecycle-compared-to-activity-lifecycle">How should you think about composable lifecycle compared to Activity lifecycle?<a class="headerlink" href="#how-should-you-think-about-composable-lifecycle-compared-to-activity-lifecycle" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>lifecycle</code>
+<code>architecture</code></p>
+<details class="question">
+<summary>How should you think about composable lifecycle compared to Activity lifecycle?</summary>
+<p>Composables do not have a lifecycle identical to Activities or Fragments.</p>
+<p>They can enter and leave composition many times based on state and tree changes.</p>
+<p>In interviews, explain:</p>
+<ul>
+<li>composable lifetime is composition-scoped</li>
+<li>effects must be tied to composition lifecycle</li>
+<li>remember state is lost when node leaves composition</li>
+<li>business state should live in ViewModel/domain layers</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-lifecycle">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="previews-in-compose"></div>
+
+<h1 id="what-are-compose-previews-and-their-limitations">What are Compose previews and their limitations?<a class="headerlink" href="#what-are-compose-previews-and-their-limitations" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>tooling</code>
+<code>previews</code></p>
+<details class="question">
+<summary>What are Compose previews and their limitations?</summary>
+<p>Previews render composables in Android Studio without running full app flow.</p>
+<p>Useful for quick UI iteration and visual validation.</p>
+<p>Limitations to mention:</p>
+<ul>
+<li>limited runtime environment</li>
+<li>navigation and dependency graphs may need fakes</li>
+<li>async side effects can behave differently</li>
+<li>not a replacement for UI tests</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#previews-in-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="mutable-state-in-compose"></div>
+
+<h1 id="what-is-mutablestate-in-compose">What is <code>MutableState</code> in Compose?<a class="headerlink" href="#what-is-mutablestate-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>beginner</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>state</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>What is <code>MutableState</code> in Compose?</summary>
+<p><code>MutableState&lt;T&gt;</code> is an observable state holder integrated with Compose snapshots.</p>
+<p>When <code>value</code> changes, composables that read it become eligible for recomposition.</p>
+<p>Typical usage:</p>
+<ul>
+<li><code>var text by remember { mutableStateOf("") }</code></li>
+<li>local UI state in composables</li>
+<li>immutable state models for larger screens</li>
+<li>avoid mutating nested mutable objects without state wrappers</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/state-and-remember/#mutable-state-in-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="remember-vs-rememberSaveable"></div>
+
+<h1 id="what-is-the-difference-between-remember-and-remembersaveable">What is the difference between <code>remember</code> and <code>rememberSaveable</code>?<a class="headerlink" href="#what-is-the-difference-between-remember-and-remembersaveable" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>state</code>
+<code>configuration</code></p>
+<details class="question">
+<summary>What is the difference between <code>remember</code> and <code>rememberSaveable</code>?</summary>
+<p><code>remember</code> keeps state across recompositions while the composable stays in composition.</p>
+<p><code>rememberSaveable</code> also survives Activity recreation using saved instance state.</p>
+<p>Interview-ready distinction:</p>
+<ul>
+<li><code>remember</code>: transient UI memory only</li>
+<li><code>rememberSaveable</code>: survives rotation/process recreation scenarios</li>
+<li><code>rememberSaveable</code> needs savable types or custom Saver</li>
+<li>long-lived/business state still belongs in ViewModel</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/state-and-remember/#remember-vs-rememberSaveable">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="remember-key-parameter"></div>
+
+<h1 id="why-do-keys-matter-in-remember">Why do keys matter in <code>remember</code>?<a class="headerlink" href="#why-do-keys-matter-in-remember" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>remember</code>
+<code>recomposition</code></p>
+<details class="question">
+<summary>Why do keys matter in <code>remember</code>?</summary>
+<p>Keys control when remembered value should be recreated.</p>
+<p>If keys change, Compose discards old remembered value and computes a new one.</p>
+<p>Practical points:</p>
+<ul>
+<li>use stable identity inputs as keys</li>
+<li>missing keys can keep stale state</li>
+<li>over-changing keys can cause unnecessary resets</li>
+<li>same concept appears in list item keys</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/state-and-remember/#remember-key-parameter">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="state-hoisting"></div>
+
+<h1 id="what-is-state-hoisting-in-compose">What is state hoisting in Compose?<a class="headerlink" href="#what-is-state-hoisting-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>state</code>
+<code>architecture</code></p>
+<details class="question">
+<summary>What is state hoisting in Compose?</summary>
+<p>State hoisting means moving state ownership to a higher-level composable
+and passing state + events down.</p>
+<p>Why it is preferred:</p>
+<ul>
+<li>improves reusability and testability</li>
+<li>keeps child composables stateless when possible</li>
+<li>aligns with unidirectional data flow</li>
+<li>simplifies screen-level orchestration with ViewModel</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#state-hoisting">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="unidirectional-data-flow-compose"></div>
+
+<h1 id="how-does-unidirectional-data-flow-apply-in-compose-ui-architecture">How does unidirectional data flow apply in Compose UI architecture?<a class="headerlink" href="#how-does-unidirectional-data-flow-apply-in-compose-ui-architecture" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>architecture</code>
+<code>state</code></p>
+<details class="question">
+<summary>How does unidirectional data flow apply in Compose UI architecture?</summary>
+<p>In UDF, state flows downward and events flow upward.</p>
+<p>Typical pattern:</p>
+<ul>
+<li>ViewModel exposes immutable UI state</li>
+<li>composable renders that state</li>
+<li>user events are callbacks to ViewModel</li>
+<li>ViewModel reduces events into new state</li>
+</ul>
+<p>This reduces hidden mutations and makes behavior predictable.</p>
+<p><a href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#unidirectional-data-flow-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="ui-state-modeling-compose"></div>
+
+<h1 id="how-should-ui-state-be-modeled-for-complex-compose-screens">How should UI state be modeled for complex Compose screens?<a class="headerlink" href="#how-should-ui-state-be-modeled-for-complex-compose-screens" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>architecture</code>
+<code>state</code></p>
+<details class="question">
+<summary>How should UI state be modeled for complex Compose screens?</summary>
+<p>Model screen state as immutable data classes with explicit sub-states
+(loading, content, error, empty).</p>
+<p>Interview-friendly guidance:</p>
+<ul>
+<li>one source of truth per screen</li>
+<li>keep transient one-off events separate from state</li>
+<li>avoid many unrelated mutable flags</li>
+<li>design state to match rendering branches</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#ui-state-modeling-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="event-handling-compose"></div>
+
+<h1 id="what-are-best-practices-for-event-handling-in-compose">What are best practices for event handling in Compose?<a class="headerlink" href="#what-are-best-practices-for-event-handling-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>architecture</code>
+<code>events</code></p>
+<details class="question">
+<summary>What are best practices for event handling in Compose?</summary>
+<p>Events should be explicit callbacks from UI to state owner.</p>
+<p>Good interview answer includes:</p>
+<ul>
+<li>pass lambdas like <code>onRetry</code>, <code>onItemClick</code></li>
+<li>avoid business logic inside composables</li>
+<li>map UI events to intents/actions in ViewModel</li>
+<li>keep event handling idempotent when possible</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#event-handling-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="recomposition-definition"></div>
+
+<h1 id="what-is-recomposition-in-jetpack-compose">What is recomposition in Jetpack Compose?<a class="headerlink" href="#what-is-recomposition-in-jetpack-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>recomposition</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>What is recomposition in Jetpack Compose?</summary>
+<p>Recomposition is re-execution of composable functions whose observed state changed.</p>
+<p>Compose tracks state reads and only re-runs affected parts of the tree.</p>
+<p>Key concepts to mention:</p>
+<ul>
+<li>state read tracking</li>
+<li>invalidation of composition scopes</li>
+<li>selective updates instead of full redraw</li>
+<li>skip optimization for unchanged inputs</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#recomposition-definition">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="what-triggers-recomposition"></div>
+
+<h1 id="what-triggers-recomposition">What triggers recomposition?<a class="headerlink" href="#what-triggers-recomposition" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>recomposition</code>
+<code>state</code></p>
+<details class="question">
+<summary>What triggers recomposition?</summary>
+<p>Recomposition is triggered when snapshot-observed state used by a composable changes.</p>
+<p>Common triggers:</p>
+<ul>
+<li><code>MutableState</code> value updates</li>
+<li>new values emitted via collected flows</li>
+<li>changed parameters from parent composable</li>
+<li>structural tree changes (conditionals/lists)</li>
+</ul>
+<p>Not every state change causes full-screen recomposition.</p>
+<p><a href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#what-triggers-recomposition">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="smart-recomposition"></div>
+
+<h1 id="what-is-smart-recomposition">What is smart recomposition?<a class="headerlink" href="#what-is-smart-recomposition" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>recomposition</code>
+<code>optimization</code></p>
+<details class="question">
+<summary>What is smart recomposition?</summary>
+<p>Smart recomposition means Compose re-runs only invalidated scopes,
+not the entire UI tree.</p>
+<p>It relies on:</p>
+<ul>
+<li>state read boundaries</li>
+<li>restart groups in compiler-generated code</li>
+<li>parameter change checks</li>
+<li>skipping groups when inputs are stable and unchanged</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#smart-recomposition">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="skip-optimization"></div>
+
+<h1 id="what-is-skip-optimization-in-compose">What is skip optimization in Compose?<a class="headerlink" href="#what-is-skip-optimization-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>recomposition</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>What is skip optimization in Compose?</summary>
+<p>Skip optimization lets Compose avoid re-running a composable group
+when its inputs are considered unchanged.</p>
+<p>Interview points:</p>
+<ul>
+<li>depends on stability analysis and equality checks</li>
+<li>unstable parameters reduce skipping opportunities</li>
+<li>fewer skipped groups can increase frame cost</li>
+<li>metrics/tools can reveal skip behavior</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#skip-optimization">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="unstable-parameter-recomposition"></div>
+
+<h1 id="why-do-unstable-parameters-often-cause-extra-recomposition">Why do unstable parameters often cause extra recomposition?<a class="headerlink" href="#why-do-unstable-parameters-often-cause-extra-recomposition" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>stability</code>
+<code>performance</code></p>
+<details class="question">
+<summary>Why do unstable parameters often cause extra recomposition?</summary>
+<p>Unstable types are assumed to potentially change in ways Compose cannot safely infer,
+so groups become less skippable.</p>
+<p>Consequences:</p>
+<ul>
+<li>more recomposition work</li>
+<li>harder performance tuning</li>
+<li>frequent invalidation in list-heavy screens</li>
+<li>pressure on frame budget</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#unstable-parameter-recomposition">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="prevent-unnecessary-recomposition"></div>
+
+<h1 id="how-do-you-reduce-unnecessary-recomposition-in-production-apps">How do you reduce unnecessary recomposition in production apps?<a class="headerlink" href="#how-do-you-reduce-unnecessary-recomposition-in-production-apps" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>recomposition</code>
+<code>performance</code></p>
+<details class="question">
+<summary>How do you reduce unnecessary recomposition in production apps?</summary>
+<p>Reduce recomposition by improving state boundaries and input stability.</p>
+<p>Practical tactics:</p>
+<ul>
+<li>hoist and split state by UI responsibility</li>
+<li>pass stable, minimal parameters</li>
+<li>use <code>derivedStateOf</code> for derived expensive values</li>
+<li>provide keys in lazy lists</li>
+<li>profile with layout inspector and tracing</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#prevent-unnecessary-recomposition">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="snapshot-system"></div>
+
+<h1 id="what-is-the-compose-snapshot-system">What is the Compose snapshot system?<a class="headerlink" href="#what-is-the-compose-snapshot-system" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>snapshot</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>What is the Compose snapshot system?</summary>
+<p>Snapshots are Compose runtime's state consistency mechanism.</p>
+<p>They track reads/writes to observable state and coordinate safe updates
+with recomposition.</p>
+<p>Interview highlights:</p>
+<ul>
+<li>MVCC-like model for state access</li>
+<li>change application invalidates readers</li>
+<li>enables thread-safe state transactions with rules</li>
+<li>foundation for automatic UI reactivity</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-system">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="snapshot-state-read-write"></div>
+
+<h1 id="how-are-state-reads-and-writes-observed-by-compose-runtime">How are state reads and writes observed by Compose runtime?<a class="headerlink" href="#how-are-state-reads-and-writes-observed-by-compose-runtime" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>snapshot</code>
+<code>recomposition</code></p>
+<details class="question">
+<summary>How are state reads and writes observed by Compose runtime?</summary>
+<p>During composition, runtime records state reads per scope.</p>
+<p>Later, writes to those state objects invalidate dependent scopes
+and schedule recomposition.</p>
+<p>This model provides:</p>
+<ul>
+<li>precise dependency tracking</li>
+<li>selective invalidation</li>
+<li>deterministic update behavior</li>
+<li>better performance than coarse full-tree updates</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-state-read-write">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="side-effects-overview"></div>
+
+<h1 id="why-does-compose-provide-side-effect-apis">Why does Compose provide side-effect APIs?<a class="headerlink" href="#why-does-compose-provide-side-effect-apis" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>side-effects</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>Why does Compose provide side-effect APIs?</summary>
+<p>Composables should describe UI, but apps still need imperative work
+(coroutines, listeners, analytics, cleanup).</p>
+<p>Side-effect APIs provide lifecycle-aware hooks for that work.</p>
+<p>Mention in interviews:</p>
+<ul>
+<li>choose API by lifecycle and restart behavior</li>
+<li>avoid launching side effects directly in composable body</li>
+<li>keep effects scoped and cancelable</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/side-effects-overview/#side-effects-overview">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="sideeffect-usage"></div>
+
+<h1 id="when-should-sideeffect-be-used">When should <code>SideEffect</code> be used?<a class="headerlink" href="#when-should-sideeffect-be-used" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>side-effects</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>When should <code>SideEffect</code> be used?</summary>
+<p><code>SideEffect</code> runs after every successful recomposition commit.</p>
+<p>Use it to publish Compose state to non-Compose objects that need
+latest values on each commit.</p>
+<p>Guardrails:</p>
+<ul>
+<li>keep work fast and idempotent</li>
+<li>avoid long-running jobs in <code>SideEffect</code></li>
+<li>prefer <code>LaunchedEffect</code> for suspend work</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/side-effects-overview/#sideeffect-usage">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="produceState-usage"></div>
+
+<h1 id="what-problem-does-producestate-solve">What problem does <code>produceState</code> solve?<a class="headerlink" href="#what-problem-does-producestate-solve" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>state</code>
+<code>side-effects</code></p>
+<details class="question">
+<summary>What problem does <code>produceState</code> solve?</summary>
+<p><code>produceState</code> bridges external async sources into Compose <code>State&lt;T&gt;</code>.</p>
+<p>It launches a coroutine tied to composition and updates <code>value</code>.</p>
+<p>Useful for:</p>
+<ul>
+<li>repository/data source integration</li>
+<li>converting callbacks or suspend fetches to UI state</li>
+<li>lifecycle-scoped loading without manual job wiring</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/side-effects-overview/#produceState-usage">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="launchedeffect-usage"></div>
+
+<h1 id="how-does-launchedeffect-work-and-when-should-you-use-it">How does <code>LaunchedEffect</code> work and when should you use it?<a class="headerlink" href="#how-does-launchedeffect-work-and-when-should-you-use-it" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>side-effects</code>
+<code>coroutines</code></p>
+<details class="question">
+<summary>How does <code>LaunchedEffect</code> work and when should you use it?</summary>
+<p><code>LaunchedEffect(keys...)</code> starts a coroutine when entering composition,
+and restarts it when keys change.</p>
+<p>Use it for composition-scoped suspend work.</p>
+<p>Interview points:</p>
+<ul>
+<li>cancellation on leaving composition</li>
+<li>key changes restart effect</li>
+<li>good for one-off screen tasks and collectors</li>
+<li>avoid using unstable/changing keys unintentionally</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#launchedeffect-usage">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="disposableeffect-usage"></div>
+
+<h1 id="when-do-you-use-disposableeffect">When do you use <code>DisposableEffect</code>?<a class="headerlink" href="#when-do-you-use-disposableeffect" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>side-effects</code>
+<code>lifecycle</code></p>
+<details class="question">
+<summary>When do you use <code>DisposableEffect</code>?</summary>
+<p><code>DisposableEffect(keys...)</code> is for registering something that needs cleanup,
+such as listeners or observers.</p>
+<p>It provides <code>onDispose</code> for deterministic teardown.</p>
+<p>Common interview examples:</p>
+<ul>
+<li>register/unregister lifecycle observer</li>
+<li>subscribe/unsubscribe callback APIs</li>
+<li>resource attach/detach tied to composition</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#disposableeffect-usage">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="rememberCoroutineScope-usage"></div>
+
+<h1 id="what-is-remembercoroutinescope-used-for">What is <code>rememberCoroutineScope</code> used for?<a class="headerlink" href="#what-is-remembercoroutinescope-used-for" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>coroutines</code>
+<code>side-effects</code></p>
+<details class="question">
+<summary>What is <code>rememberCoroutineScope</code> used for?</summary>
+<p><code>rememberCoroutineScope</code> returns a composition-aware <code>CoroutineScope</code>
+you can use from callbacks like button clicks.</p>
+<p>Difference from <code>LaunchedEffect</code>:</p>
+<ul>
+<li><code>LaunchedEffect</code>: automatic launch during composition</li>
+<li><code>rememberCoroutineScope</code>: manual launch on events</li>
+<li>both cancel when leaving composition</li>
+<li>still keep business logic in ViewModel when appropriate</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#rememberCoroutineScope-usage">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="derivedStateOf-purpose"></div>
+
+<h1 id="what-is-derivedstateof-and-when-does-it-help">What is <code>derivedStateOf</code> and when does it help?<a class="headerlink" href="#what-is-derivedstateof-and-when-does-it-help" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>state</code>
+<code>performance</code></p>
+<details class="question">
+<summary>What is <code>derivedStateOf</code> and when does it help?</summary>
+<p><code>derivedStateOf</code> memoizes derived values from other state objects
+and recalculates only when dependencies change.</p>
+<p>It helps when:</p>
+<ul>
+<li>derivation is non-trivial</li>
+<li>source state updates frequently</li>
+<li>you want to reduce unnecessary downstream recomposition</li>
+<li>computed value is consumed by multiple UI branches</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#derivedStateOf-purpose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="rememberUpdatedState-purpose"></div>
+
+<h1 id="why-is-rememberupdatedstate-important-in-long-lived-effects">Why is <code>rememberUpdatedState</code> important in long-lived effects?<a class="headerlink" href="#why-is-rememberupdatedstate-important-in-long-lived-effects" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>side-effects</code>
+<code>state</code></p>
+<details class="question">
+<summary>Why is <code>rememberUpdatedState</code> important in long-lived effects?</summary>
+<p><code>rememberUpdatedState</code> gives effects access to the latest lambda/value
+without restarting the effect.</p>
+<p>This is useful when restart would be expensive or semantically wrong.</p>
+<p>Typical use case:</p>
+<ul>
+<li>timer/listener effect keeps running</li>
+<li>callback reference updates on recomposition</li>
+<li>effect reads latest callback safely</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#rememberUpdatedState-purpose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="compositionlocal-purpose"></div>
+
+<h1 id="what-is-compositionlocal-and-when-should-it-be-used">What is <code>CompositionLocal</code> and when should it be used?<a class="headerlink" href="#what-is-compositionlocal-and-when-should-it-be-used" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>architecture</code>
+<code>compositionlocal</code></p>
+<details class="question">
+<summary>What is <code>CompositionLocal</code> and when should it be used?</summary>
+<p><code>CompositionLocal</code> passes values implicitly down the composition tree
+without threading parameters through each layer.</p>
+<p>Best for cross-cutting concerns like theme, density, or environment values.</p>
+<p>Cautions:</p>
+<ul>
+<li>avoid hiding business dependencies</li>
+<li>document provided locals clearly</li>
+<li>overuse can hurt readability and testability</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/compositionlocal-and-context-propagation/#compositionlocal-purpose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="stateflow-with-compose"></div>
+
+<h1 id="how-do-you-integrate-stateflow-with-compose-ui">How do you integrate <code>StateFlow</code> with Compose UI?<a class="headerlink" href="#how-do-you-integrate-stateflow-with-compose-ui" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>stateflow</code>
+<code>architecture</code></p>
+<details class="question">
+<summary>How do you integrate <code>StateFlow</code> with Compose UI?</summary>
+<p>Expose UI state from ViewModel as <code>StateFlow&lt;UiState&gt;</code> and collect in UI.</p>
+<p>Compose side typically uses lifecycle-aware collection API.</p>
+<p>Interview points:</p>
+<ul>
+<li>single source of truth in ViewModel</li>
+<li>immutable state objects</li>
+<li>Compose observes and renders latest state</li>
+<li>events flow back via callbacks</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#stateflow-with-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="collectAsState-vs-collectAsStateWithLifecycle"></div>
+
+<h1 id="collectasstate-vs-collectasstatewithlifecycle-what-is-the-difference"><code>collectAsState</code> vs <code>collectAsStateWithLifecycle</code> - what is the difference?<a class="headerlink" href="#collectasstate-vs-collectasstatewithlifecycle-what-is-the-difference" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>stateflow</code>
+<code>lifecycle</code></p>
+<details class="question">
+<summary><code>collectAsState</code> vs <code>collectAsStateWithLifecycle</code> - what is the difference?</summary>
+<p>Both convert Flow emissions to Compose <code>State</code>.</p>
+<p><code>collectAsStateWithLifecycle</code> adds Android lifecycle awareness,
+reducing unnecessary collection when UI is not active.</p>
+<p>Interview framing:</p>
+<ul>
+<li>prefer lifecycle-aware API on Android screens</li>
+<li>plain <code>collectAsState</code> is fine in non-lifecycle contexts</li>
+<li>prevents background collection leaks/waste</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#collectAsState-vs-collectAsStateWithLifecycle">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="snapshotFlow-usage"></div>
+
+<h1 id="what-is-snapshotflow-and-when-would-you-use-it">What is <code>snapshotFlow</code> and when would you use it?<a class="headerlink" href="#what-is-snapshotflow-and-when-would-you-use-it" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>flow</code>
+<code>snapshot</code></p>
+<details class="question">
+<summary>What is <code>snapshotFlow</code> and when would you use it?</summary>
+<p><code>snapshotFlow</code> converts reads of Compose snapshot state into a cold Flow.</p>
+<p>It is useful when coroutine/Flow pipelines need Compose state changes.</p>
+<p>Good examples:</p>
+<ul>
+<li>track scroll thresholds</li>
+<li>debounce UI-derived signals</li>
+<li>bridge Compose state to repository/analytics layers</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#snapshotFlow-usage">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="stability-in-compose"></div>
+
+<h1 id="what-does-stability-mean-in-compose">What does stability mean in Compose?<a class="headerlink" href="#what-does-stability-mean-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>stability</code>
+<code>compiler</code></p>
+<details class="question">
+<summary>What does stability mean in Compose?</summary>
+<p>Stability describes whether a type can be reliably checked for meaningful change
+to support skipping recomposition.</p>
+<p>Stable inputs improve skippability and runtime efficiency.</p>
+<p>Interview signals:</p>
+<ul>
+<li>inferred by compiler + annotations</li>
+<li>immutable data patterns help</li>
+<li>mutable public properties often hurt stability</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stability-in-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="stable-vs-immutable"></div>
+
+<h1 id="what-is-the-difference-between-stable-and-immutable">What is the difference between <code>@Stable</code> and <code>@Immutable</code>?<a class="headerlink" href="#what-is-the-difference-between-stable-and-immutable" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>stability</code>
+<code>annotations</code></p>
+<details class="question">
+<summary>What is the difference between <code>@Stable</code> and <code>@Immutable</code>?</summary>
+<p><code>@Immutable</code> indicates object state does not change after construction.</p>
+<p><code>@Stable</code> indicates changes are observable and equality semantics are reliable
+for Compose optimization.</p>
+<p>Interview caveat:</p>
+<ul>
+<li>annotations are contracts, not magic performance buttons</li>
+<li>misuse can lead to stale UI or incorrect assumptions</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stable-vs-immutable">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="compose-compiler-role"></div>
+
+<h1 id="what-is-the-role-of-the-compose-compiler">What is the role of the Compose compiler?<a class="headerlink" href="#what-is-the-role-of-the-compose-compiler" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>compiler</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>What is the role of the Compose compiler?</summary>
+<p>The Compose compiler transforms composable code into runtime calls
+that manage composition, recomposition, and skipping.</p>
+<p>Key outcomes:</p>
+<ul>
+<li>inserts restart/skip groups</li>
+<li>adds change-tracking parameters</li>
+<li>performs stability-driven optimizations</li>
+<li>enables tooling metrics for analysis</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#compose-compiler-role">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="slot-table-purpose"></div>
+
+<h1 id="what-is-the-slot-table-in-compose-runtime">What is the Slot Table in Compose runtime?<a class="headerlink" href="#what-is-the-slot-table-in-compose-runtime" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>staff</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>runtime</code>
+<code>slot-table</code></p>
+<details class="question">
+<summary>What is the Slot Table in Compose runtime?</summary>
+<p>Slot Table is the runtime data structure that stores composition groups,
+remembered values, and positional metadata.</p>
+<p>It enables efficient tree updates without rebuilding everything.</p>
+<p>Interview highlights:</p>
+<ul>
+<li>positional memoization model</li>
+<li>group identity and structure tracking</li>
+<li>powers <code>remember</code> and node reuse behavior</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/slot-table-and-runtime-internals/#slot-table-purpose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="composer-and-applier"></div>
+
+<h1 id="what-are-composer-and-applier-in-compose-internals">What are <code>Composer</code> and <code>Applier</code> in Compose internals?<a class="headerlink" href="#what-are-composer-and-applier-in-compose-internals" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>staff</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>internals</code>
+<code>runtime</code></p>
+<details class="question">
+<summary>What are <code>Composer</code> and <code>Applier</code> in Compose internals?</summary>
+<p><code>Composer</code> records and reconciles composition operations.
+<code>Applier</code> applies resulting tree changes to target UI tree implementation.</p>
+<p>In Android UI:</p>
+<ul>
+<li><code>Composer</code> decides what changed</li>
+<li><code>Applier</code> performs node insert/move/remove updates</li>
+<li>separation supports different tree backends</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#composer-and-applier">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="compose-runtime-phases"></div>
+
+<h1 id="what-are-the-major-runtime-phases-in-compose-frame-updates">What are the major runtime phases in Compose frame updates?<a class="headerlink" href="#what-are-the-major-runtime-phases-in-compose-frame-updates" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>runtime</code>
+<code>rendering</code></p>
+<details class="question">
+<summary>What are the major runtime phases in Compose frame updates?</summary>
+<p>Compose update pipeline can be framed as:</p>
+<ul>
+<li>composition (compute UI structure)</li>
+<li>layout (measure/place)</li>
+<li>drawing (render to canvas)</li>
+</ul>
+<p>Recomposition affects composition, but layout/draw can run independently
+when only size/visual invalidations occur.</p>
+<p><a href="/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#compose-runtime-phases">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="modifier-chain-order"></div>
+
+<h1 id="why-does-modifier-order-matter-in-compose">Why does modifier order matter in Compose?<a class="headerlink" href="#why-does-modifier-order-matter-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>modifier</code>
+<code>ui</code></p>
+<details class="question">
+<summary>Why does modifier order matter in Compose?</summary>
+<p>Modifiers are applied in sequence, and each step wraps or transforms behavior.</p>
+<p>Reordering can change:</p>
+<ul>
+<li>layout size constraints</li>
+<li>drawing/clipping outcome</li>
+<li>pointer input hit areas</li>
+<li>semantics/accessibility output</li>
+</ul>
+<p>Explain with simple examples like <code>padding</code> before vs after <code>clickable</code>.</p>
+<p><a href="/android-interview-prep/deep-dives/compose/modifier-chain-and-node-graph/#modifier-chain-order">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="custom-layout-basics"></div>
+
+<h1 id="what-should-you-know-before-writing-custom-layouts-in-compose">What should you know before writing custom layouts in Compose?<a class="headerlink" href="#what-should-you-know-before-writing-custom-layouts-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>layout</code>
+<code>performance</code></p>
+<details class="question">
+<summary>What should you know before writing custom layouts in Compose?</summary>
+<p>Understand constraints-driven measurement and explicit placement APIs.</p>
+<p>Core interview points:</p>
+<ul>
+<li>measure children with provided constraints</li>
+<li>place children in layout block</li>
+<li>avoid repeated expensive measurement work</li>
+<li>preserve predictable intrinsic sizing behavior</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#custom-layout-basics">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="measure-layout-draw-phases"></div>
+
+<h1 id="explain-measure-layout-and-draw-phases-in-compose">Explain measure, layout, and draw phases in Compose.<a class="headerlink" href="#explain-measure-layout-and-draw-phases-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>layout</code>
+<code>rendering</code></p>
+<details class="question">
+<summary>Explain measure, layout, and draw phases in Compose.</summary>
+<p>Measure determines child sizes under constraints.
+Layout places children in parent coordinates.
+Draw renders pixels based on final layout tree.</p>
+<p>Important interview note:</p>
+<ul>
+<li>not every state change forces all three phases equally</li>
+<li>phase-specific invalidations are key for performance</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#measure-layout-draw-phases">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="lazycolumn-performance"></div>
+
+<h1 id="how-do-you-optimize-lazycolumn-performance">How do you optimize <code>LazyColumn</code> performance?<a class="headerlink" href="#how-do-you-optimize-lazycolumn-performance" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>lazycolumn</code>
+<code>performance</code></p>
+<details class="question">
+<summary>How do you optimize <code>LazyColumn</code> performance?</summary>
+<p>Optimize item stability, keys, and per-item work.</p>
+<p>Practical checklist:</p>
+<ul>
+<li>provide stable item keys</li>
+<li>avoid heavy allocations in item content</li>
+<li>keep item state scoped correctly</li>
+<li>minimize nested lazy containers</li>
+<li>profile jank with real datasets</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#lazycolumn-performance">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="keys-in-lazycolumn"></div>
+
+<h1 id="why-are-keys-important-in-lazycolumn-items">Why are keys important in <code>LazyColumn</code> items?<a class="headerlink" href="#why-are-keys-important-in-lazycolumn-items" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>lazycolumn</code>
+<code>state</code></p>
+<details class="question">
+<summary>Why are keys important in <code>LazyColumn</code> items?</summary>
+<p>Keys preserve item identity across insertions, deletions, and moves.</p>
+<p>Without stable keys:</p>
+<ul>
+<li>item state can jump to wrong rows</li>
+<li>animations and reuse become less predictable</li>
+<li>recomposition work can increase</li>
+<li>scroll position behavior may degrade</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#keys-in-lazycolumn">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="navigation-compose-basics"></div>
+
+<h1 id="what-are-core-principles-of-navigation-in-compose">What are core principles of navigation in Compose?<a class="headerlink" href="#what-are-core-principles-of-navigation-in-compose" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>navigation</code>
+<code>architecture</code></p>
+<details class="question">
+<summary>What are core principles of navigation in Compose?</summary>
+<p>Use a route graph with explicit destinations and argument contracts.</p>
+<p>Strong interview answer includes:</p>
+<ul>
+<li>single <code>NavHost</code> per feature shell/app shell</li>
+<li>pass IDs, not large objects</li>
+<li>keep navigation decisions near state owner</li>
+<li>support deep links and back stack predictability</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-compose-basics">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="navigation-single-source-of-truth"></div>
+
+<h1 id="how-do-you-keep-navigation-maintainable-at-scale-in-compose-apps">How do you keep navigation maintainable at scale in Compose apps?<a class="headerlink" href="#how-do-you-keep-navigation-maintainable-at-scale-in-compose-apps" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>navigation</code>
+<code>architecture</code></p>
+<details class="question">
+<summary>How do you keep navigation maintainable at scale in Compose apps?</summary>
+<p>Treat destinations as typed contracts and centralize route definitions.</p>
+<p>Maintainability practices:</p>
+<ul>
+<li>sealed route models or typed destinations</li>
+<li>feature-level navigation modules</li>
+<li>avoid scattering route strings</li>
+<li>make back stack and result passing explicit</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-single-source-of-truth">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="theming-material3-compose"></div>
+
+<h1 id="how-does-theming-work-in-compose-with-material-3">How does theming work in Compose with Material 3?<a class="headerlink" href="#how-does-theming-work-in-compose-with-material-3" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>theming</code>
+<code>material3</code></p>
+<details class="question">
+<summary>How does theming work in Compose with Material 3?</summary>
+<p>Material theme is provided via composition locals (color scheme,
+typography, shapes) and consumed by Material components.</p>
+<p>Interview points:</p>
+<ul>
+<li>app-level theme as design system boundary</li>
+<li>support light/dark and dynamic color strategy</li>
+<li>keep custom tokens consistent with brand system</li>
+<li>avoid hardcoded colors in feature UI</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/theming-and-material3/#theming-material3-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="animations-compose"></div>
+
+<h1 id="what-animation-apis-should-you-discuss-in-compose-interviews">What animation APIs should you discuss in Compose interviews?<a class="headerlink" href="#what-animation-apis-should-you-discuss-in-compose-interviews" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>animation</code>
+<code>ui</code></p>
+<details class="question">
+<summary>What animation APIs should you discuss in Compose interviews?</summary>
+<p>Focus on choosing API by use case complexity.</p>
+<p>Common set:</p>
+<ul>
+<li><code>animate*AsState</code> for simple value transitions</li>
+<li><code>AnimatedVisibility</code> and <code>AnimatedContent</code> for content transitions</li>
+<li><code>updateTransition</code> for coordinated multi-property animations</li>
+<li>infinite/repeatable animations for decorative motion</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/animation-in-compose/#animations-compose">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="compose-testing-strategy"></div>
+
+<h1 id="what-is-a-strong-testing-strategy-for-compose-ui">What is a strong testing strategy for Compose UI?<a class="headerlink" href="#what-is-a-strong-testing-strategy-for-compose-ui" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>testing</code>
+<code>architecture</code></p>
+<details class="question">
+<summary>What is a strong testing strategy for Compose UI?</summary>
+<p>Use a testing pyramid: state logic tests, composable behavior tests,
+and targeted integration/end-to-end flows.</p>
+<p>Interview-ready points:</p>
+<ul>
+<li>verify semantics, not implementation details</li>
+<li>inject fake state/data for deterministic tests</li>
+<li>isolate flaky async behavior with test dispatchers</li>
+<li>keep UI tests focused on high-value user journeys</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-testing-strategy">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="semantics-and-test-tags"></div>
+
+<h1 id="how-do-semantics-and-test-tags-help-compose-testing">How do semantics and test tags help Compose testing?<a class="headerlink" href="#how-do-semantics-and-test-tags-help-compose-testing" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>intermediate</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>testing</code>
+<code>semantics</code></p>
+<details class="question">
+<summary>How do semantics and test tags help Compose testing?</summary>
+<p>Compose tests query semantics tree, not view IDs.</p>
+<p><code>Modifier.testTag()</code> and semantic properties provide stable selectors.</p>
+<p>Best practices:</p>
+<ul>
+<li>prefer meaningful semantics for accessibility + tests</li>
+<li>avoid brittle text-only selectors when dynamic</li>
+<li>keep tags unique within test scope</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#semantics-and-test-tags">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="androidview-interop"></div>
+
+<h1 id="when-and-how-should-you-use-androidview-interop">When and how should you use <code>AndroidView</code> interop?<a class="headerlink" href="#when-and-how-should-you-use-androidview-interop" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>senior</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>interoperability</code>
+<code>views</code></p>
+<details class="question">
+<summary>When and how should you use <code>AndroidView</code> interop?</summary>
+<p><code>AndroidView</code> embeds legacy View-based UI inside Compose.</p>
+<p>Use it for incremental migration or SDK widgets not available in Compose.</p>
+<p>Interview cautions:</p>
+<ul>
+<li>manage View lifecycle and state sync carefully</li>
+<li>avoid frequent View recreation</li>
+<li>keep interop boundaries explicit and temporary when possible</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#androidview-interop">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="compose-performance-checklist"></div>
+
+<h1 id="what-is-your-practical-compose-performance-checklist">What is your practical Compose performance checklist?<a class="headerlink" href="#what-is-your-practical-compose-performance-checklist" title="Permanent link">&para;</a></h1>
+<p><strong>Difficulty:</strong> <code>staff</code> • <strong>Tags:</strong>
+<code>compose</code>
+<code>performance</code>
+<code>optimization</code></p>
+<details class="question">
+<summary>What is your practical Compose performance checklist?</summary>
+<p>A strong answer balances architecture and runtime-level tuning.</p>
+<p>Quick checklist:</p>
+<ul>
+<li>stabilize data models and parameters</li>
+<li>reduce unnecessary recomposition scopes</li>
+<li>optimize lazy list item content and keys</li>
+<li>move heavy work off main thread</li>
+<li>measure with tracing, profiler, and macrobenchmark</li>
+</ul>
+<p><a href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-performance-checklist">🚀 See Full Deep Dive</a></p>
 </details>
 
 

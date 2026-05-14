@@ -1453,10 +1453,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="structured-concurrency-and-jobs-deep-dive">Structured Concurrency and Jobs Deep Dive<a class="headerlink" href="#structured-concurrency-and-jobs-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Structured concurrency gives coroutine trees clear ownership and predictable lifecycle behavior.</p>

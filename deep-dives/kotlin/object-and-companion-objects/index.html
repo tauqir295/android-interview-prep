@@ -1520,10 +1520,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="object-and-companion-objects-deep-dive">Object and Companion Objects Deep Dive<a class="headerlink" href="#object-and-companion-objects-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Kotlin's <code>object</code> keyword covers several patterns:</p>

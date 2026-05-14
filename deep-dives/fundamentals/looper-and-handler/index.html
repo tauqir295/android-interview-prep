@@ -1732,24 +1732,21 @@
 (function () {
   const link = document.getElementById("back-to-questions");
   if (!link) return;
-
   try {
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
       link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
       return;
     }
-
     const referrer = document.referrer || "";
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
   } catch (_) {
-    // Keep default fundamentals link if URL parsing fails.
+    // Keep default generated page link if URL parsing fails.
   }
 })();
 </script>
-
 <h1 id="looper-and-handler-deep-dive">Looper and Handler Deep Dive<a class="headerlink" href="#looper-and-handler-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Looper and Handler enable thread-safe message passing in Android. Looper processes messages in a queue, Handler sends messages to that queue and executes them on a specific thread. This is the foundation for multi-threading and the Binder system.</p>

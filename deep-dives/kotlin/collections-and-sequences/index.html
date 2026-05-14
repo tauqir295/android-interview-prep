@@ -1453,10 +1453,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="collections-and-sequences-deep-dive">Collections and Sequences Deep Dive<a class="headerlink" href="#collections-and-sequences-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Kotlin collections are highly expressive, but interview discussions often focus on eagerness, allocation behavior, and immutability semantics.</p>

@@ -1481,10 +1481,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="dispatchers-and-coroutine-scope-deep-dive">Dispatchers and Coroutine Scope Deep Dive<a class="headerlink" href="#dispatchers-and-coroutine-scope-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Dispatchers and scopes determine where coroutines run and who owns their lifetime.</p>

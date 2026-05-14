@@ -1470,10 +1470,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="extension-functions-deep-dive">Extension Functions Deep Dive<a class="headerlink" href="#extension-functions-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Extension functions make Kotlin APIs feel richer without modifying original classes.</p>

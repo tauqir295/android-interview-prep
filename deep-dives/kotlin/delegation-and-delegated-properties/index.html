@@ -1509,10 +1509,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="delegation-and-delegated-properties-deep-dive">Delegation and Delegated Properties Deep Dive<a class="headerlink" href="#delegation-and-delegated-properties-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Delegation is one of Kotlin's strongest language features for reducing boilerplate and favoring composition.</p>

@@ -1492,10 +1492,11 @@
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 <h1 id="generics-and-variance-deep-dive">Generics and Variance Deep Dive<a class="headerlink" href="#generics-and-variance-deep-dive" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Kotlin generics improve type safety, but their most important interview topics are variance and type erasure.</p>
