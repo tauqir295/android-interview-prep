@@ -7,10 +7,13 @@ Current state:
 - Compose mapping: complete
 - Concurrency mapping: complete
 - Architecture mapping: complete
+- CI/CD mapping: complete
+- Advanced mapping: complete
+- Future Tech mapping: complete
 - System Design mapping: complete
 - Testing mapping: complete
 - Behavioral mapping: complete
-- Deep dive files for fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Performance, System Design, Testing, and Behavioral: created
+- Deep dive files for fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Performance, CI/CD, Advanced, Future Tech, System Design, Testing, and Behavioral: created
 ---
 ## Mapping Documents
 Use these as the source of truth:
@@ -19,6 +22,9 @@ Use these as the source of truth:
 - `COMPOSE_DEEP_DIVE_MAPPING.md` (full Compose mapping)
 - `CONCURRENCY_DEEP_DIVE_MAPPING.md` (full Concurrency mapping)
 - `ARCHITECTURE_DEEP_DIVE_MAPPING.md` (full Architecture mapping)
+- `CICD_DEEP_DIVE_MAPPING.md` (full CI/CD mapping)
+- `ADVANCED_DEEP_DIVE_MAPPING.md` (full Advanced mapping)
+- `FUTURE_TECH_DEEP_DIVE_MAPPING.md` (full Future Tech mapping)
 - `SYSTEM_DESIGN_DEEP_DIVE_MAPPING.md` (full System Design mapping)
 - `TESTING_DEEP_DIVE_MAPPING.md` (full Testing mapping)
 - `BEHAVIORAL_DEEP_DIVE_MAPPING.md` (full Behavioral mapping)
@@ -239,6 +245,9 @@ Implemented globally:
 | Architecture YAML | ✅ complete |
 | Networking YAML | ✅ complete |
 | Performance YAML | ✅ complete |
+| CI/CD YAML | ✅ complete |
+| Advanced YAML | ✅ complete |
+| Future Tech YAML | ✅ complete |
 | System Design YAML | ✅ complete |
 | Testing YAML | ✅ complete |
 | Behavioral YAML | ✅ complete |
@@ -249,6 +258,9 @@ Implemented globally:
 | Architecture mapping doc | ✅ complete |
 | Networking mapping doc | ✅ complete |
 | Performance mapping doc | ✅ complete |
+| CI/CD mapping doc | ✅ complete |
+| Advanced mapping doc | ✅ complete |
+| Future Tech mapping doc | ✅ complete |
 | System Design mapping doc | ✅ complete |
 | Testing mapping doc | ✅ complete |
 | Behavioral mapping doc | ✅ complete |

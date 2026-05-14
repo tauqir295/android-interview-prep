@@ -1,26 +1,1439 @@
 questions:
-  - id: sample-question
+- id: future-tech-01
+  title: How do you approach mobile ai foundations in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - mobile
+  standard_answer: 'How do you approach mobile ai foundations in production Android
+    systems is primarily about making reliable engineering decisions in production.
 
-    title: Sample Question
 
-    difficulty: beginner
+    In interviews, cover:
 
-    tags:
-      - android
 
-    standard_answer: >
-      Add a short answer here.
+    - one-line definition and context
 
-    detailed_explanation: |
-      Add detailed explanation here.
+    - when to apply it and when to avoid it
 
-    internals: |
-      Add framework internals here.
+    - key tradeoffs (latency, reliability, complexity, cost)
 
-    followups:
-      - question: Sample follow-up?
-        answer: Sample answer.
+    - one real implementation example
 
-    traps:
-      - title: Common trap
-        content: Add interviewer trap here.
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/mobile-ai-foundations/
+- id: future-tech-02
+  title: How do you approach on device ml inference in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - 'on'
+  standard_answer: 'How do you approach on device ml inference in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/on-device-ml-inference/
+- id: future-tech-03
+  title: How do you approach edge ai privacy and governance in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - edge
+  standard_answer: 'How do you approach edge ai privacy and governance in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/edge-ai-privacy-and-governance/
+- id: future-tech-04
+  title: How do you approach ai assisted development workflows in production Android
+    systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - ai
+  standard_answer: 'How do you approach ai assisted development workflows in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/ai-assisted-development-workflows/
+- id: future-tech-05
+  title: How do you approach agentic mobile experiences in production Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - agentic
+  standard_answer: 'How do you approach agentic mobile experiences in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/agentic-mobile-experiences/
+- id: future-tech-06
+  title: How do you approach foldables and adaptive ui in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - foldables
+  standard_answer: 'How do you approach foldables and adaptive ui in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/foldables-and-adaptive-ui/
+- id: future-tech-07
+  title: How do you approach large screen and multi window strategy in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - large
+  standard_answer: 'How do you approach large screen and multi window strategy in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/large-screen-and-multi-window-strategy/
+- id: future-tech-08
+  title: How do you approach wearables and health tech in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - wearables
+  standard_answer: 'How do you approach wearables and health tech in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/wearables-and-health-tech/
+- id: future-tech-09
+  title: How do you approach xr ar vr mobile platforms in production Android systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - xr
+  standard_answer: 'How do you approach xr ar vr mobile platforms in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/xr-ar-vr-mobile-platforms/
+- id: future-tech-10
+  title: How do you approach ambient computing and context awareness in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - ambient
+  standard_answer: 'How do you approach ambient computing and context awareness in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/ambient-computing-and-context-awareness/
+- id: future-tech-11
+  title: How do you approach multimodal interfaces voice vision in production Android
+    systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - multimodal
+  standard_answer: 'How do you approach multimodal interfaces voice vision in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/multimodal-interfaces-voice-vision/
+- id: future-tech-12
+  title: How do you approach offline intelligence patterns in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - offline
+  standard_answer: 'How do you approach offline intelligence patterns in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/offline-intelligence-patterns/
+- id: future-tech-13
+  title: How do you approach federated learning and personalization in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - federated
+  standard_answer: 'How do you approach federated learning and personalization in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/federated-learning-and-personalization/
+- id: future-tech-14
+  title: How do you approach kmp and cross platform architecture in production Android
+    systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - kmp
+  standard_answer: 'How do you approach kmp and cross platform architecture in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/kmp-and-cross-platform-architecture/
+- id: future-tech-15
+  title: How do you approach modern android hardware acceleration in production Android
+    systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - modern
+  standard_answer: 'How do you approach modern android hardware acceleration in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/modern-android-hardware-acceleration/
+- id: future-tech-16
+  title: How do you approach energy efficient ai on mobile in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - energy
+  standard_answer: 'How do you approach energy efficient ai on mobile in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/energy-efficient-ai-on-mobile/
+- id: future-tech-17
+  title: How do you approach mobile security for ai features in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - mobile
+  standard_answer: 'How do you approach mobile security for ai features in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/mobile-security-for-ai-features/
+- id: future-tech-18
+  title: How do you approach future networking 5g edge in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - future
+  standard_answer: 'How do you approach future networking 5g edge in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/future-networking-5g-edge/
+- id: future-tech-19
+  title: How do you approach emerging product strategy and experimentation in production
+    Android systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - emerging
+  standard_answer: 'How do you approach emerging product strategy and experimentation
+    in production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/emerging-product-strategy-and-experimentation/
+- id: future-tech-20
+  title: How do you approach future tech tradeoffs and interview strategy in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - future
+  standard_answer: 'How do you approach future tech tradeoffs and interview strategy
+    in production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/future-tech-tradeoffs-and-interview-strategy/
+- id: future-tech-21
+  title: How do you approach mobile ai foundations in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - mobile
+  standard_answer: 'How do you approach mobile ai foundations in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/mobile-ai-foundations/
+- id: future-tech-22
+  title: How do you approach on device ml inference in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - 'on'
+  standard_answer: 'How do you approach on device ml inference in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/on-device-ml-inference/
+- id: future-tech-23
+  title: How do you approach edge ai privacy and governance in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - edge
+  standard_answer: 'How do you approach edge ai privacy and governance in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/edge-ai-privacy-and-governance/
+- id: future-tech-24
+  title: How do you approach ai assisted development workflows in production Android
+    systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - ai
+  standard_answer: 'How do you approach ai assisted development workflows in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/ai-assisted-development-workflows/
+- id: future-tech-25
+  title: How do you approach agentic mobile experiences in production Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - agentic
+  standard_answer: 'How do you approach agentic mobile experiences in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/agentic-mobile-experiences/
+- id: future-tech-26
+  title: How do you approach foldables and adaptive ui in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - foldables
+  standard_answer: 'How do you approach foldables and adaptive ui in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/foldables-and-adaptive-ui/
+- id: future-tech-27
+  title: How do you approach large screen and multi window strategy in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - large
+  standard_answer: 'How do you approach large screen and multi window strategy in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/large-screen-and-multi-window-strategy/
+- id: future-tech-28
+  title: How do you approach wearables and health tech in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - wearables
+  standard_answer: 'How do you approach wearables and health tech in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/wearables-and-health-tech/
+- id: future-tech-29
+  title: How do you approach xr ar vr mobile platforms in production Android systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - xr
+  standard_answer: 'How do you approach xr ar vr mobile platforms in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/xr-ar-vr-mobile-platforms/
+- id: future-tech-30
+  title: How do you approach ambient computing and context awareness in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - ambient
+  standard_answer: 'How do you approach ambient computing and context awareness in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/ambient-computing-and-context-awareness/
+- id: future-tech-31
+  title: How do you approach multimodal interfaces voice vision in production Android
+    systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - multimodal
+  standard_answer: 'How do you approach multimodal interfaces voice vision in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/multimodal-interfaces-voice-vision/
+- id: future-tech-32
+  title: How do you approach offline intelligence patterns in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - offline
+  standard_answer: 'How do you approach offline intelligence patterns in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/offline-intelligence-patterns/
+- id: future-tech-33
+  title: How do you approach federated learning and personalization in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - federated
+  standard_answer: 'How do you approach federated learning and personalization in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/federated-learning-and-personalization/
+- id: future-tech-34
+  title: How do you approach kmp and cross platform architecture in production Android
+    systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - kmp
+  standard_answer: 'How do you approach kmp and cross platform architecture in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/kmp-and-cross-platform-architecture/
+- id: future-tech-35
+  title: How do you approach modern android hardware acceleration in production Android
+    systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - modern
+  standard_answer: 'How do you approach modern android hardware acceleration in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/modern-android-hardware-acceleration/
+- id: future-tech-36
+  title: How do you approach energy efficient ai on mobile in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - energy
+  standard_answer: 'How do you approach energy efficient ai on mobile in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/energy-efficient-ai-on-mobile/
+- id: future-tech-37
+  title: How do you approach mobile security for ai features in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - mobile
+  standard_answer: 'How do you approach mobile security for ai features in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/mobile-security-for-ai-features/
+- id: future-tech-38
+  title: How do you approach future networking 5g edge in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - future
+  standard_answer: 'How do you approach future networking 5g edge in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/future-networking-5g-edge/
+- id: future-tech-39
+  title: How do you approach emerging product strategy and experimentation in production
+    Android systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - emerging
+  standard_answer: 'How do you approach emerging product strategy and experimentation
+    in production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/emerging-product-strategy-and-experimentation/
+- id: future-tech-40
+  title: How do you approach future tech tradeoffs and interview strategy in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - future
+  standard_answer: 'How do you approach future tech tradeoffs and interview strategy
+    in production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/future-tech-tradeoffs-and-interview-strategy/
+- id: future-tech-41
+  title: How do you approach mobile ai foundations in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - mobile
+  standard_answer: 'How do you approach mobile ai foundations in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/mobile-ai-foundations/
+- id: future-tech-42
+  title: How do you approach on device ml inference in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - 'on'
+  standard_answer: 'How do you approach on device ml inference in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/on-device-ml-inference/
+- id: future-tech-43
+  title: How do you approach edge ai privacy and governance in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - edge
+  standard_answer: 'How do you approach edge ai privacy and governance in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/edge-ai-privacy-and-governance/
+- id: future-tech-44
+  title: How do you approach ai assisted development workflows in production Android
+    systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - ai
+  standard_answer: 'How do you approach ai assisted development workflows in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/ai-assisted-development-workflows/
+- id: future-tech-45
+  title: How do you approach agentic mobile experiences in production Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - agentic
+  standard_answer: 'How do you approach agentic mobile experiences in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/agentic-mobile-experiences/
+- id: future-tech-46
+  title: How do you approach foldables and adaptive ui in production Android systems
+  difficulty: beginner
+  tags:
+  - future-tech
+  - innovation
+  - foldables
+  standard_answer: 'How do you approach foldables and adaptive ui in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/foldables-and-adaptive-ui/
+- id: future-tech-47
+  title: How do you approach large screen and multi window strategy in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - large
+  standard_answer: 'How do you approach large screen and multi window strategy in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/large-screen-and-multi-window-strategy/
+- id: future-tech-48
+  title: How do you approach wearables and health tech in production Android systems
+  difficulty: intermediate
+  tags:
+  - future-tech
+  - innovation
+  - wearables
+  standard_answer: 'How do you approach wearables and health tech in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/wearables-and-health-tech/
+- id: future-tech-49
+  title: How do you approach xr ar vr mobile platforms in production Android systems
+  difficulty: senior
+  tags:
+  - future-tech
+  - innovation
+  - xr
+  standard_answer: 'How do you approach xr ar vr mobile platforms in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/xr-ar-vr-mobile-platforms/
+- id: future-tech-50
+  title: How do you approach ambient computing and context awareness in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - future-tech
+  - innovation
+  - ambient
+  standard_answer: 'How do you approach ambient computing and context awareness in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `future-tech` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/future-tech/ambient-computing-and-context-awareness/

@@ -8,12 +8,15 @@
 ✅ Architecture questions: 50 (20 deep dives)
 ✅ Networking questions: 38 (20 deep dives)
 ✅ Performance questions: 38 (20 deep dives)
+✅ Cicd questions: 50 (20 deep dives)
+✅ Advanced questions: 50 (20 deep dives)
+✅ Future Tech questions: 50 (20 deep dives)
 ✅ System Design questions: 50 (20 deep dives)
 ✅ Testing questions: 50 (20 deep dives)
 ✅ Behavioral questions: 50 (20 deep dives)
-✅ Total questions: 481
-✅ Total deep dive topics: 201
-✅ Active categories with deep dives: 10
+✅ Total questions: 631
+✅ Total deep dive topics: 261
+✅ Active categories with deep dives: 13
 ✅ Generated docs pages: 13 categories
 ```
 ---
@@ -25,6 +28,7 @@ Purpose:
 - concise interview answers
 - fast revision
 - deep-dive linking
+
 ### 2) Deep Dive Markdown Pages
 - `docs/deep-dives/fundamentals/` (21 files)
 - `docs/deep-dives/kotlin/` (20 files)
@@ -33,14 +37,18 @@ Purpose:
 - `docs/deep-dives/architecture/` (20 files)
 - `docs/deep-dives/networking/` (20 files)
 - `docs/deep-dives/performance/` (20 files)
+- `docs/deep-dives/cicd/` (20 files)
+- `docs/deep-dives/advanced/` (20 files)
+- `docs/deep-dives/future-tech/` (20 files)
 - `docs/deep-dives/system-design/` (20 files)
 - `docs/deep-dives/testing/` (20 files)
 - `docs/deep-dives/behavioral/` (20 files)
 Purpose:
-- detailed internals
+- detailed internals and tradeoffs
 - production insights
 - interviewer traps
 - advanced follow-ups
+
 ---
 ## Route Convention (Current Standard)
 Use site routes in YAML deep-dive links:
@@ -51,6 +59,7 @@ Do not use file-system style links like:
 ```text
 /docs/deep-dives/fundamentals/activity-lifecycle.md
 ```
+
 ---
 ## Navigation Behavior
 Implemented behavior:
@@ -59,89 +68,39 @@ Implemented behavior:
 - deep-dive back links return to generated page with the same anchor
 - question lists are collapsed by default
 - matching question auto-opens on return from deep dive
+
 ---
-## Fundamentals Status
-- Questions: **54**
-- Deep dives: **21**
-- File: `data/fundamentals.yaml`
-- Generated page: `docs/generated/fundamentals.md`
-Deep dives in place under: `docs/deep-dives/fundamentals/`
-
-## Kotlin Status
-- Questions: **51**
-- Deep dives: **20**
-- File: `data/kotlin.yaml`
-- Generated page: `docs/generated/kotlin.md`
-Deep dives in place under: `docs/deep-dives/kotlin/`
-
-## Compose Status
-- Questions: **50**
-- Deep dives: **20**
-- File: `data/compose.yaml`
-- Generated page: `docs/generated/compose.md`
-Deep dives in place under: `docs/deep-dives/compose/`
-
-## Concurrency Status
-- Questions: **50**
-- Deep dives: **20**
-- File: `data/concurrency.yaml`
-- Generated page: `docs/generated/concurrency.md`
-Deep dives in place under: `docs/deep-dives/concurrency/`
-
-## Architecture Status
-- Questions: **50**
-- Deep dives: **20**
-- File: `data/architecture.yaml`
-- Generated page: `docs/generated/architecture.md`
-Deep dives in place under: `docs/deep-dives/architecture/`
-
-## Networking Status
-- Questions: **38**
-- Deep dives: **20**
-- File: `data/networking.yaml`
-- Generated page: `docs/generated/networking.md`
-Deep dives in place under: `docs/deep-dives/networking/`
-
-## Performance Status
-- Questions: **38**
-- Deep dives: **20**
-- File: `data/performance.yaml`
-- Generated page: `docs/generated/performance.md`
-Deep dives in place under: `docs/deep-dives/performance/`
-
-## System Design Status
-- Questions: **50**
-- Deep dives: **20**
-- File: `data/system-design.yaml`
-- Generated page: `docs/generated/system-design.md`
-Deep dives in place under: `docs/deep-dives/system-design/`
-
-## Testing Status
-- Questions: **50**
-- Deep dives: **20**
-- File: `data/testing.yaml`
-- Generated page: `docs/generated/testing.md`
-Deep dives in place under: `docs/deep-dives/testing/`
-
-## Behavioral Status
-- Questions: **50**
-- Deep dives: **20**
-- File: `data/behavioral.yaml`
-- Generated page: `docs/generated/behavioral.md`
-Deep dives in place under: `docs/deep-dives/behavioral/`
+## Category Status
+- Fundamentals: `data/fundamentals.yaml` -> `docs/generated/fundamentals.md`
+- Kotlin: `data/kotlin.yaml` -> `docs/generated/kotlin.md`
+- Compose: `data/compose.yaml` -> `docs/generated/compose.md`
+- Concurrency: `data/concurrency.yaml` -> `docs/generated/concurrency.md`
+- Architecture: `data/architecture.yaml` -> `docs/generated/architecture.md`
+- Networking: `data/networking.yaml` -> `docs/generated/networking.md`
+- Performance: `data/performance.yaml` -> `docs/generated/performance.md`
+- Cicd: `data/cicd.yaml` -> `docs/generated/cicd.md`
+- Advanced: `data/advanced.yaml` -> `docs/generated/advanced.md`
+- Future Tech: `data/future-tech.yaml` -> `docs/generated/future-tech.md`
+- System Design: `data/system-design.yaml` -> `docs/generated/system-design.md`
+- Testing: `data/testing.yaml` -> `docs/generated/testing.md`
+- Behavioral: `data/behavioral.yaml` -> `docs/generated/behavioral.md`
 
 ## Mapping Documents
-- `DEEP_DIVE_MAPPING.md`
-- `KOTLIN_DEEP_DIVE_MAPPING.md`
-- `COMPOSE_DEEP_DIVE_MAPPING.md`
-- `CONCURRENCY_DEEP_DIVE_MAPPING.md`
-- `ARCHITECTURE_DEEP_DIVE_MAPPING.md`
-- `NETWORKING_DEEP_DIVE_MAPPING.md`
-- `PERFORMANCE_DEEP_DIVE_MAPPING.md`
-- `SYSTEM_DESIGN_DEEP_DIVE_MAPPING.md`
-- `TESTING_DEEP_DIVE_MAPPING.md`
-- `BEHAVIORAL_DEEP_DIVE_MAPPING.md`
+- `project-docs/DEEP_DIVE_MAPPING.md`
+- `project-docs/KOTLIN_DEEP_DIVE_MAPPING.md`
+- `project-docs/COMPOSE_DEEP_DIVE_MAPPING.md`
+- `project-docs/CONCURRENCY_DEEP_DIVE_MAPPING.md`
+- `project-docs/ARCHITECTURE_DEEP_DIVE_MAPPING.md`
+- `project-docs/NETWORKING_DEEP_DIVE_MAPPING.md`
+- `project-docs/PERFORMANCE_DEEP_DIVE_MAPPING.md`
+- `project-docs/CICD_DEEP_DIVE_MAPPING.md`
+- `project-docs/ADVANCED_DEEP_DIVE_MAPPING.md`
+- `project-docs/FUTURE_TECH_DEEP_DIVE_MAPPING.md`
+- `project-docs/SYSTEM_DESIGN_DEEP_DIVE_MAPPING.md`
+- `project-docs/TESTING_DEEP_DIVE_MAPPING.md`
+- `project-docs/BEHAVIORAL_DEEP_DIVE_MAPPING.md`
 - `project-docs/ALL_QUESTIONS.md` (consolidated index)
+
 ---
 ## Build/Generate Commands
 ```bash
@@ -153,16 +112,11 @@ Optional site build:
 cd /home/mta/AndroidStudioProjects/android-interview-prep
 mkdocs build
 ```
+
 ---
 ## Quality Notes
-- YAML remains concise and interview-focused (under ~25 lines per answer)
+- YAML remains concise and interview-focused
 - Deep details are in markdown deep dives
-- Formatted consistently for MkDocs Material rendering
-- Deep dives include hash-aware back-navigation
-- Material UI card styling applied globally
-
-## Next Recommended Work
-1. Finish full authoring pass for any scaffold-style deep dives.
-2. Keep new categories on the same 2-layer architecture.
-3. Keep `project-docs/ALL_QUESTIONS.md` generated from YAML only.
-4. Add lint checks for deep-dive back-navigation snippet presence.
+- Rendering is aligned with MkDocs Material templates
+- Deep dives use hash-aware back-navigation
+- Combined index is generated from YAML by script

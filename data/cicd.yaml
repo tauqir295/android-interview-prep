@@ -1,26 +1,1438 @@
 questions:
-  - id: sample-question
+- id: cicd-01
+  title: How do you approach ci cd fundamentals in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - ci
+  standard_answer: 'How do you approach ci cd fundamentals in production Android systems
+    is primarily about making reliable engineering decisions in production.
 
-    title: Sample Question
 
-    difficulty: beginner
+    In interviews, cover:
 
-    tags:
-      - android
 
-    standard_answer: >
-      Add a short answer here.
+    - one-line definition and context
 
-    detailed_explanation: |
-      Add detailed explanation here.
+    - when to apply it and when to avoid it
 
-    internals: |
-      Add framework internals here.
+    - key tradeoffs (latency, reliability, complexity, cost)
 
-    followups:
-      - question: Sample follow-up?
-        answer: Sample answer.
+    - one real implementation example
 
-    traps:
-      - title: Common trap
-        content: Add interviewer trap here.
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/ci-cd-fundamentals/
+- id: cicd-02
+  title: How do you approach pipeline architecture and orchestration in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - pipeline
+  standard_answer: 'How do you approach pipeline architecture and orchestration in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/pipeline-architecture-and-orchestration/
+- id: cicd-03
+  title: How do you approach android build optimization in production Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - android
+  standard_answer: 'How do you approach android build optimization in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/android-build-optimization/
+- id: cicd-04
+  title: How do you approach test strategy in pipelines in production Android systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - test
+  standard_answer: 'How do you approach test strategy in pipelines in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/test-strategy-in-pipelines/
+- id: cicd-05
+  title: How do you approach branching and release workflows in production Android
+    systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - branching
+  standard_answer: 'How do you approach branching and release workflows in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/branching-and-release-workflows/
+- id: cicd-06
+  title: How do you approach artifact management and versioning in production Android
+    systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - artifact
+  standard_answer: 'How do you approach artifact management and versioning in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/artifact-management-and-versioning/
+- id: cicd-07
+  title: How do you approach secrets signing and key management in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - secrets
+  standard_answer: 'How do you approach secrets signing and key management in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/secrets-signing-and-key-management/
+- id: cicd-08
+  title: How do you approach static analysis and quality gates in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - static
+  standard_answer: 'How do you approach static analysis and quality gates in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/static-analysis-and-quality-gates/
+- id: cicd-09
+  title: How do you approach dependency security and supply chain in production Android
+    systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - dependency
+  standard_answer: 'How do you approach dependency security and supply chain in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/dependency-security-and-supply-chain/
+- id: cicd-10
+  title: How do you approach infrastructure as code for ci in production Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - infrastructure
+  standard_answer: 'How do you approach infrastructure as code for ci in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/infrastructure-as-code-for-ci/
+- id: cicd-11
+  title: How do you approach runner strategy and scaling in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - runner
+  standard_answer: 'How do you approach runner strategy and scaling in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/runner-strategy-and-scaling/
+- id: cicd-12
+  title: How do you approach caching and incremental builds in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - caching
+  standard_answer: 'How do you approach caching and incremental builds in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/caching-and-incremental-builds/
+- id: cicd-13
+  title: How do you approach deployment strategies and rollouts in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - deployment
+  standard_answer: 'How do you approach deployment strategies and rollouts in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/deployment-strategies-and-rollouts/
+- id: cicd-14
+  title: How do you approach feature flags and kill switches in production Android
+    systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - feature
+  standard_answer: 'How do you approach feature flags and kill switches in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/feature-flags-and-kill-switches/
+- id: cicd-15
+  title: How do you approach play store release automation in production Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - play
+  standard_answer: 'How do you approach play store release automation in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/play-store-release-automation/
+- id: cicd-16
+  title: How do you approach monitoring release health in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - monitoring
+  standard_answer: 'How do you approach monitoring release health in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/monitoring-release-health/
+- id: cicd-17
+  title: How do you approach rollback and incident response in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - rollback
+  standard_answer: 'How do you approach rollback and incident response in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/rollback-and-incident-response/
+- id: cicd-18
+  title: How do you approach compliance auditability and governance in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - compliance
+  standard_answer: 'How do you approach compliance auditability and governance in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/compliance-auditability-and-governance/
+- id: cicd-19
+  title: How do you approach cost optimization in ci cd in production Android systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - cost
+  standard_answer: 'How do you approach cost optimization in ci cd in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/cost-optimization-in-ci-cd/
+- id: cicd-20
+  title: How do you approach staff level devex and platform strategy in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - staff
+  standard_answer: 'How do you approach staff level devex and platform strategy in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/staff-level-devex-and-platform-strategy/
+- id: cicd-21
+  title: How do you approach ci cd fundamentals in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - ci
+  standard_answer: 'How do you approach ci cd fundamentals in production Android systems
+    is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/ci-cd-fundamentals/
+- id: cicd-22
+  title: How do you approach pipeline architecture and orchestration in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - pipeline
+  standard_answer: 'How do you approach pipeline architecture and orchestration in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/pipeline-architecture-and-orchestration/
+- id: cicd-23
+  title: How do you approach android build optimization in production Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - android
+  standard_answer: 'How do you approach android build optimization in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/android-build-optimization/
+- id: cicd-24
+  title: How do you approach test strategy in pipelines in production Android systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - test
+  standard_answer: 'How do you approach test strategy in pipelines in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/test-strategy-in-pipelines/
+- id: cicd-25
+  title: How do you approach branching and release workflows in production Android
+    systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - branching
+  standard_answer: 'How do you approach branching and release workflows in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/branching-and-release-workflows/
+- id: cicd-26
+  title: How do you approach artifact management and versioning in production Android
+    systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - artifact
+  standard_answer: 'How do you approach artifact management and versioning in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/artifact-management-and-versioning/
+- id: cicd-27
+  title: How do you approach secrets signing and key management in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - secrets
+  standard_answer: 'How do you approach secrets signing and key management in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/secrets-signing-and-key-management/
+- id: cicd-28
+  title: How do you approach static analysis and quality gates in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - static
+  standard_answer: 'How do you approach static analysis and quality gates in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/static-analysis-and-quality-gates/
+- id: cicd-29
+  title: How do you approach dependency security and supply chain in production Android
+    systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - dependency
+  standard_answer: 'How do you approach dependency security and supply chain in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/dependency-security-and-supply-chain/
+- id: cicd-30
+  title: How do you approach infrastructure as code for ci in production Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - infrastructure
+  standard_answer: 'How do you approach infrastructure as code for ci in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/infrastructure-as-code-for-ci/
+- id: cicd-31
+  title: How do you approach runner strategy and scaling in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - runner
+  standard_answer: 'How do you approach runner strategy and scaling in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/runner-strategy-and-scaling/
+- id: cicd-32
+  title: How do you approach caching and incremental builds in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - caching
+  standard_answer: 'How do you approach caching and incremental builds in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/caching-and-incremental-builds/
+- id: cicd-33
+  title: How do you approach deployment strategies and rollouts in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - deployment
+  standard_answer: 'How do you approach deployment strategies and rollouts in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/deployment-strategies-and-rollouts/
+- id: cicd-34
+  title: How do you approach feature flags and kill switches in production Android
+    systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - feature
+  standard_answer: 'How do you approach feature flags and kill switches in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/feature-flags-and-kill-switches/
+- id: cicd-35
+  title: How do you approach play store release automation in production Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - play
+  standard_answer: 'How do you approach play store release automation in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/play-store-release-automation/
+- id: cicd-36
+  title: How do you approach monitoring release health in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - monitoring
+  standard_answer: 'How do you approach monitoring release health in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/monitoring-release-health/
+- id: cicd-37
+  title: How do you approach rollback and incident response in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - rollback
+  standard_answer: 'How do you approach rollback and incident response in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/rollback-and-incident-response/
+- id: cicd-38
+  title: How do you approach compliance auditability and governance in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - compliance
+  standard_answer: 'How do you approach compliance auditability and governance in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/compliance-auditability-and-governance/
+- id: cicd-39
+  title: How do you approach cost optimization in ci cd in production Android systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - cost
+  standard_answer: 'How do you approach cost optimization in ci cd in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/cost-optimization-in-ci-cd/
+- id: cicd-40
+  title: How do you approach staff level devex and platform strategy in production
+    Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - staff
+  standard_answer: 'How do you approach staff level devex and platform strategy in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/staff-level-devex-and-platform-strategy/
+- id: cicd-41
+  title: How do you approach ci cd fundamentals in production Android systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - ci
+  standard_answer: 'How do you approach ci cd fundamentals in production Android systems
+    is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/ci-cd-fundamentals/
+- id: cicd-42
+  title: How do you approach pipeline architecture and orchestration in production
+    Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - pipeline
+  standard_answer: 'How do you approach pipeline architecture and orchestration in
+    production Android systems is primarily about making reliable engineering decisions
+    in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/pipeline-architecture-and-orchestration/
+- id: cicd-43
+  title: How do you approach android build optimization in production Android systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - android
+  standard_answer: 'How do you approach android build optimization in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/android-build-optimization/
+- id: cicd-44
+  title: How do you approach test strategy in pipelines in production Android systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - test
+  standard_answer: 'How do you approach test strategy in pipelines in production Android
+    systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/test-strategy-in-pipelines/
+- id: cicd-45
+  title: How do you approach branching and release workflows in production Android
+    systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - branching
+  standard_answer: 'How do you approach branching and release workflows in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/branching-and-release-workflows/
+- id: cicd-46
+  title: How do you approach artifact management and versioning in production Android
+    systems
+  difficulty: beginner
+  tags:
+  - cicd
+  - release
+  - artifact
+  standard_answer: 'How do you approach artifact management and versioning in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/artifact-management-and-versioning/
+- id: cicd-47
+  title: How do you approach secrets signing and key management in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - secrets
+  standard_answer: 'How do you approach secrets signing and key management in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/secrets-signing-and-key-management/
+- id: cicd-48
+  title: How do you approach static analysis and quality gates in production Android
+    systems
+  difficulty: intermediate
+  tags:
+  - cicd
+  - release
+  - static
+  standard_answer: 'How do you approach static analysis and quality gates in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/static-analysis-and-quality-gates/
+- id: cicd-49
+  title: How do you approach dependency security and supply chain in production Android
+    systems
+  difficulty: senior
+  tags:
+  - cicd
+  - release
+  - dependency
+  standard_answer: 'How do you approach dependency security and supply chain in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/dependency-security-and-supply-chain/
+- id: cicd-50
+  title: How do you approach infrastructure as code for ci in production Android systems
+  difficulty: advanced
+  tags:
+  - cicd
+  - release
+  - infrastructure
+  standard_answer: 'How do you approach infrastructure as code for ci in production
+    Android systems is primarily about making reliable engineering decisions in production.
+
+
+    In interviews, cover:
+
+
+    - one-line definition and context
+
+    - when to apply it and when to avoid it
+
+    - key tradeoffs (latency, reliability, complexity, cost)
+
+    - one real implementation example
+
+
+    Strong answer tip:
+
+
+    - connect `cicd` choices to measurable outcomes'
+  deep_dive: /android-interview-prep/deep-dives/cicd/infrastructure-as-code-for-ci/
