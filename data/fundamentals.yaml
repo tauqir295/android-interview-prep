@@ -563,7 +563,52 @@ questions:
   - android
   - fragments
   - backstack
-  standard_answer: "Fragment back stack is managed by FragmentManager.\n\nWhen you call:\nfragmentManager.beginTransaction()\n  .replace(R.id.container, newFragment)\n  .addToBackStack(null)\n  .commit()\n\nSteps:\n1. Current fragment state saved\n2. New fragment created and added\n3. Transaction added to back stack\n4. User presses back: transaction reversed\n\nKey methods:\n- addToBackStack(): Add to back stack\n- popBackStack(): Remove from back stack\n- addToBackStack(tag): Named back stack entry\n\nBack navigation:\n- Pops last transaction\n- Replaces new fragment with old one\n- Restores previous fragment state\n\nEach Activity has own FragmentManager back stack.\n"
+  standard_answer: 'Fragment back stack is managed by FragmentManager.
+
+
+    When you call:
+
+    fragmentManager.beginTransaction()
+
+    .replace(R.id.container, newFragment)
+
+    .addToBackStack(null)
+
+    .commit()
+
+
+    Steps:
+
+    1. Current fragment state saved
+
+    2. New fragment created and added
+
+    3. Transaction added to back stack
+
+    4. User presses back: transaction reversed
+
+
+    Key methods:
+
+    - addToBackStack(): Add to back stack
+
+    - popBackStack(): Remove from back stack
+
+    - addToBackStack(tag): Named back stack entry
+
+
+    Back navigation:
+
+    - Pops last transaction
+
+    - Replaces new fragment with old one
+
+    - Restores previous fragment state
+
+
+    Each Activity has own FragmentManager back stack.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/fragments/
 - id: fragment-arguments
   title: What's the best way to pass data to a Fragment?
@@ -572,7 +617,54 @@ questions:
   - android
   - fragments
   - data-passing
-  standard_answer: "BEST PRACTICE: Use Bundle with constants\n\nRecommended pattern:\ncompanion object {\n  private const val ARG_USER_ID = \"user_id\"\n  \n  fun newInstance(userId: Int) = MyFragment().apply {\n    arguments = Bundle().apply {\n      putInt(ARG_USER_ID, userId)\n    }\n  }\n}\n\nIn onCreate():\nval userId = arguments?.getInt(ARG_USER_ID) ?: 0\n\nWhy this approach:\n- Survives configuration changes\n- Works across process death\n- Type-safe with constants\n- Replicates Android best practices\n\nDON'T:\n- Pass large or non-Parcelable objects as arguments\n- Use constructors with parameters\n- Access fragments without factory method\n"
+  standard_answer: 'BEST PRACTICE: Use Bundle with constants
+
+
+    Recommended pattern:
+
+    companion object {
+
+    private const val ARG_USER_ID = "user_id"
+
+
+    fun newInstance(userId: Int) = MyFragment().apply {
+
+    arguments = Bundle().apply {
+
+    putInt(ARG_USER_ID, userId)
+
+    }
+
+    }
+
+    }
+
+
+    In onCreate():
+
+    val userId = arguments?.getInt(ARG_USER_ID) ?: 0
+
+
+    Why this approach:
+
+    - Survives configuration changes
+
+    - Works across process death
+
+    - Type-safe with constants
+
+    - Replicates Android best practices
+
+
+    DON''T:
+
+    - Pass large or non-Parcelable objects as arguments
+
+    - Use constructors with parameters
+
+    - Access fragments without factory method
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/fragments/
 - id: context-what-is
   title: What is Context and what are its types?
@@ -633,7 +725,58 @@ questions:
   - android
   - context
   - memory
-  standard_answer: "Context memory leaks occur when Activity Context is referenced\nby long-lived objects.\n\nPROBLEMATIC PATTERNS:\n\n1. Activity context in singletons:\nobject MySingleton {\n  var context: Context? = null // WRONG!\n}\n\n2. Inner class references Activity:\nclass MyInnerClass { // Holds Activity ref\n  fun doWork() {}\n}\n\n3. Static references to Activity:\ncompanion object {\n  var activity: Activity? = null // WRONG!\n}\n\nSOLUTIONS:\n- Use application context for singletons\n- Use static inner class + WeakReference\n- Use dependency injection\n- Never store Activity in long-lived objects\n\nMemory leak chain: Activity → thread → singleton → leak\n"
+  standard_answer: 'Context memory leaks occur when Activity Context is referenced
+
+    by long-lived objects.
+
+
+    PROBLEMATIC PATTERNS:
+
+
+    ### Activity context in singletons
+
+
+    object MySingleton {
+
+    var context: Context? = null // WRONG!
+
+    }
+
+
+    ### Inner class references Activity
+
+
+    class MyInnerClass { // Holds Activity ref
+
+    fun doWork() {}
+
+    }
+
+
+    ### Static references to Activity
+
+
+    companion object {
+
+    var activity: Activity? = null // WRONG!
+
+    }
+
+
+    SOLUTIONS:
+
+    - Use application context for singletons
+
+    - Use static inner class + WeakReference
+
+    - Use dependency injection
+
+    - Never store Activity in long-lived objects
+
+
+    Memory leak chain: Activity → thread → singleton → leak
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/context/
 - id: application-context-vs-activity-context
   title: When should you use Application Context vs Activity Context?
@@ -699,7 +842,47 @@ questions:
   - android
   - context
   - lifecycle
-  standard_answer: "Mismatching Context lifetime with usage causes:\n- Memory leaks (Activity never garbage collected)\n- Crashes (UI operation on destroyed context)\n- Data loss (operations interrupted)\n\nEXAMPLE - Wrong:\nclass Manager(val context: Activity) { // Holds Activity ref\n  fun work() { /* does work */ }\n}\n// Activity destroyed but Manager still referenced → leak\n\nCORRECT - Right:\nclass Manager(val context: Context) { // Use generic Context\n  fun work() { /* does work */ }\n}\nval manager = Manager(applicationContext) // App context\n\nKey principle:\nLifetime of Context >= Lifetime of code referencing it\n\nIf code runs longer than Activity: use app context.\nIf code tied to Activity: safe to use Activity context.\n"
+  standard_answer: 'Mismatching Context lifetime with usage causes:
+
+    - Memory leaks (Activity never garbage collected)
+
+    - Crashes (UI operation on destroyed context)
+
+    - Data loss (operations interrupted)
+
+
+    EXAMPLE - Wrong:
+
+    class Manager(val context: Activity) { // Holds Activity ref
+
+    fun work() { /* does work */ }
+
+    }
+
+    // Activity destroyed but Manager still referenced → leak
+
+
+    CORRECT - Right:
+
+    class Manager(val context: Context) { // Use generic Context
+
+    fun work() { /* does work */ }
+
+    }
+
+    val manager = Manager(applicationContext) // App context
+
+
+    Key principle:
+
+    Lifetime of Context >= Lifetime of code referencing it
+
+
+    If code runs longer than Activity: use app context.
+
+    If code tied to Activity: safe to use Activity context.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/context/
 - id: memory-leak-what-is
   title: What is a memory leak in Android?
@@ -763,7 +946,8 @@ questions:
   standard_answer: 'TOOLS:
 
 
-    1. LeakCanary library:
+    ### LeakCanary library
+
 
     - Automatically detects leaks
 
@@ -772,7 +956,8 @@ questions:
     - Most practical tool
 
 
-    2. Android Studio Memory Profiler:
+    ### Android Studio Memory Profiler
+
 
     - Record heap allocations
 
@@ -781,7 +966,8 @@ questions:
     - Inspect object references
 
 
-    3. Logcat:
+    ### Logcat
+
 
     - Watch for OOM errors
 
@@ -816,7 +1002,51 @@ questions:
   - android
   - memory
   - patterns
-  standard_answer: "PATTERN 1: Static Activity Reference\ncompanion object {\n  var activity: Activity? = null // WRONG!\n}\nFix: Don't store Activity references as static.\n\nPATTERN 2: Inner Class Holding Activity\ninner class MyThread : Thread() { // Holds Activity ref\n  override fun run() { doWork() }\n}\nFix: Use static inner class + WeakReference\n\nPATTERN 3: Unregistered Listeners\nregisterReceiver(myReceiver, filter) // Never unregistered\nFix: Always unregister in onPause/onDestroy\n\nPATTERN 4: Handler Messages\nhandler.postDelayed({ toast.show() }, 60000)\n// If activity destroyed before delay ends: leak\nFix: Remove messages in onDestroy\n\nPATTERN 5: Long-Lived Objects Holding Context\nsingleton.context = this // Long-lived singleton\nFix: Use app context or WeakReference\n"
+  standard_answer: 'PATTERN 1: Static Activity Reference
+
+    companion object {
+
+    var activity: Activity? = null // WRONG!
+
+    }
+
+    Fix: Don''t store Activity references as static.
+
+
+    PATTERN 2: Inner Class Holding Activity
+
+    inner class MyThread : Thread() { // Holds Activity ref
+
+    override fun run() { doWork() }
+
+    }
+
+    Fix: Use static inner class + WeakReference
+
+
+    PATTERN 3: Unregistered Listeners
+
+    registerReceiver(myReceiver, filter) // Never unregistered
+
+    Fix: Always unregister in onPause/onDestroy
+
+
+    PATTERN 4: Handler Messages
+
+    handler.postDelayed({ toast.show() }, 60000)
+
+    // If activity destroyed before delay ends: leak
+
+    Fix: Remove messages in onDestroy
+
+
+    PATTERN 5: Long-Lived Objects Holding Context
+
+    singleton.context = this // Long-lived singleton
+
+    Fix: Use app context or WeakReference
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/memory-leaks/
 - id: memory-leak-fixes
   title: What are best practices to prevent memory leaks?
@@ -943,7 +1173,66 @@ questions:
   - android
   - performance
   - anr
-  standard_answer: "RULE 1: Keep main thread operations quick\n- Maximum 100-200ms for user-facing operations\n- Don't do I/O, network, or heavy computation on main thread\n\nSOLUTIONS:\n\n1. Use threads for heavy work:\nThread { heavyWork() }.start()\n\n2. Use coroutines (modern approach):\nviewModelScope.launch(Dispatchers.Default) {\n  heavyWork() // Off main thread\n}\n\n3. AsyncTask (legacy):\nAsyncTask.execute { heavyWork() }\n\n4. Optimize database queries:\n- Index frequently queried columns\n- Avoid complex queries on main thread\n- Use query optimization\n\n5. Lazy load data:\n- Load progressively\n- Show skeleton/placeholder\n- Fetch full data in background\n\n6. Profile with Profiler:\n- Find slow operations\n- Optimize hotspots\n"
+  standard_answer: 'RULE 1: Keep main thread operations quick
+
+    - Maximum 100-200ms for user-facing operations
+
+    - Don''t do I/O, network, or heavy computation on main thread
+
+
+    SOLUTIONS:
+
+
+    ### Use threads for heavy work
+
+
+    Thread { heavyWork() }.start()
+
+
+    ### Use coroutines (modern approach)
+
+
+    viewModelScope.launch(Dispatchers.Default) {
+
+    heavyWork() // Off main thread
+
+    }
+
+
+    ### AsyncTask (legacy)
+
+
+    AsyncTask.execute { heavyWork() }
+
+
+    ### Optimize database queries
+
+
+    - Index frequently queried columns
+
+    - Avoid complex queries on main thread
+
+    - Use query optimization
+
+
+    ### Lazy load data
+
+
+    - Load progressively
+
+    - Show skeleton/placeholder
+
+    - Fetch full data in background
+
+
+    ### Profile with Profiler
+
+
+    - Find slow operations
+
+    - Optimize hotspots
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/anr-and-performance/
 - id: main-thread-vs-background
   title: Why shouldn't you do network/I/O on main thread?
@@ -1034,7 +1323,8 @@ questions:
     Measurement tools:
 
 
-    1. Profile GPU Rendering (dev options):
+    ### Profile GPU Rendering (dev options)
+
 
     - Visual graph on screen
 
@@ -1043,21 +1333,24 @@ questions:
     - Green = good, yellow/red = jank
 
 
-    2. Android Studio Profiler:
+    ### Android Studio Profiler
+
 
     - CPU, Memory, Network profiling
 
     - See main thread operations
 
 
-    3. FrameMetrics API:
+    ### FrameMetrics API
+
 
     - Programmatically measure frame times
 
     - Real user monitoring
 
 
-    4. Firebase Performance Monitoring:
+    ### Firebase Performance Monitoring
+
 
     - Production monitoring
 
@@ -1075,7 +1368,62 @@ questions:
   - android
   - threading
   - looper
-  standard_answer: "Looper: Thread mechanism for processing messages in a queue.\n\nHow it works:\n1. Thread has message queue\n2. Looper continuously loops through queue\n3. Processes one message per iteration\n4. Blocks if queue empty\n5. Exits when quit() called\n\nEach thread has max 1 Looper.\n\nMain thread always has Looper:\n- Created automatically by Android system\n- Processes UI messages, events\n\nBackground threads:\n- No Looper by default\n- Create manually if needed:\nThread {\n  Looper.prepare()\n  // ... do work ...\n  Looper.loop() // Start looping\n}.start()\n\nWhy Looper matters:\n- Thread-safe message passing\n- Ordered message processing\n- Foundation for Handler/HandlerThread\n- UI updates only on main thread (main Looper)\n"
+  standard_answer: 'Looper: Thread mechanism for processing messages in a queue.
+
+
+    How it works:
+
+    1. Thread has message queue
+
+    2. Looper continuously loops through queue
+
+    3. Processes one message per iteration
+
+    4. Blocks if queue empty
+
+    5. Exits when quit() called
+
+
+    Each thread has max 1 Looper.
+
+
+    Main thread always has Looper:
+
+    - Created automatically by Android system
+
+    - Processes UI messages, events
+
+
+    Background threads:
+
+    - No Looper by default
+
+
+    ### Create manually if needed
+
+
+    Thread {
+
+    Looper.prepare()
+
+    // ... do work ...
+
+    Looper.loop() // Start looping
+
+    }.start()
+
+
+    Why Looper matters:
+
+    - Thread-safe message passing
+
+    - Ordered message processing
+
+    - Foundation for Handler/HandlerThread
+
+    - UI updates only on main thread (main Looper)
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/looper-and-handler/
 - id: handler-what-is
   title: What is Handler and how does it relate to Looper?
@@ -1084,7 +1432,54 @@ questions:
   - android
   - threading
   - handler
-  standard_answer: "Handler: Interface for sending messages to a Thread's message queue.\n\nRelationship with Looper:\n1. Handler posts messages to queue\n2. Handler associated with Looper\n3. Looper processes messages from queue\n4. Handler executes callbacks on Looper's thread\n\nCreating Handler:\nHandler(Looper.getMainLooper()) // Posts to main thread\nHandler() // Posts to current thread's Looper\n\nCommon uses:\nhandler.post(Runnable) // Execute on handler's thread\nhandler.postDelayed(Runnable, delay) // Delayed execution\nhandler.sendMessage(Message) // Send message\n\nExample - Update UI after background work:\nThread {\n  val result = doHeavyWork()\n  mainHandler.post {\n    updateUI(result) // Runs on main thread\n  }\n}.start()\n\nKey: Handler provides thread-safe way to run code on specific thread.\n"
+  standard_answer: 'Handler: Interface for sending messages to a Thread''s message queue.
+
+
+    Relationship with Looper:
+
+    1. Handler posts messages to queue
+
+    2. Handler associated with Looper
+
+    3. Looper processes messages from queue
+
+    4. Handler executes callbacks on Looper''s thread
+
+
+    Creating Handler:
+
+    Handler(Looper.getMainLooper()) // Posts to main thread
+
+    Handler() // Posts to current thread''s Looper
+
+
+    Common uses:
+
+    handler.post(Runnable) // Execute on handler''s thread
+
+    handler.postDelayed(Runnable, delay) // Delayed execution
+
+    handler.sendMessage(Message) // Send message
+
+
+    Example - Update UI after background work:
+
+    Thread {
+
+    val result = doHeavyWork()
+
+    mainHandler.post {
+
+    updateUI(result) // Runs on main thread
+
+    }
+
+    }.start()
+
+
+    Key: Handler provides thread-safe way to run code on specific thread.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/looper-and-handler/
 - id: handler-thread
   title: What is HandlerThread and when should you use it?
@@ -1144,7 +1539,65 @@ questions:
   - android
   - handler
   - memory
-  standard_answer: "Handler with delayed messages can leak Activity context.\n\nProblem scenario:\nhandler.postDelayed(Runnable {\n  // Runnable holds implicit 'this' reference (Activity)\n}, 60000)\n// If Activity destroyed before delay ends: leak\n\nMemory leak chain:\n1. Handler post delayed message\n2. Message queued for 60 seconds\n3. Activity destroyed (user navigates away)\n4. Message still in queue, holds Activity reference\n5. Activity cannot be garbage collected\n6. After 60 seconds, message executed (too late)\n\nSOLUTION 1: Use Handler with WeakReference\nclass MyActivity : AppCompatActivity() {\n  private val handler = Handler(Looper.getMainLooper())\n  \n  private inner class MyRunnable : Runnable {\n    override fun run() { /* ... */ }\n  }\n}\n\nSOLUTION 2: Remove messages in onDestroy\noverride fun onDestroy() {\n  handler.removeCallbacks(myRunnable)\n  super.onDestroy()\n}\n\nMODERN: Use coroutines instead (automatic cleanup).\n"
+  standard_answer: 'Handler with delayed messages can leak Activity context.
+
+
+    Problem scenario:
+
+    handler.postDelayed(Runnable {
+
+    // Runnable holds implicit ''this'' reference (Activity)
+
+    }, 60000)
+
+    // If Activity destroyed before delay ends: leak
+
+
+    Memory leak chain:
+
+    1. Handler post delayed message
+
+    2. Message queued for 60 seconds
+
+    3. Activity destroyed (user navigates away)
+
+    4. Message still in queue, holds Activity reference
+
+    5. Activity cannot be garbage collected
+
+    6. After 60 seconds, message executed (too late)
+
+
+    SOLUTION 1: Use Handler with WeakReference
+
+    class MyActivity : AppCompatActivity() {
+
+    private val handler = Handler(Looper.getMainLooper())
+
+
+    private inner class MyRunnable : Runnable {
+
+    override fun run() { /* ... */ }
+
+    }
+
+    }
+
+
+    SOLUTION 2: Remove messages in onDestroy
+
+    override fun onDestroy() {
+
+    handler.removeCallbacks(myRunnable)
+
+    super.onDestroy()
+
+    }
+
+
+    MODERN: Use coroutines instead (automatic cleanup).
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/looper-and-handler/
 - id: service-what-is
   title: What is a Service in Android?
@@ -1292,7 +1745,74 @@ questions:
   - android
   - service
   - ipc
-  standard_answer: "Bound Service: Service offering interface for IPC to clients.\n\nSteps to implement:\n\n1. Create Service with Binder:\nclass MyBoundService : Service() {\n  inner class LocalBinder : Binder() {\n    fun getService() = this@MyBoundService\n  }\n}\n\n2. Override onBind():\noverride fun onBind(intent: Intent?): IBinder {\n  return LocalBinder()\n}\n\n3. Bind from Activity:\nbindService(Intent(...), connection,\n  Context.BIND_AUTO_CREATE)\n\n4. Use ServiceConnection:\nobject : ServiceConnection {\n  override fun onServiceConnected(...) {\n    val binder = service as Binder\n    val service = binder.getService()\n  }\n}\n\nLifecycle:\n- onBind() when first client binds\n- onUnbind() when last client unbinds\n- Service stops if no clients bound and not started\n\nKey: Bound service tied to client lifecycle.\nUnbind in onDestroy/onStop to prevent leaks.\n"
+  standard_answer: 'Bound Service: Service offering interface for IPC to clients.
+
+
+    Steps to implement:
+
+
+    ### Create Service with Binder
+
+
+    class MyBoundService : Service() {
+
+    inner class LocalBinder : Binder() {
+
+    fun getService() = this@MyBoundService
+
+    }
+
+    }
+
+
+    ### Override onBind()
+
+
+    override fun onBind(intent: Intent?): IBinder {
+
+    return LocalBinder()
+
+    }
+
+
+    ### Bind from Activity
+
+
+    bindService(Intent(...), connection,
+
+    Context.BIND_AUTO_CREATE)
+
+
+    ### Use ServiceConnection
+
+
+    object : ServiceConnection {
+
+    override fun onServiceConnected(...) {
+
+    val binder = service as Binder
+
+    val service = binder.getService()
+
+    }
+
+    }
+
+
+    Lifecycle:
+
+    - onBind() when first client binds
+
+    - onUnbind() when last client unbinds
+
+    - Service stops if no clients bound and not started
+
+
+    Key: Bound service tied to client lifecycle.
+
+    Unbind in onDestroy/onStop to prevent leaks.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/services/
 - id: intent-service
   title: What is IntentService and when should you use it?
@@ -1301,7 +1821,67 @@ questions:
   - android
   - service
   - background-work
-  standard_answer: "IntentService (deprecated): Subclass of Service handling asynchronous requests.\n\nBenefits:\n- Background thread automatically created\n- Processes one intent at a time (queue)\n- Auto-stops when queue empty\n- No manual threading needed\n- Simple to use\n\nHow it works:\n1. Create IntentService subclass\n2. Override onHandleIntent() (runs on bg thread)\n3. Send intents with startService()\n4. Threading automatically handled\n5. Auto-stops after processing\n\nExample:\nclass DownloadService : IntentService(\"Download\") {\n  override fun onHandleIntent(intent: Intent?) {\n    // Background thread, won't block UI\n    val file = downloadFile() // Network call OK\n  }\n}\n\nProblems (Android 8.0+):\n- Background execution restrictions\n- Use WorkManager instead\n\nMODERN APPROACH:\nUse WorkManager for background work (better lifecycle management,\npersistence, backoff policy).\n\nLegacy but useful for understanding architecture.\n"
+  standard_answer: 'IntentService (deprecated): Subclass of Service handling asynchronous requests.
+
+
+    Benefits:
+
+    - Background thread automatically created
+
+    - Processes one intent at a time (queue)
+
+    - Auto-stops when queue empty
+
+    - No manual threading needed
+
+    - Simple to use
+
+
+    How it works:
+
+    1. Create IntentService subclass
+
+    2. Override onHandleIntent() (runs on bg thread)
+
+    3. Send intents with startService()
+
+    4. Threading automatically handled
+
+    5. Auto-stops after processing
+
+
+    Example:
+
+    class DownloadService : IntentService("Download") {
+
+    override fun onHandleIntent(intent: Intent?) {
+
+    // Background thread, won''t block UI
+
+    val file = downloadFile() // Network call OK
+
+    }
+
+    }
+
+
+    Problems (Android 8.0+):
+
+    - Background execution restrictions
+
+    - Use WorkManager instead
+
+
+    MODERN APPROACH:
+
+    Use WorkManager for background work (better lifecycle management,
+
+    persistence, backoff policy).
+
+
+    Legacy but useful for understanding architecture.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/services/
 - id: broadcast-receiver
   title: What is a Broadcast Receiver?
@@ -1310,7 +1890,68 @@ questions:
   - android
   - broadcasting
   - messaging
-  standard_answer: "Broadcast Receiver: Component for receiving system/app messages.\n\nCharacteristics:\n- Listens for broadcast intents\n- Executes onReceive() when broadcast received\n- Can run even if app not open\n- No UI capability\n- Must be declared in manifest or registered\n\nSystem broadcasts:\n- ACTION_BATTERY_LOW\n- ACTION_CONNECTIVITY_CHANGE\n- ACTION_BOOT_COMPLETED\n- ACTION_PACKAGE_INSTALLED\n\nTypes of receivers:\n\nSTATIC (Manifest-declared):\n- Declared in AndroidManifest.xml\n- System can start app just to deliver broadcast\n\nDYNAMIC (Runtime-registered):\n- Registered in code via registerReceiver()\n- Active only while app running\n- Better for app-specific broadcasts\n\nExample:\nclass MyReceiver : BroadcastReceiver() {\n  override fun onReceive(context, intent) {\n    // Process broadcast\n  }\n}\n\nUse cases: Battery level, connectivity, SMS, time changes.\n"
+  standard_answer: 'Broadcast Receiver: Component for receiving system/app messages.
+
+
+    Characteristics:
+
+    - Listens for broadcast intents
+
+    - Executes onReceive() when broadcast received
+
+    - Can run even if app not open
+
+    - No UI capability
+
+    - Must be declared in manifest or registered
+
+
+    System broadcasts:
+
+    - ACTION_BATTERY_LOW
+
+    - ACTION_CONNECTIVITY_CHANGE
+
+    - ACTION_BOOT_COMPLETED
+
+    - ACTION_PACKAGE_INSTALLED
+
+
+    Types of receivers:
+
+
+    STATIC (Manifest-declared):
+
+    - Declared in AndroidManifest.xml
+
+    - System can start app just to deliver broadcast
+
+
+    DYNAMIC (Runtime-registered):
+
+    - Registered in code via registerReceiver()
+
+    - Active only while app running
+
+    - Better for app-specific broadcasts
+
+
+    Example:
+
+    class MyReceiver : BroadcastReceiver() {
+
+    override fun onReceive(context, intent) {
+
+    // Process broadcast
+
+    }
+
+    }
+
+
+    Use cases: Battery level, connectivity, SMS, time changes.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/broadcast-receivers/
 - id: broadcast-permissions
   title: How do you register broadcast receivers securely?
@@ -1319,7 +1960,78 @@ questions:
   - android
   - broadcasting
   - security
-  standard_answer: "DYNAMIC REGISTRATION (Recommended):\n\n1. Register in onCreate/onStart:\nregisterReceiver(myReceiver, IntentFilter(ACTION))\n\n2. Unregister in onDestroy/onStop:\nunregisterReceiver(myReceiver)\n\nSTATIC REGISTRATION (Manifest):\n<receiver android:name=\".MyReceiver\"\n  android:permission=\"com.example.PERM\" >\n  <intent-filter>\n    <action android:name=\"...\" />\n  </intent-filter>\n</receiver>\n\nSECURITY BEST PRACTICES:\n\n1. Use specific intent filters (not catch-all)\nOnly catch broadcasts you need\n\n2. Check sender permissions:\nIn onReceive(), verify sender is trusted\n\n3. Require permissions for safety:\nandroid:permission=\"my.permission\"\n\n4. Limit receiving broadcasts:\nUse specific actions, not generic patterns\n\n5. Android 8.0+ restrictions:\n- Static receivers limited (battery optimization)\n- Use dynamic registration\n- Or use JobScheduler/WorkManager\n\n6. Always unregister dynamic receivers:\nPrevents memory leaks and battery drain\n"
+  standard_answer: 'DYNAMIC REGISTRATION (Recommended):
+
+
+    ### Register in onCreate/onStart
+
+
+    registerReceiver(myReceiver, IntentFilter(ACTION))
+
+
+    ### Unregister in onDestroy/onStop
+
+
+    unregisterReceiver(myReceiver)
+
+
+    STATIC REGISTRATION (Manifest):
+
+    <receiver android:name=".MyReceiver"
+
+    android:permission="com.example.PERM" >
+
+    <intent-filter>
+
+    <action android:name="..." />
+
+    </intent-filter>
+
+    </receiver>
+
+
+    SECURITY BEST PRACTICES:
+
+
+    1. Use specific intent filters (not catch-all)
+
+    Only catch broadcasts you need
+
+
+    ### Check sender permissions
+
+
+    In onReceive(), verify sender is trusted
+
+
+    ### Require permissions for safety
+
+
+    android:permission="my.permission"
+
+
+    ### Limit receiving broadcasts
+
+
+    Use specific actions, not generic patterns
+
+
+    ### Android 8.0+ restrictions
+
+
+    - Static receivers limited (battery optimization)
+
+    - Use dynamic registration
+
+    - Or use JobScheduler/WorkManager
+
+
+    ### Always unregister dynamic receivers
+
+
+    Prevents memory leaks and battery drain
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/broadcast-receivers/
 - id: ordered-vs-sticky-broadcast
   title: What are ordered and sticky broadcasts?
@@ -1328,8 +2040,73 @@ questions:
   - android
   - broadcasting
   - messaging
-  standard_answer: "NORMAL BROADCAST:\n- Sent to all matching receivers simultaneously\n- No guaranteed order\n- Receivers cannot affect each other\n\nORDERED BROADCAST:\n- Delivered to receivers one at a time\n- In priority order\n- Each receiver can modify result or abort\n- Only next receiver gets modified data\n- Use: sendOrderedBroadcast()\n\nSTICKY BROADCAST:\n- Deprecated and removed in Android 5.0+\n- Previously: Last broadcast value retained\n- New receivers got last value on register\n- Caused security/memory issues\n\nExample ordered broadcast:\nsendOrderedBroadcast(intent, null,\n  resultReceiver, handler, resultCode,\n  resultData, resultExtras)\n\nReceiver can:\n- setResultCode(newCode)\n- setResultData(newData)\n- abortBroadcast() // Stop delivery to others\n\nUse cases:\n- NORMAL: Multiple unrelated receivers\n- ORDERED: Chain of responsibility pattern\n- System broadcasts all normal\n\nBest practice: Prefer explicit app-scoped communication\n(shared ViewModel/Flow or explicit\
-    \ broadcasts).\nLocalBroadcastManager is deprecated.\n"
+  standard_answer: 'NORMAL BROADCAST:
+
+    - Sent to all matching receivers simultaneously
+
+    - No guaranteed order
+
+    - Receivers cannot affect each other
+
+
+    ORDERED BROADCAST:
+
+    - Delivered to receivers one at a time
+
+    - In priority order
+
+    - Each receiver can modify result or abort
+
+    - Only next receiver gets modified data
+
+    - Use: sendOrderedBroadcast()
+
+
+    STICKY BROADCAST:
+
+    - Deprecated and removed in Android 5.0+
+
+    - Previously: Last broadcast value retained
+
+    - New receivers got last value on register
+
+    - Caused security/memory issues
+
+
+    Example ordered broadcast:
+
+    sendOrderedBroadcast(intent, null,
+
+    resultReceiver, handler, resultCode,
+
+    resultData, resultExtras)
+
+
+    Receiver can:
+
+    - setResultCode(newCode)
+
+    - setResultData(newData)
+
+    - abortBroadcast() // Stop delivery to others
+
+
+    Use cases:
+
+    - NORMAL: Multiple unrelated receivers
+
+    - ORDERED: Chain of responsibility pattern
+
+    - System broadcasts all normal
+
+
+    Best practice: Prefer explicit app-scoped communication
+
+    (shared ViewModel/Flow or explicit broadcasts).
+
+    LocalBroadcastManager is deprecated.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/broadcast-receivers/
 - id: permissions-model
   title: What is the Android permission model?
@@ -1404,8 +2181,85 @@ questions:
   - android
   - permissions
   - runtime
-  standard_answer: "STEPS:\n\n1. Declare in manifest:\n<uses-permission android:name=\"android.permission.CAMERA\" />\n\n2. Check permission at runtime:\nif (ContextCompat.checkSelfPermission(this,\n    Manifest.permission.CAMERA) \n    != PackageManager.PERMISSION_GRANTED) {\n  // Request permission\n} else {\n  // Use camera\n}\n\n3. Request permission:\nActivityCompat.requestPermissions(this,\n  arrayOf(Manifest.permission.CAMERA), 100)\n\n4. Handle response:\noverride fun onRequestPermissionsResult(\n    requestCode: Int, permissions: Array<out String>,\n    grantResults: IntArray) {\n  if (requestCode == 100) {\n    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {\n      useCamera()\n    } else {\n      showPermissionDeniedMessage()\n    }\n  }\n}\n\nMODERN APPROACH (Activity Result Contract):\nval cameraPermission = registerForActivityResult(\n  ActivityResultContracts.RequestPermission()) { isGranted ->\n  if (isGranted) useCamera()\n  else showDeniedMessage()\n}\ncameraPermission.launch(CAMERA)\n\
-    \nAlways handle permission denials gracefully.\n"
+  standard_answer: 'STEPS:
+
+
+    ### Declare in manifest
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    ### Check permission at runtime
+
+
+    if (ContextCompat.checkSelfPermission(this,
+
+    Manifest.permission.CAMERA)
+
+    != PackageManager.PERMISSION_GRANTED) {
+
+    // Request permission
+
+    } else {
+
+    // Use camera
+
+    }
+
+
+    ### Request permission
+
+
+    ActivityCompat.requestPermissions(this,
+
+    arrayOf(Manifest.permission.CAMERA), 100)
+
+
+    ### Handle response
+
+
+    override fun onRequestPermissionsResult(
+
+    requestCode: Int, permissions: Array<out String>,
+
+    grantResults: IntArray) {
+
+    if (requestCode == 100) {
+
+    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+    useCamera()
+
+    } else {
+
+    showPermissionDeniedMessage()
+
+    }
+
+    }
+
+    }
+
+
+    MODERN APPROACH (Activity Result Contract):
+
+    val cameraPermission = registerForActivityResult(
+
+    ActivityResultContracts.RequestPermission()) { isGranted ->
+
+    if (isGranted) useCamera()
+
+    else showDeniedMessage()
+
+    }
+
+    cameraPermission.launch(CAMERA)
+
+
+    Always handle permission denials gracefully.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/permissions/
 - id: permission-groups
   title: What are permission groups and how do they work?
@@ -1475,8 +2329,98 @@ questions:
   - android
   - manifest
   - fundamentals
-  standard_answer: "AndroidManifest.xml: Main configuration file for Android app.\n\nContains:\n\n1. PACKAGE NAME:\npackage=\"com.example.myapp\"\n\n2. COMPONENTS:\n- Activities\n- Services\n- Broadcast receivers\n- Content providers\n\n3. PERMISSIONS:\n- Required permissions\n- Custom permissions\n\n4. FEATURES:\n- Hardware features (camera, GPS)\n- Software features\n\n5. VERSION INFO:\n- versionCode, versionName\n- targetSdkVersion, minSdkVersion\n\n6. APPLICATION METADATA:\n- App icon, label, theme\n- Backup agent\n- Hardware acceleration flags\n\n7. INTENT FILTERS:\n- Which implicit intents components handle\n- Which apps can start component\n\nExample:\n<manifest package=\"com.example.app\" ...>\n  <uses-permission android:name=\"...\" />\n  <application>\n    <activity android:name=\".MainActivity\">\n      <intent-filter>\n        <action android:name=\"...\" />\n      </intent-filter>\n    </activity>\n  </application>\n</manifest>\n\nNote: Some settings now in build.gradle (build\
-    \ tools).\n"
+  standard_answer: 'AndroidManifest.xml: Main configuration file for Android app.
+
+
+    Contains:
+
+
+    ### PACKAGE NAME
+
+
+    package="com.example.myapp"
+
+
+    ### COMPONENTS
+
+
+    - Activities
+
+    - Services
+
+    - Broadcast receivers
+
+    - Content providers
+
+
+    ### PERMISSIONS
+
+
+    - Required permissions
+
+    - Custom permissions
+
+
+    ### FEATURES
+
+
+    - Hardware features (camera, GPS)
+
+    - Software features
+
+
+    ### VERSION INFO
+
+
+    - versionCode, versionName
+
+    - targetSdkVersion, minSdkVersion
+
+
+    ### APPLICATION METADATA
+
+
+    - App icon, label, theme
+
+    - Backup agent
+
+    - Hardware acceleration flags
+
+
+    ### INTENT FILTERS
+
+
+    - Which implicit intents components handle
+
+    - Which apps can start component
+
+
+    Example:
+
+    <manifest package="com.example.app" ...>
+
+    <uses-permission android:name="..." />
+
+    <application>
+
+    <activity android:name=".MainActivity">
+
+    <intent-filter>
+
+    <action android:name="..." />
+
+    </intent-filter>
+
+    </activity>
+
+    </application>
+
+    </manifest>
+
+
+    Note: Some settings now in build.gradle (build tools).
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/androidmanifest/
 - id: manifest-intent-filters
   title: How do you declare intent filters in manifest?
@@ -1485,8 +2429,88 @@ questions:
   - android
   - manifest
   - intents
-  standard_answer: "Intent filters declare which implicit intents a component accepts.\n\nSTRUCTURE:\n<activity android:name=\".MainActivity\">\n  <intent-filter>\n    <action android:name=\"android.intent.action.MAIN\" />\n    <category android:name=\n      \"android.intent.category.LAUNCHER\" />\n  </intent-filter>\n</activity>\n\nCOMPONENTS:\n\nACTION: What the component does\n<action android:name=\"android.intent.action.VIEW\" />\n<action android:name=\"android.intent.action.SEND\" />\n\nCATEGORY: Additional info about component\n<category android:name=\n  \"android.intent.category.DEFAULT\" />\n<category\n  android:name=\n  \"android.intent.category.LAUNCHER\" />\n\nDATA: URI/MIME type patterns\n<data android:scheme=\"https\"\n      android:host=\"example.com\"\n      android:mimeType=\"text/*\" />\n\nMATCHING RULES:\n- Implicit intent must match ALL declared filters\n- If multiple matches: chooser shown\n\nEXAMPLE - Web link handler:\n<intent-filter>\n  <action android:name=\"\n  \
-    \  android.intent.action.VIEW\" />\n  <category android:name=\"\n    android.intent.category.DEFAULT\" />\n  <category android:name=\"\n    android.intent.category.BROWSABLE\" />\n  <data android:scheme=\"https\"\n        android:host=\"example.com\" />\n</intent-filter>\n"
+  standard_answer: 'Intent filters declare which implicit intents a component accepts.
+
+
+    STRUCTURE:
+
+    <activity android:name=".MainActivity">
+
+    <intent-filter>
+
+    <action android:name="android.intent.action.MAIN" />
+
+    <category android:name=
+
+    "android.intent.category.LAUNCHER" />
+
+    </intent-filter>
+
+    </activity>
+
+
+    COMPONENTS:
+
+
+    ACTION: What the component does
+
+    <action android:name="android.intent.action.VIEW" />
+
+    <action android:name="android.intent.action.SEND" />
+
+
+    CATEGORY: Additional info about component
+
+    <category android:name=
+
+    "android.intent.category.DEFAULT" />
+
+    <category
+
+    android:name=
+
+    "android.intent.category.LAUNCHER" />
+
+
+    DATA: URI/MIME type patterns
+
+    <data android:scheme="https"
+
+    android:host="example.com"
+
+    android:mimeType="text/*" />
+
+
+    MATCHING RULES:
+
+    - Implicit intent must match ALL declared filters
+
+    - If multiple matches: chooser shown
+
+
+    EXAMPLE - Web link handler:
+
+    <intent-filter>
+
+    <action android:name="
+
+    android.intent.action.VIEW" />
+
+    <category android:name="
+
+    android.intent.category.DEFAULT" />
+
+    <category android:name="
+
+    android.intent.category.BROWSABLE" />
+
+    <data android:scheme="https"
+
+    android:host="example.com" />
+
+    </intent-filter>
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/androidmanifest/
 - id: binder-ipc
   title: What is Binder and how does IPC work in Android?
@@ -1566,8 +2590,78 @@ questions:
   - android
   - internals
   - process
-  standard_answer: "Zygote: Special system process that launches all app processes.\n\nProblem it solves:\n- Android apps need Android runtime (VM, libraries)\n- Starting VM for each app slow\n- Zygote pre-starts VM with framework loaded\n\nHow it works:\n\n1. Boot: Zygote process starts\n   - Loads Android framework\n   - Pre-initializes VM\n   - Enters listening mode\n\n2. App launch requested:\n   - Activity Manager requests process from Zygote\n   - Zygote forks itself (fork = copy entire process)\n   - Child process = new app process\n\n3. App process:\n   - Inherits Zygote's loaded framework\n   - Minimal initialization time\n   - Ready to run app code\n\nBenefits:\n- App launch much faster\n- Less memory per app (shared framework)\n- Faster development iteration\n\nProcess hierarchy:\ninit → Zygote → ActivityManager → App processes\n\nNative/Java boundary:\n- Zygote is Java (runs on runtime)\n- Child processes also Java\n- System services communicate via Binder\n\nMultiple Zygotes:\n\
-    - Android 12+: Secondary Zygote for compatibility\n"
+  standard_answer: 'Zygote: Special system process that launches all app processes.
+
+
+    Problem it solves:
+
+    - Android apps need Android runtime (VM, libraries)
+
+    - Starting VM for each app slow
+
+    - Zygote pre-starts VM with framework loaded
+
+
+    How it works:
+
+
+    1. Boot: Zygote process starts
+
+    - Loads Android framework
+
+    - Pre-initializes VM
+
+    - Enters listening mode
+
+
+    ### App launch requested
+
+
+    - Activity Manager requests process from Zygote
+
+    - Zygote forks itself (fork = copy entire process)
+
+    - Child process = new app process
+
+
+    ### App process
+
+
+    - Inherits Zygote''s loaded framework
+
+    - Minimal initialization time
+
+    - Ready to run app code
+
+
+    Benefits:
+
+    - App launch much faster
+
+    - Less memory per app (shared framework)
+
+    - Faster development iteration
+
+
+    Process hierarchy:
+
+    init → Zygote → ActivityManager → App processes
+
+
+    Native/Java boundary:
+
+    - Zygote is Java (runs on runtime)
+
+    - Child processes also Java
+
+    - System services communicate via Binder
+
+
+    Multiple Zygotes:
+
+    - Android 12+: Secondary Zygote for compatibility
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/zygote-process-creation/
 - id: art-vs-dalvik
   title: What is the difference between ART and Dalvik?
@@ -1659,8 +2753,83 @@ questions:
   - android
   - startup
   - lifecycle
-  standard_answer: "APP STARTUP FLOW:\n\n1. User taps app icon\n2. Launcher sends Intent to ActivityManager\n3. ActivityManager checks if process exists\n   - No: requests process from Zygote\n   - Yes: use existing process\n4. Zygote fork creates new process (or uses existing)\n5. New process reads app manifest\n6. Process loads Application class\n7. Application.onCreate() called\n8. Process loads Activity\n9. Activity lifecycle starts: onCreate → onStart → onResume\n10. Activity rendered on screen\n\nOPTIMIZATION OPPORTUNITIES:\n\n1. App startup time stages:\n- Cold start: No process exists (slowest)\n- Warm start: Process exists but Activity not (medium)\n- Hot start: Activity in memory but paused (fastest)\n\n2. Optimize for cold start:\n- Lazy load modules\n- Don't block Application.onCreate()\n- Defer non-essential initialization\n- Use StartupManager library\n- Profiling: Use startup profiler\n\n3. Improve perceived performance:\n- Show splash screen\n- Load skeleton/placeholder\n\
-    - Progressive content loading\n\nSystem captures startup metrics:\n- first frame (visible)\n- fully drawn (interactive)\n\nModern approach: Activity Result API, lazy\nFragment initialization.\n"
+  standard_answer: 'APP STARTUP FLOW:
+
+
+    1. User taps app icon
+
+    2. Launcher sends Intent to ActivityManager
+
+    3. ActivityManager checks if process exists
+
+    - No: requests process from Zygote
+
+    - Yes: use existing process
+
+    4. Zygote fork creates new process (or uses existing)
+
+    5. New process reads app manifest
+
+    6. Process loads Application class
+
+    7. Application.onCreate() called
+
+    8. Process loads Activity
+
+    9. Activity lifecycle starts: onCreate → onStart → onResume
+
+    10. Activity rendered on screen
+
+
+    OPTIMIZATION OPPORTUNITIES:
+
+
+    ### App startup time stages
+
+
+    - Cold start: No process exists (slowest)
+
+    - Warm start: Process exists but Activity not (medium)
+
+    - Hot start: Activity in memory but paused (fastest)
+
+
+    ### Optimize for cold start
+
+
+    - Lazy load modules
+
+    - Don''t block Application.onCreate()
+
+    - Defer non-essential initialization
+
+    - Use StartupManager library
+
+    - Profiling: Use startup profiler
+
+
+    ### Improve perceived performance
+
+
+    - Show splash screen
+
+    - Load skeleton/placeholder
+
+    - Progressive content loading
+
+
+    System captures startup metrics:
+
+    - first frame (visible)
+
+    - fully drawn (interactive)
+
+
+    Modern approach: Activity Result API, lazy
+
+    Fragment initialization.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/app-startup-flow/
 - id: recyclerview-efficiency
   title: Why is RecyclerView more efficient than ListView?
@@ -1756,7 +2925,8 @@ questions:
   standard_answer: 'RENDERING PIPELINE (per frame):
 
 
-    1. MEASURE:
+    ### MEASURE
+
 
     - Layout system calculates view dimensions
 
@@ -1765,14 +2935,16 @@ questions:
     - Recursive: child measures own children
 
 
-    2. LAYOUT:
+    ### LAYOUT
+
 
     - System positions views using measured sizes
 
     - ViewGroup places children at x,y coordinates
 
 
-    3. DRAW:
+    ### DRAW
+
 
     - Canvas API draws views
 
@@ -1781,14 +2953,16 @@ questions:
     - Composited into single frame buffer
 
 
-    4. COMPOSITE:
+    ### COMPOSITE
+
 
     - Hardware accelerator combines layers
 
     - Handles transparency, transformations
 
 
-    5. DISPLAY:
+    ### DISPLAY
+
 
     - GPU sends frame to display
 
@@ -1807,26 +2981,30 @@ questions:
     OPTIMIZATION:
 
 
-    1. Reduce View hierarchy:
+    ### Reduce View hierarchy
+
 
     - Fewer views = faster measure/layout
 
     - Use merge, include, ViewStub
 
 
-    2. Use ViewHolder pattern:
+    ### Use ViewHolder pattern
+
 
     - Avoid repeated findViewById
 
 
-    3. Avoid layout thrashing:
+    ### Avoid layout thrashing
+
 
     - Don''t measure in layout
 
     - Batch layout updates
 
 
-    4. Use hardware acceleration:
+    ### Use hardware acceleration
+
 
     - Enabled by default
 
@@ -1844,7 +3022,8 @@ questions:
   - android
   - storage
   - data
-  standard_answer: '1. SHARED PREFERENCES:
+  standard_answer: '### SHARED PREFERENCES
+
 
     - Key-value store
 
@@ -1857,7 +3036,8 @@ questions:
     - NOT encrypted
 
 
-    2. INTERNAL STORAGE:
+    ### INTERNAL STORAGE
+
 
     - App-private directory
 
@@ -1868,7 +3048,8 @@ questions:
     - Secure (not accessible by other apps)
 
 
-    3. EXTERNAL STORAGE:
+    ### EXTERNAL STORAGE
+
 
     - Public folders (/DCIM, /Pictures, /Documents)
 
@@ -1879,7 +3060,8 @@ questions:
     - May not exist on all devices
 
 
-    4. DATABASE (SQLite):
+    ### DATABASE (SQLite)
+
 
     - Structured data
 
@@ -1890,7 +3072,8 @@ questions:
     - Good for complex data
 
 
-    5. CONTENT PROVIDERS:
+    ### CONTENT PROVIDERS
+
 
     - Expose data to other apps
 
@@ -1899,7 +3082,8 @@ questions:
     - Used for contacts, photos, etc
 
 
-    6. CACHE:
+    ### CACHE
+
 
     - context.getCacheDir()
 
@@ -2021,8 +3205,107 @@ questions:
   - android
   - lifecycle
   - process
-  standard_answer: "PROCESS DEATH: OS kills app process to free memory (no warning).\n\nBEFORE KILL (chance to save):\n- onSaveInstanceState() called\n- Stored in Bundle\n- Persisted by system\n\nDURING KILL:\n- Process terminated\n- No cleanup callbacks possible\n- In-memory state lost\n- No warning given\n\nON USER RETURN:\n- If Activity saved state:\n  - OS recreates process\n  - onCreate(savedInstanceState) called\n  - App can restore Bundle data\n- If no saved state:\n  - Activity restarted fresh\n  - UI reset\n\nDATA LOSS:\n- In-memory variables lost\n- Unsaved changes lost\n- ViewModels destroyed\n- Connections closed\n\nPRESERVATION STRATEGIES:\n\n1. savedInstanceState:\n- Light data (Bundles, primitives)\n- ~100KB limit\n- Configuration changes + process death\n\n2. ViewModel:\n- Survives configuration changes\n- Lost on process death\n- Use with savedInstanceState\n\n3. Database:\n- Persistent storage\n- Survives everything\n- Use for critical data\n\n4. Preferences:\n- Settings\
-    \ persistence\n- Survives everything\n\nBest practice: ViewModel + Room Database + savedInstanceState\nfor robust state management.\n"
+  standard_answer: 'PROCESS DEATH: OS kills app process to free memory (no warning).
+
+
+    BEFORE KILL (chance to save):
+
+    - onSaveInstanceState() called
+
+    - Stored in Bundle
+
+    - Persisted by system
+
+
+    DURING KILL:
+
+    - Process terminated
+
+    - No cleanup callbacks possible
+
+    - In-memory state lost
+
+    - No warning given
+
+
+    ON USER RETURN:
+
+
+    ### If Activity saved state
+
+
+    - OS recreates process
+
+    - onCreate(savedInstanceState) called
+
+    - App can restore Bundle data
+
+
+    ### If no saved state
+
+
+    - Activity restarted fresh
+
+    - UI reset
+
+
+    DATA LOSS:
+
+    - In-memory variables lost
+
+    - Unsaved changes lost
+
+    - ViewModels destroyed
+
+    - Connections closed
+
+
+    PRESERVATION STRATEGIES:
+
+
+    ### savedInstanceState
+
+
+    - Light data (Bundles, primitives)
+
+    - ~100KB limit
+
+    - Configuration changes + process death
+
+
+    ### ViewModel
+
+
+    - Survives configuration changes
+
+    - Lost on process death
+
+    - Use with savedInstanceState
+
+
+    ### Database
+
+
+    - Persistent storage
+
+    - Survives everything
+
+    - Use for critical data
+
+
+    ### Preferences
+
+
+    - Settings persistence
+
+    - Survives everything
+
+
+    Best practice: ViewModel + Room Database + savedInstanceState
+
+    for robust state management.
+
+    '
   deep_dive: /android-interview-prep/deep-dives/fundamentals/process-death-lifecycle/
 - id: multitasking-window-focus
   title: How does multitasking affect activity lifecycle?
@@ -2034,7 +3317,8 @@ questions:
   standard_answer: 'MULTITASKING SCENARIOS:
 
 
-    1. SPLIT SCREEN:
+    ### SPLIT SCREEN
+
 
     - Two apps visible simultaneously
 
@@ -2045,7 +3329,8 @@ questions:
     - Top activity interactive, other visible
 
 
-    2. PICTURE-IN-PICTURE:
+    ### PICTURE-IN-PICTURE
+
 
     - App playing video in small window
 
@@ -2056,7 +3341,8 @@ questions:
     - User can interact with background
 
 
-    3. APP SWITCHING (Recents):
+    ### APP SWITCHING (Recents)
+
 
     - Swipe from other app
 

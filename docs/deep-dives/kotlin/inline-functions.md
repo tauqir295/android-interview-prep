@@ -1,0 +1,131 @@
+---
+hide:
+  - toc
+---
+
+!!! abstract ""
+
+    <a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a>
+
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/kotlin/${hash}`);
+      return;
+    }
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {}
+})();
+</script>
+
+# Inline Functions Deep Dive
+
+## Overview
+
+Inline functions are a compiler-level optimization and language feature used heavily with Kotlin lambdas and reified generics.
+
+---
+
+## Core Concepts
+
+```kotlin
+inline fun measure(block: () -> Unit) {
+    val start = System.nanoTime()
+    block()
+    println(System.nanoTime() - start)
+}
+```
+
+Inlining means the function body may be copied into the call site.
+
+Benefits:
+
+- fewer lambda allocations
+- fewer function call boundaries
+- support for non-local returns in inline lambdas
+
+---
+
+## Internal Implementation
+
+The compiler substitutes the inline function body directly into call sites when possible.
+
+This is why:
+
+- reified type parameters work
+- non-local returns become possible
+- bytecode can grow if abused
+
+---
+
+## JVM / Compiler Behavior
+
+### `noinline`
+Prevents a specific lambda from being inlined.
+
+### `crossinline`
+Allows inlining but forbids non-local return.
+
+These exist because not all lambda usages can be inlined safely or semantically.
+
+---
+
+## Code Examples
+
+```kotlin
+inline fun runner(block: () -> Unit) {
+    block()
+}
+
+inline fun wrapper(crossinline block: () -> Unit) {
+    val r = Runnable { block() }
+    r.run()
+}
+```
+
+---
+
+## Common Interview Questions
+
+- Why are inline functions useful for higher-order APIs?
+- When do they hurt performance?
+- Why does reified require inline?
+- What do `crossinline` and `noinline` solve?
+
+---
+
+## Production Considerations
+
+Inline small, hot higher-order utilities.
+Avoid inlining large bodies blindly.
+
+---
+
+## Performance Insights
+
+Inlining can remove overhead, but can also increase:
+
+- bytecode size
+- method complexity
+- instruction cache pressure
+
+It is a targeted optimization, not a blanket rule.
+
+---
+
+## Senior-Level Insights
+
+Good interview answers connect inline functions to:
+
+- bytecode tradeoffs
+- lambda allocation behavior
+- API ergonomics
+- reified generics support
+

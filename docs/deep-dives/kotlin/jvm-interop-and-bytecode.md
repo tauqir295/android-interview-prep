@@ -1,0 +1,135 @@
+---
+hide:
+  - toc
+---
+
+!!! abstract ""
+
+    <a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a>
+
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/kotlin/${hash}`);
+      return;
+    }
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {}
+})();
+</script>
+
+# JVM Interop and Bytecode Deep Dive
+
+## Overview
+
+Kotlin is deeply integrated with the JVM. Understanding interop and bytecode helps explain how Kotlin features behave in real Android codebases.
+
+---
+
+## Core Concepts
+
+Important interop topics:
+
+- calling Java from Kotlin
+- exposing Kotlin to Java
+- nullability differences
+- default arguments
+- companion/static-like APIs
+- SAM conversions
+
+Important bytecode topics:
+
+- generated helper methods
+- lambda classes
+- null checks
+- suspend state machines
+- inline expansion
+
+---
+
+## Internal Implementation
+
+Many Kotlin features are compiler conveniences over regular JVM structures.
+
+Examples:
+
+- default arguments generate helper methods
+- top-level declarations compile into generated holder classes
+- suspend functions add continuation machinery
+
+---
+
+## JVM / Compiler Behavior
+
+Kotlin source can look very high-level, but the emitted bytecode still follows JVM constraints.
+
+That is why knowledge of:
+
+- type erasure
+- generated methods
+- interop annotations
+- bytecode layout
+
+makes interview answers much stronger.
+
+---
+
+## Code Examples
+
+```kotlin
+class UserFactory {
+    companion object {
+        @JvmStatic
+        fun create() = UserFactory()
+    }
+}
+```
+
+```kotlin
+inline fun <reified T> check(value: Any) = value is T
+```
+
+---
+
+## Common Interview Questions
+
+- How does Kotlin handle Java nullability?
+- What does `@JvmStatic` do?
+- Why does Kotlin generate extra methods?
+- How do suspend functions appear in bytecode?
+
+---
+
+## Production Considerations
+
+Interop bugs often happen at boundaries:
+
+- Java APIs with unclear nullability
+- default args exposed poorly to Java
+- reflection/serialization expectations
+- method count and generated helper complexity
+
+---
+
+## Performance Insights
+
+Bytecode awareness helps explain:
+
+- method growth
+- allocation behavior
+- lambda overhead
+- inlining tradeoffs
+
+---
+
+## Senior-Level Insights
+
+Senior candidates stand out when they connect Kotlin language ergonomics to emitted JVM artifacts and operational consequences.
+

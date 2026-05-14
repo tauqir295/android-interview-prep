@@ -1,0 +1,182 @@
+---
+hide:
+  - toc
+---
+
+!!! abstract ""
+
+    <a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a>
+
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/kotlin/${hash}`);
+      return;
+    }
+
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {
+    // Keep default Kotlin link if URL parsing fails.
+  }
+})();
+</script>
+
+# Kotlin Basics Deep Dive
+
+## Overview
+
+Kotlin is a modern statically typed language that runs primarily on the JVM and was designed to improve safety, expressiveness, and developer productivity.
+
+For Android interviews, Kotlin basics are not just syntax questions. Interviewers often expect you to connect Kotlin language design to:
+
+- safer APIs
+- fewer runtime crashes
+- clearer state modeling
+- better interop with Java
+- reduced boilerplate in Android apps
+
+---
+
+## Core Concepts
+
+### Why Kotlin became the Android default
+
+Kotlin fits Android well because it improves several pain points from Java-heavy Android codebases:
+
+- null handling is explicit in the type system
+- common patterns require less code
+- lambdas and extension functions make APIs cleaner
+- coroutines improve async programming ergonomics
+- interoperability lets teams adopt it incrementally
+
+### `val` vs `var`
+
+```kotlin
+val name = "Kotlin"
+var count = 0
+```
+
+- `val` = reference cannot be reassigned
+- `var` = reference can be reassigned
+
+Important nuance:
+
+```kotlin
+val items = mutableListOf("a")
+items.add("b") // valid
+// items = mutableListOf() // invalid
+```
+
+So `val` gives a stable reference, not automatic deep immutability.
+
+---
+
+## Internal Implementation
+
+From a compiler perspective, Kotlin basics still map to regular JVM concepts:
+
+- top-level functions become static-like methods in generated classes
+- properties compile into fields/getters/setters depending on usage
+- `val` often becomes a field with getter only
+- `var` usually becomes a field with both getter and setter
+
+The surface syntax is cleaner, but the generated model is still understandable from a JVM point of view.
+
+---
+
+## JVM / Compiler Behavior
+
+### Property generation
+
+```kotlin
+class User {
+    val id: Int = 1
+    var name: String = "A"
+}
+```
+
+This generally compiles into:
+
+- backing fields when needed
+- `getId()`
+- `getName()`
+- `setName()`
+
+Interview insight:
+Kotlin language features often look new, but many are compiler conveniences over classic bytecode patterns.
+
+---
+
+## Code Examples
+
+### Prefer `val` by default
+
+```kotlin
+val repository = UserRepository()
+val users = repository.loadUsers()
+```
+
+### Use `var` only when mutation is real and local
+
+```kotlin
+var retries = 0
+while (retries < 3) {
+    retries++
+}
+```
+
+---
+
+## Common Interview Questions
+
+- Why is `val` preferred over `var`?
+- Does `val` mean immutable object?
+- What does Kotlin compile to on the JVM?
+- Why is Kotlin safer than Java in practice?
+
+---
+
+## Production Considerations
+
+- prefer immutable modeling for UI state
+- keep mutation local and obvious
+- use Kotlin features to improve maintainability, not cleverness
+- avoid excessive nesting of idiomatic helpers if readability drops
+
+---
+
+## Performance Insights
+
+Basic Kotlin syntax itself is not usually the bottleneck.
+
+The real performance questions come from:
+
+- allocation patterns
+- lambdas and closures
+- inlining
+- collection transformations
+- coroutine usage
+
+So Kotlin basics matter more for correctness and readability than raw speed.
+
+---
+
+## Senior-Level Insights
+
+Strong Kotlin interview answers connect language fundamentals to engineering tradeoffs:
+
+- `val` improves reasoning about state
+- explicit nullability improves API contracts
+- better syntax can reduce bug surface area
+- compiler-generated convenience still has JVM cost and structure
+
+The best answers show both language fluency and runtime awareness.
+

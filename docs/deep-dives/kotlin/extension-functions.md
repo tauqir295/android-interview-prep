@@ -1,0 +1,122 @@
+---
+hide:
+  - toc
+---
+
+!!! abstract ""
+
+    <a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a>
+
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/kotlin/${hash}`);
+      return;
+    }
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {}
+})();
+</script>
+
+# Extension Functions Deep Dive
+
+## Overview
+
+Extension functions make Kotlin APIs feel richer without modifying original classes.
+
+---
+
+## Core Concepts
+
+```kotlin
+fun String.firstCharOrNull(): Char? = firstOrNull()
+```
+
+This reads like a member call:
+
+```kotlin
+val c = "Kotlin".firstCharOrNull()
+```
+
+But extension functions do not actually inject members into the class.
+
+---
+
+## Internal Implementation
+
+Extensions are compiled as static-like functions with the receiver passed as an argument.
+
+That is why extension dispatch is static, not virtual.
+
+---
+
+## JVM / Compiler Behavior
+
+Key interview rules:
+
+- receiver is just a parameter at compile time
+- member functions beat extensions if signatures match
+- runtime subtype does not change extension resolution
+
+```kotlin
+open class A
+class B : A()
+
+fun A.label() = "A"
+fun B.label() = "B"
+
+val value: A = B()
+println(value.label()) // "A"
+```
+
+---
+
+## Code Examples
+
+### Android-flavored helper
+
+```kotlin
+fun TextView.showIf(condition: Boolean) {
+    visibility = if (condition) View.VISIBLE else View.GONE
+}
+```
+
+---
+
+## Common Interview Questions
+
+- Are extension functions polymorphic?
+- Do they really modify the original class?
+- When should you prefer extension functions over utility objects?
+
+---
+
+## Production Considerations
+
+Use extensions for:
+
+- readable helpers
+- framework convenience APIs
+- DSL-like builders
+
+Avoid putting too much business logic in obscure extension files.
+
+---
+
+## Performance Insights
+
+Extensions usually have no special runtime magic beyond regular function calls unless combined with `inline`.
+
+---
+
+## Senior-Level Insights
+
+Extension functions are great API design tools, but poor organization can make code discovery harder. Keep naming and file placement disciplined.
+

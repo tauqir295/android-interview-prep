@@ -538,9 +538,9 @@
 
     When you call:
     fragmentManager.beginTransaction()
-      .replace(R.id.container, newFragment)
-      .addToBackStack(null)
-      .commit()
+    .replace(R.id.container, newFragment)
+    .addToBackStack(null)
+    .commit()
 
     Steps:
     1. Current fragment state saved
@@ -581,13 +581,13 @@
 
     Recommended pattern:
     companion object {
-      private const val ARG_USER_ID = "user_id"
-      
-      fun newInstance(userId: Int) = MyFragment().apply {
-        arguments = Bundle().apply {
-          putInt(ARG_USER_ID, userId)
-        }
-      }
+    private const val ARG_USER_ID = "user_id"
+
+    fun newInstance(userId: Int) = MyFragment().apply {
+    arguments = Bundle().apply {
+    putInt(ARG_USER_ID, userId)
+    }
+    }
     }
 
     In onCreate():
@@ -668,19 +668,22 @@
 
     PROBLEMATIC PATTERNS:
 
-    1. Activity context in singletons:
+    ### Activity context in singletons
+
     object MySingleton {
-      var context: Context? = null // WRONG!
+    var context: Context? = null // WRONG!
     }
 
-    2. Inner class references Activity:
+    ### Inner class references Activity
+
     class MyInnerClass { // Holds Activity ref
-      fun doWork() {}
+    fun doWork() {}
     }
 
-    3. Static references to Activity:
+    ### Static references to Activity
+
     companion object {
-      var activity: Activity? = null // WRONG!
+    var activity: Activity? = null // WRONG!
     }
 
     SOLUTIONS:
@@ -759,13 +762,13 @@
 
     EXAMPLE - Wrong:
     class Manager(val context: Activity) { // Holds Activity ref
-      fun work() { /* does work */ }
+    fun work() { /* does work */ }
     }
     // Activity destroyed but Manager still referenced → leak
 
     CORRECT - Right:
     class Manager(val context: Context) { // Use generic Context
-      fun work() { /* does work */ }
+    fun work() { /* does work */ }
     }
     val manager = Manager(applicationContext) // App context
 
@@ -835,17 +838,20 @@
 
     TOOLS:
 
-    1. LeakCanary library:
+    ### LeakCanary library
+
     - Automatically detects leaks
     - Shows leak chain
     - Most practical tool
 
-    2. Android Studio Memory Profiler:
+    ### Android Studio Memory Profiler
+
     - Record heap allocations
     - Take heap dumps
     - Inspect object references
 
-    3. Logcat:
+    ### Logcat
+
     - Watch for OOM errors
     - Monitor memory growth
 
@@ -879,13 +885,13 @@
 
     PATTERN 1: Static Activity Reference
     companion object {
-      var activity: Activity? = null // WRONG!
+    var activity: Activity? = null // WRONG!
     }
     Fix: Don't store Activity references as static.
 
     PATTERN 2: Inner Class Holding Activity
     inner class MyThread : Thread() { // Holds Activity ref
-      override fun run() { doWork() }
+    override fun run() { doWork() }
     }
     Fix: Use static inner class + WeakReference
 
@@ -1016,28 +1022,34 @@
 
     SOLUTIONS:
 
-    1. Use threads for heavy work:
+    ### Use threads for heavy work
+
     Thread { heavyWork() }.start()
 
-    2. Use coroutines (modern approach):
+    ### Use coroutines (modern approach)
+
     viewModelScope.launch(Dispatchers.Default) {
-      heavyWork() // Off main thread
+    heavyWork() // Off main thread
     }
 
-    3. AsyncTask (legacy):
+    ### AsyncTask (legacy)
+
     AsyncTask.execute { heavyWork() }
 
-    4. Optimize database queries:
+    ### Optimize database queries
+
     - Index frequently queried columns
     - Avoid complex queries on main thread
     - Use query optimization
 
-    5. Lazy load data:
+    ### Lazy load data
+
     - Load progressively
     - Show skeleton/placeholder
     - Fetch full data in background
 
-    6. Profile with Profiler:
+    ### Profile with Profiler
+
     - Find slow operations
     - Optimize hotspots
 
@@ -1117,20 +1129,24 @@
 
     Measurement tools:
 
-    1. Profile GPU Rendering (dev options):
+    ### Profile GPU Rendering (dev options)
+
     - Visual graph on screen
     - Shows frame times
     - Green = good, yellow/red = jank
 
-    2. Android Studio Profiler:
+    ### Android Studio Profiler
+
     - CPU, Memory, Network profiling
     - See main thread operations
 
-    3. FrameMetrics API:
+    ### FrameMetrics API
+
     - Programmatically measure frame times
     - Real user monitoring
 
-    4. Firebase Performance Monitoring:
+    ### Firebase Performance Monitoring
+
     - Production monitoring
     - Real user metrics
 
@@ -1170,11 +1186,13 @@
 
     Background threads:
     - No Looper by default
-    - Create manually if needed:
+
+    ### Create manually if needed
+
     Thread {
-      Looper.prepare()
-      // ... do work ...
-      Looper.loop() // Start looping
+    Looper.prepare()
+    // ... do work ...
+    Looper.loop() // Start looping
     }.start()
 
     Why Looper matters:
@@ -1219,10 +1237,10 @@
 
     Example - Update UI after background work:
     Thread {
-      val result = doHeavyWork()
-      mainHandler.post {
-        updateUI(result) // Runs on main thread
-      }
+    val result = doHeavyWork()
+    mainHandler.post {
+    updateUI(result) // Runs on main thread
+    }
     }.start()
 
     Key: Handler provides thread-safe way to run code on specific thread.
@@ -1290,7 +1308,7 @@
 
     Problem scenario:
     handler.postDelayed(Runnable {
-      // Runnable holds implicit 'this' reference (Activity)
+    // Runnable holds implicit 'this' reference (Activity)
     }, 60000)
     // If Activity destroyed before delay ends: leak
 
@@ -1304,17 +1322,17 @@
 
     SOLUTION 1: Use Handler with WeakReference
     class MyActivity : AppCompatActivity() {
-      private val handler = Handler(Looper.getMainLooper())
-      
-      private inner class MyRunnable : Runnable {
-        override fun run() { /* ... */ }
-      }
+    private val handler = Handler(Looper.getMainLooper())
+
+    private inner class MyRunnable : Runnable {
+    override fun run() { /* ... */ }
+    }
     }
 
     SOLUTION 2: Remove messages in onDestroy
     override fun onDestroy() {
-      handler.removeCallbacks(myRunnable)
-      super.onDestroy()
+    handler.removeCallbacks(myRunnable)
+    super.onDestroy()
     }
 
     MODERN: Use coroutines instead (automatic cleanup).
@@ -1443,28 +1461,32 @@
 
     Steps to implement:
 
-    1. Create Service with Binder:
+    ### Create Service with Binder
+
     class MyBoundService : Service() {
-      inner class LocalBinder : Binder() {
-        fun getService() = this@MyBoundService
-      }
+    inner class LocalBinder : Binder() {
+    fun getService() = this@MyBoundService
+    }
     }
 
-    2. Override onBind():
+    ### Override onBind()
+
     override fun onBind(intent: Intent?): IBinder {
-      return LocalBinder()
+    return LocalBinder()
     }
 
-    3. Bind from Activity:
-    bindService(Intent(...), connection,
-      Context.BIND_AUTO_CREATE)
+    ### Bind from Activity
 
-    4. Use ServiceConnection:
+    bindService(Intent(...), connection,
+    Context.BIND_AUTO_CREATE)
+
+    ### Use ServiceConnection
+
     object : ServiceConnection {
-      override fun onServiceConnected(...) {
-        val binder = service as Binder
-        val service = binder.getService()
-      }
+    override fun onServiceConnected(...) {
+    val binder = service as Binder
+    val service = binder.getService()
+    }
     }
 
     Lifecycle:
@@ -1510,10 +1532,10 @@
 
     Example:
     class DownloadService : IntentService("Download") {
-      override fun onHandleIntent(intent: Intent?) {
-        // Background thread, won't block UI
-        val file = downloadFile() // Network call OK
-      }
+    override fun onHandleIntent(intent: Intent?) {
+    // Background thread, won't block UI
+    val file = downloadFile() // Network call OK
+    }
     }
 
     Problems (Android 8.0+):
@@ -1571,9 +1593,9 @@
 
     Example:
     class MyReceiver : BroadcastReceiver() {
-      override fun onReceive(context, intent) {
-        // Process broadcast
-      }
+    override fun onReceive(context, intent) {
+    // Process broadcast
+    }
     }
 
     Use cases: Battery level, connectivity, SMS, time changes.
@@ -1597,18 +1619,20 @@
 
     DYNAMIC REGISTRATION (Recommended):
 
-    1. Register in onCreate/onStart:
+    ### Register in onCreate/onStart
+
     registerReceiver(myReceiver, IntentFilter(ACTION))
 
-    2. Unregister in onDestroy/onStop:
+    ### Unregister in onDestroy/onStop
+
     unregisterReceiver(myReceiver)
 
     STATIC REGISTRATION (Manifest):
     <receiver android:name=".MyReceiver"
-      android:permission="com.example.PERM" >
-      <intent-filter>
-        <action android:name="..." />
-      </intent-filter>
+    android:permission="com.example.PERM" >
+    <intent-filter>
+    <action android:name="..." />
+    </intent-filter>
     </receiver>
 
     SECURITY BEST PRACTICES:
@@ -1616,21 +1640,26 @@
     1. Use specific intent filters (not catch-all)
     Only catch broadcasts you need
 
-    2. Check sender permissions:
+    ### Check sender permissions
+
     In onReceive(), verify sender is trusted
 
-    3. Require permissions for safety:
+    ### Require permissions for safety
+
     android:permission="my.permission"
 
-    4. Limit receiving broadcasts:
+    ### Limit receiving broadcasts
+
     Use specific actions, not generic patterns
 
-    5. Android 8.0+ restrictions:
+    ### Android 8.0+ restrictions
+
     - Static receivers limited (battery optimization)
     - Use dynamic registration
     - Or use JobScheduler/WorkManager
 
-    6. Always unregister dynamic receivers:
+    ### Always unregister dynamic receivers
+
     Prevents memory leaks and battery drain
 
 
@@ -1670,8 +1699,8 @@
 
     Example ordered broadcast:
     sendOrderedBroadcast(intent, null,
-      resultReceiver, handler, resultCode,
-      resultData, resultExtras)
+    resultReceiver, handler, resultCode,
+    resultData, resultExtras)
 
     Receiver can:
     - setResultCode(newCode)
@@ -1756,40 +1785,44 @@
 
     STEPS:
 
-    1. Declare in manifest:
+    ### Declare in manifest
+
     <uses-permission android:name="android.permission.CAMERA" />
 
-    2. Check permission at runtime:
+    ### Check permission at runtime
+
     if (ContextCompat.checkSelfPermission(this,
-        Manifest.permission.CAMERA) 
-        != PackageManager.PERMISSION_GRANTED) {
-      // Request permission
+    Manifest.permission.CAMERA)
+    != PackageManager.PERMISSION_GRANTED) {
+    // Request permission
     } else {
-      // Use camera
+    // Use camera
     }
 
-    3. Request permission:
-    ActivityCompat.requestPermissions(this,
-      arrayOf(Manifest.permission.CAMERA), 100)
+    ### Request permission
 
-    4. Handle response:
+    ActivityCompat.requestPermissions(this,
+    arrayOf(Manifest.permission.CAMERA), 100)
+
+    ### Handle response
+
     override fun onRequestPermissionsResult(
-        requestCode: Int, permissions: Array<out String>,
-        grantResults: IntArray) {
-      if (requestCode == 100) {
-        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-          useCamera()
-        } else {
-          showPermissionDeniedMessage()
-        }
-      }
+    requestCode: Int, permissions: Array<out String>,
+    grantResults: IntArray) {
+    if (requestCode == 100) {
+    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+    useCamera()
+    } else {
+    showPermissionDeniedMessage()
+    }
+    }
     }
 
     MODERN APPROACH (Activity Result Contract):
     val cameraPermission = registerForActivityResult(
-      ActivityResultContracts.RequestPermission()) { isGranted ->
-      if (isGranted) useCamera()
-      else showDeniedMessage()
+    ActivityResultContracts.RequestPermission()) { isGranted ->
+    if (isGranted) useCamera()
+    else showDeniedMessage()
     }
     cameraPermission.launch(CAMERA)
 
@@ -1863,46 +1896,53 @@
 
     Contains:
 
-    1. PACKAGE NAME:
+    ### PACKAGE NAME
+
     package="com.example.myapp"
 
-    2. COMPONENTS:
+    ### COMPONENTS
+
     - Activities
     - Services
     - Broadcast receivers
     - Content providers
 
-    3. PERMISSIONS:
+    ### PERMISSIONS
+
     - Required permissions
     - Custom permissions
 
-    4. FEATURES:
+    ### FEATURES
+
     - Hardware features (camera, GPS)
     - Software features
 
-    5. VERSION INFO:
+    ### VERSION INFO
+
     - versionCode, versionName
     - targetSdkVersion, minSdkVersion
 
-    6. APPLICATION METADATA:
+    ### APPLICATION METADATA
+
     - App icon, label, theme
     - Backup agent
     - Hardware acceleration flags
 
-    7. INTENT FILTERS:
+    ### INTENT FILTERS
+
     - Which implicit intents components handle
     - Which apps can start component
 
     Example:
     <manifest package="com.example.app" ...>
-      <uses-permission android:name="..." />
-      <application>
-        <activity android:name=".MainActivity">
-          <intent-filter>
-            <action android:name="..." />
-          </intent-filter>
-        </activity>
-      </application>
+    <uses-permission android:name="..." />
+    <application>
+    <activity android:name=".MainActivity">
+    <intent-filter>
+    <action android:name="..." />
+    </intent-filter>
+    </activity>
+    </application>
     </manifest>
 
     Note: Some settings now in build.gradle (build tools).
@@ -1928,11 +1968,11 @@
 
     STRUCTURE:
     <activity android:name=".MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name=
-          "android.intent.category.LAUNCHER" />
-      </intent-filter>
+    <intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name=
+    "android.intent.category.LAUNCHER" />
+    </intent-filter>
     </activity>
 
     COMPONENTS:
@@ -1943,15 +1983,15 @@
 
     CATEGORY: Additional info about component
     <category android:name=
-      "android.intent.category.DEFAULT" />
+    "android.intent.category.DEFAULT" />
     <category
-      android:name=
-      "android.intent.category.LAUNCHER" />
+    android:name=
+    "android.intent.category.LAUNCHER" />
 
     DATA: URI/MIME type patterns
     <data android:scheme="https"
-          android:host="example.com"
-          android:mimeType="text/*" />
+    android:host="example.com"
+    android:mimeType="text/*" />
 
     MATCHING RULES:
     - Implicit intent must match ALL declared filters
@@ -1959,14 +1999,14 @@
 
     EXAMPLE - Web link handler:
     <intent-filter>
-      <action android:name="
-        android.intent.action.VIEW" />
-      <category android:name="
-        android.intent.category.DEFAULT" />
-      <category android:name="
-        android.intent.category.BROWSABLE" />
-      <data android:scheme="https"
-            android:host="example.com" />
+    <action android:name="
+    android.intent.action.VIEW" />
+    <category android:name="
+    android.intent.category.DEFAULT" />
+    <category android:name="
+    android.intent.category.BROWSABLE" />
+    <data android:scheme="https"
+    android:host="example.com" />
     </intent-filter>
 
 
@@ -2048,19 +2088,21 @@
     How it works:
 
     1. Boot: Zygote process starts
-       - Loads Android framework
-       - Pre-initializes VM
-       - Enters listening mode
+    - Loads Android framework
+    - Pre-initializes VM
+    - Enters listening mode
 
-    2. App launch requested:
-       - Activity Manager requests process from Zygote
-       - Zygote forks itself (fork = copy entire process)
-       - Child process = new app process
+    ### App launch requested
 
-    3. App process:
-       - Inherits Zygote's loaded framework
-       - Minimal initialization time
-       - Ready to run app code
+    - Activity Manager requests process from Zygote
+    - Zygote forks itself (fork = copy entire process)
+    - Child process = new app process
+
+    ### App process
+
+    - Inherits Zygote's loaded framework
+    - Minimal initialization time
+    - Ready to run app code
 
     Benefits:
     - App launch much faster
@@ -2158,8 +2200,8 @@
     1. User taps app icon
     2. Launcher sends Intent to ActivityManager
     3. ActivityManager checks if process exists
-       - No: requests process from Zygote
-       - Yes: use existing process
+    - No: requests process from Zygote
+    - Yes: use existing process
     4. Zygote fork creates new process (or uses existing)
     5. New process reads app manifest
     6. Process loads Application class
@@ -2170,19 +2212,22 @@
 
     OPTIMIZATION OPPORTUNITIES:
 
-    1. App startup time stages:
+    ### App startup time stages
+
     - Cold start: No process exists (slowest)
     - Warm start: Process exists but Activity not (medium)
     - Hot start: Activity in memory but paused (fastest)
 
-    2. Optimize for cold start:
+    ### Optimize for cold start
+
     - Lazy load modules
     - Don't block Application.onCreate()
     - Defer non-essential initialization
     - Use StartupManager library
     - Profiling: Use startup profiler
 
-    3. Improve perceived performance:
+    ### Improve perceived performance
+
     - Show splash screen
     - Load skeleton/placeholder
     - Progressive content loading
@@ -2271,25 +2316,30 @@
 
     RENDERING PIPELINE (per frame):
 
-    1. MEASURE:
+    ### MEASURE
+
     - Layout system calculates view dimensions
     - ViewGroup measures children
     - Recursive: child measures own children
 
-    2. LAYOUT:
+    ### LAYOUT
+
     - System positions views using measured sizes
     - ViewGroup places children at x,y coordinates
 
-    3. DRAW:
+    ### DRAW
+
     - Canvas API draws views
     - Each View.onDraw() paints content
     - Composited into single frame buffer
 
-    4. COMPOSITE:
+    ### COMPOSITE
+
     - Hardware accelerator combines layers
     - Handles transparency, transformations
 
-    5. DISPLAY:
+    ### DISPLAY
+
     - GPU sends frame to display
     - Vsync synchronized (60/90/120 fps)
 
@@ -2300,18 +2350,22 @@
 
     OPTIMIZATION:
 
-    1. Reduce View hierarchy:
+    ### Reduce View hierarchy
+
     - Fewer views = faster measure/layout
     - Use merge, include, ViewStub
 
-    2. Use ViewHolder pattern:
+    ### Use ViewHolder pattern
+
     - Avoid repeated findViewById
 
-    3. Avoid layout thrashing:
+    ### Avoid layout thrashing
+
     - Don't measure in layout
     - Batch layout updates
 
-    4. Use hardware acceleration:
+    ### Use hardware acceleration
+
     - Enabled by default
     - Use Layer types for animations
 
@@ -2334,37 +2388,43 @@
 
 ??? question "What are the different storage options in Android?"
 
-    1. SHARED PREFERENCES:
+    ### SHARED PREFERENCES
+
     - Key-value store
     - SharedPreferences.getSharedPreferences()
     - Best for small data (settings, flags)
     - Lightweight
     - NOT encrypted
 
-    2. INTERNAL STORAGE:
+    ### INTERNAL STORAGE
+
     - App-private directory
     - Deleted when app uninstalled
     - Default choice for app data
     - Secure (not accessible by other apps)
 
-    3. EXTERNAL STORAGE:
+    ### EXTERNAL STORAGE
+
     - Public folders (/DCIM, /Pictures, /Documents)
     - Shared with other apps
     - Requires permissions
     - May not exist on all devices
 
-    4. DATABASE (SQLite):
+    ### DATABASE (SQLite)
+
     - Structured data
     - Room library (ORM)
     - Relational queries
     - Good for complex data
 
-    5. CONTENT PROVIDERS:
+    ### CONTENT PROVIDERS
+
     - Expose data to other apps
     - Standardized data access interface
     - Used for contacts, photos, etc
 
-    6. CACHE:
+    ### CACHE
+
     - context.getCacheDir()
     - Temporary data
     - Can be cleared by system
@@ -2472,13 +2532,17 @@
     - No warning given
 
     ON USER RETURN:
-    - If Activity saved state:
-      - OS recreates process
-      - onCreate(savedInstanceState) called
-      - App can restore Bundle data
-    - If no saved state:
-      - Activity restarted fresh
-      - UI reset
+
+    ### If Activity saved state
+
+    - OS recreates process
+    - onCreate(savedInstanceState) called
+    - App can restore Bundle data
+
+    ### If no saved state
+
+    - Activity restarted fresh
+    - UI reset
 
     DATA LOSS:
     - In-memory variables lost
@@ -2488,22 +2552,26 @@
 
     PRESERVATION STRATEGIES:
 
-    1. savedInstanceState:
+    ### savedInstanceState
+
     - Light data (Bundles, primitives)
     - ~100KB limit
     - Configuration changes + process death
 
-    2. ViewModel:
+    ### ViewModel
+
     - Survives configuration changes
     - Lost on process death
     - Use with savedInstanceState
 
-    3. Database:
+    ### Database
+
     - Persistent storage
     - Survives everything
     - Use for critical data
 
-    4. Preferences:
+    ### Preferences
+
     - Settings persistence
     - Survives everything
 
@@ -2529,19 +2597,22 @@
 
     MULTITASKING SCENARIOS:
 
-    1. SPLIT SCREEN:
+    ### SPLIT SCREEN
+
     - Two apps visible simultaneously
     - Both in foreground state
     - Both receive onResume()
     - Top activity interactive, other visible
 
-    2. PICTURE-IN-PICTURE:
+    ### PICTURE-IN-PICTURE
+
     - App playing video in small window
     - onPause() called (not visible)
     - Continues running
     - User can interact with background
 
-    3. APP SWITCHING (Recents):
+    ### APP SWITCHING (Recents)
+
     - Swipe from other app
     - Current Activity: onPause → onStop
     - Switched app: onStart → onResume

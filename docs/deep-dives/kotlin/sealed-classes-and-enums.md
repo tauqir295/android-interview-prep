@@ -1,0 +1,155 @@
+---
+hide:
+  - toc
+---
+
+!!! abstract ""
+
+    <a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a>
+
+<script>
+(function () {
+  const link = document.getElementById("back-to-questions");
+  if (!link) return;
+  try {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      link.setAttribute("href", `/android-interview-prep/generated/kotlin/${hash}`);
+      return;
+    }
+    const referrer = document.referrer || "";
+    if (referrer.includes("/android-interview-prep/generated/")) {
+      link.setAttribute("href", referrer);
+    }
+  } catch (_) {}
+})();
+</script>
+
+# Sealed Classes and Enums Deep Dive
+
+## Overview
+
+Sealed classes and enum classes both model limited domains, but they solve different problems.
+
+---
+
+## Core Concepts
+
+### Enum classes
+
+Best for a fixed set of singleton constants.
+
+```kotlin
+enum class SortOrder {
+    ASCENDING,
+    DESCENDING
+}
+```
+
+### Sealed classes
+
+Best for closed hierarchies where each case may carry different data.
+
+```kotlin
+sealed class UiState {
+    object Loading : UiState()
+    data class Success(val items: List<String>) : UiState()
+    data class Error(val message: String) : UiState()
+}
+```
+
+---
+
+## Internal Implementation
+
+Enums create one instance per enum constant.
+Sealed classes define a restricted inheritance tree.
+
+Key difference:
+
+- enum = fixed constants
+- sealed = fixed subtype set
+
+That makes sealed classes much stronger for state/result/event modeling.
+
+---
+
+## JVM / Compiler Behavior
+
+### Enums
+
+Compile to Java-style enum classes with constant instances.
+
+### Sealed classes
+
+Compile as regular classes/interfaces with metadata allowing the compiler to reason about exhaustiveness.
+
+The JVM itself does not “understand” sealed behavior the same way Kotlin source does; much of the experience is compiler driven.
+
+---
+
+## Code Examples
+
+### Exhaustive `when`
+
+```kotlin
+fun render(state: UiState): String = when (state) {
+    UiState.Loading -> "loading"
+    is UiState.Success -> state.items.joinToString()
+    is UiState.Error -> state.message
+}
+```
+
+### Enum use case
+
+```kotlin
+enum class ThemeMode {
+    LIGHT,
+    DARK,
+    SYSTEM
+}
+```
+
+---
+
+## Common Interview Questions
+
+- When should you choose sealed over enum?
+- Why is sealed useful for UI state?
+- Does sealed always mean no `else` in `when`?
+
+---
+
+## Production Considerations
+
+Use enums for:
+
+- simple flags
+- static modes
+- limited status values
+
+Use sealed classes for:
+
+- state machines
+- result wrappers
+- navigation outcomes
+- view state models
+
+---
+
+## Performance Insights
+
+The choice is usually more about modeling clarity than raw performance.
+But sealed class instances can allocate more frequently if used carelessly in high-frequency state updates.
+
+---
+
+## Senior-Level Insights
+
+The best modeling tool is the one that matches the domain:
+
+- enum for simple symbolic constants
+- sealed for structured closed-state systems
+
+That distinction improves both correctness and maintainability.
+
