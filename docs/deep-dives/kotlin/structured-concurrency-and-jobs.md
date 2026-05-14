@@ -2,11 +2,8 @@
 hide:
   - toc
 ---
-
 !!! abstract ""
-
     <a id="back-to-questions" href="/android-interview-prep/generated/kotlin/">← Back to Kotlin</a>
-
 <script>
 (function () {
   const link = document.getElementById("back-to-questions");
@@ -21,10 +18,11 @@ hide:
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
-  } catch (_) {}
+  } catch (_) {
+    // Keep default generated page link if URL parsing fails.
+  }
 })();
 </script>
-
 # Structured Concurrency and Jobs Deep Dive
 
 ## Overview

@@ -4,12 +4,14 @@ This document tracks the active deep-dive mapping for the Android Interview Prep
 Current state:
 - Fundamentals mapping: complete
 - Kotlin mapping: complete
-- Deep dive files for both categories: created
+- Compose mapping: complete
+- Deep dive files for fundamentals and Kotlin: created
 ---
 ## Mapping Documents
 Use these as the source of truth:
 - `DEEP_DIVE_MAPPING.md` (this file, fundamentals + architecture status)
 - `KOTLIN_DEEP_DIVE_MAPPING.md` (full Kotlin mapping)
+- `COMPOSE_DEEP_DIVE_MAPPING.md` (full Compose mapping)
 ---
 ## Fundamentals Mapping
 ### Files and Question Coverage
@@ -64,6 +66,34 @@ Kotlin deep-dive files currently present under `docs/deep-dives/kotlin/`:
 20. `jvm-interop-and-bytecode.md`
 **Total:** 51 Kotlin questions -> 20 Kotlin deep dives
 ---
+## Compose Mapping
+Compose mapping and per-topic sections are maintained in:
+- `COMPOSE_DEEP_DIVE_MAPPING.md`
+
+Compose deep-dive files are planned under `docs/deep-dives/compose/`:
+1. `compose-basics-and-composable-contract.md`
+2. `state-and-remember.md`
+3. `state-hoisting-and-udf.md`
+4. `recomposition-and-skip-optimization.md`
+5. `snapshot-system-and-observation.md`
+6. `side-effects-overview.md`
+7. `effects-coroutines-and-lifecycle.md`
+8. `derived-state-and-remember-updated-state.md`
+9. `compositionlocal-and-context-propagation.md`
+10. `flow-integration-with-compose.md`
+11. `stability-and-compose-compiler.md`
+12. `slot-table-and-runtime-internals.md`
+13. `composer-applier-and-runtime-phases.md`
+14. `modifier-chain-and-node-graph.md`
+15. `layout-measure-draw-pipeline.md`
+16. `lazy-layouts-and-list-performance.md`
+17. `navigation-in-compose.md`
+18. `theming-and-material3.md`
+19. `animation-in-compose.md`
+20. `testing-interop-and-performance.md`
+
+**Total:** 50 Compose questions -> 20 Compose deep dives
+---
 ## Link Convention (Important)
 Use site route links in YAML:
 ```yaml
@@ -80,6 +110,23 @@ Do not use old filesystem-style links:
 - Fix formatting issues in YAML source, not generated markdown files.
 - Regenerate with `scripts/generate_docs.py` after any YAML/template change.
 ---
+## Deep Dive Scaffold Template
+Use the reusable deep-dive template to avoid navigation regressions:
+- Template: `templates/deep-dive.md.j2`
+- Scaffold script: `scripts/scaffold_deep_dive.py`
+
+Example:
+```bash
+python3 scripts/scaffold_deep_dive.py \
+  --category compose \
+  --category-title Compose \
+  --topic-slug recomposition-and-skip-optimization \
+  --topic-title "Recomposition and Skip Optimization"
+```
+
+This scaffold includes the hash/referrer-aware `back-to-questions` link block
+so deep dives return to the correct question anchor.
+---
 ## Navigation Rules
 Implemented globally:
 - generated question anchors by `id`
@@ -93,8 +140,10 @@ Implemented globally:
 |---|---|
 | Fundamentals YAML | ✅ complete |
 | Kotlin YAML | ✅ complete |
+| Compose YAML | ✅ complete |
 | Fundamentals deep dives | ✅ complete |
 | Kotlin deep dives | ✅ complete |
+| Compose mapping doc | ✅ complete |
 | Generated docs pages | ✅ generated |
 | Combined question index (`ALL_QUESTIONS.md`) | ✅ updated |
 ---

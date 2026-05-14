@@ -2,33 +2,27 @@
 hide:
   - toc
 ---
-
 !!! abstract ""
-
     <a id="back-to-questions" href="/android-interview-prep/generated/fundamentals/">← Back to Fundamentals</a>
-
 <script>
 (function () {
   const link = document.getElementById("back-to-questions");
   if (!link) return;
-
   try {
     const hash = window.location.hash;
     if (hash && hash.length > 1) {
       link.setAttribute("href", `/android-interview-prep/generated/fundamentals/${hash}`);
       return;
     }
-
     const referrer = document.referrer || "";
     if (referrer.includes("/android-interview-prep/generated/")) {
       link.setAttribute("href", referrer);
     }
   } catch (_) {
-    // Keep default fundamentals link if URL parsing fails.
+    // Keep default generated page link if URL parsing fails.
   }
 })();
 </script>
-
 # Looper and Handler Deep Dive
 
 ## Overview

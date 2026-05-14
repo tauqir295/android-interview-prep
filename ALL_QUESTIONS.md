@@ -1,5 +1,5 @@
 # Complete Question List - Android Interview Prep
-Generated: 105 interview questions across 41 deep dive topics
+Generated: 155 interview questions across 61 deep dive topics
 ---
 ## Fundamentals Questions
 ## Activity Lifecycle (6 questions -> 1 deep dive)
@@ -154,14 +154,90 @@ Generated: 105 interview questions across 41 deep dive topics
 105. `suspend-state-machine` - How are coroutines compiled into a state machine?
 
 ---
+## Compose Questions
+## Compose Basics And Composable Contract (4 questions -> 1 deep dive)
+106. `compose-declarative-ui` - What makes Jetpack Compose a declarative UI toolkit?
+107. `composable-function` - What is a composable function?
+108. `composable-lifecycle` - How should you think about composable lifecycle compared to Activity lifecycle?
+109. `previews-in-compose` - What are Compose previews and their limitations?
+## State And Remember (3 questions -> 1 deep dive)
+110. `mutable-state-in-compose` - What is `MutableState` in Compose?
+111. `remember-vs-rememberSaveable` - What is the difference between `remember` and `rememberSaveable`?
+112. `remember-key-parameter` - Why do keys matter in `remember`?
+## State Hoisting And Udf (4 questions -> 1 deep dive)
+113. `state-hoisting` - What is state hoisting in Compose?
+114. `unidirectional-data-flow-compose` - How does unidirectional data flow apply in Compose UI architecture?
+115. `ui-state-modeling-compose` - How should UI state be modeled for complex Compose screens?
+116. `event-handling-compose` - What are best practices for event handling in Compose?
+## Recomposition And Skip Optimization (6 questions -> 1 deep dive)
+117. `recomposition-definition` - What is recomposition in Jetpack Compose?
+118. `what-triggers-recomposition` - What triggers recomposition?
+119. `smart-recomposition` - What is smart recomposition?
+120. `skip-optimization` - What is skip optimization in Compose?
+121. `unstable-parameter-recomposition` - Why do unstable parameters often cause extra recomposition?
+122. `prevent-unnecessary-recomposition` - How do you reduce unnecessary recomposition in production apps?
+## Snapshot System And Observation (2 questions -> 1 deep dive)
+123. `snapshot-system` - What is the Compose snapshot system?
+124. `snapshot-state-read-write` - How are state reads and writes observed by Compose runtime?
+## Side Effects Overview (3 questions -> 1 deep dive)
+125. `side-effects-overview` - Why does Compose provide side-effect APIs?
+126. `sideeffect-usage` - When should `SideEffect` be used?
+127. `produceState-usage` - What problem does `produceState` solve?
+## Effects Coroutines And Lifecycle (3 questions -> 1 deep dive)
+128. `launchedeffect-usage` - How does `LaunchedEffect` work and when should you use it?
+129. `disposableeffect-usage` - When do you use `DisposableEffect`?
+130. `rememberCoroutineScope-usage` - What is `rememberCoroutineScope` used for?
+## Derived State And Remember Updated State (2 questions -> 1 deep dive)
+131. `derivedStateOf-purpose` - What is `derivedStateOf` and when does it help?
+132. `rememberUpdatedState-purpose` - Why is `rememberUpdatedState` important in long-lived effects?
+## Compositionlocal And Context Propagation (1 questions -> 1 deep dive)
+133. `compositionlocal-purpose` - What is `CompositionLocal` and when should it be used?
+## Flow Integration With Compose (3 questions -> 1 deep dive)
+134. `stateflow-with-compose` - How do you integrate `StateFlow` with Compose UI?
+135. `collectAsState-vs-collectAsStateWithLifecycle` - `collectAsState` vs `collectAsStateWithLifecycle` - what is the difference?
+136. `snapshotFlow-usage` - What is `snapshotFlow` and when would you use it?
+## Stability And Compose Compiler (3 questions -> 1 deep dive)
+137. `stability-in-compose` - What does stability mean in Compose?
+138. `stable-vs-immutable` - What is the difference between `@Stable` and `@Immutable`?
+139. `compose-compiler-role` - What is the role of the Compose compiler?
+## Slot Table And Runtime Internals (1 questions -> 1 deep dive)
+140. `slot-table-purpose` - What is the Slot Table in Compose runtime?
+## Composer Applier And Runtime Phases (2 questions -> 1 deep dive)
+141. `composer-and-applier` - What are `Composer` and `Applier` in Compose internals?
+142. `compose-runtime-phases` - What are the major runtime phases in Compose frame updates?
+## Modifier Chain And Node Graph (1 questions -> 1 deep dive)
+143. `modifier-chain-order` - Why does modifier order matter in Compose?
+## Layout Measure Draw Pipeline (2 questions -> 1 deep dive)
+144. `custom-layout-basics` - What should you know before writing custom layouts in Compose?
+145. `measure-layout-draw-phases` - Explain measure, layout, and draw phases in Compose.
+## Lazy Layouts And List Performance (2 questions -> 1 deep dive)
+146. `lazycolumn-performance` - How do you optimize `LazyColumn` performance?
+147. `keys-in-lazycolumn` - Why are keys important in `LazyColumn` items?
+## Navigation In Compose (2 questions -> 1 deep dive)
+148. `navigation-compose-basics` - What are core principles of navigation in Compose?
+149. `navigation-single-source-of-truth` - How do you keep navigation maintainable at scale in Compose apps?
+## Theming And Material3 (1 questions -> 1 deep dive)
+150. `theming-material3-compose` - How does theming work in Compose with Material 3?
+## Animation In Compose (1 questions -> 1 deep dive)
+151. `animations-compose` - What animation APIs should you discuss in Compose interviews?
+## Testing Interop And Performance (4 questions -> 1 deep dive)
+152. `compose-testing-strategy` - What is a strong testing strategy for Compose UI?
+153. `semantics-and-test-tags` - How do semantics and test tags help Compose testing?
+154. `androidview-interop` - When and how should you use `AndroidView` interop?
+155. `compose-performance-checklist` - What is your practical Compose performance checklist?
+
+---
 ## Statistics
-- **Total Questions:** 105
-- **Total Deep Dives:** 41
+- **Total Questions:** 155
+- **Total Deep Dives:** 61
 - **Fundamentals:** 54 questions
 - **Kotlin:** 51 questions
-- **Beginner:** 23 questions
-- **Intermediate:** 65 questions
+- **Compose:** 50 questions
+- **Beginner:** 27 questions
+- **Intermediate:** 91 questions
 - **Advanced:** 17 questions
+- **Senior:** 17 questions
+- **Staff:** 3 questions
 
 ## By Category Difficulty
 ### Fundamentals
@@ -174,21 +250,34 @@ Generated: 105 interview questions across 41 deep dive topics
 - Intermediate: 28
 - Advanced: 14
 
+### Compose
+- Beginner: 4
+- Intermediate: 26
+- Senior: 17
+- Staff: 3
+
 ## Quick Tags Reference
 - **android:** 55 questions
 - **kotlin:** 51 questions
-- **coroutines:** 13 questions
-- **lifecycle:** 11 questions
-- **performance:** 11 questions
+- **compose:** 50 questions
+- **performance:** 17 questions
+- **coroutines:** 15 questions
+- **lifecycle:** 14 questions
+- **architecture:** 11 questions
+- **runtime:** 11 questions
+- **state:** 10 questions
+- **compiler:** 8 questions
+- **recomposition:** 7 questions
+- **side-effects:** 7 questions
 - **intents:** 6 questions
 - **memory:** 6 questions
-- **fundamentals:** 5 questions
+- **fundamentals:** 6 questions
 - **fragments:** 5 questions
 - **threading:** 5 questions
-- **compiler:** 5 questions
+- **ui:** 5 questions
+- **flow:** 5 questions
 - **ipc:** 4 questions
 - **context:** 4 questions
 - **service:** 4 questions
-- **inline:** 4 questions
 ---
-**Next Step:** Regenerate docs and validate navigation for both Fundamentals and Kotlin sections.
+**Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, and Compose sections.
