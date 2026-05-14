@@ -5,13 +5,15 @@ Current state:
 - Fundamentals mapping: complete
 - Kotlin mapping: complete
 - Compose mapping: complete
-- Deep dive files for fundamentals and Kotlin: created
+- Architecture mapping: complete
+- Deep dive files for fundamentals, Kotlin, Compose, and Architecture: created
 ---
 ## Mapping Documents
 Use these as the source of truth:
 - `DEEP_DIVE_MAPPING.md` (this file, fundamentals + architecture status)
 - `KOTLIN_DEEP_DIVE_MAPPING.md` (full Kotlin mapping)
 - `COMPOSE_DEEP_DIVE_MAPPING.md` (full Compose mapping)
+- `ARCHITECTURE_DEEP_DIVE_MAPPING.md` (full Architecture mapping)
 ---
 ## Fundamentals Mapping
 ### Files and Question Coverage
@@ -94,6 +96,34 @@ Compose deep-dive files are planned under `docs/deep-dives/compose/`:
 
 **Total:** 50 Compose questions -> 20 Compose deep dives
 ---
+## Architecture Mapping
+Architecture mapping and per-topic sections are maintained in:
+- `ARCHITECTURE_DEEP_DIVE_MAPPING.md`
+
+Architecture deep-dive files currently present under `docs/deep-dives/architecture/`:
+1. `mvvm-and-viewmodel.md`
+2. `mvi-and-udf.md`
+3. `clean-architecture-layering.md`
+4. `repository-pattern-and-data-sources.md`
+5. `use-cases-and-domain-layer.md`
+6. `dependency-injection-strategies.md`
+7. `hilt-in-production.md`
+8. `dagger-and-component-graph.md`
+9. `service-locator-and-anti-patterns.md`
+10. `modularization-strategies.md`
+11. `feature-modules-and-boundaries.md`
+12. `state-management-and-ssot.md`
+13. `offline-first-and-sync.md`
+14. `caching-and-pagination-architecture.md`
+15. `reactive-architecture-with-flows.md`
+16. `ui-state-and-event-modeling.md`
+17. `navigation-and-deep-link-architecture.md`
+18. `testing-architecture-and-testability.md`
+19. `scalability-and-team-topologies.md`
+20. `production-tradeoffs-and-decision-making.md`
+
+**Total:** 50 Architecture questions -> 20 Architecture deep dives
+---
 ## Link Convention (Important)
 Use site route links in YAML:
 ```yaml
@@ -141,9 +171,11 @@ Implemented globally:
 | Fundamentals YAML | ✅ complete |
 | Kotlin YAML | ✅ complete |
 | Compose YAML | ✅ complete |
+| Architecture YAML | ✅ complete |
 | Fundamentals deep dives | ✅ complete |
 | Kotlin deep dives | ✅ complete |
 | Compose mapping doc | ✅ complete |
+| Architecture mapping doc | ✅ complete |
 | Generated docs pages | ✅ generated |
 | Combined question index (`ALL_QUESTIONS.md`) | ✅ updated |
 ---

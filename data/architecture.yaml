@@ -1,26 +1,950 @@
 questions:
-  - id: sample-question
-
-    title: Sample Question
-
+  - id: mvvm-basics
+    title: What is MVVM in Android architecture?
     difficulty: beginner
-
     tags:
+      - architecture
+      - mvvm
       - android
+    standard_answer: |
+      MVVM separates UI rendering from business/data orchestration.
 
-    standard_answer: >
-      Add a short answer here.
+      Typical split:
 
-    detailed_explanation: |
-      Add detailed explanation here.
+      - View: renders state and forwards user actions
+      - ViewModel: exposes lifecycle-aware UI state
+      - Repository: abstracts data access
 
-    internals: |
-      Add framework internals here.
+      Why teams use it:
 
-    followups:
-      - question: Sample follow-up?
-        answer: Sample answer.
+      - better testability
+      - cleaner separation of concerns
+      - easier lifecycle-safe state handling
+    deep_dive: /android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/
 
-    traps:
-      - title: Common trap
-        content: Add interviewer trap here.
+  - id: viewmodel-role
+    title: What is the role of a ViewModel in scalable Android apps?
+    difficulty: beginner
+    tags:
+      - architecture
+      - viewmodel
+      - state
+    standard_answer: |
+      ViewModel owns screen-level state and survives configuration changes.
+
+      Key responsibilities:
+
+      - transform domain data into UI-friendly state
+      - coordinate use cases/repositories
+      - expose immutable observable state
+      - handle user intents/events
+
+      It should avoid direct Android UI references.
+    deep_dive: /android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/
+
+  - id: savedstatehandle-usage
+    title: When should you use SavedStateHandle in architecture design?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - viewmodel
+      - state
+    standard_answer: |
+      Use `SavedStateHandle` for small, restorable screen state
+      tied to process recreation.
+
+      Good candidates:
+
+      - selected tab/index
+      - filter/sort selection
+      - lightweight form progress
+
+      Avoid storing large objects or domain caches in it.
+    deep_dive: /android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/
+
+  - id: mvi-what-is
+    title: What is MVI architecture?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - mvi
+      - state
+    standard_answer: |
+      MVI models UI as a loop: intent -> reducer -> new immutable state.
+
+      Core benefits:
+
+      - predictable state transitions
+      - easier debugging/time-travel style reasoning
+      - explicit event handling contract
+
+      Tradeoff: can introduce boilerplate if over-applied.
+    deep_dive: /android-interview-prep/deep-dives/architecture/mvi-and-udf/
+
+  - id: mvi-vs-mvvm
+    title: MVVM vs MVI - how do you choose?
+    difficulty: senior
+    tags:
+      - architecture
+      - mvvm
+      - mvi
+    standard_answer: |
+      Choose by complexity and team needs, not trend preference.
+
+      MVVM:
+
+      - lower ceremony
+      - common Android default
+
+      MVI:
+
+      - stronger state/event determinism
+      - better for complex interaction-heavy screens
+
+      Many teams use MVVM + UDF patterns as a middle ground.
+    deep_dive: /android-interview-prep/deep-dives/architecture/mvi-and-udf/
+
+  - id: udf-principles
+    title: What are the key principles of Unidirectional Data Flow?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - udf
+      - state
+    standard_answer: |
+      UDF means state flows down, events flow up.
+
+      Interview-ready points:
+
+      - single source of truth for screen state
+      - immutable state exposure
+      - explicit intent/event handlers
+      - deterministic state transitions
+
+      This reduces hidden mutation bugs.
+    deep_dive: /android-interview-prep/deep-dives/architecture/mvi-and-udf/
+
+  - id: clean-architecture-overview
+    title: What is Clean Architecture in Android?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - clean-architecture
+      - layers
+    standard_answer: |
+      Clean Architecture organizes code by responsibility and dependency direction.
+
+      Typical layers:
+
+      - presentation
+      - domain
+      - data
+
+      Main rule: inner layers should not depend on outer framework details.
+    deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
+
+  - id: layer-dependency-rule
+    title: What is the dependency rule in layered architecture?
+    difficulty: senior
+    tags:
+      - architecture
+      - clean-architecture
+      - dependency-inversion
+    standard_answer: |
+      Dependencies must point inward toward stable policy layers.
+
+      Practical implications:
+
+      - UI depends on domain contracts
+      - data implements domain abstractions
+      - domain avoids Android/framework types
+
+      This improves portability and test isolation.
+    deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
+
+  - id: dependency-inversion-android
+    title: How does dependency inversion apply to Android app architecture?
+    difficulty: senior
+    tags:
+      - architecture
+      - solid
+      - dependency-inversion
+    standard_answer: |
+      High-level policies should depend on abstractions, not concrete SDK/data details.
+
+      In Android this usually means:
+
+      - domain uses interfaces
+      - data/network/db implement those interfaces
+      - DI wires concrete implementations
+
+      It keeps business logic resilient to infrastructure changes.
+    deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
+
+  - id: repository-pattern-purpose
+    title: Why use the Repository pattern?
+    difficulty: beginner
+    tags:
+      - architecture
+      - repository
+      - data
+    standard_answer: |
+      Repository abstracts data origin and provides a clean API to higher layers.
+
+      Benefits:
+
+      - decouples UI/domain from network/db details
+      - centralizes data policies
+      - simplifies testing with fakes
+      - enables caching/sync orchestration
+    deep_dive: /android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/
+
+  - id: repository-single-source-truth
+    title: How does a repository support a Single Source of Truth model?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - repository
+      - state
+    standard_answer: |
+      Repository enforces one authoritative read path for consumers.
+
+      Common approach:
+
+      - local DB is canonical source
+      - network refresh updates DB
+      - UI observes DB-backed streams
+
+      This avoids competing data sources in UI.
+    deep_dive: /android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/
+
+  - id: multiple-data-sources-orchestration
+    title: How should repositories orchestrate network, cache, and database sources?
+    difficulty: senior
+    tags:
+      - architecture
+      - repository
+      - caching
+    standard_answer: |
+      Define explicit policies for freshness, fallback, and write ordering.
+
+      Typical strategy:
+
+      - read local first
+      - fetch remote by staleness rules
+      - merge/validate payload
+      - persist then emit
+
+      Keep these rules in repository, not UI.
+    deep_dive: /android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/
+
+  - id: use-case-purpose
+    title: What problem do use cases solve in architecture?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - use-cases
+      - domain
+    standard_answer: |
+      Use cases encapsulate business actions independent of UI and data frameworks.
+
+      They help by:
+
+      - isolating domain logic
+      - improving reuse across screens
+      - making behavior unit-testable
+      - reducing ViewModel complexity
+    deep_dive: /android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/
+
+  - id: use-case-granularity
+    title: How granular should use cases be?
+    difficulty: senior
+    tags:
+      - architecture
+      - use-cases
+      - design
+    standard_answer: |
+      Use cases should represent coherent business actions, not tiny wrappers.
+
+      Guidance:
+
+      - too coarse: hard to compose/test
+      - too fine: boilerplate and indirection
+      - optimize for domain clarity and change boundaries
+
+      Granularity is a context-based design decision.
+    deep_dive: /android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/
+
+  - id: domain-layer-when-to-add
+    title: When is a dedicated domain layer worth adding?
+    difficulty: senior
+    tags:
+      - architecture
+      - domain
+      - clean-architecture
+    standard_answer: |
+      Add domain layer when business rules are non-trivial or reused.
+
+      Signals:
+
+      - multiple features share logic
+      - policies outgrow ViewModels
+      - testability/portability requirements increase
+
+      For simple apps, extra layers can be unnecessary overhead.
+    deep_dive: /android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/
+
+  - id: dependency-injection-what-why
+    title: Why is dependency injection important in Android architecture?
+    difficulty: beginner
+    tags:
+      - architecture
+      - di
+      - testability
+    standard_answer: |
+      DI manages object creation/wiring outside business logic.
+
+      Benefits:
+
+      - loose coupling
+      - easier testing with fakes/mocks
+      - centralized lifecycle/scope control
+      - clearer dependency graph at scale
+    deep_dive: /android-interview-prep/deep-dives/architecture/dependency-injection-strategies/
+
+  - id: constructor-injection-vs-field-injection
+    title: Constructor injection vs field injection - which is preferred?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - di
+      - design
+    standard_answer: |
+      Constructor injection is usually preferred.
+
+      Reasons:
+
+      - explicit required dependencies
+      - easier immutable object design
+      - better unit-test ergonomics
+
+      Field injection is useful in framework-controlled classes but less explicit.
+    deep_dive: /android-interview-prep/deep-dives/architecture/dependency-injection-strategies/
+
+  - id: di-scope-management
+    title: How do DI scopes affect memory and lifecycle behavior?
+    difficulty: senior
+    tags:
+      - architecture
+      - di
+      - lifecycle
+    standard_answer: |
+      Scopes define object lifetime and reuse boundaries.
+
+      Mis-scoping can cause:
+
+      - leaks (too long-lived)
+      - churn/perf cost (too short-lived)
+      - inconsistent shared state
+
+      Align scopes with Activity/Fragment/ViewModel/app lifetimes.
+    deep_dive: /android-interview-prep/deep-dives/architecture/dependency-injection-strategies/
+
+  - id: hilt-benefits
+    title: What architectural advantages does Hilt provide?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - hilt
+      - di
+    standard_answer: |
+      Hilt standardizes DI setup for Android component lifecycles.
+
+      Key advantages:
+
+      - less boilerplate than manual Dagger setup
+      - predefined component hierarchy
+      - easier onboarding and consistency
+      - strong integration with ViewModel/WorkManager
+    deep_dive: /android-interview-prep/deep-dives/architecture/hilt-in-production/
+
+  - id: hilt-component-lifetimes
+    title: What Hilt component lifetimes should senior engineers know?
+    difficulty: senior
+    tags:
+      - architecture
+      - hilt
+      - lifecycle
+    standard_answer: |
+      Senior interviews expect understanding of scope boundaries.
+
+      Common lifetimes:
+
+      - SingletonComponent: app-wide
+      - ActivityRetainedComponent: across config changes
+      - ViewModelComponent: ViewModel lifetime
+      - Activity/Fragment components: UI-bound
+
+      Wrong scope choices create subtle bugs.
+    deep_dive: /android-interview-prep/deep-dives/architecture/hilt-in-production/
+
+  - id: dagger-vs-hilt
+    title: Dagger vs Hilt - what is the architectural tradeoff?
+    difficulty: senior
+    tags:
+      - architecture
+      - dagger
+      - hilt
+    standard_answer: |
+      Hilt is Dagger with Android-focused conventions and generated glue code.
+
+      Tradeoff framing:
+
+      - Hilt: faster setup, consistent patterns
+      - raw Dagger: maximum graph/control flexibility
+
+      Choose based on customization needs and team productivity.
+    deep_dive: /android-interview-prep/deep-dives/architecture/dagger-and-component-graph/
+
+  - id: dagger-component-subcomponent
+    title: What should you understand about Dagger components and subcomponents?
+    difficulty: senior
+    tags:
+      - architecture
+      - dagger
+      - di
+    standard_answer: |
+      Components define object graph roots; subcomponents model child lifecycles.
+
+      Important points:
+
+      - parent can provide bindings to child
+      - child can narrow scope/lifetime
+      - graph shape affects compilation and maintainability
+
+      Avoid overly complex graph hierarchies.
+    deep_dive: /android-interview-prep/deep-dives/architecture/dagger-and-component-graph/
+
+  - id: dagger-performance-tradeoffs
+    title: What are Dagger/Hilt build and runtime tradeoffs at scale?
+    difficulty: staff
+    tags:
+      - architecture
+      - dagger
+      - scalability
+    standard_answer: |
+      DI frameworks improve structure but add compile-time and graph complexity costs.
+
+      Staff-level concerns:
+
+      - annotation processing build impact
+      - module graph growth over time
+      - debugging generated binding errors
+      - balancing explicitness vs velocity
+    deep_dive: /android-interview-prep/deep-dives/architecture/dagger-and-component-graph/
+
+  - id: service-locator-what-is
+    title: What is a Service Locator pattern?
+    difficulty: beginner
+    tags:
+      - architecture
+      - service-locator
+      - di
+    standard_answer: |
+      Service Locator is a registry that provides dependencies on demand.
+
+      It can simplify small systems but often hides real dependencies.
+
+      Interview angle:
+
+      - quick bootstrap option
+      - weaker explicitness than constructor DI
+      - can reduce testability if overused
+    deep_dive: /android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/
+
+  - id: service-locator-vs-di
+    title: Service Locator vs DI - why does this matter in interviews?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - service-locator
+      - di
+    standard_answer: |
+      DI makes dependencies explicit in constructors; Service Locator hides them at call sites.
+
+      Consequences:
+
+      - DI is easier to reason about and test
+      - Service Locator can create implicit coupling
+      - hidden runtime failures are more likely
+
+      Prefer DI for medium/large apps.
+    deep_dive: /android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/
+
+  - id: modularization-why
+    title: Why modularize Android apps?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - modularization
+      - scalability
+    standard_answer: |
+      Modularization separates code by ownership and change boundaries.
+
+      Benefits:
+
+      - faster incremental builds
+      - clearer feature boundaries
+      - parallel team development
+      - safer refactoring and release isolation
+    deep_dive: /android-interview-prep/deep-dives/architecture/modularization-strategies/
+
+  - id: multi-module-architecture-shapes
+    title: What multi-module structures are common in Android?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - modularization
+      - multi-module
+    standard_answer: |
+      Common structures include layered modules and feature-first modules.
+
+      Typical options:
+
+      - app + core + feature modules
+      - domain/data/presentation split per feature
+      - hybrid platform modules for shared infra
+
+      Choose structure based on team and product complexity.
+    deep_dive: /android-interview-prep/deep-dives/architecture/modularization-strategies/
+
+  - id: api-vs-implementation-modules
+    title: How do API vs implementation module boundaries improve architecture?
+    difficulty: senior
+    tags:
+      - architecture
+      - modularization
+      - dependencies
+    standard_answer: |
+      Expose only stable contracts and keep internals hidden.
+
+      Benefits:
+
+      - reduced coupling and accidental usage
+      - clearer ownership contracts
+      - better compile isolation
+      - safer internal refactors
+
+      Public surface area should stay intentionally small.
+    deep_dive: /android-interview-prep/deep-dives/architecture/modularization-strategies/
+
+  - id: feature-module-boundaries
+    title: What defines a good feature module boundary?
+    difficulty: senior
+    tags:
+      - architecture
+      - feature-modules
+      - modularization
+    standard_answer: |
+      A good boundary aligns with user-facing capabilities and team ownership.
+
+      Signs of healthy boundaries:
+
+      - minimal cross-feature dependencies
+      - explicit navigation/contracts
+      - isolated tests and release paths
+      - clear domain language per feature
+    deep_dive: /android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/
+
+  - id: dynamic-feature-modules-when
+    title: When should you use dynamic feature modules?
+    difficulty: senior
+    tags:
+      - architecture
+      - feature-modules
+      - scalability
+    standard_answer: |
+      Use dynamic delivery when features are optional, heavy, or region-specific.
+
+      Tradeoffs:
+
+      - better install size/startup profile
+      - added delivery/testing complexity
+      - more runtime handling for missing modules
+
+      Evaluate product value against operational cost.
+    deep_dive: /android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/
+
+  - id: dependency-direction-between-modules
+    title: How should dependency direction work between feature modules?
+    difficulty: senior
+    tags:
+      - architecture
+      - modularization
+      - dependency-inversion
+    standard_answer: |
+      Features should depend on shared contracts, not each other's internals.
+
+      Recommended pattern:
+
+      - keep cross-feature APIs contract-driven
+      - avoid cyclic feature dependencies
+      - place shared infra in core/platform modules
+
+      This preserves build and team independence.
+    deep_dive: /android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/
+
+  - id: state-management-android-architecture
+    title: What is a strong state management approach in Android architecture?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - state
+      - ui
+    standard_answer: |
+      Keep state ownership explicit and state models immutable where possible.
+
+      Common approach:
+
+      - ViewModel owns screen state
+      - UI renders state + emits events
+      - repository/domain updates source state
+
+      Avoid scattered mutable flags across layers.
+    deep_dive: /android-interview-prep/deep-dives/architecture/state-management-and-ssot/
+
+  - id: single-source-of-truth
+    title: What does Single Source of Truth mean in practice?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - state
+      - repository
+    standard_answer: |
+      One authoritative state source should drive reads for a given data set.
+
+      In practice:
+
+      - define canonical owner (often DB-backed)
+      - route all writes through controlled paths
+      - keep projections/derived views read-only
+
+      This reduces inconsistency and race conditions.
+    deep_dive: /android-interview-prep/deep-dives/architecture/state-management-and-ssot/
+
+  - id: immutable-ui-state-models
+    title: Why model UI state as immutable data classes?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - state
+      - testability
+    standard_answer: |
+      Immutable state makes transitions explicit and easier to test.
+
+      Benefits:
+
+      - predictable rendering behavior
+      - simpler equality/change reasoning
+      - safer concurrent/reactive usage
+      - clearer reducer-style updates
+    deep_dive: /android-interview-prep/deep-dives/architecture/state-management-and-ssot/
+
+  - id: offline-first-principles
+    title: What is offline-first architecture?
+    difficulty: senior
+    tags:
+      - architecture
+      - offline-first
+      - data
+    standard_answer: |
+      Offline-first treats local storage as primary read path,
+      syncing with network opportunistically.
+
+      Core principles:
+
+      - local-first reads
+      - resilient queued writes
+      - explicit conflict policy
+      - sync observability/telemetry
+    deep_dive: /android-interview-prep/deep-dives/architecture/offline-first-and-sync/
+
+  - id: sync-strategies-pull-push
+    title: Push, pull, and hybrid sync strategies - when to use each?
+    difficulty: senior
+    tags:
+      - architecture
+      - sync
+      - offline-first
+    standard_answer: |
+      Choose strategy by freshness needs, battery budget, and backend capability.
+
+      Quick framing:
+
+      - pull: simple, periodic consistency
+      - push: lower latency updates
+      - hybrid: practical balance for many products
+
+      Design for retries and backoff from day one.
+    deep_dive: /android-interview-prep/deep-dives/architecture/offline-first-and-sync/
+
+  - id: conflict-resolution-sync
+    title: How should architecture handle sync conflicts?
+    difficulty: staff
+    tags:
+      - architecture
+      - sync
+      - data-consistency
+    standard_answer: |
+      Conflict policy must be explicit and domain-aware.
+
+      Common strategies:
+
+      - last write wins (simple, risky)
+      - version/vector based merge
+      - server-authoritative with client reconciliation
+      - user-assisted conflict resolution for critical entities
+
+      Track conflict metrics to tune policy.
+    deep_dive: /android-interview-prep/deep-dives/architecture/offline-first-and-sync/
+
+  - id: caching-strategies
+    title: What caching strategies are common in Android architecture?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - caching
+      - data
+    standard_answer: |
+      Choose cache strategy per data volatility and UX expectations.
+
+      Common options:
+
+      - memory cache for hot short-lived reads
+      - disk/DB cache for persistence
+      - TTL or staleness-based refresh
+      - cache-aside or network-bound-resource style
+    deep_dive: /android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/
+
+  - id: pagination-architecture
+    title: What does a robust pagination architecture look like?
+    difficulty: senior
+    tags:
+      - architecture
+      - pagination
+      - data
+    standard_answer: |
+      Robust pagination handles loading state, errors, deduplication, and persistence.
+
+      Must-have concerns:
+
+      - stable page keys/cursors
+      - append/prepend retry behavior
+      - local cache coherence
+      - refresh invalidation strategy
+    deep_dive: /android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/
+
+  - id: stateflow-architecture
+    title: How does StateFlow fit Android architecture design?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - stateflow
+      - reactive
+    standard_answer: |
+      `StateFlow` is a lifecycle-friendly state stream for UI layers.
+
+      Architectural usage:
+
+      - ViewModel exposes immutable `StateFlow<UiState>`
+      - UI collects and renders
+      - updates come from repository/use-case pipelines
+
+      Keep one-off events separate from persistent state.
+    deep_dive: /android-interview-prep/deep-dives/architecture/reactive-architecture-with-flows/
+
+  - id: event-handling-one-off-events
+    title: How should one-off events be handled in reactive architecture?
+    difficulty: senior
+    tags:
+      - architecture
+      - events
+      - reactive
+    standard_answer: |
+      Model state and events as different channels.
+
+      Typical pattern:
+
+      - `StateFlow` for persistent UI state
+      - `SharedFlow`/Channel for one-time events
+      - consume events with lifecycle awareness
+
+      Avoid encoding transient events as sticky state flags.
+    deep_dive: /android-interview-prep/deep-dives/architecture/reactive-architecture-with-flows/
+
+  - id: error-handling-architecture
+    title: What is a good error handling architecture for Android apps?
+    difficulty: senior
+    tags:
+      - architecture
+      - error-handling
+      - resilience
+    standard_answer: |
+      Handle errors by layer and map them to domain/UI semantics.
+
+      Recommended approach:
+
+      - classify technical vs business errors
+      - normalize in repository/domain boundaries
+      - expose user-actionable UI states
+      - log structured diagnostics for operations
+    deep_dive: /android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/
+
+  - id: retry-strategies-architecture
+    title: How do retry strategies fit architecture decisions?
+    difficulty: senior
+    tags:
+      - architecture
+      - retry
+      - resilience
+    standard_answer: |
+      Retry policy should be explicit, bounded, and context-aware.
+
+      Common rules:
+
+      - exponential backoff for transient failures
+      - idempotency awareness for writes
+      - user-driven retry for recoverable UI actions
+      - circuit-breaker style guardrails for unstable backends
+    deep_dive: /android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/
+
+  - id: ui-state-modeling-architecture
+    title: How should complex UI state be modeled architecturally?
+    difficulty: senior
+    tags:
+      - architecture
+      - ui-state
+      - state
+    standard_answer: |
+      Use explicit immutable state models with clear sub-states.
+
+      Common shape:
+
+      - loading/content/error/empty branches
+      - data payload + UI metadata
+      - separate ephemeral events
+
+      Prefer readability and deterministic transitions over cleverness.
+    deep_dive: /android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/
+
+  - id: navigation-architecture
+    title: What are key principles of navigation architecture?
+    difficulty: intermediate
+    tags:
+      - architecture
+      - navigation
+      - modularization
+    standard_answer: |
+      Navigation should use explicit destination contracts and clear ownership.
+
+      Good practices:
+
+      - central route definitions
+      - pass IDs/contracts, not large mutable objects
+      - keep navigation decisions near state owner
+      - test back stack behavior for critical flows
+    deep_dive: /android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/
+
+  - id: deep-link-architecture
+    title: How should deep links be designed in modular Android apps?
+    difficulty: senior
+    tags:
+      - architecture
+      - deep-links
+      - navigation
+    standard_answer: |
+      Treat deep links as stable external API contracts.
+
+      Architecture implications:
+
+      - central validation and parsing
+      - module-level routing boundaries
+      - auth/feature-flag gating support
+      - backward compatibility strategy
+    deep_dive: /android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/
+
+  - id: architecture-testability
+    title: How do you design Android architecture for high testability?
+    difficulty: senior
+    tags:
+      - architecture
+      - testing
+      - testability
+    standard_answer: |
+      Testability improves when dependencies and state transitions are explicit.
+
+      Design choices:
+
+      - constructor-injected abstractions
+      - pure use-case logic where possible
+      - deterministic state reducers
+      - contract tests at module boundaries
+    deep_dive: /android-interview-prep/deep-dives/architecture/testing-architecture-and-testability/
+
+  - id: scaling-architecture-for-team
+    title: How does architecture impact team scalability?
+    difficulty: staff
+    tags:
+      - architecture
+      - scalability
+      - team
+    standard_answer: |
+      Architecture defines ownership boundaries, release independence, and coordination cost.
+
+      Team-scale signals:
+
+      - clear module ownership
+      - low cross-team dependency hotspots
+      - predictable integration contracts
+      - standards for observability and quality gates
+    deep_dive: /android-interview-prep/deep-dives/architecture/scalability-and-team-topologies/
+
+
+  - id: architecture-governance
+    title: What is architecture governance in large Android codebases?
+    difficulty: staff
+    tags:
+      - architecture
+      - governance
+      - scalability
+    standard_answer: |
+      Governance is how teams enforce architectural direction without blocking delivery.
+
+      Typical mechanisms:
+
+      - module ownership model
+      - ADRs and decision logs
+      - lint/static checks for boundaries
+      - review standards and architecture forums
+    deep_dive: /android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/
+
+  - id: production-architecture-tradeoffs
+    title: How should senior engineers discuss architecture tradeoffs in interviews?
+    difficulty: senior
+    tags:
+      - architecture
+      - tradeoffs
+      - senior
+    standard_answer: |
+      Frame tradeoffs by context, constraints, and measurable outcomes.
+
+      Strong answer structure:
+
+      - what problem and constraints existed
+      - options considered
+      - decision and rationale
+      - risks/mitigations
+      - follow-up metrics and iteration
+
+      Avoid presenting architecture as one-size-fits-all.
+    deep_dive: /android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/
