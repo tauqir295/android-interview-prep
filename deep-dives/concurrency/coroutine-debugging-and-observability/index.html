@@ -860,10 +860,14 @@ Attach identifiers at coroutine launch and preserve them through <code>withConte
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How do you trace a coroutine across dispatcher switches?</li>
-<li>What should be logged on cancellation?</li>
-<li>Why are coroutine names useful in production?</li>
-<li>How do you observe Flow bottlenecks end-to-end?</li>
+<li><strong>Q:</strong> How do you trace a coroutine across dispatcher switches?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What should be logged on cancellation?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> Why are coroutine names useful in production?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> How do you observe Flow bottlenecks end-to-end?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

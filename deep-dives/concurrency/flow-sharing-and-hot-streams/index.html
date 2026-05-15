@@ -855,10 +855,14 @@ Using <code>WhileSubscribed</code> can reduce wasted work in UI-driven contexts.
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When should you use <code>stateIn</code> vs <code>shareIn</code>?</li>
-<li>What replay value should be used for one-off events?</li>
-<li>How can sharing leak work in long-lived scopes?</li>
-<li>Why can <code>WhileSubscribed</code> improve battery/network usage?</li>
+<li><strong>Q:</strong> When should you use <code>stateIn</code> vs <code>shareIn</code>?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> What replay value should be used for one-off events?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How can sharing leak work in long-lived scopes?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> Why can <code>WhileSubscribed</code> improve battery/network usage?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

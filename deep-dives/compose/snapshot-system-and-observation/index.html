@@ -885,10 +885,14 @@ snapshot views and writes are applied through controlled transactions.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How does Compose know what to invalidate?</li>
-<li>Is snapshot state thread-safe by default in all scenarios?</li>
-<li>Why can mutating nested mutable objects fail to update UI?</li>
-<li>When should you use <code>snapshotFlow</code>?</li>
+<li><strong>Q:</strong> How does Compose know what to invalidate?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> Is snapshot state thread-safe by default in all scenarios?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> Why can mutating nested mutable objects fail to update UI?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
+<li><strong>Q:</strong> When should you use <code>snapshotFlow</code>?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

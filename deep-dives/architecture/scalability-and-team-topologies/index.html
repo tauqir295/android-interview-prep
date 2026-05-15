@@ -877,10 +877,14 @@ usually fail at scale.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How does architecture reduce cross-team blocking?</li>
-<li>What boundaries should a platform team own?</li>
-<li>How do you measure architecture scalability?</li>
-<li>How do you evolve ownership during re-orgs?</li>
+<li><strong>Q:</strong> How does architecture reduce cross-team blocking?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What boundaries should a platform team own?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How do you measure architecture scalability?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How do you evolve ownership during re-orgs?
+  <strong>A:</strong> Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

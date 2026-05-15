@@ -875,10 +875,14 @@ schedule recomposition safely.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why does Compose prefer immutable UI models?</li>
-<li>When does <code>remember</code> lose state?</li>
-<li>How does <code>rememberSaveable</code> decide what can be saved?</li>
-<li>What are key-related state bugs in dynamic lists?</li>
+<li><strong>Q:</strong> Why does Compose prefer immutable UI models?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> When does <code>remember</code> lose state?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> How does <code>rememberSaveable</code> decide what can be saved?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> What are key-related state bugs in dynamic lists?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

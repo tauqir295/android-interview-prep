@@ -909,9 +909,12 @@
 <hr />
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why avoid long work in <code>onReceive()</code>?</li>
-<li>Static vs dynamic registration differences?</li>
-<li>How Android 8+ changed implicit broadcast behavior?</li>
+<li><strong>Q:</strong> Why avoid long work in <code>onReceive()</code>?
+  <strong>A:</strong> Answer with Android lifecycle and platform constraints first, then API behavior, and finally the production tradeoffs around reliability and user impact.</li>
+<li><strong>Q:</strong> Static vs dynamic registration differences?
+  <strong>A:</strong> Answer with Android lifecycle and platform constraints first, then API behavior, and finally the production tradeoffs around reliability and user impact.</li>
+<li><strong>Q:</strong> How Android 8+ changed implicit broadcast behavior?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
 </ul>
 <hr />
 <h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>

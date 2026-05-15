@@ -853,9 +853,12 @@ triggers recomposition scheduling.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>collectAsState</code> vs <code>collectAsStateWithLifecycle</code>?</li>
-<li>How to model one-time events safely?</li>
-<li>Why use <code>snapshotFlow</code>?</li>
+<li><strong>Q:</strong> <code>collectAsState</code> vs <code>collectAsStateWithLifecycle</code>?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How to model one-time events safely?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
+<li><strong>Q:</strong> Why use <code>snapshotFlow</code>?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

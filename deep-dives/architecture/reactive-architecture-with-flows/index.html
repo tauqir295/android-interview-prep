@@ -881,10 +881,14 @@ state propagation across layers.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>StateFlow</code> vs <code>SharedFlow</code> for UI architecture?</li>
-<li>Where should operators live: UI, ViewModel, or domain?</li>
-<li>How do you prevent duplicate collectors and wasted work?</li>
-<li>How do you model retries in stream pipelines?</li>
+<li><strong>Q:</strong> <code>StateFlow</code> vs <code>SharedFlow</code> for UI architecture?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> Where should operators live: UI, ViewModel, or domain?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How do you prevent duplicate collectors and wasted work?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How do you model retries in stream pipelines?
+  <strong>A:</strong> Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

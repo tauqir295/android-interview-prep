@@ -857,10 +857,14 @@ Favor immutable emissions and centralized state reducers.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why can <code>x = x + 1</code> fail under concurrency?</li>
-<li>When are atomics enough, and when are they not?</li>
-<li>How does thread confinement simplify correctness?</li>
-<li>What architecture reduces race-condition surface area?</li>
+<li><strong>Q:</strong> Why can <code>x = x + 1</code> fail under concurrency?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> When are atomics enough, and when are they not?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How does thread confinement simplify correctness?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What architecture reduces race-condition surface area?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

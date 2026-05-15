@@ -855,9 +855,12 @@ updates state that immediately restarts itself.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why not launch coroutines directly in composable body?</li>
-<li>Which effect API runs after commit?</li>
-<li>How do keys impact effect restarts?</li>
+<li><strong>Q:</strong> Why not launch coroutines directly in composable body?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> Which effect API runs after commit?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
+<li><strong>Q:</strong> How do keys impact effect restarts?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

@@ -869,10 +869,14 @@ This is why cancellation knowledge is essential for Flow debugging.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What is cooperative cancellation?</li>
-<li>How does <code>async</code> differ from <code>launch</code> in error handling?</li>
-<li>When do sibling coroutines get cancelled?</li>
-<li>What does <code>CoroutineExceptionHandler</code> actually catch?</li>
+<li><strong>Q:</strong> What is cooperative cancellation?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How does <code>async</code> differ from <code>launch</code> in error handling?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> When do sibling coroutines get cancelled?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What does <code>CoroutineExceptionHandler</code> actually catch?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

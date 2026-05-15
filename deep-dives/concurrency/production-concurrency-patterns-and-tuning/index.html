@@ -857,10 +857,14 @@ scoped correctly to avoid leaks and stale collectors.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How do you prevent a coroutine fan-out storm?</li>
-<li>What metrics guide concurrency tuning?</li>
-<li>How do you balance throughput vs tail latency?</li>
-<li>Why are bounded queues safer than unbounded buffers?</li>
+<li><strong>Q:</strong> How do you prevent a coroutine fan-out storm?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What metrics guide concurrency tuning?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How do you balance throughput vs tail latency?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> Why are bounded queues safer than unbounded buffers?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

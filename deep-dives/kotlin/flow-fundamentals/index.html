@@ -848,9 +848,12 @@ Many operators are implemented as chains of suspendable transformations.</p>
 <hr />
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What does “cold” mean in Flow?</li>
-<li>How is Flow different from LiveData or Rx streams?</li>
-<li>Why is Flow sequential by default?</li>
+<li><strong>Q:</strong> What does “cold” mean in Flow?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How is Flow different from LiveData or Rx streams?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> Why is Flow sequential by default?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
 </ul>
 <hr />
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>

@@ -874,10 +874,14 @@ but it often hides coupling and weakens architectural clarity.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why is constructor DI generally preferred?</li>
-<li>Is Service Locator always an anti-pattern?</li>
-<li>How do hidden dependencies hurt testability?</li>
-<li>How would you migrate incrementally to DI?</li>
+<li><strong>Q:</strong> Why is constructor DI generally preferred?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
+<li><strong>Q:</strong> Is Service Locator always an anti-pattern?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
+<li><strong>Q:</strong> How do hidden dependencies hurt testability?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How would you migrate incrementally to DI?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

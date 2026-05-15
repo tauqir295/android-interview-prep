@@ -859,9 +859,12 @@
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How would you answer: <strong>How does SurfaceFlinger compose frames?</strong>?</li>
-<li>How would you answer: <strong>How does Perfetto capture low-overhead traces?</strong>?</li>
-<li>How would you answer: <strong>What hardening checks belong before release?</strong>?</li>
+<li><strong>Q:</strong> How does SurfaceFlinger compose frames?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> How does Perfetto capture low-overhead traces?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What hardening checks belong before release?
+  <strong>A:</strong> Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

@@ -851,10 +851,14 @@ It becomes lower-level machinery that coordinates with <code>Continuation</code>
 <hr />
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Does <code>suspend</code> mean background thread?</li>
-<li>What is a continuation?</li>
-<li>How are coroutines lighter than threads?</li>
-<li>What does CPS transformation mean?</li>
+<li><strong>Q:</strong> Does <code>suspend</code> mean background thread?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What is a continuation?
+  <strong>A:</strong> Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.</li>
+<li><strong>Q:</strong> How are coroutines lighter than threads?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> What does CPS transformation mean?
+  <strong>A:</strong> Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.</li>
 </ul>
 <hr />
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>

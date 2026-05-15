@@ -870,10 +870,14 @@ You still need to choose the right dispatcher for blocking or CPU-bound work.</p
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What makes Flow different from Rx streams?</li>
-<li>Why is Flow cold by default?</li>
-<li>When does a collector start executing the upstream pipeline?</li>
-<li>How does cancellation affect collection?</li>
+<li><strong>Q:</strong> What makes Flow different from Rx streams?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> Why is Flow cold by default?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> When does a collector start executing the upstream pipeline?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How does cancellation affect collection?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

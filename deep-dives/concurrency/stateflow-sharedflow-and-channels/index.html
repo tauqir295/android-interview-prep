@@ -854,10 +854,14 @@ Work-queue or request-response pipelines often map better to <code>Channel</code
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why are one-off events awkward with plain <code>StateFlow</code>?</li>
-<li>When is a <code>Channel</code> safer than <code>SharedFlow</code>?</li>
-<li>How does replay affect duplicate UI actions?</li>
-<li>How do you model state and events separately in ViewModel?</li>
+<li><strong>Q:</strong> Why are one-off events awkward with plain <code>StateFlow</code>?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> When is a <code>Channel</code> safer than <code>SharedFlow</code>?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How does replay affect duplicate UI actions?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How do you model state and events separately in ViewModel?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

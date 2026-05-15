@@ -864,10 +864,14 @@ possible to avoid lock convoy behavior.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When is <code>Mutex</code> better than <code>synchronized</code> in coroutine code?</li>
-<li>Why should lock scope be as small as possible?</li>
-<li>When should you prefer atomics over lock-based protection?</li>
-<li>How do you avoid deadlocks with multiple locks?</li>
+<li><strong>Q:</strong> When is <code>Mutex</code> better than <code>synchronized</code> in coroutine code?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> Why should lock scope be as small as possible?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> When should you prefer atomics over lock-based protection?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> How do you avoid deadlocks with multiple locks?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

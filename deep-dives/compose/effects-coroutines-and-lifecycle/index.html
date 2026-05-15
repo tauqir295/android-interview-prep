@@ -854,9 +854,12 @@ and restart for keyed effects.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>LaunchedEffect(Unit)</code> vs <code>rememberCoroutineScope</code>?</li>
-<li>How do you avoid stale lambda capture?</li>
-<li>When is cleanup guaranteed?</li>
+<li><strong>Q:</strong> <code>LaunchedEffect(Unit)</code> vs <code>rememberCoroutineScope</code>?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> How do you avoid stale lambda capture?
+  <strong>A:</strong> Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.</li>
+<li><strong>Q:</strong> When is cleanup guaranteed?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

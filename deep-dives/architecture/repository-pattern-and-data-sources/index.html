@@ -893,10 +893,14 @@ should live instead of leaking into ViewModels.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Should repositories return <code>Flow</code>, <code>suspend</code>, or both?</li>
-<li>Where should mapping happen?</li>
-<li>How do you enforce SSOT in multi-feature apps?</li>
-<li>Repository vs use case: where do rules belong?</li>
+<li><strong>Q:</strong> Should repositories return <code>Flow</code>, <code>suspend</code>, or both?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> Where should mapping happen?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How do you enforce SSOT in multi-feature apps?
+  <strong>A:</strong> Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.</li>
+<li><strong>Q:</strong> Repository vs use case: where do rules belong?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

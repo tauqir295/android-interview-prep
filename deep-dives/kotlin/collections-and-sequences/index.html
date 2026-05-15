@@ -853,9 +853,12 @@ Standard library operations still correspond to loops, lambdas, and allocated co
 <hr />
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When should you use <code>Sequence</code>?</li>
-<li>Are Kotlin collections immutable?</li>
-<li>Why can operator chains become allocation-heavy?</li>
+<li><strong>Q:</strong> When should you use <code>Sequence</code>?
+  <strong>A:</strong> Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.</li>
+<li><strong>Q:</strong> Are Kotlin collections immutable?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> Why can operator chains become allocation-heavy?
+  <strong>A:</strong> Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.</li>
 </ul>
 <hr />
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>

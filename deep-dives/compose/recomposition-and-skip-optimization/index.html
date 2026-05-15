@@ -890,10 +890,14 @@ At runtime, <code>Composer</code> evaluates whether a group can be skipped based
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What exactly triggers recomposition?</li>
-<li>Why does unstable input type hurt performance?</li>
-<li>Is recomposition the same as redraw?</li>
-<li>How do you diagnose "too much recomposition"?</li>
+<li><strong>Q:</strong> What exactly triggers recomposition?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> Why does unstable input type hurt performance?
+  <strong>A:</strong> Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.</li>
+<li><strong>Q:</strong> Is recomposition the same as redraw?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> How do you diagnose "too much recomposition"?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

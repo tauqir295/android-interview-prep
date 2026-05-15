@@ -886,10 +886,14 @@ Network becomes synchronization infrastructure, not a mandatory read dependency.
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How do you guarantee eventual consistency?</li>
-<li>When is optimistic UI unsafe?</li>
-<li>How do you avoid infinite retry loops?</li>
-<li>Where should conflict resolution policy live?</li>
+<li><strong>Q:</strong> How do you guarantee eventual consistency?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
+<li><strong>Q:</strong> When is optimistic UI unsafe?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How do you avoid infinite retry loops?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> Where should conflict resolution policy live?
+  <strong>A:</strong> Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

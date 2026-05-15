@@ -859,10 +859,14 @@ Heavy mapping should happen upstream before reaching renderer-level collectors.<
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What does "main-safe" mean in practice?</li>
-<li>Why should callers not care which dispatcher a repository uses?</li>
-<li>How do main-thread violations lead to ANRs?</li>
-<li>How does lifecycle cancellation reduce stale UI updates?</li>
+<li><strong>Q:</strong> What does "main-safe" mean in practice?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> Why should callers not care which dispatcher a repository uses?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> How do main-thread violations lead to ANRs?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> How does lifecycle cancellation reduce stale UI updates?
+  <strong>A:</strong> Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

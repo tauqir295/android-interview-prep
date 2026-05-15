@@ -874,9 +874,12 @@ Scopes combine context plus job hierarchy rules.</p>
 <hr />
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What is the difference between scope and dispatcher?</li>
-<li>Why is <code>Dispatchers.IO</code> different from <code>Default</code>?</li>
-<li>Why is <code>GlobalScope</code> discouraged?</li>
+<li><strong>Q:</strong> What is the difference between scope and dispatcher?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> Why is <code>Dispatchers.IO</code> different from <code>Default</code>?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
+<li><strong>Q:</strong> Why is <code>GlobalScope</code> discouraged?
+  <strong>A:</strong> Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.</li>
 </ul>
 <hr />
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>

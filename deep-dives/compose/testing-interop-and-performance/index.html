@@ -852,9 +852,12 @@ issues often emerge from recomposition, layout, or draw hotspots.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What should UI tests assert in Compose?</li>
-<li>When is <code>AndroidView</code> acceptable vs technical debt?</li>
-<li>How do you triage Compose jank in production?</li>
+<li><strong>Q:</strong> What should UI tests assert in Compose?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
+<li><strong>Q:</strong> When is <code>AndroidView</code> acceptable vs technical debt?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
+<li><strong>Q:</strong> How do you triage Compose jank in production?
+  <strong>A:</strong> Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

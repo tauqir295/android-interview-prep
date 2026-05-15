@@ -882,10 +882,14 @@ then upstream refresh updates that store.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why separate one-time events from persistent state?</li>
-<li>Where should SSOT live: ViewModel or repository?</li>
-<li>How do you prevent stale state races?</li>
-<li>Is immutable state always required?</li>
+<li><strong>Q:</strong> Why separate one-time events from persistent state?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> Where should SSOT live: ViewModel or repository?
+  <strong>A:</strong> Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.</li>
+<li><strong>Q:</strong> How do you prevent stale state races?
+  <strong>A:</strong> Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.</li>
+<li><strong>Q:</strong> Is immutable state always required?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

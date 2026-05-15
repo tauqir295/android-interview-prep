@@ -856,10 +856,14 @@ Buffered chains improve throughput but may increase latency under bursts.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why does <code>collectLatest</code> cancel in-flight work?</li>
-<li>When is <code>flatMapMerge</code> better than <code>flatMapLatest</code>?</li>
-<li>What tradeoff does <code>conflate</code> make?</li>
-<li>How do you debug dropped intermediate emissions?</li>
+<li><strong>Q:</strong> Why does <code>collectLatest</code> cancel in-flight work?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> When is <code>flatMapMerge</code> better than <code>flatMapLatest</code>?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> What tradeoff does <code>conflate</code> make?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How do you debug dropped intermediate emissions?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

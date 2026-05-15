@@ -858,10 +858,14 @@ change delivery semantics and memory behavior under bursty callbacks.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why is <code>awaitClose</code> mandatory in most callback adapters?</li>
-<li>When is <code>channelFlow</code> preferred over <code>callbackFlow</code>?</li>
-<li>How do you avoid dropping critical callback events?</li>
-<li>What happens if callback thread is blocked by flow emission?</li>
+<li><strong>Q:</strong> Why is <code>awaitClose</code> mandatory in most callback adapters?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> When is <code>channelFlow</code> preferred over <code>callbackFlow</code>?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How do you avoid dropping critical callback events?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
+<li><strong>Q:</strong> What happens if callback thread is blocked by flow emission?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

@@ -855,10 +855,14 @@ need careful configuration to avoid duplicate event handling on re-entry.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why is plain <code>launch { flow.collect {} }</code> risky in Fragments?</li>
-<li>How does <code>repeatOnLifecycle</code> differ from one-time collection?</li>
-<li>How do you avoid duplicate event consumption on recreation?</li>
-<li>What should be hot vs cold in ViewModel streams?</li>
+<li><strong>Q:</strong> Why is plain <code>launch { flow.collect {} }</code> risky in Fragments?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How does <code>repeatOnLifecycle</code> differ from one-time collection?
+  <strong>A:</strong> Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.</li>
+<li><strong>Q:</strong> How do you avoid duplicate event consumption on recreation?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> What should be hot vs cold in ViewModel streams?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

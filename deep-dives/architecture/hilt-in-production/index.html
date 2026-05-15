@@ -876,10 +876,14 @@ Its value is consistency and lower setup cost across teams.</p>
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Hilt vs raw Dagger: what changes practically?</li>
-<li>Which scope should this dependency use?</li>
-<li>When do you need an entry point?</li>
-<li>How do you test Hilt-heavy modules?</li>
+<li><strong>Q:</strong> Hilt vs raw Dagger: what changes practically?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
+<li><strong>Q:</strong> Which scope should this dependency use?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> When do you need an entry point?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
+<li><strong>Q:</strong> How do you test Hilt-heavy modules?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

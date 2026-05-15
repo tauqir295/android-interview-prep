@@ -859,9 +859,12 @@
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How would you answer: <strong>How does Binder IPC work in production?</strong>?</li>
-<li>How would you answer: <strong>How does Android TLS stack integrate with apps?</strong>?</li>
-<li>How would you answer: <strong>How does StrictMode reveal internals issues?</strong>?</li>
+<li><strong>Q:</strong> How does Binder IPC work in production?
+  <strong>A:</strong> Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.</li>
+<li><strong>Q:</strong> How does Android TLS stack integrate with apps?
+  <strong>A:</strong> State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.</li>
+<li><strong>Q:</strong> How does StrictMode reveal internals issues?
+  <strong>A:</strong> Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

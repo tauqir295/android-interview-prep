@@ -860,10 +860,14 @@ Unbounded parallel <code>async</code> usage can amplify pressure on APIs/DB and 
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When is <code>launch</code> preferable to <code>async</code>?</li>
-<li>Why can forgotten <code>await()</code> hide failures?</li>
-<li>Is lazy async good by default?</li>
-<li>How do you cap parallel requests safely?</li>
+<li><strong>Q:</strong> When is <code>launch</code> preferable to <code>async</code>?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> Why can forgotten <code>await()</code> hide failures?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> Is lazy async good by default?
+  <strong>A:</strong> Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.</li>
+<li><strong>Q:</strong> How do you cap parallel requests safely?
+  <strong>A:</strong> Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>

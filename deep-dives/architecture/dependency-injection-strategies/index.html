@@ -887,10 +887,14 @@ At scale, DI quality affects reliability, testability, and developer velocity.</
 </code></pre></div>
 <h2 id="common-interview-questions">Common Interview Questions<a class="headerlink" href="#common-interview-questions" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Why is constructor injection preferred over field injection?</li>
-<li>How do you choose scope lifetimes?</li>
-<li>When is a Service Locator acceptable?</li>
-<li>How do you test graph-heavy code without brittle setup?</li>
+<li><strong>Q:</strong> Why is constructor injection preferred over field injection?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
+<li><strong>Q:</strong> How do you choose scope lifetimes?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
+<li><strong>Q:</strong> When is a Service Locator acceptable?
+  <strong>A:</strong> Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.</li>
+<li><strong>Q:</strong> How do you test graph-heavy code without brittle setup?
+  <strong>A:</strong> Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.</li>
 </ul>
 <h2 id="production-considerations">Production Considerations<a class="headerlink" href="#production-considerations" title="Permanent link">&para;</a></h2>
 <ul>
