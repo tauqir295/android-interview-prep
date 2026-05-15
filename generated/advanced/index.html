@@ -14,7 +14,7 @@
         <link rel="prev" href="../cicd/">
       
       
-        <link rel="next" href="../future-tech/">
+        <link rel="next" href="../aosp/">
       
       
         
@@ -897,10 +897,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#explain-android-background-restrictions-doze-app-standby-and-background-start-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain Android background restrictions - Doze, App Standby, and background start limits
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aosp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 AOSP Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1365,6 +1403,17 @@
     <span class="md-ellipsis">
       
         Architect Firebase offline sync; explain conflict resolution when device and cloud both write
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-android-background-restrictions-doze-app-standby-and-background-start-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain Android background restrictions - Doze, App Standby, and background start limits
       
     </span>
   </a>
@@ -2144,6 +2193,32 @@ In interviews, cover:
 Strong answer tip:
 - Explain CRDTs (conflict-free types): instead of last-write-wins, use append-only logs (all edits preserved); merge can reconcile divergent branches</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/firebase-offline-sync-and-conflicts/#advanced-30">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="explain-android-background-restrictions-doze-app-standby-and-backgroun"></div>
+
+<h2 id="explain-android-background-restrictions-doze-app-standby-and-background-start-limits">Explain Android background restrictions - Doze, App Standby, and background start limits<a class="headerlink" href="#explain-android-background-restrictions-doze-app-standby-and-background-start-limits" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">background</span>
+  <span class="question-badge question-badge--tag">doze</span>
+  <span class="question-badge question-badge--tag">workmanager</span>
+  <span class="question-badge question-badge--tag">battery</span>
+</div>
+
+<details class="question">
+<summary>View Answer</summary>
+<p>Android progressively restricts background work to reduce battery drain; understanding the exact constraints per API level is critical for reliable background execution design.
+In interviews, cover:
+- Doze mode (API 23+): when the device is stationary, unplugged, and screen off, Android disables network, wayfence alarms, and JobScheduler; apps get maintenance windows to run deferred work; FCM high-priority messages bypass Doze
+- App Standby (API 23+): apps not used recently are put in standby; their jobs run only during daily maintenance windows; active use resets the standby bucket
+- Background start restrictions (API 26+): apps in the background cannot start Activities; use Notifications with PendingIntent, they can start ForegroundService from background if targeting &lt;API31
+- Android 12 (API 31+): exact alarms require SCHEDULE_EXACT_ALARM permission; foreground service start from background is further restricted
+- WorkManager is the single correct approach for deferrable guaranteed background work; it respects Doze, uses JobScheduler on API 23+ and AlarmManager with broadcast on older, and supports constraints
+Strong answer tip:
+- distinguish: long-running active background work (media playback, navigation) belongs in a ForegroundService; deferred guaranteed work in WorkManager; high-priority data in high-priority FCM messages</p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/advanced-tradeoffs-and-interview-strategy/#explain-android-background-restrictions-doze-app-standby-and-backgroun">🚀 See Full Deep Dive</a></p>
 </details>
 
 

@@ -955,6 +955,61 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compare-datastore-vs-sharedpreferences-consistency-migration-and-threading-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare DataStore vs SharedPreferences - consistency, migration, and threading model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-room-flow-invalidation-correctness-problems-and-avoiding-over-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain Room + Flow invalidation - correctness problems and avoiding over-collection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-room-transactions-wal-mode-and-concurrency-correctness-under-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain Room transactions, WAL mode, and concurrency correctness under load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-sync-engine-design-idempotency-deduplication-and-at-least-once-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain sync engine design - idempotency, deduplication, and at-least-once semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain deletes and tombstones in offline sync - preventing resurrected data
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1113,6 +1168,33 @@
     
   
     🎓 Advanced Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aosp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧩 AOSP Internals
   
 
     
@@ -1805,6 +1887,61 @@
     <span class="md-ellipsis">
       
         How should senior engineers discuss architecture tradeoffs in interviews?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare-datastore-vs-sharedpreferences-consistency-migration-and-threading-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compare DataStore vs SharedPreferences - consistency, migration, and threading model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-room-flow-invalidation-correctness-problems-and-avoiding-over-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain Room + Flow invalidation - correctness problems and avoiding over-collection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-room-transactions-wal-mode-and-concurrency-correctness-under-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain Room transactions, WAL mode, and concurrency correctness under load
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-sync-engine-design-idempotency-deduplication-and-at-least-once-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain sync engine design - idempotency, deduplication, and at-least-once semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explain deletes and tombstones in offline sync - preventing resurrected data
       
     </span>
   </a>
@@ -3028,6 +3165,131 @@ syncing with network opportunistically.</p>
 </ul>
 <p>Avoid presenting architecture as one-size-fits-all.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/#production-architecture-tradeoffs">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="compare-datastore-vs-sharedpreferences-consistency-migration-and-threa"></div>
+
+<h2 id="compare-datastore-vs-sharedpreferences-consistency-migration-and-threading-model">Compare DataStore vs SharedPreferences - consistency, migration, and threading model<a class="headerlink" href="#compare-datastore-vs-sharedpreferences-consistency-migration-and-threading-model" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">datastore</span>
+  <span class="question-badge question-badge--tag">sharedpreferences</span>
+  <span class="question-badge question-badge--tag">persistence</span>
+</div>
+
+<details class="question">
+<summary>View Answer</summary>
+<p>DataStore replaces SharedPreferences with a fully asynchronous, coroutine-based API that uses atomic file operations to prevent partial writes and data corruption.
+In interviews, cover:
+- SharedPreferences is synchronous in commit() (ANR risk on large writes) or fire-and-forget in apply() (crash on process kill before write completes); reads are synchronous and block the calling thread if the file hasn't been loaded
+- DataStore (Preferences DataStore) exposes Flow<Preferences>; all reads and writes are non-blocking coroutine operations on an IO-backed dispatcher; no more synchronous reads on the main thread
+- Atomic writes via an atomic rename (write to temp file then rename) prevent partial write corruption — a process kill mid-write still yields the last valid file
+- Proto DataStore uses protobuf for typed key schema; Preferences DataStore uses untyped key objects; both live in a single-process single-file design (no cross-process access)
+- migration: ReplaceFileCorruptionHandler, SharedPreferencesMigration; migrate incrementally by creating DataStore with the old SP file name and letting it auto-import
+Strong answer tip:
+- never mix SharedPreferences and DataStore on the same file path; DataStore acquires a FileLock and SP does not — they will corrupt each other if both access the same file</p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#compare-datastore-vs-sharedpreferences-consistency-migration-and-threa">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="explain-room-flow-invalidation-correctness-problems-and-avoiding-over-"></div>
+
+<h2 id="explain-room-flow-invalidation-correctness-problems-and-avoiding-over-collection">Explain Room + Flow invalidation - correctness problems and avoiding over-collection<a class="headerlink" href="#explain-room-flow-invalidation-correctness-problems-and-avoiding-over-collection" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">room</span>
+  <span class="question-badge question-badge--tag">database</span>
+  <span class="question-badge question-badge--tag">flow</span>
+  <span class="question-badge question-badge--tag">invalidation</span>
+</div>
+
+<details class="question">
+<summary>View Answer</summary>
+<p>Room's Flow-based queries re-emit on every table write that affects the observed table, not just writes that change the result set — this causes unnecessary recompositions when not handled correctly.
+In interviews, cover:
+- Room Flow is backed by InvalidationTracker; any write to a table observed by a query triggers re-emission, even if the query result is identical — this can cause high-frequency re-renders on write-heavy tables
+- fix: apply distinctUntilChanged() downstream to suppress equal consecutive emissions
+- collecting inside the ViewModel using stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList()): shares the upstream database flow while there are active UI subscribers and caches the last value for 5 seconds after the last subscriber disconnects — prevents restart on rotation
+- do NOT collect Room Flow in a simple LaunchedEffect without cancellation management; the flow continues emitting even when the composable leaves composition unless the scope is tied to the composable lifecycle
+Strong answer tip:
+- benchmark with invalidation tracking disabled and enabled on a write-heavy table; the difference shows whether your architecture is over-collecting or correctly throttling</p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#explain-room-flow-invalidation-correctness-problems-and-avoiding-over-">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="explain-room-transactions-wal-mode-and-concurrency-correctness-under-l"></div>
+
+<h2 id="explain-room-transactions-wal-mode-and-concurrency-correctness-under-load">Explain Room transactions, WAL mode, and concurrency correctness under load<a class="headerlink" href="#explain-room-transactions-wal-mode-and-concurrency-correctness-under-load" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">room</span>
+  <span class="question-badge question-badge--tag">database</span>
+  <span class="question-badge question-badge--tag">transactions</span>
+  <span class="question-badge question-badge--tag">wal</span>
+  <span class="question-badge question-badge--tag">concurrency</span>
+</div>
+
+<details class="question">
+<summary>View Answer</summary>
+<p>Room uses SQLite under the hood; WAL mode allows concurrent reads while a write is in progress, but transaction boundaries and thread safety must still be managed explicitly.
+In interviews, cover:
+- @Transaction on a @Dao method executes the body inside a single SQL transaction; required for multi-table writes that must be atomic (e.g. insert order + insert items in one atomic operation)
+- WAL (Write-Ahead Logging): readers do not block writers and writers do not block readers in WAL mode; Room enables WAL by default since version 2.4; improves throughput on read-heavy workloads
+- concurrency: Room queues writes on a single-threaded executor by default; multiple coroutines doing concurrent writes will serialize; for high write throughput, design batched inserts rather than many small single-row writes
+- never use @Transaction with very long-running operations (network calls, slow computations) — this holds an exclusive write lock and starves reads
+Strong answer tip:
+- test with Room's testing support: RoomDatabase.inMemoryDatabaseBuilder() combined with a custom QueryCallback to assert the SQL generated by your DAO matches expected index usage</p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#explain-room-transactions-wal-mode-and-concurrency-correctness-under-l">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="explain-sync-engine-design-idempotency-deduplication-and-at-least-once"></div>
+
+<h2 id="explain-sync-engine-design-idempotency-deduplication-and-at-least-once-semantics">Explain sync engine design - idempotency, deduplication, and at-least-once semantics<a class="headerlink" href="#explain-sync-engine-design-idempotency-deduplication-and-at-least-once-semantics" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">sync</span>
+  <span class="question-badge question-badge--tag">offline</span>
+  <span class="question-badge question-badge--tag">idempotency</span>
+</div>
+
+<details class="question">
+<summary>View Answer</summary>
+<p>A robust sync engine guarantees that every user action eventually reaches the server exactly once — achieved through idempotent operations, at-least-once delivery with server-side deduplication.
+In interviews, cover:
+- at-least-once delivery: the client retries until it receives a server acknowledgement; the server must deduplicate to prevent double application of the operation
+- idempotency key: each client-generated operation carries a UUID; the server stores processed IDs and rejects re-submissions without error (returns the original response)
+- outbox pattern: write operations go to a local outbox table first (atomic with the UI change); WorkManager drains the outbox; on 2xx response, delete the outbox row; on retryable error, backoff and retry; on permanent failure, tombstone the row and surface to UX
+- deduplication window: server must retain idempotency keys for at least the maximum expected retry window (typically 7–30 days)
+Strong answer tip:
+- ordering matters for operations that depend on each other (e.g. create comment requires post to exist first); tag operations with a dependency chain and ensure the drainer respects it</p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#explain-sync-engine-design-idempotency-deduplication-and-at-least-once">🚀 See Full Deep Dive</a></p>
+</details>
+<hr />
+<div id="explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-"></div>
+
+<h2 id="explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-data">Explain deletes and tombstones in offline sync - preventing resurrected data<a class="headerlink" href="#explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-data" title="Permanent link">&para;</a></h2>
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">sync</span>
+  <span class="question-badge question-badge--tag">offline</span>
+  <span class="question-badge question-badge--tag">tombstones</span>
+  <span class="question-badge question-badge--tag">conflict-resolution</span>
+</div>
+
+<details class="question">
+<summary>View Answer</summary>
+<p>In offline-first apps, deleting a record locally then syncing risks the delete being lost if another device re-syncs the same record after the delete — tombstones prevent this resurrection.
+In interviews, cover:
+- resurrection problem: client A deletes record; client B (offline) has the record; client B comes online and upserts the record — without a tombstone, the record reappears on client A after next sync
+- tombstone: a deleted_at timestamp replaces the full delete; the sync layer treats records with deleted_at set as soft-deleted; all clients respect deleted_at and hide the record
+- garbage collection: tombstones must be retained for the maximum expected offline window (e.g. 30 days); after that, hard-delete the tombstone and the record permanently
+- conflict resolution: if both a delete and an update arrive for the same record, last-writer-wins is dangerous; prefer explicit policy — e.g. update wins over delete (data preservation) or delete wins over update (GDPR compliance)
+Strong answer tip:
+- for GDPR right-to-erasure compliance, hard deletion must be certain; log the deletion event, replicate it to all downstream stores, and verify through compliance audit that no copies remain in backups or caches</p>
+<p><a class="question-dive-link" href="/android-interview-prep/deep-dives/architecture/clean-architecture-layering/#explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-">🚀 See Full Deep Dive</a></p>
 </details>
 
 

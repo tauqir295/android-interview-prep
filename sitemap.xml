@@ -125,6 +125,38 @@
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/ams-and-process-lifecycle/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/binder-ipc-and-threading/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/boot-init-and-system-server/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/memory-gc-and-scheduler-behavior/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/power-background-execution-and-jobs/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/security-selinux-and-sandboxing/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/windowmanager-surfaceflinger-render-pipeline/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/aosp/zygote-art-and-app-startup/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
          <loc>https://tauqir295.github.io/android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
@@ -1122,6 +1154,10 @@
     </url>
     <url>
          <loc>https://tauqir295.github.io/android-interview-prep/generated/advanced/</loc>
+         <lastmod>2026-05-15</lastmod>
+    </url>
+    <url>
+         <loc>https://tauqir295.github.io/android-interview-prep/generated/aosp/</loc>
          <lastmod>2026-05-15</lastmod>
     </url>
     <url>
