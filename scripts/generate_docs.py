@@ -2,6 +2,7 @@ import yaml
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from collections import Counter, OrderedDict
+import re
 
 DATA_DIR = Path("data")
 DOCS_DIR = Path("docs/generated")
@@ -39,6 +40,50 @@ env = Environment(
 )
 
 template = env.get_template("category.md.j2")
+
+
+def normalize_answer_spacing(answer: str) -> str:
+    if not answer:
+        return answer
+
+    lines = answer.splitlines()
+    out: list[str] = []
+
+    def is_markdown_list_item(value: str) -> bool:
+        return value.startswith("- ") or re.match(r"^\d+\.\s+", value) is not None
+
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+
+        # Ensure a visual break before section-like labels ending with ':'.
+        if stripped.endswith(":") and not stripped.startswith("- ") and out and out[-1].strip() != "":
+            out.append("")
+
+        # Ensure a visual break before markdown lists (ordered/unordered).
+        if is_markdown_list_item(stripped) and out and out[-1].strip() != "":
+            out.append("")
+
+        out.append(line)
+
+        # Ensure a visual break after section-like labels ending with ':'.
+        if stripped.endswith(":") and not stripped.startswith("- "):
+            next_stripped = lines[idx + 1].strip() if idx + 1 < len(lines) else ""
+            if is_markdown_list_item(next_stripped):
+                out.append("")
+
+    # Collapse consecutive blank lines to one.
+    collapsed: list[str] = []
+    blank = False
+    for line in out:
+        if line.strip() == "":
+            if blank:
+                continue
+            blank = True
+        else:
+            blank = False
+        collapsed.append(line)
+
+    return "\n".join(collapsed)
 
 
 def titleize_slug(slug: str) -> str:
@@ -156,9 +201,14 @@ for yaml_file in DATA_DIR.glob("*.yaml"):
 
     category_name = yaml_file.stem
 
+    questions = data.get("questions", [])
+    for q in questions:
+        if isinstance(q.get("standard_answer"), str):
+            q["standard_answer"] = normalize_answer_spacing(q["standard_answer"])
+
     rendered = template.render(
         category_title=category_name.replace("-", " ").title(),
-        questions=data.get("questions", [])
+        questions=questions
     )
 
     output_file = DOCS_DIR / f"{category_name}.md"

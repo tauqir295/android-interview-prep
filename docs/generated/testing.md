@@ -56,9 +56,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:
@@ -88,9 +92,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:
@@ -120,9 +128,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:
@@ -152,9 +164,13 @@ hide:
     In interviews, cover:
 
     - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+
     - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+
     - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+
     - assert business rules and branching decisions, not the private implementation details used to reach them
+
     - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
 
     Strong answer tip:
@@ -184,9 +200,13 @@ hide:
     In interviews, cover:
 
     - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+
     - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+
     - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+
     - assert business rules and branching decisions, not the private implementation details used to reach them
+
     - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
 
     Strong answer tip:
@@ -216,9 +236,13 @@ hide:
     In interviews, cover:
 
     - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+
     - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+
     - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+
     - assert business rules and branching decisions, not the private implementation details used to reach them
+
     - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
 
     Strong answer tip:
@@ -248,9 +272,13 @@ hide:
     In interviews, cover:
 
     - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+
     - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+
     - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+
     - assert business rules and branching decisions, not the private implementation details used to reach them
+
     - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
 
     Strong answer tip:
@@ -280,9 +308,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:
@@ -312,9 +344,13 @@ hide:
     In interviews, cover:
 
     - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+
     - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+
     - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+
     - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+
     - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
 
     Strong answer tip:
@@ -344,9 +380,13 @@ hide:
     In interviews, cover:
 
     - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+
     - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+
     - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+
     - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+
     - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
 
     Strong answer tip:
@@ -376,9 +416,13 @@ hide:
     In interviews, cover:
 
     - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+
     - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+
     - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+
     - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+
     - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
 
     Strong answer tip:
@@ -408,9 +452,13 @@ hide:
     In interviews, cover:
 
     - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+
     - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+
     - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+
     - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+
     - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
 
     Strong answer tip:
@@ -440,9 +488,13 @@ hide:
     In interviews, cover:
 
     - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+
     - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+
     - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+
     - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+
     - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
 
     Strong answer tip:
@@ -472,9 +524,13 @@ hide:
     In interviews, cover:
 
     - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+
     - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+
     - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+
     - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+
     - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
 
     Strong answer tip:
@@ -504,9 +560,13 @@ hide:
     In interviews, cover:
 
     - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+
     - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+
     - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+
     - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+
     - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
 
     Strong answer tip:
@@ -536,9 +596,13 @@ hide:
     In interviews, cover:
 
     - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+
     - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+
     - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+
     - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+
     - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
 
     Strong answer tip:
@@ -568,9 +632,13 @@ hide:
     In interviews, cover:
 
     - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+
     - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+
     - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+
     - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+
     - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
 
     Strong answer tip:
@@ -600,9 +668,13 @@ hide:
     In interviews, cover:
 
     - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+
     - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+
     - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+
     - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+
     - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
 
     Strong answer tip:
@@ -632,9 +704,13 @@ hide:
     In interviews, cover:
 
     - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+
     - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+
     - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+
     - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+
     - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
 
     Strong answer tip:
@@ -664,9 +740,13 @@ hide:
     In interviews, cover:
 
     - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+
     - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+
     - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+
     - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+
     - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
 
     Strong answer tip:
@@ -696,9 +776,13 @@ hide:
     In interviews, cover:
 
     - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+
     - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+
     - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+
     - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+
     - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
 
     Strong answer tip:
@@ -728,9 +812,13 @@ hide:
     In interviews, cover:
 
     - use in-memory Room databases for fast repository and DAO validation when persistence fidelity beyond process lifetime is unnecessary
+
     - write migration tests from real historical schemas so destructive upgrade mistakes are caught before release
+
     - verify data preservation, default values, index creation, and backfill logic, not just that the migration technically runs
+
     - exercise realistic edge rows such as nullables, old enums, and partially populated legacy data
+
     - keep migration ownership explicit because schema changes often outlive the engineer who made them
 
     Strong answer tip:
@@ -760,9 +848,13 @@ hide:
     In interviews, cover:
 
     - use in-memory Room databases for fast repository and DAO validation when persistence fidelity beyond process lifetime is unnecessary
+
     - write migration tests from real historical schemas so destructive upgrade mistakes are caught before release
+
     - verify data preservation, default values, index creation, and backfill logic, not just that the migration technically runs
+
     - exercise realistic edge rows such as nullables, old enums, and partially populated legacy data
+
     - keep migration ownership explicit because schema changes often outlive the engineer who made them
 
     Strong answer tip:
@@ -792,9 +884,13 @@ hide:
     In interviews, cover:
 
     - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+
     - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+
     - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+
     - assert business rules and branching decisions, not the private implementation details used to reach them
+
     - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
 
     Strong answer tip:
@@ -824,9 +920,13 @@ hide:
     In interviews, cover:
 
     - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+
     - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+
     - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+
     - assert business rules and branching decisions, not the private implementation details used to reach them
+
     - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
 
     Strong answer tip:
@@ -856,9 +956,13 @@ hide:
     In interviews, cover:
 
     - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+
     - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+
     - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+
     - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+
     - use retries sparingly and only as incident containment while the root cause is actively being removed
 
     Strong answer tip:
@@ -888,9 +992,13 @@ hide:
     In interviews, cover:
 
     - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+
     - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+
     - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+
     - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+
     - use retries sparingly and only as incident containment while the root cause is actively being removed
 
     Strong answer tip:
@@ -920,9 +1028,13 @@ hide:
     In interviews, cover:
 
     - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+
     - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+
     - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+
     - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+
     - run these suites where the signal justifies the cost; they are powerful but not cheap
 
     Strong answer tip:
@@ -952,9 +1064,13 @@ hide:
     In interviews, cover:
 
     - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+
     - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+
     - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+
     - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+
     - run these suites where the signal justifies the cost; they are powerful but not cheap
 
     Strong answer tip:
@@ -984,9 +1100,13 @@ hide:
     In interviews, cover:
 
     - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+
     - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+
     - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+
     - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+
     - run these suites where the signal justifies the cost; they are powerful but not cheap
 
     Strong answer tip:
@@ -1016,9 +1136,13 @@ hide:
     In interviews, cover:
 
     - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+
     - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+
     - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+
     - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+
     - run these suites where the signal justifies the cost; they are powerful but not cheap
 
     Strong answer tip:
@@ -1048,9 +1172,13 @@ hide:
     In interviews, cover:
 
     - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+
     - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+
     - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+
     - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+
     - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
 
     Strong answer tip:
@@ -1080,9 +1208,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:
@@ -1112,9 +1244,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1144,9 +1280,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1176,9 +1316,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1208,9 +1352,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1240,9 +1388,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1272,9 +1424,13 @@ hide:
     In interviews, cover:
 
     - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+
     - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+
     - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+
     - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+
     - run these suites where the signal justifies the cost; they are powerful but not cheap
 
     Strong answer tip:
@@ -1304,9 +1460,13 @@ hide:
     In interviews, cover:
 
     - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+
     - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+
     - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+
     - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+
     - use retries sparingly and only as incident containment while the root cause is actively being removed
 
     Strong answer tip:
@@ -1336,9 +1496,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1368,9 +1532,13 @@ hide:
     In interviews, cover:
 
     - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+
     - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+
     - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+
     - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+
     - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
 
     Strong answer tip:
@@ -1400,9 +1568,13 @@ hide:
     In interviews, cover:
 
     - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+
     - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+
     - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+
     - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+
     - use retries sparingly and only as incident containment while the root cause is actively being removed
 
     Strong answer tip:
@@ -1432,9 +1604,13 @@ hide:
     In interviews, cover:
 
     - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+
     - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+
     - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+
     - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+
     - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
 
     Strong answer tip:
@@ -1464,9 +1640,13 @@ hide:
     In interviews, cover:
 
     - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+
     - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+
     - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+
     - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+
     - use retries sparingly and only as incident containment while the root cause is actively being removed
 
     Strong answer tip:
@@ -1496,9 +1676,13 @@ hide:
     In interviews, cover:
 
     - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+
     - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+
     - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+
     - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+
     - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
 
     Strong answer tip:
@@ -1528,9 +1712,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1560,9 +1748,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:
@@ -1592,9 +1784,13 @@ hide:
     In interviews, cover:
 
     - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+
     - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+
     - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+
     - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+
     - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
 
     Strong answer tip:
@@ -1624,9 +1820,13 @@ hide:
     In interviews, cover:
 
     - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+
     - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+
     - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+
     - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+
     - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
 
     Strong answer tip:

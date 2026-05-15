@@ -56,9 +56,13 @@ hide:
     In interviews, cover:
 
     - begin with the user task and fallback UX because many “AI features” fail when confidence is low or context is missing
+
     - decide early whether inference belongs on-device, at the edge, or in the cloud based on latency, privacy, and model update cadence
+
     - treat model quality as one metric among several: battery, memory footprint, startup cost, and abuse potential also matter
+
     - instrument prompts, confidence thresholds, and opt-out behavior so the feature can be tuned safely after launch
+
     - plan an evaluation set that reflects real device conditions rather than desktop benchmark numbers
 
     Strong answer tip:
@@ -88,9 +92,13 @@ hide:
     In interviews, cover:
 
     - budget for cold-start cost, RAM pressure, binary size, and hardware acceleration support across the Android device matrix
+
     - choose runtime and format carefully: TFLite, MediaPipe, or vendor accelerators all have different portability and observability tradeoffs
+
     - benchmark on representative low-end devices because desktop or flagship numbers hide thermal throttling and memory stalls
+
     - design update strategy for models independently from app releases when the iteration loop needs to move faster than Play rollout
+
     - keep a server or rules-based fallback when model load fails, confidence is low, or hardware support is inconsistent
 
     Strong answer tip:
@@ -120,9 +128,13 @@ hide:
     In interviews, cover:
 
     - classify which inputs are sensitive and decide whether they can be logged, retained, or exported at all
+
     - minimize data movement by preferring on-device preprocessing and redacted telemetry over raw-content collection
+
     - document model purpose, failure modes, and human override paths because privacy review is not just a legal checklist
+
     - audit third-party SDKs and model providers as part of the trust boundary, especially if prompts or embeddings leave the device
+
     - build governance for abuse cases such as prompt injection, leakage of personal content, or biased outcomes
 
     Strong answer tip:
@@ -152,9 +164,13 @@ hide:
     In interviews, cover:
 
     - use AI for draft generation, test scaffolding, documentation, and search acceleration, but keep human review accountable for correctness
+
     - protect code and secrets by defining what repositories, tickets, or production data may be sent to external tools
+
     - measure outcomes such as review churn, defect escape rate, and onboarding speed instead of relying on subjective enthusiasm
+
     - standardize prompt patterns and code-review expectations so generated code does not create a second undocumented coding style
+
     - train teams to verify licenses, concurrency behavior, and security assumptions because generated code often looks plausible while being subtly wrong
 
     Strong answer tip:
@@ -184,9 +200,13 @@ hide:
     In interviews, cover:
 
     - give the agent a narrow task scope, explicit tools, and clear permission boundaries before letting it act on user data or accounts
+
     - design confirmation steps for high-risk actions such as purchases, account changes, or message sending
+
     - make the agent observable: log tool calls, success/failure reasons, and fallback paths for support and incident response
+
     - plan for ambiguity and hallucination by exposing state, confidence, and reversibility instead of pretending the system is always correct
+
     - keep deterministic fallbacks so the feature still works when retrieval, network, or model reasoning degrades
 
     Strong answer tip:
@@ -216,9 +236,13 @@ hide:
     In interviews, cover:
 
     - design around window size classes and posture signals instead of hardcoding device names or aspect ratios
+
     - treat continuity seriously: app state should survive span, fold, rotate, and drag-to-multiwindow transitions without surprises
+
     - choose when dual-pane layouts improve productivity and when they simply overcrowd the UI
+
     - test navigation, media playback, and camera flows across posture changes because those transitions often reveal lifecycle gaps
+
     - optimize for one adaptive code path rather than separate phone and foldable forks that drift over time
 
     Strong answer tip:
@@ -248,9 +272,13 @@ hide:
     In interviews, cover:
 
     - use canonical layouts such as list-detail, supporting panes, and persistent navigation where they reduce context switching
+
     - handle live resize and multi-window interruptions without assuming the activity always owns the full screen
+
     - make keyboard, mouse, and stylus interactions first-class on tablets and ChromeOS-style environments
+
     - watch for resource and lifecycle issues when multiple visible activities or windows are active simultaneously
+
     - measure large-screen success with task speed, retention, and feature adoption, not just “tablet compatibility”
 
     Strong answer tip:
@@ -280,9 +308,13 @@ hide:
     In interviews, cover:
 
     - treat battery as a primary product requirement because continuous sensing quickly destroys usability on small devices
+
     - separate wellness features from clinical claims, since validation and regulatory obligations differ drastically
+
     - handle intermittent connectivity gracefully because wearables often sync in bursts rather than maintaining steady network sessions
+
     - minimize raw health data retention and clearly define what leaves the device, what is derived locally, and what the user can delete
+
     - design for glanceability and interruption tolerance: many interactions are seconds long and context-switched
 
     Strong answer tip:
@@ -312,9 +344,13 @@ hide:
     In interviews, cover:
 
     - latency budgets are far tighter than ordinary mobile UI because motion-to-photon delay directly affects comfort
+
     - design input models for gaze, gesture, controllers, and fallback touch because discoverability differs sharply across modalities
+
     - keep sessions resilient to tracking loss, environmental changes, and permission revocation rather than assuming ideal conditions
+
     - choose which tasks genuinely benefit from spatial interfaces instead of forcing 2D workflows into 3D scenes
+
     - treat thermal limits and sustained performance as first-order constraints on immersive experiences
 
     Strong answer tip:
@@ -344,9 +380,13 @@ hide:
     In interviews, cover:
 
     - use context signals such as location, activity, device state, and time only when they produce a clear user benefit
+
     - prefer transparent automation with simple overrides so users understand why the system acted
+
     - treat false positives as trust failures: one wrong automation can cost more than several missed opportunities
+
     - budget for continuous sensing, privacy review, and offline behavior before broad rollout
+
     - instrument trigger quality and user reversals so context rules can be tightened over time
 
     Strong answer tip:
@@ -376,9 +416,13 @@ hide:
     In interviews, cover:
 
     - assign each modality a clear job—for example, voice for intent capture, camera for recognition, and touch for confirmation
+
     - design interruption and fallback flows because users may lose audio, camera access, or confidence in the recognition result
+
     - keep latency low across modality handoffs; a smart feature that feels sluggish quickly feels broken
+
     - test accessibility and environmental failure cases such as noise, glare, accents, and low-light conditions
+
     - be explicit about privacy when microphone and camera are involved together
 
     Strong answer tip:
@@ -408,9 +452,13 @@ hide:
     In interviews, cover:
 
     - decide which parts of reasoning must happen locally and which can be deferred until the network returns
+
     - cache the smallest useful context set because large local context windows quickly hit storage and privacy limits
+
     - design stale-data handling so recommendations degrade gracefully instead of confidently using outdated state
+
     - reconcile offline actions with server truth using idempotent sync and conflict-resolution rules
+
     - treat observability differently offline: measure queued events, replay success, and fallback usage
 
     Strong answer tip:
@@ -440,9 +488,13 @@ hide:
     In interviews, cover:
 
     - clarify whether you need true federated training, lightweight on-device ranking, or just local heuristics because complexity differs dramatically
+
     - budget for device heterogeneity, intermittent charging, and unreliable network because client participation is uneven
+
     - design privacy protections such as secure aggregation, clipping, and telemetry minimization instead of assuming federated equals private by default
+
     - watch personalization drift: a model can overfit one user’s short-term behavior and degrade broader product goals
+
     - keep rollout controls because bad local models are harder to inspect than centralized services
 
     Strong answer tip:
@@ -472,9 +524,13 @@ hide:
     In interviews, cover:
 
     - share what changes slowly across platforms—networking contracts, domain rules, persistence abstractions—not every layer by default
+
     - avoid forcing a least-common-denominator UI architecture if platform conventions differ materially
+
     - measure build complexity, release coupling, and debugging friction because shared code is not automatically cheaper
+
     - define ownership boundaries early so Android, iOS, and platform teams know who governs shared modules
+
     - watch binary size, native interop, and test strategy because cross-platform gains can be offset by tooling complexity
 
     Strong answer tip:
@@ -504,9 +560,13 @@ hide:
     In interviews, cover:
 
     - choose accelerators based on the actual bottleneck: rendering, vision inference, encoding, or signal processing all favor different hardware paths
+
     - treat fallback paths as mandatory because Android hardware capabilities vary widely across vendors and OS versions
+
     - measure sustained performance and thermal behavior, not just short benchmark bursts on flagship devices
+
     - watch data-movement overhead because copying tensors or frames between subsystems can erase theoretical acceleration wins
+
     - keep observability around which accelerator path executed in production so support and optimization are possible
 
     Strong answer tip:
@@ -536,9 +596,13 @@ hide:
     In interviews, cover:
 
     - track joules, thermal throttling, and wakeup frequency in addition to latency and accuracy
+
     - batch work, defer non-urgent inference, and prefer event-driven triggers over constant polling
+
     - compress or distill models when user value does not justify a large runtime footprint
+
     - use hardware accelerators when they reduce net energy, but verify that data transfer and model warmup do not reverse the gain
+
     - expose settings or adaptive behavior for low-battery and battery-saver modes
 
     Strong answer tip:
@@ -568,9 +632,13 @@ hide:
     In interviews, cover:
 
     - treat prompts, tool calls, and retrieved context as untrusted inputs that must be validated and constrained
+
     - separate model capability from user authorization so a helpful assistant cannot exceed the caller’s actual permissions
+
     - protect embedded models and proprietary prompts appropriately, while recognizing that client-side secrecy is never absolute
+
     - red-team abuse paths including jailbreak-like prompt patterns, unsafe action execution, and data exfiltration through logs or analytics
+
     - monitor model misuse with policy-aware telemetry rather than raw sensitive content capture
 
     Strong answer tip:
@@ -600,9 +668,13 @@ hide:
     In interviews, cover:
 
     - separate radio-theory potential from actual product gain because device mobility, congestion, and coverage can erase the edge advantage
+
     - identify which workloads benefit from lower round-trip time such as gaming, AR, or conversational interaction
+
     - keep fallback behavior for ordinary LTE/Wi‑Fi conditions so the product remains useful off the ideal network
+
     - watch battery and radio wake costs because more network chatter can cancel the experience benefit
+
     - treat backend placement and session routing as part of the feature design, not an infrastructure afterthought
 
     Strong answer tip:
@@ -632,9 +704,13 @@ hide:
     In interviews, cover:
 
     - start with a narrow user problem and define what proof would justify further investment
+
     - choose leading indicators such as task completion, retention, or time saved instead of vanity metrics like raw impressions
+
     - build pilot programs and internal dogfood loops before broad launches when technology uncertainty is high
+
     - set explicit kill criteria so teams can stop low-signal experiments without political friction
+
     - separate experimental architecture from core product dependencies until the value case is proven
 
     Strong answer tip:
@@ -664,9 +740,13 @@ hide:
     In interviews, cover:
 
     - compare hype to constraints: latency, battery, privacy, regulatory burden, and team capability usually decide feasibility
+
     - state where a new technology creates durable product advantage versus where it is mostly differentiation theater
+
     - use a staged rollout model: prototype, limited beta, measurable validation, then platform investment
+
     - show that you can design fallback paths when the underlying ecosystem is immature or fragmented
+
     - frame answers around user outcomes, operational cost, and reversibility rather than trend vocabulary alone
 
     Strong answer tip:
@@ -696,9 +776,13 @@ hide:
     In interviews, cover:
 
     - begin with the user task and fallback UX because many “AI features” fail when confidence is low or context is missing
+
     - decide early whether inference belongs on-device, at the edge, or in the cloud based on latency, privacy, and model update cadence
+
     - treat model quality as one metric among several: battery, memory footprint, startup cost, and abuse potential also matter
+
     - instrument prompts, confidence thresholds, and opt-out behavior so the feature can be tuned safely after launch
+
     - plan an evaluation set that reflects real device conditions rather than desktop benchmark numbers
 
     Strong answer tip:
@@ -728,9 +812,13 @@ hide:
     In interviews, cover:
 
     - budget for cold-start cost, RAM pressure, binary size, and hardware acceleration support across the Android device matrix
+
     - choose runtime and format carefully: TFLite, MediaPipe, or vendor accelerators all have different portability and observability tradeoffs
+
     - benchmark on representative low-end devices because desktop or flagship numbers hide thermal throttling and memory stalls
+
     - design update strategy for models independently from app releases when the iteration loop needs to move faster than Play rollout
+
     - keep a server or rules-based fallback when model load fails, confidence is low, or hardware support is inconsistent
 
     Strong answer tip:
@@ -760,9 +848,13 @@ hide:
     In interviews, cover:
 
     - classify which inputs are sensitive and decide whether they can be logged, retained, or exported at all
+
     - minimize data movement by preferring on-device preprocessing and redacted telemetry over raw-content collection
+
     - document model purpose, failure modes, and human override paths because privacy review is not just a legal checklist
+
     - audit third-party SDKs and model providers as part of the trust boundary, especially if prompts or embeddings leave the device
+
     - build governance for abuse cases such as prompt injection, leakage of personal content, or biased outcomes
 
     Strong answer tip:
@@ -792,9 +884,13 @@ hide:
     In interviews, cover:
 
     - use AI for draft generation, test scaffolding, documentation, and search acceleration, but keep human review accountable for correctness
+
     - protect code and secrets by defining what repositories, tickets, or production data may be sent to external tools
+
     - measure outcomes such as review churn, defect escape rate, and onboarding speed instead of relying on subjective enthusiasm
+
     - standardize prompt patterns and code-review expectations so generated code does not create a second undocumented coding style
+
     - train teams to verify licenses, concurrency behavior, and security assumptions because generated code often looks plausible while being subtly wrong
 
     Strong answer tip:
@@ -824,9 +920,13 @@ hide:
     In interviews, cover:
 
     - give the agent a narrow task scope, explicit tools, and clear permission boundaries before letting it act on user data or accounts
+
     - design confirmation steps for high-risk actions such as purchases, account changes, or message sending
+
     - make the agent observable: log tool calls, success/failure reasons, and fallback paths for support and incident response
+
     - plan for ambiguity and hallucination by exposing state, confidence, and reversibility instead of pretending the system is always correct
+
     - keep deterministic fallbacks so the feature still works when retrieval, network, or model reasoning degrades
 
     Strong answer tip:
@@ -856,9 +956,13 @@ hide:
     In interviews, cover:
 
     - design around window size classes and posture signals instead of hardcoding device names or aspect ratios
+
     - treat continuity seriously: app state should survive span, fold, rotate, and drag-to-multiwindow transitions without surprises
+
     - choose when dual-pane layouts improve productivity and when they simply overcrowd the UI
+
     - test navigation, media playback, and camera flows across posture changes because those transitions often reveal lifecycle gaps
+
     - optimize for one adaptive code path rather than separate phone and foldable forks that drift over time
 
     Strong answer tip:
@@ -888,9 +992,13 @@ hide:
     In interviews, cover:
 
     - use canonical layouts such as list-detail, supporting panes, and persistent navigation where they reduce context switching
+
     - handle live resize and multi-window interruptions without assuming the activity always owns the full screen
+
     - make keyboard, mouse, and stylus interactions first-class on tablets and ChromeOS-style environments
+
     - watch for resource and lifecycle issues when multiple visible activities or windows are active simultaneously
+
     - measure large-screen success with task speed, retention, and feature adoption, not just “tablet compatibility”
 
     Strong answer tip:
@@ -920,9 +1028,13 @@ hide:
     In interviews, cover:
 
     - treat battery as a primary product requirement because continuous sensing quickly destroys usability on small devices
+
     - separate wellness features from clinical claims, since validation and regulatory obligations differ drastically
+
     - handle intermittent connectivity gracefully because wearables often sync in bursts rather than maintaining steady network sessions
+
     - minimize raw health data retention and clearly define what leaves the device, what is derived locally, and what the user can delete
+
     - design for glanceability and interruption tolerance: many interactions are seconds long and context-switched
 
     Strong answer tip:
@@ -952,9 +1064,13 @@ hide:
     In interviews, cover:
 
     - latency budgets are far tighter than ordinary mobile UI because motion-to-photon delay directly affects comfort
+
     - design input models for gaze, gesture, controllers, and fallback touch because discoverability differs sharply across modalities
+
     - keep sessions resilient to tracking loss, environmental changes, and permission revocation rather than assuming ideal conditions
+
     - choose which tasks genuinely benefit from spatial interfaces instead of forcing 2D workflows into 3D scenes
+
     - treat thermal limits and sustained performance as first-order constraints on immersive experiences
 
     Strong answer tip:
@@ -984,9 +1100,13 @@ hide:
     In interviews, cover:
 
     - use context signals such as location, activity, device state, and time only when they produce a clear user benefit
+
     - prefer transparent automation with simple overrides so users understand why the system acted
+
     - treat false positives as trust failures: one wrong automation can cost more than several missed opportunities
+
     - budget for continuous sensing, privacy review, and offline behavior before broad rollout
+
     - instrument trigger quality and user reversals so context rules can be tightened over time
 
     Strong answer tip:
@@ -1016,9 +1136,13 @@ hide:
     In interviews, cover:
 
     - assign each modality a clear job—for example, voice for intent capture, camera for recognition, and touch for confirmation
+
     - design interruption and fallback flows because users may lose audio, camera access, or confidence in the recognition result
+
     - keep latency low across modality handoffs; a smart feature that feels sluggish quickly feels broken
+
     - test accessibility and environmental failure cases such as noise, glare, accents, and low-light conditions
+
     - be explicit about privacy when microphone and camera are involved together
 
     Strong answer tip:
@@ -1048,9 +1172,13 @@ hide:
     In interviews, cover:
 
     - decide which parts of reasoning must happen locally and which can be deferred until the network returns
+
     - cache the smallest useful context set because large local context windows quickly hit storage and privacy limits
+
     - design stale-data handling so recommendations degrade gracefully instead of confidently using outdated state
+
     - reconcile offline actions with server truth using idempotent sync and conflict-resolution rules
+
     - treat observability differently offline: measure queued events, replay success, and fallback usage
 
     Strong answer tip:
@@ -1080,9 +1208,13 @@ hide:
     In interviews, cover:
 
     - clarify whether you need true federated training, lightweight on-device ranking, or just local heuristics because complexity differs dramatically
+
     - budget for device heterogeneity, intermittent charging, and unreliable network because client participation is uneven
+
     - design privacy protections such as secure aggregation, clipping, and telemetry minimization instead of assuming federated equals private by default
+
     - watch personalization drift: a model can overfit one user’s short-term behavior and degrade broader product goals
+
     - keep rollout controls because bad local models are harder to inspect than centralized services
 
     Strong answer tip:
@@ -1112,9 +1244,13 @@ hide:
     In interviews, cover:
 
     - share what changes slowly across platforms—networking contracts, domain rules, persistence abstractions—not every layer by default
+
     - avoid forcing a least-common-denominator UI architecture if platform conventions differ materially
+
     - measure build complexity, release coupling, and debugging friction because shared code is not automatically cheaper
+
     - define ownership boundaries early so Android, iOS, and platform teams know who governs shared modules
+
     - watch binary size, native interop, and test strategy because cross-platform gains can be offset by tooling complexity
 
     Strong answer tip:
@@ -1144,9 +1280,13 @@ hide:
     In interviews, cover:
 
     - choose accelerators based on the actual bottleneck: rendering, vision inference, encoding, or signal processing all favor different hardware paths
+
     - treat fallback paths as mandatory because Android hardware capabilities vary widely across vendors and OS versions
+
     - measure sustained performance and thermal behavior, not just short benchmark bursts on flagship devices
+
     - watch data-movement overhead because copying tensors or frames between subsystems can erase theoretical acceleration wins
+
     - keep observability around which accelerator path executed in production so support and optimization are possible
 
     Strong answer tip:
@@ -1176,9 +1316,13 @@ hide:
     In interviews, cover:
 
     - track joules, thermal throttling, and wakeup frequency in addition to latency and accuracy
+
     - batch work, defer non-urgent inference, and prefer event-driven triggers over constant polling
+
     - compress or distill models when user value does not justify a large runtime footprint
+
     - use hardware accelerators when they reduce net energy, but verify that data transfer and model warmup do not reverse the gain
+
     - expose settings or adaptive behavior for low-battery and battery-saver modes
 
     Strong answer tip:
@@ -1208,9 +1352,13 @@ hide:
     In interviews, cover:
 
     - treat prompts, tool calls, and retrieved context as untrusted inputs that must be validated and constrained
+
     - separate model capability from user authorization so a helpful assistant cannot exceed the caller’s actual permissions
+
     - protect embedded models and proprietary prompts appropriately, while recognizing that client-side secrecy is never absolute
+
     - red-team abuse paths including jailbreak-like prompt patterns, unsafe action execution, and data exfiltration through logs or analytics
+
     - monitor model misuse with policy-aware telemetry rather than raw sensitive content capture
 
     Strong answer tip:
@@ -1240,9 +1388,13 @@ hide:
     In interviews, cover:
 
     - separate radio-theory potential from actual product gain because device mobility, congestion, and coverage can erase the edge advantage
+
     - identify which workloads benefit from lower round-trip time such as gaming, AR, or conversational interaction
+
     - keep fallback behavior for ordinary LTE/Wi‑Fi conditions so the product remains useful off the ideal network
+
     - watch battery and radio wake costs because more network chatter can cancel the experience benefit
+
     - treat backend placement and session routing as part of the feature design, not an infrastructure afterthought
 
     Strong answer tip:
@@ -1272,9 +1424,13 @@ hide:
     In interviews, cover:
 
     - start with a narrow user problem and define what proof would justify further investment
+
     - choose leading indicators such as task completion, retention, or time saved instead of vanity metrics like raw impressions
+
     - build pilot programs and internal dogfood loops before broad launches when technology uncertainty is high
+
     - set explicit kill criteria so teams can stop low-signal experiments without political friction
+
     - separate experimental architecture from core product dependencies until the value case is proven
 
     Strong answer tip:
@@ -1304,9 +1460,13 @@ hide:
     In interviews, cover:
 
     - compare hype to constraints: latency, battery, privacy, regulatory burden, and team capability usually decide feasibility
+
     - state where a new technology creates durable product advantage versus where it is mostly differentiation theater
+
     - use a staged rollout model: prototype, limited beta, measurable validation, then platform investment
+
     - show that you can design fallback paths when the underlying ecosystem is immature or fragmented
+
     - frame answers around user outcomes, operational cost, and reversibility rather than trend vocabulary alone
 
     Strong answer tip:
@@ -1336,9 +1496,13 @@ hide:
     In interviews, cover:
 
     - begin with the user task and fallback UX because many “AI features” fail when confidence is low or context is missing
+
     - decide early whether inference belongs on-device, at the edge, or in the cloud based on latency, privacy, and model update cadence
+
     - treat model quality as one metric among several: battery, memory footprint, startup cost, and abuse potential also matter
+
     - instrument prompts, confidence thresholds, and opt-out behavior so the feature can be tuned safely after launch
+
     - plan an evaluation set that reflects real device conditions rather than desktop benchmark numbers
 
     Strong answer tip:
@@ -1368,9 +1532,13 @@ hide:
     In interviews, cover:
 
     - budget for cold-start cost, RAM pressure, binary size, and hardware acceleration support across the Android device matrix
+
     - choose runtime and format carefully: TFLite, MediaPipe, or vendor accelerators all have different portability and observability tradeoffs
+
     - benchmark on representative low-end devices because desktop or flagship numbers hide thermal throttling and memory stalls
+
     - design update strategy for models independently from app releases when the iteration loop needs to move faster than Play rollout
+
     - keep a server or rules-based fallback when model load fails, confidence is low, or hardware support is inconsistent
 
     Strong answer tip:
@@ -1400,9 +1568,13 @@ hide:
     In interviews, cover:
 
     - classify which inputs are sensitive and decide whether they can be logged, retained, or exported at all
+
     - minimize data movement by preferring on-device preprocessing and redacted telemetry over raw-content collection
+
     - document model purpose, failure modes, and human override paths because privacy review is not just a legal checklist
+
     - audit third-party SDKs and model providers as part of the trust boundary, especially if prompts or embeddings leave the device
+
     - build governance for abuse cases such as prompt injection, leakage of personal content, or biased outcomes
 
     Strong answer tip:
@@ -1432,9 +1604,13 @@ hide:
     In interviews, cover:
 
     - use AI for draft generation, test scaffolding, documentation, and search acceleration, but keep human review accountable for correctness
+
     - protect code and secrets by defining what repositories, tickets, or production data may be sent to external tools
+
     - measure outcomes such as review churn, defect escape rate, and onboarding speed instead of relying on subjective enthusiasm
+
     - standardize prompt patterns and code-review expectations so generated code does not create a second undocumented coding style
+
     - train teams to verify licenses, concurrency behavior, and security assumptions because generated code often looks plausible while being subtly wrong
 
     Strong answer tip:
@@ -1464,9 +1640,13 @@ hide:
     In interviews, cover:
 
     - give the agent a narrow task scope, explicit tools, and clear permission boundaries before letting it act on user data or accounts
+
     - design confirmation steps for high-risk actions such as purchases, account changes, or message sending
+
     - make the agent observable: log tool calls, success/failure reasons, and fallback paths for support and incident response
+
     - plan for ambiguity and hallucination by exposing state, confidence, and reversibility instead of pretending the system is always correct
+
     - keep deterministic fallbacks so the feature still works when retrieval, network, or model reasoning degrades
 
     Strong answer tip:
@@ -1496,9 +1676,13 @@ hide:
     In interviews, cover:
 
     - design around window size classes and posture signals instead of hardcoding device names or aspect ratios
+
     - treat continuity seriously: app state should survive span, fold, rotate, and drag-to-multiwindow transitions without surprises
+
     - choose when dual-pane layouts improve productivity and when they simply overcrowd the UI
+
     - test navigation, media playback, and camera flows across posture changes because those transitions often reveal lifecycle gaps
+
     - optimize for one adaptive code path rather than separate phone and foldable forks that drift over time
 
     Strong answer tip:
@@ -1528,9 +1712,13 @@ hide:
     In interviews, cover:
 
     - use canonical layouts such as list-detail, supporting panes, and persistent navigation where they reduce context switching
+
     - handle live resize and multi-window interruptions without assuming the activity always owns the full screen
+
     - make keyboard, mouse, and stylus interactions first-class on tablets and ChromeOS-style environments
+
     - watch for resource and lifecycle issues when multiple visible activities or windows are active simultaneously
+
     - measure large-screen success with task speed, retention, and feature adoption, not just “tablet compatibility”
 
     Strong answer tip:
@@ -1560,9 +1748,13 @@ hide:
     In interviews, cover:
 
     - treat battery as a primary product requirement because continuous sensing quickly destroys usability on small devices
+
     - separate wellness features from clinical claims, since validation and regulatory obligations differ drastically
+
     - handle intermittent connectivity gracefully because wearables often sync in bursts rather than maintaining steady network sessions
+
     - minimize raw health data retention and clearly define what leaves the device, what is derived locally, and what the user can delete
+
     - design for glanceability and interruption tolerance: many interactions are seconds long and context-switched
 
     Strong answer tip:
@@ -1592,9 +1784,13 @@ hide:
     In interviews, cover:
 
     - latency budgets are far tighter than ordinary mobile UI because motion-to-photon delay directly affects comfort
+
     - design input models for gaze, gesture, controllers, and fallback touch because discoverability differs sharply across modalities
+
     - keep sessions resilient to tracking loss, environmental changes, and permission revocation rather than assuming ideal conditions
+
     - choose which tasks genuinely benefit from spatial interfaces instead of forcing 2D workflows into 3D scenes
+
     - treat thermal limits and sustained performance as first-order constraints on immersive experiences
 
     Strong answer tip:
@@ -1624,9 +1820,13 @@ hide:
     In interviews, cover:
 
     - use context signals such as location, activity, device state, and time only when they produce a clear user benefit
+
     - prefer transparent automation with simple overrides so users understand why the system acted
+
     - treat false positives as trust failures: one wrong automation can cost more than several missed opportunities
+
     - budget for continuous sensing, privacy review, and offline behavior before broad rollout
+
     - instrument trigger quality and user reversals so context rules can be tightened over time
 
     Strong answer tip:

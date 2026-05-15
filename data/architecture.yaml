@@ -10,15 +10,19 @@ questions:
       MVVM separates UI rendering from business/data orchestration.
 
       Typical split:
-
+      
       - View: renders state and forwards user actions
+      
       - ViewModel: exposes lifecycle-aware UI state
+      
       - Repository: abstracts data access
 
       Why teams use it:
-
+      
       - better testability
+      
       - cleaner separation of concerns
+      
       - easier lifecycle-safe state handling
     deep_dive: /android-interview-prep/deep-dives/architecture/mvvm-and-viewmodel/
 
@@ -33,10 +37,13 @@ questions:
       ViewModel owns screen-level state and survives configuration changes.
 
       Key responsibilities:
-
+      
       - transform domain data into UI-friendly state
+      
       - coordinate use cases/repositories
+      
       - expose immutable observable state
+      
       - handle user intents/events
 
       It should avoid direct Android UI references.
@@ -54,9 +61,11 @@ questions:
       tied to process recreation.
 
       Good candidates:
-
+      
       - selected tab/index
+      
       - filter/sort selection
+      
       - lightweight form progress
 
       Avoid storing large objects or domain caches in it.
@@ -73,9 +82,11 @@ questions:
       MVI models UI as a loop: intent -> reducer -> new immutable state.
 
       Core benefits:
-
+      
       - predictable state transitions
+      
       - easier debugging/time-travel style reasoning
+      
       - explicit event handling contract
 
       Tradeoff: can introduce boilerplate if over-applied.
@@ -92,13 +103,15 @@ questions:
       Choose by complexity and team needs, not trend preference.
 
       MVVM:
-
+      
       - lower ceremony
+      
       - common Android default
 
       MVI:
-
+      
       - stronger state/event determinism
+      
       - better for complex interaction-heavy screens
 
       Many teams use MVVM + UDF patterns as a middle ground.
@@ -115,10 +128,13 @@ questions:
       UDF means state flows down, events flow up.
 
       Interview-ready points:
-
+      
       - single source of truth for screen state
+      
       - immutable state exposure
+      
       - explicit intent/event handlers
+      
       - deterministic state transitions
 
       This reduces hidden mutation bugs.
@@ -135,9 +151,11 @@ questions:
       Clean Architecture organizes code by responsibility and dependency direction.
 
       Typical layers:
-
+      
       - presentation
+      
       - domain
+      
       - data
 
       Main rule: inner layers should not depend on outer framework details.
@@ -154,9 +172,11 @@ questions:
       Dependencies must point inward toward stable policy layers.
 
       Practical implications:
-
+      
       - UI depends on domain contracts
+      
       - data implements domain abstractions
+      
       - domain avoids Android/framework types
 
       This improves portability and test isolation.
@@ -173,9 +193,11 @@ questions:
       High-level policies should depend on abstractions, not concrete SDK/data details.
 
       In Android this usually means:
-
+      
       - domain uses interfaces
+      
       - data/network/db implement those interfaces
+      
       - DI wires concrete implementations
 
       It keeps business logic resilient to infrastructure changes.
@@ -192,10 +214,13 @@ questions:
       Repository abstracts data origin and provides a clean API to higher layers.
 
       Benefits:
-
+      
       - decouples UI/domain from network/db details
+      
       - centralizes data policies
+      
       - simplifies testing with fakes
+      
       - enables caching/sync orchestration
     deep_dive: /android-interview-prep/deep-dives/architecture/repository-pattern-and-data-sources/
 
@@ -210,9 +235,11 @@ questions:
       Repository enforces one authoritative read path for consumers.
 
       Common approach:
-
+      
       - local DB is canonical source
+      
       - network refresh updates DB
+      
       - UI observes DB-backed streams
 
       This avoids competing data sources in UI.
@@ -229,10 +256,13 @@ questions:
       Define explicit policies for freshness, fallback, and write ordering.
 
       Typical strategy:
-
+      
       - read local first
+      
       - fetch remote by staleness rules
+      
       - merge/validate payload
+      
       - persist then emit
 
       Keep these rules in repository, not UI.
@@ -249,10 +279,13 @@ questions:
       Use cases encapsulate business actions independent of UI and data frameworks.
 
       They help by:
-
+      
       - isolating domain logic
+      
       - improving reuse across screens
+      
       - making behavior unit-testable
+      
       - reducing ViewModel complexity
     deep_dive: /android-interview-prep/deep-dives/architecture/use-cases-and-domain-layer/
 
@@ -267,9 +300,11 @@ questions:
       Use cases should represent coherent business actions, not tiny wrappers.
 
       Guidance:
-
+      
       - too coarse: hard to compose/test
+      
       - too fine: boilerplate and indirection
+      
       - optimize for domain clarity and change boundaries
 
       Granularity is a context-based design decision.
@@ -286,9 +321,11 @@ questions:
       Add domain layer when business rules are non-trivial or reused.
 
       Signals:
-
+      
       - multiple features share logic
+      
       - policies outgrow ViewModels
+      
       - testability/portability requirements increase
 
       For simple apps, extra layers can be unnecessary overhead.
@@ -305,10 +342,13 @@ questions:
       DI manages object creation/wiring outside business logic.
 
       Benefits:
-
+      
       - loose coupling
+      
       - easier testing with fakes/mocks
+      
       - centralized lifecycle/scope control
+      
       - clearer dependency graph at scale
     deep_dive: /android-interview-prep/deep-dives/architecture/dependency-injection-strategies/
 
@@ -323,9 +363,11 @@ questions:
       Constructor injection is usually preferred.
 
       Reasons:
-
+      
       - explicit required dependencies
+      
       - easier immutable object design
+      
       - better unit-test ergonomics
 
       Field injection is useful in framework-controlled classes but less explicit.
@@ -342,9 +384,11 @@ questions:
       Scopes define object lifetime and reuse boundaries.
 
       Mis-scoping can cause:
-
+      
       - leaks (too long-lived)
+      
       - churn/perf cost (too short-lived)
+      
       - inconsistent shared state
 
       Align scopes with Activity/Fragment/ViewModel/app lifetimes.
@@ -361,10 +405,13 @@ questions:
       Hilt standardizes DI setup for Android component lifecycles.
 
       Key advantages:
-
+      
       - less boilerplate than manual Dagger setup
+      
       - predefined component hierarchy
+      
       - easier onboarding and consistency
+      
       - strong integration with ViewModel/WorkManager
     deep_dive: /android-interview-prep/deep-dives/architecture/hilt-in-production/
 
@@ -379,10 +426,13 @@ questions:
       Senior interviews expect understanding of scope boundaries.
 
       Common lifetimes:
-
+      
       - SingletonComponent: app-wide
+      
       - ActivityRetainedComponent: across config changes
+      
       - ViewModelComponent: ViewModel lifetime
+      
       - Activity/Fragment components: UI-bound
 
       Wrong scope choices create subtle bugs.
@@ -399,8 +449,9 @@ questions:
       Hilt is Dagger with Android-focused conventions and generated glue code.
 
       Tradeoff framing:
-
+      
       - Hilt: faster setup, consistent patterns
+      
       - raw Dagger: maximum graph/control flexibility
 
       Choose based on customization needs and team productivity.
@@ -417,9 +468,11 @@ questions:
       Components define object graph roots; subcomponents model child lifecycles.
 
       Important points:
-
+      
       - parent can provide bindings to child
+      
       - child can narrow scope/lifetime
+      
       - graph shape affects compilation and maintainability
 
       Avoid overly complex graph hierarchies.
@@ -436,10 +489,13 @@ questions:
       DI frameworks improve structure but add compile-time and graph complexity costs.
 
       Staff-level concerns:
-
+      
       - annotation processing build impact
+      
       - module graph growth over time
+      
       - debugging generated binding errors
+      
       - balancing explicitness vs velocity
     deep_dive: /android-interview-prep/deep-dives/architecture/dagger-and-component-graph/
 
@@ -456,9 +512,11 @@ questions:
       It can simplify small systems but often hides real dependencies.
 
       Interview angle:
-
+      
       - quick bootstrap option
+      
       - weaker explicitness than constructor DI
+      
       - can reduce testability if overused
     deep_dive: /android-interview-prep/deep-dives/architecture/service-locator-and-anti-patterns/
 
@@ -473,9 +531,11 @@ questions:
       DI makes dependencies explicit in constructors; Service Locator hides them at call sites.
 
       Consequences:
-
+      
       - DI is easier to reason about and test
+      
       - Service Locator can create implicit coupling
+      
       - hidden runtime failures are more likely
 
       Prefer DI for medium/large apps.
@@ -492,10 +552,13 @@ questions:
       Modularization separates code by ownership and change boundaries.
 
       Benefits:
-
+      
       - faster incremental builds
+      
       - clearer feature boundaries
+      
       - parallel team development
+      
       - safer refactoring and release isolation
     deep_dive: /android-interview-prep/deep-dives/architecture/modularization-strategies/
 
@@ -510,9 +573,11 @@ questions:
       Common structures include layered modules and feature-first modules.
 
       Typical options:
-
+      
       - app + core + feature modules
+      
       - domain/data/presentation split per feature
+      
       - hybrid platform modules for shared infra
 
       Choose structure based on team and product complexity.
@@ -529,10 +594,13 @@ questions:
       Expose only stable contracts and keep internals hidden.
 
       Benefits:
-
+      
       - reduced coupling and accidental usage
+      
       - clearer ownership contracts
+      
       - better compile isolation
+      
       - safer internal refactors
 
       Public surface area should stay intentionally small.
@@ -549,10 +617,13 @@ questions:
       A good boundary aligns with user-facing capabilities and team ownership.
 
       Signs of healthy boundaries:
-
+      
       - minimal cross-feature dependencies
+      
       - explicit navigation/contracts
+      
       - isolated tests and release paths
+      
       - clear domain language per feature
     deep_dive: /android-interview-prep/deep-dives/architecture/feature-modules-and-boundaries/
 
@@ -567,9 +638,11 @@ questions:
       Use dynamic delivery when features are optional, heavy, or region-specific.
 
       Tradeoffs:
-
+      
       - better install size/startup profile
+      
       - added delivery/testing complexity
+      
       - more runtime handling for missing modules
 
       Evaluate product value against operational cost.
@@ -586,9 +659,11 @@ questions:
       Features should depend on shared contracts, not each other's internals.
 
       Recommended pattern:
-
+      
       - keep cross-feature APIs contract-driven
+      
       - avoid cyclic feature dependencies
+      
       - place shared infra in core/platform modules
 
       This preserves build and team independence.
@@ -605,9 +680,11 @@ questions:
       Keep state ownership explicit and state models immutable where possible.
 
       Common approach:
-
+      
       - ViewModel owns screen state
+      
       - UI renders state + emits events
+      
       - repository/domain updates source state
 
       Avoid scattered mutable flags across layers.
@@ -624,9 +701,11 @@ questions:
       One authoritative state source should drive reads for a given data set.
 
       In practice:
-
+      
       - define canonical owner (often DB-backed)
+      
       - route all writes through controlled paths
+      
       - keep projections/derived views read-only
 
       This reduces inconsistency and race conditions.
@@ -643,10 +722,13 @@ questions:
       Immutable state makes transitions explicit and easier to test.
 
       Benefits:
-
+      
       - predictable rendering behavior
+      
       - simpler equality/change reasoning
+      
       - safer concurrent/reactive usage
+      
       - clearer reducer-style updates
     deep_dive: /android-interview-prep/deep-dives/architecture/state-management-and-ssot/
 
@@ -662,10 +744,13 @@ questions:
       syncing with network opportunistically.
 
       Core principles:
-
+      
       - local-first reads
+      
       - resilient queued writes
+      
       - explicit conflict policy
+      
       - sync observability/telemetry
     deep_dive: /android-interview-prep/deep-dives/architecture/offline-first-and-sync/
 
@@ -680,9 +765,11 @@ questions:
       Choose strategy by freshness needs, battery budget, and backend capability.
 
       Quick framing:
-
+      
       - pull: simple, periodic consistency
+      
       - push: lower latency updates
+      
       - hybrid: practical balance for many products
 
       Design for retries and backoff from day one.
@@ -699,10 +786,13 @@ questions:
       Conflict policy must be explicit and domain-aware.
 
       Common strategies:
-
+      
       - last write wins (simple, risky)
+      
       - version/vector based merge
+      
       - server-authoritative with client reconciliation
+      
       - user-assisted conflict resolution for critical entities
 
       Track conflict metrics to tune policy.
@@ -719,10 +809,13 @@ questions:
       Choose cache strategy per data volatility and UX expectations.
 
       Common options:
-
+      
       - memory cache for hot short-lived reads
+      
       - disk/DB cache for persistence
+      
       - TTL or staleness-based refresh
+      
       - cache-aside or network-bound-resource style
     deep_dive: /android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/
 
@@ -737,10 +830,13 @@ questions:
       Robust pagination handles loading state, errors, deduplication, and persistence.
 
       Must-have concerns:
-
+      
       - stable page keys/cursors
+      
       - append/prepend retry behavior
+      
       - local cache coherence
+      
       - refresh invalidation strategy
     deep_dive: /android-interview-prep/deep-dives/architecture/caching-and-pagination-architecture/
 
@@ -755,9 +851,11 @@ questions:
       `StateFlow` is a lifecycle-friendly state stream for UI layers.
 
       Architectural usage:
-
+      
       - ViewModel exposes immutable `StateFlow<UiState>`
+      
       - UI collects and renders
+      
       - updates come from repository/use-case pipelines
 
       Keep one-off events separate from persistent state.
@@ -774,9 +872,11 @@ questions:
       Model state and events as different channels.
 
       Typical pattern:
-
+      
       - `StateFlow` for persistent UI state
+      
       - `SharedFlow`/Channel for one-time events
+      
       - consume events with lifecycle awareness
 
       Avoid encoding transient events as sticky state flags.
@@ -793,10 +893,13 @@ questions:
       Handle errors by layer and map them to domain/UI semantics.
 
       Recommended approach:
-
+      
       - classify technical vs business errors
+      
       - normalize in repository/domain boundaries
+      
       - expose user-actionable UI states
+      
       - log structured diagnostics for operations
     deep_dive: /android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/
 
@@ -811,10 +914,13 @@ questions:
       Retry policy should be explicit, bounded, and context-aware.
 
       Common rules:
-
+      
       - exponential backoff for transient failures
+      
       - idempotency awareness for writes
+      
       - user-driven retry for recoverable UI actions
+      
       - circuit-breaker style guardrails for unstable backends
     deep_dive: /android-interview-prep/deep-dives/architecture/ui-state-and-event-modeling/
 
@@ -829,9 +935,11 @@ questions:
       Use explicit immutable state models with clear sub-states.
 
       Common shape:
-
+      
       - loading/content/error/empty branches
+      
       - data payload + UI metadata
+      
       - separate ephemeral events
 
       Prefer readability and deterministic transitions over cleverness.
@@ -848,10 +956,13 @@ questions:
       Navigation should use explicit destination contracts and clear ownership.
 
       Good practices:
-
+      
       - central route definitions
+      
       - pass IDs/contracts, not large mutable objects
+      
       - keep navigation decisions near state owner
+      
       - test back stack behavior for critical flows
     deep_dive: /android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/
 
@@ -866,10 +977,13 @@ questions:
       Treat deep links as stable external API contracts.
 
       Architecture implications:
-
+      
       - central validation and parsing
+      
       - module-level routing boundaries
+      
       - auth/feature-flag gating support
+      
       - backward compatibility strategy
     deep_dive: /android-interview-prep/deep-dives/architecture/navigation-and-deep-link-architecture/
 
@@ -884,10 +998,13 @@ questions:
       Testability improves when dependencies and state transitions are explicit.
 
       Design choices:
-
+      
       - constructor-injected abstractions
+      
       - pure use-case logic where possible
+      
       - deterministic state reducers
+      
       - contract tests at module boundaries
     deep_dive: /android-interview-prep/deep-dives/architecture/testing-architecture-and-testability/
 
@@ -902,13 +1019,15 @@ questions:
       Architecture defines ownership boundaries, release independence, and coordination cost.
 
       Team-scale signals:
-
+      
       - clear module ownership
+      
       - low cross-team dependency hotspots
+      
       - predictable integration contracts
+      
       - standards for observability and quality gates
     deep_dive: /android-interview-prep/deep-dives/architecture/scalability-and-team-topologies/
-
 
   - id: architecture-governance
     title: What is architecture governance in large Android codebases?
@@ -921,10 +1040,13 @@ questions:
       Governance is how teams enforce architectural direction without blocking delivery.
 
       Typical mechanisms:
-
+      
       - module ownership model
+      
       - ADRs and decision logs
+      
       - lint/static checks for boundaries
+      
       - review standards and architecture forums
     deep_dive: /android-interview-prep/deep-dives/architecture/production-tradeoffs-and-decision-making/
 
@@ -939,11 +1061,15 @@ questions:
       Frame tradeoffs by context, constraints, and measurable outcomes.
 
       Strong answer structure:
-
+      
       - what problem and constraints existed
+      
       - options considered
+      
       - decision and rationale
+      
       - risks/mitigations
+      
       - follow-up metrics and iteration
 
       Avoid presenting architecture as one-size-fits-all.
@@ -958,13 +1084,21 @@ questions:
       - persistence
     standard_answer: |
       DataStore replaces SharedPreferences with a fully asynchronous, coroutine-based API that uses atomic file operations to prevent partial writes and data corruption.
+      
       In interviews, cover:
+      
       - SharedPreferences is synchronous in commit() (ANR risk on large writes) or fire-and-forget in apply() (crash on process kill before write completes); reads are synchronous and block the calling thread if the file hasn't been loaded
+      
       - DataStore (Preferences DataStore) exposes Flow<Preferences>; all reads and writes are non-blocking coroutine operations on an IO-backed dispatcher; no more synchronous reads on the main thread
+      
       - Atomic writes via an atomic rename (write to temp file then rename) prevent partial write corruption — a process kill mid-write still yields the last valid file
+      
       - Proto DataStore uses protobuf for typed key schema; Preferences DataStore uses untyped key objects; both live in a single-process single-file design (no cross-process access)
+      
       - migration: ReplaceFileCorruptionHandler, SharedPreferencesMigration; migrate incrementally by creating DataStore with the old SP file name and letting it auto-import
+      
       Strong answer tip:
+      
       - never mix SharedPreferences and DataStore on the same file path; DataStore acquires a FileLock and SP does not — they will corrupt each other if both access the same file
     deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
   - id: explain-room-flow-invalidation-correctness-problems-and-avoiding-over-
@@ -978,12 +1112,19 @@ questions:
       - invalidation
     standard_answer: |
       Room's Flow-based queries re-emit on every table write that affects the observed table, not just writes that change the result set — this causes unnecessary recompositions when not handled correctly.
+      
       In interviews, cover:
+      
       - Room Flow is backed by InvalidationTracker; any write to a table observed by a query triggers re-emission, even if the query result is identical — this can cause high-frequency re-renders on write-heavy tables
+      
       - fix: apply distinctUntilChanged() downstream to suppress equal consecutive emissions
+      
       - collecting inside the ViewModel using stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList()): shares the upstream database flow while there are active UI subscribers and caches the last value for 5 seconds after the last subscriber disconnects — prevents restart on rotation
+      
       - do NOT collect Room Flow in a simple LaunchedEffect without cancellation management; the flow continues emitting even when the composable leaves composition unless the scope is tied to the composable lifecycle
+      
       Strong answer tip:
+      
       - benchmark with invalidation tracking disabled and enabled on a write-heavy table; the difference shows whether your architecture is over-collecting or correctly throttling
     deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
   - id: explain-room-transactions-wal-mode-and-concurrency-correctness-under-l
@@ -998,12 +1139,19 @@ questions:
       - concurrency
     standard_answer: |
       Room uses SQLite under the hood; WAL mode allows concurrent reads while a write is in progress, but transaction boundaries and thread safety must still be managed explicitly.
+      
       In interviews, cover:
+      
       - @Transaction on a @Dao method executes the body inside a single SQL transaction; required for multi-table writes that must be atomic (e.g. insert order + insert items in one atomic operation)
+      
       - WAL (Write-Ahead Logging): readers do not block writers and writers do not block readers in WAL mode; Room enables WAL by default since version 2.4; improves throughput on read-heavy workloads
+      
       - concurrency: Room queues writes on a single-threaded executor by default; multiple coroutines doing concurrent writes will serialize; for high write throughput, design batched inserts rather than many small single-row writes
+      
       - never use @Transaction with very long-running operations (network calls, slow computations) — this holds an exclusive write lock and starves reads
+      
       Strong answer tip:
+      
       - test with Room's testing support: RoomDatabase.inMemoryDatabaseBuilder() combined with a custom QueryCallback to assert the SQL generated by your DAO matches expected index usage
     deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
   - id: explain-sync-engine-design-idempotency-deduplication-and-at-least-once
@@ -1016,12 +1164,19 @@ questions:
       - idempotency
     standard_answer: |
       A robust sync engine guarantees that every user action eventually reaches the server exactly once — achieved through idempotent operations, at-least-once delivery with server-side deduplication.
+      
       In interviews, cover:
+      
       - at-least-once delivery: the client retries until it receives a server acknowledgement; the server must deduplicate to prevent double application of the operation
+      
       - idempotency key: each client-generated operation carries a UUID; the server stores processed IDs and rejects re-submissions without error (returns the original response)
+      
       - outbox pattern: write operations go to a local outbox table first (atomic with the UI change); WorkManager drains the outbox; on 2xx response, delete the outbox row; on retryable error, backoff and retry; on permanent failure, tombstone the row and surface to UX
+      
       - deduplication window: server must retain idempotency keys for at least the maximum expected retry window (typically 7–30 days)
+      
       Strong answer tip:
+      
       - ordering matters for operations that depend on each other (e.g. create comment requires post to exist first); tag operations with a dependency chain and ensure the drainer respects it
     deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/
   - id: explain-deletes-and-tombstones-in-offline-sync-preventing-resurrected-
@@ -1035,11 +1190,18 @@ questions:
       - conflict-resolution
     standard_answer: |
       In offline-first apps, deleting a record locally then syncing risks the delete being lost if another device re-syncs the same record after the delete — tombstones prevent this resurrection.
+      
       In interviews, cover:
+      
       - resurrection problem: client A deletes record; client B (offline) has the record; client B comes online and upserts the record — without a tombstone, the record reappears on client A after next sync
+      
       - tombstone: a deleted_at timestamp replaces the full delete; the sync layer treats records with deleted_at set as soft-deleted; all clients respect deleted_at and hide the record
+      
       - garbage collection: tombstones must be retained for the maximum expected offline window (e.g. 30 days); after that, hard-delete the tombstone and the record permanently
+      
       - conflict resolution: if both a delete and an update arrive for the same record, last-writer-wins is dangerous; prefer explicit policy — e.g. update wins over delete (data preservation) or delete wins over update (GDPR compliance)
+      
       Strong answer tip:
+      
       - for GDPR right-to-erasure compliance, hard deletion must be certain; log the deletion event, replicate it to all downstream stores, and verify through compliance audit that no copies remain in backups or caches
     deep_dive: /android-interview-prep/deep-dives/architecture/clean-architecture-layering/

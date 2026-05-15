@@ -10,7 +10,6 @@ questions:
 
     transitions through from creation to destruction.
 
-
     Android manages lifecycle callbacks automatically to:
 
     - optimize memory usage
@@ -20,7 +19,6 @@ questions:
     - handle multitasking
 
     - manage interruptions
-
 
     Core lifecycle methods:
 
@@ -53,7 +51,6 @@ questions:
 
     - Use for resource allocation needed for UI visibility
 
-
     onResume(): Called when Activity gains focus and is ready for interaction.
 
     - Window is in focus
@@ -61,7 +58,6 @@ questions:
     - Can receive user input
 
     - Use for animations, camera, location updates
-
 
     Simple rule: onStart = visible, onResume = interactive.
 
@@ -78,7 +74,6 @@ questions:
 
     predictable destruction (rotation, low memory).
 
-
     Called in order:
 
     1. onPause()
@@ -86,7 +81,6 @@ questions:
     2. onSaveInstanceState()
 
     3. onStop()
-
 
     Common use cases:
 
@@ -97,7 +91,6 @@ questions:
     - Save form data
 
     - Save UI state
-
 
     Note: NOT called during activity finish() or user back press.
 
@@ -116,9 +109,7 @@ questions:
 
     2. onCreate() → onStart() → onResume()
 
-
     The Activity is DESTROYED and RECREATED.
-
 
     To preserve data:
 
@@ -129,7 +120,6 @@ questions:
     - Use retained fragments
 
     - Add android:configChanges to manifest
-
 
     Best practice: Use ViewModel for non-UI state.
 
@@ -146,7 +136,6 @@ questions:
 
     (no warning, no lifecycle callbacks).
 
-
     Recovery steps when user returns:
 
     1. OS restarts app process
@@ -155,9 +144,7 @@ questions:
 
     3. App can restore state from Bundle
 
-
     Without state saving: Data loss, UI reset.
-
 
     Solutions:
 
@@ -184,21 +171,17 @@ questions:
 
     onPause() → onStop() → onDestroy()
 
-
     VISIBLE BUT NOT INTERACTIVE:
 
     onStart() (no onResume yet - dialog shown)
-
 
     ANOTHER APP IN FOREGROUND:
 
     onPause() → onStop() (but not onDestroy)
 
-
     BACK TO APP:
 
     onStart() → onResume()
-
 
     DEVICE ROTATION:
 
@@ -225,7 +208,6 @@ questions:
 
     - Guaranteed to reach target
 
-
     IMPLICIT INTENT:
 
     - No target component specified
@@ -236,11 +218,9 @@ questions:
 
     - May show chooser if multiple matches
 
-
     Example explicit:
 
     Intent(this, MainActivity::class.java)
-
 
     Example implicit:
 
@@ -257,9 +237,7 @@ questions:
   - manifest
   standard_answer: 'Intent filters declare which implicit intents a component can handle.
 
-
     Defined in AndroidManifest.xml inside activity/service/broadcast receiver.
-
 
     Components:
 
@@ -268,7 +246,6 @@ questions:
     - category: Additional flags about component
 
     - data: URI patterns, MIME types component accepts
-
 
     Matching process:
 
@@ -279,7 +256,6 @@ questions:
     3. Returns list of matching components
 
     4. Shows chooser if multiple matches
-
 
     Example:
 
@@ -300,7 +276,6 @@ questions:
 
     component for an implicit intent.
 
-
     Steps:
 
     1. Find all installed apps with matching intent filters
@@ -311,7 +286,6 @@ questions:
 
     4. Filter by data (URI, MIME type must match)
 
-
     If multiple matches:
 
     - Shows chooser dialog
@@ -320,11 +294,9 @@ questions:
 
     - System can remember preference
 
-
     If no matches:
 
     - ActivityNotFoundException thrown
-
 
     Optimization: Use explicit intents for internal communication.
 
@@ -343,13 +315,11 @@ questions:
 
     - Used with contexts without activity (Services)
 
-
     FLAG_ACTIVITY_SINGLE_TOP:
 
     - If activity at top of stack, calls onNewIntent() instead of onCreate()
 
     - Prevents duplicate stack entries
-
 
     FLAG_ACTIVITY_CLEAR_TOP:
 
@@ -357,13 +327,11 @@ questions:
 
     - Target becomes top (or recreated if not running)
 
-
     FLAG_ACTIVITY_NO_HISTORY:
 
     - Activity won''t be kept in history
 
     - Never appears in back button
-
 
     FLAG_ACTIVITY_CLEAR_TASK:
 
@@ -380,11 +348,9 @@ questions:
   - notifications
   standard_answer: 'PendingIntent wraps an intent to be executed later by another app.
 
-
     Key property: Grants permission to foreign app to execute intent
 
     with YOUR app''s identity and permissions.
-
 
     Common uses:
 
@@ -396,7 +362,6 @@ questions:
 
     - Broadcast receivers
 
-
     Types:
 
     - PendingIntent.getActivity()
@@ -404,7 +369,6 @@ questions:
     - PendingIntent.getService()
 
     - PendingIntent.getBroadcast()
-
 
     Important: Use FLAG_IMMUTABLE (Android 12+) for security.
 
@@ -420,7 +384,6 @@ questions:
   - fragments
   - lifecycle
   standard_answer: 'Fragment lifecycle is similar to Activity but with additional callbacks.
-
 
     Key lifecycle methods:
 
@@ -441,7 +404,6 @@ questions:
     - onDestroyView(): UI destroyed
 
     - onDestroy(): Fragment destroyed
-
 
     Key difference from Activity:
 
@@ -472,7 +434,6 @@ questions:
 
     - Heavy component
 
-
     FRAGMENT:
 
     - Reusable UI component
@@ -485,7 +446,6 @@ questions:
 
     - Lightweight, composable
 
-
     Use fragments for:
 
     - Modular UI components
@@ -495,7 +455,6 @@ questions:
     - Master-detail layouts
 
     - Reusable screens
-
 
     Use activities for:
 
@@ -522,7 +481,6 @@ questions:
 
     - Use LiveData for reactive updates
 
-
     APPROACH 2: Interface Callback
 
     - Fragment implements listener interface
@@ -533,7 +491,6 @@ questions:
 
     - More verbose, legacy approach
 
-
     APPROACH 3: Shared Preferences / Database
 
     - Persist data to storage
@@ -542,7 +499,6 @@ questions:
 
     - Good for persistent data
 
-
     APPROACH 4: Bundle Arguments
 
     - Pass data between fragments
@@ -550,7 +506,6 @@ questions:
     - Only during fragment creation
 
     - Not for ongoing communication
-
 
     Modern approach: Use ViewModel + LiveData.
 
@@ -565,7 +520,6 @@ questions:
   - backstack
   standard_answer: 'Fragment back stack is managed by FragmentManager.
 
-
     When you call:
 
     fragmentManager.beginTransaction()
@@ -575,7 +529,6 @@ questions:
     .addToBackStack(null)
 
     .commit()
-
 
     Steps:
 
@@ -587,7 +540,6 @@ questions:
 
     4. User presses back: transaction reversed
 
-
     Key methods:
 
     - addToBackStack(): Add to back stack
@@ -596,7 +548,6 @@ questions:
 
     - addToBackStack(tag): Named back stack entry
 
-
     Back navigation:
 
     - Pops last transaction
@@ -604,7 +555,6 @@ questions:
     - Replaces new fragment with old one
 
     - Restores previous fragment state
-
 
     Each Activity has own FragmentManager back stack.
 
@@ -619,13 +569,11 @@ questions:
   - data-passing
   standard_answer: 'BEST PRACTICE: Use Bundle with constants
 
-
     Recommended pattern:
 
     companion object {
 
     private const val ARG_USER_ID = "user_id"
-
 
     fun newInstance(userId: Int) = MyFragment().apply {
 
@@ -639,11 +587,9 @@ questions:
 
     }
 
-
     In onCreate():
 
     val userId = arguments?.getInt(ARG_USER_ID) ?: 0
-
 
     Why this approach:
 
@@ -654,7 +600,6 @@ questions:
     - Type-safe with constants
 
     - Replicates Android best practices
-
 
     DON''T:
 
@@ -677,12 +622,9 @@ questions:
 
     and system services.
 
-
     Think of it as: "Reference to the current application state."
 
-
     Primary types:
-
 
     APPLICATION CONTEXT:
 
@@ -691,7 +633,6 @@ questions:
     - Accessible via getApplicationContext()
 
     - Use for singletons, global listeners
-
 
     ACTIVITY CONTEXT:
 
@@ -702,7 +643,6 @@ questions:
     - Use for UI operations, dialogs
 
     - Destroyed when Activity destroyed
-
 
     Common uses:
 
@@ -729,12 +669,9 @@ questions:
 
     by long-lived objects.
 
-
     PROBLEMATIC PATTERNS:
 
-
     ### Activity context in singletons
-
 
     object MySingleton {
 
@@ -742,9 +679,7 @@ questions:
 
     }
 
-
     ### Inner class references Activity
-
 
     class MyInnerClass { // Holds Activity ref
 
@@ -752,16 +687,13 @@ questions:
 
     }
 
-
     ### Static references to Activity
-
 
     companion object {
 
     var activity: Activity? = null // WRONG!
 
     }
-
 
     SOLUTIONS:
 
@@ -772,7 +704,6 @@ questions:
     - Use dependency injection
 
     - Never store Activity in long-lived objects
-
 
     Memory leak chain: Activity → thread → singleton → leak
 
@@ -797,7 +728,6 @@ questions:
 
     - Any operation not tied to UI
 
-
     DON''T use for:
 
     - UI operations (dialogs crash if Activity destroyed)
@@ -805,7 +735,6 @@ questions:
     - Showing toasts in some cases
 
     - Creating LayoutInflater
-
 
     USE ACTIVITY CONTEXT:
 
@@ -819,7 +748,6 @@ questions:
 
     - Access Activity-specific services
 
-
     DON''T use for:
 
     - Long-lived objects (memory leak risk)
@@ -827,7 +755,6 @@ questions:
     - Singletons
 
     - Static references
-
 
     Simple rule: Use app context if possible, activity context only
 
@@ -850,7 +777,6 @@ questions:
 
     - Data loss (operations interrupted)
 
-
     EXAMPLE - Wrong:
 
     class Manager(val context: Activity) { // Holds Activity ref
@@ -860,7 +786,6 @@ questions:
     }
 
     // Activity destroyed but Manager still referenced → leak
-
 
     CORRECT - Right:
 
@@ -872,11 +797,9 @@ questions:
 
     val manager = Manager(applicationContext) // App context
 
-
     Key principle:
 
     Lifetime of Context >= Lifetime of code referencing it
-
 
     If code runs longer than Activity: use app context.
 
@@ -895,7 +818,6 @@ questions:
 
     referenced, preventing garbage collection.
 
-
     Memory leak chain:
 
     1. Object created
@@ -908,7 +830,6 @@ questions:
 
     5. Memory usage grows
 
-
     Consequences:
 
     - Out of Memory (OOM) exceptions
@@ -920,7 +841,6 @@ questions:
     - Battery drain
 
     - Reduced available memory for other apps
-
 
     Common Android leak sources:
 
@@ -945,9 +865,7 @@ questions:
   - debugging
   standard_answer: 'TOOLS:
 
-
     ### LeakCanary library
-
 
     - Automatically detects leaks
 
@@ -955,9 +873,7 @@ questions:
 
     - Most practical tool
 
-
     ### Android Studio Memory Profiler
-
 
     - Record heap allocations
 
@@ -965,14 +881,11 @@ questions:
 
     - Inspect object references
 
-
     ### Logcat
-
 
     - Watch for OOM errors
 
     - Monitor memory growth
-
 
     PROCESS:
 
@@ -987,7 +900,6 @@ questions:
     5. Inspect object references
 
     6. Trace back to root reference
-
 
     Key: Always check that objects can be garbage collected
 
@@ -1012,7 +924,6 @@ questions:
 
     Fix: Don''t store Activity references as static.
 
-
     PATTERN 2: Inner Class Holding Activity
 
     inner class MyThread : Thread() { // Holds Activity ref
@@ -1023,13 +934,11 @@ questions:
 
     Fix: Use static inner class + WeakReference
 
-
     PATTERN 3: Unregistered Listeners
 
     registerReceiver(myReceiver, filter) // Never unregistered
 
     Fix: Always unregister in onPause/onDestroy
-
 
     PATTERN 4: Handler Messages
 
@@ -1038,7 +947,6 @@ questions:
     // If activity destroyed before delay ends: leak
 
     Fix: Remove messages in onDestroy
-
 
     PATTERN 5: Long-Lived Objects Holding Context
 
@@ -1061,13 +969,11 @@ questions:
 
     - Any global operation
 
-
     2. Use WeakReference for Activity references
 
     - Long-lived objects needing Activity
 
     - Handler.Callback with WeakReference<Activity>
-
 
     3. Always unregister listeners
 
@@ -1077,7 +983,6 @@ questions:
 
     - Event buses: unsubscribe in onDestroy
 
-
     4. Remove handlers/callbacks before destroying
 
     - handler.removeCallbacks()
@@ -1086,20 +991,17 @@ questions:
 
     - In onDestroy/onPause
 
-
     5. Use ViewBinding over findViewById
 
     - Automatic null-out in onDestroyView
 
     - Prevents view references
 
-
     6. Close resources properly
 
     - Close streams, databases, cursors
 
     - Try-with-resources for auto-close
-
 
     7. Use LeakCanary in development
 
@@ -1120,7 +1022,6 @@ questions:
 
     for too long, preventing UI updates or input handling.
 
-
     Timeout thresholds:
 
     - Foreground input dispatch: ~5 seconds
@@ -1128,7 +1029,6 @@ questions:
     - Broadcast receiver: 10 seconds
 
     - Service timeouts vary by API level and state
-
 
     When ANR triggered:
 
@@ -1140,7 +1040,6 @@ questions:
 
     4. User can close app or wait
 
-
     Result:
 
     - App crash
@@ -1150,7 +1049,6 @@ questions:
     - Potential uninstall
 
     - Play Store warnings
-
 
     Common causes:
 
@@ -1179,18 +1077,13 @@ questions:
 
     - Don''t do I/O, network, or heavy computation on main thread
 
-
     SOLUTIONS:
-
 
     ### Use threads for heavy work
 
-
     Thread { heavyWork() }.start()
 
-
     ### Use coroutines (modern approach)
-
 
     viewModelScope.launch(Dispatchers.Default) {
 
@@ -1198,15 +1091,11 @@ questions:
 
     }
 
-
     ### AsyncTask (legacy)
-
 
     AsyncTask.execute { heavyWork() }
 
-
     ### Optimize database queries
-
 
     - Index frequently queried columns
 
@@ -1214,9 +1103,7 @@ questions:
 
     - Use query optimization
 
-
     ### Lazy load data
-
 
     - Load progressively
 
@@ -1224,9 +1111,7 @@ questions:
 
     - Fetch full data in background
 
-
     ### Profile with Profiler
-
 
     - Find slow operations
 
@@ -1251,7 +1136,6 @@ questions:
 
     - Handle system messages
 
-
     Network/I/O characteristics:
 
     - Unpredictable duration (100ms to seconds+)
@@ -1259,7 +1143,6 @@ questions:
     - Can block indefinitely
 
     - May fail and retry
-
 
     If you block main thread with I/O:
 
@@ -1271,7 +1154,6 @@ questions:
 
     - UI freezes visibly to user
 
-
     Solution: Off-load to background thread
 
     - Main thread: responsive UI
@@ -1279,7 +1161,6 @@ questions:
     - Background thread: I/O, network, computation
 
     - Post results back to main thread for UI updates
-
 
     Modern approach: Coroutines
 
@@ -1298,9 +1179,7 @@ questions:
   - rendering
   standard_answer: 'JANK: Visible stutter in UI animations/scrolling.
 
-
     Cause: Dropping frames due to main thread blocking.
-
 
     Expected frame rate:
 
@@ -1310,7 +1189,6 @@ questions:
 
     - 120fps devices: frame every 8.33ms
 
-
     If main thread busy > frame time:
 
     - Frame dropped
@@ -1319,12 +1197,9 @@ questions:
 
     - User sees jank
 
-
     Measurement tools:
 
-
     ### Profile GPU Rendering (dev options)
-
 
     - Visual graph on screen
 
@@ -1332,30 +1207,23 @@ questions:
 
     - Green = good, yellow/red = jank
 
-
     ### Android Studio Profiler
-
 
     - CPU, Memory, Network profiling
 
     - See main thread operations
 
-
     ### FrameMetrics API
-
 
     - Programmatically measure frame times
 
     - Real user monitoring
 
-
     ### Firebase Performance Monitoring
-
 
     - Production monitoring
 
     - Real user metrics
-
 
     Prevention: Keep main thread responsive (<5ms per operation).
 
@@ -1370,7 +1238,6 @@ questions:
   - looper
   standard_answer: 'Looper: Thread mechanism for processing messages in a queue.
 
-
     How it works:
 
     1. Thread has message queue
@@ -1383,9 +1250,7 @@ questions:
 
     5. Exits when quit() called
 
-
     Each thread has max 1 Looper.
-
 
     Main thread always has Looper:
 
@@ -1393,14 +1258,11 @@ questions:
 
     - Processes UI messages, events
 
-
     Background threads:
 
     - No Looper by default
 
-
     ### Create manually if needed
-
 
     Thread {
 
@@ -1411,7 +1273,6 @@ questions:
     Looper.loop() // Start looping
 
     }.start()
-
 
     Why Looper matters:
 
@@ -1434,7 +1295,6 @@ questions:
   - handler
   standard_answer: 'Handler: Interface for sending messages to a Thread''s message queue.
 
-
     Relationship with Looper:
 
     1. Handler posts messages to queue
@@ -1445,13 +1305,11 @@ questions:
 
     4. Handler executes callbacks on Looper''s thread
 
-
     Creating Handler:
 
     Handler(Looper.getMainLooper()) // Posts to main thread
 
     Handler() // Posts to current thread''s Looper
-
 
     Common uses:
 
@@ -1460,7 +1318,6 @@ questions:
     handler.postDelayed(Runnable, delay) // Delayed execution
 
     handler.sendMessage(Message) // Send message
-
 
     Example - Update UI after background work:
 
@@ -1476,7 +1333,6 @@ questions:
 
     }.start()
 
-
     Key: Handler provides thread-safe way to run code on specific thread.
 
     '
@@ -1490,7 +1346,6 @@ questions:
   - handler
   standard_answer: 'HandlerThread: Thread with built-in Looper for handling messages.
 
-
     Benefits over plain Thread:
 
     - Looper automatically created and started
@@ -1501,7 +1356,6 @@ questions:
 
     - No need for manual Looper.prepare()/loop()
 
-
     Creating HandlerThread:
 
     val handlerThread = HandlerThread("MyThread")
@@ -1509,7 +1363,6 @@ questions:
     handlerThread.start()
 
     val handler = Handler(handlerThread.looper)
-
 
     Use cases:
 
@@ -1521,12 +1374,9 @@ questions:
 
     - Any repeatable background task
 
-
     Best practice: Combine with Handler for thread-safe updates.
 
-
     Handler posts work → HandlerThread queue → Looper processes
-
 
     Remember: Always call quit() when done to avoid thread leaks.
 
@@ -1541,7 +1391,6 @@ questions:
   - memory
   standard_answer: 'Handler with delayed messages can leak Activity context.
 
-
     Problem scenario:
 
     handler.postDelayed(Runnable {
@@ -1551,7 +1400,6 @@ questions:
     }, 60000)
 
     // If Activity destroyed before delay ends: leak
-
 
     Memory leak chain:
 
@@ -1567,13 +1415,11 @@ questions:
 
     6. After 60 seconds, message executed (too late)
 
-
     SOLUTION 1: Use Handler with WeakReference
 
     class MyActivity : AppCompatActivity() {
 
     private val handler = Handler(Looper.getMainLooper())
-
 
     private inner class MyRunnable : Runnable {
 
@@ -1582,7 +1428,6 @@ questions:
     }
 
     }
-
 
     SOLUTION 2: Remove messages in onDestroy
 
@@ -1593,7 +1438,6 @@ questions:
     super.onDestroy()
 
     }
-
 
     MODERN: Use coroutines instead (automatic cleanup).
 
@@ -1608,7 +1452,6 @@ questions:
   - fundamentals
   standard_answer: 'Service: Component for long-running operations in background.
 
-
     Key characteristics:
 
     - No UI (unlike Activity)
@@ -1620,7 +1463,6 @@ questions:
     - Has own lifecycle
 
     - Must be declared in manifest
-
 
     When to use:
 
@@ -1634,9 +1476,7 @@ questions:
 
     - Long-running computations
 
-
     Service types:
-
 
     STARTED SERVICE:
 
@@ -1646,7 +1486,6 @@ questions:
 
     - No connection to caller
 
-
     BOUND SERVICE:
 
     - Connected to caller via IPC
@@ -1655,7 +1494,6 @@ questions:
 
     - Stops when all clients unbind
 
-
     FOREGROUND SERVICE:
 
     - Runs with visible notification
@@ -1663,7 +1501,6 @@ questions:
     - Higher priority, but can still be stopped by system/user
 
     - Used for user-aware background work
-
 
     Important: Services run on main thread by default.
 
@@ -1688,7 +1525,6 @@ questions:
 
     - No persistence
 
-
     SERVICE:
 
     - Can outlive Activity
@@ -1701,25 +1537,21 @@ questions:
 
     - Less likely to be killed, but still possible
 
-
     USE CASE:
 
     Heavy computation + don''t need UI after?
 
     → Thread
 
-
     Need background work to survive Activity destroy?
 
     → Service
-
 
     Example distinction:
 
     - Play music in Thread (stops when app closed)
 
     - Play music in Service (continues when minimized)
-
 
     KEY DIFFERENCE:
 
@@ -1728,7 +1560,6 @@ questions:
     - Running service: Higher priority (less likely to be killed)
 
     - Background app with thread: Lower priority (killed first)
-
 
     System Management:
 
@@ -1747,12 +1578,9 @@ questions:
   - ipc
   standard_answer: 'Bound Service: Service offering interface for IPC to clients.
 
-
     Steps to implement:
 
-
     ### Create Service with Binder
-
 
     class MyBoundService : Service() {
 
@@ -1764,9 +1592,7 @@ questions:
 
     }
 
-
     ### Override onBind()
-
 
     override fun onBind(intent: Intent?): IBinder {
 
@@ -1774,17 +1600,13 @@ questions:
 
     }
 
-
     ### Bind from Activity
-
 
     bindService(Intent(...), connection,
 
     Context.BIND_AUTO_CREATE)
 
-
     ### Use ServiceConnection
-
 
     object : ServiceConnection {
 
@@ -1798,7 +1620,6 @@ questions:
 
     }
 
-
     Lifecycle:
 
     - onBind() when first client binds
@@ -1806,7 +1627,6 @@ questions:
     - onUnbind() when last client unbinds
 
     - Service stops if no clients bound and not started
-
 
     Key: Bound service tied to client lifecycle.
 
@@ -1823,7 +1643,6 @@ questions:
   - background-work
   standard_answer: 'IntentService (deprecated): Subclass of Service handling asynchronous requests.
 
-
     Benefits:
 
     - Background thread automatically created
@@ -1836,7 +1655,6 @@ questions:
 
     - Simple to use
 
-
     How it works:
 
     1. Create IntentService subclass
@@ -1848,7 +1666,6 @@ questions:
     4. Threading automatically handled
 
     5. Auto-stops after processing
-
 
     Example:
 
@@ -1864,20 +1681,17 @@ questions:
 
     }
 
-
     Problems (Android 8.0+):
 
     - Background execution restrictions
 
     - Use WorkManager instead
 
-
     MODERN APPROACH:
 
     Use WorkManager for background work (better lifecycle management,
 
     persistence, backoff policy).
-
 
     Legacy but useful for understanding architecture.
 
@@ -1892,7 +1706,6 @@ questions:
   - messaging
   standard_answer: 'Broadcast Receiver: Component for receiving system/app messages.
 
-
     Characteristics:
 
     - Listens for broadcast intents
@@ -1905,7 +1718,6 @@ questions:
 
     - Must be declared in manifest or registered
 
-
     System broadcasts:
 
     - ACTION_BATTERY_LOW
@@ -1916,16 +1728,13 @@ questions:
 
     - ACTION_PACKAGE_INSTALLED
 
-
     Types of receivers:
-
 
     STATIC (Manifest-declared):
 
     - Declared in AndroidManifest.xml
 
     - System can start app just to deliver broadcast
-
 
     DYNAMIC (Runtime-registered):
 
@@ -1934,7 +1743,6 @@ questions:
     - Active only while app running
 
     - Better for app-specific broadcasts
-
 
     Example:
 
@@ -1947,7 +1755,6 @@ questions:
     }
 
     }
-
 
     Use cases: Battery level, connectivity, SMS, time changes.
 
@@ -1962,18 +1769,13 @@ questions:
   - security
   standard_answer: 'DYNAMIC REGISTRATION (Recommended):
 
-
     ### Register in onCreate/onStart
-
 
     registerReceiver(myReceiver, IntentFilter(ACTION))
 
-
     ### Unregister in onDestroy/onStop
 
-
     unregisterReceiver(myReceiver)
-
 
     STATIC REGISTRATION (Manifest):
 
@@ -1989,35 +1791,25 @@ questions:
 
     </receiver>
 
-
     SECURITY BEST PRACTICES:
-
 
     1. Use specific intent filters (not catch-all)
 
     Only catch broadcasts you need
 
-
     ### Check sender permissions
-
 
     In onReceive(), verify sender is trusted
 
-
     ### Require permissions for safety
-
 
     android:permission="my.permission"
 
-
     ### Limit receiving broadcasts
-
 
     Use specific actions, not generic patterns
 
-
     ### Android 8.0+ restrictions
-
 
     - Static receivers limited (battery optimization)
 
@@ -2025,9 +1817,7 @@ questions:
 
     - Or use JobScheduler/WorkManager
 
-
     ### Always unregister dynamic receivers
-
 
     Prevents memory leaks and battery drain
 
@@ -2048,7 +1838,6 @@ questions:
 
     - Receivers cannot affect each other
 
-
     ORDERED BROADCAST:
 
     - Delivered to receivers one at a time
@@ -2061,7 +1850,6 @@ questions:
 
     - Use: sendOrderedBroadcast()
 
-
     STICKY BROADCAST:
 
     - Deprecated and removed in Android 5.0+
@@ -2072,7 +1860,6 @@ questions:
 
     - Caused security/memory issues
 
-
     Example ordered broadcast:
 
     sendOrderedBroadcast(intent, null,
@@ -2080,7 +1867,6 @@ questions:
     resultReceiver, handler, resultCode,
 
     resultData, resultExtras)
-
 
     Receiver can:
 
@@ -2090,7 +1876,6 @@ questions:
 
     - abortBroadcast() // Stop delivery to others
 
-
     Use cases:
 
     - NORMAL: Multiple unrelated receivers
@@ -2098,7 +1883,6 @@ questions:
     - ORDERED: Chain of responsibility pattern
 
     - System broadcasts all normal
-
 
     Best practice: Prefer explicit app-scoped communication
 
@@ -2123,7 +1907,6 @@ questions:
 
     - Cannot revoke individual permissions
 
-
     ANDROID 6.0+ (Runtime permissions):
 
     - Permissions granted at runtime
@@ -2134,9 +1917,7 @@ questions:
 
     - App handles permission denials gracefully
 
-
     Permission categories:
-
 
     NORMAL PERMISSIONS (auto-granted):
 
@@ -2148,7 +1929,6 @@ questions:
 
     - Declared only in manifest
 
-
     DANGEROUS PERMISSIONS (runtime):
 
     - CAMERA, MICROPHONE
@@ -2159,16 +1939,13 @@ questions:
 
     - Require explicit user request via dialog
 
-
     SIGNATURE PERMISSIONS:
 
     - Only apps signed with same cert
 
-
     CUSTOM PERMISSIONS:
 
     - App-defined permissions
-
 
     Best practice: Request permissions only when needed (ask on usage).
 
@@ -2183,15 +1960,11 @@ questions:
   - runtime
   standard_answer: 'STEPS:
 
-
     ### Declare in manifest
-
 
     <uses-permission android:name="android.permission.CAMERA" />
 
-
     ### Check permission at runtime
-
 
     if (ContextCompat.checkSelfPermission(this,
 
@@ -2207,17 +1980,13 @@ questions:
 
     }
 
-
     ### Request permission
-
 
     ActivityCompat.requestPermissions(this,
 
     arrayOf(Manifest.permission.CAMERA), 100)
 
-
     ### Handle response
-
 
     override fun onRequestPermissionsResult(
 
@@ -2241,7 +2010,6 @@ questions:
 
     }
 
-
     MODERN APPROACH (Activity Result Contract):
 
     val cameraPermission = registerForActivityResult(
@@ -2256,7 +2024,6 @@ questions:
 
     cameraPermission.launch(CAMERA)
 
-
     Always handle permission denials gracefully.
 
     '
@@ -2270,12 +2037,9 @@ questions:
   - groups
   standard_answer: 'Permission Groups: Dangerous permissions organized by functional groups.
 
-
     System shows one prompt per group.
 
-
     Example groups:
-
 
     CALENDAR: READ_CALENDAR, WRITE_CALENDAR
 
@@ -2297,7 +2061,6 @@ questions:
 
     PHOTOS: READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO
 
-
     How it works:
 
     1. User grants CALENDAR group permission
@@ -2306,9 +2069,7 @@ questions:
 
     3. Grant decisions are per permission and can vary by Android version
 
-
     Important: Each permission still must be declared in manifest.
-
 
     Best practice:
 
@@ -2331,18 +2092,13 @@ questions:
   - fundamentals
   standard_answer: 'AndroidManifest.xml: Main configuration file for Android app.
 
-
     Contains:
-
 
     ### PACKAGE NAME
 
-
     package="com.example.myapp"
 
-
     ### COMPONENTS
-
 
     - Activities
 
@@ -2352,33 +2108,25 @@ questions:
 
     - Content providers
 
-
     ### PERMISSIONS
-
 
     - Required permissions
 
     - Custom permissions
 
-
     ### FEATURES
-
 
     - Hardware features (camera, GPS)
 
     - Software features
 
-
     ### VERSION INFO
-
 
     - versionCode, versionName
 
     - targetSdkVersion, minSdkVersion
 
-
     ### APPLICATION METADATA
-
 
     - App icon, label, theme
 
@@ -2386,14 +2134,11 @@ questions:
 
     - Hardware acceleration flags
 
-
     ### INTENT FILTERS
-
 
     - Which implicit intents components handle
 
     - Which apps can start component
-
 
     Example:
 
@@ -2417,7 +2162,6 @@ questions:
 
     </manifest>
 
-
     Note: Some settings now in build.gradle (build tools).
 
     '
@@ -2430,7 +2174,6 @@ questions:
   - manifest
   - intents
   standard_answer: 'Intent filters declare which implicit intents a component accepts.
-
 
     STRUCTURE:
 
@@ -2448,16 +2191,13 @@ questions:
 
     </activity>
 
-
     COMPONENTS:
-
 
     ACTION: What the component does
 
     <action android:name="android.intent.action.VIEW" />
 
     <action android:name="android.intent.action.SEND" />
-
 
     CATEGORY: Additional info about component
 
@@ -2471,7 +2211,6 @@ questions:
 
     "android.intent.category.LAUNCHER" />
 
-
     DATA: URI/MIME type patterns
 
     <data android:scheme="https"
@@ -2480,13 +2219,11 @@ questions:
 
     android:mimeType="text/*" />
 
-
     MATCHING RULES:
 
     - Implicit intent must match ALL declared filters
 
     - If multiple matches: chooser shown
-
 
     EXAMPLE - Web link handler:
 
@@ -2521,7 +2258,6 @@ questions:
   - binder
   standard_answer: 'Binder: Android''s Inter-Process Communication (IPC) mechanism.
 
-
     Architecture:
 
     - Client process passes data to kernel
@@ -2531,7 +2267,6 @@ questions:
     - Server Binder thread processes request
 
     - Response sent back through kernel
-
 
     Why Binder:
 
@@ -2543,7 +2278,6 @@ questions:
 
     - Security: UID/PID tracking
 
-
     Common uses:
 
     - Bound services
@@ -2553,7 +2287,6 @@ questions:
     - Inter-app communication
 
     - Activity manager, package manager
-
 
     AIDL (Android Interface Definition Language):
 
@@ -2565,7 +2298,6 @@ questions:
 
     - Server handles in onBind()
 
-
     AIDL workflow:
 
     1. Define .aidl file
@@ -2575,7 +2307,6 @@ questions:
     3. Implement service
 
     4. Bind and call methods
-
 
     Most apps use high-level APIs (Intent, services)
 
@@ -2592,7 +2323,6 @@ questions:
   - process
   standard_answer: 'Zygote: Special system process that launches all app processes.
 
-
     Problem it solves:
 
     - Android apps need Android runtime (VM, libraries)
@@ -2601,9 +2331,7 @@ questions:
 
     - Zygote pre-starts VM with framework loaded
 
-
     How it works:
-
 
     1. Boot: Zygote process starts
 
@@ -2613,9 +2341,7 @@ questions:
 
     - Enters listening mode
 
-
     ### App launch requested
-
 
     - Activity Manager requests process from Zygote
 
@@ -2623,16 +2349,13 @@ questions:
 
     - Child process = new app process
 
-
     ### App process
-
 
     - Inherits Zygote''s loaded framework
 
     - Minimal initialization time
 
     - Ready to run app code
-
 
     Benefits:
 
@@ -2642,11 +2365,9 @@ questions:
 
     - Faster development iteration
 
-
     Process hierarchy:
 
     init → Zygote → ActivityManager → App processes
-
 
     Native/Java boundary:
 
@@ -2655,7 +2376,6 @@ questions:
     - Child processes also Java
 
     - System services communicate via Binder
-
 
     Multiple Zygotes:
 
@@ -2684,7 +2404,6 @@ questions:
 
     - Higher runtime memory usage
 
-
     ART (Android 5.0+):
 
     - AOT (Ahead-Of-Time) compilation
@@ -2701,9 +2420,7 @@ questions:
 
     - Predictable performance
 
-
     COMPARISON:
-
 
     Performance: ART faster (precompiled)
 
@@ -2715,13 +2432,11 @@ questions:
 
     Install time: ART slower (compilation)
 
-
     JIT vs AOT:
 
     - JIT: optimize while running
 
     - AOT: optimize before running
-
 
     ART advantages:
 
@@ -2734,7 +2449,6 @@ questions:
     - Better battery life
 
     - Faster app startup
-
 
     Modern Android: Hybrid
 
@@ -2754,7 +2468,6 @@ questions:
   - startup
   - lifecycle
   standard_answer: 'APP STARTUP FLOW:
-
 
     1. User taps app icon
 
@@ -2780,12 +2493,9 @@ questions:
 
     10. Activity rendered on screen
 
-
     OPTIMIZATION OPPORTUNITIES:
 
-
     ### App startup time stages
-
 
     - Cold start: No process exists (slowest)
 
@@ -2793,9 +2503,7 @@ questions:
 
     - Hot start: Activity in memory but paused (fastest)
 
-
     ### Optimize for cold start
-
 
     - Lazy load modules
 
@@ -2807,9 +2515,7 @@ questions:
 
     - Profiling: Use startup profiler
 
-
     ### Improve perceived performance
-
 
     - Show splash screen
 
@@ -2817,13 +2523,11 @@ questions:
 
     - Progressive content loading
 
-
     System captures startup metrics:
 
     - first frame (visible)
 
     - fully drawn (interactive)
-
 
     Modern approach: Activity Result API, lazy
 
@@ -2850,7 +2554,6 @@ questions:
 
     - Janky scrolling
 
-
     RECYCLERVIEW IMPROVEMENTS:
 
     - Reuses View objects (recycled pools)
@@ -2862,7 +2565,6 @@ questions:
     - Pool size = ~10-15 views
 
     - Original 100 items but only ~10 views created
-
 
     How recycling works:
 
@@ -2876,7 +2578,6 @@ questions:
 
     5. No new View created
 
-
     ARCHITECTURE:
 
     - RecyclerView: Container
@@ -2889,7 +2590,6 @@ questions:
 
     - ItemAnimator: Animations
 
-
     Key efficiencies:
 
     - View reuse (memory efficient)
@@ -2901,7 +2601,6 @@ questions:
     - Multiple layout types
 
     - Item decoration/spacing
-
 
     Best practices:
 
@@ -2924,9 +2623,7 @@ questions:
   - performance
   standard_answer: 'RENDERING PIPELINE (per frame):
 
-
     ### MEASURE
-
 
     - Layout system calculates view dimensions
 
@@ -2934,17 +2631,13 @@ questions:
 
     - Recursive: child measures own children
 
-
     ### LAYOUT
-
 
     - System positions views using measured sizes
 
     - ViewGroup places children at x,y coordinates
 
-
     ### DRAW
-
 
     - Canvas API draws views
 
@@ -2952,22 +2645,17 @@ questions:
 
     - Composited into single frame buffer
 
-
     ### COMPOSITE
-
 
     - Hardware accelerator combines layers
 
     - Handles transparency, transformations
 
-
     ### DISPLAY
-
 
     - GPU sends frame to display
 
     - Vsync synchronized (60/90/120 fps)
-
 
     TIMING BUDGET (60 fps):
 
@@ -2977,39 +2665,29 @@ questions:
 
     - Miss budget: Frame dropped, jank visible
 
-
     OPTIMIZATION:
 
-
     ### Reduce View hierarchy
-
 
     - Fewer views = faster measure/layout
 
     - Use merge, include, ViewStub
 
-
     ### Use ViewHolder pattern
-
 
     - Avoid repeated findViewById
 
-
     ### Avoid layout thrashing
-
 
     - Don''t measure in layout
 
     - Batch layout updates
 
-
     ### Use hardware acceleration
-
 
     - Enabled by default
 
     - Use Layer types for animations
-
 
     Profiling: GPU rendering debug, Layout Inspector.
 
@@ -3024,7 +2702,6 @@ questions:
   - data
   standard_answer: '### SHARED PREFERENCES
 
-
     - Key-value store
 
     - SharedPreferences.getSharedPreferences()
@@ -3035,9 +2712,7 @@ questions:
 
     - NOT encrypted
 
-
     ### INTERNAL STORAGE
-
 
     - App-private directory
 
@@ -3047,9 +2722,7 @@ questions:
 
     - Secure (not accessible by other apps)
 
-
     ### EXTERNAL STORAGE
-
 
     - Public folders (/DCIM, /Pictures, /Documents)
 
@@ -3059,9 +2732,7 @@ questions:
 
     - May not exist on all devices
 
-
     ### DATABASE (SQLite)
-
 
     - Structured data
 
@@ -3071,9 +2742,7 @@ questions:
 
     - Good for complex data
 
-
     ### CONTENT PROVIDERS
-
 
     - Expose data to other apps
 
@@ -3081,9 +2750,7 @@ questions:
 
     - Used for contacts, photos, etc
 
-
     ### CACHE
-
 
     - context.getCacheDir()
 
@@ -3092,7 +2759,6 @@ questions:
     - Can be cleared by system
 
     - Don''t expect data persistence
-
 
     Rules:
 
@@ -3105,7 +2771,6 @@ questions:
     - Temporary: Cache
 
     - Media: External storage
-
 
     Best practice: Use Room for structured data.
 
@@ -3120,7 +2785,6 @@ questions:
   - navigation
   standard_answer: 'TASK: Collection of activities arranged in backstack.
 
-
     Each task has:
 
     - One backstack
@@ -3131,7 +2795,6 @@ questions:
 
     - Shown in recents
 
-
     BACKSTACK: LIFO (Last-In-First-Out) structure
 
     - Activities arranged in order launched
@@ -3139,7 +2802,6 @@ questions:
     - Current activity at top
 
     - User press back: removes top activity
-
 
     EXAMPLE BACKSTACK (top to bottom):
 
@@ -3151,19 +2813,15 @@ questions:
 
     [Activity A] ← Home/root
 
-
     User presses back:
 
     [Activity D] removed → [Activity C] shown
 
-
     FLAGS AFFECTING BACKSTACK:
-
 
     FLAG_ACTIVITY_NEW_TASK:
 
     - New activity starts in new task
-
 
     FLAG_ACTIVITY_CLEAR_TOP:
 
@@ -3171,13 +2829,11 @@ questions:
 
     - Target becomes top
 
-
     FLAG_ACTIVITY_SINGLE_TOP:
 
     - If activity at top: calls onNewIntent()
 
     - Doesn''t create duplicate
-
 
     MULTI-APP TASKS:
 
@@ -3186,7 +2842,6 @@ questions:
     - Back press: goes to App1 or App2
 
     - Task spans apps
-
 
     Best practice:
 
@@ -3207,7 +2862,6 @@ questions:
   - process
   standard_answer: 'PROCESS DEATH: OS kills app process to free memory (no warning).
 
-
     BEFORE KILL (chance to save):
 
     - onSaveInstanceState() called
@@ -3215,7 +2869,6 @@ questions:
     - Stored in Bundle
 
     - Persisted by system
-
 
     DURING KILL:
 
@@ -3227,12 +2880,9 @@ questions:
 
     - No warning given
 
-
     ON USER RETURN:
 
-
     ### If Activity saved state
-
 
     - OS recreates process
 
@@ -3240,14 +2890,11 @@ questions:
 
     - App can restore Bundle data
 
-
     ### If no saved state
-
 
     - Activity restarted fresh
 
     - UI reset
-
 
     DATA LOSS:
 
@@ -3259,12 +2906,9 @@ questions:
 
     - Connections closed
 
-
     PRESERVATION STRATEGIES:
 
-
     ### savedInstanceState
-
 
     - Light data (Bundles, primitives)
 
@@ -3272,9 +2916,7 @@ questions:
 
     - Configuration changes + process death
 
-
     ### ViewModel
-
 
     - Survives configuration changes
 
@@ -3282,9 +2924,7 @@ questions:
 
     - Use with savedInstanceState
 
-
     ### Database
-
 
     - Persistent storage
 
@@ -3292,14 +2932,11 @@ questions:
 
     - Use for critical data
 
-
     ### Preferences
-
 
     - Settings persistence
 
     - Survives everything
-
 
     Best practice: ViewModel + Room Database + savedInstanceState
 
@@ -3316,9 +2953,7 @@ questions:
   - multitasking
   standard_answer: 'MULTITASKING SCENARIOS:
 
-
     ### SPLIT SCREEN
-
 
     - Two apps visible simultaneously
 
@@ -3328,9 +2963,7 @@ questions:
 
     - Top activity interactive, other visible
 
-
     ### PICTURE-IN-PICTURE
-
 
     - App playing video in small window
 
@@ -3340,9 +2973,7 @@ questions:
 
     - User can interact with background
 
-
     ### APP SWITCHING (Recents)
-
 
     - Swipe from other app
 
@@ -3352,21 +2983,17 @@ questions:
 
     - Current app not destroyed (still in memory)
 
-
     LIFECYCLE IMPACT:
-
 
     Old app (going background):
 
     onPause() → onStop()
-
 
     New app (coming foreground):
 
     onStart() (if first time) or
 
     onStart() → onResume() (if was paused)
-
 
     IMPORTANT:
 
@@ -3375,7 +3002,6 @@ questions:
     - Only top activity "interactive"
 
     - Other visible but not interactive
-
 
     CONSEQUENCES:
 
@@ -3386,7 +3012,6 @@ questions:
     - Don''t assume onStop() means background
 
     - May be visible but not interactive
-
 
     Example: Video player in split screen
 
@@ -3408,12 +3033,19 @@ questions:
     - plurals
   standard_answer: |
     Android i18n goes beyond string translation — plurals, date/number formats, and text direction all change based on locale and must be handled by platform APIs, not hardcoded logic.
+    
     In interviews, cover:
+    
     - plurals: use <plurals> resources with quantity strings (zero, one, two, few, many, other); getQuantityString(R.plurals.x, count, count) — never concatenate count + " items" in code
+    
     - number formatting: NumberFormat.getInstance(locale).format(n) or NumberCompat; never hardcode commas or periods as decimal separators — they are locale-specific
+    
     - date formatting: use DateTimeFormatter with explicit locale; avoid toString() on Date/Calendar classes which use the system default locale
+    
     - locale configuration changes: configuration change when the user switches language results in an Activity recreation; ensure ViewModels are locale-independent (store raw data, not formatted strings)
+    
     Strong answer tip:
+    
     - test by forcing locale with LocaleList.setDefault() in an Espresso test or using the ADB command: adb shell am start -a android.intent.action.MAIN --locale de_DE
   deep_dive: /android-interview-prep/deep-dives/fundamentals/activity-lifecycle-and-state/
 - id: explain-rtl-layout-support-bidirectional-text-icon-direction-and-meani
@@ -3426,12 +3058,19 @@ questions:
     - layout
   standard_answer: |
     Android flips horizontal layout automatically in RTL locales when supportsRtl=true is set in the manifest, but logical mirroring of meaning (not just geometry) requires explicit design attention.
+    
     In interviews, cover:
+    
     - enable RTL: android:supportsRtl="true" in <application>; use start/end instead of left/right in layout attributes; layout direction flips automatically
+    
     - icons: directional icons (back arrow, forward arrow, skip) must be mirrored in RTL; non-directional icons (play, settings, share) must not; use android:autoMirrored="true" in SVG drawables for directional ones or provide explicit -ldrtl resources
+    
     - bidirectional text (BiDi): a string with mixed Arabic and English characters; rely on BidiFormatter or android:textDirection="locale" rather than hardcoding LTR/RTL text direction on TextViews
+    
     - padding/margin: Modifier.padding(start=16.dp) in Compose, paddingStart in Views — these automatically flip in RTL
+    
     Strong answer tip:
+    
     - test with: adb shell settings put global debug.force_rtl 1 (developer option) to force RTL on any locale without actually changing device language
   deep_dive: /android-interview-prep/deep-dives/fundamentals/activity-lifecycle-and-state/
 - id: explain-accessibility-at-scale-audit-strategy-semantics-coverage-and-k
@@ -3445,11 +3084,18 @@ questions:
     - keyboard
   standard_answer: |
     Accessibility at scale requires systematic auditing, not ad-hoc fixes; semantic coverage, focus order, and touch target size are the three most common failure classes.
+    
     In interviews, cover:
+    
     - semantic coverage: every interactive element needs a contentDescription or labelFor; group related elements with mergeDescendants; use Role (Button, Checkbox, Image) so TalkBack announces the correct interaction model
+    
     - touch target size: Material spec recommends 48×48dp minimum; Modifier.minimumInteractiveComponentSize() enforces this in Compose; small tap targets fail WCAG 2.5.5
+    
     - focus order: keyboard and D-pad navigation must follow a logical reading order; customise with Modifier.focusProperties { next = focusRef } in Compose or android:nextFocusDown in Views
+    
     - audit tooling: Accessibility Scanner app, Android Studio Layout Inspector accessibility tab, and automated checks via UiAutomator with AccessibilityNodeInfoCompat
+    
     Strong answer tip:
+    
     - integrate automated accessibility checks into your UI test suite using AccessibilityChecks.enable() in Espresso — this runs Google's accessibility test framework on every test run and catches regressions before code review
   deep_dive: /android-interview-prep/deep-dives/fundamentals/activity-lifecycle-and-state/

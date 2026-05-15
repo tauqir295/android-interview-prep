@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Aosp
+# AOSP
 
 <script>
 (function () {
@@ -58,16 +58,19 @@ hide:
     In interviews, cover:
 
     - client proxy marshals args into Parcel and calls ioctl on /dev/binder
+
     - Binder driver routes transaction to target process work queue
+
     - target process Binder thread pool dequeues and dispatches to stub
+
     - reply travels back over same kernel-managed transaction context
+
     - latency cost comes from context switch, marshalling, and queue contention
 
     Strong answer tip:
 
     - explain where tail latency appears under load: binder thread starvation,
       oversized parcels, and lock contention in server process code.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/binder-ipc-and-threading/#aosp-01">🚀 See Full Deep Dive</a>
 
@@ -94,16 +97,19 @@ hide:
     In interviews, cover:
 
     - every process has binder worker threads plus caller thread handoff rules
+
     - undersized pool causes head-of-line blocking for unrelated requests
+
     - oversized pool can increase CPU contention and lock pressure
+
     - long-running calls should be offloaded from binder thread quickly
+
     - instrumentation should track queue depth, p95 call time, timeout rates
 
     Strong answer tip:
 
     - recommend short binder handlers that validate, enqueue, and return,
       moving expensive work to dedicated executors.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/binder-ipc-and-threading/#aosp-02">🚀 See Full Deep Dive</a>
 
@@ -130,16 +136,19 @@ hide:
     In interviews, cover:
 
     - register linkToDeath on remote binder interface
+
     - binderDied callback signals remote object is no longer valid
+
     - client must drop cached interface and trigger reconnection flow
+
     - avoid memory leaks by unlinking recipients on normal teardown
+
     - use idempotent recovery paths to survive rapid process restarts
 
     Strong answer tip:
 
     - connect death handling to real user impact: frozen UI actions,
       orphan sessions, or stuck foreground features after service crash.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/binder-ipc-and-threading/#aosp-03">🚀 See Full Deep Dive</a>
 
@@ -166,16 +175,19 @@ hide:
     In interviews, cover:
 
     - capture Perfetto with binder, sched, freq, and userspace slices enabled
+
     - identify long binder transaction slices and waiting states
+
     - separate marshalling overhead from server execution time
+
     - inspect lock contention and synchronous call chains in service process
+
     - validate fix with before/after p95 and p99 binder latency metrics
 
     Strong answer tip:
 
     - call out anti-pattern: nested synchronous binder calls across services
       creating cascading tail latency and ANR risk.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/binder-ipc-and-threading/#aosp-04">🚀 See Full Deep Dive</a>
 
@@ -202,16 +214,19 @@ hide:
     In interviews, cover:
 
     - state classes: top, foreground service, visible, service, cached
+
     - transition triggers: activity visibility, bindings, broadcasts, jobs
+
     - OOM adj influences LMKD victim selection under memory pressure
+
     - cached processes improve warm start performance but are expendable
+
     - policy differs by API level for background execution restrictions
 
     Strong answer tip:
 
     - connect process state to user-perceived behavior: startup speed,
       background reliability, and kill likelihood after app switch.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/ams-and-process-lifecycle/#aosp-05">🚀 See Full Deep Dive</a>
 
@@ -238,16 +253,19 @@ hide:
     In interviews, cover:
 
     - AMS computes OOM score adjustment from component importance
+
     - LMKD monitors PSI and memory watermarks to trigger eviction
+
     - cached/background processes are preferred kill targets
+
     - kill decisions balance reclaim speed against restart churn
+
     - repeated kill loops indicate bad memory budget or background policy
 
     Strong answer tip:
 
     - explain that reducing process RSS and startup cost together is better
       than only trying to avoid kills at all costs.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/ams-and-process-lifecycle/#aosp-06">🚀 See Full Deep Dive</a>
 
@@ -274,16 +292,19 @@ hide:
     In interviews, cover:
 
     - stale callback updating destroyed Activity or Fragment view
+
     - service bind/unbind timing races around configuration change
+
     - broadcast receiver work running after process priority dropped
+
     - mitigation with lifecycle-aware scopes and state guards
+
     - idempotent cleanup paths to handle duplicate teardown events
 
     Strong answer tip:
 
     - use concrete example: network callback arriving after onStop and
       triggering illegal UI access or leaked window exception.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/ams-and-process-lifecycle/#aosp-07">🚀 See Full Deep Dive</a>
 
@@ -310,16 +331,19 @@ hide:
     In interviews, cover:
 
     - API 26 service limits and broadcast restrictions
+
     - JobScheduler and WorkManager as policy-compliant execution paths
+
     - foreground service requirements and user-visible notifications
+
     - app standby buckets and quota effects on deferred work
+
     - compatibility strategy for mixed minSdk and targetSdk population
 
     Strong answer tip:
 
     - tie policy changes to battery goals and abuse prevention, not just
       platform limitation framing.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/ams-and-process-lifecycle/#aosp-08">🚀 See Full Deep Dive</a>
 
@@ -346,16 +370,19 @@ hide:
     In interviews, cover:
 
     - app UI thread records display list and RenderThread submits GPU work
+
     - buffers queued via BufferQueue from producer to consumer side
+
     - SurfaceFlinger latches latest ready buffers per layer
+
     - Hardware Composer composes layers and presents to display
+
     - misses in any stage create jank or frame drop at display boundary
 
     Strong answer tip:
 
     - describe deadline math: 16.6 ms at 60 Hz, 8.3 ms at 120 Hz, with
       tighter budget at higher refresh rates.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/windowmanager-surfaceflinger-render-pipeline/#aosp-09">🚀 See Full Deep Dive</a>
 
@@ -382,16 +409,19 @@ hide:
     In interviews, cover:
 
     - focused window token determines primary key event target
+
     - touch routing respects hit-test, obscured windows, split focus rules
+
     - policy checks prevent taps into blocked or secure overlay scenarios
+
     - ANR in input target can trigger dispatcher timeout diagnostics
+
     - window transitions must keep focus updates atomic to avoid ghost input
 
     Strong answer tip:
 
     - mention security angle: tapjacking defenses and obscured-window checks
       are part of routing policy, not only UI behavior.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/windowmanager-surfaceflinger-render-pipeline/#aosp-10">🚀 See Full Deep Dive</a>
 
@@ -418,16 +448,19 @@ hide:
     In interviews, cover:
 
     - app misses: expensive layout, overdraw, sync binder waits
+
     - GPU misses: shader cost, texture upload spikes, driver stalls
+
     - compositor misses: late buffer latch, composition complexity
+
     - scheduler effects: CPU throttling, frequency scaling, thread preemption
+
     - use FrameTimeline and Perfetto to attribute missed deadlines accurately
 
     Strong answer tip:
 
     - avoid vague answer; name at least one metric per layer (UI frame time,
       GPU completion, SF present delay).
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/windowmanager-surfaceflinger-render-pipeline/#aosp-11">🚀 See Full Deep Dive</a>
 
@@ -454,15 +487,18 @@ hide:
     In interviews, cover:
 
     - double buffering minimizes latency but risks producer stalls
+
     - triple buffering increases tolerance to jitter under variable workload
+
     - deep queueing can hide jitter while making interaction feel delayed
+
     - ideal setting depends on refresh rate, workload burstiness, UX goals
+
     - validate with frame pacing plus touch latency measurements
 
     Strong answer tip:
 
     - explain this as an explicit product tradeoff, not a universal setting.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/windowmanager-surfaceflinger-render-pipeline/#aosp-12">🚀 See Full Deep Dive</a>
 
@@ -489,15 +525,18 @@ hide:
     In interviews, cover:
 
     - preload phase amortizes class/resource initialization cost
+
     - fork creates child quickly with shared read-only memory pages
+
     - dirty pages become private when app mutates state
+
     - startup gains come from less initialization and fewer page faults
+
     - wrong preload choices can bloat baseline memory for all apps
 
     Strong answer tip:
 
     - connect COW behavior to real memory KPIs: PSS growth and page dirtying.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/zygote-art-and-app-startup/#aosp-13">🚀 See Full Deep Dive</a>
 
@@ -524,16 +563,19 @@ hide:
     In interviews, cover:
 
     - baseline profile driven compilation for hot startup paths
+
     - JIT for dynamic hotspots during normal execution
+
     - AOT artifacts used where profile confidence is high
+
     - dex2oat mode and profile quality impact startup variance
+
     - stale or missing profiles regress first-run and cold start metrics
 
     Strong answer tip:
 
     - mention operational loop: generate profile, ship, measure startup,
       refresh profile after major code-path changes.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/zygote-art-and-app-startup/#aosp-14">🚀 See Full Deep Dive</a>
 
@@ -560,16 +602,19 @@ hide:
     In interviews, cover:
 
     - class verifier and linker work triggered by first touch
+
     - static initializers doing I/O or heavy object graph construction
+
     - dependency chains that pull many classes into startup path
+
     - lazy initialization or deferral after first frame where acceptable
+
     - startup tracing to map class load events to frame misses
 
     Strong answer tip:
 
     - give example of a singleton init removed from Application and moved to
       lazy path, with measured cold start improvement.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/zygote-art-and-app-startup/#aosp-15">🚀 See Full Deep Dive</a>
 
@@ -596,15 +641,18 @@ hide:
     In interviews, cover:
 
     - profile captures method hot paths from representative journeys
+
     - install-time compilation uses profile to pre-optimize selected methods
+
     - improves cold start and first-use latency after install/update
+
     - poor coverage leaves startup paths interpreted or JIT-compiled
+
     - must be regenerated when navigation and hot paths evolve
 
     Strong answer tip:
 
     - discuss governance: benchmark gate in CI to prevent profile regressions.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/zygote-art-and-app-startup/#aosp-16">🚀 See Full Deep Dive</a>
 
@@ -631,16 +679,19 @@ hide:
     In interviews, cover:
 
     - bootloader verifies and loads kernel plus ramdisk
+
     - init parses rc scripts, mounts filesystems, starts core daemons
+
     - zygote and system_server start framework service graph
+
     - package and activity services prepare app/runtime state
+
     - launcher intent starts once core readiness conditions are satisfied
 
     Strong answer tip:
 
     - identify where boot time is usually spent: I/O init, service startup,
       and package scanning overhead.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/boot-init-and-system-server/#aosp-17">🚀 See Full Deep Dive</a>
 
@@ -667,16 +718,19 @@ hide:
     In interviews, cover:
 
     - contains ActivityManager, PackageManager, WindowManager, etc.
+
     - services communicate heavily over binder with app processes
+
     - crash in critical service can trigger watchdog recovery actions
+
     - strict threading and watchdog boundaries prevent global stalls
+
     - service startup order and dependencies affect boot reliability
 
     Strong answer tip:
 
     - explain why service teams keep binder handlers short and avoid blocking
       operations in main/system threads.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/boot-init-and-system-server/#aosp-18">🚀 See Full Deep Dive</a>
 
@@ -703,16 +757,19 @@ hide:
     In interviews, cover:
 
     - service class and trigger conditions control startup ordering
+
     - wrong permissions or context labels can break service bring-up
+
     - restart policies can hide flapping failures or amplify boot loops
+
     - property-triggered actions must avoid unsafe race-prone sequencing
+
     - rc audits should include least privilege and deterministic ordering
 
     Strong answer tip:
 
     - mention validating init changes with boot-time trace and failure-inject
       tests before broad rollout.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/boot-init-and-system-server/#aosp-19">🚀 See Full Deep Dive</a>
 
@@ -739,16 +796,19 @@ hide:
     In interviews, cover:
 
     - monitored loopers and handler checkpoints in core processes
+
     - timeout policy distinguishes transient load from hard deadlock
+
     - capture traces/tombstones before restart to preserve root-cause data
+
     - avoid false positives via bounded work and asynchronous design
+
     - recurring watchdog resets indicate architecture or lock-order defects
 
     Strong answer tip:
 
     - connect watchdog events to postmortem quality: restart alone is not
       success unless diagnostics explain recurrence drivers.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/boot-init-and-system-server/#aosp-20">🚀 See Full Deep Dive</a>
 
@@ -775,16 +835,19 @@ hide:
     In interviews, cover:
 
     - per-app UID/process isolation limits direct data access
+
     - binder and permission checks gate privileged capabilities
+
     - SELinux policy constrains even privileged process behavior
+
     - denials can block exploit chains that pass app-level checks
+
     - security posture depends on policy quality and update hygiene
 
     Strong answer tip:
 
     - clarify that SELinux is not optional hardening; it is core runtime
       policy enforcement in production Android builds.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/security-selinux-and-sandboxing/#aosp-21">🚀 See Full Deep Dive</a>
 
@@ -811,16 +874,19 @@ hide:
     In interviews, cover:
 
     - collect avc logs and map source-target class permissions
+
     - verify labeling and domain transition correctness first
+
     - prefer fixing context/type assignment over broad allow rule
+
     - test policy in realistic scenarios and regression suites
+
     - reject permissive shortcuts in release builds
 
     Strong answer tip:
 
     - explain review process: security sign-off for policy deltas with threat
       rationale and rollback plan.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/security-selinux-and-sandboxing/#aosp-22">🚀 See Full Deep Dive</a>
 
@@ -847,16 +913,19 @@ hide:
     In interviews, cover:
 
     - missing caller identity validation in binder service methods
+
     - confused deputy flows where privileged service executes untrusted intent
+
     - exported component abuse forwarding into privileged code path
+
     - insufficient input validation on file, URI, or command parameters
+
     - mitigate with identity checks, allowlists, and capability minimization
 
     Strong answer tip:
 
     - give one concrete guard pattern: enforceCallingPermission plus package
       signature verification before dangerous operations.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/security-selinux-and-sandboxing/#aosp-23">🚀 See Full Deep Dive</a>
 
@@ -883,16 +952,19 @@ hide:
     In interviews, cover:
 
     - package manager stores grant state per UID and user profile
+
     - framework APIs check permission state on privileged operations
+
     - app ops can add finer-grained runtime policy gates
+
     - kernel/SELinux still enforce final access constraints independently
+
     - revocation and one-time grants require robust app fallback behavior
 
     Strong answer tip:
 
     - distinguish user-consent policy (framework layer) from capability
       enforcement primitives (kernel and SELinux layers).
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/security-selinux-and-sandboxing/#aosp-24">🚀 See Full Deep Dive</a>
 
@@ -919,15 +991,18 @@ hide:
     In interviews, cover:
 
     - stop-the-world pause windows still exist despite concurrent collectors
+
     - allocation churn in UI path increases GC frequency and pause risk
+
     - large object and bitmap patterns stress heap fragmentation
+
     - tune by reducing allocations, pooling wisely, deferring heavy work
+
     - verify with frame metrics plus GC event correlation in traces
 
     Strong answer tip:
 
     - focus on prevention via allocation discipline, not collector tuning only.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/memory-gc-and-scheduler-behavior/#aosp-25">🚀 See Full Deep Dive</a>
 
@@ -954,16 +1029,19 @@ hide:
     In interviews, cover:
 
     - runnable threads compete by virtual runtime under CFS
+
     - priority and cgroup class influence CPU share and latency
+
     - foreground UI/render threads need predictable scheduling budget
+
     - background compute can starve interaction if priorities are misused
+
     - scheduler tuning must be validated with end-user latency metrics
 
     Strong answer tip:
 
     - warn against blindly boosting priorities; it can shift starvation to
       other critical threads and increase thermal throttling risk.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/memory-gc-and-scheduler-behavior/#aosp-26">🚀 See Full Deep Dive</a>
 
@@ -990,16 +1068,19 @@ hide:
     In interviews, cover:
 
     - over-prioritizing background workers near UI priority classes
+
     - long CPU bursts on inherited high-priority threads
+
     - binder handler doing blocking I/O at elevated priority
+
     - lock inversion between high and low priority threads
+
     - use bounded executors, priority discipline, and trace validation
 
     Strong answer tip:
 
     - present a policy: only latency-critical paths get elevated priority,
       with explicit SLO and rollback criteria.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/memory-gc-and-scheduler-behavior/#aosp-27">🚀 See Full Deep Dive</a>
 
@@ -1026,15 +1107,18 @@ hide:
     In interviews, cover:
 
     - quantify voluntary and involuntary context switches per request
+
     - identify synchronous call chains crossing many processes
+
     - collapse unnecessary hops or batch operations to reduce transitions
+
     - co-locate tightly coupled services where practical
+
     - verify gains with CPU time, tail latency, and energy impact metrics
 
     Strong answer tip:
 
     - frame optimization as architecture-level change, not micro-tuning only.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/memory-gc-and-scheduler-behavior/#aosp-28">🚀 See Full Deep Dive</a>
 
@@ -1061,16 +1145,19 @@ hide:
     In interviews, cover:
 
     - trigger conditions and progressive idle state deepening
+
     - maintenance window cadence and work batching semantics
+
     - high-priority FCM and alarms with explicit policy exceptions
+
     - reliability strategy for tasks delayed by long idle periods
+
     - battery-user trust tradeoff when requesting exemptions
 
     Strong answer tip:
 
     - recommend designing for eventual completion, not exact timing, unless
       feature is truly user-critical and policy-eligible for exemption.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/power-background-execution-and-jobs/#aosp-29">🚀 See Full Deep Dive</a>
 
@@ -1097,16 +1184,19 @@ hide:
     In interviews, cover:
 
     - bucket states from active to restricted with tighter quotas
+
     - job and alarm throttling behavior by bucket assignment
+
     - user interaction can promote bucket and relax constraints
+
     - WorkManager should be used with resilient retry/backoff policies
+
     - observability needs bucket-aware failure analysis in production
 
     Strong answer tip:
 
     - show how product teams set realistic freshness expectations given quota
       policy instead of assuming near-real-time background execution.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/power-background-execution-and-jobs/#aosp-30">🚀 See Full Deep Dive</a>
 
@@ -1133,16 +1223,19 @@ hide:
     In interviews, cover:
 
     - WorkManager for durable deferrable work with constraint awareness
+
     - JobScheduler as underlying scheduler on modern API levels
+
     - ForegroundService for user-visible ongoing work requiring immediacy
+
     - misuse of foreground service harms UX and policy compliance
+
     - choose by SLA, user visibility, and platform policy eligibility
 
     Strong answer tip:
 
     - answer with a decision matrix: immediacy, durability, user awareness,
       and tolerance for delayed execution.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/power-background-execution-and-jobs/#aosp-31">🚀 See Full Deep Dive</a>
 
@@ -1169,16 +1262,19 @@ hide:
     In interviews, cover:
 
     - partial wakelock held across slow network or retry loops
+
     - missing timeout or release path in failure branches
+
     - chaining wakelock with frequent alarms compounds drain
+
     - use WorkManager constraints and opportunistic batching instead
+
     - validate with batterystats and thermal event correlation
 
     Strong answer tip:
 
     - describe guardrails: strict timeout defaults, ownership logging, and
       automated tests that assert release behavior on all code paths.
-
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/aosp/power-background-execution-and-jobs/#aosp-32">🚀 See Full Deep Dive</a>
 

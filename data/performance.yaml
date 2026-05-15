@@ -8,18 +8,28 @@ questions:
       - monitoring
     standard_answer: |
       Key Android performance metrics:
+      
       FPS/Jank:
+      
       - FPS (frames per second): smooth 60 FPS target
+      
       - Jank: frame drops below 60 FPS
       Memory:
+      
       - Heap size: total allocated
+      
       - PSS: proportional set size
       Battery & Network:
+      
       - Battery drain rate
+      
       - Network latency
+      
       - Data usage
       Startup:
+      
       - Cold start: app launch from dead
+      
       - Warm start: from background
     deep_dive: /android-interview-prep/deep-dives/performance/performance-metrics/
   - id: jank-and-ui-drops
@@ -32,16 +42,26 @@ questions:
     standard_answer: |
       Jank = frame drops below 60 FPS (16.6ms per frame).
       Common causes:
+      
       - Heavy computation on main thread
+      
       - Too many allocations (GC pauses)
+      
       - Expensive layout passes
+      
       - Slow drawing operations
+      
       - Blocking I/O
       Fixes:
+      
       - Move work to background thread
+      
       - Reduce allocation rate
+      
       - Optimize layouts (flatten hierarchy)
+      
       - Use Hardware acceleration
+      
       - Implement proper caching
     deep_dive: /android-interview-prep/deep-dives/performance/jank-and-frame-drops/
   - id: memory-leaks
@@ -54,18 +74,29 @@ questions:
     standard_answer: |
       Memory leak = object not released when no longer needed.
       Common causes:
+      
       - Static references to context
+      
       - Inner classes holding outer reference
+      
       - Listener/callback not unregistered
+      
       - Handler posting delayed messages
       Detection tools:
+      
       - LeakCanary library (automatic)
+      
       - Android Profiler memory tab
+      
       - Heap dumps + MAT analysis
       Prevention:
+      
       - Use WeakReference for context
+      
       - Unregister listeners in onDestroy
+      
       - Avoid anonymous inner classes
+      
       - Cancel delayed messages
     deep_dive: /android-interview-prep/deep-dives/performance/memory-leaks/
   - id: garbage-collection
@@ -78,16 +109,25 @@ questions:
     standard_answer: |
       GC (Garbage Collection) frees unused memory.
       Android ART uses:
+      
       - Mark-sweep: pause app, scan heap
+      
       - Generational GC: young objects collected more
+      
       - CMS: marks while app runs
       GC pause impacts:
+      
       - Causes frame drops (jank)
+      
       - Allocation rate = GC frequency
+      
       - Reduce allocations = fewer pauses
       Profile with:
+      
       - Memory Profiler timeline
+      
       - Logcat GC events
+      
       - Perfetto for detailed events
     deep_dive: /android-interview-prep/deep-dives/performance/memory-management/
   - id: battery-optimization
@@ -99,20 +139,33 @@ questions:
       - power
     standard_answer: |
       Battery drain sources:
+      
       - CPU compute
+      
       - Screen brightness/duration
+      
       - Networking (WiFi/cellular)
+      
       - GPS/sensors
+      
       - Location polling
       Optimization strategies:
+      
       - Batch network requests (not individual)
+      
       - Use Doze mode (WorkManager scheduling)
+      
       - Reduce location precision
+      
       - Disable sensors when not needed
+      
       - Use push instead of polling
+      
       - Aggregate sensor updates
       Tools:
+      
       - Battery Historian
+      
       - Perfetto energy profiling
     deep_dive: /android-interview-prep/deep-dives/performance/battery-optimization/
   - id: rendering-pipeline
@@ -124,7 +177,9 @@ questions:
       - pipeline
     standard_answer: |
       Android rendering (60-120 FPS):
+      
       Phases:
+      
       1. Input: user touch/events
       2. Animation: animate values
       3. Measure: calculate sizes
@@ -134,9 +189,13 @@ questions:
       7. Display: swap buffers
       Budget: 8.3ms (120 FPS) to 16.6ms (60 FPS)
       Optimization:
+      
       - Reduce draw complexity
+      
       - Simplify layouts (flatten hierarchy)
+      
       - Use hardware acceleration
+      
       - Minimize redraws
     deep_dive: /android-interview-prep/deep-dives/performance/rendering-pipeline/
   - id: overdraw
@@ -149,17 +208,27 @@ questions:
     standard_answer: |
       Overdraw = drawing pixels multiple times per frame.
       Example:
+      
       - Background color filled
+      
       - Card drawn on top (re-fills)
+      
       - Text drawn on top (re-fills again)
       Detection:
+      
       - Developer Options: Show GPU overdraw
+      
       - Perfetto GPU profiling
+      
       - Visual: areas glow bright
       Fixes:
+      
       - Remove unnecessary backgrounds
+      
       - Merge layers where possible
+      
       - Use `clipRect` to limit drawing
+      
       - Clip non-visible areas
     deep_dive: /android-interview-prep/deep-dives/performance/rendering-optimization/
   - id: app-startup-time
@@ -171,19 +240,28 @@ questions:
       - performance
     standard_answer: |
       Startup phases:
+      
       1. Process creation: Zygote fork
       2. App launch: onCreate()
       3. Activity: layout inflation
       4. First frame: rendering
       Optimization:
+      
       - Defer heavy initialization
+      
       - Use lazy initialization
+      
       - Prewarm VMs on startup
+      
       - Reduce layout complexity
+      
       - Use App Startup library
       Profiling:
+      
       - `adb shell am start -W` timing
+      
       - Android Studio Profiler
+      
       - Perfetto startup trace
     deep_dive: /android-interview-prep/deep-dives/performance/app-startup/
   - id: memory-profiling
@@ -196,17 +274,27 @@ questions:
     standard_answer: |
       Memory profiling tells where RAM goes.
       Tools:
+      
       - Android Profiler: real-time memory
+      
       - LeakCanary: automatic leak detection
+      
       - Heap Dumps: snapshot analysis
+      
       - MAT: heap dump deep dive
+      
       - dumpsys: command-line info
       Key metrics:
+      
       - Heap: app allocated memory
+      
       - Native: C++ allocations
+      
       - Graphics: GPU memory
+      
       - Stack: thread stacks
       Workflow:
+      
       1. Record memory profile
       2. Force GC
       3. Identify retained objects
@@ -223,17 +311,27 @@ questions:
     standard_answer: |
       CPU profiling shows processor time usage.
       Methods:
+      
       - Sampled: interrupt periodically (~1000Hz)
+      
       - Instrumented: log entry/exit
+      
       - Method tracing: record call stacks
       Tools:
+      
       - Android Profiler CPU tab
+      
       - Perfetto: system-wide tracing
+      
       - Simpleperf: low-overhead
       What to find:
+      
       - Hot methods: consuming lots of time
+      
       - Lock contention: threads waiting
+      
       - Allocations: GC triggers
+      
       - System calls: I/O blocking
     deep_dive: /android-interview-prep/deep-dives/performance/cpu-profiling/
   - id: layout-inflation
@@ -246,19 +344,28 @@ questions:
     standard_answer: |
       Layout inflation converts XML to view tree.
       Process:
+      
       1. Parse XML
       2. Create ViewGroup/View objects
       3. Set attributes via reflection
       4. Add to parent
       Performance impact:
+      
       - Creates objects (allocation/GC)
+      
       - Reflection overhead
+      
       - Slower for complex hierarchies
       Optimization:
+      
       - ViewStub: defer inflation
+      
       - Merge: reduces depth
+      
       - Include: reuse layouts
+      
       - Data binding: skip findViewById()
+      
       - Compose: no XML inflation
     deep_dive: /android-interview-prep/deep-dives/performance/layout-optimization/
   - id: anr-prevention
@@ -270,19 +377,31 @@ questions:
       - threading
     standard_answer: |
       ANR (Application Not Responding):
+      
       - Main thread blocked > 5 seconds
+      
       - Broadcast receiver > 10 seconds
+      
       - Service > 20 seconds
       Common causes:
+      
       - Heavy computation on main thread
+      
       - Network I/O blocking
+      
       - Database queries not cached
+      
       - Synchronized blocks with contention
       Prevention:
+      
       - Use background threads (coroutines)
+      
       - Move I/O off main thread
+      
       - Cache expensive computations
+      
       - Use async libraries (Retrofit)
+      
       - Profile with Perfetto
     deep_dive: /android-interview-prep/deep-dives/performance/anr-prevention/
   - id: bitmap-optimization
@@ -295,19 +414,31 @@ questions:
     standard_answer: |
       Bitmaps are large (width × height × 4 bytes).
       Optimization:
+      
       - Downscale: load only needed resolution
+      
       - Compression: use WebP (20-30% smaller)
+      
       - Caching: cache in memory or disk
+      
       - Sample size: decode at 1/2 or 1/4
+      
       - Reuse: recycle old bitmaps
       Glide library handles most:
+      
       - Automatic downscaling
+      
       - Format optimization
+      
       - Memory + disk cache
+      
       - Lifecycle aware
       Avoid:
+      
       - Huge bitmaps into memory
+      
       - Keeping references forever
+      
       - Ignoring OOM exceptions
     deep_dive: /android-interview-prep/deep-dives/performance/bitmap-optimization/
   - id: database-performance
@@ -320,20 +451,33 @@ questions:
     standard_answer: |
       Database optimization is critical.
       Strategies:
+      
       - Index frequently-queried columns
+      
       - Select only needed columns (not *)
+      
       - Use pagination for large result sets
+      
       - Batch insert/update (not individual)
+      
       - Prepare statements (not ad-hoc SQL)
+      
       - Use ViewModels to cache
       Room-specific:
+      
       - Observe Flow<List<T>> for updates
+      
       - Use @Query with parameters
+      
       - Implement DAO pattern
+      
       - Use database transactions
       Anti-patterns:
+      
       - N+1 queries
+      
       - Loading all data at once
+      
       - Creating new database per query
     deep_dive: /android-interview-prep/deep-dives/performance/database-optimization/
   - id: network-performance
@@ -346,19 +490,31 @@ questions:
     standard_answer: |
       Network is often the bottleneck.
       Optimization:
+      
       - Batch requests (don't spam)
+      
       - Compress responses (gzip)
+      
       - Cache responses (HTTP headers)
+      
       - Use CDN for static assets
+      
       - Implement exponential backoff
+      
       - Minimize payload size
       Monitoring:
+      
       - Network Profiler: timing
+      
       - Check bandwidth consumption
+      
       - Latency baseline for networks
       Mobile-specific:
+      
       - Account for variable latency
+      
       - Implement offline fallback
+      
       - Use Retrofit + OkHttp
     deep_dive: /android-interview-prep/deep-dives/performance/network-optimization/
   - id: string-formatting
@@ -371,18 +527,21 @@ questions:
     standard_answer: |
       String operations create allocations (GC).
       Performance (fastest to slowest):
+      
       1. String literal: "hello"
       2. Simple concatenation: "a" + "b"
       3. StringBuilder: sb.append()
       4. String.format(): expensive
       5. String interpolation in loops
       BAD (allocation per loop):
+      
       ```
       for (i in 1..1000) {
         val str = "Item $i"  // NEW allocation
       }
       ```
       GOOD:
+      
       ```
       val sb = StringBuilder()
       for (i in 1..1000) {
@@ -401,21 +560,34 @@ questions:
     standard_answer: |
       Reflection is flexible but slow.
       Cost examples (vs direct call):
+      
       - Class.forName(): ~1000x slower
+      
       - Method.invoke(): ~10-100x slower
+      
       - Field.get(): ~50x slower
       Why so slow:
+      
       - Runtime lookup of class/method/field
+      
       - Security checks
+      
       - No JIT optimization
       When it matters:
+      
       - Called millions of times (NO)
+      
       - Called in hot loops (NO)
+      
       - Cold path (fine)
+      
       - Framework code (unavoidable)
       Optimization:
+      
       - Cache Method objects
+      
       - Avoid in tight loops
+      
       - Use code generation (Room, Dagger)
     deep_dive: /android-interview-prep/deep-dives/performance/reflection-optimization/
   - id: view-recycling
@@ -428,23 +600,35 @@ questions:
     standard_answer: |
       RecyclerView recycles views to save memory.
       Recycling pools:
+      
       - Attached: currently visible
+      
       - Scrap: removed, reusable
+      
       - Cache: recently scrolled off
+      
       - Recycled: available for reuse
       Reuse flow:
+      
       1. Item scrolls out
       2. ViewHolder moves to scrap
       3. onBindViewHolder() called
       4. View updated without recreation
       Benefits:
+      
       - Smooth scrolling (no lag)
+      
       - Memory efficient
+      
       - CPU efficient (no inflation)
       Best practices:
+      
       - Keep onBindViewHolder() fast
+      
       - Avoid heavy layouts per item
+      
       - Use ViewStub for conditional
+      
       - Pre-calculate view sizes
     deep_dive: /android-interview-prep/deep-dives/performance/recyclerview-optimization/
   - id: lazy-initialization
@@ -457,25 +641,37 @@ questions:
     standard_answer: |
       Lazy initialization delays object creation.
       Example:
+      
       ```kotlin
       private val expensive: Expensive by lazy {
         Expensive()  // created on first access
       }
       ```
       Benefits:
+      
       - Faster app startup
+      
       - Memory savings
+      
       - Simpler dependency management
       Drawbacks:
+      
       - First access has latency
+      
       - Thread-safe overhead
       Good use cases:
+      
       - Heavy database connections
+      
       - Image caches
+      
       - Analytics SDK
+      
       - ML models
       Bad use cases:
+      
       - UI-critical objects
+      
       - Startup-critical paths
     deep_dive: /android-interview-prep/deep-dives/performance/initialization-patterns/
   - id: object-pooling
@@ -488,19 +684,30 @@ questions:
     standard_answer: |
       Object pooling reuses objects to avoid allocation.
       Benefits:
+      
       - Reduce GC pressure
+      
       - Faster allocation
+      
       - Predictable performance
       Drawbacks:
+      
       - Complexity (reset state)
+      
       - Memory still allocated
+      
       - Only helps if allocation bottleneck
       Good use cases:
+      
       - High-throughput servers
+      
       - Real-time games
+      
       - Allocation proven bottleneck
       Modern approach:
+      
       - Kotlin object pools
+      
       - Coroutine object reuse
     deep_dive: /android-interview-prep/deep-dives/performance/allocation-optimization/
   - id: perfetto-tracing
@@ -513,21 +720,32 @@ questions:
     standard_answer: |
       Perfetto is a system profiler for end-to-end analysis.
       Capabilities:
+      
       - CPU usage per thread
+      
       - GPU rendering analysis
+      
       - Memory allocation timeline
+      
       - Disk I/O traces
+      
       - Network events
+      
       - Power/battery drain
       How to use:
+      
       1. Enable tracing
       2. Reproduce issue (30-60s)
       3. Stop tracing
       4. Load UI trace at ui.perfetto.dev
       What it shows:
+      
       - Frame rendering
+      
       - Thread activity
+      
       - Kernel events
+      
       - Power state changes
     deep_dive: /android-interview-prep/deep-dives/performance/profiling-tools/
   - id: frame-rate-stability
@@ -540,21 +758,34 @@ questions:
     standard_answer: |
       Stable frame rate = consistent 60 FPS.
       Challenges:
+      
       - Uneven workload distribution
+      
       - GC pauses
+      
       - Background tasks
       Solutions:
+      
       - Frame budget: < 16.6ms per frame
+      
       - Profile each frame
+      
       - Use async tasks
+      
       - Spread work across frames
+      
       - Predict heavy frames
       Monitoring:
+      
       - Perfetto frame timeline
+      
       - Android Profiler FPS
+      
       - Custom frame listeners
       Advanced:
+      
       - Variable refresh rate
+      
       - Frame choreographer
     deep_dive: /android-interview-prep/deep-dives/performance/frame-stability/
   - id: cold-start-optimization
@@ -567,21 +798,31 @@ questions:
     standard_answer: |
       Cold start = app launch from dead process.
       Timeline:
+      
       1. Zygote fork + JIT warmup
       2. dex verification
       3. Application.onCreate()
       4. Activity + layout inflation
       5. First frame render
       Common slow points:
+      
       - Heavy init in Application
+      
       - Database/SharedPreferences
+      
       - Synchronous I/O
+      
       - Complex theme init
       Optimizations:
+      
       - Defer init to lazy
+      
       - Use App Startup library
+      
       - Avoid blocking foreground
+      
       - Reduce Activity layout
+      
       - Use splash screen
     deep_dive: /android-interview-prep/deep-dives/performance/startup-optimization/
   - id: warm-cache
@@ -594,20 +835,32 @@ questions:
     standard_answer: |
       Warm cache = pre-loaded data for instant access.
       Strategy:
+      
       - Prefetch likely data
+      
       - Load in background after startup
+      
       - Keep in memory
+      
       - Update periodically
       Examples:
+      
       - User profile: load at startup
+      
       - Common list: preload next page
+      
       - Images: cache before displaying
       Implementation:
+      
       - Use Flow.replay()
+      
       - Background job for refresh
+      
       - Memory bounds (evict on pressure)
       Tradeoff:
+      
       - Pro: instant display
+      
       - Con: memory overhead, staleness
     deep_dive: /android-interview-prep/deep-dives/performance/caching-strategies/
   - id: composition-performance
@@ -620,23 +873,37 @@ questions:
     standard_answer: |
       Compose vs Views performance is nuanced.
       Compose advantages:
+      
       - Efficient recomposition (skips unchanged)
+      
       - Less allocation overhead
+      
       - Better compiler optimizations
       View advantages:
+      
       - Lower overhead for simple UI
+      
       - Hardware acceleration mature
       Recomposition cost:
+      
       - Recomposition is fast (~microseconds)
+      
       - Can add up in complex trees
+      
       - Use Stability annotations
       Rendering is same:
+      
       - Both use Android graphics
+      
       - Same frame time budget
       Optimization:
+      
       - Use remember() correctly
+      
       - Avoid recomposition
+      
       - Use @Stable
+      
       - Profile recomposition
     deep_dive: /android-interview-prep/deep-dives/performance/compose-performance/
   - id: shader-compilation
@@ -649,18 +916,28 @@ questions:
     standard_answer: |
       Shader compilation happens at runtime (GPU).
       Impact:
+      
       - First frame with new shader: slow
+      
       - Subsequent: cached (fast)
       Symptom:
+      
       - Jank on first appearance of UI effect
       Solutions:
+      
       - Pre-compile shaders
+      
       - Warm up GPU at startup
+      
       - Use simpler shaders
+      
       - Avoid new combinations
       Common causes:
+      
       - Text rendering (fonts/sizes)
+      
       - Complex effects (blur, shadow)
+      
       - Gradient combinations
     deep_dive: /android-interview-prep/deep-dives/performance/graphics-optimization/
   - id: memory-pressure
@@ -673,15 +950,23 @@ questions:
     standard_answer: |
       Memory pressure = system running low on RAM.
       Symptoms:
+      
       - App slowdowns (constant GC)
+      
       - ANRs
+      
       - Out of Memory crashes
       Handling:
+      
       - Implement onLowMemory()
+      
       - Clear caches aggressively
+      
       - Reduce image quality
+      
       - Free non-critical resources
       Example:
+      
       ```kotlin
       override fun onLowMemory() {
         super.onLowMemory()
@@ -690,8 +975,11 @@ questions:
       }
       ```
       Prevention:
+      
       - Don't allocate huge objects
+      
       - Implement bounded caches
+      
       - Monitor memory in tests
     deep_dive: /android-interview-prep/deep-dives/performance/memory-management/
   - id: graphics-memory
@@ -704,17 +992,27 @@ questions:
     standard_answer: |
       Graphics memory = GPU + framebuffer allocations.
       Allocations:
+      
       - Framebuffer: width × height × 4
+      
       - Texture: image data
+      
       - GPU cache: driver overhead
       Rough numbers:
+      
       - 1080p framebuffer: ~8.3 MB
+      
       - Texture 1024x1024: ~4 MB
+      
       - Multiple framebuffers: multiples
       Optimization:
+      
       - Reduce texture size
+      
       - Use TextureView sparingly
+      
       - Reduce layer complexity
+      
       - Monitor Profiler Graphics
     deep_dive: /android-interview-prep/deep-dives/performance/memory-management/
   - id: power-consumption-profiling
@@ -727,21 +1025,34 @@ questions:
     standard_answer: |
       Power profiling measures energy usage.
       Tools:
+      
       - Battery Historian: visual drain timeline
+      
       - Perfetto energy events: power state
+      
       - Monsoon: hardware measurement
       What to measure:
+      
       - CPU active vs idle
+      
       - Screen on time
+      
       - Radio state (WiFi, cellular)
+      
       - Wake locks
       Interpretation:
+      
       - Expected baseline
+      
       - Spikes = power-hungry ops
+      
       - Wakelocks = preventing sleep
       Optimization targets:
+      
       - Reduce CPU work
+      
       - Batch I/O
+      
       - Use Doze scheduling
     deep_dive: /android-interview-prep/deep-dives/performance/battery-profiling/
   - id: systrace-analysis
@@ -754,17 +1065,27 @@ questions:
     standard_answer: |
       Systrace captures kernel + app events.
       Shows:
+      
       - CPU frequency scaling
+      
       - Thread scheduling
+      
       - Disk I/O
+      
       - Frame rendering
+      
       - App event markers
       Interpreting:
+      
       - Green = running
+      
       - Yellow = waiting
+      
       - Red = not scheduled
       vsync alignment:
+      
       - Marks 16.6ms frame boundaries
+      
       - if work extends past = jank
     deep_dive: /android-interview-prep/deep-dives/performance/profiling-tools/
   - id: custom-performance-monitoring
@@ -777,6 +1098,7 @@ questions:
     standard_answer: |
       Custom monitoring tracks app-specific metrics.
       Implementation:
+      
       ```kotlin
       object PerfMonitor {
         fun trackMethodTime(name: String, block: () -> Unit) {
@@ -788,17 +1110,27 @@ questions:
       }
       ```
       What to track:
+      
       - API response times
+      
       - Database query latency
+      
       - Custom UI operations
+      
       - Cache hit rates
       Reporting:
+      
       - Firebase Performance
+      
       - Crashlytics
+      
       - Custom backend
       Best practices:
+      
       - Sampling (not every call)
+      
       - Async reporting
+      
       - Aggregation
     deep_dive: /android-interview-prep/deep-dives/performance/monitoring-implementation/
   - id: performance-testing
@@ -811,10 +1143,14 @@ questions:
     standard_answer: |
       Performance tests measure speed/memory.
       Tools:
+      
       - Jetpack Benchmark library
+      
       - Macrobenchmark (full app)
+      
       - Microbenchmark (code snippets)
       Example:
+      
       ```kotlin
       @Test
       fun jsonParsingBenchmark() {
@@ -825,9 +1161,13 @@ questions:
       }
       ```
       Best practices:
+      
       - Run on real device
+      
       - Multiple iterations
+      
       - Report distribution
+      
       - Test realistic data
     deep_dive: /android-interview-prep/deep-dives/performance/performance-testing/
   - id: responsiveness-perception
@@ -840,20 +1180,32 @@ questions:
     standard_answer: |
       Perceived responsiveness ≠ actual performance.
       Factors:
+      
       - Immediate feedback
+      
       - Animation smoothness
+      
       - Predictability
+      
       - Touch feedback
       Techniques:
+      
       - Show loading indicator immediately
+      
       - Skeletons (UI placeholder)
+      
       - Instant first frame
+      
       - Smooth animations
       Example:
+      
       - Actual: 2-second network request
+      
       - Perceived: Fast (progress shown immediately)
       Lesson:
+      
       - User perception matters more
+      
       - UX design can fake responsiveness
     deep_dive: /android-interview-prep/deep-dives/performance/ux-perception/
   - id: benchmark-tools
@@ -866,15 +1218,24 @@ questions:
     standard_answer: |
       Android profiling tools serve different purposes.
       Tools:
+      
       - Android Profiler: app, real-time
+      
       - Perfetto: system, high detail
+      
       - Systrace: kernel, very detailed
+      
       - LeakCanary: memory leaks
+      
       - Battery Historian: battery drain
       When to use:
+      
       - Quick checks: Android Profiler
+      
       - Deep dive: Perfetto/Systrace
+      
       - Memory leaks: LeakCanary
+      
       - Battery: Battery Historian
     deep_dive: /android-interview-prep/deep-dives/performance/profiling-tools/
   - id: performance-budgets
@@ -887,21 +1248,34 @@ questions:
     standard_answer: |
       Performance budget = explicit metric limit.
       Examples:
+      
       - Cold start <= 5 seconds
+      
       - Frame rate >= 60 FPS
+      
       - Memory <= 100 MB
+      
       - Network <= 2 MB per session
       Benefits:
+      
       - Prevents regression
+      
       - Guides priorities
+      
       - Aligns team goals
       Enforcement:
+      
       - Continuous benchmarking
+      
       - CI checks (fail if exceeded)
+      
       - Code review criteria
       Setting:
+      
       - Baseline current performance
+      
       - Set realistic goals
+      
       - Account for device variability
     deep_dive: /android-interview-prep/deep-dives/performance/performance-strategy/
   - id: gpu-rendering-cost
@@ -914,20 +1288,32 @@ questions:
     standard_answer: |
       GPU rendering = off-loading work from CPU.
       Tradeoff:
+      
       - Pro: Frees CPU for logic
+      
       - Con: Setup/sync overhead
+      
       - Con: Not always faster
       When GPU helps:
+      
       - Complex graphics (transforms)
+      
       - Many objects (batching)
+      
       - Heavy shading
       When CPU is better:
+      
       - Simple UI
+      
       - Rare updates
+      
       - Small viewport
       Optimization:
+      
       - Batch draw calls
+      
       - Use GPU for heavy work only
+      
       - Reduce texture uploads
     deep_dive: /android-interview-prep/deep-dives/performance/gpu-optimization/
   - id: kernel-linux-performance
@@ -940,21 +1326,34 @@ questions:
     standard_answer: |
       Kernel scheduling impacts frame timing.
       Key subsystems:
+      
       - Scheduler: which thread runs
+      
       - MM: memory management
+      
       - I/O scheduler: disk requests
+      
       - Thermal: CPU throttling
       Performance factors:
+      
       - Load average: threads waiting
+      
       - Context switches: contention
+      
       - Page faults: disk access
       Android-specific:
+      
       - cpufreq: CPU scaling
+      
       - Zygote: shared memory
+      
       - ASHMEM: low-memory killer
       Visible from userspace:
+      
       - Perfetto kernel events
+      
       - Systrace scheduling
+      
       - Load: `adb shell cat /proc/loadavg`
     deep_dive: /android-interview-prep/deep-dives/performance/system-internals/
   - id: ahead-of-time-compilation
@@ -967,19 +1366,30 @@ questions:
     standard_answer: |
       AoT = compile before running.
       Android evolution:
+      
       - Dalvik: JIT (slow startup)
+      
       - ART: JIT + profile-guided opt
+      
       - Modern: ReadyToRun (pre-compiled)
       Benefits of AoT:
+      
       - Instant execution
+      
       - Predictable performance
+      
       - Lower battery
       Tradeoffs:
+      
       - Larger app size
+      
       - Less optimized (no profile)
       In practice:
+      
       - System apps: mostly AoT
+      
       - Third-party: mix
+      
       - User interaction: JIT if slow
     deep_dive: /android-interview-prep/deep-dives/performance/compilation-optimization/
   - id: explain-r8-and-proguard-reflection-and-serialization-pitfalls-in-andro
@@ -993,13 +1403,21 @@ questions:
       - serialization
     standard_answer: |
       R8 shrinks, obfuscates, and optimizes code at compile time, but it cannot see through runtime reflection or dynamic class loading — missing keep rules cause production crashes.
+      
       In interviews, cover:
+      
       - Gson uses reflection to access fields by name; R8 renames fields; without -keepclassmembers rules for your model classes, Gson silently reads null for every field at runtime
+      
       - Retrofit uses annotation processing and reflection for @GET/@POST parsing; the interface itself must be kept: -keep interface com.example.MyApi
+      
       - Kotlin metadata: serialization libraries read @Serializable annotation data; if the package or class is renamed, kotlinx.serialization fails to find the generated serializer
+      
       - room: @Dao and @Entity annotated classes need keep rules; R8 keeps them if the AGP Room plugin is applied, but custom DAO implementations accessed reflectively do not
+      
       - resource names accessed via R.string.*, Resources.getIdentifier(), or dynamic resource loading need resources keep rules (-keep class **.R$*)
+      
       Strong answer tip:
+      
       - always verify shrunk release builds with manual smoke tests AND automated tests run against the release variant; add -printusage to see what R8 removed and catch silent serialization breakage in CI
     deep_dive: /android-interview-prep/deep-dives/performance/performance-metrics/
   - id: explain-baseline-profiles-macrobenchmark-and-operationalizing-startup-
@@ -1012,12 +1430,20 @@ questions:
       - startup
     standard_answer: |
       Baseline Profiles pre-compile critical code paths at install time, reducing JIT compilation overhead during the first user interactions after install.
+      
       In interviews, cover:
+      
       - Baseline Profile: a text file (baseline-prof.txt) listing method signatures that ART should AOT-compile; generated using the Macrobenchmark library's BaselineProfileRule; included in the release AAB/APK
+      
       - without a profile, ART JIT-compiles hot methods during early use — this causes slower first-startup and first-interaction performance; with a profile, those paths run at near-AOT speed from first launch
+      
       - Macrobenchmark: an instrumentation test library that drives a real device/emulator through user journeys and measures frame timing, startup time, and memory; use it to validate profile coverage and regression test between builds
+      
       - measure: startupMode=COLD gives the worst case (process killed before start); WARM (Activity re-create) and HOT (resume) represent common cases
+      
       - operationalize: run Macrobenchmark in CI on a physical device via Firebase Test Lab or a private device farm; gate releases on P50/P95 startup regression
+      
       Strong answer tip:
+      
       - re-generate the Baseline Profile after every major code change; stale profiles miss new hot paths added after the profile was captured
     deep_dive: /android-interview-prep/deep-dives/performance/performance-metrics/
