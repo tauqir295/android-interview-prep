@@ -50,9 +50,12 @@ renderFrame()
 val ms = (System.nanoTime() - start) / 1_000_000.0
 ```
 ## Common Interview Questions
-- Which metric tells you this optimization worked?
-- How do you avoid premature optimization?
-- What tradeoff did you accept to improve responsiveness?
+- **Q:** Which metric tells you this optimization worked?
+  **A:** Answer with measurement-first reasoning: define the baseline, optimize the highest-impact bottleneck, and prove improvement with user-visible metrics.
+- **Q:** How do you avoid premature optimization?
+  **A:** Answer with measurement-first reasoning: define the baseline, optimize the highest-impact bottleneck, and prove improvement with user-visible metrics.
+- **Q:** What tradeoff did you accept to improve responsiveness?
+  **A:** Answer with measurement-first reasoning: define the baseline, optimize the highest-impact bottleneck, and prove improvement with user-visible metrics.
 ## Production Considerations
 - Define performance budgets per critical user journey.
 - Alert on regressions, not just absolute incidents.

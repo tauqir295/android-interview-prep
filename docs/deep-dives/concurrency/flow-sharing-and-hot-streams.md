@@ -54,10 +54,14 @@ val uiState: StateFlow<UiState> = repository.observeItems()
     )
 ```
 ## Common Interview Questions
-- When should you use `stateIn` vs `shareIn`?
-- What replay value should be used for one-off events?
-- How can sharing leak work in long-lived scopes?
-- Why can `WhileSubscribed` improve battery/network usage?
+- **Q:** When should you use `stateIn` vs `shareIn`?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** What replay value should be used for one-off events?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How can sharing leak work in long-lived scopes?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why can `WhileSubscribed` improve battery/network usage?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 - choose replay deliberately
 - avoid event duplication with accidental replay > 0

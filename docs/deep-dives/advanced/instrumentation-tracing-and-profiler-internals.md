@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What is JNI overhead and how is it reduced?**?
-- How would you answer: **What changed from Dalvik to ART?**?
-
+- **Q:** What is JNI overhead and how is it reduced?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
+- **Q:** What changed from Dalvik to ART?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

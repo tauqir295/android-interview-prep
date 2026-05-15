@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **When should NDK be used?**?
-- How would you answer: **How does Choreographer coordinate with VSYNC?**?
-
+- **Q:** When should NDK be used?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
+- **Q:** How does Choreographer coordinate with VSYNC?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

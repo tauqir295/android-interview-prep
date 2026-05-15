@@ -53,9 +53,12 @@ fun repository_returnsCachedValueBeforeNetwork() {
 }
 ```
 ## Common Interview Questions
-- How do you pick the right test layer?
-- What makes a suite trustworthy?
-- How do you reduce flaky runs?
+- **Q:** How do you pick the right test layer?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** What makes a suite trustworthy?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** How do you reduce flaky runs?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
 ## Production Considerations
 - Test failures should be actionable.
 - Keep test runtime budgets for CI.

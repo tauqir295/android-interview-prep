@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **Why is quantization important for mobile AI?**?
-- How would you answer: **How should models be updated offline?**?
-- How would you answer: **How should QA evolve for foldables?**?
-
+- **Q:** Why is quantization important for mobile AI?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How should models be updated offline?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How should QA evolve for foldables?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

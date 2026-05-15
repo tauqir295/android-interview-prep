@@ -104,11 +104,14 @@ class ArticleRepositoryImpl(
 
 ## Common Interview Questions
 
-- Should repositories return `Flow`, `suspend`, or both?
-- Where should mapping happen?
-- How do you enforce SSOT in multi-feature apps?
-- Repository vs use case: where do rules belong?
-
+- **Q:** Should repositories return `Flow`, `suspend`, or both?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** Where should mapping happen?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you enforce SSOT in multi-feature apps?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** Repository vs use case: where do rules belong?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - document freshness and retry policies explicitly

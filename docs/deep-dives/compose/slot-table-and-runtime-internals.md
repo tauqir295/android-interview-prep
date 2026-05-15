@@ -65,9 +65,10 @@ fun ItemRow(item: ItemUi) {
 
 ## Common Interview Questions
 
-- What breaks positional memoization?
-- How are list item moves handled with and without keys?
-
+- **Q:** What breaks positional memoization?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How are list item moves handled with and without keys?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - keep composition structure predictable

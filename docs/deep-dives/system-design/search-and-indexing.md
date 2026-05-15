@@ -49,9 +49,12 @@ Client -> Gateway -> Service -> Cache/DB
                        -> Queue -> Workers
 ```
 ## Common Interview Questions
-- How does this design fail under traffic spikes?
-- Which dependency is the primary bottleneck and why?
-- What is your mitigation strategy for partial outages?
+- **Q:** How does this design fail under traffic spikes?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** Which dependency is the primary bottleneck and why?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** What is your mitigation strategy for partial outages?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 ## Production Considerations
 - Define SLOs and map alerts to user-visible impact.
 - Add capacity tests before major launches.

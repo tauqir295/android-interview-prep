@@ -99,12 +99,14 @@ mutex.withLock {
 
 ## Common Interview Questions
 
-- StateFlow vs SharedFlow?
-- Channel vs SharedFlow?
-- When use `Mutex` instead of synchronized locking?
+- **Q:** StateFlow vs SharedFlow?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** Channel vs SharedFlow?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** When use `Mutex` instead of synchronized locking?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 
 ---
-
 ## Production Considerations
 
 Common mistakes:

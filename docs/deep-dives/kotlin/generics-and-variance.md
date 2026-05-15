@@ -93,13 +93,16 @@ fun copyAll(from: List<out Number>, to: MutableList<in Number>) {
 
 ## Common Interview Questions
 
-- What is variance?
-- What is the producer/consumer rule?
-- Why does type erasure matter?
-- Why is `List<String>` not automatically `List<Any>`?
+- **Q:** What is variance?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** What is the producer/consumer rule?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Why does type erasure matter?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Why is `List<String>` not automatically `List<Any>`?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Variance improves API correctness, especially in libraries and architecture boundaries. Poor variance choices can make APIs painful or unsafe.

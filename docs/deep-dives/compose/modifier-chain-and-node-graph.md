@@ -62,9 +62,10 @@ Modifier
 
 ## Common Interview Questions
 
-- Why does `padding().clickable()` differ from `clickable().padding()`?
-- Which modifiers impact semantics tree?
-
+- **Q:** Why does `padding().clickable()` differ from `clickable().padding()`?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Which modifiers impact semantics tree?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - standardize modifier ordering conventions in codebase

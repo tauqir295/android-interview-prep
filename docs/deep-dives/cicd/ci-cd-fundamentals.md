@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **What is CI/CD for Android teams?**?
-- How would you answer: **How do staged rollouts reduce risk?**?
-- How would you answer: **How do pre-submit and post-submit checks differ?**?
-
+- **Q:** What is CI/CD for Android teams?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How do staged rollouts reduce risk?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How do pre-submit and post-submit checks differ?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

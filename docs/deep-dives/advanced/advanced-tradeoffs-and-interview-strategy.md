@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **How does JobScheduler prioritize jobs?**?
-- How would you answer: **How do ashmem and mmap differ?**?
-
+- **Q:** How does JobScheduler prioritize jobs?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
+- **Q:** How do ashmem and mmap differ?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

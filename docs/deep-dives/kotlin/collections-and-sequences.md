@@ -85,12 +85,14 @@ val names = users.asSequence()
 
 ## Common Interview Questions
 
-- When should you use `Sequence`?
-- Are Kotlin collections immutable?
-- Why can operator chains become allocation-heavy?
+- **Q:** When should you use `Sequence`?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Are Kotlin collections immutable?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** Why can operator chains become allocation-heavy?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Use collection chains for readable business logic.

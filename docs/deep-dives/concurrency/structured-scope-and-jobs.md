@@ -81,11 +81,14 @@ val scope = CoroutineScope(Dispatchers.Main + supervisor)
 
 ## Common Interview Questions
 
-- What happens when a child coroutine fails?
-- Why is `viewModelScope` useful?
-- When would you use `SupervisorJob`?
-- How does structured concurrency prevent leaks?
-
+- **Q:** What happens when a child coroutine fails?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why is `viewModelScope` useful?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** When would you use `SupervisorJob`?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How does structured concurrency prevent leaks?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 
 - keep scopes tied to real ownership boundaries

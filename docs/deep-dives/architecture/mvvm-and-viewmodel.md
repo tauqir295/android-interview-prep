@@ -91,11 +91,14 @@ class AccountViewModel(
 
 ## Common Interview Questions
 
-- Where does business logic end and UI logic begin?
-- Should ViewModel call repository directly or via use cases?
-- How do you model transient events in MVVM?
-- What usually makes a ViewModel "too fat"?
-
+- **Q:** Where does business logic end and UI logic begin?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Should ViewModel call repository directly or via use cases?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you model transient events in MVVM?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** What usually makes a ViewModel "too fat"?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - keep ViewModel APIs small and explicit

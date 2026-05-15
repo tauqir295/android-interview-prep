@@ -67,9 +67,10 @@ fun AppTheme(content: @Composable () -> Unit) {
 
 ## Common Interview Questions
 
-- When should you avoid `CompositionLocal`?
-- How does it differ from dependency injection?
-
+- **Q:** When should you avoid `CompositionLocal`?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How does it differ from dependency injection?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
 ## Production Considerations
 
 - document every custom local clearly

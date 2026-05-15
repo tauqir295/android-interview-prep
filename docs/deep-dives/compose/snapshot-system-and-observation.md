@@ -97,11 +97,14 @@ fun ObserveScrollAsFlow(listState: LazyListState) {
 
 ## Common Interview Questions
 
-- How does Compose know what to invalidate?
-- Is snapshot state thread-safe by default in all scenarios?
-- Why can mutating nested mutable objects fail to update UI?
-- When should you use `snapshotFlow`?
-
+- **Q:** How does Compose know what to invalidate?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** Is snapshot state thread-safe by default in all scenarios?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** Why can mutating nested mutable objects fail to update UI?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** When should you use `snapshotFlow`?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
 ## Production Considerations
 
 - Keep state mutation paths explicit.

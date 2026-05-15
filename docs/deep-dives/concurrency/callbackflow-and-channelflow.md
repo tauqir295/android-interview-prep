@@ -57,10 +57,14 @@ fun LocationClient.locationUpdates(): Flow<Location> = callbackFlow {
 }
 ```
 ## Common Interview Questions
-- Why is `awaitClose` mandatory in most callback adapters?
-- When is `channelFlow` preferred over `callbackFlow`?
-- How do you avoid dropping critical callback events?
-- What happens if callback thread is blocked by flow emission?
+- **Q:** Why is `awaitClose` mandatory in most callback adapters?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** When is `channelFlow` preferred over `callbackFlow`?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How do you avoid dropping critical callback events?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** What happens if callback thread is blocked by flow emission?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
 ## Production Considerations
 - always clean up listeners
 - avoid heavy work in callback thread

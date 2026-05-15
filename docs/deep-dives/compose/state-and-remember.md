@@ -87,11 +87,14 @@ fun UserCard(userId: String) {
 
 ## Common Interview Questions
 
-- Why does Compose prefer immutable UI models?
-- When does `remember` lose state?
-- How does `rememberSaveable` decide what can be saved?
-- What are key-related state bugs in dynamic lists?
-
+- **Q:** Why does Compose prefer immutable UI models?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** When does `remember` lose state?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** How does `rememberSaveable` decide what can be saved?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** What are key-related state bugs in dynamic lists?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - Keep remembered state minimal and local.

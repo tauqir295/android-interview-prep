@@ -43,9 +43,10 @@ Threat modeling identifies realistic abuse paths before they become incidents.
 - Prioritize mitigations and detection controls.
 
 ## Common Interview Questions
-- How is a mobile threat model different from backend threat modeling?
-- Which findings should block release?
-
+- **Q:** How is a mobile threat model different from backend threat modeling?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
+- **Q:** Which findings should block release?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 - Re-run threat models for major feature launches, auth changes, and SDK additions.
 - Tie findings to backlog items with owners and deadlines.

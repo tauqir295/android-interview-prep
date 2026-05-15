@@ -84,11 +84,14 @@ data class ArchitectureDecision(
 
 ## Common Interview Questions
 
-- How do you choose between speed and maintainability?
-- What does a strong architecture proposal include?
-- How do you know when to revisit old decisions?
-- How do you communicate tradeoffs to non-architect stakeholders?
-
+- **Q:** How do you choose between speed and maintainability?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** What does a strong architecture proposal include?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you know when to revisit old decisions?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you communicate tradeoffs to non-architect stakeholders?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
 ## Production Considerations
 
 - require written rationale for high-impact architecture changes

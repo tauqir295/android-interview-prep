@@ -97,11 +97,14 @@ interface SyncCoordinator {
 
 ## Common Interview Questions
 
-- How do you guarantee eventual consistency?
-- When is optimistic UI unsafe?
-- How do you avoid infinite retry loops?
-- Where should conflict resolution policy live?
-
+- **Q:** How do you guarantee eventual consistency?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** When is optimistic UI unsafe?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you avoid infinite retry loops?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Where should conflict resolution policy live?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
 ## Production Considerations
 
 - instrument queue depth, sync latency, and conflict rate

@@ -55,10 +55,14 @@ queryFlow
     }
 ```
 ## Common Interview Questions
-- Why does `collectLatest` cancel in-flight work?
-- When is `flatMapMerge` better than `flatMapLatest`?
-- What tradeoff does `conflate` make?
-- How do you debug dropped intermediate emissions?
+- **Q:** Why does `collectLatest` cancel in-flight work?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** When is `flatMapMerge` better than `flatMapLatest`?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** What tradeoff does `conflate` make?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How do you debug dropped intermediate emissions?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 ## Production Considerations
 - choose operator semantics per UX expectation
 - cap buffers for bursty sources

@@ -47,8 +47,10 @@ Weekly cross-functional review:
 - explicit owners and dates
 ```
 ## Common Interview Questions
-- How do you align PM and engineering when priorities differ?
-- How do you communicate delays?
+- **Q:** How do you align PM and engineering when priorities differ?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
+- **Q:** How do you communicate delays?
+  **A:** Use a concise STAR format: set context and constraints, describe your decision and communication steps, quantify outcomes, and close with what behavior changed afterward.
 ## Production Considerations
 - Strong stakeholder loops reduce late surprises and fire drills.
 ## Interview Signals

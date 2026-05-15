@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What risks come with AI-generated code?**?
-- How would you answer: **How do you design KMP boundaries for Android-first teams?**?
-- How would you answer: **How does KMP adoption change hiring and topology?**?
-
+- **Q:** What risks come with AI-generated code?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do you design KMP boundaries for Android-first teams?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** How does KMP adoption change hiring and topology?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

@@ -101,11 +101,14 @@ private fun reduce(state: ProfileUiState, intent: ProfileIntent): ProfileUiState
 
 ## Common Interview Questions
 
-- MVI vs MVVM: when is MVI worth the overhead?
-- How do you model one-time events without replay bugs?
-- Should reducers be pure functions?
-- How do you prevent state explosion on large screens?
-
+- **Q:** MVI vs MVVM: when is MVI worth the overhead?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you model one-time events without replay bugs?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Should reducers be pure functions?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you prevent state explosion on large screens?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - keep intent vocabulary small and domain-oriented

@@ -68,10 +68,14 @@ suspend fun saferOrder() {
 }
 ```
 ## Common Interview Questions
-- How do deadlocks happen in coroutine code?
-- How do you diagnose lock contention in production?
-- Why can bounded parallelism reduce contention?
-- What is the difference between deadlock and starvation?
+- **Q:** How do deadlocks happen in coroutine code?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do you diagnose lock contention in production?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why can bounded parallelism reduce contention?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What is the difference between deadlock and starvation?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 - define lock ordering and document it
 - avoid nested locking unless necessary

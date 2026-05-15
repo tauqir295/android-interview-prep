@@ -86,11 +86,14 @@ class LoginViewModelTest {
 
 ## Common Interview Questions
 
-- What should be unit vs integration tested?
-- How do you test one-time events?
-- How do you keep UI tests stable and valuable?
-- How do contract tests help modular teams?
-
+- **Q:** What should be unit vs integration tested?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you test one-time events?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you keep UI tests stable and valuable?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do contract tests help modular teams?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - prioritize deterministic fast tests in CI gates

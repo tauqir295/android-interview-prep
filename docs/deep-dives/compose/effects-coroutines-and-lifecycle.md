@@ -65,10 +65,12 @@ fun LocationObserver(onLocation: (Location) -> Unit) {
 
 ## Common Interview Questions
 
-- `LaunchedEffect(Unit)` vs `rememberCoroutineScope`?
-- How do you avoid stale lambda capture?
-- When is cleanup guaranteed?
-
+- **Q:** `LaunchedEffect(Unit)` vs `rememberCoroutineScope`?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** How do you avoid stale lambda capture?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** When is cleanup guaranteed?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - avoid unstable keys for long-lived jobs

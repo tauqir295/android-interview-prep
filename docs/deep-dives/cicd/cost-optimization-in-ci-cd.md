@@ -68,9 +68,10 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How do you parallelize Android pipelines effectively?**?
-- How would you answer: **Why are deterministic builds important?**?
-
+- **Q:** How do you parallelize Android pipelines effectively?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why are deterministic builds important?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

@@ -86,11 +86,14 @@ fun loadUser(scope: CoroutineScope) {
 
 ## Common Interview Questions
 
-- What does continuation represent?
-- Why does suspend not imply background thread?
-- How does resume know where to continue?
-- What does CPS transformation mean in practice?
-
+- **Q:** What does continuation represent?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why does suspend not imply background thread?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How does resume know where to continue?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** What does CPS transformation mean in practice?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 
 - avoid hidden blocking in suspend functions

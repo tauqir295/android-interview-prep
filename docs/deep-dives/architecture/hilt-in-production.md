@@ -87,11 +87,14 @@ object NetworkModule {
 
 ## Common Interview Questions
 
-- Hilt vs raw Dagger: what changes practically?
-- Which scope should this dependency use?
-- When do you need an entry point?
-- How do you test Hilt-heavy modules?
-
+- **Q:** Hilt vs raw Dagger: what changes practically?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** Which scope should this dependency use?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** When do you need an entry point?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you test Hilt-heavy modules?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
 ## Production Considerations
 
 - keep modules close to feature ownership boundaries

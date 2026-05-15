@@ -64,9 +64,10 @@ LazyColumn {
 
 ## Common Interview Questions
 
-- Why do items "jump" without keys?
-- How do you reduce jank on long feeds?
-
+- **Q:** Why do items "jump" without keys?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How do you reduce jank on long feeds?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - avoid expensive work inside item lambdas

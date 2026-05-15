@@ -82,13 +82,16 @@ Conceptually, the compiler rewrites this into a resumable form rather than a sim
 
 ## Common Interview Questions
 
-- Does `suspend` mean background thread?
-- What is a continuation?
-- How are coroutines lighter than threads?
-- What does CPS transformation mean?
+- **Q:** Does `suspend` mean background thread?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What is a continuation?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** How are coroutines lighter than threads?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What does CPS transformation mean?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Coroutines simplify async logic, but misuse can still cause:

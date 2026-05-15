@@ -77,11 +77,14 @@ suspend fun loadConditionally(flag: Boolean): String = coroutineScope {
 
 ## Common Interview Questions
 
-- When is `launch` preferable to `async`?
-- Why can forgotten `await()` hide failures?
-- Is lazy async good by default?
-- How do you cap parallel requests safely?
-
+- **Q:** When is `launch` preferable to `async`?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why can forgotten `await()` hide failures?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Is lazy async good by default?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How do you cap parallel requests safely?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 
 - always consume `Deferred` results intentionally

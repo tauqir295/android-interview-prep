@@ -102,11 +102,14 @@ fun SearchResultList(
 
 ## Common Interview Questions
 
-- What exactly triggers recomposition?
-- Why does unstable input type hurt performance?
-- Is recomposition the same as redraw?
-- How do you diagnose "too much recomposition"?
-
+- **Q:** What exactly triggers recomposition?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** Why does unstable input type hurt performance?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Is recomposition the same as redraw?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** How do you diagnose "too much recomposition"?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
 ## Production Considerations
 
 - Profile before micro-optimizing.

@@ -141,12 +141,14 @@ fun makeRunnable(): Runnable {
 
 ## Common Interview Questions
 
-- Is a companion object the same as `static`?
-- When is an object declaration initialized?
-- What is lost when returning an anonymous object from a public API?
+- **Q:** Is a companion object the same as `static`?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** When is an object declaration initialized?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** What is lost when returning an anonymous object from a public API?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Use object declarations for:

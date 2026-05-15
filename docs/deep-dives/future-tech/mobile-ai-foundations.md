@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **How is AI changing Android product architecture?**?
-- How would you answer: **How do multimodal interfaces change UI architecture?**?
-- How would you answer: **How do you set SLOs for AI response latency?**?
-
+- **Q:** How is AI changing Android product architecture?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** How do multimodal interfaces change UI architecture?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do you set SLOs for AI response latency?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

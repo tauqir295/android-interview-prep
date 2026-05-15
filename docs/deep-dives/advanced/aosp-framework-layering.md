@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What role does RenderThread play?**?
-- How would you answer: **What is init.rc and why does it matter?**?
-- How would you answer: **How do AOSP boundaries influence app architecture?**?
-
+- **Q:** What role does RenderThread play?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What is init.rc and why does it matter?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
+- **Q:** How do AOSP boundaries influence app architecture?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

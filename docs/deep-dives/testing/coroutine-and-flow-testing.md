@@ -53,9 +53,12 @@ fun sample() = runTest {
 }
 ```
 ## Common Interview Questions
-- Why does this test belong at this layer?
-- What failure mode does this suite catch best?
-- How do you keep signal high as suite size grows?
+- **Q:** Why does this test belong at this layer?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** What failure mode does this suite catch best?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** How do you keep signal high as suite size grows?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
 ## Production Considerations
 - Tie test gates to release risk and incident history.
 - Track regression escape rate as an outcome metric.

@@ -47,9 +47,12 @@ Order Created -> Payment Reserved -> Inventory Reserved -> Confirmed
                       on failure -> Compensation steps
 ```
 ## Common Interview Questions
-- When do you use ACID transactions?
-- How do you explain saga failure handling?
-- How do you guarantee no duplicate side effects?
+- **Q:** When do you use ACID transactions?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** How do you explain saga failure handling?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** How do you guarantee no duplicate side effects?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
 ## Production Considerations
 - Keep audit trails for state transitions.
 - Provide operator tooling for stuck workflows.

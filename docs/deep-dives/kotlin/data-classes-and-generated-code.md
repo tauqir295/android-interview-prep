@@ -115,13 +115,16 @@ val (id, name) = user
 
 ## Common Interview Questions
 
-- What gets included in generated equality?
-- Is a data class automatically immutable?
-- Why is `copy()` useful in Android UI state?
-- When should you avoid data classes?
+- **Q:** What gets included in generated equality?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Is a data class automatically immutable?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Why is `copy()` useful in Android UI state?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** When should you avoid data classes?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Use data classes for:

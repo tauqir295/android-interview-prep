@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **Trunk-based or GitFlow: which scales better?**?
-- How would you answer: **How do feature flags support safe delivery?**?
-- How would you answer: **What is a release train model for mobile?**?
-
+- **Q:** Trunk-based or GitFlow: which scales better?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
+- **Q:** How do feature flags support safe delivery?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
+- **Q:** What is a release train model for mobile?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

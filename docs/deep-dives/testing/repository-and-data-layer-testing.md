@@ -48,8 +48,10 @@ fun repository_usesCacheThenRefreshesFromNetwork() = runTest {
 }
 ```
 ## Common Interview Questions
-- How do you test offline-first repository behavior?
-- What do you mock vs keep real?
+- **Q:** How do you test offline-first repository behavior?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** What do you mock vs keep real?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
 ## Production Considerations
 - Validate retry and conflict-resolution paths.
 ## Performance Insights

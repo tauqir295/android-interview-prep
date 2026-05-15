@@ -47,9 +47,12 @@ Inputs: users, regions, RPS, payload, freshness
 Outputs: service topology, storage choice, scaling strategy
 ```
 ## Common Interview Questions
-- How do you gather requirements quickly?
-- How do you prevent over-design?
-- Which constraints change architecture the most?
+- **Q:** How do you gather requirements quickly?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** How do you prevent over-design?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** Which constraints change architecture the most?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
 ## Production Considerations
 - Align scope with team size and on-call maturity.
 - Document accepted risks explicitly.

@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How do you protect signing keys in CI?**?
-- How would you answer: **What should a CI/CD incident playbook include?**?
-- How would you answer: **How do you discuss CI/CD tradeoffs at staff level?**?
-
+- **Q:** How do you protect signing keys in CI?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** What should a CI/CD incident playbook include?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How do you discuss CI/CD tradeoffs at staff level?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

@@ -88,11 +88,14 @@ class FeedPagingPolicy(
 
 ## Common Interview Questions
 
-- Where should pagination state live?
-- Cursor vs offset pagination tradeoffs?
-- How do you avoid duplicate items across pages?
-- What should invalidate cached pages?
-
+- **Q:** Where should pagination state live?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** Cursor vs offset pagination tradeoffs?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** How do you avoid duplicate items across pages?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** What should invalidate cached pages?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
 ## Production Considerations
 
 - instrument cache hit rate and page load latency

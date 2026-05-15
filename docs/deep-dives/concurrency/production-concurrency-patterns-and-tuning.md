@@ -56,10 +56,14 @@ suspend fun <T> boundedNetworkCall(block: suspend () -> T): T {
 }
 ```
 ## Common Interview Questions
-- How do you prevent a coroutine fan-out storm?
-- What metrics guide concurrency tuning?
-- How do you balance throughput vs tail latency?
-- Why are bounded queues safer than unbounded buffers?
+- **Q:** How do you prevent a coroutine fan-out storm?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What metrics guide concurrency tuning?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How do you balance throughput vs tail latency?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why are bounded queues safer than unbounded buffers?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 ## Production Considerations
 - define feature-level concurrency limits
 - keep cancellation cooperative end-to-end

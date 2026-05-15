@@ -66,10 +66,12 @@ fun AnalyticsScreen(screenName: String) {
 
 ## Common Interview Questions
 
-- Why not launch coroutines directly in composable body?
-- Which effect API runs after commit?
-- How do keys impact effect restarts?
-
+- **Q:** Why not launch coroutines directly in composable body?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** Which effect API runs after commit?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How do keys impact effect restarts?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - keep effects idempotent when possible

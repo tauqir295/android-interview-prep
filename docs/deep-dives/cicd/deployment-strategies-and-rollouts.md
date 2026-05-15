@@ -68,9 +68,10 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How do lint and Detekt fit into CI?**?
-- How would you answer: **How do you control CI/CD spend?**?
-
+- **Q:** How do lint and Detekt fit into CI?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How do you control CI/CD spend?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How do you reduce Android build times in CI?**?
-- How would you answer: **What makes a robust kill switch?**?
-- How would you answer: **How do you manage environment promotion safely?**?
-
+- **Q:** How do you reduce Android build times in CI?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** What makes a robust kill switch?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
+- **Q:** How do you manage environment promotion safely?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

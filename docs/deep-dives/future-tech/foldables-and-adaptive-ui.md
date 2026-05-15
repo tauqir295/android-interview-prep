@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What governance controls are needed for AI?**?
-- How would you answer: **How do you balance personalization with privacy?**?
-- How would you answer: **What does responsible AI mean in mobile development?**?
-
+- **Q:** What governance controls are needed for AI?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do you balance personalization with privacy?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
+- **Q:** What does responsible AI mean in mobile development?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

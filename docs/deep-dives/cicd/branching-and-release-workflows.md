@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How does Gradle build cache help CI?**?
-- How would you answer: **How do you automate Play Store uploads?**?
-- How would you answer: **How do you detect config drift in CI?**?
-
+- **Q:** How does Gradle build cache help CI?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** How do you automate Play Store uploads?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How do you detect config drift in CI?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

@@ -51,9 +51,12 @@ Action: ...
 Result: ...
 ```
 ## Common Interview Questions
-- What did you do when priorities conflicted?
-- How did you influence without authority?
-- What changed in your approach after this event?
+- **Q:** What did you do when priorities conflicted?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
+- **Q:** How did you influence without authority?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
+- **Q:** What changed in your approach after this event?
+  **A:** Use a concise STAR format: set context and constraints, describe your decision and communication steps, quantify outcomes, and close with what behavior changed afterward.
 ## Production Considerations
 - Behavioral strength affects delivery predictability and incident response quality.
 - Strong communication reduces coordination failures across teams.

@@ -85,11 +85,14 @@ suspend fun loop() {
 
 ## Common Interview Questions
 
-- What is cooperative cancellation?
-- How does `async` differ from `launch` in error handling?
-- When do sibling coroutines get cancelled?
-- What does `CoroutineExceptionHandler` actually catch?
-
+- **Q:** What is cooperative cancellation?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How does `async` differ from `launch` in error handling?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** When do sibling coroutines get cancelled?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What does `CoroutineExceptionHandler` actually catch?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 
 - cancel work when UI or requests are no longer relevant

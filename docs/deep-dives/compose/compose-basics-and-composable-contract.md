@@ -93,11 +93,14 @@ fun Counter() {
 
 ## Common Interview Questions
 
-- Why is Compose called declarative?
-- Is a composable lifecycle same as Activity lifecycle?
-- Why should composables avoid side effects during rendering?
-- How does Compose know which UI to update?
-
+- **Q:** Why is Compose called declarative?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** Is a composable lifecycle same as Activity lifecycle?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** Why should composables avoid side effects during rendering?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** How does Compose know which UI to update?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
 ## Production Considerations
 
 - Keep composables small and single-purpose.

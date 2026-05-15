@@ -96,11 +96,14 @@ class OrdersNavigatorImpl(
 
 ## Common Interview Questions
 
-- When does modularization become over-engineering?
-- How do you handle shared code without creating a "god core" module?
-- API vs implementation dependency - what changes in build behavior?
-- How do teams migrate a monolith incrementally?
-
+- **Q:** When does modularization become over-engineering?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you handle shared code without creating a "god core" module?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** API vs implementation dependency - what changes in build behavior?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do teams migrate a monolith incrementally?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - start with a few high-value boundaries, then iterate

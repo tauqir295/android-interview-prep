@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **How do mobile agents use tool APIs safely?**?
-- How would you answer: **How do you design accelerator fallbacks?**?
-- How would you answer: **How do you evaluate quality of mobile AI agents?**?
-
+- **Q:** How do mobile agents use tool APIs safely?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do you design accelerator fallbacks?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do you evaluate quality of mobile AI agents?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

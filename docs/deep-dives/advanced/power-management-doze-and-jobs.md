@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **How does Android app sandboxing work?**?
-- How would you answer: **How do you answer deep internals questions without overfitting?**?
-
+- **Q:** How does Android app sandboxing work?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
+- **Q:** How do you answer deep internals questions without overfitting?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

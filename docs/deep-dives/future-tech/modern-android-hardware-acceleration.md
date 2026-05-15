@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What are key considerations for wearables and health data?**?
-- How would you answer: **How does edge compute change backend strategy?**?
-
+- **Q:** What are key considerations for wearables and health data?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How does edge compute change backend strategy?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

@@ -94,11 +94,14 @@ class FeedViewModel(
 
 ## Common Interview Questions
 
-- Why separate one-time events from persistent state?
-- Where should SSOT live: ViewModel or repository?
-- How do you prevent stale state races?
-- Is immutable state always required?
-
+- **Q:** Why separate one-time events from persistent state?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Where should SSOT live: ViewModel or repository?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** How do you prevent stale state races?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** Is immutable state always required?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - avoid hidden mutable singletons as state owners

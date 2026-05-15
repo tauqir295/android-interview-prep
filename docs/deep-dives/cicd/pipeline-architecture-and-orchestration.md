@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **What are typical Android pipeline stages?**?
-- How would you answer: **How does canary deployment work for mobile?**?
-- How would you answer: **How do you manage CI failure budgets?**?
-
+- **Q:** What are typical Android pipeline stages?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How does canary deployment work for mobile?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** How do you manage CI failure budgets?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

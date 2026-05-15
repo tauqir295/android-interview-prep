@@ -88,11 +88,14 @@ sealed interface CheckoutEvent {
 
 ## Common Interview Questions
 
-- Why not keep one-off events inside state?
-- How do you avoid event replay on rotation?
-- Where should retry backoff decisions live?
-- How do you keep error handling consistent across features?
-
+- **Q:** Why not keep one-off events inside state?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you avoid event replay on rotation?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Where should retry backoff decisions live?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you keep error handling consistent across features?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - define shared UX error standards across teams

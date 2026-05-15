@@ -1,1100 +1,1101 @@
 questions:
-  - id: testing-strategy
-    title: How do you define an Android testing strategy?
-    difficulty: intermediate
-    tags:
-      - testing
-      - strategy
-      - android
-    standard_answer: |
-      How do you define an Android testing strategy? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `strategy`
-    deep_dive: /android-interview-prep/deep-dives/testing/testing-fundamentals/
-
-  - id: test-pyramid
-    title: What is the test pyramid and why does it matter?
-    difficulty: beginner
-    tags:
-      - testing
-      - test-pyramid
-      - quality
-    standard_answer: |
-      What is the test pyramid and why does it matter? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `test-pyramid`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
-
-  - id: unit-vs-integration
-    title: What is the difference between unit and integration tests?
-    difficulty: beginner
-    tags:
-      - testing
-      - unit-testing
-      - integration-testing
-    standard_answer: |
-      What is the difference between unit and integration tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `unit-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
-
-  - id: viewmodel-unit-tests
-    title: How do you unit test a ViewModel?
-    difficulty: intermediate
-    tags:
-      - testing
-      - viewmodel
-      - unit-testing
-    standard_answer: |
-      How do you unit test a ViewModel? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `viewmodel`
-    deep_dive: /android-interview-prep/deep-dives/testing/unit-testing-viewmodel/
-
-  - id: usecase-tests
-    title: How should use cases be tested?
-    difficulty: intermediate
-    tags:
-      - testing
-      - domain
-      - unit-testing
-    standard_answer: |
-      How should use cases be tested? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `domain`
-    deep_dive: /android-interview-prep/deep-dives/testing/unit-testing-viewmodel/
-
-  - id: repository-tests
-    title: How do you test repository logic with multiple data sources?
-    difficulty: senior
-    tags:
-      - testing
-      - repository
-      - data-layer
-    standard_answer: |
-      How do you test repository logic with multiple data sources? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `repository`
-    deep_dive: /android-interview-prep/deep-dives/testing/repository-and-data-layer-testing/
-
-  - id: datasource-tests
-    title: How do you test remote and local data sources?
-    difficulty: intermediate
-    tags:
-      - testing
-      - data-layer
-      - repository
-    standard_answer: |
-      How do you test remote and local data sources? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `data-layer`
-    deep_dive: /android-interview-prep/deep-dives/testing/repository-and-data-layer-testing/
-
-  - id: integration-boundary
-    title: When should you add integration tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - integration-testing
-      - strategy
-    standard_answer: |
-      When should you add integration tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `integration-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/integration-testing/
-
-  - id: compose-ui-tests
-    title: How do Compose UI tests differ from View UI tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - compose
-      - ui-testing
-    standard_answer: |
-      How do Compose UI tests differ from View UI tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `compose`
-    deep_dive: /android-interview-prep/deep-dives/testing/ui-testing-with-compose/
-
-  - id: semantics-testing
-    title: Why are semantics important in Compose tests?
-    difficulty: senior
-    tags:
-      - testing
-      - compose
-      - accessibility
-    standard_answer: |
-      Why are semantics important in Compose tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `compose`
-    deep_dive: /android-interview-prep/deep-dives/testing/ui-testing-with-compose/
-
-  - id: espresso-basics
-    title: When do you still use Espresso?
-    difficulty: intermediate
-    tags:
-      - testing
-      - espresso
-      - ui-testing
-    standard_answer: |
-      When do you still use Espresso? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `espresso`
-    deep_dive: /android-interview-prep/deep-dives/testing/espresso-and-ui-automation/
-
-  - id: idling-resources
-    title: What are idling resources and when are they needed?
-    difficulty: senior
-    tags:
-      - testing
-      - espresso
-      - synchronization
-    standard_answer: |
-      What are idling resources and when are they needed? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `espresso`
-    deep_dive: /android-interview-prep/deep-dives/testing/espresso-and-ui-automation/
-
-  - id: mocks-vs-fakes
-    title: When should you use mocks vs fakes?
-    difficulty: intermediate
-    tags:
-      - testing
-      - mocks
-      - fakes
-    standard_answer: |
-      When should you use mocks vs fakes? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `mocks`
-    deep_dive: /android-interview-prep/deep-dives/testing/mocking-fakes-and-stubs/
-
-  - id: stub-vs-spy
-    title: What is the difference between stubs and spies?
-    difficulty: intermediate
-    tags:
-      - testing
-      - mocks
-      - unit-testing
-    standard_answer: |
-      What is the difference between stubs and spies? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `mocks`
-    deep_dive: /android-interview-prep/deep-dives/testing/mocking-fakes-and-stubs/
-
-  - id: coroutine-test
-    title: How do you test coroutines deterministically?
-    difficulty: intermediate
-    tags:
-      - testing
-      - coroutines
-      - kotlin
-    standard_answer: |
-      How do you test coroutines deterministically? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `coroutines`
-    deep_dive: /android-interview-prep/deep-dives/testing/coroutine-and-flow-testing/
-
-  - id: virtual-time
-    title: Why is virtual time important for async tests?
-    difficulty: senior
-    tags:
-      - testing
-      - coroutines
-      - virtual-time
-    standard_answer: |
-      Why is virtual time important for async tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `coroutines`
-    deep_dive: /android-interview-prep/deep-dives/testing/coroutine-and-flow-testing/
-
-  - id: flow-test-patterns
-    title: How do you test Flow emissions?
-    difficulty: intermediate
-    tags:
-      - testing
-      - flow
-      - coroutines
-    standard_answer: |
-      How do you test Flow emissions? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `flow`
-    deep_dive: /android-interview-prep/deep-dives/testing/coroutine-and-flow-testing/
-
-  - id: stateflow-testing
-    title: How do you test StateFlow UI state?
-    difficulty: intermediate
-    tags:
-      - testing
-      - stateflow
-      - ui-state
-    standard_answer: |
-      How do you test StateFlow UI state? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `stateflow`
-    deep_dive: /android-interview-prep/deep-dives/testing/stateflow-sharedflow-testing/
-
-  - id: sharedflow-events-testing
-    title: How do you test one-off SharedFlow events?
-    difficulty: senior
-    tags:
-      - testing
-      - sharedflow
-      - events
-    standard_answer: |
-      How do you test one-off SharedFlow events? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `sharedflow`
-    deep_dive: /android-interview-prep/deep-dives/testing/stateflow-sharedflow-testing/
-
-  - id: mockwebserver
-    title: Why use MockWebServer for networking tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - networking
-      - mockwebserver
-    standard_answer: |
-      Why use MockWebServer for networking tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `networking`
-    deep_dive: /android-interview-prep/deep-dives/testing/network-testing-and-mockwebserver/
-
-  - id: api-contract-tests
-    title: How do you keep API tests resilient to server changes?
-    difficulty: senior
-    tags:
-      - testing
-      - networking
-      - contract-testing
-    standard_answer: |
-      How do you keep API tests resilient to server changes? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `networking`
-    deep_dive: /android-interview-prep/deep-dives/testing/contract-testing/
-
-  - id: room-inmemory-tests
-    title: How do you test Room with in-memory databases?
-    difficulty: intermediate
-    tags:
-      - testing
-      - room
-      - database
-    standard_answer: |
-      How do you test Room with in-memory databases? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `room`
-    deep_dive: /android-interview-prep/deep-dives/testing/database-testing-room/
-
-  - id: migration-tests
-    title: Why are Room migration tests critical?
-    difficulty: senior
-    tags:
-      - testing
-      - room
-      - migration
-    standard_answer: |
-      Why are Room migration tests critical? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `room`
-    deep_dive: /android-interview-prep/deep-dives/testing/database-testing-room/
-
-  - id: testable-architecture
-    title: What makes Android architecture testable?
-    difficulty: intermediate
-    tags:
-      - testing
-      - architecture
-      - design
-    standard_answer: |
-      What makes Android architecture testable? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `architecture`
-    deep_dive: /android-interview-prep/deep-dives/testing/testability-and-architecture/
-
-  - id: dependency-injection-testing
-    title: How does DI improve testability?
-    difficulty: intermediate
-    tags:
-      - testing
-      - di
-      - architecture
-    standard_answer: |
-      How does DI improve testability? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `di`
-    deep_dive: /android-interview-prep/deep-dives/testing/testability-and-architecture/
-
-  - id: flaky-tests
-    title: What causes flaky tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - flaky-tests
-      - quality
-    standard_answer: |
-      What causes flaky tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `flaky-tests`
-    deep_dive: /android-interview-prep/deep-dives/testing/flaky-test-diagnostics/
-
-  - id: stabilize-ui-tests
-    title: How do you stabilize flaky UI tests?
-    difficulty: senior
-    tags:
-      - testing
-      - ui-testing
-      - flaky-tests
-    standard_answer: |
-      How do you stabilize flaky UI tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `ui-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/flaky-test-diagnostics/
-
-  - id: benchmark-tests
-    title: When should you add benchmark tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - performance
-      - benchmark
-    standard_answer: |
-      When should you add benchmark tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `performance`
-    deep_dive: /android-interview-prep/deep-dives/testing/performance-and-benchmark-testing/
-
-  - id: macrobenchmark
-    title: What does Macrobenchmark validate?
-    difficulty: senior
-    tags:
-      - testing
-      - macrobenchmark
-      - performance
-    standard_answer: |
-      What does Macrobenchmark validate? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `macrobenchmark`
-    deep_dive: /android-interview-prep/deep-dives/testing/performance-and-benchmark-testing/
-
-  - id: golden-tests
-    title: What are snapshot or golden tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - snapshot
-      - ui-testing
-    standard_answer: |
-      What are snapshot or golden tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `snapshot`
-    deep_dive: /android-interview-prep/deep-dives/testing/snapshot-and-golden-testing/
-
-  - id: visual-regression
-    title: How do visual regression tests fit release safety?
-    difficulty: senior
-    tags:
-      - testing
-      - snapshot
-      - release
-    standard_answer: |
-      How do visual regression tests fit release safety? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `snapshot`
-    deep_dive: /android-interview-prep/deep-dives/testing/snapshot-and-golden-testing/
-
-  - id: consumer-contract
-    title: What is consumer-driven contract testing?
-    difficulty: staff
-    tags:
-      - testing
-      - contract-testing
-      - api
-    standard_answer: |
-      What is consumer-driven contract testing? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `contract-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/contract-testing/
-
-  - id: e2e-tests
-    title: What are good use cases for end-to-end tests?
-    difficulty: intermediate
-    tags:
-      - testing
-      - e2e
-      - strategy
-    standard_answer: |
-      What are good use cases for end-to-end tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `e2e`
-    deep_dive: /android-interview-prep/deep-dives/testing/e2e-testing-and-release-gates/
-
-  - id: release-gates
-    title: How should tests gate production releases?
-    difficulty: senior
-    tags:
-      - testing
-      - release
-      - quality
-    standard_answer: |
-      How should tests gate production releases? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `release`
-    deep_dive: /android-interview-prep/deep-dives/testing/e2e-testing-and-release-gates/
-
-  - id: ci-pipeline
-    title: How do you design a fast CI test pipeline?
-    difficulty: intermediate
-    tags:
-      - testing
-      - ci
-      - automation
-    standard_answer: |
-      How do you design a fast CI test pipeline? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `ci`
-    deep_dive: /android-interview-prep/deep-dives/testing/ci-cd-test-pipelines/
-
-  - id: sharding-tests
-    title: When should you shard test suites?
-    difficulty: senior
-    tags:
-      - testing
-      - ci
-      - scalability
-    standard_answer: |
-      When should you shard test suites? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `ci`
-    deep_dive: /android-interview-prep/deep-dives/testing/ci-cd-test-pipelines/
-
-  - id: test-reporting
-    title: What metrics should test reports include?
-    difficulty: intermediate
-    tags:
-      - testing
-      - metrics
-      - quality
-    standard_answer: |
-      What metrics should test reports include? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `metrics`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
-
-  - id: quality-gates
-    title: How do quality gates prevent regressions?
-    difficulty: senior
-    tags:
-      - testing
-      - quality
-      - governance
-    standard_answer: |
-      How do quality gates prevent regressions? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `quality`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
-
-  - id: mutation-testing
-    title: Where does mutation testing fit in Android?
-    difficulty: staff
-    tags:
-      - testing
-      - mutation-testing
-      - quality
-    standard_answer: |
-      Where does mutation testing fit in Android? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `mutation-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
-
-  - id: hermetic-tests
-    title: What are hermetic tests and why are they valuable?
-    difficulty: senior
-    tags:
-      - testing
-      - hermetic
-      - reliability
-    standard_answer: |
-      What are hermetic tests and why are they valuable? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `hermetic`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
-
-  - id: test-data-builders
-    title: Why use test data builders?
-    difficulty: intermediate
-    tags:
-      - testing
-      - unit-testing
-      - maintainability
-    standard_answer: |
-      Why use test data builders? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `unit-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/mocking-fakes-and-stubs/
-
-  - id: clock-abstraction
-    title: How does clock abstraction improve test reliability?
-    difficulty: senior
-    tags:
-      - testing
-      - time
-      - architecture
-    standard_answer: |
-      How does clock abstraction improve test reliability? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `time`
-    deep_dive: /android-interview-prep/deep-dives/testing/unit-testing-viewmodel/
-
-  - id: retry-in-tests
-    title: Should flaky tests be fixed with retries?
-    difficulty: intermediate
-    tags:
-      - testing
-      - flaky-tests
-      - ci
-    standard_answer: |
-      Should flaky tests be fixed with retries? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `flaky-tests`
-    deep_dive: /android-interview-prep/deep-dives/testing/flaky-test-diagnostics/
-
-  - id: android-test-runner
-    title: How do you structure instrumentation test modules?
-    difficulty: senior
-    tags:
-      - testing
-      - instrumentation
-      - android
-    standard_answer: |
-      How do you structure instrumentation test modules? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `instrumentation`
-    deep_dive: /android-interview-prep/deep-dives/testing/espresso-and-ui-automation/
-
-  - id: test-environments
-    title: How do you manage test environments across teams?
-    difficulty: staff
-    tags:
-      - testing
-      - environments
-      - operations
-    standard_answer: |
-      How do you manage test environments across teams? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `environments`
-    deep_dive: /android-interview-prep/deep-dives/testing/ci-cd-test-pipelines/
-
-  - id: contract-mocks
-    title: How do contracts reduce mock drift?
-    difficulty: senior
-    tags:
-      - testing
-      - contract-testing
-      - mocks
-    standard_answer: |
-      How do contracts reduce mock drift? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `contract-testing`
-    deep_dive: /android-interview-prep/deep-dives/testing/contract-testing/
-
-  - id: qa-dev-collaboration
-    title: How should QA and dev collaborate on automation?
-    difficulty: intermediate
-    tags:
-      - testing
-      - collaboration
-      - process
-    standard_answer: |
-      How should QA and dev collaborate on automation? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `collaboration`
-    deep_dive: /android-interview-prep/deep-dives/testing/testing-fundamentals/
-
-  - id: risk-based-testing
-    title: What is risk-based testing?
-    difficulty: intermediate
-    tags:
-      - testing
-      - strategy
-      - risk
-    standard_answer: |
-      What is risk-based testing? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `strategy`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
-
-  - id: postmortem-regression-tests
-    title: How do you turn incidents into regression tests?
-    difficulty: senior
-    tags:
-      - testing
-      - postmortem
-      - quality
-    standard_answer: |
-      How do you turn incidents into regression tests? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `postmortem`
-    deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
-
-  - id: test-maintenance-cost
-    title: How do you manage long-term test maintenance cost?
-    difficulty: staff
-    tags:
-      - testing
-      - maintainability
-      - strategy
-    standard_answer: |
-      How do you manage long-term test maintenance cost? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `testing` choices to measurable outcomes in `maintainability`
-    deep_dive: /android-interview-prep/deep-dives/testing/testability-and-architecture/
+- id: testing-strategy
+  title: How do you define an Android testing strategy?
+  difficulty: intermediate
+  tags:
+  - testing
+  - strategy
+  - android
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/testing-fundamentals/
+- id: test-pyramid
+  title: What is the test pyramid and why does it matter?
+  difficulty: beginner
+  tags:
+  - testing
+  - test-pyramid
+  - quality
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
+- id: unit-vs-integration
+  title: What is the difference between unit and integration tests?
+  difficulty: beginner
+  tags:
+  - testing
+  - unit-testing
+  - integration-testing
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
+- id: viewmodel-unit-tests
+  title: How do you unit test a ViewModel?
+  difficulty: intermediate
+  tags:
+  - testing
+  - viewmodel
+  - unit-testing
+  standard_answer: |-
+    Application-layer tests are best when architecture exposes clear seams, deterministic dependencies, and observable outputs instead of framework-heavy hidden behavior.
+
+    In interviews, cover:
+
+    - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+    - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+    - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+    - assert business rules and branching decisions, not the private implementation details used to reach them
+    - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
+
+    Strong answer tip:
+
+    - Good testing answers emphasize design-for-testability: clear boundaries make simpler tests possible.
+  deep_dive: /android-interview-prep/deep-dives/testing/unit-testing-viewmodel/
+- id: usecase-tests
+  title: How should use cases be tested?
+  difficulty: intermediate
+  tags:
+  - testing
+  - domain
+  - unit-testing
+  standard_answer: |-
+    Application-layer tests are best when architecture exposes clear seams, deterministic dependencies, and observable outputs instead of framework-heavy hidden behavior.
+
+    In interviews, cover:
+
+    - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+    - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+    - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+    - assert business rules and branching decisions, not the private implementation details used to reach them
+    - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
+
+    Strong answer tip:
+
+    - Good testing answers emphasize design-for-testability: clear boundaries make simpler tests possible.
+  deep_dive: /android-interview-prep/deep-dives/testing/unit-testing-viewmodel/
+- id: repository-tests
+  title: How do you test repository logic with multiple data sources?
+  difficulty: senior
+  tags:
+  - testing
+  - repository
+  - data-layer
+  standard_answer: |-
+    Application-layer tests are best when architecture exposes clear seams, deterministic dependencies, and observable outputs instead of framework-heavy hidden behavior.
+
+    In interviews, cover:
+
+    - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+    - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+    - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+    - assert business rules and branching decisions, not the private implementation details used to reach them
+    - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
+
+    Strong answer tip:
+
+    - Good testing answers emphasize design-for-testability: clear boundaries make simpler tests possible.
+  deep_dive: /android-interview-prep/deep-dives/testing/repository-and-data-layer-testing/
+- id: datasource-tests
+  title: How do you test remote and local data sources?
+  difficulty: intermediate
+  tags:
+  - testing
+  - data-layer
+  - repository
+  standard_answer: |-
+    Application-layer tests are best when architecture exposes clear seams, deterministic dependencies, and observable outputs instead of framework-heavy hidden behavior.
+
+    In interviews, cover:
+
+    - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+    - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+    - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+    - assert business rules and branching decisions, not the private implementation details used to reach them
+    - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
+
+    Strong answer tip:
+
+    - Good testing answers emphasize design-for-testability: clear boundaries make simpler tests possible.
+  deep_dive: /android-interview-prep/deep-dives/testing/repository-and-data-layer-testing/
+- id: integration-boundary
+  title: When should you add integration tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - integration-testing
+  - strategy
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/integration-testing/
+- id: compose-ui-tests
+  title: How do Compose UI tests differ from View UI tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - compose
+  - ui-testing
+  standard_answer: |-
+    UI and instrumentation tests should validate behavior that lower layers cannot prove, while keeping selectors and synchronization stable enough for long-term trust.
+
+    In interviews, cover:
+
+    - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+    - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+    - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+    - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+    - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
+
+    Strong answer tip:
+
+    - Interviewers like hearing how you keep UI tests stable over time, not just that you know how to write them.
+  deep_dive: /android-interview-prep/deep-dives/testing/ui-testing-with-compose/
+- id: semantics-testing
+  title: Why are semantics important in Compose tests?
+  difficulty: senior
+  tags:
+  - testing
+  - compose
+  - accessibility
+  standard_answer: |-
+    UI and instrumentation tests should validate behavior that lower layers cannot prove, while keeping selectors and synchronization stable enough for long-term trust.
+
+    In interviews, cover:
+
+    - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+    - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+    - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+    - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+    - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
+
+    Strong answer tip:
+
+    - Interviewers like hearing how you keep UI tests stable over time, not just that you know how to write them.
+  deep_dive: /android-interview-prep/deep-dives/testing/ui-testing-with-compose/
+- id: espresso-basics
+  title: When do you still use Espresso?
+  difficulty: intermediate
+  tags:
+  - testing
+  - espresso
+  - ui-testing
+  standard_answer: |-
+    UI and instrumentation tests should validate behavior that lower layers cannot prove, while keeping selectors and synchronization stable enough for long-term trust.
+
+    In interviews, cover:
+
+    - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+    - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+    - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+    - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+    - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
+
+    Strong answer tip:
+
+    - Interviewers like hearing how you keep UI tests stable over time, not just that you know how to write them.
+  deep_dive: /android-interview-prep/deep-dives/testing/espresso-and-ui-automation/
+- id: idling-resources
+  title: What are idling resources and when are they needed?
+  difficulty: senior
+  tags:
+  - testing
+  - espresso
+  - synchronization
+  standard_answer: |-
+    UI and instrumentation tests should validate behavior that lower layers cannot prove, while keeping selectors and synchronization stable enough for long-term trust.
+
+    In interviews, cover:
+
+    - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+    - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+    - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+    - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+    - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
+
+    Strong answer tip:
+
+    - Interviewers like hearing how you keep UI tests stable over time, not just that you know how to write them.
+  deep_dive: /android-interview-prep/deep-dives/testing/espresso-and-ui-automation/
+- id: mocks-vs-fakes
+  title: When should you use mocks vs fakes?
+  difficulty: intermediate
+  tags:
+  - testing
+  - mocks
+  - fakes
+  standard_answer: |-
+    Test doubles should make important behavior easier to observe without freezing tests to incidental implementation details.
+
+    In interviews, cover:
+
+    - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+    - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+    - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+    - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+    - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
+
+    Strong answer tip:
+
+    - A strong answer explains why a fake can survive refactors better than a heavily interaction-based mock.
+  deep_dive: /android-interview-prep/deep-dives/testing/mocking-fakes-and-stubs/
+- id: stub-vs-spy
+  title: What is the difference between stubs and spies?
+  difficulty: intermediate
+  tags:
+  - testing
+  - mocks
+  - unit-testing
+  standard_answer: |-
+    Test doubles should make important behavior easier to observe without freezing tests to incidental implementation details.
+
+    In interviews, cover:
+
+    - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+    - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+    - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+    - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+    - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
+
+    Strong answer tip:
+
+    - A strong answer explains why a fake can survive refactors better than a heavily interaction-based mock.
+  deep_dive: /android-interview-prep/deep-dives/testing/mocking-fakes-and-stubs/
+- id: coroutine-test
+  title: How do you test coroutines deterministically?
+  difficulty: intermediate
+  tags:
+  - testing
+  - coroutines
+  - kotlin
+  standard_answer: |-
+    Asynchronous tests should control time and scheduling explicitly so failures are deterministic and meaningful rather than timing-dependent.
+
+    In interviews, cover:
+
+    - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+    - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+    - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+    - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+    - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
+
+    Strong answer tip:
+
+    - One of the strongest signals here is knowing why `Thread.sleep()` is a smell in coroutine tests.
+  deep_dive: /android-interview-prep/deep-dives/testing/coroutine-and-flow-testing/
+- id: virtual-time
+  title: Why is virtual time important for async tests?
+  difficulty: senior
+  tags:
+  - testing
+  - coroutines
+  - virtual-time
+  standard_answer: |-
+    Asynchronous tests should control time and scheduling explicitly so failures are deterministic and meaningful rather than timing-dependent.
+
+    In interviews, cover:
+
+    - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+    - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+    - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+    - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+    - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
+
+    Strong answer tip:
+
+    - One of the strongest signals here is knowing why `Thread.sleep()` is a smell in coroutine tests.
+  deep_dive: /android-interview-prep/deep-dives/testing/coroutine-and-flow-testing/
+- id: flow-test-patterns
+  title: How do you test Flow emissions?
+  difficulty: intermediate
+  tags:
+  - testing
+  - flow
+  - coroutines
+  standard_answer: |-
+    Asynchronous tests should control time and scheduling explicitly so failures are deterministic and meaningful rather than timing-dependent.
+
+    In interviews, cover:
+
+    - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+    - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+    - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+    - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+    - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
+
+    Strong answer tip:
+
+    - One of the strongest signals here is knowing why `Thread.sleep()` is a smell in coroutine tests.
+  deep_dive: /android-interview-prep/deep-dives/testing/coroutine-and-flow-testing/
+- id: stateflow-testing
+  title: How do you test StateFlow UI state?
+  difficulty: intermediate
+  tags:
+  - testing
+  - stateflow
+  - ui-state
+  standard_answer: |-
+    Asynchronous tests should control time and scheduling explicitly so failures are deterministic and meaningful rather than timing-dependent.
+
+    In interviews, cover:
+
+    - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+    - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+    - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+    - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+    - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
+
+    Strong answer tip:
+
+    - One of the strongest signals here is knowing why `Thread.sleep()` is a smell in coroutine tests.
+  deep_dive: /android-interview-prep/deep-dives/testing/stateflow-sharedflow-testing/
+- id: sharedflow-events-testing
+  title: How do you test one-off SharedFlow events?
+  difficulty: senior
+  tags:
+  - testing
+  - sharedflow
+  - events
+  standard_answer: |-
+    Asynchronous tests should control time and scheduling explicitly so failures are deterministic and meaningful rather than timing-dependent.
+
+    In interviews, cover:
+
+    - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+    - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+    - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+    - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+    - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
+
+    Strong answer tip:
+
+    - One of the strongest signals here is knowing why `Thread.sleep()` is a smell in coroutine tests.
+  deep_dive: /android-interview-prep/deep-dives/testing/stateflow-sharedflow-testing/
+- id: mockwebserver
+  title: Why use MockWebServer for networking tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - networking
+  - mockwebserver
+  standard_answer: |-
+    Test doubles should make important behavior easier to observe without freezing tests to incidental implementation details.
+
+    In interviews, cover:
+
+    - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+    - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+    - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+    - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+    - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
+
+    Strong answer tip:
+
+    - A strong answer explains why a fake can survive refactors better than a heavily interaction-based mock.
+  deep_dive: /android-interview-prep/deep-dives/testing/network-testing-and-mockwebserver/
+- id: api-contract-tests
+  title: How do you keep API tests resilient to server changes?
+  difficulty: senior
+  tags:
+  - testing
+  - networking
+  - contract-testing
+  standard_answer: |-
+    Test doubles should make important behavior easier to observe without freezing tests to incidental implementation details.
+
+    In interviews, cover:
+
+    - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+    - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+    - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+    - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+    - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
+
+    Strong answer tip:
+
+    - A strong answer explains why a fake can survive refactors better than a heavily interaction-based mock.
+  deep_dive: /android-interview-prep/deep-dives/testing/contract-testing/
+- id: room-inmemory-tests
+  title: How do you test Room with in-memory databases?
+  difficulty: intermediate
+  tags:
+  - testing
+  - room
+  - database
+  standard_answer: |-
+    Persistence tests should prove both correctness and upgrade safety, because storage bugs often surface only after real users carry old state into new binaries.
+
+    In interviews, cover:
+
+    - use in-memory Room databases for fast repository and DAO validation when persistence fidelity beyond process lifetime is unnecessary
+    - write migration tests from real historical schemas so destructive upgrade mistakes are caught before release
+    - verify data preservation, default values, index creation, and backfill logic, not just that the migration technically runs
+    - exercise realistic edge rows such as nullables, old enums, and partially populated legacy data
+    - keep migration ownership explicit because schema changes often outlive the engineer who made them
+
+    Strong answer tip:
+
+    - Mention that migration tests are insurance against the worst kind of bug: one that only appears on upgrade in production.
+  deep_dive: /android-interview-prep/deep-dives/testing/database-testing-room/
+- id: migration-tests
+  title: Why are Room migration tests critical?
+  difficulty: senior
+  tags:
+  - testing
+  - room
+  - migration
+  standard_answer: |-
+    Persistence tests should prove both correctness and upgrade safety, because storage bugs often surface only after real users carry old state into new binaries.
+
+    In interviews, cover:
+
+    - use in-memory Room databases for fast repository and DAO validation when persistence fidelity beyond process lifetime is unnecessary
+    - write migration tests from real historical schemas so destructive upgrade mistakes are caught before release
+    - verify data preservation, default values, index creation, and backfill logic, not just that the migration technically runs
+    - exercise realistic edge rows such as nullables, old enums, and partially populated legacy data
+    - keep migration ownership explicit because schema changes often outlive the engineer who made them
+
+    Strong answer tip:
+
+    - Mention that migration tests are insurance against the worst kind of bug: one that only appears on upgrade in production.
+  deep_dive: /android-interview-prep/deep-dives/testing/database-testing-room/
+- id: testable-architecture
+  title: What makes Android architecture testable?
+  difficulty: intermediate
+  tags:
+  - testing
+  - architecture
+  - design
+  standard_answer: |-
+    Application-layer tests are best when architecture exposes clear seams, deterministic dependencies, and observable outputs instead of framework-heavy hidden behavior.
+
+    In interviews, cover:
+
+    - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+    - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+    - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+    - assert business rules and branching decisions, not the private implementation details used to reach them
+    - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
+
+    Strong answer tip:
+
+    - Good testing answers emphasize design-for-testability: clear boundaries make simpler tests possible.
+  deep_dive: /android-interview-prep/deep-dives/testing/testability-and-architecture/
+- id: dependency-injection-testing
+  title: How does DI improve testability?
+  difficulty: intermediate
+  tags:
+  - testing
+  - di
+  - architecture
+  standard_answer: |-
+    Application-layer tests are best when architecture exposes clear seams, deterministic dependencies, and observable outputs instead of framework-heavy hidden behavior.
+
+    In interviews, cover:
+
+    - test ViewModels through state transitions and emitted effects, not through Android lifecycle machinery
+    - use fakes or test doubles at repository and data-source boundaries so failure paths and caching rules can be exercised deterministically
+    - inject clocks, dispatchers, network clients, and stores so logic can be tested without sleeping or global state
+    - assert business rules and branching decisions, not the private implementation details used to reach them
+    - for repositories with multiple sources, verify precedence, merge logic, and stale-data handling explicitly
+
+    Strong answer tip:
+
+    - Good testing answers emphasize design-for-testability: clear boundaries make simpler tests possible.
+  deep_dive: /android-interview-prep/deep-dives/testing/testability-and-architecture/
+- id: flaky-tests
+  title: What causes flaky tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - flaky-tests
+  - quality
+  standard_answer: |-
+    Flaky tests are a trust problem before they are a tooling problem; once engineers stop believing failures, the suite stops protecting releases.
+
+    In interviews, cover:
+
+    - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+    - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+    - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+    - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+    - use retries sparingly and only as incident containment while the root cause is actively being removed
+
+    Strong answer tip:
+
+    - A mature answer says retries can reduce noise temporarily, but they should never become the long-term strategy.
+  deep_dive: /android-interview-prep/deep-dives/testing/flaky-test-diagnostics/
+- id: stabilize-ui-tests
+  title: How do you stabilize flaky UI tests?
+  difficulty: senior
+  tags:
+  - testing
+  - ui-testing
+  - flaky-tests
+  standard_answer: |-
+    Flaky tests are a trust problem before they are a tooling problem; once engineers stop believing failures, the suite stops protecting releases.
+
+    In interviews, cover:
+
+    - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+    - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+    - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+    - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+    - use retries sparingly and only as incident containment while the root cause is actively being removed
+
+    Strong answer tip:
+
+    - A mature answer says retries can reduce noise temporarily, but they should never become the long-term strategy.
+  deep_dive: /android-interview-prep/deep-dives/testing/flaky-test-diagnostics/
+- id: benchmark-tests
+  title: When should you add benchmark tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - performance
+  - benchmark
+  standard_answer: |-
+    Specialized test types matter when correctness alone is not enough and you need confidence in performance, visual stability, or assertion quality.
+
+    In interviews, cover:
+
+    - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+    - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+    - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+    - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+    - run these suites where the signal justifies the cost; they are powerful but not cheap
+
+    Strong answer tip:
+
+    - Strong candidates explain where these tests fit in the release process rather than presenting them as universal defaults.
+  deep_dive: /android-interview-prep/deep-dives/testing/performance-and-benchmark-testing/
+- id: macrobenchmark
+  title: What does Macrobenchmark validate?
+  difficulty: senior
+  tags:
+  - testing
+  - macrobenchmark
+  - performance
+  standard_answer: |-
+    Specialized test types matter when correctness alone is not enough and you need confidence in performance, visual stability, or assertion quality.
+
+    In interviews, cover:
+
+    - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+    - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+    - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+    - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+    - run these suites where the signal justifies the cost; they are powerful but not cheap
+
+    Strong answer tip:
+
+    - Strong candidates explain where these tests fit in the release process rather than presenting them as universal defaults.
+  deep_dive: /android-interview-prep/deep-dives/testing/performance-and-benchmark-testing/
+- id: golden-tests
+  title: What are snapshot or golden tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - snapshot
+  - ui-testing
+  standard_answer: |-
+    Specialized test types matter when correctness alone is not enough and you need confidence in performance, visual stability, or assertion quality.
+
+    In interviews, cover:
+
+    - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+    - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+    - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+    - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+    - run these suites where the signal justifies the cost; they are powerful but not cheap
+
+    Strong answer tip:
+
+    - Strong candidates explain where these tests fit in the release process rather than presenting them as universal defaults.
+  deep_dive: /android-interview-prep/deep-dives/testing/snapshot-and-golden-testing/
+- id: visual-regression
+  title: How do visual regression tests fit release safety?
+  difficulty: senior
+  tags:
+  - testing
+  - snapshot
+  - release
+  standard_answer: |-
+    Specialized test types matter when correctness alone is not enough and you need confidence in performance, visual stability, or assertion quality.
+
+    In interviews, cover:
+
+    - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+    - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+    - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+    - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+    - run these suites where the signal justifies the cost; they are powerful but not cheap
+
+    Strong answer tip:
+
+    - Strong candidates explain where these tests fit in the release process rather than presenting them as universal defaults.
+  deep_dive: /android-interview-prep/deep-dives/testing/snapshot-and-golden-testing/
+- id: consumer-contract
+  title: What is consumer-driven contract testing?
+  difficulty: staff
+  tags:
+  - testing
+  - contract-testing
+  - api
+  standard_answer: |-
+    Test doubles should make important behavior easier to observe without freezing tests to incidental implementation details.
+
+    In interviews, cover:
+
+    - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+    - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+    - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+    - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+    - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
+
+    Strong answer tip:
+
+    - A strong answer explains why a fake can survive refactors better than a heavily interaction-based mock.
+  deep_dive: /android-interview-prep/deep-dives/testing/contract-testing/
+- id: e2e-tests
+  title: What are good use cases for end-to-end tests?
+  difficulty: intermediate
+  tags:
+  - testing
+  - e2e
+  - strategy
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/e2e-testing-and-release-gates/
+- id: release-gates
+  title: How should tests gate production releases?
+  difficulty: senior
+  tags:
+  - testing
+  - release
+  - quality
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/e2e-testing-and-release-gates/
+- id: ci-pipeline
+  title: How do you design a fast CI test pipeline?
+  difficulty: intermediate
+  tags:
+  - testing
+  - ci
+  - automation
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/ci-cd-test-pipelines/
+- id: sharding-tests
+  title: When should you shard test suites?
+  difficulty: senior
+  tags:
+  - testing
+  - ci
+  - scalability
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/ci-cd-test-pipelines/
+- id: test-reporting
+  title: What metrics should test reports include?
+  difficulty: intermediate
+  tags:
+  - testing
+  - metrics
+  - quality
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
+- id: quality-gates
+  title: How do quality gates prevent regressions?
+  difficulty: senior
+  tags:
+  - testing
+  - quality
+  - governance
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
+- id: mutation-testing
+  title: Where does mutation testing fit in Android?
+  difficulty: staff
+  tags:
+  - testing
+  - mutation-testing
+  - quality
+  standard_answer: |-
+    Specialized test types matter when correctness alone is not enough and you need confidence in performance, visual stability, or assertion quality.
+
+    In interviews, cover:
+
+    - benchmark and Macrobenchmark tests validate startup, scrolling, and frame timing regressions that functional tests cannot see
+    - snapshot or golden tests are helpful for stable visual surfaces, but require disciplined review of intentional changes
+    - visual regression testing works best when rendering is deterministic and the tolerance policy is explicit
+    - mutation testing is useful as a spot check on whether unit tests actually detect behavior changes rather than merely executing code paths
+    - run these suites where the signal justifies the cost; they are powerful but not cheap
+
+    Strong answer tip:
+
+    - Strong candidates explain where these tests fit in the release process rather than presenting them as universal defaults.
+  deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
+- id: hermetic-tests
+  title: What are hermetic tests and why are they valuable?
+  difficulty: senior
+  tags:
+  - testing
+  - hermetic
+  - reliability
+  standard_answer: |-
+    Flaky tests are a trust problem before they are a tooling problem; once engineers stop believing failures, the suite stops protecting releases.
+
+    In interviews, cover:
+
+    - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+    - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+    - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+    - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+    - use retries sparingly and only as incident containment while the root cause is actively being removed
+
+    Strong answer tip:
+
+    - A mature answer says retries can reduce noise temporarily, but they should never become the long-term strategy.
+  deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
+- id: test-data-builders
+  title: Why use test data builders?
+  difficulty: intermediate
+  tags:
+  - testing
+  - unit-testing
+  - maintainability
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/mocking-fakes-and-stubs/
+- id: clock-abstraction
+  title: How does clock abstraction improve test reliability?
+  difficulty: senior
+  tags:
+  - testing
+  - time
+  - architecture
+  standard_answer: |-
+    Asynchronous tests should control time and scheduling explicitly so failures are deterministic and meaningful rather than timing-dependent.
+
+    In interviews, cover:
+
+    - use test dispatchers and virtual time to advance work instantly instead of sleeping the thread
+    - verify Flow and StateFlow through collected emissions and state transitions, especially loading, success, and error boundaries
+    - treat one-off SharedFlow events carefully so the test proves exactly-once delivery expectations rather than incidental collection order
+    - inject clocks and schedulers so timeout, debounce, retry, and expiry logic can be tested without wall-clock dependence
+    - cancel collectors and scopes cleanly in tests to avoid hidden leaks and cross-test interference
+
+    Strong answer tip:
+
+    - One of the strongest signals here is knowing why `Thread.sleep()` is a smell in coroutine tests.
+  deep_dive: /android-interview-prep/deep-dives/testing/unit-testing-viewmodel/
+- id: retry-in-tests
+  title: Should flaky tests be fixed with retries?
+  difficulty: intermediate
+  tags:
+  - testing
+  - flaky-tests
+  - ci
+  standard_answer: |-
+    Flaky tests are a trust problem before they are a tooling problem; once engineers stop believing failures, the suite stops protecting releases.
+
+    In interviews, cover:
+
+    - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+    - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+    - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+    - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+    - use retries sparingly and only as incident containment while the root cause is actively being removed
+
+    Strong answer tip:
+
+    - A mature answer says retries can reduce noise temporarily, but they should never become the long-term strategy.
+  deep_dive: /android-interview-prep/deep-dives/testing/flaky-test-diagnostics/
+- id: android-test-runner
+  title: How do you structure instrumentation test modules?
+  difficulty: senior
+  tags:
+  - testing
+  - instrumentation
+  - android
+  standard_answer: |-
+    UI and instrumentation tests should validate behavior that lower layers cannot prove, while keeping selectors and synchronization stable enough for long-term trust.
+
+    In interviews, cover:
+
+    - prefer user-visible semantics or stable accessibility labels over brittle implementation selectors
+    - Compose tests and View-system tests differ mainly in how they surface tree state and synchronization, not in the goal of validating user behavior
+    - use Espresso or instrumentation where real platform integration matters, such as permissions, intents, or WebView/system interaction
+    - introduce idling resources or explicit synchronization only when true async boundaries exist; over-synchronization hides design issues
+    - structure instrumentation modules so they are isolated, shardable, and cheap to run selectively in CI
+
+    Strong answer tip:
+
+    - Interviewers like hearing how you keep UI tests stable over time, not just that you know how to write them.
+  deep_dive: /android-interview-prep/deep-dives/testing/espresso-and-ui-automation/
+- id: test-environments
+  title: How do you manage test environments across teams?
+  difficulty: staff
+  tags:
+  - testing
+  - environments
+  - operations
+  standard_answer: |-
+    Flaky tests are a trust problem before they are a tooling problem; once engineers stop believing failures, the suite stops protecting releases.
+
+    In interviews, cover:
+
+    - look first for uncontrolled time, shared state, network dependence, and environment variance rather than masking flakiness with retries
+    - make tests hermetic by controlling inputs, clocks, storage, and network boundaries wherever practical
+    - stabilize UI tests through deterministic selectors, explicit synchronization, and fewer cross-layer assumptions
+    - treat environment setup as productized infrastructure with versioned emulator images, seed data, and ownership
+    - use retries sparingly and only as incident containment while the root cause is actively being removed
+
+    Strong answer tip:
+
+    - A mature answer says retries can reduce noise temporarily, but they should never become the long-term strategy.
+  deep_dive: /android-interview-prep/deep-dives/testing/ci-cd-test-pipelines/
+- id: contract-mocks
+  title: How do contracts reduce mock drift?
+  difficulty: senior
+  tags:
+  - testing
+  - contract-testing
+  - mocks
+  standard_answer: |-
+    Test doubles should make important behavior easier to observe without freezing tests to incidental implementation details.
+
+    In interviews, cover:
+
+    - use mocks to verify specific collaboration when call shape matters, but prefer fakes when behavior and state transitions are more important
+    - keep stubs simple and spies rare; once the test is asserting too many interactions, it is often coupled to implementation
+    - MockWebServer is valuable because it exercises real serialization, interceptors, retries, and error handling without unstable external dependencies
+    - contract tests reduce drift by forcing client and provider expectations to stay synchronized as APIs evolve
+    - audit mock usage regularly because excessive mocking often signals boundaries that are too granular or poorly designed
+
+    Strong answer tip:
+
+    - A strong answer explains why a fake can survive refactors better than a heavily interaction-based mock.
+  deep_dive: /android-interview-prep/deep-dives/testing/contract-testing/
+- id: qa-dev-collaboration
+  title: How should QA and dev collaborate on automation?
+  difficulty: intermediate
+  tags:
+  - testing
+  - collaboration
+  - process
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/testing-fundamentals/
+- id: risk-based-testing
+  title: What is risk-based testing?
+  difficulty: intermediate
+  tags:
+  - testing
+  - strategy
+  - risk
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/test-pyramid-and-strategy/
+- id: postmortem-regression-tests
+  title: How do you turn incidents into regression tests?
+  difficulty: senior
+  tags:
+  - testing
+  - postmortem
+  - quality
+  standard_answer: |-
+    Release-oriented testing should turn test results into actionable delivery decisions instead of a giant undifferentiated wall of pass/fail output.
+
+    In interviews, cover:
+
+    - design CI stages so fast signal arrives first and large suites are sharded or run selectively when risk warrants it
+    - report metrics that drive action: flaky rate, suite duration, top failure causes, coverage gaps, and escaped defects
+    - convert incidents into targeted regression tests close to the layer where the issue should have been caught
+    - partner QA and developers on strategy, environment realism, and ownership rather than treating automation as one side’s responsibility
+    - use test data builders or factory patterns to keep scenario setup readable and maintainable as the domain evolves
+
+    Strong answer tip:
+
+    - A good answer makes testing feel like an operational feedback system, not just a pile of test frameworks.
+  deep_dive: /android-interview-prep/deep-dives/testing/test-metrics-and-quality-governance/
+- id: test-maintenance-cost
+  title: How do you manage long-term test maintenance cost?
+  difficulty: staff
+  tags:
+  - testing
+  - maintainability
+  - strategy
+  standard_answer: |-
+    Testing strategy should allocate confidence where risk is highest while keeping the feedback loop fast enough that engineers still trust and use it.
+
+    In interviews, cover:
+
+    - bias toward unit and small integration tests for logic, and use slower UI or end-to-end tests only where they buy unique confidence
+    - tie coverage depth to risk: payments, auth, migrations, and upgrade flows deserve heavier protection than low-impact UI copy
+    - define what each layer is responsible for so teams do not duplicate the same assertion in five different suites
+    - watch maintenance cost because too many brittle tests create a false sense of safety and slow delivery
+    - review incidents and escaped defects to rebalance the strategy over time instead of defending the pyramid dogmatically
+
+    Strong answer tip:
+
+    - A strong answer makes the strategy feel economic: what is cheap confidence, what is expensive confidence, and where is each worth paying for?
+  deep_dive: /android-interview-prep/deep-dives/testing/testability-and-architecture/

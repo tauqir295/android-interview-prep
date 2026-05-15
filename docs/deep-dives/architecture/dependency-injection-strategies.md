@@ -99,11 +99,14 @@ object FeedModule {
 
 ## Common Interview Questions
 
-- Why is constructor injection preferred over field injection?
-- How do you choose scope lifetimes?
-- When is a Service Locator acceptable?
-- How do you test graph-heavy code without brittle setup?
-
+- **Q:** Why is constructor injection preferred over field injection?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** How do you choose scope lifetimes?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** When is a Service Locator acceptable?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** How do you test graph-heavy code without brittle setup?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - standardize module/package conventions for bindings

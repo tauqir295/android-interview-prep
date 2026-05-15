@@ -85,11 +85,14 @@ viewModelScope.launch {
 
 ## Common Interview Questions
 
-- What makes Flow different from Rx streams?
-- Why is Flow cold by default?
-- When does a collector start executing the upstream pipeline?
-- How does cancellation affect collection?
-
+- **Q:** What makes Flow different from Rx streams?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** Why is Flow cold by default?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** When does a collector start executing the upstream pipeline?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How does cancellation affect collection?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
 ## Production Considerations
 
 - keep expensive upstream work shared when multiple collectors exist

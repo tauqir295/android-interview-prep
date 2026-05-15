@@ -65,10 +65,12 @@ AndroidView(factory = { context -> MapView(context) })
 
 ## Common Interview Questions
 
-- What should UI tests assert in Compose?
-- When is `AndroidView` acceptable vs technical debt?
-- How do you triage Compose jank in production?
-
+- **Q:** What should UI tests assert in Compose?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** When is `AndroidView` acceptable vs technical debt?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** How do you triage Compose jank in production?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
 ## Production Considerations
 
 - build a test pyramid with fast deterministic layers

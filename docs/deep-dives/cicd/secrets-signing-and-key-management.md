@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How should test pyramid map to CI stages?**?
-- How would you answer: **Which metrics should monitor release health?**?
-- How would you answer: **How do you use quality trend dashboards?**?
-
+- **Q:** How should test pyramid map to CI stages?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** Which metrics should monitor release health?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
+- **Q:** How do you use quality trend dashboards?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

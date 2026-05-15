@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **How does ActivityTaskManager coordinate tasks?**?
-- How would you answer: **What runtime costs come with dynamic feature modules?**?
-
+- **Q:** How does ActivityTaskManager coordinate tasks?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
+- **Q:** What runtime costs come with dynamic feature modules?
+  **A:** Answer with internals-first reasoning: describe the subsystem boundaries, explain the runtime behavior and bottlenecks, then show how you would validate with traces and measurable latency or memory budgets.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

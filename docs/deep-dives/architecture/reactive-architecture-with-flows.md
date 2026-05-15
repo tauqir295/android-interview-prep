@@ -93,11 +93,14 @@ class SearchViewModel(
 
 ## Common Interview Questions
 
-- `StateFlow` vs `SharedFlow` for UI architecture?
-- Where should operators live: UI, ViewModel, or domain?
-- How do you prevent duplicate collectors and wasted work?
-- How do you model retries in stream pipelines?
-
+- **Q:** `StateFlow` vs `SharedFlow` for UI architecture?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** Where should operators live: UI, ViewModel, or domain?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you prevent duplicate collectors and wasted work?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How do you model retries in stream pipelines?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - set explicit sharing policies (`WhileSubscribed`, timeout)

@@ -78,12 +78,14 @@ viewModelScope.launch {
 
 ## Common Interview Questions
 
-- What is the difference between scope and dispatcher?
-- Why is `Dispatchers.IO` different from `Default`?
-- Why is `GlobalScope` discouraged?
+- **Q:** What is the difference between scope and dispatcher?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why is `Dispatchers.IO` different from `Default`?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why is `GlobalScope` discouraged?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Use lifecycle-aware scopes on Android:

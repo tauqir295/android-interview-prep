@@ -51,9 +51,12 @@ interface UserApi {
 }
 ```
 ## Common Interview Questions
-- How do you structure API interfaces for long-term maintainability?
-- Where should retry and timeout logic live?
-- How do you expose failures to the UI layer?
+- **Q:** How do you structure API interfaces for long-term maintainability?
+  **A:** Answer with API contract and failure semantics: timeout and retry policy, idempotency, error mapping, and observability for client and server behavior.
+- **Q:** Where should retry and timeout logic live?
+  **A:** Answer with API contract and failure semantics: timeout and retry policy, idempotency, error mapping, and observability for client and server behavior.
+- **Q:** How do you expose failures to the UI layer?
+  **A:** Answer with API contract and failure semantics: timeout and retry policy, idempotency, error mapping, and observability for client and server behavior.
 ## Production Considerations
 - Add telemetry around status codes and latency percentiles.
 - Guard against schema drift with robust parsing defaults.

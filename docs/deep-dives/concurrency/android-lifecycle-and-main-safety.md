@@ -58,10 +58,14 @@ class UserRepository(
 }
 ```
 ## Common Interview Questions
-- What does "main-safe" mean in practice?
-- Why should callers not care which dispatcher a repository uses?
-- How do main-thread violations lead to ANRs?
-- How does lifecycle cancellation reduce stale UI updates?
+- **Q:** What does "main-safe" mean in practice?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why should callers not care which dispatcher a repository uses?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do main-thread violations lead to ANRs?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How does lifecycle cancellation reduce stale UI updates?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
 ## Production Considerations
 - enforce strict-mode policies in debug builds
 - audit blocking APIs used from presentation layer

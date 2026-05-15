@@ -59,10 +59,14 @@ scope.launch(CoroutineName("sync-refresh") + handler) {
 }
 ```
 ## Common Interview Questions
-- How do you trace a coroutine across dispatcher switches?
-- What should be logged on cancellation?
-- Why are coroutine names useful in production?
-- How do you observe Flow bottlenecks end-to-end?
+- **Q:** How do you trace a coroutine across dispatcher switches?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What should be logged on cancellation?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why are coroutine names useful in production?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do you observe Flow bottlenecks end-to-end?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
 ## Production Considerations
 - define standard telemetry fields for async work
 - sample high-volume traces to control cost

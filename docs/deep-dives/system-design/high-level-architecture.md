@@ -48,9 +48,12 @@ A good high-level architecture shows clear boundaries, clear ownership, and clea
                    -> [Feed Service] -> [Cache + Feed DB]
 ```
 ## Common Interview Questions
-- Why include a BFF?
-- How do you split service boundaries?
-- What is your fallback plan on dependency failure?
+- **Q:** Why include a BFF?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** How do you split service boundaries?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** What is your fallback plan on dependency failure?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
 ## Production Considerations
 - Version APIs safely.
 - Keep observability at each boundary.

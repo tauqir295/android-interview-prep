@@ -1,1100 +1,1101 @@
 questions:
-  - id: system-design
-    title: What is Android system design in interviews?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - architecture
-      - interview
-    standard_answer: |
-      What is Android system design in interviews? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `architecture`
-    deep_dive: /android-interview-prep/deep-dives/system-design/system-design-fundamentals/
-
-  - id: functional-vs-nonfunctional-requirements
-    title: How do you separate functional vs non-functional requirements?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - requirements
-      - scalability
-    standard_answer: |
-      How do you separate functional vs non-functional requirements? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `requirements`
-    deep_dive: /android-interview-prep/deep-dives/system-design/requirements-and-scope/
-
-  - id: scope-definition
-    title: How do you define scope for a system design round?
-    difficulty: beginner
-    tags:
-      - system-design
-      - requirements
-      - planning
-    standard_answer: |
-      How do you define scope for a system design round? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `requirements`
-    deep_dive: /android-interview-prep/deep-dives/system-design/requirements-and-scope/
-
-  - id: estimations
-    title: How do you do quick capacity estimations?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - capacity
-      - scalability
-    standard_answer: |
-      How do you do quick capacity estimations? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `capacity`
-    deep_dive: /android-interview-prep/deep-dives/system-design/scalability-and-capacity-planning/
-
-  - id: high-level-components
-    title: How do you structure high-level components?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - architecture
-      - components
-    standard_answer: |
-      How do you structure high-level components? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `architecture`
-    deep_dive: /android-interview-prep/deep-dives/system-design/high-level-architecture/
-
-  - id: service-boundaries
-    title: How do you define service boundaries?
-    difficulty: senior
-    tags:
-      - system-design
-      - microservices
-      - architecture
-    standard_answer: |
-      How do you define service boundaries? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `microservices`
-    deep_dive: /android-interview-prep/deep-dives/system-design/high-level-architecture/
-
-  - id: data-modeling
-    title: How do you approach data modeling in system design?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - data
-      - modeling
-    standard_answer: |
-      How do you approach data modeling in system design? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `data`
-    deep_dive: /android-interview-prep/deep-dives/system-design/data-modeling-and-storage/
-
-  - id: sql-vs-nosql
-    title: When do you choose SQL vs NoSQL?
-    difficulty: senior
-    tags:
-      - system-design
-      - databases
-      - tradeoffs
-    standard_answer: |
-      When do you choose SQL vs NoSQL? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `databases`
-    deep_dive: /android-interview-prep/deep-dives/system-design/data-modeling-and-storage/
-
-  - id: indexing-strategy
-    title: How do indexes affect read and write performance?
-    difficulty: senior
-    tags:
-      - system-design
-      - database
-      - indexing
-    standard_answer: |
-      How do indexes affect read and write performance? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `database`
-    deep_dive: /android-interview-prep/deep-dives/system-design/search-and-indexing/
-
-  - id: consistency-models
-    title: What consistency models should you discuss in interviews?
-    difficulty: senior
-    tags:
-      - system-design
-      - consistency
-      - distributed-systems
-    standard_answer: |
-      What consistency models should you discuss in interviews? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `consistency`
-    deep_dive: /android-interview-prep/deep-dives/system-design/consistency-and-transactions/
-
-  - id: transactions-and-sagas
-    title: When should you use transactions vs sagas?
-    difficulty: staff
-    tags:
-      - system-design
-      - transactions
-      - saga
-    standard_answer: |
-      When should you use transactions vs sagas? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `transactions`
-    deep_dive: /android-interview-prep/deep-dives/system-design/consistency-and-transactions/
-
-  - id: horizontal-scaling
-    title: How do you scale a system horizontally?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - scalability
-      - backend
-    standard_answer: |
-      How do you scale a system horizontally? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `scalability`
-    deep_dive: /android-interview-prep/deep-dives/system-design/scalability-and-capacity-planning/
-
-  - id: load-balancing
-    title: How do load balancers fit into architecture design?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - networking
-      - scalability
-    standard_answer: |
-      How do load balancers fit into architecture design? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `networking`
-    deep_dive: /android-interview-prep/deep-dives/system-design/high-level-architecture/
-
-  - id: cache-aside
-    title: What is cache-aside and when is it useful?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - caching
-      - performance
-    standard_answer: |
-      What is cache-aside and when is it useful? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `caching`
-    deep_dive: /android-interview-prep/deep-dives/system-design/caching-strategies/
-
-  - id: cache-invalidation
-    title: Why is cache invalidation hard?
-    difficulty: senior
-    tags:
-      - system-design
-      - caching
-      - consistency
-    standard_answer: |
-      Why is cache invalidation hard? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `caching`
-    deep_dive: /android-interview-prep/deep-dives/system-design/caching-strategies/
-
-  - id: message-queues
-    title: When do you add a message queue?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - queues
-      - async
-    standard_answer: |
-      When do you add a message queue? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `queues`
-    deep_dive: /android-interview-prep/deep-dives/system-design/queueing-and-async-processing/
-
-  - id: event-driven-design
-    title: What are event-driven architecture tradeoffs?
-    difficulty: senior
-    tags:
-      - system-design
-      - events
-      - architecture
-    standard_answer: |
-      What are event-driven architecture tradeoffs? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `events`
-    deep_dive: /android-interview-prep/deep-dives/system-design/queueing-and-async-processing/
-
-  - id: api-gateway
-    title: What role does an API gateway play?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - api
-      - gateway
-    standard_answer: |
-      What role does an API gateway play? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `api`
-    deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
-
-  - id: rest-vs-grpc-design
-    title: How do you choose REST vs gRPC for internal APIs?
-    difficulty: senior
-    tags:
-      - system-design
-      - api
-      - grpc
-    standard_answer: |
-      How do you choose REST vs gRPC for internal APIs? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `api`
-    deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
-
-  - id: versioning-strategy
-    title: How do you version APIs safely?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - api
-      - versioning
-    standard_answer: |
-      How do you version APIs safely? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `api`
-    deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
-
-  - id: authn-vs-authz
-    title: How do you model authentication vs authorization?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - security
-      - auth
-    standard_answer: |
-      How do you model authentication vs authorization? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `security`
-    deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
-
-  - id: security-hardening
-    title: What security hardening do you mention in interviews?
-    difficulty: senior
-    tags:
-      - system-design
-      - security
-      - production
-    standard_answer: |
-      What security hardening do you mention in interviews? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `security`
-    deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
-
-  - id: slos-and-slas
-    title: How do SLOs/SLAs shape architecture decisions?
-    difficulty: senior
-    tags:
-      - system-design
-      - observability
-      - slo
-    standard_answer: |
-      How do SLOs/SLAs shape architecture decisions? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `observability`
-    deep_dive: /android-interview-prep/deep-dives/system-design/observability-and-slos/
-
-  - id: logging-metrics-tracing
-    title: Why are logs, metrics, and traces all needed?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - observability
-      - monitoring
-    standard_answer: |
-      Why are logs, metrics, and traces all needed? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `observability`
-    deep_dive: /android-interview-prep/deep-dives/system-design/observability-and-slos/
-
-  - id: circuit-breaker
-    title: What is a circuit breaker and why use it?
-    difficulty: senior
-    tags:
-      - system-design
-      - resilience
-      - reliability
-    standard_answer: |
-      What is a circuit breaker and why use it? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `resilience`
-    deep_dive: /android-interview-prep/deep-dives/system-design/resilience-and-failure-handling/
-
-  - id: bulkheads-and-timeouts
-    title: How do timeouts, retries, and bulkheads work together?
-    difficulty: staff
-    tags:
-      - system-design
-      - resilience
-      - timeouts
-    standard_answer: |
-      How do timeouts, retries, and bulkheads work together? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `resilience`
-    deep_dive: /android-interview-prep/deep-dives/system-design/resilience-and-failure-handling/
-
-  - id: idempotency
-    title: Why is idempotency important in distributed systems?
-    difficulty: senior
-    tags:
-      - system-design
-      - reliability
-      - api
-    standard_answer: |
-      Why is idempotency important in distributed systems? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `reliability`
-    deep_dive: /android-interview-prep/deep-dives/system-design/resilience-and-failure-handling/
-
-  - id: multi-region
-    title: When do you move to multi-region architecture?
-    difficulty: staff
-    tags:
-      - system-design
-      - multi-region
-      - scalability
-    standard_answer: |
-      When do you move to multi-region architecture? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `multi-region`
-    deep_dive: /android-interview-prep/deep-dives/system-design/multi-region-and-disaster-recovery/
-
-  - id: disaster-recovery-rpo-rto
-    title: How do RPO and RTO influence disaster recovery design?
-    difficulty: staff
-    tags:
-      - system-design
-      - dr
-      - reliability
-    standard_answer: |
-      How do RPO and RTO influence disaster recovery design? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `dr`
-    deep_dive: /android-interview-prep/deep-dives/system-design/multi-region-and-disaster-recovery/
-
-  - id: cost-vs-latency
-    title: How do you balance cost vs latency?
-    difficulty: senior
-    tags:
-      - system-design
-      - cost
-      - tradeoffs
-    standard_answer: |
-      How do you balance cost vs latency? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `cost`
-    deep_dive: /android-interview-prep/deep-dives/system-design/cost-optimization/
-
-  - id: capacity-headroom
-    title: How much capacity headroom should a production system keep?
-    difficulty: senior
-    tags:
-      - system-design
-      - capacity
-      - operations
-    standard_answer: |
-      How much capacity headroom should a production system keep? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `capacity`
-    deep_dive: /android-interview-prep/deep-dives/system-design/cost-optimization/
-
-  - id: bff-pattern
-    title: What is Backend-for-Frontend (BFF) and when should Android use it?
-    difficulty: senior
-    tags:
-      - system-design
-      - bff
-      - mobile
-    standard_answer: |
-      What is Backend-for-Frontend (BFF) and when should Android use it? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `bff`
-    deep_dive: /android-interview-prep/deep-dives/system-design/mobile-backend-for-frontend/
-
-  - id: edge-caching-mobile
-    title: How does edge caching improve mobile user experience?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - cdn
-      - mobile
-    standard_answer: |
-      How does edge caching improve mobile user experience? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `cdn`
-    deep_dive: /android-interview-prep/deep-dives/system-design/mobile-backend-for-frontend/
-
-  - id: realtime-chat-design
-    title: How would you design a real-time chat backend?
-    difficulty: staff
-    tags:
-      - system-design
-      - realtime
-      - websocket
-    standard_answer: |
-      How would you design a real-time chat backend? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `realtime`
-    deep_dive: /android-interview-prep/deep-dives/system-design/real-time-systems/
-
-  - id: fanout-problem
-    title: How do you handle fan-out at scale?
-    difficulty: staff
-    tags:
-      - system-design
-      - realtime
-      - scalability
-    standard_answer: |
-      How do you handle fan-out at scale? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `realtime`
-    deep_dive: /android-interview-prep/deep-dives/system-design/real-time-systems/
-
-  - id: search-architecture
-    title: How do you design search for low-latency queries?
-    difficulty: senior
-    tags:
-      - system-design
-      - search
-      - indexing
-    standard_answer: |
-      How do you design search for low-latency queries? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `search`
-    deep_dive: /android-interview-prep/deep-dives/system-design/search-and-indexing/
-
-  - id: eventual-consistency-search
-    title: Why is search often eventually consistent?
-    difficulty: senior
-    tags:
-      - system-design
-      - search
-      - consistency
-    standard_answer: |
-      Why is search often eventually consistent? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `search`
-    deep_dive: /android-interview-prep/deep-dives/system-design/search-and-indexing/
-
-  - id: analytics-pipeline
-    title: How do you design analytics ingestion pipelines?
-    difficulty: senior
-    tags:
-      - system-design
-      - analytics
-      - data-pipeline
-    standard_answer: |
-      How do you design analytics ingestion pipelines? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `analytics`
-    deep_dive: /android-interview-prep/deep-dives/system-design/analytics-pipeline-design/
-
-  - id: batch-vs-stream
-    title: When do you choose batch vs stream processing?
-    difficulty: senior
-    tags:
-      - system-design
-      - analytics
-      - streaming
-    standard_answer: |
-      When do you choose batch vs stream processing? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `analytics`
-    deep_dive: /android-interview-prep/deep-dives/system-design/analytics-pipeline-design/
-
-  - id: migration-strangler
-    title: What is the strangler pattern for migrations?
-    difficulty: senior
-    tags:
-      - system-design
-      - migration
-      - architecture
-    standard_answer: |
-      What is the strangler pattern for migrations? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `migration`
-    deep_dive: /android-interview-prep/deep-dives/system-design/migration-and-evolution-strategies/
-
-  - id: schema-evolution
-    title: How do you manage schema evolution safely?
-    difficulty: senior
-    tags:
-      - system-design
-      - schema
-      - migration
-    standard_answer: |
-      How do you manage schema evolution safely? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `schema`
-    deep_dive: /android-interview-prep/deep-dives/system-design/migration-and-evolution-strategies/
-
-  - id: tradeoff-framework
-    title: How do you present tradeoffs clearly in interviews?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - tradeoffs
-      - interview
-    standard_answer: |
-      How do you present tradeoffs clearly in interviews? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `tradeoffs`
-    deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
-
-  - id: cap-theorem-practical
-    title: How do you explain CAP theorem pragmatically?
-    difficulty: staff
-    tags:
-      - system-design
-      - distributed-systems
-      - cap
-    standard_answer: |
-      How do you explain CAP theorem pragmatically? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `distributed-systems`
-    deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
-
-  - id: read-heavy-vs-write-heavy
-    title: How does workload shape architecture choices?
-    difficulty: senior
-    tags:
-      - system-design
-      - capacity
-      - databases
-    standard_answer: |
-      How does workload shape architecture choices? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `capacity`
-    deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
-
-  - id: availability-vs-consistency
-    title: How do you choose availability vs consistency?
-    difficulty: staff
-    tags:
-      - system-design
-      - consistency
-      - availability
-    standard_answer: |
-      How do you choose availability vs consistency? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `consistency`
-    deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
-
-  - id: backpressure-in-systems
-    title: What is backpressure in distributed systems?
-    difficulty: senior
-    tags:
-      - system-design
-      - backpressure
-      - queues
-    standard_answer: |
-      What is backpressure in distributed systems? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `backpressure`
-    deep_dive: /android-interview-prep/deep-dives/system-design/queueing-and-async-processing/
-
-  - id: rate-limiting
-    title: How do you design rate limiting?
-    difficulty: intermediate
-    tags:
-      - system-design
-      - rate-limiting
-      - api
-    standard_answer: |
-      How do you design rate limiting? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `rate-limiting`
-    deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
-
-  - id: tenant-isolation
-    title: How do you design multi-tenant isolation?
-    difficulty: staff
-    tags:
-      - system-design
-      - multi-tenant
-      - security
-    standard_answer: |
-      How do you design multi-tenant isolation? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `multi-tenant`
-    deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
-
-  - id: data-retention
-    title: How do retention policies affect architecture?
-    difficulty: senior
-    tags:
-      - system-design
-      - compliance
-      - data
-    standard_answer: |
-      How do retention policies affect architecture? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `compliance`
-    deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
-
-  - id: design-round-structure
-    title: What is a strong structure for solving design rounds?
-    difficulty: beginner
-    tags:
-      - system-design
-      - interview
-      - communication
-    standard_answer: |
-      What is a strong structure for solving design rounds? is primarily about making clear, practical decisions.
-
-      In interviews, cover:
-
-      - definition in one sentence
-      - when to use it and when not to
-      - tradeoffs (latency, reliability, complexity, cost)
-      - a production example from your team
-
-      Strong answer tip:
-
-      - connect `system-design` choices to measurable outcomes in `interview`
-    deep_dive: /android-interview-prep/deep-dives/system-design/system-design-fundamentals/
+- id: system-design
+  title: What is Android system design in interviews?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - architecture
+  - interview
+  standard_answer: |-
+    System design interviews reward structured thinking: clarify the problem, narrow scope intelligently, and make tradeoffs explicit before diving into components.
+
+    In interviews, cover:
+
+    - separate functional requirements from scale, latency, availability, compliance, and cost constraints because architecture follows those boundaries
+    - time-box assumptions and rough estimations so the discussion stays grounded rather than hand-wavy
+    - define the first viable version of the system before exploring advanced optimizations or multi-region complexity
+    - use a repeatable structure—requirements, APIs, data model, components, bottlenecks, tradeoffs, evolution path
+    - state what you are intentionally not solving yet; scope discipline is a positive signal, not a weakness
+
+    Strong answer tip:
+
+    - Interviewers usually prefer a clearly scoped and well-defended design over an overbuilt design that never established its assumptions.
+  deep_dive: /android-interview-prep/deep-dives/system-design/system-design-fundamentals/
+- id: functional-vs-nonfunctional-requirements
+  title: How do you separate functional vs non-functional requirements?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - requirements
+  - scalability
+  standard_answer: |-
+    System design interviews reward structured thinking: clarify the problem, narrow scope intelligently, and make tradeoffs explicit before diving into components.
+
+    In interviews, cover:
+
+    - separate functional requirements from scale, latency, availability, compliance, and cost constraints because architecture follows those boundaries
+    - time-box assumptions and rough estimations so the discussion stays grounded rather than hand-wavy
+    - define the first viable version of the system before exploring advanced optimizations or multi-region complexity
+    - use a repeatable structure—requirements, APIs, data model, components, bottlenecks, tradeoffs, evolution path
+    - state what you are intentionally not solving yet; scope discipline is a positive signal, not a weakness
+
+    Strong answer tip:
+
+    - Interviewers usually prefer a clearly scoped and well-defended design over an overbuilt design that never established its assumptions.
+  deep_dive: /android-interview-prep/deep-dives/system-design/requirements-and-scope/
+- id: scope-definition
+  title: How do you define scope for a system design round?
+  difficulty: beginner
+  tags:
+  - system-design
+  - requirements
+  - planning
+  standard_answer: |-
+    System design interviews reward structured thinking: clarify the problem, narrow scope intelligently, and make tradeoffs explicit before diving into components.
+
+    In interviews, cover:
+
+    - separate functional requirements from scale, latency, availability, compliance, and cost constraints because architecture follows those boundaries
+    - time-box assumptions and rough estimations so the discussion stays grounded rather than hand-wavy
+    - define the first viable version of the system before exploring advanced optimizations or multi-region complexity
+    - use a repeatable structure—requirements, APIs, data model, components, bottlenecks, tradeoffs, evolution path
+    - state what you are intentionally not solving yet; scope discipline is a positive signal, not a weakness
+
+    Strong answer tip:
+
+    - Interviewers usually prefer a clearly scoped and well-defended design over an overbuilt design that never established its assumptions.
+  deep_dive: /android-interview-prep/deep-dives/system-design/requirements-and-scope/
+- id: estimations
+  title: How do you do quick capacity estimations?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - capacity
+  - scalability
+  standard_answer: |-
+    System design interviews reward structured thinking: clarify the problem, narrow scope intelligently, and make tradeoffs explicit before diving into components.
+
+    In interviews, cover:
+
+    - separate functional requirements from scale, latency, availability, compliance, and cost constraints because architecture follows those boundaries
+    - time-box assumptions and rough estimations so the discussion stays grounded rather than hand-wavy
+    - define the first viable version of the system before exploring advanced optimizations or multi-region complexity
+    - use a repeatable structure—requirements, APIs, data model, components, bottlenecks, tradeoffs, evolution path
+    - state what you are intentionally not solving yet; scope discipline is a positive signal, not a weakness
+
+    Strong answer tip:
+
+    - Interviewers usually prefer a clearly scoped and well-defended design over an overbuilt design that never established its assumptions.
+  deep_dive: /android-interview-prep/deep-dives/system-design/scalability-and-capacity-planning/
+- id: high-level-components
+  title: How do you structure high-level components?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - architecture
+  - components
+  standard_answer: |-
+    Component and boundary design is about minimizing coupling while preserving ownership clarity, deployability, and operational simplicity.
+
+    In interviews, cover:
+
+    - start with capabilities and change boundaries, not with a default “microservices everywhere” assumption
+    - define interfaces around business actions and data contracts so teams can evolve independently
+    - introduce BFF or edge-specific services when client needs diverge enough that a generic backend becomes a coordination bottleneck
+    - watch for boundaries that look clean on diagrams but create chatty synchronous dependencies at runtime
+    - for migrations, use strangler-style replacement when you need to route traffic gradually and prove the new path safely
+
+    Strong answer tip:
+
+    - A strong answer balances conceptual purity with operational cost: every boundary has coordination overhead.
+  deep_dive: /android-interview-prep/deep-dives/system-design/high-level-architecture/
+- id: service-boundaries
+  title: How do you define service boundaries?
+  difficulty: senior
+  tags:
+  - system-design
+  - microservices
+  - architecture
+  standard_answer: |-
+    Component and boundary design is about minimizing coupling while preserving ownership clarity, deployability, and operational simplicity.
+
+    In interviews, cover:
+
+    - start with capabilities and change boundaries, not with a default “microservices everywhere” assumption
+    - define interfaces around business actions and data contracts so teams can evolve independently
+    - introduce BFF or edge-specific services when client needs diverge enough that a generic backend becomes a coordination bottleneck
+    - watch for boundaries that look clean on diagrams but create chatty synchronous dependencies at runtime
+    - for migrations, use strangler-style replacement when you need to route traffic gradually and prove the new path safely
+
+    Strong answer tip:
+
+    - A strong answer balances conceptual purity with operational cost: every boundary has coordination overhead.
+  deep_dive: /android-interview-prep/deep-dives/system-design/high-level-architecture/
+- id: data-modeling
+  title: How do you approach data modeling in system design?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - data
+  - modeling
+  standard_answer: |-
+    Data design should reflect access patterns, consistency needs, and evolution pressure rather than ideological preference for one storage model.
+
+    In interviews, cover:
+
+    - model the dominant queries first because schema shape and storage choice should serve real read/write behavior
+    - choose SQL when joins, transactions, and strong relational constraints matter; choose NoSQL when scale patterns or flexibility outweigh that rigor
+    - treat indexes as read-optimization structures that also add write cost, storage cost, and operational complexity
+    - plan schema evolution with backward compatibility, dual writes or readers, and safe rollout sequencing
+    - explicitly discuss how the workload mix changes the architecture—for example, read-heavy systems often value caching and indexing more than strict write throughput
+
+    Strong answer tip:
+
+    - Interviewers like designs that clearly tie storage choices to query patterns, not “SQL for consistency, NoSQL for scale” clichés.
+  deep_dive: /android-interview-prep/deep-dives/system-design/data-modeling-and-storage/
+- id: sql-vs-nosql
+  title: When do you choose SQL vs NoSQL?
+  difficulty: senior
+  tags:
+  - system-design
+  - databases
+  - tradeoffs
+  standard_answer: |-
+    Data design should reflect access patterns, consistency needs, and evolution pressure rather than ideological preference for one storage model.
+
+    In interviews, cover:
+
+    - model the dominant queries first because schema shape and storage choice should serve real read/write behavior
+    - choose SQL when joins, transactions, and strong relational constraints matter; choose NoSQL when scale patterns or flexibility outweigh that rigor
+    - treat indexes as read-optimization structures that also add write cost, storage cost, and operational complexity
+    - plan schema evolution with backward compatibility, dual writes or readers, and safe rollout sequencing
+    - explicitly discuss how the workload mix changes the architecture—for example, read-heavy systems often value caching and indexing more than strict write throughput
+
+    Strong answer tip:
+
+    - Interviewers like designs that clearly tie storage choices to query patterns, not “SQL for consistency, NoSQL for scale” clichés.
+  deep_dive: /android-interview-prep/deep-dives/system-design/data-modeling-and-storage/
+- id: indexing-strategy
+  title: How do indexes affect read and write performance?
+  difficulty: senior
+  tags:
+  - system-design
+  - database
+  - indexing
+  standard_answer: |-
+    Data design should reflect access patterns, consistency needs, and evolution pressure rather than ideological preference for one storage model.
+
+    In interviews, cover:
+
+    - model the dominant queries first because schema shape and storage choice should serve real read/write behavior
+    - choose SQL when joins, transactions, and strong relational constraints matter; choose NoSQL when scale patterns or flexibility outweigh that rigor
+    - treat indexes as read-optimization structures that also add write cost, storage cost, and operational complexity
+    - plan schema evolution with backward compatibility, dual writes or readers, and safe rollout sequencing
+    - explicitly discuss how the workload mix changes the architecture—for example, read-heavy systems often value caching and indexing more than strict write throughput
+
+    Strong answer tip:
+
+    - Interviewers like designs that clearly tie storage choices to query patterns, not “SQL for consistency, NoSQL for scale” clichés.
+  deep_dive: /android-interview-prep/deep-dives/system-design/search-and-indexing/
+- id: consistency-models
+  title: What consistency models should you discuss in interviews?
+  difficulty: senior
+  tags:
+  - system-design
+  - consistency
+  - distributed-systems
+  standard_answer: |-
+    Consistency decisions should be framed around user-visible correctness and failure handling, not abstract distributed-systems vocabulary alone.
+
+    In interviews, cover:
+
+    - name which operations require strong guarantees and which can tolerate eventual convergence or asynchronous repair
+    - use transactions where the boundary is small and synchronous correctness is critical; use sagas where work spans services and compensation is acceptable
+    - build idempotency into APIs and consumers so retries do not create duplicate side effects under failure
+    - explain CAP pragmatically: partitions force tradeoffs, so the real question is which user guarantee you preserve when the network misbehaves
+    - for eventually consistent systems such as search or analytics, define freshness expectations and user messaging explicitly
+
+    Strong answer tip:
+
+    - The strongest answers connect consistency to user experience—for example, payments and inventory feel different from search rankings or analytics counters.
+  deep_dive: /android-interview-prep/deep-dives/system-design/consistency-and-transactions/
+- id: transactions-and-sagas
+  title: When should you use transactions vs sagas?
+  difficulty: staff
+  tags:
+  - system-design
+  - transactions
+  - saga
+  standard_answer: |-
+    Consistency decisions should be framed around user-visible correctness and failure handling, not abstract distributed-systems vocabulary alone.
+
+    In interviews, cover:
+
+    - name which operations require strong guarantees and which can tolerate eventual convergence or asynchronous repair
+    - use transactions where the boundary is small and synchronous correctness is critical; use sagas where work spans services and compensation is acceptable
+    - build idempotency into APIs and consumers so retries do not create duplicate side effects under failure
+    - explain CAP pragmatically: partitions force tradeoffs, so the real question is which user guarantee you preserve when the network misbehaves
+    - for eventually consistent systems such as search or analytics, define freshness expectations and user messaging explicitly
+
+    Strong answer tip:
+
+    - The strongest answers connect consistency to user experience—for example, payments and inventory feel different from search rankings or analytics counters.
+  deep_dive: /android-interview-prep/deep-dives/system-design/consistency-and-transactions/
+- id: horizontal-scaling
+  title: How do you scale a system horizontally?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - scalability
+  - backend
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/scalability-and-capacity-planning/
+- id: load-balancing
+  title: How do load balancers fit into architecture design?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - networking
+  - scalability
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/high-level-architecture/
+- id: cache-aside
+  title: What is cache-aside and when is it useful?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - caching
+  - performance
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/caching-strategies/
+- id: cache-invalidation
+  title: Why is cache invalidation hard?
+  difficulty: senior
+  tags:
+  - system-design
+  - caching
+  - consistency
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/caching-strategies/
+- id: message-queues
+  title: When do you add a message queue?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - queues
+  - async
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/queueing-and-async-processing/
+- id: event-driven-design
+  title: What are event-driven architecture tradeoffs?
+  difficulty: senior
+  tags:
+  - system-design
+  - events
+  - architecture
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/queueing-and-async-processing/
+- id: api-gateway
+  title: What role does an API gateway play?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - api
+  - gateway
+  standard_answer: |-
+    External interface design should balance client simplicity, backward compatibility, security boundaries, and operational evolvability.
+
+    In interviews, cover:
+
+    - API gateways are useful for auth, routing, throttling, and cross-cutting concerns, but they should not become opaque monoliths of business logic
+    - choose REST where broad interoperability and caching matter; choose gRPC where low-latency internal contracts and typed schemas provide leverage
+    - design versioning and deprecation paths early so clients are never forced into emergency upgrades
+    - separate authentication from authorization in both system boundaries and failure reasoning
+    - for multi-tenant systems, isolate data, compute, quotas, and observability strongly enough that one tenant cannot degrade or inspect another
+
+    Strong answer tip:
+
+    - Interviewers like when you mention not only the happy path but also abuse resistance, key rotation, and backward compatibility.
+  deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
+- id: rest-vs-grpc-design
+  title: How do you choose REST vs gRPC for internal APIs?
+  difficulty: senior
+  tags:
+  - system-design
+  - api
+  - grpc
+  standard_answer: |-
+    External interface design should balance client simplicity, backward compatibility, security boundaries, and operational evolvability.
+
+    In interviews, cover:
+
+    - API gateways are useful for auth, routing, throttling, and cross-cutting concerns, but they should not become opaque monoliths of business logic
+    - choose REST where broad interoperability and caching matter; choose gRPC where low-latency internal contracts and typed schemas provide leverage
+    - design versioning and deprecation paths early so clients are never forced into emergency upgrades
+    - separate authentication from authorization in both system boundaries and failure reasoning
+    - for multi-tenant systems, isolate data, compute, quotas, and observability strongly enough that one tenant cannot degrade or inspect another
+
+    Strong answer tip:
+
+    - Interviewers like when you mention not only the happy path but also abuse resistance, key rotation, and backward compatibility.
+  deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
+- id: versioning-strategy
+  title: How do you version APIs safely?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - api
+  - versioning
+  standard_answer: |-
+    External interface design should balance client simplicity, backward compatibility, security boundaries, and operational evolvability.
+
+    In interviews, cover:
+
+    - API gateways are useful for auth, routing, throttling, and cross-cutting concerns, but they should not become opaque monoliths of business logic
+    - choose REST where broad interoperability and caching matter; choose gRPC where low-latency internal contracts and typed schemas provide leverage
+    - design versioning and deprecation paths early so clients are never forced into emergency upgrades
+    - separate authentication from authorization in both system boundaries and failure reasoning
+    - for multi-tenant systems, isolate data, compute, quotas, and observability strongly enough that one tenant cannot degrade or inspect another
+
+    Strong answer tip:
+
+    - Interviewers like when you mention not only the happy path but also abuse resistance, key rotation, and backward compatibility.
+  deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
+- id: authn-vs-authz
+  title: How do you model authentication vs authorization?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - security
+  - auth
+  standard_answer: |-
+    External interface design should balance client simplicity, backward compatibility, security boundaries, and operational evolvability.
+
+    In interviews, cover:
+
+    - API gateways are useful for auth, routing, throttling, and cross-cutting concerns, but they should not become opaque monoliths of business logic
+    - choose REST where broad interoperability and caching matter; choose gRPC where low-latency internal contracts and typed schemas provide leverage
+    - design versioning and deprecation paths early so clients are never forced into emergency upgrades
+    - separate authentication from authorization in both system boundaries and failure reasoning
+    - for multi-tenant systems, isolate data, compute, quotas, and observability strongly enough that one tenant cannot degrade or inspect another
+
+    Strong answer tip:
+
+    - Interviewers like when you mention not only the happy path but also abuse resistance, key rotation, and backward compatibility.
+  deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
+- id: security-hardening
+  title: What security hardening do you mention in interviews?
+  difficulty: senior
+  tags:
+  - system-design
+  - security
+  - production
+  standard_answer: |-
+    External interface design should balance client simplicity, backward compatibility, security boundaries, and operational evolvability.
+
+    In interviews, cover:
+
+    - API gateways are useful for auth, routing, throttling, and cross-cutting concerns, but they should not become opaque monoliths of business logic
+    - choose REST where broad interoperability and caching matter; choose gRPC where low-latency internal contracts and typed schemas provide leverage
+    - design versioning and deprecation paths early so clients are never forced into emergency upgrades
+    - separate authentication from authorization in both system boundaries and failure reasoning
+    - for multi-tenant systems, isolate data, compute, quotas, and observability strongly enough that one tenant cannot degrade or inspect another
+
+    Strong answer tip:
+
+    - Interviewers like when you mention not only the happy path but also abuse resistance, key rotation, and backward compatibility.
+  deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
+- id: slos-and-slas
+  title: How do SLOs/SLAs shape architecture decisions?
+  difficulty: senior
+  tags:
+  - system-design
+  - observability
+  - slo
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/observability-and-slos/
+- id: logging-metrics-tracing
+  title: Why are logs, metrics, and traces all needed?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - observability
+  - monitoring
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/observability-and-slos/
+- id: circuit-breaker
+  title: What is a circuit breaker and why use it?
+  difficulty: senior
+  tags:
+  - system-design
+  - resilience
+  - reliability
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/resilience-and-failure-handling/
+- id: bulkheads-and-timeouts
+  title: How do timeouts, retries, and bulkheads work together?
+  difficulty: staff
+  tags:
+  - system-design
+  - resilience
+  - timeouts
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/resilience-and-failure-handling/
+- id: idempotency
+  title: Why is idempotency important in distributed systems?
+  difficulty: senior
+  tags:
+  - system-design
+  - reliability
+  - api
+  standard_answer: |-
+    Consistency decisions should be framed around user-visible correctness and failure handling, not abstract distributed-systems vocabulary alone.
+
+    In interviews, cover:
+
+    - name which operations require strong guarantees and which can tolerate eventual convergence or asynchronous repair
+    - use transactions where the boundary is small and synchronous correctness is critical; use sagas where work spans services and compensation is acceptable
+    - build idempotency into APIs and consumers so retries do not create duplicate side effects under failure
+    - explain CAP pragmatically: partitions force tradeoffs, so the real question is which user guarantee you preserve when the network misbehaves
+    - for eventually consistent systems such as search or analytics, define freshness expectations and user messaging explicitly
+
+    Strong answer tip:
+
+    - The strongest answers connect consistency to user experience—for example, payments and inventory feel different from search rankings or analytics counters.
+  deep_dive: /android-interview-prep/deep-dives/system-design/resilience-and-failure-handling/
+- id: multi-region
+  title: When do you move to multi-region architecture?
+  difficulty: staff
+  tags:
+  - system-design
+  - multi-region
+  - scalability
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/multi-region-and-disaster-recovery/
+- id: disaster-recovery-rpo-rto
+  title: How do RPO and RTO influence disaster recovery design?
+  difficulty: staff
+  tags:
+  - system-design
+  - dr
+  - reliability
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/multi-region-and-disaster-recovery/
+- id: cost-vs-latency
+  title: How do you balance cost vs latency?
+  difficulty: senior
+  tags:
+  - system-design
+  - cost
+  - tradeoffs
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/cost-optimization/
+- id: capacity-headroom
+  title: How much capacity headroom should a production system keep?
+  difficulty: senior
+  tags:
+  - system-design
+  - capacity
+  - operations
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/cost-optimization/
+- id: bff-pattern
+  title: What is Backend-for-Frontend (BFF) and when should Android use it?
+  difficulty: senior
+  tags:
+  - system-design
+  - bff
+  - mobile
+  standard_answer: |-
+    Component and boundary design is about minimizing coupling while preserving ownership clarity, deployability, and operational simplicity.
+
+    In interviews, cover:
+
+    - start with capabilities and change boundaries, not with a default “microservices everywhere” assumption
+    - define interfaces around business actions and data contracts so teams can evolve independently
+    - introduce BFF or edge-specific services when client needs diverge enough that a generic backend becomes a coordination bottleneck
+    - watch for boundaries that look clean on diagrams but create chatty synchronous dependencies at runtime
+    - for migrations, use strangler-style replacement when you need to route traffic gradually and prove the new path safely
+
+    Strong answer tip:
+
+    - A strong answer balances conceptual purity with operational cost: every boundary has coordination overhead.
+  deep_dive: /android-interview-prep/deep-dives/system-design/mobile-backend-for-frontend/
+- id: edge-caching-mobile
+  title: How does edge caching improve mobile user experience?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - cdn
+  - mobile
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/mobile-backend-for-frontend/
+- id: realtime-chat-design
+  title: How would you design a real-time chat backend?
+  difficulty: staff
+  tags:
+  - system-design
+  - realtime
+  - websocket
+  standard_answer: |-
+    Workload-specific designs are strongest when you identify the primary pressure—freshness, throughput, tail latency, ordering, or cost—and shape the architecture around it.
+
+    In interviews, cover:
+
+    - real-time chat emphasizes low-latency fanout, presence, ordering expectations, and offline reconciliation
+    - search systems usually trade strict consistency for fast indexed reads and controlled ingestion pipelines
+    - analytics pipelines optimize for high write volume, schema evolution, and downstream aggregation rather than per-event transactional guarantees
+    - batch versus stream is rarely a philosophical choice; it depends on freshness needs, operational complexity, and cost tolerance
+    - explicitly call out where client experience and backend architecture meet, especially for mobile offline behavior and tail-latency sensitivity
+
+    Strong answer tip:
+
+    - Interviewers respond well when example systems are used to demonstrate principles, not just recite component names.
+  deep_dive: /android-interview-prep/deep-dives/system-design/real-time-systems/
+- id: fanout-problem
+  title: How do you handle fan-out at scale?
+  difficulty: staff
+  tags:
+  - system-design
+  - realtime
+  - scalability
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/real-time-systems/
+- id: search-architecture
+  title: How do you design search for low-latency queries?
+  difficulty: senior
+  tags:
+  - system-design
+  - search
+  - indexing
+  standard_answer: |-
+    Workload-specific designs are strongest when you identify the primary pressure—freshness, throughput, tail latency, ordering, or cost—and shape the architecture around it.
+
+    In interviews, cover:
+
+    - real-time chat emphasizes low-latency fanout, presence, ordering expectations, and offline reconciliation
+    - search systems usually trade strict consistency for fast indexed reads and controlled ingestion pipelines
+    - analytics pipelines optimize for high write volume, schema evolution, and downstream aggregation rather than per-event transactional guarantees
+    - batch versus stream is rarely a philosophical choice; it depends on freshness needs, operational complexity, and cost tolerance
+    - explicitly call out where client experience and backend architecture meet, especially for mobile offline behavior and tail-latency sensitivity
+
+    Strong answer tip:
+
+    - Interviewers respond well when example systems are used to demonstrate principles, not just recite component names.
+  deep_dive: /android-interview-prep/deep-dives/system-design/search-and-indexing/
+- id: eventual-consistency-search
+  title: Why is search often eventually consistent?
+  difficulty: senior
+  tags:
+  - system-design
+  - search
+  - consistency
+  standard_answer: |-
+    Consistency decisions should be framed around user-visible correctness and failure handling, not abstract distributed-systems vocabulary alone.
+
+    In interviews, cover:
+
+    - name which operations require strong guarantees and which can tolerate eventual convergence or asynchronous repair
+    - use transactions where the boundary is small and synchronous correctness is critical; use sagas where work spans services and compensation is acceptable
+    - build idempotency into APIs and consumers so retries do not create duplicate side effects under failure
+    - explain CAP pragmatically: partitions force tradeoffs, so the real question is which user guarantee you preserve when the network misbehaves
+    - for eventually consistent systems such as search or analytics, define freshness expectations and user messaging explicitly
+
+    Strong answer tip:
+
+    - The strongest answers connect consistency to user experience—for example, payments and inventory feel different from search rankings or analytics counters.
+  deep_dive: /android-interview-prep/deep-dives/system-design/search-and-indexing/
+- id: analytics-pipeline
+  title: How do you design analytics ingestion pipelines?
+  difficulty: senior
+  tags:
+  - system-design
+  - analytics
+  - data-pipeline
+  standard_answer: |-
+    Workload-specific designs are strongest when you identify the primary pressure—freshness, throughput, tail latency, ordering, or cost—and shape the architecture around it.
+
+    In interviews, cover:
+
+    - real-time chat emphasizes low-latency fanout, presence, ordering expectations, and offline reconciliation
+    - search systems usually trade strict consistency for fast indexed reads and controlled ingestion pipelines
+    - analytics pipelines optimize for high write volume, schema evolution, and downstream aggregation rather than per-event transactional guarantees
+    - batch versus stream is rarely a philosophical choice; it depends on freshness needs, operational complexity, and cost tolerance
+    - explicitly call out where client experience and backend architecture meet, especially for mobile offline behavior and tail-latency sensitivity
+
+    Strong answer tip:
+
+    - Interviewers respond well when example systems are used to demonstrate principles, not just recite component names.
+  deep_dive: /android-interview-prep/deep-dives/system-design/analytics-pipeline-design/
+- id: batch-vs-stream
+  title: When do you choose batch vs stream processing?
+  difficulty: senior
+  tags:
+  - system-design
+  - analytics
+  - streaming
+  standard_answer: |-
+    Workload-specific designs are strongest when you identify the primary pressure—freshness, throughput, tail latency, ordering, or cost—and shape the architecture around it.
+
+    In interviews, cover:
+
+    - real-time chat emphasizes low-latency fanout, presence, ordering expectations, and offline reconciliation
+    - search systems usually trade strict consistency for fast indexed reads and controlled ingestion pipelines
+    - analytics pipelines optimize for high write volume, schema evolution, and downstream aggregation rather than per-event transactional guarantees
+    - batch versus stream is rarely a philosophical choice; it depends on freshness needs, operational complexity, and cost tolerance
+    - explicitly call out where client experience and backend architecture meet, especially for mobile offline behavior and tail-latency sensitivity
+
+    Strong answer tip:
+
+    - Interviewers respond well when example systems are used to demonstrate principles, not just recite component names.
+  deep_dive: /android-interview-prep/deep-dives/system-design/analytics-pipeline-design/
+- id: migration-strangler
+  title: What is the strangler pattern for migrations?
+  difficulty: senior
+  tags:
+  - system-design
+  - migration
+  - architecture
+  standard_answer: |-
+    Component and boundary design is about minimizing coupling while preserving ownership clarity, deployability, and operational simplicity.
+
+    In interviews, cover:
+
+    - start with capabilities and change boundaries, not with a default “microservices everywhere” assumption
+    - define interfaces around business actions and data contracts so teams can evolve independently
+    - introduce BFF or edge-specific services when client needs diverge enough that a generic backend becomes a coordination bottleneck
+    - watch for boundaries that look clean on diagrams but create chatty synchronous dependencies at runtime
+    - for migrations, use strangler-style replacement when you need to route traffic gradually and prove the new path safely
+
+    Strong answer tip:
+
+    - A strong answer balances conceptual purity with operational cost: every boundary has coordination overhead.
+  deep_dive: /android-interview-prep/deep-dives/system-design/migration-and-evolution-strategies/
+- id: schema-evolution
+  title: How do you manage schema evolution safely?
+  difficulty: senior
+  tags:
+  - system-design
+  - schema
+  - migration
+  standard_answer: |-
+    Data design should reflect access patterns, consistency needs, and evolution pressure rather than ideological preference for one storage model.
+
+    In interviews, cover:
+
+    - model the dominant queries first because schema shape and storage choice should serve real read/write behavior
+    - choose SQL when joins, transactions, and strong relational constraints matter; choose NoSQL when scale patterns or flexibility outweigh that rigor
+    - treat indexes as read-optimization structures that also add write cost, storage cost, and operational complexity
+    - plan schema evolution with backward compatibility, dual writes or readers, and safe rollout sequencing
+    - explicitly discuss how the workload mix changes the architecture—for example, read-heavy systems often value caching and indexing more than strict write throughput
+
+    Strong answer tip:
+
+    - Interviewers like designs that clearly tie storage choices to query patterns, not “SQL for consistency, NoSQL for scale” clichés.
+  deep_dive: /android-interview-prep/deep-dives/system-design/migration-and-evolution-strategies/
+- id: tradeoff-framework
+  title: How do you present tradeoffs clearly in interviews?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - tradeoffs
+  - interview
+  standard_answer: |-
+    System design interviews reward structured thinking: clarify the problem, narrow scope intelligently, and make tradeoffs explicit before diving into components.
+
+    In interviews, cover:
+
+    - separate functional requirements from scale, latency, availability, compliance, and cost constraints because architecture follows those boundaries
+    - time-box assumptions and rough estimations so the discussion stays grounded rather than hand-wavy
+    - define the first viable version of the system before exploring advanced optimizations or multi-region complexity
+    - use a repeatable structure—requirements, APIs, data model, components, bottlenecks, tradeoffs, evolution path
+    - state what you are intentionally not solving yet; scope discipline is a positive signal, not a weakness
+
+    Strong answer tip:
+
+    - Interviewers usually prefer a clearly scoped and well-defended design over an overbuilt design that never established its assumptions.
+  deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
+- id: cap-theorem-practical
+  title: How do you explain CAP theorem pragmatically?
+  difficulty: staff
+  tags:
+  - system-design
+  - distributed-systems
+  - cap
+  standard_answer: |-
+    Consistency decisions should be framed around user-visible correctness and failure handling, not abstract distributed-systems vocabulary alone.
+
+    In interviews, cover:
+
+    - name which operations require strong guarantees and which can tolerate eventual convergence or asynchronous repair
+    - use transactions where the boundary is small and synchronous correctness is critical; use sagas where work spans services and compensation is acceptable
+    - build idempotency into APIs and consumers so retries do not create duplicate side effects under failure
+    - explain CAP pragmatically: partitions force tradeoffs, so the real question is which user guarantee you preserve when the network misbehaves
+    - for eventually consistent systems such as search or analytics, define freshness expectations and user messaging explicitly
+
+    Strong answer tip:
+
+    - The strongest answers connect consistency to user experience—for example, payments and inventory feel different from search rankings or analytics counters.
+  deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
+- id: read-heavy-vs-write-heavy
+  title: How does workload shape architecture choices?
+  difficulty: senior
+  tags:
+  - system-design
+  - capacity
+  - databases
+  standard_answer: |-
+    Data design should reflect access patterns, consistency needs, and evolution pressure rather than ideological preference for one storage model.
+
+    In interviews, cover:
+
+    - model the dominant queries first because schema shape and storage choice should serve real read/write behavior
+    - choose SQL when joins, transactions, and strong relational constraints matter; choose NoSQL when scale patterns or flexibility outweigh that rigor
+    - treat indexes as read-optimization structures that also add write cost, storage cost, and operational complexity
+    - plan schema evolution with backward compatibility, dual writes or readers, and safe rollout sequencing
+    - explicitly discuss how the workload mix changes the architecture—for example, read-heavy systems often value caching and indexing more than strict write throughput
+
+    Strong answer tip:
+
+    - Interviewers like designs that clearly tie storage choices to query patterns, not “SQL for consistency, NoSQL for scale” clichés.
+  deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
+- id: availability-vs-consistency
+  title: How do you choose availability vs consistency?
+  difficulty: staff
+  tags:
+  - system-design
+  - consistency
+  - availability
+  standard_answer: |-
+    Consistency decisions should be framed around user-visible correctness and failure handling, not abstract distributed-systems vocabulary alone.
+
+    In interviews, cover:
+
+    - name which operations require strong guarantees and which can tolerate eventual convergence or asynchronous repair
+    - use transactions where the boundary is small and synchronous correctness is critical; use sagas where work spans services and compensation is acceptable
+    - build idempotency into APIs and consumers so retries do not create duplicate side effects under failure
+    - explain CAP pragmatically: partitions force tradeoffs, so the real question is which user guarantee you preserve when the network misbehaves
+    - for eventually consistent systems such as search or analytics, define freshness expectations and user messaging explicitly
+
+    Strong answer tip:
+
+    - The strongest answers connect consistency to user experience—for example, payments and inventory feel different from search rankings or analytics counters.
+  deep_dive: /android-interview-prep/deep-dives/system-design/tradeoffs-and-decision-frameworks/
+- id: backpressure-in-systems
+  title: What is backpressure in distributed systems?
+  difficulty: senior
+  tags:
+  - system-design
+  - backpressure
+  - queues
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/queueing-and-async-processing/
+- id: rate-limiting
+  title: How do you design rate limiting?
+  difficulty: intermediate
+  tags:
+  - system-design
+  - rate-limiting
+  - api
+  standard_answer: |-
+    Scalability mechanisms should be introduced when a measured bottleneck justifies their complexity, not simply because they appear in distributed-systems diagrams.
+
+    In interviews, cover:
+
+    - horizontal scaling, load balancing, caches, and queues each solve different constraints; combine them only where the bottleneck warrants it
+    - cache-aside is often simplest operationally, but cache invalidation, TTL policy, and partial-staleness behavior need explicit design
+    - queues and event-driven flows improve decoupling and absorption of bursts, but they also add retries, ordering, deduplication, and visibility concerns
+    - fanout and backpressure problems should be addressed with batching, quotas, async processing, and admission control rather than infinite scale assumptions
+    - rate limiting should protect both fairness and downstream stability, with clear client behavior when limits are hit
+
+    Strong answer tip:
+
+    - A good scalability answer explains not just what mechanism you add, but what new failure modes it introduces.
+  deep_dive: /android-interview-prep/deep-dives/system-design/api-design-and-gateways/
+- id: tenant-isolation
+  title: How do you design multi-tenant isolation?
+  difficulty: staff
+  tags:
+  - system-design
+  - multi-tenant
+  - security
+  standard_answer: |-
+    External interface design should balance client simplicity, backward compatibility, security boundaries, and operational evolvability.
+
+    In interviews, cover:
+
+    - API gateways are useful for auth, routing, throttling, and cross-cutting concerns, but they should not become opaque monoliths of business logic
+    - choose REST where broad interoperability and caching matter; choose gRPC where low-latency internal contracts and typed schemas provide leverage
+    - design versioning and deprecation paths early so clients are never forced into emergency upgrades
+    - separate authentication from authorization in both system boundaries and failure reasoning
+    - for multi-tenant systems, isolate data, compute, quotas, and observability strongly enough that one tenant cannot degrade or inspect another
+
+    Strong answer tip:
+
+    - Interviewers like when you mention not only the happy path but also abuse resistance, key rotation, and backward compatibility.
+  deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
+- id: data-retention
+  title: How do retention policies affect architecture?
+  difficulty: senior
+  tags:
+  - system-design
+  - compliance
+  - data
+  standard_answer: |-
+    Operational architecture should make reliability, observability, and recovery explicit design dimensions rather than afterthoughts.
+
+    In interviews, cover:
+
+    - use SLOs to decide how much redundancy, latency headroom, and alerting sophistication the system actually needs
+    - logs, metrics, and traces answer different questions, so mature observability designs use all three intentionally
+    - timeouts, retries, circuit breakers, and bulkheads should be tuned together because the wrong combination amplifies incidents
+    - multi-region and disaster recovery decisions should be tied to RPO/RTO goals and justified by business impact, not prestige
+    - cost, headroom, and retention policies are architectural constraints: they shape data flow, storage choices, and safety margins
+
+    Strong answer tip:
+
+    - A strong answer names the recovery objective and the operational tradeoff, not just “we would use multi-region for reliability.”
+  deep_dive: /android-interview-prep/deep-dives/system-design/security-and-compliance/
+- id: design-round-structure
+  title: What is a strong structure for solving design rounds?
+  difficulty: beginner
+  tags:
+  - system-design
+  - interview
+  - communication
+  standard_answer: |-
+    System design interviews reward structured thinking: clarify the problem, narrow scope intelligently, and make tradeoffs explicit before diving into components.
+
+    In interviews, cover:
+
+    - separate functional requirements from scale, latency, availability, compliance, and cost constraints because architecture follows those boundaries
+    - time-box assumptions and rough estimations so the discussion stays grounded rather than hand-wavy
+    - define the first viable version of the system before exploring advanced optimizations or multi-region complexity
+    - use a repeatable structure—requirements, APIs, data model, components, bottlenecks, tradeoffs, evolution path
+    - state what you are intentionally not solving yet; scope discipline is a positive signal, not a weakness
+
+    Strong answer tip:
+
+    - Interviewers usually prefer a clearly scoped and well-defended design over an overbuilt design that never established its assumptions.
+  deep_dive: /android-interview-prep/deep-dives/system-design/system-design-fundamentals/

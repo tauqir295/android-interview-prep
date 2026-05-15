@@ -103,12 +103,14 @@ override fun onReceive(context: Context, intent: Intent) {
 
 ## Common Interview Questions
 
-- Why avoid long work in `onReceive()`?
-- Static vs dynamic registration differences?
-- How Android 8+ changed implicit broadcast behavior?
+- **Q:** Why avoid long work in `onReceive()`?
+  **A:** Answer with Android lifecycle and platform constraints first, then API behavior, and finally the production tradeoffs around reliability and user impact.
+- **Q:** Static vs dynamic registration differences?
+  **A:** Answer with Android lifecycle and platform constraints first, then API behavior, and finally the production tradeoffs around reliability and user impact.
+- **Q:** How Android 8+ changed implicit broadcast behavior?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 
 ---
-
 ## Key Takeaways
 
 - Broadcast Receivers are event listeners, not long-running workers.

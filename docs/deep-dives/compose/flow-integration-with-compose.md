@@ -64,10 +64,12 @@ fun HomeRoute(viewModel: HomeViewModel) {
 
 ## Common Interview Questions
 
-- `collectAsState` vs `collectAsStateWithLifecycle`?
-- How to model one-time events safely?
-- Why use `snapshotFlow`?
-
+- **Q:** `collectAsState` vs `collectAsStateWithLifecycle`?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How to model one-time events safely?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Why use `snapshotFlow`?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
 ## Production Considerations
 
 - avoid collecting high-frequency streams without need

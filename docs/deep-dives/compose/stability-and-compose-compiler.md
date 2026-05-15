@@ -65,10 +65,12 @@ data class ProfileUi(
 
 ## Common Interview Questions
 
-- Is `@Stable` always safe to add?
-- Why can wrong annotation usage cause stale UI?
-- How do compiler metrics help optimization?
-
+- **Q:** Is `@Stable` always safe to add?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Why can wrong annotation usage cause stale UI?
+  **A:** Describe data policy explicitly: freshness and invalidation rules, canonical local source, deterministic merge logic, and duplicate prevention with stable keys.
+- **Q:** How do compiler metrics help optimization?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - treat stability annotations as correctness contracts

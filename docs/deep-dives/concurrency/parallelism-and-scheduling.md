@@ -79,11 +79,14 @@ suspend fun process(items: List<Item>) = coroutineScope {
 
 ## Common Interview Questions
 
-- When should you use `limitedParallelism`?
-- Is it equivalent to a fixed thread pool?
-- How do you pick the limit value?
-- What metrics validate the chosen bound?
-
+- **Q:** When should you use `limitedParallelism`?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Is it equivalent to a fixed thread pool?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do you pick the limit value?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** What metrics validate the chosen bound?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 
 - start conservative and tune with metrics

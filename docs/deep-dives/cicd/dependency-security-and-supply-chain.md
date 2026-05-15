@@ -68,10 +68,12 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How do you version Android artifacts reliably?**?
-- How would you answer: **When should rollback be automatic?**?
-- How would you answer: **What are common CI security interview traps?**?
-
+- **Q:** How do you version Android artifacts reliably?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** When should rollback be automatic?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** What are common CI security interview traps?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

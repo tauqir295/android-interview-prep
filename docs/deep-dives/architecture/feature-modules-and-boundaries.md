@@ -90,11 +90,14 @@ class ProfileEntryImpl(
 
 ## Common Interview Questions
 
-- How do you choose feature boundaries initially?
-- How do you prevent cross-feature dependency creep?
-- When are dynamic feature modules worth it?
-- How do you handle shared design-system dependencies?
-
+- **Q:** How do you choose feature boundaries initially?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you prevent cross-feature dependency creep?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** When are dynamic feature modules worth it?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you handle shared design-system dependencies?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - enforce dependency rules in CI

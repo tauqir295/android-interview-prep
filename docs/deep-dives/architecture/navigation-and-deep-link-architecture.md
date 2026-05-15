@@ -94,11 +94,14 @@ fun NavController.navigate(route: AppRoute) {
 
 ## Common Interview Questions
 
-- How do you design navigation for multi-module apps?
-- Where should deep link validation and auth checks happen?
-- How do you keep route contracts backward compatible?
-- What are common back-stack bugs and how do you prevent them?
-
+- **Q:** How do you design navigation for multi-module apps?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Where should deep link validation and auth checks happen?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
+- **Q:** How do you keep route contracts backward compatible?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** What are common back-stack bugs and how do you prevent them?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - log deep-link parse failures and destination fallbacks

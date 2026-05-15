@@ -80,12 +80,14 @@ viewModelScope.launch {
 
 ## Common Interview Questions
 
-- What does “cold” mean in Flow?
-- How is Flow different from LiveData or Rx streams?
-- Why is Flow sequential by default?
+- **Q:** What does “cold” mean in Flow?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How is Flow different from LiveData or Rx streams?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** Why is Flow sequential by default?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
 
 ---
-
 ## Production Considerations
 
 Flow is powerful for:

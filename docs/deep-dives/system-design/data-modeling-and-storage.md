@@ -49,9 +49,12 @@ Write: API -> Primary DB -> Change Event -> Indexer -> Search Index
 Read:  API -> Search Index (list) -> DB (details)
 ```
 ## Common Interview Questions
-- SQL vs NoSQL: what decides?
-- How do you handle schema migration safely?
-- How do you avoid hot keys?
+- **Q:** SQL vs NoSQL: what decides?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** How do you handle schema migration safely?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** How do you avoid hot keys?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
 ## Production Considerations
 - Enforce retention and PII handling policies.
 - Instrument slow queries and index hit ratios.

@@ -44,8 +44,10 @@ I owned rollout strategy, alerting thresholds, and post-release analysis.
 When regression appeared, I led rollback and shipped a guarded fix within 24h.
 ```
 ## Common Interview Questions
-- Tell me about a mistake and what changed after it.
-- How do you handle missed commitments?
+- **Q:** Tell me about a mistake and what changed after it.
+  **A:** Use a concise STAR format: set context and constraints, describe your decision and communication steps, quantify outcomes, and close with what behavior changed afterward.
+- **Q:** How do you handle missed commitments?
+  **A:** Use a concise STAR format: set context and constraints, describe your decision and communication steps, quantify outcomes, and close with what behavior changed afterward.
 ## Production Considerations
 - Ownership culture lowers repeat incidents.
 ## Interview Signals

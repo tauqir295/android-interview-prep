@@ -73,9 +73,10 @@ fun TwoPane(modifier: Modifier = Modifier, left: @Composable () -> Unit, right: 
 
 ## Common Interview Questions
 
-- What is intrinsic measurement and when is it costly?
-- Why can nested unconstrained layouts cause performance issues?
-
+- **Q:** What is intrinsic measurement and when is it costly?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Why can nested unconstrained layouts cause performance issues?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - avoid repeated expensive measurement logic

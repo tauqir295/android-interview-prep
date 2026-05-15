@@ -66,9 +66,10 @@ fun TimedAction(onTimeout: () -> Unit) {
 
 ## Common Interview Questions
 
-- Why not key `LaunchedEffect` with callback directly?
-- Does `derivedStateOf` always improve performance?
-
+- **Q:** Why not key `LaunchedEffect` with callback directly?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Does `derivedStateOf` always improve performance?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - avoid premature optimization

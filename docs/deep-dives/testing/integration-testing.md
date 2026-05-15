@@ -48,8 +48,10 @@ fun apiResponse_mapsToDomain_andPersistsLocally() = runTest {
 }
 ```
 ## Common Interview Questions
-- What belongs in integration vs E2E?
-- How do you keep integration tests maintainable?
+- **Q:** What belongs in integration vs E2E?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** How do you keep integration tests maintainable?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
 ## Production Considerations
 - Integration coverage should mirror critical release gates.
 ## Performance Insights

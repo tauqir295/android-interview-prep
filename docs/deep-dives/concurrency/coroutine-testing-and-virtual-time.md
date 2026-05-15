@@ -66,10 +66,14 @@ fun debounce_emits_latest_value() = runTest {
 }
 ```
 ## Common Interview Questions
-- Why is `runBlocking` not ideal for coroutine unit tests?
-- What does virtual time actually control?
-- How do you test cancellation and timeout behavior?
-- Why inject dispatchers into repositories/use cases?
+- **Q:** Why is `runBlocking` not ideal for coroutine unit tests?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What does virtual time actually control?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How do you test cancellation and timeout behavior?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Why inject dispatchers into repositories/use cases?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
 ## Production Considerations
 - centralize dispatcher providers
 - avoid real `delay` in unit tests

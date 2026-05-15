@@ -87,11 +87,14 @@ viewModelScope.launch(Dispatchers.Main) {
 
 ## Common Interview Questions
 
-- What should run on Main vs IO vs Default?
-- Is `Dispatchers.IO` just a background thread pool?
-- What does `withContext` guarantee?
-- When does dispatcher switching become an anti-pattern?
-
+- **Q:** What should run on Main vs IO vs Default?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** Is `Dispatchers.IO` just a background thread pool?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What does `withContext` guarantee?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** When does dispatcher switching become an anti-pattern?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 
 - keep main-thread blocks short and explicit

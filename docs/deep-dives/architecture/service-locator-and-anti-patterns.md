@@ -86,11 +86,14 @@ class HomeViewModel : ViewModel() {
 
 ## Common Interview Questions
 
-- Why is constructor DI generally preferred?
-- Is Service Locator always an anti-pattern?
-- How do hidden dependencies hurt testability?
-- How would you migrate incrementally to DI?
-
+- **Q:** Why is constructor DI generally preferred?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** Is Service Locator always an anti-pattern?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** How do hidden dependencies hurt testability?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How would you migrate incrementally to DI?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
 ## Production Considerations
 
 - avoid introducing new locator-based dependencies

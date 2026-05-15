@@ -68,9 +68,10 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **How do you detect vulnerable dependencies in CI?**?
-- How would you answer: **What are useful SLOs for CI pipelines?**?
-
+- **Q:** How do you detect vulnerable dependencies in CI?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** What are useful SLOs for CI pipelines?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

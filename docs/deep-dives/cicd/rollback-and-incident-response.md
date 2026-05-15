@@ -68,9 +68,10 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **When should you use self-hosted runners?**?
-- How would you answer: **How do matrix builds help Android coverage?**?
-
+- **Q:** When should you use self-hosted runners?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
+- **Q:** How do matrix builds help Android coverage?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

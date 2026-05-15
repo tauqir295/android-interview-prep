@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What is an agentic mobile experience?**?
-- How would you answer: **How do GPU/NPU offload decisions impact app design?**?
-- How would you answer: **What are future-tech interview anti-patterns?**?
-
+- **Q:** What is an agentic mobile experience?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do GPU/NPU offload decisions impact app design?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** What are future-tech interview anti-patterns?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

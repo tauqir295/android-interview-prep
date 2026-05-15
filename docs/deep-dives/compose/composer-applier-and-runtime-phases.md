@@ -68,9 +68,10 @@ fun AlphaChip(text: String, enabled: Boolean) {
 
 ## Common Interview Questions
 
-- Is recomposition equivalent to layout + draw every time?
-- What responsibilities belong to composer vs applier?
-
+- **Q:** Is recomposition equivalent to layout + draw every time?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** What responsibilities belong to composer vs applier?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
 ## Production Considerations
 
 - optimize based on phase bottleneck, not assumptions

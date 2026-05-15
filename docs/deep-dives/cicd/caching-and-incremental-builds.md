@@ -68,9 +68,10 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **What quality gates should block release?**?
-- How would you answer: **How does SOC2/GDPR influence release process?**?
-
+- **Q:** What quality gates should block release?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How does SOC2/GDPR influence release process?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

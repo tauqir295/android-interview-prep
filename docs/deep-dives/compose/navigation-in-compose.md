@@ -67,9 +67,10 @@ NavHost(navController = navController, startDestination = "home") {
 
 ## Common Interview Questions
 
-- Should you pass full objects or IDs through routes?
-- How do you test navigation contracts?
-
+- **Q:** Should you pass full objects or IDs through routes?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How do you test navigation contracts?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - centralize route declarations

@@ -53,10 +53,14 @@ val events: SharedFlow<UiEvent> = _events
 private val workQueue = Channel<WorkItem>(capacity = Channel.BUFFERED)
 ```
 ## Common Interview Questions
-- Why are one-off events awkward with plain `StateFlow`?
-- When is a `Channel` safer than `SharedFlow`?
-- How does replay affect duplicate UI actions?
-- How do you model state and events separately in ViewModel?
+- **Q:** Why are one-off events awkward with plain `StateFlow`?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** When is a `Channel` safer than `SharedFlow`?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How does replay affect duplicate UI actions?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How do you model state and events separately in ViewModel?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 - separate state stream from event stream
 - keep replay minimal for transient events

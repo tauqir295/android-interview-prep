@@ -94,11 +94,14 @@ interface FeedComponent {
 
 ## Common Interview Questions
 
-- When to use subcomponents vs component dependencies?
-- How do scopes map to Android lifecycles?
-- Why might Dagger builds become slow?
-- How do you debug missing binding chains?
-
+- **Q:** When to use subcomponents vs component dependencies?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do scopes map to Android lifecycles?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** Why might Dagger builds become slow?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
+- **Q:** How do you debug missing binding chains?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
 ## Production Considerations
 
 - keep module ownership per team/feature

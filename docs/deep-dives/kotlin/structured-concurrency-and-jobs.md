@@ -82,12 +82,14 @@ val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
 
 ## Common Interview Questions
 
-- Why is structured concurrency safer than ad-hoc launching?
-- What is the difference between `Job` and `SupervisorJob`?
-- When should you use `async` instead of `launch`?
+- **Q:** Why is structured concurrency safer than ad-hoc launching?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** What is the difference between `Job` and `SupervisorJob`?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** When should you use `async` instead of `launch`?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Use structured concurrency to avoid:

@@ -61,9 +61,10 @@ Text("Details", modifier = Modifier.alpha(alpha))
 
 ## Common Interview Questions
 
-- Which API to choose for simple vs complex transitions?
-- How do you reduce jank in animation-heavy screens?
-
+- **Q:** Which API to choose for simple vs complex transitions?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How do you reduce jank in animation-heavy screens?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - cap concurrent animations in dense lists

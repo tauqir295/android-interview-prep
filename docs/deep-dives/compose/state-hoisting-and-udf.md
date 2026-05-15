@@ -89,11 +89,14 @@ fun FeedScreen(
 
 ## Common Interview Questions
 
-- Why hoist state if local state works?
-- How do you model loading/content/error without flag explosion?
-- Where should navigation events live?
-- How do you prevent one-time event replay bugs?
-
+- **Q:** Why hoist state if local state works?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How do you model loading/content/error without flag explosion?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Where should navigation events live?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** How do you prevent one-time event replay bugs?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - Use immutable state data classes.

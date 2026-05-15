@@ -50,8 +50,10 @@ fun loadProfile_updatesUiState() = runTest {
 }
 ```
 ## Common Interview Questions
-- What exactly do you assert in ViewModel tests?
-- How do you test one-off events safely?
+- **Q:** What exactly do you assert in ViewModel tests?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
+- **Q:** How do you test one-off events safely?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
 ## Production Considerations
 - Keep ViewModel APIs deterministic and test-friendly.
 ## Performance Insights

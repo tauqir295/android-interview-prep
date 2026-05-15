@@ -49,8 +49,10 @@ fun useCase_emitsError_whenDependencyFails() {
 }
 ```
 ## Common Interview Questions
-- Is the pyramid still relevant with Compose?
-- How do you justify fewer E2E tests?
+- **Q:** Is the pyramid still relevant with Compose?
+  **A:** Explain runtime behavior: what invalidates state, how recomposition is scoped, where side effects live, and how to verify frame stability with profiler traces.
+- **Q:** How do you justify fewer E2E tests?
+  **A:** Answer by test pyramid intent: unit for logic speed, integration for boundaries, and end-to-end for critical journeys with flakiness controls.
 ## Production Considerations
 - Tie strategy to release risk and incident history.
 ## Performance Insights

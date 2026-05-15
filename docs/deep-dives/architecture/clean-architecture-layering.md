@@ -86,11 +86,14 @@ class GetProductUseCase(
 
 ## Common Interview Questions
 
-- Does every app need all three layers?
-- Where should model mapping live?
-- How do you avoid over-abstraction?
-- How does this impact build speed?
-
+- **Q:** Does every app need all three layers?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Where should model mapping live?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you avoid over-abstraction?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How does this impact build speed?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - introduce layers where complexity justifies them

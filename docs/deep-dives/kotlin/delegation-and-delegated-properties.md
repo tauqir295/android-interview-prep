@@ -108,12 +108,14 @@ var count: Int by Delegates.observable(0) { _, old, new ->
 
 ## Common Interview Questions
 
-- Why is delegation better than inheritance here?
-- How does `lazy` behave with threads?
-- What methods must a custom delegate implement?
+- **Q:** Why is delegation better than inheritance here?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** How does `lazy` behave with threads?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What methods must a custom delegate implement?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
 
 ---
-
 ## Production Considerations
 
 Delegation is excellent for:

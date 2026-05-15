@@ -47,8 +47,10 @@ Risk: C requires schema migration and adds rollback complexity.
 Decision: Ship A+B, schedule C behind feature flag next sprint.
 ```
 ## Common Interview Questions
-- How do you keep answers structured under pressure?
-- How do you communicate with non-technical stakeholders?
+- **Q:** How do you keep answers structured under pressure?
+  **A:** Use a concise STAR format: set context and constraints, describe your decision and communication steps, quantify outcomes, and close with what behavior changed afterward.
+- **Q:** How do you communicate with non-technical stakeholders?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
 ## Production Considerations
 - Clear comms during incidents improves MTTR.
 ## Interview Signals

@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **How do you handle JNI threading safely?**?
-- How would you answer: **How do you debug SELinux denials in practice?**?
-
+- **Q:** How do you handle JNI threading safely?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do you debug SELinux denials in practice?
+  **A:** Answer in layered controls: model threats, harden identity and transport, protect keys and secrets, add runtime integrity signals, and define response playbooks.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

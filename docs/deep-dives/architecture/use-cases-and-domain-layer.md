@@ -95,11 +95,14 @@ class PlaceOrderUseCase(
 
 ## Common Interview Questions
 
-- When does a domain layer become over-engineering?
-- How many use cases per feature is too many?
-- Where should validation rules live?
-- How do you test use-case orchestration effectively?
-
+- **Q:** When does a domain layer become over-engineering?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How many use cases per feature is too many?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** Where should validation rules live?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you test use-case orchestration effectively?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
 ## Production Considerations
 
 - keep domain API naming aligned with product language

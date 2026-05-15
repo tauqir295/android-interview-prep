@@ -88,11 +88,14 @@ data class ModuleOwner(
 
 ## Common Interview Questions
 
-- How does architecture reduce cross-team blocking?
-- What boundaries should a platform team own?
-- How do you measure architecture scalability?
-- How do you evolve ownership during re-orgs?
-
+- **Q:** How does architecture reduce cross-team blocking?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What boundaries should a platform team own?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you measure architecture scalability?
+  **A:** Answer by defining boundaries and ownership first, then place business rules in the correct layer, and finish with testability and change-resilience tradeoffs.
+- **Q:** How do you evolve ownership during re-orgs?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
 ## Production Considerations
 
 - publish ownership and dependency maps

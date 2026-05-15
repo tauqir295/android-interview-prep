@@ -63,10 +63,14 @@ suspend fun getOrLoadUser(id: String): User {
 }
 ```
 ## Common Interview Questions
-- When is `Mutex` better than `synchronized` in coroutine code?
-- Why should lock scope be as small as possible?
-- When should you prefer atomics over lock-based protection?
-- How do you avoid deadlocks with multiple locks?
+- **Q:** When is `Mutex` better than `synchronized` in coroutine code?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why should lock scope be as small as possible?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** When should you prefer atomics over lock-based protection?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do you avoid deadlocks with multiple locks?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 - guard only truly shared mutable state
 - keep critical sections small and non-blocking

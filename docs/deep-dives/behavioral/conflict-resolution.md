@@ -46,8 +46,10 @@ I proposed a canary with explicit rollback thresholds.
 This aligned risk tolerance and enabled on-time launch.
 ```
 ## Common Interview Questions
-- Describe a difficult disagreement.
-- How do you disagree with your manager?
+- **Q:** Describe a difficult disagreement.
+  **A:** Use a concise STAR format: set context and constraints, describe your decision and communication steps, quantify outcomes, and close with what behavior changed afterward.
+- **Q:** How do you disagree with your manager?
+  **A:** Use STAR with explicit tradeoffs: context, options considered, decision rationale, quantified result, and what process change you institutionalized.
 ## Production Considerations
 - Healthy conflict handling improves roadmap quality.
 ## Interview Signals

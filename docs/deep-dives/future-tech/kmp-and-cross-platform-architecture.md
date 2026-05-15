@@ -64,9 +64,10 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **What are multi-window performance tradeoffs?**?
-- How would you answer: **How do you mitigate prompt injection in agents?**?
-
+- **Q:** What are multi-window performance tradeoffs?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** How do you mitigate prompt injection in agents?
+  **A:** Frame it around graph ownership: prefer constructor injection, align scopes to lifecycle boundaries, keep contracts explicit, and validate with test replacements.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

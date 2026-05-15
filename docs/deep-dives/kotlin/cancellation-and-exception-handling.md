@@ -85,12 +85,14 @@ try {
 
 ## Common Interview Questions
 
-- Why is cancellation called cooperative?
-- Why should `CancellationException` usually be rethrown?
-- Why doesn't `CoroutineExceptionHandler` catch everything?
+- **Q:** Why is cancellation called cooperative?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Why should `CancellationException` usually be rethrown?
+  **A:** Tie Kotlin language features to production outcomes: safety, readability, testability, and runtime or allocation tradeoffs when relevant.
+- **Q:** Why doesn't `CoroutineExceptionHandler` catch everything?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 
 ---
-
 ## Production Considerations
 
 Common bugs:

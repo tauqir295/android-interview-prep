@@ -66,9 +66,10 @@ MaterialTheme(
 
 ## Common Interview Questions
 
-- How do you support dynamic color and brand colors together?
-- Where should theme switching state live?
-
+- **Q:** How do you support dynamic color and brand colors together?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
+- **Q:** Where should theme switching state live?
+  **A:** Answer from runtime mechanics: state ownership, recomposition triggers, effect lifecycle, and frame-time impact measured with tooling.
 ## Production Considerations
 
 - keep token names domain-friendly

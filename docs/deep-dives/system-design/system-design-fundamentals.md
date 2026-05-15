@@ -49,9 +49,12 @@ Mobile App -> API Gateway -> BFF -> Services -> DB
                                \-> Queue -> Workers
 ```
 ## Common Interview Questions
-- How do you structure an answer in 35-45 minutes?
-- What assumptions should you state first?
-- Which tradeoffs matter most for Android clients?
+- **Q:** How do you structure an answer in 35-45 minutes?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** What assumptions should you state first?
+  **A:** Structure the answer as constraints then tradeoffs: SLOs, capacity assumptions, bottlenecks, failure modes, and mitigation plans with clear triggers.
+- **Q:** Which tradeoffs matter most for Android clients?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
 ## Production Considerations
 - Define SLIs/SLOs before choosing technology.
 - Plan observability from day one.

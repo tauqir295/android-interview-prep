@@ -80,11 +80,14 @@ suspend fun loadBatch(ids: List<String>) = coroutineScope {
 
 ## Common Interview Questions
 
-- What causes thread starvation in coroutine apps?
-- Why can IO dispatcher still saturate?
-- How do you identify scheduler bottlenecks?
-- Should you create custom pools for every feature?
-
+- **Q:** What causes thread starvation in coroutine apps?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** Why can IO dispatcher still saturate?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** How do you identify scheduler bottlenecks?
+  **A:** State load and SLO assumptions first, identify the first bottleneck, choose scaling and consistency strategy, and explain fallback behavior for partial failures.
+- **Q:** Should you create custom pools for every feature?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 
 - monitor queue depth and task latency

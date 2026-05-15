@@ -64,10 +64,12 @@ fun decision() = "Measure before optimize"
 
 ## Common Interview Questions
 
-- How would you answer: **When should AI inference run on-device vs cloud?**?
-- How would you answer: **What is needed for robust voice UX pipelines?**?
-- How would you answer: **What observability is required for on-device inference?**?
-
+- **Q:** When should AI inference run on-device vs cloud?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
+- **Q:** What is needed for robust voice UX pipelines?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
+- **Q:** What observability is required for on-device inference?
+  **A:** Answer with practical constraints: privacy, latency, battery, and governance; then explain rollout strategy and how you would monitor quality in production.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.

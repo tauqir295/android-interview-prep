@@ -54,10 +54,14 @@ viewLifecycleOwner.lifecycleScope.launch {
 }
 ```
 ## Common Interview Questions
-- Why is plain `launch { flow.collect {} }` risky in Fragments?
-- How does `repeatOnLifecycle` differ from one-time collection?
-- How do you avoid duplicate event consumption on recreation?
-- What should be hot vs cold in ViewModel streams?
+- **Q:** Why is plain `launch { flow.collect {} }` risky in Fragments?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How does `repeatOnLifecycle` differ from one-time collection?
+  **A:** Start from delivery semantics: use StateFlow for durable state, SharedFlow or Channel for transient events, and lifecycle-aware collection to prevent duplicate work.
+- **Q:** How do you avoid duplicate event consumption on recreation?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** What should be hot vs cold in ViewModel streams?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
 ## Production Considerations
 - tie collection to screen visibility state
 - keep event channels separate from persistent state

@@ -56,10 +56,14 @@ suspend fun confinedUpdate(state: MutableStateFlow<Int>) {
 }
 ```
 ## Common Interview Questions
-- Why can `x = x + 1` fail under concurrency?
-- When are atomics enough, and when are they not?
-- How does thread confinement simplify correctness?
-- What architecture reduces race-condition surface area?
+- **Q:** Why can `x = x + 1` fail under concurrency?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** When are atomics enough, and when are they not?
+  **A:** Answer with correctness first and throughput second: cancellation model, dispatcher choice, bounded parallelism, and contention or latency measurements.
+- **Q:** How does thread confinement simplify correctness?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
+- **Q:** What architecture reduces race-condition surface area?
+  **A:** Lead with correctness then throughput: choose dispatcher by workload type, keep critical sections small, cap parallelism, and monitor tail latency and queue depth.
 ## Production Considerations
 - minimize shared mutable structures
 - centralize mutation points

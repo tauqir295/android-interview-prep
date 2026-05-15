@@ -68,9 +68,10 @@ steps:
 
 ## Common Interview Questions
 
-- How would you answer: **What are SBOM and SLSA in mobile delivery?**?
-- How would you answer: **How do staff engineers improve CI/CD devex?**?
-
+- **Q:** What are SBOM and SLSA in mobile delivery?
+  **A:** Answer with a release-safety flow: deterministic build, automated quality gates, staged rollout, observability thresholds, and a fast rollback path.
+- **Q:** How do staff engineers improve CI/CD devex?
+  **A:** Use a delivery pipeline narrative: separate pre-submit and post-submit checks, gate promotion on quality signals, roll out gradually, and keep an immediate halt path.
 ## Production Considerations
 
 - Define constraints and target outcomes clearly.
