@@ -1,0 +1,265 @@
+questions:
+  - id: security-threat-modeling
+    title: How do you threat model an Android app before release?
+    difficulty: intermediate
+    tags:
+      - security
+      - threat-modeling
+      - android
+    standard_answer: |
+      Threat modeling is about finding high-impact abuse paths before attackers do.
+
+      In interviews, cover:
+
+      - assets you protect (PII, auth tokens, payment flows)
+      - trust boundaries (device, app, backend, third-party SDKs)
+      - likely attackers and abuse paths
+      - prioritized mitigations with measurable risk reduction
+
+      Strong answer tip:
+
+      - explain one real issue you prevented with threat modeling
+    deep_dive: /android-interview-prep/deep-dives/security/threat-modeling-and-attack-surface/
+
+  - id: security-manifest-hardening
+    title: What manifest hardening checks do you always enforce?
+    difficulty: intermediate
+    tags:
+      - security
+      - manifest
+      - hardening
+    standard_answer: |
+      Manifest hardening minimizes accidental exposure at install time.
+
+      In interviews, cover:
+
+      - explicit `android:exported` for every component
+      - minimum required permissions only
+      - `usesCleartextTraffic` and backup policy settings
+      - custom permission protection levels for sensitive flows
+
+      Strong answer tip:
+
+      - mention automated lint/CI rules that block unsafe manifest changes
+    deep_dive: /android-interview-prep/deep-dives/security/manifest-and-component-hardening/
+
+  - id: security-exported-components
+    title: How do you secure exported Activities, Services, and Receivers?
+    difficulty: senior
+    tags:
+      - security
+      - components
+      - intents
+    standard_answer: |
+      Exported component security is about strict input validation and caller trust.
+
+      In interviews, cover:
+
+      - why exported components increase attack surface
+      - caller verification and signature permissions
+      - intent schema validation and default-deny behavior
+      - tests for spoofed intents and privilege escalation attempts
+
+      Strong answer tip:
+
+      - describe one exploit pattern (intent spoofing) and your mitigation
+    deep_dive: /android-interview-prep/deep-dives/security/manifest-and-component-hardening/
+
+  - id: security-data-at-rest
+    title: How do you protect sensitive data at rest on Android?
+    difficulty: intermediate
+    tags:
+      - security
+      - storage
+      - encryption
+    standard_answer: |
+      Data-at-rest protection combines least retention, strong crypto, and key isolation.
+
+      In interviews, cover:
+
+      - avoid storing secrets unless required
+      - EncryptedSharedPreferences / SQLCipher-style patterns where needed
+      - scoped storage and private app directories
+      - secure deletion and data lifecycle considerations
+
+      Strong answer tip:
+
+      - connect storage controls to a specific compliance or threat scenario
+    deep_dive: /android-interview-prep/deep-dives/security/data-protection-and-keystore/
+
+  - id: security-keystore
+    title: When do you use Android Keystore, and what are the common pitfalls?
+    difficulty: advanced
+    tags:
+      - security
+      - keystore
+      - cryptography
+    standard_answer: |
+      Android Keystore protects key material from app memory and most filesystem attacks.
+
+      In interviews, cover:
+
+      - key generation and non-exportable private keys
+      - hardware-backed keys and attestation support
+      - key invalidation events (biometric enrollment, lock changes)
+      - fallback strategy when hardware support is unavailable
+
+      Strong answer tip:
+
+      - explain key rotation and migration without user data loss
+    deep_dive: /android-interview-prep/deep-dives/security/data-protection-and-keystore/
+
+  - id: security-network-config
+    title: How do you use Network Security Config in production apps?
+    difficulty: intermediate
+    tags:
+      - security
+      - networking
+      - tls
+    standard_answer: |
+      Network Security Config enforces transport security policy by environment.
+
+      In interviews, cover:
+
+      - cleartext disabled by default
+      - debug-only trust anchors vs release trust anchors
+      - per-domain policy for certificate expectations
+      - rollout strategy to avoid breaking older clients
+
+      Strong answer tip:
+
+      - call out how you keep debug allowances out of release builds
+    deep_dive: /android-interview-prep/deep-dives/security/network-security-and-api-abuse/
+
+  - id: security-cert-pinning
+    title: When is certificate pinning worth the operational cost?
+    difficulty: senior
+    tags:
+      - security
+      - certificate-pinning
+      - networking
+    standard_answer: |
+      Pinning reduces MITM risk but increases outage risk if not rotated carefully.
+
+      In interviews, cover:
+
+      - threat model that justifies pinning
+      - backup pins and expiration planning
+      - staged rollout and kill-switch strategy
+      - monitoring for TLS and pin failures in production
+
+      Strong answer tip:
+
+      - discuss both security gain and operational blast radius
+    deep_dive: /android-interview-prep/deep-dives/security/network-security-and-api-abuse/
+
+  - id: security-webview-hardening
+    title: What are your WebView hardening defaults?
+    difficulty: intermediate
+    tags:
+      - security
+      - webview
+      - hardening
+    standard_answer: |
+      WebView hardening is about reducing script and bridge abuse.
+
+      In interviews, cover:
+
+      - disable JavaScript unless absolutely required
+      - never expose unsafe JS interfaces
+      - strict URL allowlisting and safe browsing
+      - blocked file/content access where unnecessary
+
+      Strong answer tip:
+
+      - mention how you test for open-redirect and deep-link abuse paths
+    deep_dive: /android-interview-prep/deep-dives/security/webview-and-client-side-hardening/
+
+  - id: security-secret-management
+    title: How do you keep API keys and secrets out of the APK?
+    difficulty: intermediate
+    tags:
+      - security
+      - secrets
+      - build
+    standard_answer: |
+      Client apps cannot safely hold true secrets, so design for exposure resistance.
+
+      In interviews, cover:
+
+      - classify public identifiers vs real secrets
+      - move sensitive operations server-side
+      - short-lived tokens and scoped credentials
+      - build-time controls to prevent accidental secret commits
+
+      Strong answer tip:
+
+      - explain why obfuscation is not secret management
+    deep_dive: /android-interview-prep/deep-dives/security/release-hardening-and-runtime-integrity/
+
+  - id: security-r8-obfuscation
+    title: What does R8/ProGuard protect, and what does it not protect?
+    difficulty: intermediate
+    tags:
+      - security
+      - r8
+      - reverse-engineering
+    standard_answer: |
+      Obfuscation raises reverse-engineering cost, but it is not a cryptographic control.
+
+      In interviews, cover:
+
+      - what shrinking/obfuscation changes in release binaries
+      - where sensitive logic still remains recoverable
+      - balancing stack trace quality with hardening
+      - keeping mapping files secure and operationally accessible
+
+      Strong answer tip:
+
+      - combine obfuscation with backend authorization and abuse detection
+    deep_dive: /android-interview-prep/deep-dives/security/release-hardening-and-runtime-integrity/
+
+  - id: security-play-integrity
+    title: How do you use Play Integrity API without locking out legitimate users?
+    difficulty: advanced
+    tags:
+      - security
+      - play-integrity
+      - attestation
+    standard_answer: |
+      Integrity signals should inform risk decisions, not become a single hard block.
+
+      In interviews, cover:
+
+      - server-side verification flow and replay protection
+      - risk tiers for suspicious vs clearly malicious devices
+      - progressive friction (step-up auth) instead of blanket denial
+      - monitoring false positives by market/device segment
+
+      Strong answer tip:
+
+      - describe a policy that balances fraud reduction and user retention
+    deep_dive: /android-interview-prep/deep-dives/security/release-hardening-and-runtime-integrity/
+
+  - id: security-logging-pii
+    title: How do you prevent sensitive data leaks through logs and analytics?
+    difficulty: senior
+    tags:
+      - security
+      - privacy
+      - observability
+    standard_answer: |
+      Logging safety requires explicit data classification and redaction by default.
+
+      In interviews, cover:
+
+      - never log credentials, tokens, or full PII
+      - centralized redaction utilities and safe logging wrappers
+      - privacy review for analytics schemas and events
+      - retention controls and incident response for accidental leaks
+
+      Strong answer tip:
+
+      - show how your team enforced this with CI checks and code review rules
+    deep_dive: /android-interview-prep/deep-dives/security/release-hardening-and-runtime-integrity/
+

@@ -34,11 +34,13 @@ nav:
 
   - 🌐 Networking & Offline: generated/networking.md
 
+  - 🔐 App Security: generated/security.md
+
   - 🚀 Performance & Vitals: generated/performance.md
 
   - ⚙️ CI/CD & Release: generated/cicd.md
 
-  - 🎓 Advanced & Internals: generated/advanced.md
+  - 🎓 Advanced Internals: generated/advanced.md
 
   - 🤖 2026 Tech: generated/future-tech.md
 

@@ -16,6 +16,7 @@ PREFERRED_CATEGORY_ORDER = [
     "concurrency",
     "architecture",
     "networking",
+    "security",
     "performance",
     "cicd",
     "advanced",

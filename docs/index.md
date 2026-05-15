@@ -42,6 +42,13 @@ Data persistence and API communication.
 * **Database:** Room, Migrations, and Relationships.
 * **Strategy:** Offline-First Architecture and data synchronization.
 
+### [🔐 App Security](./generated/security.md)
+Production-grade Android hardening and abuse prevention.
+* **Threat Modeling:** Attack surface mapping and risk prioritization.
+* **App Hardening:** Manifest, exported component, and WebView security.
+* **Data Protection:** Keystore usage, local encryption, and secret handling.
+* **Runtime Defense:** Network security config, integrity signals, and release hardening.
+
 ### [🚀 Performance & Vitals](./generated/performance.md)
 Building "buttery smooth" experiences.
 * **Optimization:** Memory leaks (LeakCanary), ANRs, and App Startup time.
@@ -66,10 +73,9 @@ Comprehensive testing strategies from unit to system tests.
 * **UI & E2E:** Compose testing, Espresso, and release gates.
 * **Advanced:** Flaky test diagnostics, performance benchmarks, and mutation testing.
 
-### [🎓 Advanced & Security](./generated/advanced.md)
+### [🎓 Advanced Internals](./generated/advanced.md)
 Going deep into the OS.
 * **Internals:** AOSP basics and Binder IPC.
-* **Security:** Keystore, ProGuard, and R8.
 * **Form Factors:** Foldables and Tablets.
 
 ### [🤖 Future Tech](./generated/future-tech.md)
