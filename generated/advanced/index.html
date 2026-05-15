@@ -1483,15 +1483,19 @@
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Android Runtime (ART) is the JVM executing app code, with JIT compilation, GC, and instrumentation built in.
-In interviews, cover:
-- <strong>Compilation modes:</strong> Ahead-of-Time (AOT) at install, Just-in-Time (JIT) at runtime, Interpreter for cold code
-- <strong>GC behavior:</strong> concurrent mark-sweep, generational GC, GC pauses tune-able via heap size
-- <strong>Why it matters:</strong> slow app startup = bad UX; GC pauses = frame drops; incorrect GC tuning = memory crashes
-- <strong>Real tradeoff:</strong> larger heap reduces GC frequency but increases pause times; smaller heap = frequent GCs but faster pauses
-- <strong>Debug vs release:</strong> release uses AOT (faster, deterministic), debug uses Interpreter + JIT (flexible for iteration)
-Strong answer tip:
-- Explain when you'd profile ART: startup time bottleneck? Use systrace to see compilation phases; frame drops? Check GC timings</p>
+<p>Android Runtime (ART) is the JVM executing app code, with JIT compilation, GC, and instrumentation built in.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Compilation modes:</strong> Ahead-of-Time (AOT) at install, Just-in-Time (JIT) at runtime, Interpreter for cold code</li>
+<li><strong>GC behavior:</strong> concurrent mark-sweep, generational GC, GC pauses tune-able via heap size</li>
+<li><strong>Why it matters:</strong> slow app startup = bad UX; GC pauses = frame drops; incorrect GC tuning = memory crashes</li>
+<li><strong>Real tradeoff:</strong> larger heap reduces GC frequency but increases pause times; smaller heap = frequent GCs but faster pauses</li>
+<li><strong>Debug vs release:</strong> release uses AOT (faster, deterministic), debug uses Interpreter + JIT (flexible for iteration)</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain when you'd profile ART: startup time bottleneck? Use systrace to see compilation phases; frame drops? Check GC timings</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-runtime-internals/#advanced-01">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1507,15 +1511,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Binder is Android's cross-process IPC: synchronous by default, uses shared memory, enforces capability-based security.
-In interviews, cover:
-- <strong>Binder transaction limit:</strong> 1 MB buffer per process (shared pool); exceeding it ≈ transaction failure without warning
-- <strong>Thread pool sizing:</strong> system_server has 32 binder threads; each thread blocks until response; too few = deadlock, too many = memory spike
-- <strong>Synchronous calls:</strong> A→B→C chain can deadlock if threads exhaust; common in framework (WindowManager, ActivityManager)
-- <strong>Real scale issue:</strong> batch transactions vs individual calls—1000 individual calls = 1000 round trips; batch + parse = 1 round trip
-- <strong>Observable symptom:</strong> "binder thread exhausted" ANR; fix is either parallelize responses or batch callers
-Strong answer tip:
-- Walk through why system_server can deadlock: A waits for B, B waits for A; how you'd detect this in tombstones</p>
+<p>Binder is Android's cross-process IPC: synchronous by default, uses shared memory, enforces capability-based security.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Binder transaction limit:</strong> 1 MB buffer per process (shared pool); exceeding it ≈ transaction failure without warning</li>
+<li><strong>Thread pool sizing:</strong> system_server has 32 binder threads; each thread blocks until response; too few = deadlock, too many = memory spike</li>
+<li><strong>Synchronous calls:</strong> A→B→C chain can deadlock if threads exhaust; common in framework (WindowManager, ActivityManager)</li>
+<li><strong>Real scale issue:</strong> batch transactions vs individual calls—1000 individual calls = 1000 round trips; batch + parse = 1 round trip</li>
+<li><strong>Observable symptom:</strong> "binder thread exhausted" ANR; fix is either parallelize responses or batch callers</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Walk through why system_server can deadlock: A waits for B, B waits for A; how you'd detect this in tombstones</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/binder-and-ipc-at-scale/#advanced-02">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1531,15 +1539,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Zygote is a master process forking new app processes, sharing ART state + preloaded classes to speed startup.
-In interviews, cover:
-- <strong>Preloading</strong>: Zygote loads ~4000 classes at boot (android.<em>, java.</em>, framework); fork copies memory, saves re-parsing + verification
-- <strong>COW (Copy-on-Write)</strong>: forked app pages are initially shared with zygote; only written pages copied, saving memory footprint
-- <strong>Startup sequence</strong>: Zygote fork → set UID/GID → bindApplication() → onCreate chain; each step measurable
-- <strong>Tradeoff</strong>: more preloading = faster cold start but larger zygote heap; less preloading = smaller zygote but slower apps
-- <strong>Real bottleneck</strong>: classes that can't be preloaded (have static state) must be loaded per-app; timing = startup latency
-Strong answer tip:
-- Explain why your app's onCreate is slow: did you load large libraries or do I/O? Is it unpre-loadable? How you'd profile with perfetto</p>
+<p>Zygote is a master process forking new app processes, sharing ART state + preloaded classes to speed startup.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Preloading</strong>: Zygote loads ~4000 classes at boot (android.<em>, java.</em>, framework); fork copies memory, saves re-parsing + verification</li>
+<li><strong>COW (Copy-on-Write)</strong>: forked app pages are initially shared with zygote; only written pages copied, saving memory footprint</li>
+<li><strong>Startup sequence</strong>: Zygote fork → set UID/GID → bindApplication() → onCreate chain; each step measurable</li>
+<li><strong>Tradeoff</strong>: more preloading = faster cold start but larger zygote heap; less preloading = smaller zygote but slower apps</li>
+<li><strong>Real bottleneck</strong>: classes that can't be preloaded (have static state) must be loaded per-app; timing = startup latency</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain why your app's onCreate is slow: did you load large libraries or do I/O? Is it unpre-loadable? How you'd profile with perfetto</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/zygote-art-and-startup/#advanced-03">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1555,15 +1567,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>RenderThread (RT) is a worker thread executing GPU commands decoupled from main thread; vsync synchronizes frame output.
-In interviews, cover:
-- <strong>Frame pipelining</strong>: Main thread prepares frame N+1 while RT renders N; vsync fires every 16.67ms (60Hz), blocking present
-- <strong>Triple buffering</strong>: 3 buffers cycle to prevent tearing; if frame misses vsync, 16.67ms penalty (jank spike visible)
-- <strong>Synchronization</strong>: main→RT hand-off via sync tokens; if main slower than RT can consume, RT sits idle (GPU under-utilized)
-- <strong>Tradeoff</strong>: reduce redraw area = less GPU work but more CPU overhead computing bounds; full invalidate = GPU full-screen but simple CPU
-- <strong>Real bottleneck</strong>: RecyclerView item bind on main blocks RT; if bind takes 10ms, RT can't dequeue next work in 16.67ms window
-Strong answer tip:
-- Walk through a jank frame: main thread slow due to GC pause → RT sits idle → next frame misses vsync → dropped frame visible</p>
+<p>RenderThread (RT) is a worker thread executing GPU commands decoupled from main thread; vsync synchronizes frame output.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Frame pipelining</strong>: Main thread prepares frame N+1 while RT renders N; vsync fires every 16.67ms (60Hz), blocking present</li>
+<li><strong>Triple buffering</strong>: 3 buffers cycle to prevent tearing; if frame misses vsync, 16.67ms penalty (jank spike visible)</li>
+<li><strong>Synchronization</strong>: main→RT hand-off via sync tokens; if main slower than RT can consume, RT sits idle (GPU under-utilized)</li>
+<li><strong>Tradeoff</strong>: reduce redraw area = less GPU work but more CPU overhead computing bounds; full invalidate = GPU full-screen but simple CPU</li>
+<li><strong>Real bottleneck</strong>: RecyclerView item bind on main blocks RT; if bind takes 10ms, RT can't dequeue next work in 16.67ms window</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Walk through a jank frame: main thread slow due to GC pause → RT sits idle → next frame misses vsync → dropped frame visible</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/renderthread-and-gpu-pipeline/#advanced-04">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1579,15 +1595,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>ART heap is generational: young gen (fast collections) + old gen (full GC); tuning balances pause time vs memory bloat.
-In interviews, cover:
-- <strong>Heap sizing</strong>: VM max heap in manifest; exceeding = OutOfMemoryError; too small = frequent GC; too large = long pause times
-- <strong>Generational GC</strong>: young gen holds short-lived objects (quick collections); old gen rare collections but longer pauses
-- <strong>Concurrent vs full</strong>: concurrent GC pauses ~5-20ms; full marks+sweeps stops world, can pause 100+ms (visible jank)
-- <strong>Tradeoff</strong>: increasing young gen ratio (more fast GCs) = lower pause time but more CPU; decreasing = fewer GCs but longer pauses
-- <strong>Real tuning</strong>: apps with bursts of allocation (JSON parsing, view inflation) benefit from larger young gen; steady-state apps not so much
-Strong answer tip:
-- Profile with Logcat GC messages: if you see "Explicit concurrent copying" every 1s, young gen is too small; explain sizing strategy</p>
+<p>ART heap is generational: young gen (fast collections) + old gen (full GC); tuning balances pause time vs memory bloat.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Heap sizing</strong>: VM max heap in manifest; exceeding = OutOfMemoryError; too small = frequent GC; too large = long pause times</li>
+<li><strong>Generational GC</strong>: young gen holds short-lived objects (quick collections); old gen rare collections but longer pauses</li>
+<li><strong>Concurrent vs full</strong>: concurrent GC pauses ~5-20ms; full marks+sweeps stops world, can pause 100+ms (visible jank)</li>
+<li><strong>Tradeoff</strong>: increasing young gen ratio (more fast GCs) = lower pause time but more CPU; decreasing = fewer GCs but longer pauses</li>
+<li><strong>Real tuning</strong>: apps with bursts of allocation (JSON parsing, view inflation) benefit from larger young gen; steady-state apps not so much</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Profile with Logcat GC messages: if you see "Explicit concurrent copying" every 1s, young gen is too small; explain sizing strategy</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/memory-model-and-gc-tuning/#advanced-05">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1603,15 +1623,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>AOSP is layered: Linux kernel ← HAL ← Framework (Java services) ← Apps; each layer provides abstractions &amp; isolation.
-In interviews, cover:
-- <strong>Kernel</strong>: device drivers, scheduling, memory management; interface via syscalls
-- <strong>HAL</strong>: hardware abstraction layer (cameras, audio, sensors); allows ODMs to keep drivers closed-source
-- <strong>Framework</strong>: system_server with WindowManager, ActivityManager, PackageManager; orchestrates system policies
-- <strong>App layer</strong>: uses context + manager objects (getSystemService) to access framework
-- <strong>Why it matters</strong>: adding a feature (e.g., new sensor type) requires HAL module + framework service + app permissions
-Strong answer tip:
-- Explain how an app accesses camera: Camera2 API → framework → HAL → kernel driver; which layer encodes permissions?</p>
+<p>AOSP is layered: Linux kernel ← HAL ← Framework (Java services) ← Apps; each layer provides abstractions &amp; isolation.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Kernel</strong>: device drivers, scheduling, memory management; interface via syscalls</li>
+<li><strong>HAL</strong>: hardware abstraction layer (cameras, audio, sensors); allows ODMs to keep drivers closed-source</li>
+<li><strong>Framework</strong>: system_server with WindowManager, ActivityManager, PackageManager; orchestrates system policies</li>
+<li><strong>App layer</strong>: uses context + manager objects (getSystemService) to access framework</li>
+<li><strong>Why it matters</strong>: adding a feature (e.g., new sensor type) requires HAL module + framework service + app permissions</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain how an app accesses camera: Camera2 API → framework → HAL → kernel driver; which layer encodes permissions?</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/aosp-framework-layering/#advanced-06">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1627,15 +1651,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>System services (WindowManager, ActivityManager, etc.) manage device resources &amp; enforce lifecycle across apps via binder.
-In interviews, cover:
-- <strong>System services</strong>: run in system_server process; app-facing APIs (e.g., startActivity) → service impl → enforces policy
-- <strong>Lifecycle callbacks</strong>: framework intercepts lifecycle (onPause, onDestroy); unwinds cleanly or ANRs if service unresponsive
-- <strong>Resource conflicts</strong>: two apps request same hardware (camera) → framework arbitrates (focus, permissions); older app loses access
-- <strong>Tradeoff</strong>: strict lifecycle enforcement = predictable but may denying older apps; lenient = backward-compatible but leaky
-- <strong>Real issue</strong>: app never calls onDestroy properly → services accumulate → memory leak or resource starvation
-Strong answer tip:
-- Explain how ActivityManager enforces lifecycle: if onPause doesn't complete in 5s, ANR; how you'd catch this in profiler</p>
+<p>System services (WindowManager, ActivityManager, etc.) manage device resources &amp; enforce lifecycle across apps via binder.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>System services</strong>: run in system_server process; app-facing APIs (e.g., startActivity) → service impl → enforces policy</li>
+<li><strong>Lifecycle callbacks</strong>: framework intercepts lifecycle (onPause, onDestroy); unwinds cleanly or ANRs if service unresponsive</li>
+<li><strong>Resource conflicts</strong>: two apps request same hardware (camera) → framework arbitrates (focus, permissions); older app loses access</li>
+<li><strong>Tradeoff</strong>: strict lifecycle enforcement = predictable but may denying older apps; lenient = backward-compatible but leaky</li>
+<li><strong>Real issue</strong>: app never calls onDestroy properly → services accumulate → memory leak or resource starvation</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain how ActivityManager enforces lifecycle: if onPause doesn't complete in 5s, ANR; how you'd catch this in profiler</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/system-services-and-lifecycle/#advanced-07">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1651,15 +1679,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Input dispatch (touch events) is decoupled from rendering (SurfaceFlinger); WindowManager coordinates focus &amp; gesture routing.
-In interviews, cover:
-- <strong>Touch dispatch</strong>: InputManager receives kernel events → WindowManager determines focus-owning window → delivers to app
-- <strong>ANRs on input</strong>: if app's input handler blocks &gt;5s (e.g., doing I/O in onTouchEvent), system kills it; deadlock risk
-- <strong>SurfaceFlinger</strong>: compositor combining app surfaces → display buffer via vsync; runs on RT, not main thread
-- <strong>Tradeoff</strong>: synchronous dispatch = responsive but easy to deadlock; async = resilient but adds perceived latency
-- <strong>Real issue</strong>: modal dialogs consume all touch events; app behind modal is unresponsive; framework must timeout
-Strong answer tip:
-- Walk through slow onTouchEvent: if it blocks, dispatch timeout fires, ANR dialog shown; how you'd detect in crash logs</p>
+<p>Input dispatch (touch events) is decoupled from rendering (SurfaceFlinger); WindowManager coordinates focus &amp; gesture routing.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Touch dispatch</strong>: InputManager receives kernel events → WindowManager determines focus-owning window → delivers to app</li>
+<li><strong>ANRs on input</strong>: if app's input handler blocks &gt;5s (e.g., doing I/O in onTouchEvent), system kills it; deadlock risk</li>
+<li><strong>SurfaceFlinger</strong>: compositor combining app surfaces → display buffer via vsync; runs on RT, not main thread</li>
+<li><strong>Tradeoff</strong>: synchronous dispatch = responsive but easy to deadlock; async = resilient but adds perceived latency</li>
+<li><strong>Real issue</strong>: modal dialogs consume all touch events; app behind modal is unresponsive; framework must timeout</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Walk through slow onTouchEvent: if it blocks, dispatch timeout fires, ANR dialog shown; how you'd detect in crash logs</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/input-window-and-surfaceflinger/#advanced-08">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1675,15 +1707,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Android's security model is layered: Linux DAC (file permissions) + SELinux MAC (mandatory access control) + app-level permissions + capability dropping.
-In interviews, cover:
-- <strong>Linux kernel layer:</strong> DAC (user/group IDs), process isolation, file permissions; why apps run as separate UIDs
-- <strong>SELinux (Mandatory Access Control):</strong> type enforcement (TE), role-based access control (RBAC); confines what even root can do
-- <strong>Android permission system:</strong> declared at install time, checked at runtime; coarse-grained (not a replacement for OS isolation)
-- <strong>Privilege separation:</strong> system_server, mediaserver, adbd each confined by SEPolicy; privilege escalation exploits chain multiple layers
-- <strong>Real example:</strong> why a compromised app can't read another app's private dir (UID isolation) AND can't escalate via kernel even if it gains root (SELinux)
-Strong answer tip:
-- Explain how you'd investigate a privilege escalation exploit: which layers failed, what SEPolicy rule was missing, how you'd harden it</p>
+<p>Android's security model is layered: Linux DAC (file permissions) + SELinux MAC (mandatory access control) + app-level permissions + capability dropping.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Linux kernel layer:</strong> DAC (user/group IDs), process isolation, file permissions; why apps run as separate UIDs</li>
+<li><strong>SELinux (Mandatory Access Control):</strong> type enforcement (TE), role-based access control (RBAC); confines what even root can do</li>
+<li><strong>Android permission system:</strong> declared at install time, checked at runtime; coarse-grained (not a replacement for OS isolation)</li>
+<li><strong>Privilege separation:</strong> system_server, mediaserver, adbd each confined by SEPolicy; privilege escalation exploits chain multiple layers</li>
+<li><strong>Real example:</strong> why a compromised app can't read another app's private dir (UID isolation) AND can't escalate via kernel even if it gains root (SELinux)</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain how you'd investigate a privilege escalation exploit: which layers failed, what SEPolicy rule was missing, how you'd harden it</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-security-model/#advanced-09">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1699,19 +1735,23 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>SEPolicy (SELinux policy) defines which domains (processes/services) can access which resources (files, sockets, devices) on Android.
-In interviews, cover:
-- <strong>Type Enforcement (TE):</strong> every file/process has a type; rules allow/deny (type A can read type B); denials are logged
-- <strong>domains vs types:</strong> domains are types for processes (e.g., <code>system_server</code>, <code>mediaserver</code>); confines what that service can do
-- <strong>attribute grouping:</strong> allows policies to say "all untrusted_app<em> can read shared_libs but not credentials"
-- </em><em>common sandboxing patterns:</em><em>
-  - untrusted_app: restricted, only sees its own app dir and shared data
-  - priv_app: privileged system apps, elevated but still confined
-  - system_server: all-powerful in absense of SEPolicy, now divided into modules
-- </em><em>audit mode vs enforcing:</em><em> audit logs all denials without blocking; enforcing blocks and logs; gradual rollout prevents breakage
-- </em><em>real example:</em>* how adding a deny rule for a vendor daemon prevents it from reading /data/local/tmp without breaking functionality
-Strong answer tip:
-- Walk through a policy rule: <code>allow untrusted_app app_data_file:file {read write};</code> means untrusted apps can read/write their own data files; explain what blocks them from other paths</p>
+<p>SEPolicy (SELinux policy) defines which domains (processes/services) can access which resources (files, sockets, devices) on Android.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Type Enforcement (TE):</strong> every file/process has a type; rules allow/deny (type A can read type B); denials are logged</li>
+<li><strong>domains vs types:</strong> domains are types for processes (e.g., <code>system_server</code>, <code>mediaserver</code>); confines what that service can do</li>
+<li><strong>attribute grouping:</strong> allows policies to say "all untrusted_app* can read shared_libs but not credentials"</li>
+<li><strong>common sandboxing patterns:</strong></li>
+<li>untrusted_app: restricted, only sees its own app dir and shared data</li>
+<li>priv_app: privileged system apps, elevated but still confined</li>
+<li>system_server: all-powerful in absense of SEPolicy, now divided into modules</li>
+<li><strong>audit mode vs enforcing:</strong> audit logs all denials without blocking; enforcing blocks and logs; gradual rollout prevents breakage</li>
+<li><strong>real example:</strong> how adding a deny rule for a vendor daemon prevents it from reading /data/local/tmp without breaking functionality</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Walk through a policy rule: <code>allow untrusted_app app_data_file:file {read write};</code> means untrusted apps can read/write their own data files; explain what blocks them from other paths</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/sepolicy-and-sandboxing/#advanced-10">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1727,15 +1767,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>NDK allows writing performance-critical code in C/C++, interfaced via JNI; requires careful memory + thread management.
-In interviews, cover:
-- <strong>JNI bridge</strong>: Java calls native code via nativeMethod(); native accesses Java heap via JNI env; marshalling has overhead
-- <strong>When to use</strong>: tight loops (crypto, image processing), leverage system libraries (OpenSSL), real-time requirements
-- <strong>When to avoid</strong>: simple business logic (extra complexity), frequent calls (marshalling overhead per call), string/array copying
-- <strong>Tradeoff</strong>: native = 2-10x faster for compute but harder to debug, memory crashes kill process, cross-platform complexity
-- <strong>Real issue</strong>: native leaking Java objects (missing DeleteLocalRef) → GC can't collect → memory bloat
-Strong answer tip:
-- Estimate speedup: if 10% of CPU time in tight Java loop, native gains ~10% overall; if 50%, gains ~50%; understand which bottleneck</p>
+<p>NDK allows writing performance-critical code in C/C++, interfaced via JNI; requires careful memory + thread management.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>JNI bridge</strong>: Java calls native code via nativeMethod(); native accesses Java heap via JNI env; marshalling has overhead</li>
+<li><strong>When to use</strong>: tight loops (crypto, image processing), leverage system libraries (OpenSSL), real-time requirements</li>
+<li><strong>When to avoid</strong>: simple business logic (extra complexity), frequent calls (marshalling overhead per call), string/array copying</li>
+<li><strong>Tradeoff</strong>: native = 2-10x faster for compute but harder to debug, memory crashes kill process, cross-platform complexity</li>
+<li><strong>Real issue</strong>: native leaking Java objects (missing DeleteLocalRef) → GC can't collect → memory bloat</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Estimate speedup: if 10% of CPU time in tight Java loop, native gains ~10% overall; if 50%, gains ~50%; understand which bottleneck</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/native-interop-and-ndk/#advanced-11">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1751,15 +1795,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>JNI has hidden costs: method lookup overhead, local/global reference management, GC interaction if referencing Java objects.
-In interviews, cover:
-- <strong>Local vs global refs</strong>: locals valid only in current call scope; globals survive but must be freed or leak; each ref is 4 bytes memory
-- <strong>Critical sections</strong>: holding a reference to Java array while in native requires pinning (prevents GC relocation); heavyweight
-- <strong>GC interaction</strong>: if native holds Java refs, GC must scan native frames; large ref tables = slower GC
-- <strong>Marshalling cost</strong>: copying strings/arrays Java→native = O(n) per call; reuse buffers when possible
-- <strong>Tradeoff</strong>: minimize JNI crossings = fewer local-ref pressure but larger native batches; frequent calls = easier to audit but slower
-Strong answer tip:
-- Explain why copying large arrays in each JNI call is bad: 1000 calls × 1MB copy = 1GB moved; suggest GetDirectBufferAddress bypass</p>
+<p>JNI has hidden costs: method lookup overhead, local/global reference management, GC interaction if referencing Java objects.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Local vs global refs</strong>: locals valid only in current call scope; globals survive but must be freed or leak; each ref is 4 bytes memory</li>
+<li><strong>Critical sections</strong>: holding a reference to Java array while in native requires pinning (prevents GC relocation); heavyweight</li>
+<li><strong>GC interaction</strong>: if native holds Java refs, GC must scan native frames; large ref tables = slower GC</li>
+<li><strong>Marshalling cost</strong>: copying strings/arrays Java→native = O(n) per call; reuse buffers when possible</li>
+<li><strong>Tradeoff</strong>: minimize JNI crossings = fewer local-ref pressure but larger native batches; frequent calls = easier to audit but slower</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain why copying large arrays in each JNI call is bad: 1000 calls × 1MB copy = 1GB moved; suggest GetDirectBufferAddress bypass</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/jni-performance-and-safety/#advanced-12">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1775,15 +1823,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Doze and JobScheduler restrict background activity when battery low or screen off; tradeoff is reliability vs battery life.
-In interviews, cover:
-- <strong>Doze mode</strong>: triggered after 1h+ idle; suspends most alarms &amp; wakelocks; battery can last 2-5x longer but apps can't sync
-- <strong>JobScheduler</strong>: app declares work (network fetch, sync); OS schedules it optimally (batched, plugged in or low battery); adaptive
-- <strong>Foreground services</strong>: exempt from Doze (as long as notification shown); but users see "X is draining battery" warning
-- <strong>Tradeoff</strong>: strict Doze = battery longevity but users get stale data; lenient = responsive but battery drains; JobScheduler finds middle
-- <strong>Real issue</strong>: app waits for background sync but Doze deferred it 8 hours → user perceives data is stale; poor UX
-Strong answer tip:
-- Explain your app's sync strategy: if critical, use foreground service; if batch-OK, use JobScheduler; explain why to PM</p>
+<p>Doze and JobScheduler restrict background activity when battery low or screen off; tradeoff is reliability vs battery life.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Doze mode</strong>: triggered after 1h+ idle; suspends most alarms &amp; wakelocks; battery can last 2-5x longer but apps can't sync</li>
+<li><strong>JobScheduler</strong>: app declares work (network fetch, sync); OS schedules it optimally (batched, plugged in or low battery); adaptive</li>
+<li><strong>Foreground services</strong>: exempt from Doze (as long as notification shown); but users see "X is draining battery" warning</li>
+<li><strong>Tradeoff</strong>: strict Doze = battery longevity but users get stale data; lenient = responsive but battery drains; JobScheduler finds middle</li>
+<li><strong>Real issue</strong>: app waits for background sync but Doze deferred it 8 hours → user perceives data is stale; poor UX</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain your app's sync strategy: if critical, use foreground service; if batch-OK, use JobScheduler; explain why to PM</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/power-management-doze-and-jobs/#advanced-13">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1799,15 +1851,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Android storage spans internal (ext4/F2FS) + external (SD card); scoped storage restricts direct file access for privacy &amp; security.
-In interviews, cover:
-- <strong>Scoped Storage</strong>: app can only access its own directory (/data/data/pkg) + shared media via MediaStore; prevents privacy leaks
-- <strong>Filesystems</strong>: internal uses ext4 or F2FS (flash-friendly, no journal overhead); choice impacts performance &amp; longevity
-- <strong>Tradeoff</strong>: scoped storage protects privacy but makes file sharing harder (MediaStore overhead); older targeting allows old perms but security risk
-- <strong>Real bottleneck</strong>: MediaStore queries are slow if index stale; batching large file ops can timeout or ANR the UI
-- <strong>Encryption</strong>: full-disk or file-level; full-disk cheaper but all-or-nothing; file-level flexible but slower I/O
-Strong answer tip:
-- Explain why scoped storage forces apps to migrate: old apps had blanket READ_EXTERNAL_STORAGE access; now must use MediaStore or SAF</p>
+<p>Android storage spans internal (ext4/F2FS) + external (SD card); scoped storage restricts direct file access for privacy &amp; security.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Scoped Storage</strong>: app can only access its own directory (/data/data/pkg) + shared media via MediaStore; prevents privacy leaks</li>
+<li><strong>Filesystems</strong>: internal uses ext4 or F2FS (flash-friendly, no journal overhead); choice impacts performance &amp; longevity</li>
+<li><strong>Tradeoff</strong>: scoped storage protects privacy but makes file sharing harder (MediaStore overhead); older targeting allows old perms but security risk</li>
+<li><strong>Real bottleneck</strong>: MediaStore queries are slow if index stale; batching large file ops can timeout or ANR the UI</li>
+<li><strong>Encryption</strong>: full-disk or file-level; full-disk cheaper but all-or-nothing; file-level flexible but slower I/O</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain why scoped storage forces apps to migrate: old apps had blanket READ_EXTERNAL_STORAGE access; now must use MediaStore or SAF</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/storage-stack-and-filesystems/#advanced-14">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1823,15 +1879,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Network stack handles TCP/IP, DNS, connection pooling; Android adds Doze restrictions, multi-SIM support, and radio state transitions.
-In interviews, cover:
-- <strong>Connection pooling</strong>: HTTP/2 reuses TCP connections; creates new when old closed; Doze can close sockets → connection churn
-- <strong>DNS resolution</strong>: blocking in many libraries; resolve off main thread or cache heavily; system resolver caches 10s
-- <strong>Radio state</strong>: cellular radio state transitions (active→idle) cost battery; batching requests into one window saves 90% radio energy
-- <strong>Tradeoff</strong>: aggressive connection reuse = faster but risks stale connections; eager new = resilient but connection ramp-up latency
-- <strong>Real issue</strong>: app makes 100 HTTP requests sequentially on main thread → blocks 5+ seconds → ANR / perceived unresponsiveness
-Strong answer tip:
-- Explain radio state: app request triggers radio active state (~3s); each request = ~500μJ; batching 10 requests = 1 active window, ~50μJ per request</p>
+<p>Network stack handles TCP/IP, DNS, connection pooling; Android adds Doze restrictions, multi-SIM support, and radio state transitions.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Connection pooling</strong>: HTTP/2 reuses TCP connections; creates new when old closed; Doze can close sockets → connection churn</li>
+<li><strong>DNS resolution</strong>: blocking in many libraries; resolve off main thread or cache heavily; system resolver caches 10s</li>
+<li><strong>Radio state</strong>: cellular radio state transitions (active→idle) cost battery; batching requests into one window saves 90% radio energy</li>
+<li><strong>Tradeoff</strong>: aggressive connection reuse = faster but risks stale connections; eager new = resilient but connection ramp-up latency</li>
+<li><strong>Real issue</strong>: app makes 100 HTTP requests sequentially on main thread → blocks 5+ seconds → ANR / perceived unresponsiveness</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain radio state: app request triggers radio active state (~3s); each request = ~500μJ; batching 10 requests = 1 active window, ~50μJ per request</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/network-stack-and-connectivity/#advanced-15">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1847,15 +1907,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Android boot: bootloader → kernel → init (PID 1) → property service + socket listeners → Zygote → system_server → apps.
-In interviews, cover:
-- <strong>init process</strong>: runs init.rc scripts (parsed DSL); spawns system_server, Zygote; manages socket listeners (recovery, property)
-- <strong>Property service</strong>: key-value system; "ro.build.fingerprint" immutable after boot, others writable; apps can't set ro.<em> properties
-- </em><em>init.rc language</em><em>: service blocks, on events (boot, charger), imports; allows platform customization pre-boot
-- </em><em>Tradeoff</em><em>: early script execution = control but complex debugging; late (in app) = simpler but less control
-- </em><em>Real issue</em>*: modified init.rc breaks boot (infinite loop); recovery mode + adb shell only way out
-Strong answer tip:
-- Explain why Zygote start happens in init: needs privileges (UIDs), isolation; app process fork inherits only heap (security boundary)</p>
+<p>Android boot: bootloader → kernel → init (PID 1) → property service + socket listeners → Zygote → system_server → apps.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>init process</strong>: runs init.rc scripts (parsed DSL); spawns system_server, Zygote; manages socket listeners (recovery, property)</li>
+<li><strong>Property service</strong>: key-value system; "ro.build.fingerprint" immutable after boot, others writable; apps can't set ro.* properties</li>
+<li><strong>init.rc language</strong>: service blocks, on events (boot, charger), imports; allows platform customization pre-boot</li>
+<li><strong>Tradeoff</strong>: early script execution = control but complex debugging; late (in app) = simpler but less control</li>
+<li><strong>Real issue</strong>: modified init.rc breaks boot (infinite loop); recovery mode + adb shell only way out</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain why Zygote start happens in init: needs privileges (UIDs), isolation; app process fork inherits only heap (security boundary)</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/boot-flow-and-init/#advanced-16">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1871,15 +1935,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Android profiling spans kernel (ftrace) → userspace samplers (Perfetto, systrace) → runtime instrumentation (method tracing).
-In interviews, cover:
-- <strong>Systrace</strong>: kernel + framework events; shows thread state, I/O, GC over time; 64ms buffering latency, low overhead
-- <strong>Perfetto</strong>: background service + data sink; captures CPU, memory, battery; more comprehensive but heavier than systrace
-- <strong>Method tracing</strong>: ART instrumentation; logs entry/exit per method; 100x slower than running code; use on 1% of sessions
-- <strong>Tradeoff</strong>: systrace = fast + direct but requires interpreting events; method tracing = explicit but overhead distorts measurements
-- <strong>Real usage</strong>: jank suspected → run systrace (60s) → view on perfeto UI → see which frame missed vsync → dig frame-by-frame
-Strong answer tip:
-- Walk through a systrace: find vsync markers → identify frames that miss deadline → backtrace to main/RT thread doing work</p>
+<p>Android profiling spans kernel (ftrace) → userspace samplers (Perfetto, systrace) → runtime instrumentation (method tracing).</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Systrace</strong>: kernel + framework events; shows thread state, I/O, GC over time; 64ms buffering latency, low overhead</li>
+<li><strong>Perfetto</strong>: background service + data sink; captures CPU, memory, battery; more comprehensive but heavier than systrace</li>
+<li><strong>Method tracing</strong>: ART instrumentation; logs entry/exit per method; 100x slower than running code; use on 1% of sessions</li>
+<li><strong>Tradeoff</strong>: systrace = fast + direct but requires interpreting events; method tracing = explicit but overhead distorts measurements</li>
+<li><strong>Real usage</strong>: jank suspected → run systrace (60s) → view on perfeto UI → see which frame missed vsync → dig frame-by-frame</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Walk through a systrace: find vsync markers → identify frames that miss deadline → backtrace to main/RT thread doing work</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/instrumentation-tracing-and-profiler-internals/#advanced-17">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1895,15 +1963,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Linux kernel CFS scheduler allocates CPU share per-process/thread; Android adds priority boosting, task affinity, and cgroup limits.
-In interviews, cover:
-- <strong>CFS (Completely Fair Scheduler)</strong>: divides CPU time proportionally; nice level affects vruntime weight; lower nice = gets more CPU
-- <strong>Thread priorities</strong>: Looper threads set priority via Process.setThreadPriority(); main thread = THREAD_PRIORITY_DEFAULT (-4)
-- <strong>RT scheduling</strong>: realtime threads use FIFO/RR policy (not CFS); reserved for system_server components (not app code normally)
-- <strong>Tradeoff</strong>: high priority = lower latency but may starve normal work; background priority = battery but may miss deadlines
-- <strong>Real issue</strong>: custom background thread at default priority competes with main; if doing I/O, blocks main waiting for result
-Strong answer tip:
-- Explain: if custom thread does heavy work (file I/O) at default priority, it may preempt main, reducing frame rate; use BACKGROUND priority</p>
+<p>Linux kernel CFS scheduler allocates CPU share per-process/thread; Android adds priority boosting, task affinity, and cgroup limits.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>CFS (Completely Fair Scheduler)</strong>: divides CPU time proportionally; nice level affects vruntime weight; lower nice = gets more CPU</li>
+<li><strong>Thread priorities</strong>: Looper threads set priority via Process.setThreadPriority(); main thread = THREAD_PRIORITY_DEFAULT (-4)</li>
+<li><strong>RT scheduling</strong>: realtime threads use FIFO/RR policy (not CFS); reserved for system_server components (not app code normally)</li>
+<li><strong>Tradeoff</strong>: high priority = lower latency but may starve normal work; background priority = battery but may miss deadlines</li>
+<li><strong>Real issue</strong>: custom background thread at default priority competes with main; if doing I/O, blocks main waiting for result</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain: if custom thread does heavy work (file I/O) at default priority, it may preempt main, reducing frame rate; use BACKGROUND priority</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/multithreading-and-scheduler-behavior/#advanced-18">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1919,15 +1991,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Modularization breaks monolithic app into feature modules; reduces build time, enables on-demand delivery, isolates teams &amp; risk.
-In interviews, cover:
-- <strong>Dynamic feature modules</strong>: delivered via Play Core; on-demand (user clicks purchase) or install-time (part of base APK)
-- <strong>Communication</strong>: modules talk via NavigationActivity intents or shared interfaces (extracted to :core module); avoids hard deps
-- <strong>Tradeoff</strong>: modularity = slower builds initially (more compile steps) but faster iteration (rebuild 1 module); also harder testing
-- <strong>Real scale issue</strong>: 500+ screens in monolith = 10min builds; split into 30 modules = 90s per module = parallel gains 3-5x speedup
-- <strong>Dependency cycles</strong>: A→B→A breaks modularization; force acyclic graph via code review or static analysis tool
-Strong answer tip:
-- Explain module graph design: feature modules depend on :core (API), never on each other; core is thin (navigation, utils, models)</p>
+<p>Modularization breaks monolithic app into feature modules; reduces build time, enables on-demand delivery, isolates teams &amp; risk.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Dynamic feature modules</strong>: delivered via Play Core; on-demand (user clicks purchase) or install-time (part of base APK)</li>
+<li><strong>Communication</strong>: modules talk via NavigationActivity intents or shared interfaces (extracted to :core module); avoids hard deps</li>
+<li><strong>Tradeoff</strong>: modularity = slower builds initially (more compile steps) but faster iteration (rebuild 1 module); also harder testing</li>
+<li><strong>Real scale issue</strong>: 500+ screens in monolith = 10min builds; split into 30 modules = 90s per module = parallel gains 3-5x speedup</li>
+<li><strong>Dependency cycles</strong>: A→B→A breaks modularization; force acyclic graph via code review or static analysis tool</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain module graph design: feature modules depend on :core (API), never on each other; core is thin (navigation, utils, models)</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/modularization-at-scale/#advanced-19">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1943,15 +2019,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Advanced topics require balancing technical depth, team readiness, and business value; strong candidates articulate tradeoffs clearly.
-In interviews, cover:
-- <strong>Technical depth vs pragmatism</strong>: why you'd NOT use native for everything (complexity, debugging, maintenance cost)
-- <strong>Team capability</strong>: if team unfamiliar with Binder, modularity overhead &gt;&gt; benefit; upskilling needed
-- <strong>Measurement discipline</strong>: never assume—profile systrace, measure before/after; anecdote ≠ data
-- <strong>Risk tolerance</strong>: Doze strict = safer battery but may break critical syncs; tiered approach (foreground service for critical) balances both
-- <strong>Interview signal</strong>: candidates who say "it depends" + explain factors (data size, team, release timeline) rank higher than "always use X"
-Strong answer tip:
-- When asked "should we use NDK?", answer: "depends on CPU profile. If top-10 functions consume &gt;50% time, measure speedup. If &lt;20%, probably no."</p>
+<p>Advanced topics require balancing technical depth, team readiness, and business value; strong candidates articulate tradeoffs clearly.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Technical depth vs pragmatism</strong>: why you'd NOT use native for everything (complexity, debugging, maintenance cost)</li>
+<li><strong>Team capability</strong>: if team unfamiliar with Binder, modularity overhead &gt;&gt; benefit; upskilling needed</li>
+<li><strong>Measurement discipline</strong>: never assume—profile systrace, measure before/after; anecdote ≠ data</li>
+<li><strong>Risk tolerance</strong>: Doze strict = safer battery but may break critical syncs; tiered approach (foreground service for critical) balances both</li>
+<li><strong>Interview signal</strong>: candidates who say "it depends" + explain factors (data size, team, release timeline) rank higher than "always use X"</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>When asked "should we use NDK?", answer: "depends on CPU profile. If top-10 functions consume &gt;50% time, measure speedup. If &lt;20%, probably no."</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/advanced-tradeoffs-and-interview-strategy/#advanced-20">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1967,15 +2047,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>RxJava enables declarative, composable async data streams; backpressure prevents memory overflow when source outpaces consumer.
-In interviews, cover:
-- <strong>Observable vs Flowable</strong>: Observable ignores backpressure (easy but risky); Flowable respects it (safe but overhead); choose by data volume
-- <strong>Backpressure strategies</strong>: drop (lose data), buffer (memory risk), latest (emit only newest), pause upstream (blocks producer)
-- <strong>Operator fusion</strong>: RxJava 2 inlines operators to avoid allocation; chaining map→filter→map creates single loop, not 3 passes
-- <strong>Cancellation</strong>: Disposable prevents memory leaks; if subscription doesn't unsubscribe, resources leak; CompositeDisposable aggregates many
-- <strong>Tradeoff</strong>: reactive = elegant async but steeper learning curve; testing needs TestScheduler; imperative may be clearer for simple cases
-Strong answer tip:
-- Explain OutOfMemoryError from unbackpressured Observable: if source emits 1M items/sec but consumer takes 1ms each, buffer grows infinitely</p>
+<p>RxJava enables declarative, composable async data streams; backpressure prevents memory overflow when source outpaces consumer.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Observable vs Flowable</strong>: Observable ignores backpressure (easy but risky); Flowable respects it (safe but overhead); choose by data volume</li>
+<li><strong>Backpressure strategies</strong>: drop (lose data), buffer (memory risk), latest (emit only newest), pause upstream (blocks producer)</li>
+<li><strong>Operator fusion</strong>: RxJava 2 inlines operators to avoid allocation; chaining map→filter→map creates single loop, not 3 passes</li>
+<li><strong>Cancellation</strong>: Disposable prevents memory leaks; if subscription doesn't unsubscribe, resources leak; CompositeDisposable aggregates many</li>
+<li><strong>Tradeoff</strong>: reactive = elegant async but steeper learning curve; testing needs TestScheduler; imperative may be clearer for simple cases</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain OutOfMemoryError from unbackpressured Observable: if source emits 1M items/sec but consumer takes 1ms each, buffer grows infinitely</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/reactive-programming-and-rxjava/#advanced-21">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -1991,15 +2075,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Dependency injection decouples code through inversion of control; Dagger generates code to wire dependencies at compile-time, preventing circular loops.
-In interviews, cover:
-- <strong>Dagger dependency graph</strong>: DAG (directed acyclic) enforced at compile time; circular A→B→A fails with error (prevents runtime surprises)
-- <strong>Scopes</strong>: @Singleton caches instance lifetime (module level); @ActivityScoped per-activity; unscoped creates new instance each time
-- <strong>Lazy vs Provider</strong>: Lazy<T> delays creation until .get(); Provider<T> creates fresh on each .get(); tradeoff between memory and initialization
-- <strong>Real scale issue</strong>: monolith with 100+ modules → Dagger build time can spike (seconds); need hierarchical graphs or library modules
-- <strong>Hilt auto-wiring</strong>: reduces boilerplate vs raw Dagger; but less explicit = harder to debug non-obvious wiring
-Strong answer tip:
-- Why circular deps fail at compile-time (not runtime): A @Provides B, B @Provides A → Dagger sees cycle, errors before code runs; detection is free</p>
+<p>Dependency injection decouples code through inversion of control; Dagger generates code to wire dependencies at compile-time, preventing circular loops.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Dagger dependency graph</strong>: DAG (directed acyclic) enforced at compile time; circular A→B→A fails with error (prevents runtime surprises)</li>
+<li><strong>Scopes</strong>: @Singleton caches instance lifetime (module level); @ActivityScoped per-activity; unscoped creates new instance each time</li>
+<li><strong>Lazy vs Provider</strong>: Lazy<T> delays creation until .get(); Provider<T> creates fresh on each .get(); tradeoff between memory and initialization</li>
+<li><strong>Real scale issue</strong>: monolith with 100+ modules → Dagger build time can spike (seconds); need hierarchical graphs or library modules</li>
+<li><strong>Hilt auto-wiring</strong>: reduces boilerplate vs raw Dagger; but less explicit = harder to debug non-obvious wiring</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Why circular deps fail at compile-time (not runtime): A @Provides B, B @Provides A → Dagger sees cycle, errors before code runs; detection is free</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/dependency-injection-at-scale/#advanced-22">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2015,15 +2103,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Compose tracks state changes; recomposition reruns composables when inputs change; smart structuring prevents cascading recomposes.
-In interviews, cover:
-- <strong>State stability</strong>: if parameter immutable reference never changes, Compose skips recomposition of that subtree; use data classes with sensible equals
-- <strong>Recomposition scope</strong>: changes to State<T> only recompose that scope downward (not entire tree); fine-grained control is key
-- <strong>Remember &amp; derivedStateOf</strong>: remember caches computed value across recompositions; derivedStateOf skips child recompose if result unchanged
-- <strong>Key optimization</strong>: wrapping subtree in key { } forces recomposition only if key changes; prevents implicit dependency creep
-- <strong>Tradeoff</strong>: lazy recomposition = fast but requires careful state modeling; too much remember logic = hard to reason about data flow
-Strong answer tip:
-- Explain LazyColumn jank: if item composition expensive (complex layout), 100 items → lag on scroll; fix with content key + memoization</p>
+<p>Compose tracks state changes; recomposition reruns composables when inputs change; smart structuring prevents cascading recomposes.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>State stability</strong>: if parameter immutable reference never changes, Compose skips recomposition of that subtree; use data classes with sensible equals</li>
+<li><strong>Recomposition scope</strong>: changes to State<T> only recompose that scope downward (not entire tree); fine-grained control is key</li>
+<li><strong>Remember &amp; derivedStateOf</strong>: remember caches computed value across recompositions; derivedStateOf skips child recompose if result unchanged</li>
+<li><strong>Key optimization</strong>: wrapping subtree in key { } forces recomposition only if key changes; prevents implicit dependency creep</li>
+<li><strong>Tradeoff</strong>: lazy recomposition = fast but requires careful state modeling; too much remember logic = hard to reason about data flow</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain LazyColumn jank: if item composition expensive (complex layout), 100 items → lag on scroll; fix with content key + memoization</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/jetpack-compose-performance/#advanced-23">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2039,15 +2131,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Custom views must implement onMeasure (size negotiation), onLayout (position children), onDraw (render); invalidation triggers recalculation.
-In interviews, cover:
-- <strong>Measure phase</strong>: parent offers constraints (width spec + height spec); child returns size (exact, at-most, or unspecified); two-pass negotiation
-- <strong>Layout phase</strong>: parent calls child.layout() with actual bounds; child positions children recursively; coordinates are relative to parent
-- <strong>Draw phase</strong>: onDraw() receives Canvas; drawing commands (drawRect, drawText) rendered to framebuffer; occluded areas still drawn (waste)
-- <strong>Invalidation cascade</strong>: calling invalidate() queues layout/draw pass; if called in onDraw (recursive), ANR possible; use Choreographer for throttling
-- <strong>Real bottleneck</strong>: measuring unspecified children in loop → O(n²) layouts; wrap in MeasureSpec.makeMeasureSpec to avoid re-negotiation
-Strong answer tip:
-- Explain nested RecyclerView jank: parent measures child with unspecified height → child measures all items → O(n) per scroll frame</p>
+<p>Custom views must implement onMeasure (size negotiation), onLayout (position children), onDraw (render); invalidation triggers recalculation.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Measure phase</strong>: parent offers constraints (width spec + height spec); child returns size (exact, at-most, or unspecified); two-pass negotiation</li>
+<li><strong>Layout phase</strong>: parent calls child.layout() with actual bounds; child positions children recursively; coordinates are relative to parent</li>
+<li><strong>Draw phase</strong>: onDraw() receives Canvas; drawing commands (drawRect, drawText) rendered to framebuffer; occluded areas still drawn (waste)</li>
+<li><strong>Invalidation cascade</strong>: calling invalidate() queues layout/draw pass; if called in onDraw (recursive), ANR possible; use Choreographer for throttling</li>
+<li><strong>Real bottleneck</strong>: measuring unspecified children in loop → O(n²) layouts; wrap in MeasureSpec.makeMeasureSpec to avoid re-negotiation</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain nested RecyclerView jank: parent measures child with unspecified height → child measures all items → O(n) per scroll frame</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/custom-view-rendering-and-invalidation/#advanced-24">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2063,15 +2159,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Choreographer schedules frame callbacks synchronized to display refresh rate (60Hz = 16.67ms); callbacks orchestrate animation timing.
-In interviews, cover:
-- <strong>Vsync sync</strong>: Choreographer.postFrameCallback() queued at next vsync pulse; all callbacks fired before frame deadline (preserves 60fps)
-- <strong>Three types</strong>: input callbacks (touch dispatch), animation callbacks (property animators), traversal callbacks (measure/layout/draw)
-- <strong>Frame pacing</strong>: if animation frame takes 18ms (exceeds 16.67ms), vsync drops frame → visible stutter; Choreographer helps but can't fix slow code
-- <strong>Interpolation</strong>: animation value = interpolator.getInterpolation(elapsed/duration); linear (constant speed) vs ease-in (acceleration)
-- <strong>Tradeoff</strong>: tight animation loop (fast cadence) = smooth but CPU overhead; loose cadence (sparse callbacks) = jank but power efficient
-Strong answer tip:
-- Why animated PropertyAnimator is smoother than custom Handler loop: Choreographer syncs with display; Handler has no vsync awareness, may miss deadlines</p>
+<p>Choreographer schedules frame callbacks synchronized to display refresh rate (60Hz = 16.67ms); callbacks orchestrate animation timing.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Vsync sync</strong>: Choreographer.postFrameCallback() queued at next vsync pulse; all callbacks fired before frame deadline (preserves 60fps)</li>
+<li><strong>Three types</strong>: input callbacks (touch dispatch), animation callbacks (property animators), traversal callbacks (measure/layout/draw)</li>
+<li><strong>Frame pacing</strong>: if animation frame takes 18ms (exceeds 16.67ms), vsync drops frame → visible stutter; Choreographer helps but can't fix slow code</li>
+<li><strong>Interpolation</strong>: animation value = interpolator.getInterpolation(elapsed/duration); linear (constant speed) vs ease-in (acceleration)</li>
+<li><strong>Tradeoff</strong>: tight animation loop (fast cadence) = smooth but CPU overhead; loose cadence (sparse callbacks) = jank but power efficient</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Why animated PropertyAnimator is smoother than custom Handler loop: Choreographer syncs with display; Handler has no vsync awareness, may miss deadlines</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/choreographer-and-animation-timing/#advanced-25">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2087,15 +2187,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Room provides compile-time SQL checking; N+1 (loading parent then looping children) kills performance; indices prevent table scans.
-In interviews, cover:
-- <strong>N+1 pattern</strong>: query users (1 query) → loop each user → query their posts (N queries) = N+1 total; solution is JOIN in single query
-- <strong>Indices</strong>: @Index on frequently queried columns (user_id, timestamp) reduces table scan; adds write overhead, saves read time per query
-- <strong>RxJava integration</strong>: @Query returns Observable<List\<User>>; Room emits new list on any table change; can cause jank if listener does work
-- <strong>Transaction safety</strong>: @Transaction ensures query completes atomically; long transactions block other writes (lock contention); tune retention
-- <strong>Real scale</strong>: app with 1M posts, no index on user_id → table scan reads all 1M rows for each query; adding index = O(log n) instead
-Strong answer tip:
-- Explain slow queries: SELECT * FROM users WHERE user_id = ? without index → full table scan (1M+ rows); add @Index(['user_id'])</p>
+<p>Room provides compile-time SQL checking; N+1 (loading parent then looping children) kills performance; indices prevent table scans.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>N+1 pattern</strong>: query users (1 query) → loop each user → query their posts (N queries) = N+1 total; solution is JOIN in single query</li>
+<li><strong>Indices</strong>: @Index on frequently queried columns (user_id, timestamp) reduces table scan; adds write overhead, saves read time per query</li>
+<li><strong>RxJava integration</strong>: @Query returns Observable<List\<User>>; Room emits new list on any table change; can cause jank if listener does work</li>
+<li><strong>Transaction safety</strong>: @Transaction ensures query completes atomically; long transactions block other writes (lock contention); tune retention</li>
+<li><strong>Real scale</strong>: app with 1M posts, no index on user_id → table scan reads all 1M rows for each query; adding index = O(log n) instead</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain slow queries: SELECT * FROM users WHERE user_id = ? without index → full table scan (1M+ rows); add @Index(['user_id'])</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/room-database-query-optimization/#advanced-26">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2111,15 +2215,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>WorkManager provides work scheduling with persistence + retry; JobScheduler offers periodic jobs; foreground services stay alive but visible to user.
-In interviews, cover:
-- <strong>WorkManager</strong>: survives app restart (persistent); retries with exponential backoff; respects Doze + battery saver constraints
-- <strong>Periodic jobs</strong>: JobScheduler schedules aligned to window (batched with others); WorkManager PeriodicWorkRequest can't guarantee exact timing
-- <strong>Foreground services</strong>: exempt from Doze &amp; cachekill; but users see "X is draining battery" → acceptable only for user-initiated work (music, nav)
-- <strong>Guarantee levels</strong>: WorkManager ≈ "eventually" (may delay hours); JobScheduler "optimized timing" (batched); foreground = immediate but intrusive
-- <strong>Tradeoff</strong>: WorkManager = reliable but deferred; periodic jobs = adaptive but imprecise; foreground = immediate but battery impact + permission risk
-Strong answer tip:
-- Why WorkManager over JobScheduler for analytics: flaky network → WorkManager auto-retries across app restarts; JobScheduler discards on reboot</p>
+<p>WorkManager provides work scheduling with persistence + retry; JobScheduler offers periodic jobs; foreground services stay alive but visible to user.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>WorkManager</strong>: survives app restart (persistent); retries with exponential backoff; respects Doze + battery saver constraints</li>
+<li><strong>Periodic jobs</strong>: JobScheduler schedules aligned to window (batched with others); WorkManager PeriodicWorkRequest can't guarantee exact timing</li>
+<li><strong>Foreground services</strong>: exempt from Doze &amp; cachekill; but users see "X is draining battery" → acceptable only for user-initiated work (music, nav)</li>
+<li><strong>Guarantee levels</strong>: WorkManager ≈ "eventually" (may delay hours); JobScheduler "optimized timing" (batched); foreground = immediate but intrusive</li>
+<li><strong>Tradeoff</strong>: WorkManager = reliable but deferred; periodic jobs = adaptive but imprecise; foreground = immediate but battery impact + permission risk</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Why WorkManager over JobScheduler for analytics: flaky network → WorkManager auto-retries across app restarts; JobScheduler discards on reboot</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/workmanager-and-background-execution/#advanced-27">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2135,15 +2243,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Gradle plugins customize build with custom tasks; incremental tasks only process changed inputs; build caching skips unchanged task outputs.
-In interviews, cover:
-- <strong>Custom tasks</strong>: extend DefaultTask, define @Input/@Output properties; Gradle uses these to detect stale inputs and skip re-execution
-- <strong>Incremental tasks</strong>: if only 1 file changed, process only that file (not whole source tree); incremental build = 10-100x faster than clean
-- <strong>Build caching</strong>: if task run was cached in CI, local build skips re-execution; but caching can silently hide bugs if cache keying wrong
-- <strong>Real scale issue</strong>: 500 modules × 30s compile = 250min full build; parallel + incremental = 1-2min (100x speedup) but requires task isolation
-- <strong>Tradeoff</strong>: fine-grained @Input/@Output = proper caching but complex; coarse-grained = simple but cache misses, full rebuilds
-Strong answer tip:
-- Explain build slowdown: all tasks rerun despite no source changes? Check task inputs—probably reading system properties or time which aren't cached</p>
+<p>Gradle plugins customize build with custom tasks; incremental tasks only process changed inputs; build caching skips unchanged task outputs.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Custom tasks</strong>: extend DefaultTask, define @Input/@Output properties; Gradle uses these to detect stale inputs and skip re-execution</li>
+<li><strong>Incremental tasks</strong>: if only 1 file changed, process only that file (not whole source tree); incremental build = 10-100x faster than clean</li>
+<li><strong>Build caching</strong>: if task run was cached in CI, local build skips re-execution; but caching can silently hide bugs if cache keying wrong</li>
+<li><strong>Real scale issue</strong>: 500 modules × 30s compile = 250min full build; parallel + incremental = 1-2min (100x speedup) but requires task isolation</li>
+<li><strong>Tradeoff</strong>: fine-grained @Input/@Output = proper caching but complex; coarse-grained = simple but cache misses, full rebuilds</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain build slowdown: all tasks rerun despite no source changes? Check task inputs—probably reading system properties or time which aren't cached</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/gradle-plugin-architecture/#advanced-28">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2159,15 +2271,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Protobuf provides compact binary encoding with schema evolution; JSON is human-readable but larger; choice depends on bandwidth vs developer velocity.
-In interviews, cover:
-- <strong>Protobuf size</strong>: binary encoding ≈ 30% of JSON for same data; saves bandwidth on mobile (cellular cost ≈ $5-10/GB in many regions)
-- <strong>Code generation</strong>: Protobuf generates setters/getters (strict); JSON uses reflection (slower but flexible); mismatch in field type catches at compile
-- <strong>Schema evolution</strong>: adding optional field to Protobuf is safe (old clients ignore new field); JSON schemas must be versioned (v1, v2 endpoints)
-- <strong>Developer experience</strong>: Protobuf = verbose schema + generated code; JSON = any editor but no schema validation until runtime
-- <strong>Real tradeoff</strong>: Protobuf = 3-5ms encode time + 3MB binary; JSON = 15-20ms encode + 10MB; for 1M requests/day, Protobuf saves 200 CPU-cores
-Strong answer tip:
-- When to choose: high-frequency APIs (&gt;1M req/day) → Protobuf; internal tools/webhooks → JSON; hybrid = Protobuf over-wire, JSON for logging</p>
+<p>Protobuf provides compact binary encoding with schema evolution; JSON is human-readable but larger; choice depends on bandwidth vs developer velocity.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Protobuf size</strong>: binary encoding ≈ 30% of JSON for same data; saves bandwidth on mobile (cellular cost ≈ $5-10/GB in many regions)</li>
+<li><strong>Code generation</strong>: Protobuf generates setters/getters (strict); JSON uses reflection (slower but flexible); mismatch in field type catches at compile</li>
+<li><strong>Schema evolution</strong>: adding optional field to Protobuf is safe (old clients ignore new field); JSON schemas must be versioned (v1, v2 endpoints)</li>
+<li><strong>Developer experience</strong>: Protobuf = verbose schema + generated code; JSON = any editor but no schema validation until runtime</li>
+<li><strong>Real tradeoff</strong>: Protobuf = 3-5ms encode time + 3MB binary; JSON = 15-20ms encode + 10MB; for 1M requests/day, Protobuf saves 200 CPU-cores</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>When to choose: high-frequency APIs (&gt;1M req/day) → Protobuf; internal tools/webhooks → JSON; hybrid = Protobuf over-wire, JSON for logging</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/data-serialization-tradeoffs/#advanced-29">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2183,15 +2299,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Firebase Realtime Database syncs offline writes to cloud; conflicts arise when device and cloud both modify same record; resolution requires strategy.
-In interviews, cover:
-- <strong>Offline writes</strong>: Firebase queues writes locally; syncs when reconnected; but if cloud wrote same field, last-write-wins (data loss risk)
-- <strong>Conflict strategies</strong>: last-write-wins (simple but lossy); timestamp comparison (clock skew risks); vector clocks (complex but safe)
-- <strong>Real issue</strong>: user edits note offline, cloud has newer version (another device), sync → user's edit discarded silently
-- <strong>Firestore transactions</strong>: multi-document ACID semantics; but offline writes don't participate—only synced at reconnect, breaking atomicity
-- <strong>Tradeoff</strong>: optimistic sync = responsive UX but conflict risk; pessimistic (require online) = safe but poor offline experience
-Strong answer tip:
-- Explain CRDTs (conflict-free types): instead of last-write-wins, use append-only logs (all edits preserved); merge can reconcile divergent branches</p>
+<p>Firebase Realtime Database syncs offline writes to cloud; conflicts arise when device and cloud both modify same record; resolution requires strategy.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li><strong>Offline writes</strong>: Firebase queues writes locally; syncs when reconnected; but if cloud wrote same field, last-write-wins (data loss risk)</li>
+<li><strong>Conflict strategies</strong>: last-write-wins (simple but lossy); timestamp comparison (clock skew risks); vector clocks (complex but safe)</li>
+<li><strong>Real issue</strong>: user edits note offline, cloud has newer version (another device), sync → user's edit discarded silently</li>
+<li><strong>Firestore transactions</strong>: multi-document ACID semantics; but offline writes don't participate—only synced at reconnect, breaking atomicity</li>
+<li><strong>Tradeoff</strong>: optimistic sync = responsive UX but conflict risk; pessimistic (require online) = safe but poor offline experience</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>Explain CRDTs (conflict-free types): instead of last-write-wins, use append-only logs (all edits preserved); merge can reconcile divergent branches</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/firebase-offline-sync-and-conflicts/#advanced-30">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2209,15 +2329,19 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Android progressively restricts background work to reduce battery drain; understanding the exact constraints per API level is critical for reliable background execution design.
-In interviews, cover:
-- Doze mode (API 23+): when the device is stationary, unplugged, and screen off, Android disables network, wayfence alarms, and JobScheduler; apps get maintenance windows to run deferred work; FCM high-priority messages bypass Doze
-- App Standby (API 23+): apps not used recently are put in standby; their jobs run only during daily maintenance windows; active use resets the standby bucket
-- Background start restrictions (API 26+): apps in the background cannot start Activities; use Notifications with PendingIntent, they can start ForegroundService from background if targeting &lt;API31
-- Android 12 (API 31+): exact alarms require SCHEDULE_EXACT_ALARM permission; foreground service start from background is further restricted
-- WorkManager is the single correct approach for deferrable guaranteed background work; it respects Doze, uses JobScheduler on API 23+ and AlarmManager with broadcast on older, and supports constraints
-Strong answer tip:
-- distinguish: long-running active background work (media playback, navigation) belongs in a ForegroundService; deferred guaranteed work in WorkManager; high-priority data in high-priority FCM messages</p>
+<p>Android progressively restricts background work to reduce battery drain; understanding the exact constraints per API level is critical for reliable background execution design.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>Doze mode (API 23+): when the device is stationary, unplugged, and screen off, Android disables network, wayfence alarms, and JobScheduler; apps get maintenance windows to run deferred work; FCM high-priority messages bypass Doze</li>
+<li>App Standby (API 23+): apps not used recently are put in standby; their jobs run only during daily maintenance windows; active use resets the standby bucket</li>
+<li>Background start restrictions (API 26+): apps in the background cannot start Activities; use Notifications with PendingIntent, they can start ForegroundService from background if targeting &lt;API31</li>
+<li>Android 12 (API 31+): exact alarms require SCHEDULE_EXACT_ALARM permission; foreground service start from background is further restricted</li>
+<li>WorkManager is the single correct approach for deferrable guaranteed background work; it respects Doze, uses JobScheduler on API 23+ and AlarmManager with broadcast on older, and supports constraints</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>distinguish: long-running active background work (media playback, navigation) belongs in a ForegroundService; deferred guaranteed work in WorkManager; high-priority data in high-priority FCM messages</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/advanced-tradeoffs-and-interview-strategy/#explain-android-background-restrictions-doze-app-standby-and-backgroun">🚀 See Full Deep Dive</a></p>
 </details>
 
