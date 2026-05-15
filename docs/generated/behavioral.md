@@ -1635,3 +1635,93 @@ hide:
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/behavioral/remote-and-distributed-teams/#remote-trust-building">🚀 See Full Deep Dive</a>
 
+
+---
+
+<div id="walk-through-driving-a-major-view-to-compose-migration-without-stoppin"></div>
+
+## Walk through driving a major View-to-Compose migration without stopping feature delivery
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">behavioral</span>
+  <span class="question-badge question-badge--tag">leadership</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">migration</span>
+  <span class="question-badge question-badge--tag">planning</span>
+</div>
+
+??? question "View Answer"
+
+    A View→Compose migration at scale requires an incremental strategy that lets both systems coexist safely, keeps the main branch releasable, and minimizes cognitive burden on feature teams.
+    In interviews, cover:
+    - strategy: interop first — embed Compose islands inside existing View screens using ComposeView; do not require full-screen rewrites upfront; this de-risks migration one component at a time
+    - priority: start with new feature screens (greenfield) in Compose to build team fluency; then migrate high-churn Views where Compose gives the biggest maintenance payoff
+    - shared design system: extract a :core:ui module early with shared Material3 theme, typography, color tokens; this prevents duplicated design decisions during the transition period
+    - tracking: a migration dashboard showing % of screens in Compose vs Views; set a target date for <5% remaining View-based screens
+    - guard rails: lint rules blocking new View-based Fragments in feature modules where migration is complete; enforce Compose-only in those module scopes
+    Strong answer tip:
+    - common failure mode: teams build parallel implementations (View screen and Compose screen) permanently; set a deprecation deadline for each migrated screen's View implementation and remove it within one sprint
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/behavioral/behavioral-fundamentals/#walk-through-driving-a-major-view-to-compose-migration-without-stoppin">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="describe-mentoring-engineers-and-raising-the-bar-on-compose-code-quali"></div>
+
+## Describe mentoring engineers and raising the bar on Compose code quality at scale
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">behavioral</span>
+  <span class="question-badge question-badge--tag">leadership</span>
+  <span class="question-badge question-badge--tag">mentoring</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">code-quality</span>
+</div>
+
+??? question "View Answer"
+
+    Raising code quality at scale requires building systems (automated checks, shared patterns, exemplar code) rather than reviewing every PR individually.
+    In interviews, cover:
+    - exemplar code: write and maintain a :feature:reference module with gold-standard Compose implementations of common patterns (list screen, form with validation, empty/error/loading states); new engineers read it, not documentation
+    - automated guardrails: lint rules that flag common Compose anti-patterns (side-effect in composable body, Unit returns from composable, raw List<T> as composable parameter without @Immutable); block merges automatically
+    - code review culture: review at the pattern level not the syntax level; focus feedback on stability (is this skippable?), testability (can effects be tested?), and accessibility (do semantics cover all interactive elements?)
+    - growth: pair senior engineers with mid-level on high-complexity screens; rotate ownership so knowledge spreads; run bi-weekly Compose design reviews where teams present their approach before implementation
+    Strong answer tip:
+    - measure impact: track recomposition count regressions in CI using Macrobenchmark; a quality-raised codebase shows stable or decreasing average recomposition rates per screen across releases
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/behavioral/behavioral-fundamentals/#describe-mentoring-engineers-and-raising-the-bar-on-compose-code-quali">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="walk-through-making-a-technical-decision-under-uncertainty-build-vs-bu"></div>
+
+## Walk through making a technical decision under uncertainty - build vs buy, library choice
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">behavioral</span>
+  <span class="question-badge question-badge--tag">decision-making</span>
+  <span class="question-badge question-badge--tag">leadership</span>
+  <span class="question-badge question-badge--tag">technical-strategy</span>
+</div>
+
+??? question "View Answer"
+
+    Decisions under uncertainty require explicit framing of what you know, what you can learn quickly, and what the reversibility of the choice is — not waiting for perfect information.
+    In interviews, cover:
+    - decision framing: write a one-page decision document with: problem statement, non-goals, options considered, decision criteria (maintenance cost, team expertise, licensing, performance, support), and recommendation
+    - time-box investigation: allocate 2–3 days for a technical spike to validate critical assumptions before committing; the spike should invalidate the riskiest assumption, not explore everything
+    - reversibility: weight decisions by how easily you can reverse them; choose a slightly-worse-but-reversible option over a slightly-better irreversible one when uncertainty is high
+    - stakeholder alignment: present the decision doc to affected teams before finalizing; async feedback round with a 48-hour deadline prevents the decision from becoming a meeting-driven delay
+    Strong answer tip:
+    - describe a real decision where your initial recommendation changed after the spike; showing intellectual honesty and adaptation to new information signals engineering maturity to interviewers
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/behavioral/behavioral-fundamentals/#walk-through-making-a-technical-decision-under-uncertainty-build-vs-bu">🚀 See Full Deep Dive</a>
+

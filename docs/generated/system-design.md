@@ -1635,3 +1635,96 @@ hide:
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/system-design/system-design-fundamentals/#design-round-structure">🚀 See Full Deep Dive</a>
 
+
+---
+
+<div id="design-a-push-notification-system-end-to-end-with-privacy-and-delivery"></div>
+
+## Design a push notification system end-to-end with privacy and delivery correctness
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">system-design</span>
+  <span class="question-badge question-badge--tag">push-notifications</span>
+  <span class="question-badge question-badge--tag">fcm</span>
+  <span class="question-badge question-badge--tag">privacy</span>
+  <span class="question-badge question-badge--tag">reliability</span>
+</div>
+
+??? question "View Answer"
+
+    A production push notification system must balance reliability (at-least-once delivery), privacy (minimal payload exposure), and user control (preferences, opt-out).
+    In interviews, cover:
+    - architecture: notification service → message queue (Kafka/SQS) → sender worker pool → FCM/APNs; decouple sending from triggering to handle burst traffic
+    - privacy: send data-only notifications (notification ID only); the app calls a secured endpoint to fetch notification content with authentication — payload never traverses FCM in plaintext
+    - delivery guarantees: FCM provides at-least-once delivery with TTL; for critical alerts (payment received), implement server-side read receipts and retry logic if no acknowledgement within TTL window
+    - user preferences: maintain per-user, per-notification-type opt-in/out preferences server-side; never rely solely on client settings which can be stale
+    - silent notifications for data sync: use FCM data messages with a low priority budget; do not exceed system-imposed limits (20 high-priority messages per hour per device on Android 13+)
+    Strong answer tip:
+    - discuss notification deduplication: if a notification for order #123 is generated twice (retry), the device must not show two toasts; use a deterministic notification ID (hash of entity type + entity ID)
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/system-design/system-design-fundamentals/#design-a-push-notification-system-end-to-end-with-privacy-and-delivery">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="design-app-modularization-for-a-large-compose-app-with-100-screens"></div>
+
+## Design app modularization for a large Compose app with 100+ screens
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">system-design</span>
+  <span class="question-badge question-badge--tag">modularization</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">gradle</span>
+</div>
+
+??? question "View Answer"
+
+    Modularizing a large Compose app requires a layered module graph that prevents circular dependencies, enables parallel builds, and gives feature teams independent release velocity.
+    In interviews, cover:
+    - module types: :core:ui (design system, shared composables), :core:data (repositories, Room), :core:domain (use cases, business logic), :feature:X (each feature as an independent module with its own ViewModel/Screen)
+    - dependency direction: feature → domain → data; feature → core:ui; never data → feature (avoids cycles); enforce with Gradle module-specific dependency constraints or Lint rules
+    - navigation: central nav graph in a :navigation module that references feature entry points by route string — features do not know about each other; use NavigationBuilder extension functions
+    - build impact: modules with separate compilation units allow Gradle to compile changed modules in parallel; features with stable interfaces benefit from build caching
+    - dynamic delivery: large features (AR, video editor) as Play Feature Delivery modules — only installed when needed
+    Strong answer tip:
+    - identify the top 3 most-changed modules in your repo history; these should be the smallest and most isolated modules in your graph — changes to them should not trigger recompilation of the entire dependency tree
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/system-design/system-design-fundamentals/#design-app-modularization-for-a-large-compose-app-with-100-screens">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="design-api-versioning-and-backward-compatibility-strategy-for-mobile-r"></div>
+
+## Design API versioning and backward compatibility strategy for mobile releases
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--tag">system-design</span>
+  <span class="question-badge question-badge--tag">api-design</span>
+  <span class="question-badge question-badge--tag">versioning</span>
+  <span class="question-badge question-badge--tag">backward-compatibility</span>
+  <span class="question-badge question-badge--tag">mobile</span>
+</div>
+
+??? question "View Answer"
+
+    Mobile apps have a long tail of versions in the wild — API versioning must ensure old clients continue working while new clients get new capabilities.
+    In interviews, cover:
+    - version header approach: clients send X-App-Version or Accept: application/vnd.example.v2+json; the server routes to the appropriate handler; simpler than URL versioning for mobile where the client is always known
+    - additive-only changes: add new fields, never remove or rename; use Kotlin's @JsonClass(generateAdapter=true) or kotlinx.serialization with ignoreUnknownKeys=true so old clients skip new fields
+    - deprecation policy: mark an API path/field as deprecated and support it for M major app versions (e.g. 3 versions = ~6 months); track client version distribution to know when usage of old paths is zero
+    - sunset header: return Deprecation: true and Sunset: <date> headers from deprecated endpoints; client-side analytics detect these and alert engineers
+    - feature flags + minimum version: gate backend features behind a minimum app version check; use RemoteConfig or a server-side capability negotiation endpoint
+    Strong answer tip:
+    - the most common mistake is breaking changes deployed as a same-version update; always treat any response schema change as potentially breaking and design for forward compatibility (client parses only what it knows)
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/system-design/system-design-fundamentals/#design-api-versioning-and-backward-compatibility-strategy-for-mobile-r">🚀 See Full Deep Dive</a>
+

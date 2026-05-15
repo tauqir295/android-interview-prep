@@ -42,6 +42,8 @@ nav:
 
   - 🎓 Advanced Internals: generated/advanced.md
 
+  - 🧩 AOSP Internals: generated/aosp.md
+
   - 🤖 2026 Tech: generated/future-tech.md
 
   - 🏗️ System Design: generated/system-design.md

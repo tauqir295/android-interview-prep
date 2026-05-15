@@ -2759,3 +2759,91 @@ hide:
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/multitasking-window-focus/#multitasking-window-focus">🚀 See Full Deep Dive</a>
 
+
+---
+
+<div id="explain-android-i18n-correctness-plurals-gender-neutral-text-number-fo"></div>
+
+## Explain Android i18n correctness - plurals, gender-neutral text, number formatting, and locale handling
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">i18n</span>
+  <span class="question-badge question-badge--tag">localization</span>
+  <span class="question-badge question-badge--tag">plurals</span>
+</div>
+
+??? question "View Answer"
+
+    Android i18n goes beyond string translation — plurals, date/number formats, and text direction all change based on locale and must be handled by platform APIs, not hardcoded logic.
+    In interviews, cover:
+    - plurals: use <plurals> resources with quantity strings (zero, one, two, few, many, other); getQuantityString(R.plurals.x, count, count) — never concatenate count + " items" in code
+    - number formatting: NumberFormat.getInstance(locale).format(n) or NumberCompat; never hardcode commas or periods as decimal separators — they are locale-specific
+    - date formatting: use DateTimeFormatter with explicit locale; avoid toString() on Date/Calendar classes which use the system default locale
+    - locale configuration changes: configuration change when the user switches language results in an Activity recreation; ensure ViewModels are locale-independent (store raw data, not formatted strings)
+    Strong answer tip:
+    - test by forcing locale with LocaleList.setDefault() in an Espresso test or using the ADB command: adb shell am start -a android.intent.action.MAIN --locale de_DE
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle-and-state/#explain-android-i18n-correctness-plurals-gender-neutral-text-number-fo">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="explain-rtl-layout-support-bidirectional-text-icon-direction-and-meani"></div>
+
+## Explain RTL layout support - bidirectional text, icon direction, and meaning preservation
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">rtl</span>
+  <span class="question-badge question-badge--tag">bidirectional</span>
+  <span class="question-badge question-badge--tag">layout</span>
+</div>
+
+??? question "View Answer"
+
+    Android flips horizontal layout automatically in RTL locales when supportsRtl=true is set in the manifest, but logical mirroring of meaning (not just geometry) requires explicit design attention.
+    In interviews, cover:
+    - enable RTL: android:supportsRtl="true" in <application>; use start/end instead of left/right in layout attributes; layout direction flips automatically
+    - icons: directional icons (back arrow, forward arrow, skip) must be mirrored in RTL; non-directional icons (play, settings, share) must not; use android:autoMirrored="true" in SVG drawables for directional ones or provide explicit -ldrtl resources
+    - bidirectional text (BiDi): a string with mixed Arabic and English characters; rely on BidiFormatter or android:textDirection="locale" rather than hardcoding LTR/RTL text direction on TextViews
+    - padding/margin: Modifier.padding(start=16.dp) in Compose, paddingStart in Views — these automatically flip in RTL
+    Strong answer tip:
+    - test with: adb shell settings put global debug.force_rtl 1 (developer option) to force RTL on any locale without actually changing device language
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle-and-state/#explain-rtl-layout-support-bidirectional-text-icon-direction-and-meani">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="explain-accessibility-at-scale-audit-strategy-semantics-coverage-and-k"></div>
+
+## Explain accessibility at scale - audit strategy, semantics coverage, and keyboard/D-pad navigation
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">accessibility</span>
+  <span class="question-badge question-badge--tag">a11y</span>
+  <span class="question-badge question-badge--tag">talkback</span>
+  <span class="question-badge question-badge--tag">keyboard</span>
+</div>
+
+??? question "View Answer"
+
+    Accessibility at scale requires systematic auditing, not ad-hoc fixes; semantic coverage, focus order, and touch target size are the three most common failure classes.
+    In interviews, cover:
+    - semantic coverage: every interactive element needs a contentDescription or labelFor; group related elements with mergeDescendants; use Role (Button, Checkbox, Image) so TalkBack announces the correct interaction model
+    - touch target size: Material spec recommends 48×48dp minimum; Modifier.minimumInteractiveComponentSize() enforces this in Compose; small tap targets fail WCAG 2.5.5
+    - focus order: keyboard and D-pad navigation must follow a logical reading order; customise with Modifier.focusProperties { next = focusRef } in Compose or android:nextFocusDown in Views
+    - audit tooling: Accessibility Scanner app, Android Studio Layout Inspector accessibility tab, and automated checks via UiAutomator with AccessibilityNodeInfoCompat
+    Strong answer tip:
+    - integrate automated accessibility checks into your UI test suite using AccessibilityChecks.enable() in Espresso — this runs Google's accessibility test framework on every test run and catches regressions before code review
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/fundamentals/activity-lifecycle-and-state/#explain-accessibility-at-scale-audit-strategy-semantics-coverage-and-k">🚀 See Full Deep Dive</a>
+

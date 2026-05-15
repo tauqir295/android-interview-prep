@@ -995,3 +995,182 @@ questions:
       - continuation resumes later from the right state
       This explains how coroutines appear sequential while remaining resumable.
     deep_dive: /android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/
+  - id: explain-the-kotlin-type-system-nullable-vs-non-nullable-platform-types
+    title: Explain the Kotlin type system - nullable vs non-nullable, platform types, and Nothing
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - null-safety
+      - type-system
+    standard_answer: |
+      Kotlin splits every type into non-nullable (String) and nullable (String?), enforcing null safety at compile time through safe-call (?.),  Elvis (?:), and non-null assertion (!!) operators.
+      In interviews, cover:
+      - non-null types prevent NullPointerExceptions at compile time; ? variants must be explicitly unwrapped
+      - platform types (String!) arise when consuming Java APIs with no nullability annotation — the compiler allows assignment to String but a null return still causes a runtime NPE
+      - Nothing is the bottom type with no values; it models code paths that never return (throw, error(), TODO(), infinite loops) and enables exhaustive type-checking in expressions like: val s: String = intent.getStringExtra("k") ?: error("Missing k")
+      - on Android, wrap all Java API boundaries immediately: convert T! to T? at the call site and validate before propagating deeper
+      Strong answer tip:
+      - demonstrate the trap: `val x: String = javaMethod()` compiles even when javaMethod() returns a platform type — you can still get a Kotlin-generated NPE at runtime if Java returns null
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-generics-variance-out-in-and-star-projections
+    title: Explain Kotlin generics variance - out, in, and star-projections
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - generics
+      - variance
+    standard_answer: |
+      By default Kotlin generics are invariant: List<String> is not a subtype of List<Any> even though String is Any.
+      In interviews, cover:
+      - out T (covariant / producer): you can read T but not write it; Kotlin's List<out T> means List<String> is a subtype of List<Any>; maps to Java ? extends T
+      - in T (contravariant / consumer): you can write T but not read it; Comparator<in T> is the canonical example; maps to Java ? super T
+      - use-site variance: apply out/in at the call site on a declaration that didn't use it: fun f(xs: MutableList<out Number>)
+      - star projection (List<*>): means "list of unknown type"; prevents unsafe writes to mutable collections unlike List<Any?> which would permit them
+      Strong answer tip:
+      - MutableList<String> is NOT a subtype of MutableList<Any> (invariant) because that would allow inserting a non-String; but List<String> IS a subtype of List<Any> because List is declared out
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-inline-functions-and-reified-type-parameters-capabiliti
+    title: Explain Kotlin inline functions and reified type parameters - capabilities and costs
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - inline
+      - reified
+      - performance
+    standard_answer: |
+      inline copies the function body into every call site, which eliminates lambda allocation on Android hot paths and enables reified type parameters.
+      In interviews, cover:
+      - without inline, lambdas passed as function parameters cause an object allocation per call; inline removes this overhead for critical inner loops
+      - reified T works because the compiler substitutes the real type at each inlined call site, enabling T::class, is T, as T, filterIsInstance<T>() — none of which work in regular generics due to JVM type erasure
+      - Java equivalent: Class<T> parameter or TypeToken patterns (Gson TypeToken); reified is cleaner but restricted to inline functions
+      - costs: every call site grows in bytecode (code size); DEX method count impact is minor in modern builds but library authors must be careful since changing an inline function body forces all consumers to recompile
+      Strong answer tip:
+      - you cannot have reified without inline — the two are inseparable; also, complex nested generic structure still hits type erasure unless the compiler substitutes enough info
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-extension-functions-dispatch-rules-and-common-pitfalls
+    title: Explain Kotlin extension functions - dispatch rules and common pitfalls
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - extensions
+      - dispatch
+    standard_answer: |
+      Extension functions are statically dispatched at compile time based on the declared type of the receiver — they are not virtual.
+      In interviews, cover:
+      - open class A; class B : A(); fun A.f() = "A"; fun B.f() = "B"; val x: A = B(); x.f() returns "A" not "B" — no polymorphism
+      - extensions are compiled to static methods in a generated class; they cannot access private members of the extended class
+      - naming conflicts with member functions: member always wins; add an import alias if shadowing is genuinely intended
+      - extension properties cannot have backing fields; they are equivalent to getter-only computed properties
+      Strong answer tip:
+      - common Android misuse: extending a class to add behavior that belongs inside it — prefer refactoring if you own the class; extensions shine for utility on third-party or platform types
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-object-declarations-companion-objects-and-singleton-ini
+    title: Explain Kotlin object declarations, companion objects, and singleton initialization order
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - object
+      - singleton
+      - companion
+    standard_answer: |
+      Kotlin object declarations are thread-safe lazy singletons backed by a class with static INSTANCE; initialization happens on first access.
+      In interviews, cover:
+      - object Foo is initialized the first time any property or function on it is accessed; this is JVM class-loading laziness with guaranteed thread safety
+      - companion object { } compiles to a nested INSTANCE class; annotate with @JvmStatic to expose members as true static methods to Java callers
+      - initialization order traps: if an object accesses another object during its own init block and that second object also reads back the first, you can get partial initialization or deadlock
+      - testability: singletons are hard to swap in tests; prefer injecting an interface rather than referencing the object directly, or use a factory behind the companion
+      Strong answer tip:
+      - never do heavy I/O or complex logic in an object's init block — it runs on first access which may be the main thread at app startup
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-delegation-and-property-delegates-by-lazy-observable-an
+    title: Explain Kotlin delegation and property delegates - by, lazy, observable, and custom delegates
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - delegation
+      - lazy
+      - delegates
+    standard_answer: |
+      Kotlin delegation separates interface from implementation (class delegation) or defers property access logic to a delegate object (property delegates).
+      In interviews, cover:
+      - class C(val base: Base) : Base by base: all methods of Base are automatically forwarded to base; useful for decoration without inheritance
+      - lazy { ... } defers initialization until first read; default mode is LazyThreadSafetyMode.SYNCHRONIZED (double-checked locking); use LazyThreadSafetyMode.NONE on single-thread access for less overhead
+      - Delegates.observable() calls a callback on every set — useful for triggering UI update logic without a separate setter
+      - custom delegates implement getValue/setValue (for var) or just getValue (for val); commonly used for ViewBinding, SharedPreferences, SavedStateHandle wrappers
+      Strong answer tip:
+      - lazy is NOT automatically correct on multiple threads unless the LazyThreadSafetyMode is appropriate; and the delegate captures the lambda, so avoid capturing stale context
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-value-classes-inline-classes-runtime-representation-box
+    title: Explain Kotlin value classes (inline classes) - runtime representation, boxing, and Android use cases
+    difficulty: advanced
+    tags:
+      - kotlin
+      - value-classes
+      - inline-classes
+      - performance
+    standard_answer: |
+      Value classes wrap a single property and are represented as the raw type at runtime wherever the compiler can avoid boxing, eliminating the allocation cost of wrapper types.
+      In interviews, cover:
+      - @JvmInline value class UserId(val id: String) — at call sites where the type is known, the compiler uses String directly; boxing occurs at generic boundaries, interface use, or nullable value class references
+      - primary use cases on Android: type-safe wrappers around primitives (Dp, Px, UserId, SessionToken) with zero runtime cost in the happy path
+      - limitations: only one property, no additional state fields, cannot be used as generic type arguments in all positions without boxing
+      - Compose uses value classes extensively: AnnotatedString, Color (backed by ULong), etc.
+      Strong answer tip:
+      - box vs no-box: if you store a value class in a List<UserId>, it boxes; if you call a fun that accepts UserId directly, it is unboxed — describe this tradeoff for interview depth
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-kotlin-jvm-interop-sam-conversions-default-methods-and-jvmover
+    title: Explain Kotlin JVM interop - SAM conversions, default methods, and @JvmOverloads
+    difficulty: intermediate
+    tags:
+      - kotlin
+      - jvm-interop
+      - java
+      - sam
+    standard_answer: |
+      Kotlin and Java interop requires understanding of how each compiles to bytecode and the adaptation layer between them.
+      In interviews, cover:
+      - SAM conversions: a Kotlin lambda can be passed where Java expects a Single Abstract Method interface (Runnable, Callable); in Kotlin-defined interfaces this requires the fun interface keyword
+      - default methods: Kotlin interface default implementations compile to static helper methods; Java 8+ callers can use them directly, older bytecode-targets need @JvmDefault or the DefaultImpls workaround
+      - @JvmOverloads: generates Java overloads for each combination of default parameter values; without it, Java callers must pass all arguments
+      - @JvmStatic: makes companion object members accessible as true static methods in Java bytecode
+      - suspend functions appear to Java as blocking methods with an extra Continuation<T> parameter; wrap them with CoroutineScope.launch or use runBlocking in Java-entry-point code
+      Strong answer tip:
+      - describe how Kotlin's @JvmField avoids getter/setter generation — useful when Java code needs direct field access
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: discuss-kotlin-performance-traps-sequences-vs-collections-allocation-a
+    title: Discuss Kotlin performance traps - sequences vs collections, allocation, and persistent data structures
+    difficulty: advanced
+    tags:
+      - kotlin
+      - performance
+      - sequences
+      - collections
+      - allocation
+    standard_answer: |
+      Kotlin's collection API is expressive but can create significant intermediate allocations in chains of operators; sequences and careful operator choice reduce this cost.
+      In interviews, cover:
+      - list.filter{}.map{}: each operator creates a new List; with Sequence, operators are lazy and fused — a single pass emits each element through the full pipeline before moving to the next
+      - use asSequence() when the chain has 3+ operators and the list is large; for small lists the sequence overhead (lambda allocation, boxing) outweighs the benefit
+      - String concatenation in loops: compile to StringBuilder internally when the loop is simple; complex patterns may generate temporary strings — use buildString
+      - persistent/immutable data structures (e.g. Kotlin's kotlinx.collections.immutable): structural sharing avoids full copies on update; useful for Compose state where copy() on data classes creates throwaway allocations
+      Strong answer tip:
+      - profile first — measure with Android Profiler or Perfetto before optimizing; the savings from sequence over a list of 10 items are negligible, but on a list of 10,000 items in a RecyclerView bind() call they matter
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/
+  - id: explain-reflection-and-kclass-on-android-costs-risks-and-alternatives
+    title: Explain reflection and KClass on Android - costs, risks, and alternatives
+    difficulty: advanced
+    tags:
+      - kotlin
+      - reflection
+      - kclass
+      - performance
+    standard_answer: |
+      Kotlin reflection on Android uses kotlin-reflect.jar which is 2–3 MB and adds initialization latency; it should be avoided on hot paths.
+      In interviews, cover:
+      - KClass<T> and ::class give compile-time access to class metadata; simple operations (::class.java, is T) are fine without kotlin-reflect
+      - heavy reflection (KClass.memberProperties, KFunction.call, KType introspection) requires kotlin-reflect and adds method count and startup time to the DEX
+      - alternatives: code generation at compile time (kapt/KSP with annotation processors), sealed class hierarchies for known types, kotlinx.serialization which uses codegen not runtime reflection
+      - R8/ProGuard strips reflective access unless you add keep rules, causing runtime ClassNotFoundException or missing fields; this is a common production surprise
+      Strong answer tip:
+      - for Gson specifically: replace with kotlinx.serialization or Moshi with codegen adapters; both eliminate runtime reflection on Android data models
+    deep_dive: /android-interview-prep/deep-dives/kotlin/kotlin-basics/

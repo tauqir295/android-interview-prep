@@ -1696,3 +1696,33 @@ hide:
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/cicd/android-app-release-process/#cicd-52">🚀 See Full Deep Dive</a>
 
+
+---
+
+<div id="explain-gradle-build-performance-kapt-vs-ksp-configuration-cache-and-m"></div>
+
+## Explain Gradle build performance - KAPT vs KSP, configuration cache, and modularization impact
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">gradle</span>
+  <span class="question-badge question-badge--tag">build</span>
+  <span class="question-badge question-badge--tag">kapt</span>
+  <span class="question-badge question-badge--tag">ksp</span>
+  <span class="question-badge question-badge--tag">configuration-cache</span>
+</div>
+
+??? question "View Answer"
+
+    Gradle build time is the most visible productivity metric for Android teams; KAPT vs KSP, incremental compilation, and configuration cache are the three biggest levers.
+    In interviews, cover:
+    - KAPT runs annotation processors in an AP round triggered by the Kotlin compiler; it compiles all sources twice (Kotlin→Java stub→AP→Kotlin); adds significant compile time for large modules especially with Room, Hilt, Moshi
+    - KSP (Kotlin Symbol Processing): runs as a Kotlin compiler plugin without the stub generation step; 2–4× faster than KAPT for equivalent processors; most major libraries now have KSP support
+    - configuration cache: caches the result of the Configure phase; a cache hit skips scanning all build.gradle files — major speedup for incremental builds; use --configuration-cache and fix task inputs that break cacheability
+    - modularization: breaks one large module into many smaller ones; only modules whose inputs changed are recompiled; combined with build caching this is the biggest long-term build speedup
+    Strong answer tip:
+    - measure with ./gradlew assembleDebug --profile; the generated HTML report shows which tasks took the most time; focus optimization energy on the 3–5 slowest tasks
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/cicd/android-app-release-process/#explain-gradle-build-performance-kapt-vs-ksp-configuration-cache-and-m">🚀 See Full Deep Dive</a>
+

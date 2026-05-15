@@ -20,6 +20,7 @@ PREFERRED_CATEGORY_ORDER = [
     "performance",
     "cicd",
     "advanced",
+    "aosp",
     "future-tech",
     "system-design",
     "testing",

@@ -909,3 +909,34 @@ hide:
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/firebase-offline-sync-and-conflicts/#advanced-30">🚀 See Full Deep Dive</a>
 
+
+---
+
+<div id="explain-android-background-restrictions-doze-app-standby-and-backgroun"></div>
+
+## Explain Android background restrictions - Doze, App Standby, and background start limits
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">background</span>
+  <span class="question-badge question-badge--tag">doze</span>
+  <span class="question-badge question-badge--tag">workmanager</span>
+  <span class="question-badge question-badge--tag">battery</span>
+</div>
+
+??? question "View Answer"
+
+    Android progressively restricts background work to reduce battery drain; understanding the exact constraints per API level is critical for reliable background execution design.
+    In interviews, cover:
+    - Doze mode (API 23+): when the device is stationary, unplugged, and screen off, Android disables network, wayfence alarms, and JobScheduler; apps get maintenance windows to run deferred work; FCM high-priority messages bypass Doze
+    - App Standby (API 23+): apps not used recently are put in standby; their jobs run only during daily maintenance windows; active use resets the standby bucket
+    - Background start restrictions (API 26+): apps in the background cannot start Activities; use Notifications with PendingIntent, they can start ForegroundService from background if targeting <API31
+    - Android 12 (API 31+): exact alarms require SCHEDULE_EXACT_ALARM permission; foreground service start from background is further restricted
+    - WorkManager is the single correct approach for deferrable guaranteed background work; it respects Doze, uses JobScheduler on API 23+ and AlarmManager with broadcast on older, and supports constraints
+    Strong answer tip:
+    - distinguish: long-running active background work (media playback, navigation) belongs in a ForegroundService; deferred guaranteed work in WorkManager; high-priority data in high-priority FCM messages
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/advanced-tradeoffs-and-interview-strategy/#explain-android-background-restrictions-doze-app-standby-and-backgroun">🚀 See Full Deep Dive</a>
+

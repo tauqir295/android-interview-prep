@@ -1436,3 +1436,64 @@ hide:
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/performance/compilation-optimization/#ahead-of-time-compilation">🚀 See Full Deep Dive</a>
 
+
+---
+
+<div id="explain-r8-and-proguard-reflection-and-serialization-pitfalls-in-andro"></div>
+
+## Explain R8 and ProGuard reflection and serialization pitfalls in Android apps
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">r8</span>
+  <span class="question-badge question-badge--tag">proguard</span>
+  <span class="question-badge question-badge--tag">shrinking</span>
+  <span class="question-badge question-badge--tag">reflection</span>
+  <span class="question-badge question-badge--tag">serialization</span>
+</div>
+
+??? question "View Answer"
+
+    R8 shrinks, obfuscates, and optimizes code at compile time, but it cannot see through runtime reflection or dynamic class loading — missing keep rules cause production crashes.
+    In interviews, cover:
+    - Gson uses reflection to access fields by name; R8 renames fields; without -keepclassmembers rules for your model classes, Gson silently reads null for every field at runtime
+    - Retrofit uses annotation processing and reflection for @GET/@POST parsing; the interface itself must be kept: -keep interface com.example.MyApi
+    - Kotlin metadata: serialization libraries read @Serializable annotation data; if the package or class is renamed, kotlinx.serialization fails to find the generated serializer
+    - room: @Dao and @Entity annotated classes need keep rules; R8 keeps them if the AGP Room plugin is applied, but custom DAO implementations accessed reflectively do not
+    - resource names accessed via R.string.*, Resources.getIdentifier(), or dynamic resource loading need resources keep rules (-keep class **.R$*)
+    Strong answer tip:
+    - always verify shrunk release builds with manual smoke tests AND automated tests run against the release variant; add -printusage to see what R8 removed and catch silent serialization breakage in CI
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/performance/performance-metrics/#explain-r8-and-proguard-reflection-and-serialization-pitfalls-in-andro">🚀 See Full Deep Dive</a>
+
+
+---
+
+<div id="explain-baseline-profiles-macrobenchmark-and-operationalizing-startup-"></div>
+
+## Explain Baseline Profiles, Macrobenchmark, and operationalizing startup performance
+
+<div class="question-meta">
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--tag">performance</span>
+  <span class="question-badge question-badge--tag">baseline-profiles</span>
+  <span class="question-badge question-badge--tag">macrobenchmark</span>
+  <span class="question-badge question-badge--tag">startup</span>
+</div>
+
+??? question "View Answer"
+
+    Baseline Profiles pre-compile critical code paths at install time, reducing JIT compilation overhead during the first user interactions after install.
+    In interviews, cover:
+    - Baseline Profile: a text file (baseline-prof.txt) listing method signatures that ART should AOT-compile; generated using the Macrobenchmark library's BaselineProfileRule; included in the release AAB/APK
+    - without a profile, ART JIT-compiles hot methods during early use — this causes slower first-startup and first-interaction performance; with a profile, those paths run at near-AOT speed from first launch
+    - Macrobenchmark: an instrumentation test library that drives a real device/emulator through user journeys and measures frame timing, startup time, and memory; use it to validate profile coverage and regression test between builds
+    - measure: startupMode=COLD gives the worst case (process killed before start); WARM (Activity re-create) and HOT (resume) represent common cases
+    - operationalize: run Macrobenchmark in CI on a physical device via Firebase Test Lab or a private device farm; gate releases on P50/P95 startup regression
+    Strong answer tip:
+    - re-generate the Baseline Profile after every major code change; stale profiles miss new hot paths added after the profile was captured
+
+
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/performance/performance-metrics/#explain-baseline-profiles-macrobenchmark-and-operationalizing-startup-">🚀 See Full Deep Dive</a>
+
