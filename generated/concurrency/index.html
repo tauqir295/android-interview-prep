@@ -2059,17 +2059,33 @@
 where child coroutines are tied to a parent scope.</p>
 <p>This ensures:</p>
 <ul>
-<li>automatic cancellation</li>
-<li>lifecycle-aware execution</li>
-<li>proper error propagation</li>
-<li>prevention of coroutine leaks</li>
+<li>
+<p>automatic cancellation</p>
+</li>
+<li>
+<p>lifecycle-aware execution</p>
+</li>
+<li>
+<p>proper error propagation</p>
+</li>
+<li>
+<p>prevention of coroutine leaks</p>
+</li>
 </ul>
 <p>Core concepts:</p>
 <ul>
-<li>CoroutineScope</li>
-<li>Job hierarchy</li>
-<li>parent-child relationships</li>
-<li>cooperative cancellation</li>
+<li>
+<p>CoroutineScope</p>
+</li>
+<li>
+<p>Job hierarchy</p>
+</li>
+<li>
+<p>parent-child relationships</p>
+</li>
+<li>
+<p>cooperative cancellation</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-internals/#structured-concurrency">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2090,10 +2106,18 @@ where child coroutines are tied to a parent scope.</p>
 <p>It can only be called from another suspend function or coroutine.</p>
 <p>Key points:</p>
 <ul>
-<li>not necessarily asynchronous by itself</li>
-<li>compiled into coroutine machinery</li>
-<li>can resume later after suspension</li>
-<li>used for non-blocking async work</li>
+<li>
+<p>not necessarily asynchronous by itself</p>
+</li>
+<li>
+<p>compiled into coroutine machinery</p>
+</li>
+<li>
+<p>can resume later after suspension</p>
+</li>
+<li>
+<p>used for non-blocking async work</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-internals/#suspend-functions">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2115,9 +2139,15 @@ where child coroutines are tied to a parent scope.</p>
 so it can resume later from the correct point.</p>
 <p>Interview points:</p>
 <ul>
-<li>coroutine state is captured in the continuation</li>
-<li>used by suspend functions and builders</li>
-<li>enables non-blocking suspension/resumption</li>
+<li>
+<p>coroutine state is captured in the continuation</p>
+</li>
+<li>
+<p>used by suspend functions and builders</p>
+</li>
+<li>
+<p>enables non-blocking suspension/resumption</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-internals/#continuation-and-cps">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2139,9 +2169,15 @@ so it can resume later from the correct point.</p>
 around each suspension point.</p>
 <p>Why it matters:</p>
 <ul>
-<li>explains how suspend functions resume</li>
-<li>helps reason about allocation and debugging</li>
-<li>is the basis for coroutine CPS transformation</li>
+<li>
+<p>explains how suspend functions resume</p>
+</li>
+<li>
+<p>helps reason about allocation and debugging</p>
+</li>
+<li>
+<p>is the basis for coroutine CPS transformation</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-internals/#coroutine-state-machine">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2162,10 +2198,18 @@ around each suspension point.</p>
 units of suspended work scheduled on threads.</p>
 <p>Practical distinction:</p>
 <ul>
-<li>threads are heavier to create/switch</li>
-<li>coroutines are cheaper and structured</li>
-<li>multiple coroutines can share a small thread pool</li>
-<li>coroutines do not replace threads for every use case</li>
+<li>
+<p>threads are heavier to create/switch</p>
+</li>
+<li>
+<p>coroutines are cheaper and structured</p>
+</li>
+<li>
+<p>multiple coroutines can share a small thread pool</p>
+</li>
+<li>
+<p>coroutines do not replace threads for every use case</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/threads-vs-coroutines/#threads-vs-coroutines">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2185,9 +2229,15 @@ units of suspended work scheduled on threads.</p>
 <p>Dispatchers decide where coroutine code runs.</p>
 <p>Common dispatchers:</p>
 <ul>
-<li><code>Main</code> for UI work</li>
-<li><code>IO</code> for blocking I/O</li>
-<li><code>Default</code> for CPU-heavy work</li>
+<li>
+<p><code>Main</code> for UI work</p>
+</li>
+<li>
+<p><code>IO</code> for blocking I/O</p>
+</li>
+<li>
+<p><code>Default</code> for CPU-heavy work</p>
+</li>
 </ul>
 <p>Good interview answer: dispatchers are a scheduling policy,
 not a background-thread guarantee by themselves.</p>
@@ -2210,9 +2260,15 @@ not a background-thread guarantee by themselves.</p>
 for a scoped block of work.</p>
 <p>It is useful for:</p>
 <ul>
-<li>moving blocking work off the main thread</li>
-<li>returning results back to the original coroutine</li>
-<li>keeping context switching explicit and readable</li>
+<li>
+<p>moving blocking work off the main thread</p>
+</li>
+<li>
+<p>returning results back to the original coroutine</p>
+</li>
+<li>
+<p>keeping context switching explicit and readable</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/threads-dispatchers-context/#withcontext-purpose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2232,10 +2288,18 @@ for a scoped block of work.</p>
 <p><code>CoroutineScope</code> defines the lifetime boundary for launching coroutines.</p>
 <p>It matters because it controls:</p>
 <ul>
-<li>cancellation ownership</li>
-<li>structured concurrency behavior</li>
-<li>leak prevention</li>
-<li>lifecycle alignment in Android</li>
+<li>
+<p>cancellation ownership</p>
+</li>
+<li>
+<p>structured concurrency behavior</p>
+</li>
+<li>
+<p>leak prevention</p>
+</li>
+<li>
+<p>lifecycle alignment in Android</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/#coroutine-scope">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2257,9 +2321,15 @@ for a scoped block of work.</p>
 Child failure can also propagate upward depending on scope type.</p>
 <p>Interview points:</p>
 <ul>
-<li>explicit ownership tree</li>
-<li>cooperative cancellation</li>
-<li>failure propagation rules</li>
+<li>
+<p>explicit ownership tree</p>
+</li>
+<li>
+<p>cooperative cancellation</p>
+</li>
+<li>
+<p>failure propagation rules</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/#job-hierarchy">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2281,8 +2351,12 @@ Child failure can also propagate upward depending on scope type.</p>
 without automatically cancelling others.</p>
 <p>Use it when:</p>
 <ul>
-<li>sibling tasks are independent</li>
-<li>partial failure should not bring down the whole scope</li>
+<li>
+<p>sibling tasks are independent</p>
+</li>
+<li>
+<p>partial failure should not bring down the whole scope</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/#supervisorjob">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2304,8 +2378,12 @@ without automatically cancelling others.</p>
 failure in one child while handling its result explicitly.</p>
 <p>Difference from <code>coroutineScope</code>:</p>
 <ul>
-<li>failure isolation vs fail-fast cancellation</li>
-<li>localized supervision boundary</li>
+<li>
+<p>failure isolation vs fail-fast cancellation</p>
+</li>
+<li>
+<p>localized supervision boundary</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/structured-scope-and-jobs/#supervisorScope">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2327,9 +2405,15 @@ failure in one child while handling its result explicitly.</p>
 suspension point.</p>
 <p>Important ideas:</p>
 <ul>
-<li><code>Job.cancel()</code> requests cancellation</li>
-<li>suspension functions often detect it automatically</li>
-<li>non-cooperative work must check manually</li>
+<li>
+<p><code>Job.cancel()</code> requests cancellation</p>
+</li>
+<li>
+<p>suspension functions often detect it automatically</p>
+</li>
+<li>
+<p>non-cooperative work must check manually</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/#coroutine-cancellation">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2352,9 +2436,15 @@ and stop themselves instead of being forcefully killed.</p>
 abrupt state corruption.</p>
 <p>Common tools:</p>
 <ul>
-<li><code>isActive</code></li>
-<li><code>ensureActive()</code></li>
-<li>cancellable suspending functions</li>
+<li>
+<p><code>isActive</code></p>
+</li>
+<li>
+<p><code>ensureActive()</code></p>
+</li>
+<li>
+<p>cancellable suspending functions</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/#cooperative-cancellation">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2374,10 +2464,18 @@ abrupt state corruption.</p>
 <p>Coroutine exception handling depends on the coroutine builder and scope.</p>
 <p>Key points:</p>
 <ul>
-<li><code>launch</code> propagates exceptions to its parent</li>
-<li><code>async</code> stores exceptions until awaited</li>
-<li>failures can cancel sibling children in regular scopes</li>
-<li>supervision changes propagation behavior</li>
+<li>
+<p><code>launch</code> propagates exceptions to its parent</p>
+</li>
+<li>
+<p><code>async</code> stores exceptions until awaited</p>
+</li>
+<li>
+<p>failures can cancel sibling children in regular scopes</p>
+</li>
+<li>
+<p>supervision changes propagation behavior</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/#coroutine-exception-handling">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2399,9 +2497,15 @@ launched with <code>launch</code>.</p>
 <p>It is not a replacement for try/catch in suspend code.</p>
 <p>Use it to:</p>
 <ul>
-<li>log/report uncaught failures</li>
-<li>provide a last-resort safety net</li>
-<li>centralize crash telemetry in root scopes</li>
+<li>
+<p>log/report uncaught failures</p>
+</li>
+<li>
+<p>provide a last-resort safety net</p>
+</li>
+<li>
+<p>centralize crash telemetry in root scopes</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/cancellation-exception-supervision/#coroutineexceptionhandler">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2422,10 +2526,18 @@ launched with <code>launch</code>.</p>
 produces a result.</p>
 <p>Interview framing:</p>
 <ul>
-<li><code>launch</code> returns <code>Job</code></li>
-<li><code>async</code> returns <code>Deferred</code></li>
-<li><code>async</code> exceptions are observed on <code>await()</code></li>
-<li>prefer the simplest builder that matches the need</li>
+<li>
+<p><code>launch</code> returns <code>Job</code></p>
+</li>
+<li>
+<p><code>async</code> returns <code>Deferred</code></p>
+</li>
+<li>
+<p><code>async</code> exceptions are observed on <code>await()</code></p>
+</li>
+<li>
+<p>prefer the simplest builder that matches the need</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/launch-async-parallelism/#launch-vs-async">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2466,9 +2578,15 @@ avoid doing work until the result is needed.</p>
 concurrently active jobs.</p>
 <p>Common approaches:</p>
 <ul>
-<li>semaphore-style gating</li>
-<li>dispatcher <code>limitedParallelism</code></li>
-<li>batching work into controlled chunks</li>
+<li>
+<p>semaphore-style gating</p>
+</li>
+<li>
+<p>dispatcher <code>limitedParallelism</code></p>
+</li>
+<li>
+<p>batching work into controlled chunks</p>
+</li>
 </ul>
 <p>This prevents resource saturation and tail-latency spikes.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/launch-async-parallelism/#parallelism-limit">🚀 See Full Deep Dive</a></p>
@@ -2491,9 +2609,15 @@ concurrently active jobs.</p>
 improving efficiency compared with one-thread-per-task models.</p>
 <p>Interview points:</p>
 <ul>
-<li>pools are shared resources</li>
-<li>pool saturation affects latency</li>
-<li>CPU and blocking work should be separated carefully</li>
+<li>
+<p>pools are shared resources</p>
+</li>
+<li>
+<p>pool saturation affects latency</p>
+</li>
+<li>
+<p>CPU and blocking work should be separated carefully</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/scheduler-thread-pools/#thread-pools">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2514,9 +2638,15 @@ improving efficiency compared with one-thread-per-task models.</p>
 or thread pool because resources are monopolized by other work.</p>
 <p>In Android apps it often appears when:</p>
 <ul>
-<li>blocking code occupies shared pools</li>
-<li>parallelism is unbounded</li>
-<li>main-thread work is overloaded</li>
+<li>
+<p>blocking code occupies shared pools</p>
+</li>
+<li>
+<p>parallelism is unbounded</p>
+</li>
+<li>
+<p>main-thread work is overloaded</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/scheduler-thread-pools/#thread-starvation">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2537,9 +2667,15 @@ or thread pool because resources are monopolized by other work.</p>
 through a dispatcher view.</p>
 <p>It is useful for:</p>
 <ul>
-<li>protecting shared downstream resources</li>
-<li>preventing resource thrash</li>
-<li>balancing throughput and fairness</li>
+<li>
+<p>protecting shared downstream resources</p>
+</li>
+<li>
+<p>preventing resource thrash</p>
+</li>
+<li>
+<p>balancing throughput and fairness</p>
+</li>
 </ul>
 <p>Good interview answer: it is a concurrency control tool, not just an optimization.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/parallelism-and-scheduling/#limited-parallelism">🚀 See Full Deep Dive</a></p>
@@ -2562,9 +2698,15 @@ through a dispatcher view.</p>
 cancellation-aware and coroutine-based.</p>
 <p>Key traits:</p>
 <ul>
-<li>declarative stream pipeline</li>
-<li>cold by default</li>
-<li>integrates with coroutines and operators</li>
+<li>
+<p>declarative stream pipeline</p>
+</li>
+<li>
+<p>cold by default</p>
+</li>
+<li>
+<p>integrates with coroutines and operators</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#flow-what-is">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2585,9 +2727,15 @@ cancellation-aware and coroutine-based.</p>
 Hot flows can emit independently of collectors.</p>
 <p>In interviews, explain:</p>
 <ul>
-<li>cold = collector drives execution</li>
-<li>hot = producer exists independently</li>
-<li>StateFlow and SharedFlow are hot stream primitives</li>
+<li>
+<p>cold = collector drives execution</p>
+</li>
+<li>
+<p>hot = producer exists independently</p>
+</li>
+<li>
+<p>StateFlow and SharedFlow are hot stream primitives</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#cold-vs-hot-flow">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2610,9 +2758,15 @@ downstream can consume it.</p>
 or explicit operator choices.</p>
 <p>Why it matters:</p>
 <ul>
-<li>protects memory and responsiveness</li>
-<li>affects latency and throughput</li>
-<li>can change user-visible behavior</li>
+<li>
+<p>protects memory and responsiveness</p>
+</li>
+<li>
+<p>affects latency and throughput</p>
+</li>
+<li>
+<p>can change user-visible behavior</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#backpressure">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2633,9 +2787,15 @@ or explicit operator choices.</p>
 work and only the newest value matters.</p>
 <p>Common use cases:</p>
 <ul>
-<li>search suggestions</li>
-<li>rapid UI updates</li>
-<li>debounced rendering pipelines</li>
+<li>
+<p>search suggestions</p>
+</li>
+<li>
+<p>rapid UI updates</p>
+</li>
+<li>
+<p>debounced rendering pipelines</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-operators-and-backpressure/#collectLatest">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2656,9 +2816,15 @@ work and only the newest value matters.</p>
 cancelling the previous inner stream.</p>
 <p>This is ideal for:</p>
 <ul>
-<li>query-driven network search</li>
-<li>live UI filters</li>
-<li>state pipelines where only the newest source matters</li>
+<li>
+<p>query-driven network search</p>
+</li>
+<li>
+<p>live UI filters</p>
+</li>
+<li>
+<p>state pipelines where only the newest source matters</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-operators-and-backpressure/#flatMapLatest">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2679,8 +2845,12 @@ cancelling the previous inner stream.</p>
 Conflation drops intermediate values and keeps the latest one.</p>
 <p>Use cases:</p>
 <ul>
-<li>buffering for throughput</li>
-<li>conflation for UI state that only needs the latest value</li>
+<li>
+<p>buffering for throughput</p>
+</li>
+<li>
+<p>conflation for UI state that only needs the latest value</p>
+</li>
 </ul>
 <p>Tradeoff: speed vs completeness of intermediate emissions.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-operators-and-backpressure/#buffering-conflation">🚀 See Full Deep Dive</a></p>
@@ -2702,9 +2872,15 @@ Conflation drops intermediate values and keeps the latest one.</p>
 SharedFlow represents shared emissions/events without a required initial state.</p>
 <p>Good interview framing:</p>
 <ul>
-<li>StateFlow for persistent UI state</li>
-<li>SharedFlow for one-off events or broadcasts</li>
-<li>both are hot and coroutine-friendly</li>
+<li>
+<p>StateFlow for persistent UI state</p>
+</li>
+<li>
+<p>SharedFlow for one-off events or broadcasts</p>
+</li>
+<li>
+<p>both are hot and coroutine-friendly</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/stateflow-sharedflow-and-channels/#stateflow-vs-sharedflow">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2726,8 +2902,12 @@ one-consumer model.</p>
 <p>Use SharedFlow when you want multicasting or multiple subscribers.</p>
 <p>Interview nuance:</p>
 <ul>
-<li>Channel = delivery semantics and backpressure control</li>
-<li>SharedFlow = broadcast-style hot stream</li>
+<li>
+<p>Channel = delivery semantics and backpressure control</p>
+</li>
+<li>
+<p>SharedFlow = broadcast-style hot stream</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/stateflow-sharedflow-and-channels/#channels-vs-sharedflow">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2748,9 +2928,15 @@ one-consumer model.</p>
 <code>shareIn</code> shares upstream work among multiple collectors.</p>
 <p>They are useful when:</p>
 <ul>
-<li>expensive upstream work should be shared</li>
-<li>UI needs lifecycle-friendly hot stream behavior</li>
-<li>a cold stream should become reusable across collectors</li>
+<li>
+<p>expensive upstream work should be shared</p>
+</li>
+<li>
+<p>UI needs lifecycle-friendly hot stream behavior</p>
+</li>
+<li>
+<p>a cold stream should become reusable across collectors</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-sharing-and-hot-streams/#statein-sharein">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2771,9 +2957,15 @@ one-consumer model.</p>
 toast messages, or snackbar actions.</p>
 <p>Good practice:</p>
 <ul>
-<li>keep replay small or zero for one-off events</li>
-<li>collect from lifecycle-aware UI scopes</li>
-<li>avoid encoding events as sticky state</li>
+<li>
+<p>keep replay small or zero for one-off events</p>
+</li>
+<li>
+<p>collect from lifecycle-aware UI scopes</p>
+</li>
+<li>
+<p>avoid encoding events as sticky state</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-sharing-and-hot-streams/#one-off-events-with-sharedflow">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2795,9 +2987,15 @@ toast messages, or snackbar actions.</p>
 observers, or callbacks rather than suspend/Flow primitives.</p>
 <p>Key concerns:</p>
 <ul>
-<li>close resources in awaitClose</li>
-<li>avoid leaking listeners</li>
-<li>respect backpressure and cancellation</li>
+<li>
+<p>close resources in awaitClose</p>
+</li>
+<li>
+<p>avoid leaking listeners</p>
+</li>
+<li>
+<p>respect backpressure and cancellation</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/callbackflow-and-channelflow/#callbackflow">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2836,10 +3034,18 @@ need a single Flow channel to merge them safely.</p>
 <p>Bridge callbacks into Flow with a lifecycle-aware, cancellable adapter.</p>
 <p>Practical rules:</p>
 <ul>
-<li>register listener when collection starts</li>
-<li>unregister in awaitClose or equivalent cleanup</li>
-<li>avoid blocking callback threads</li>
-<li>keep backpressure and cancellation in mind</li>
+<li>
+<p>register listener when collection starts</p>
+</li>
+<li>
+<p>unregister in awaitClose or equivalent cleanup</p>
+</li>
+<li>
+<p>avoid blocking callback threads</p>
+</li>
+<li>
+<p>keep backpressure and cancellation in mind</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/callbackflow-and-channelflow/#flow-callback-interop">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2861,9 +3067,15 @@ need a single Flow channel to merge them safely.</p>
 lock might.</p>
 <p>Interview points:</p>
 <ul>
-<li>suspending lock acquisition</li>
-<li>cooperative with coroutines</li>
-<li>useful for protecting shared mutable state</li>
+<li>
+<p>suspending lock acquisition</p>
+</li>
+<li>
+<p>cooperative with coroutines</p>
+</li>
+<li>
+<p>useful for protecting shared mutable state</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/#mutex">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2884,9 +3096,15 @@ lock might.</p>
 immutable data, and message passing.</p>
 <p>Good interview answer:</p>
 <ul>
-<li>choose the simplest strategy that preserves correctness</li>
-<li>prefer immutability when practical</li>
-<li>use locks only around real shared mutable state</li>
+<li>
+<p>choose the simplest strategy that preserves correctness</p>
+</li>
+<li>
+<p>prefer immutability when practical</p>
+</li>
+<li>
+<p>use locks only around real shared mutable state</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/#synchronization-strategies">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2907,10 +3125,18 @@ immutable data, and message passing.</p>
 writes can interleave unpredictably.</p>
 <p>Risks include:</p>
 <ul>
-<li>race conditions</li>
-<li>inconsistent reads</li>
-<li>deadlocks and contention</li>
-<li>difficult debugging</li>
+<li>
+<p>race conditions</p>
+</li>
+<li>
+<p>inconsistent reads</p>
+</li>
+<li>
+<p>deadlocks and contention</p>
+</li>
+<li>
+<p>difficult debugging</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/#shared-mutable-state">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2930,9 +3156,15 @@ writes can interleave unpredictably.</p>
 <p>Atomic operations allow safe lock-free updates for certain shared values.</p>
 <p>They are useful when you need:</p>
 <ul>
-<li>simple counters or flags</li>
-<li>high-throughput coordination</li>
-<li>predictable low-overhead synchronization</li>
+<li>
+<p>simple counters or flags</p>
+</li>
+<li>
+<p>high-throughput coordination</p>
+</li>
+<li>
+<p>predictable low-overhead synchronization</p>
+</li>
 </ul>
 <p>They are not a universal replacement for locks.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/synchronization-and-mutex/#atomic-operations">🚀 See Full Deep Dive</a></p>
@@ -2956,8 +3188,12 @@ or dispatcher.</p>
 can mutate the state at a time.</p>
 <p>Common Android examples:</p>
 <ul>
-<li>main-thread UI ownership</li>
-<li>single-threaded executors for caches</li>
+<li>
+<p>main-thread UI ownership</p>
+</li>
+<li>
+<p>single-threaded executors for caches</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/thread-confinement-and-race-conditions/#thread-confinement">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2978,9 +3214,15 @@ can mutate the state at a time.</p>
 concurrent operations.</p>
 <p>In practice it appears as:</p>
 <ul>
-<li>inconsistent UI or state</li>
-<li>flaky tests</li>
-<li>intermittent crashes or stale data</li>
+<li>
+<p>inconsistent UI or state</p>
+</li>
+<li>
+<p>flaky tests</p>
+</li>
+<li>
+<p>intermittent crashes or stale data</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/thread-confinement-and-race-conditions/#race-conditions">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3001,9 +3243,15 @@ concurrent operations.</p>
 and none can continue.</p>
 <p>Avoid deadlocks by:</p>
 <ul>
-<li>minimizing lock scope</li>
-<li>using consistent lock ordering</li>
-<li>preferring non-blocking coordination when possible</li>
+<li>
+<p>minimizing lock scope</p>
+</li>
+<li>
+<p>using consistent lock ordering</p>
+</li>
+<li>
+<p>preferring non-blocking coordination when possible</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/thread-confinement-and-race-conditions/#deadlocks">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3023,9 +3271,15 @@ and none can continue.</p>
 <p>Test coroutines with a controlled test dispatcher and coroutine test scope.</p>
 <p>Good practices:</p>
 <ul>
-<li>replace real dispatchers with test dispatchers</li>
-<li>assert state transitions deterministically</li>
-<li>avoid real delays and sleeps in tests</li>
+<li>
+<p>replace real dispatchers with test dispatchers</p>
+</li>
+<li>
+<p>assert state transitions deterministically</p>
+</li>
+<li>
+<p>avoid real delays and sleeps in tests</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-testing-and-virtual-time/#coroutine-testing">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3046,9 +3300,15 @@ and none can continue.</p>
 <p>This makes delay-based and timeout-based tests fast and deterministic.</p>
 <p>It is especially useful for:</p>
 <ul>
-<li>retry logic</li>
-<li>debounce behavior</li>
-<li>cancellation timing</li>
+<li>
+<p>retry logic</p>
+</li>
+<li>
+<p>debounce behavior</p>
+</li>
+<li>
+<p>cancellation timing</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-testing-and-virtual-time/#virtual-time-testing">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3068,9 +3328,15 @@ and none can continue.</p>
 <p>Test dispatchers let you control coroutine execution in tests.</p>
 <p>This helps you:</p>
 <ul>
-<li>avoid flaky scheduler-dependent behavior</li>
-<li>make execution deterministic</li>
-<li>verify concurrency logic without real threads or delays</li>
+<li>
+<p>avoid flaky scheduler-dependent behavior</p>
+</li>
+<li>
+<p>make execution deterministic</p>
+</li>
+<li>
+<p>verify concurrency logic without real threads or delays</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-testing-and-virtual-time/#test-dispatchers">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3090,9 +3356,15 @@ and none can continue.</p>
 <p>Debugging coroutines in production requires good tracing and context naming.</p>
 <p>Helpful techniques:</p>
 <ul>
-<li>name coroutine jobs meaningfully</li>
-<li>log structured context and cancellation events</li>
-<li>correlate coroutine lifecycles with user actions and requests</li>
+<li>
+<p>name coroutine jobs meaningfully</p>
+</li>
+<li>
+<p>log structured context and cancellation events</p>
+</li>
+<li>
+<p>correlate coroutine lifecycles with user actions and requests</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-debugging-and-observability/#coroutine-debugging">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3113,9 +3385,15 @@ and none can continue.</p>
 measuring latency, and tracking cancellations/failures.</p>
 <p>Useful signals:</p>
 <ul>
-<li>collection duration</li>
-<li>emission count and rate</li>
-<li>cancellation and error frequency</li>
+<li>
+<p>collection duration</p>
+</li>
+<li>
+<p>emission count and rate</p>
+</li>
+<li>
+<p>cancellation and error frequency</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/coroutine-debugging-and-observability/#trace-and-observability">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3195,10 +3473,18 @@ an ANR.</p>
 and minimizing blocking work.</p>
 <p>Practical steps:</p>
 <ul>
-<li>measure before tuning</li>
-<li>keep main-thread work minimal</li>
-<li>share expensive upstream work</li>
-<li>use bounded pools and backpressure-aware flows</li>
+<li>
+<p>measure before tuning</p>
+</li>
+<li>
+<p>keep main-thread work minimal</p>
+</li>
+<li>
+<p>share expensive upstream work</p>
+</li>
+<li>
+<p>use bounded pools and backpressure-aware flows</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/production-concurrency-patterns-and-tuning/#concurrency-performance-optimization">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3216,15 +3502,29 @@ and minimizing blocking work.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Exception handling in coroutines differs from synchronous code because cancellation and failures propagate through the parent-child hierarchy.
-In interviews, cover:
-- try/catch inside a coroutine: catches exceptions thrown by suspend functions normally — this works but only within the coroutine that uses it
-- uncaught exceptions in launch: propagate to the parent coroutine and cancel the entire scope unless a SupervisorJob is involved; use CoroutineExceptionHandler as the last resort handler attached to the scope
-- CoroutineExceptionHandler: installed on the CoroutineScope or GlobalScope; called for uncaught exceptions from launch-based coroutines; NOT called for async-based ones (async propagates via Deferred.await())
-- async: wrap await() in try/catch; the exception is rethrown at await() time; CoroutineExceptionHandler does not help here
-- SupervisorJob: child failures do not cancel siblings; use supervisorScope { } for independent parallel tasks where one failing should not kill all others
-Strong answer tip:
-- CancellationException is special — it should never be caught and swallowed; always rethrow it so coroutine cancellation works correctly</p>
+<p>Exception handling in coroutines differs from synchronous code because cancellation and failures propagate through the parent-child hierarchy.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>try/catch inside a coroutine: catches exceptions thrown by suspend functions normally — this works but only within the coroutine that uses it</p>
+</li>
+<li>
+<p>uncaught exceptions in launch: propagate to the parent coroutine and cancel the entire scope unless a SupervisorJob is involved; use CoroutineExceptionHandler as the last resort handler attached to the scope</p>
+</li>
+<li>
+<p>CoroutineExceptionHandler: installed on the CoroutineScope or GlobalScope; called for uncaught exceptions from launch-based coroutines; NOT called for async-based ones (async propagates via Deferred.await())</p>
+</li>
+<li>
+<p>async: wrap await() in try/catch; the exception is rethrown at await() time; CoroutineExceptionHandler does not help here</p>
+</li>
+<li>
+<p>SupervisorJob: child failures do not cancel siblings; use supervisorScope { } for independent parallel tasks where one failing should not kill all others</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>CancellationException is special — it should never be caught and swallowed; always rethrow it so coroutine cancellation works correctly</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#explain-coroutine-exception-handling-try-catch-coroutineexceptionhandl">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3242,14 +3542,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Choosing between Channel, Flow, and SharedFlow depends on delivery guarantees, subscriber count, and lifecycle management requirements.
-In interviews, cover:
-- cold Flow: lazy, unicast, each collector gets its own sequence; perfect for repository data that should start fresh per subscriber; no buffering by default
-- SharedFlow: hot, multicast, can replay latest N values; use for events that multiple observers should observe simultaneously (e.g. UI + analytics); never loses emissions past the replay buffer
-- Channel: hot, point-to-point; only one consumer receives each item (unless you fan-out manually); suited for producer/consumer queues and work distribution between coroutines
-- StateFlow: special SharedFlow with replay=1 and conflation; the canonical holder of current UI state — always holds a current value, deduplicated by equality
-Strong answer tip:
-- the classic mistake is using Channel for UI events observed by multiple elements; use SharedFlow(replay=0) or a Channel wrapped in receiveAsFlow() for single-shot event delivery</p>
+<p>Choosing between Channel, Flow, and SharedFlow depends on delivery guarantees, subscriber count, and lifecycle management requirements.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>cold Flow: lazy, unicast, each collector gets its own sequence; perfect for repository data that should start fresh per subscriber; no buffering by default</p>
+</li>
+<li>
+<p>SharedFlow: hot, multicast, can replay latest N values; use for events that multiple observers should observe simultaneously (e.g. UI + analytics); never loses emissions past the replay buffer</p>
+</li>
+<li>
+<p>Channel: hot, point-to-point; only one consumer receives each item (unless you fan-out manually); suited for producer/consumer queues and work distribution between coroutines</p>
+</li>
+<li>
+<p>StateFlow: special SharedFlow with replay=1 and conflation; the canonical holder of current UI state — always holds a current value, deduplicated by equality</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>the classic mistake is using Channel for UI events observed by multiple elements; use SharedFlow(replay=0) or a Channel wrapped in receiveAsFlow() for single-shot event delivery</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#compare-channels-vs-flow-vs-sharedflow-how-to-choose-the-right-primiti">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3265,15 +3577,29 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin coroutines use cooperative cancellation — a coroutine is only cancelled when it reaches a suspension point that checks cancellation status.
-In interviews, cover:
-- cancellation is checked at every suspend function from the coroutines library (delay, yield, withContext, IO operations); pure CPU-bound loops without suspension never see cancellation
-- ensureActive() or isActive checks make CPU-intensive loops cancellable: while(isActive) { ... }
-- blocking calls (Thread.sleep, JDBC queries) block the thread and ignore cancellation; wrap with Dispatchers.IO and use yield() if the work is interruptible
-- withContext(NonCancellable) { ... }: use only for cleanup in a finally block that must run even after cancellation — never use it to suppress cancellation of the main work
-- catching CancellationException and not re-throwing it breaks structured concurrency; always rethrow
-Strong answer tip:
-- demonstrate: for(i in 0..1_000_000) { expensiveCompute(i) } will not respond to cancel; fix: for(i in 0..1_000_000) { ensureActive(); expensiveCompute(i) }</p>
+<p>Kotlin coroutines use cooperative cancellation — a coroutine is only cancelled when it reaches a suspension point that checks cancellation status.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>cancellation is checked at every suspend function from the coroutines library (delay, yield, withContext, IO operations); pure CPU-bound loops without suspension never see cancellation</p>
+</li>
+<li>
+<p>ensureActive() or isActive checks make CPU-intensive loops cancellable: while(isActive) { ... }</p>
+</li>
+<li>
+<p>blocking calls (Thread.sleep, JDBC queries) block the thread and ignore cancellation; wrap with Dispatchers.IO and use yield() if the work is interruptible</p>
+</li>
+<li>
+<p>withContext(NonCancellable) { ... }: use only for cleanup in a finally block that must run even after cancellation — never use it to suppress cancellation of the main work</p>
+</li>
+<li>
+<p>catching CancellationException and not re-throwing it breaks structured concurrency; always rethrow</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>demonstrate: for(i in 0..1_000_000) { expensiveCompute(i) } will not respond to cancel; fix: for(i in 0..1_000_000) { ensureActive(); expensiveCompute(i) }</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#explain-cancellation-cooperation-in-coroutines-where-it-works-and-wher">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3290,14 +3616,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>withTimeout cancels the block with TimeoutCancellationException when the deadline elapses; this propagates up unless caught, while withTimeoutOrNull returns null instead.
-In interviews, cover:
-- withTimeout cancellation is a CancellationException subclass — it propagates up and cancels the enclosing scope unless explicitly caught with try/catch(TimeoutCancellationException) or by using withTimeoutOrNull
-- the scope is cancelled after timeout but started work (e.g. a started network request) may not be cancelled if the underlying dispatcher or blocking I/O doesn't support interruption
-- UX trap: if a UI action timeout fires while the user is still interacting, partial state changes may have already happened; pair with proper rollback logic or use idempotent operations
-- withTimeoutOrNull is safer for optional data fetching where a fallback is acceptable
-Strong answer tip:
-- distinguish: timeout inside a supervisorScope means only that child is cancelled; timeout inside a regular scope cancels all siblings — this is frequently wrong at the UI layer</p>
+<p>withTimeout cancels the block with TimeoutCancellationException when the deadline elapses; this propagates up unless caught, while withTimeoutOrNull returns null instead.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>withTimeout cancellation is a CancellationException subclass — it propagates up and cancels the enclosing scope unless explicitly caught with try/catch(TimeoutCancellationException) or by using withTimeoutOrNull</p>
+</li>
+<li>
+<p>the scope is cancelled after timeout but started work (e.g. a started network request) may not be cancelled if the underlying dispatcher or blocking I/O doesn't support interruption</p>
+</li>
+<li>
+<p>UX trap: if a UI action timeout fires while the user is still interacting, partial state changes may have already happened; pair with proper rollback logic or use idempotent operations</p>
+</li>
+<li>
+<p>withTimeoutOrNull is safer for optional data fetching where a fallback is acceptable</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>distinguish: timeout inside a supervisorScope means only that child is cancelled; timeout inside a regular scope cancels all siblings — this is frequently wrong at the UI layer</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#how-do-withtimeout-and-withtimeoutornull-work-and-what-are-the-ux-corr">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3314,14 +3652,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Dispatchers.Main.immediate executes a coroutine body directly without re-posting to the main looper if the call is already on the main thread, reducing one frame of latency.
-In interviews, cover:
-- Dispatchers.Main posts a Runnable to the main message queue even if called from the main thread; Dispatchers.Main.immediate checks and runs inline if already on main — this avoids an extra frame delay for UI updates
-- re-entrancy trap: if immediate execution causes a UI state update while a measure/layout/draw pass is in progress, the resulting re-draw may be dropped or cause visual glitches
-- preferred use: ViewModelScope uses Main.immediate by default in Jetpack so state updates are applied synchronously when possible without async overhead
-- distinguish from calling launch(Dispatchers.Main): always posts; launch(Dispatchers.Main.immediate): may run inline
-Strong answer tip:
-- use Main.immediate for ViewModel → UI state pushes; avoid it for transitions or animations where you explicitly need the next frame boundary</p>
+<p>Dispatchers.Main.immediate executes a coroutine body directly without re-posting to the main looper if the call is already on the main thread, reducing one frame of latency.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>Dispatchers.Main posts a Runnable to the main message queue even if called from the main thread; Dispatchers.Main.immediate checks and runs inline if already on main — this avoids an extra frame delay for UI updates</p>
+</li>
+<li>
+<p>re-entrancy trap: if immediate execution causes a UI state update while a measure/layout/draw pass is in progress, the resulting re-draw may be dropped or cause visual glitches</p>
+</li>
+<li>
+<p>preferred use: ViewModelScope uses Main.immediate by default in Jetpack so state updates are applied synchronously when possible without async overhead</p>
+</li>
+<li>
+<p>distinguish from calling launch(Dispatchers.Main): always posts; launch(Dispatchers.Main.immediate): may run inline</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>use Main.immediate for ViewModel → UI state pushes; avoid it for transitions or animations where you explicitly need the next frame boundary</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#explain-dispatchers-main-immediate-and-re-entrancy-hazards-in-coroutin">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3339,14 +3689,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Conflating state and transient events in a StateFlow or LiveData causes events to replay on configuration change; the correct model separates durable state from consumed-once events.
-In interviews, cover:
-- LiveData's SingleLiveEvent allowed one-shot delivery but was not multi-observer safe; with SharedFlow(replay=0), an emission is delivered to current collectors only and is never replayed
-- state: durable, always has a current value, should be replayed to new observers (e.g. loading/content/error enum); use StateFlow
-- events: consumed-once side effects (navigation, snackbar, dialog show); use SharedFlow(replay=0, extraBufferCapacity=1) or Channel.receiveAsFlow(); never put them in StateFlow
-- on rotation: the ViewModel is retained; a new collector subscribes and if state is in StateFlow, it receives the last value — correct; if a one-shot event was in StateFlow, it re-fires — incorrect
-Strong answer tip:
-- the Compose-specific problem: LaunchedEffect(key) runs when key changes; if you use an ever-incrementing counter as a key for events, be careful about recomposition re-launching the effect</p>
+<p>Conflating state and transient events in a StateFlow or LiveData causes events to replay on configuration change; the correct model separates durable state from consumed-once events.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>LiveData's SingleLiveEvent allowed one-shot delivery but was not multi-observer safe; with SharedFlow(replay=0), an emission is delivered to current collectors only and is never replayed</p>
+</li>
+<li>
+<p>state: durable, always has a current value, should be replayed to new observers (e.g. loading/content/error enum); use StateFlow</p>
+</li>
+<li>
+<p>events: consumed-once side effects (navigation, snackbar, dialog show); use SharedFlow(replay=0, extraBufferCapacity=1) or Channel.receiveAsFlow(); never put them in StateFlow</p>
+</li>
+<li>
+<p>on rotation: the ViewModel is retained; a new collector subscribes and if state is in StateFlow, it receives the last value — correct; if a one-shot event was in StateFlow, it re-fires — incorrect</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>the Compose-specific problem: LaunchedEffect(key) runs when key changes; if you use an ever-incrementing counter as a key for events, be careful about recomposition re-launching the effect</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#explain-state-vs-event-modeling-and-the-singleliveevent-replacement-pa">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3363,14 +3725,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>callbackFlow bridges callback-based APIs to Flow, but incorrect cleanup in awaitClose causes callback leaks and undefined behavior on cancellation.
-In interviews, cover:
-- callbackFlow { ... awaitClose { unregister() } }: awaitClose holds the flow open until the collector cancels; the lambda inside awaitClose must unregister the callback unconditionally
-- forgetting awaitClose or leaving it empty means the callback continues firing after the collector stops, creating a memory or resource leak
-- trySend() not send(): inside a callback, you cannot call send() (which is a suspend call); use trySend() or buffer the flow; if the buffer is full, data is dropped — size the buffer based on expected callback frequency
-- concurrency: callbacks may fire from any thread; Flow's internal channel is thread-safe but ensure data classes passed out are immutable or defensively copied
-Strong answer tip:
-- test cancellation explicitly: cancel the scope collecting the flow and verify via a mock that the callback was unregistered — this is the most common callbackFlow bug in production</p>
+<p>callbackFlow bridges callback-based APIs to Flow, but incorrect cleanup in awaitClose causes callback leaks and undefined behavior on cancellation.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>callbackFlow { ... awaitClose { unregister() } }: awaitClose holds the flow open until the collector cancels; the lambda inside awaitClose must unregister the callback unconditionally</p>
+</li>
+<li>
+<p>forgetting awaitClose or leaving it empty means the callback continues firing after the collector stops, creating a memory or resource leak</p>
+</li>
+<li>
+<p>trySend() not send(): inside a callback, you cannot call send() (which is a suspend call); use trySend() or buffer the flow; if the buffer is full, data is dropped — size the buffer based on expected callback frequency</p>
+</li>
+<li>
+<p>concurrency: callbacks may fire from any thread; Flow's internal channel is thread-safe but ensure data classes passed out are immutable or defensively copied</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>test cancellation explicitly: cancel the scope collecting the flow and verify via a mock that the callback was unregistered — this is the most common callbackFlow bug in production</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/concurrency/flow-fundamentals/#explain-callbackflow-correctness-awaitclose-cancellation-and-leak-prev">🚀 See Full Deep Dive</a></p>
 </details>
 

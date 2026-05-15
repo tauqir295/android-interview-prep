@@ -2148,10 +2148,18 @@
 and Compose updates it when state changes.</p>
 <p>Key interview points:</p>
 <ul>
-<li>no manual view mutation for most updates</li>
-<li>composables are state-driven functions</li>
-<li>runtime handles incremental UI updates</li>
-<li>easier unidirectional data flow patterns</li>
+<li>
+<p>no manual view mutation for most updates</p>
+</li>
+<li>
+<p>composables are state-driven functions</p>
+</li>
+<li>
+<p>runtime handles incremental UI updates</p>
+</li>
+<li>
+<p>easier unidirectional data flow patterns</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#compose-declarative-ui">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2172,10 +2180,18 @@ and Compose updates it when state changes.</p>
 that emits UI into the Compose tree.</p>
 <p>Important details:</p>
 <ul>
-<li>called from other composables</li>
-<li>can read state and react to changes</li>
-<li>should be side-effect free in the UI phase</li>
-<li>participates in recomposition and skipping</li>
+<li>
+<p>called from other composables</p>
+</li>
+<li>
+<p>can read state and react to changes</p>
+</li>
+<li>
+<p>should be side-effect free in the UI phase</p>
+</li>
+<li>
+<p>participates in recomposition and skipping</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-function">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2196,10 +2212,18 @@ that emits UI into the Compose tree.</p>
 <p>They can enter and leave composition many times based on state and tree changes.</p>
 <p>In interviews, explain:</p>
 <ul>
-<li>composable lifetime is composition-scoped</li>
-<li>effects must be tied to composition lifecycle</li>
-<li>remember state is lost when node leaves composition</li>
-<li>business state should live in ViewModel/domain layers</li>
+<li>
+<p>composable lifetime is composition-scoped</p>
+</li>
+<li>
+<p>effects must be tied to composition lifecycle</p>
+</li>
+<li>
+<p>remember state is lost when node leaves composition</p>
+</li>
+<li>
+<p>business state should live in ViewModel/domain layers</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#composable-lifecycle">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2220,10 +2244,18 @@ that emits UI into the Compose tree.</p>
 <p>Useful for quick UI iteration and visual validation.</p>
 <p>Limitations to mention:</p>
 <ul>
-<li>limited runtime environment</li>
-<li>navigation and dependency graphs may need fakes</li>
-<li>async side effects can behave differently</li>
-<li>not a replacement for UI tests</li>
+<li>
+<p>limited runtime environment</p>
+</li>
+<li>
+<p>navigation and dependency graphs may need fakes</p>
+</li>
+<li>
+<p>async side effects can behave differently</p>
+</li>
+<li>
+<p>not a replacement for UI tests</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#previews-in-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2244,10 +2276,18 @@ that emits UI into the Compose tree.</p>
 <p>When <code>value</code> changes, composables that read it become eligible for recomposition.</p>
 <p>Typical usage:</p>
 <ul>
-<li><code>var text by remember { mutableStateOf("") }</code></li>
-<li>local UI state in composables</li>
-<li>immutable state models for larger screens</li>
-<li>avoid mutating nested mutable objects without state wrappers</li>
+<li>
+<p><code>var text by remember { mutableStateOf("") }</code></p>
+</li>
+<li>
+<p>local UI state in composables</p>
+</li>
+<li>
+<p>immutable state models for larger screens</p>
+</li>
+<li>
+<p>avoid mutating nested mutable objects without state wrappers</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-and-remember/#mutable-state-in-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2268,10 +2308,18 @@ that emits UI into the Compose tree.</p>
 <p><code>rememberSaveable</code> also survives Activity recreation using saved instance state.</p>
 <p>Interview-ready distinction:</p>
 <ul>
-<li><code>remember</code>: transient UI memory only</li>
-<li><code>rememberSaveable</code>: survives rotation/process recreation scenarios</li>
-<li><code>rememberSaveable</code> needs savable types or custom Saver</li>
-<li>long-lived/business state still belongs in ViewModel</li>
+<li>
+<p><code>remember</code>: transient UI memory only</p>
+</li>
+<li>
+<p><code>rememberSaveable</code>: survives rotation/process recreation scenarios</p>
+</li>
+<li>
+<p><code>rememberSaveable</code> needs savable types or custom Saver</p>
+</li>
+<li>
+<p>long-lived/business state still belongs in ViewModel</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-and-remember/#remember-vs-rememberSaveable">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2292,10 +2340,18 @@ that emits UI into the Compose tree.</p>
 <p>If keys change, Compose discards old remembered value and computes a new one.</p>
 <p>Practical points:</p>
 <ul>
-<li>use stable identity inputs as keys</li>
-<li>missing keys can keep stale state</li>
-<li>over-changing keys can cause unnecessary resets</li>
-<li>same concept appears in list item keys</li>
+<li>
+<p>use stable identity inputs as keys</p>
+</li>
+<li>
+<p>missing keys can keep stale state</p>
+</li>
+<li>
+<p>over-changing keys can cause unnecessary resets</p>
+</li>
+<li>
+<p>same concept appears in list item keys</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-and-remember/#remember-key-parameter">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2316,10 +2372,18 @@ that emits UI into the Compose tree.</p>
 and passing state + events down.</p>
 <p>Why it is preferred:</p>
 <ul>
-<li>improves reusability and testability</li>
-<li>keeps child composables stateless when possible</li>
-<li>aligns with unidirectional data flow</li>
-<li>simplifies screen-level orchestration with ViewModel</li>
+<li>
+<p>improves reusability and testability</p>
+</li>
+<li>
+<p>keeps child composables stateless when possible</p>
+</li>
+<li>
+<p>aligns with unidirectional data flow</p>
+</li>
+<li>
+<p>simplifies screen-level orchestration with ViewModel</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#state-hoisting">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2339,10 +2403,18 @@ and passing state + events down.</p>
 <p>In UDF, state flows downward and events flow upward.</p>
 <p>Typical pattern:</p>
 <ul>
-<li>ViewModel exposes immutable UI state</li>
-<li>composable renders that state</li>
-<li>user events are callbacks to ViewModel</li>
-<li>ViewModel reduces events into new state</li>
+<li>
+<p>ViewModel exposes immutable UI state</p>
+</li>
+<li>
+<p>composable renders that state</p>
+</li>
+<li>
+<p>user events are callbacks to ViewModel</p>
+</li>
+<li>
+<p>ViewModel reduces events into new state</p>
+</li>
 </ul>
 <p>This reduces hidden mutations and makes behavior predictable.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#unidirectional-data-flow-compose">🚀 See Full Deep Dive</a></p>
@@ -2364,10 +2436,18 @@ and passing state + events down.</p>
 (loading, content, error, empty).</p>
 <p>Interview-friendly guidance:</p>
 <ul>
-<li>one source of truth per screen</li>
-<li>keep transient one-off events separate from state</li>
-<li>avoid many unrelated mutable flags</li>
-<li>design state to match rendering branches</li>
+<li>
+<p>one source of truth per screen</p>
+</li>
+<li>
+<p>keep transient one-off events separate from state</p>
+</li>
+<li>
+<p>avoid many unrelated mutable flags</p>
+</li>
+<li>
+<p>design state to match rendering branches</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#ui-state-modeling-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2387,10 +2467,18 @@ and passing state + events down.</p>
 <p>Events should be explicit callbacks from UI to state owner.</p>
 <p>Good interview answer includes:</p>
 <ul>
-<li>pass lambdas like <code>onRetry</code>, <code>onItemClick</code></li>
-<li>avoid business logic inside composables</li>
-<li>map UI events to intents/actions in ViewModel</li>
-<li>keep event handling idempotent when possible</li>
+<li>
+<p>pass lambdas like <code>onRetry</code>, <code>onItemClick</code></p>
+</li>
+<li>
+<p>avoid business logic inside composables</p>
+</li>
+<li>
+<p>map UI events to intents/actions in ViewModel</p>
+</li>
+<li>
+<p>keep event handling idempotent when possible</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/state-hoisting-and-udf/#event-handling-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2411,10 +2499,18 @@ and passing state + events down.</p>
 <p>Compose tracks state reads and only re-runs affected parts of the tree.</p>
 <p>Key concepts to mention:</p>
 <ul>
-<li>state read tracking</li>
-<li>invalidation of composition scopes</li>
-<li>selective updates instead of full redraw</li>
-<li>skip optimization for unchanged inputs</li>
+<li>
+<p>state read tracking</p>
+</li>
+<li>
+<p>invalidation of composition scopes</p>
+</li>
+<li>
+<p>selective updates instead of full redraw</p>
+</li>
+<li>
+<p>skip optimization for unchanged inputs</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#recomposition-definition">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2434,10 +2530,18 @@ and passing state + events down.</p>
 <p>Recomposition is triggered when snapshot-observed state used by a composable changes.</p>
 <p>Common triggers:</p>
 <ul>
-<li><code>MutableState</code> value updates</li>
-<li>new values emitted via collected flows</li>
-<li>changed parameters from parent composable</li>
-<li>structural tree changes (conditionals/lists)</li>
+<li>
+<p><code>MutableState</code> value updates</p>
+</li>
+<li>
+<p>new values emitted via collected flows</p>
+</li>
+<li>
+<p>changed parameters from parent composable</p>
+</li>
+<li>
+<p>structural tree changes (conditionals/lists)</p>
+</li>
 </ul>
 <p>Not every state change causes full-screen recomposition.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#what-triggers-recomposition">🚀 See Full Deep Dive</a></p>
@@ -2459,10 +2563,18 @@ and passing state + events down.</p>
 not the entire UI tree.</p>
 <p>It relies on:</p>
 <ul>
-<li>state read boundaries</li>
-<li>restart groups in compiler-generated code</li>
-<li>parameter change checks</li>
-<li>skipping groups when inputs are stable and unchanged</li>
+<li>
+<p>state read boundaries</p>
+</li>
+<li>
+<p>restart groups in compiler-generated code</p>
+</li>
+<li>
+<p>parameter change checks</p>
+</li>
+<li>
+<p>skipping groups when inputs are stable and unchanged</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#smart-recomposition">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2483,10 +2595,18 @@ not the entire UI tree.</p>
 when its inputs are considered unchanged.</p>
 <p>Interview points:</p>
 <ul>
-<li>depends on stability analysis and equality checks</li>
-<li>unstable parameters reduce skipping opportunities</li>
-<li>fewer skipped groups can increase frame cost</li>
-<li>metrics/tools can reveal skip behavior</li>
+<li>
+<p>depends on stability analysis and equality checks</p>
+</li>
+<li>
+<p>unstable parameters reduce skipping opportunities</p>
+</li>
+<li>
+<p>fewer skipped groups can increase frame cost</p>
+</li>
+<li>
+<p>metrics/tools can reveal skip behavior</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#skip-optimization">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2507,10 +2627,18 @@ when its inputs are considered unchanged.</p>
 so groups become less skippable.</p>
 <p>Consequences:</p>
 <ul>
-<li>more recomposition work</li>
-<li>harder performance tuning</li>
-<li>frequent invalidation in list-heavy screens</li>
-<li>pressure on frame budget</li>
+<li>
+<p>more recomposition work</p>
+</li>
+<li>
+<p>harder performance tuning</p>
+</li>
+<li>
+<p>frequent invalidation in list-heavy screens</p>
+</li>
+<li>
+<p>pressure on frame budget</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#unstable-parameter-recomposition">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2530,11 +2658,21 @@ so groups become less skippable.</p>
 <p>Reduce recomposition by improving state boundaries and input stability.</p>
 <p>Practical tactics:</p>
 <ul>
-<li>hoist and split state by UI responsibility</li>
-<li>pass stable, minimal parameters</li>
-<li>use <code>derivedStateOf</code> for derived expensive values</li>
-<li>provide keys in lazy lists</li>
-<li>profile with layout inspector and tracing</li>
+<li>
+<p>hoist and split state by UI responsibility</p>
+</li>
+<li>
+<p>pass stable, minimal parameters</p>
+</li>
+<li>
+<p>use <code>derivedStateOf</code> for derived expensive values</p>
+</li>
+<li>
+<p>provide keys in lazy lists</p>
+</li>
+<li>
+<p>profile with layout inspector and tracing</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/recomposition-and-skip-optimization/#prevent-unnecessary-recomposition">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2556,10 +2694,18 @@ so groups become less skippable.</p>
 with recomposition.</p>
 <p>Interview highlights:</p>
 <ul>
-<li>MVCC-like model for state access</li>
-<li>change application invalidates readers</li>
-<li>enables thread-safe state transactions with rules</li>
-<li>foundation for automatic UI reactivity</li>
+<li>
+<p>MVCC-like model for state access</p>
+</li>
+<li>
+<p>change application invalidates readers</p>
+</li>
+<li>
+<p>enables thread-safe state transactions with rules</p>
+</li>
+<li>
+<p>foundation for automatic UI reactivity</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-system">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2581,10 +2727,18 @@ with recomposition.</p>
 and schedule recomposition.</p>
 <p>This model provides:</p>
 <ul>
-<li>precise dependency tracking</li>
-<li>selective invalidation</li>
-<li>deterministic update behavior</li>
-<li>better performance than coarse full-tree updates</li>
+<li>
+<p>precise dependency tracking</p>
+</li>
+<li>
+<p>selective invalidation</p>
+</li>
+<li>
+<p>deterministic update behavior</p>
+</li>
+<li>
+<p>better performance than coarse full-tree updates</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/snapshot-system-and-observation/#snapshot-state-read-write">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2606,9 +2760,15 @@ and schedule recomposition.</p>
 <p>Side-effect APIs provide lifecycle-aware hooks for that work.</p>
 <p>Mention in interviews:</p>
 <ul>
-<li>choose API by lifecycle and restart behavior</li>
-<li>avoid launching side effects directly in composable body</li>
-<li>keep effects scoped and cancelable</li>
+<li>
+<p>choose API by lifecycle and restart behavior</p>
+</li>
+<li>
+<p>avoid launching side effects directly in composable body</p>
+</li>
+<li>
+<p>keep effects scoped and cancelable</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/side-effects-overview/#side-effects-overview">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2630,9 +2790,15 @@ and schedule recomposition.</p>
 latest values on each commit.</p>
 <p>Guardrails:</p>
 <ul>
-<li>keep work fast and idempotent</li>
-<li>avoid long-running jobs in <code>SideEffect</code></li>
-<li>prefer <code>LaunchedEffect</code> for suspend work</li>
+<li>
+<p>keep work fast and idempotent</p>
+</li>
+<li>
+<p>avoid long-running jobs in <code>SideEffect</code></p>
+</li>
+<li>
+<p>prefer <code>LaunchedEffect</code> for suspend work</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/side-effects-overview/#sideeffect-usage">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2653,9 +2819,15 @@ latest values on each commit.</p>
 <p>It launches a coroutine tied to composition and updates <code>value</code>.</p>
 <p>Useful for:</p>
 <ul>
-<li>repository/data source integration</li>
-<li>converting callbacks or suspend fetches to UI state</li>
-<li>lifecycle-scoped loading without manual job wiring</li>
+<li>
+<p>repository/data source integration</p>
+</li>
+<li>
+<p>converting callbacks or suspend fetches to UI state</p>
+</li>
+<li>
+<p>lifecycle-scoped loading without manual job wiring</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/side-effects-overview/#produceState-usage">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2677,10 +2849,18 @@ and restarts it when keys change.</p>
 <p>Use it for composition-scoped suspend work.</p>
 <p>Interview points:</p>
 <ul>
-<li>cancellation on leaving composition</li>
-<li>key changes restart effect</li>
-<li>good for one-off screen tasks and collectors</li>
-<li>avoid using unstable/changing keys unintentionally</li>
+<li>
+<p>cancellation on leaving composition</p>
+</li>
+<li>
+<p>key changes restart effect</p>
+</li>
+<li>
+<p>good for one-off screen tasks and collectors</p>
+</li>
+<li>
+<p>avoid using unstable/changing keys unintentionally</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#launchedeffect-usage">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2702,9 +2882,15 @@ such as listeners or observers.</p>
 <p>It provides <code>onDispose</code> for deterministic teardown.</p>
 <p>Common interview examples:</p>
 <ul>
-<li>register/unregister lifecycle observer</li>
-<li>subscribe/unsubscribe callback APIs</li>
-<li>resource attach/detach tied to composition</li>
+<li>
+<p>register/unregister lifecycle observer</p>
+</li>
+<li>
+<p>subscribe/unsubscribe callback APIs</p>
+</li>
+<li>
+<p>resource attach/detach tied to composition</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#disposableeffect-usage">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2725,10 +2911,18 @@ such as listeners or observers.</p>
 you can use from callbacks like button clicks.</p>
 <p>Difference from <code>LaunchedEffect</code>:</p>
 <ul>
-<li><code>LaunchedEffect</code>: automatic launch during composition</li>
-<li><code>rememberCoroutineScope</code>: manual launch on events</li>
-<li>both cancel when leaving composition</li>
-<li>still keep business logic in ViewModel when appropriate</li>
+<li>
+<p><code>LaunchedEffect</code>: automatic launch during composition</p>
+</li>
+<li>
+<p><code>rememberCoroutineScope</code>: manual launch on events</p>
+</li>
+<li>
+<p>both cancel when leaving composition</p>
+</li>
+<li>
+<p>still keep business logic in ViewModel when appropriate</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/effects-coroutines-and-lifecycle/#rememberCoroutineScope-usage">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2749,10 +2943,18 @@ you can use from callbacks like button clicks.</p>
 and recalculates only when dependencies change.</p>
 <p>It helps when:</p>
 <ul>
-<li>derivation is non-trivial</li>
-<li>source state updates frequently</li>
-<li>you want to reduce unnecessary downstream recomposition</li>
-<li>computed value is consumed by multiple UI branches</li>
+<li>
+<p>derivation is non-trivial</p>
+</li>
+<li>
+<p>source state updates frequently</p>
+</li>
+<li>
+<p>you want to reduce unnecessary downstream recomposition</p>
+</li>
+<li>
+<p>computed value is consumed by multiple UI branches</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#derivedStateOf-purpose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2774,9 +2976,15 @@ without restarting the effect.</p>
 <p>This is useful when restart would be expensive or semantically wrong.</p>
 <p>Typical use case:</p>
 <ul>
-<li>timer/listener effect keeps running</li>
-<li>callback reference updates on recomposition</li>
-<li>effect reads latest callback safely</li>
+<li>
+<p>timer/listener effect keeps running</p>
+</li>
+<li>
+<p>callback reference updates on recomposition</p>
+</li>
+<li>
+<p>effect reads latest callback safely</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/derived-state-and-remember-updated-state/#rememberUpdatedState-purpose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2798,9 +3006,15 @@ without threading parameters through each layer.</p>
 <p>Best for cross-cutting concerns like theme, density, or environment values.</p>
 <p>Cautions:</p>
 <ul>
-<li>avoid hiding business dependencies</li>
-<li>document provided locals clearly</li>
-<li>overuse can hurt readability and testability</li>
+<li>
+<p>avoid hiding business dependencies</p>
+</li>
+<li>
+<p>document provided locals clearly</p>
+</li>
+<li>
+<p>overuse can hurt readability and testability</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compositionlocal-and-context-propagation/#compositionlocal-purpose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2821,10 +3035,18 @@ without threading parameters through each layer.</p>
 <p>Compose side typically uses lifecycle-aware collection API.</p>
 <p>Interview points:</p>
 <ul>
-<li>single source of truth in ViewModel</li>
-<li>immutable state objects</li>
-<li>Compose observes and renders latest state</li>
-<li>events flow back via callbacks</li>
+<li>
+<p>single source of truth in ViewModel</p>
+</li>
+<li>
+<p>immutable state objects</p>
+</li>
+<li>
+<p>Compose observes and renders latest state</p>
+</li>
+<li>
+<p>events flow back via callbacks</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#stateflow-with-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2846,9 +3068,15 @@ without threading parameters through each layer.</p>
 reducing unnecessary collection when UI is not active.</p>
 <p>Interview framing:</p>
 <ul>
-<li>prefer lifecycle-aware API on Android screens</li>
-<li>plain <code>collectAsState</code> is fine in non-lifecycle contexts</li>
-<li>prevents background collection leaks/waste</li>
+<li>
+<p>prefer lifecycle-aware API on Android screens</p>
+</li>
+<li>
+<p>plain <code>collectAsState</code> is fine in non-lifecycle contexts</p>
+</li>
+<li>
+<p>prevents background collection leaks/waste</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#collectAsState-vs-collectAsStateWithLifecycle">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2869,9 +3097,15 @@ reducing unnecessary collection when UI is not active.</p>
 <p>It is useful when coroutine/Flow pipelines need Compose state changes.</p>
 <p>Good examples:</p>
 <ul>
-<li>track scroll thresholds</li>
-<li>debounce UI-derived signals</li>
-<li>bridge Compose state to repository/analytics layers</li>
+<li>
+<p>track scroll thresholds</p>
+</li>
+<li>
+<p>debounce UI-derived signals</p>
+</li>
+<li>
+<p>bridge Compose state to repository/analytics layers</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/flow-integration-with-compose/#snapshotFlow-usage">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2893,9 +3127,15 @@ to support skipping recomposition.</p>
 <p>Stable inputs improve skippability and runtime efficiency.</p>
 <p>Interview signals:</p>
 <ul>
-<li>inferred by compiler + annotations</li>
-<li>immutable data patterns help</li>
-<li>mutable public properties often hurt stability</li>
+<li>
+<p>inferred by compiler + annotations</p>
+</li>
+<li>
+<p>immutable data patterns help</p>
+</li>
+<li>
+<p>mutable public properties often hurt stability</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stability-in-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2917,8 +3157,12 @@ to support skipping recomposition.</p>
 for Compose optimization.</p>
 <p>Interview caveat:</p>
 <ul>
-<li>annotations are contracts, not magic performance buttons</li>
-<li>misuse can lead to stale UI or incorrect assumptions</li>
+<li>
+<p>annotations are contracts, not magic performance buttons</p>
+</li>
+<li>
+<p>misuse can lead to stale UI or incorrect assumptions</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#stable-vs-immutable">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2939,10 +3183,18 @@ for Compose optimization.</p>
 that manage composition, recomposition, and skipping.</p>
 <p>Key outcomes:</p>
 <ul>
-<li>inserts restart/skip groups</li>
-<li>adds change-tracking parameters</li>
-<li>performs stability-driven optimizations</li>
-<li>enables tooling metrics for analysis</li>
+<li>
+<p>inserts restart/skip groups</p>
+</li>
+<li>
+<p>adds change-tracking parameters</p>
+</li>
+<li>
+<p>performs stability-driven optimizations</p>
+</li>
+<li>
+<p>enables tooling metrics for analysis</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/stability-and-compose-compiler/#compose-compiler-role">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2964,9 +3216,15 @@ remembered values, and positional metadata.</p>
 <p>It enables efficient tree updates without rebuilding everything.</p>
 <p>Interview highlights:</p>
 <ul>
-<li>positional memoization model</li>
-<li>group identity and structure tracking</li>
-<li>powers <code>remember</code> and node reuse behavior</li>
+<li>
+<p>positional memoization model</p>
+</li>
+<li>
+<p>group identity and structure tracking</p>
+</li>
+<li>
+<p>powers <code>remember</code> and node reuse behavior</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/slot-table-and-runtime-internals/#slot-table-purpose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2987,9 +3245,15 @@ remembered values, and positional metadata.</p>
 <code>Applier</code> applies resulting tree changes to target UI tree implementation.</p>
 <p>In Android UI:</p>
 <ul>
-<li><code>Composer</code> decides what changed</li>
-<li><code>Applier</code> performs node insert/move/remove updates</li>
-<li>separation supports different tree backends</li>
+<li>
+<p><code>Composer</code> decides what changed</p>
+</li>
+<li>
+<p><code>Applier</code> performs node insert/move/remove updates</p>
+</li>
+<li>
+<p>separation supports different tree backends</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/composer-applier-and-runtime-phases/#composer-and-applier">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3008,9 +3272,15 @@ remembered values, and positional metadata.</p>
 <summary>View Answer</summary>
 <p>Compose update pipeline can be framed as:</p>
 <ul>
-<li>composition (compute UI structure)</li>
-<li>layout (measure/place)</li>
-<li>drawing (render to canvas)</li>
+<li>
+<p>composition (compute UI structure)</p>
+</li>
+<li>
+<p>layout (measure/place)</p>
+</li>
+<li>
+<p>drawing (render to canvas)</p>
+</li>
 </ul>
 <p>Recomposition affects composition, but layout/draw can run independently
 when only size/visual invalidations occur.</p>
@@ -3032,10 +3302,18 @@ when only size/visual invalidations occur.</p>
 <p>Modifiers are applied in sequence, and each step wraps or transforms behavior.</p>
 <p>Reordering can change:</p>
 <ul>
-<li>layout size constraints</li>
-<li>drawing/clipping outcome</li>
-<li>pointer input hit areas</li>
-<li>semantics/accessibility output</li>
+<li>
+<p>layout size constraints</p>
+</li>
+<li>
+<p>drawing/clipping outcome</p>
+</li>
+<li>
+<p>pointer input hit areas</p>
+</li>
+<li>
+<p>semantics/accessibility output</p>
+</li>
 </ul>
 <p>Explain with simple examples like <code>padding</code> before vs after <code>clickable</code>.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/modifier-chain-and-node-graph/#modifier-chain-order">🚀 See Full Deep Dive</a></p>
@@ -3056,10 +3334,18 @@ when only size/visual invalidations occur.</p>
 <p>Understand constraints-driven measurement and explicit placement APIs.</p>
 <p>Core interview points:</p>
 <ul>
-<li>measure children with provided constraints</li>
-<li>place children in layout block</li>
-<li>avoid repeated expensive measurement work</li>
-<li>preserve predictable intrinsic sizing behavior</li>
+<li>
+<p>measure children with provided constraints</p>
+</li>
+<li>
+<p>place children in layout block</p>
+</li>
+<li>
+<p>avoid repeated expensive measurement work</p>
+</li>
+<li>
+<p>preserve predictable intrinsic sizing behavior</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#custom-layout-basics">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3081,8 +3367,12 @@ Layout places children in parent coordinates.
 Draw renders pixels based on final layout tree.</p>
 <p>Important interview note:</p>
 <ul>
-<li>not every state change forces all three phases equally</li>
-<li>phase-specific invalidations are key for performance</li>
+<li>
+<p>not every state change forces all three phases equally</p>
+</li>
+<li>
+<p>phase-specific invalidations are key for performance</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/layout-measure-draw-pipeline/#measure-layout-draw-phases">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3102,11 +3392,21 @@ Draw renders pixels based on final layout tree.</p>
 <p>Optimize item stability, keys, and per-item work.</p>
 <p>Practical checklist:</p>
 <ul>
-<li>provide stable item keys</li>
-<li>avoid heavy allocations in item content</li>
-<li>keep item state scoped correctly</li>
-<li>minimize nested lazy containers</li>
-<li>profile jank with real datasets</li>
+<li>
+<p>provide stable item keys</p>
+</li>
+<li>
+<p>avoid heavy allocations in item content</p>
+</li>
+<li>
+<p>keep item state scoped correctly</p>
+</li>
+<li>
+<p>minimize nested lazy containers</p>
+</li>
+<li>
+<p>profile jank with real datasets</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#lazycolumn-performance">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3126,10 +3426,18 @@ Draw renders pixels based on final layout tree.</p>
 <p>Keys preserve item identity across insertions, deletions, and moves.</p>
 <p>Without stable keys:</p>
 <ul>
-<li>item state can jump to wrong rows</li>
-<li>animations and reuse become less predictable</li>
-<li>recomposition work can increase</li>
-<li>scroll position behavior may degrade</li>
+<li>
+<p>item state can jump to wrong rows</p>
+</li>
+<li>
+<p>animations and reuse become less predictable</p>
+</li>
+<li>
+<p>recomposition work can increase</p>
+</li>
+<li>
+<p>scroll position behavior may degrade</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/lazy-layouts-and-list-performance/#keys-in-lazycolumn">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3149,10 +3457,18 @@ Draw renders pixels based on final layout tree.</p>
 <p>Use a route graph with explicit destinations and argument contracts.</p>
 <p>Strong interview answer includes:</p>
 <ul>
-<li>single <code>NavHost</code> per feature shell/app shell</li>
-<li>pass IDs, not large objects</li>
-<li>keep navigation decisions near state owner</li>
-<li>support deep links and back stack predictability</li>
+<li>
+<p>single <code>NavHost</code> per feature shell/app shell</p>
+</li>
+<li>
+<p>pass IDs, not large objects</p>
+</li>
+<li>
+<p>keep navigation decisions near state owner</p>
+</li>
+<li>
+<p>support deep links and back stack predictability</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-compose-basics">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3172,10 +3488,18 @@ Draw renders pixels based on final layout tree.</p>
 <p>Treat destinations as typed contracts and centralize route definitions.</p>
 <p>Maintainability practices:</p>
 <ul>
-<li>sealed route models or typed destinations</li>
-<li>feature-level navigation modules</li>
-<li>avoid scattering route strings</li>
-<li>make back stack and result passing explicit</li>
+<li>
+<p>sealed route models or typed destinations</p>
+</li>
+<li>
+<p>feature-level navigation modules</p>
+</li>
+<li>
+<p>avoid scattering route strings</p>
+</li>
+<li>
+<p>make back stack and result passing explicit</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/navigation-in-compose/#navigation-single-source-of-truth">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3196,10 +3520,18 @@ Draw renders pixels based on final layout tree.</p>
 typography, shapes) and consumed by Material components.</p>
 <p>Interview points:</p>
 <ul>
-<li>app-level theme as design system boundary</li>
-<li>support light/dark and dynamic color strategy</li>
-<li>keep custom tokens consistent with brand system</li>
-<li>avoid hardcoded colors in feature UI</li>
+<li>
+<p>app-level theme as design system boundary</p>
+</li>
+<li>
+<p>support light/dark and dynamic color strategy</p>
+</li>
+<li>
+<p>keep custom tokens consistent with brand system</p>
+</li>
+<li>
+<p>avoid hardcoded colors in feature UI</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/theming-and-material3/#theming-material3-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3219,10 +3551,18 @@ typography, shapes) and consumed by Material components.</p>
 <p>Focus on choosing API by use case complexity.</p>
 <p>Common set:</p>
 <ul>
-<li><code>animate*AsState</code> for simple value transitions</li>
-<li><code>AnimatedVisibility</code> and <code>AnimatedContent</code> for content transitions</li>
-<li><code>updateTransition</code> for coordinated multi-property animations</li>
-<li>infinite/repeatable animations for decorative motion</li>
+<li>
+<p><code>animate*AsState</code> for simple value transitions</p>
+</li>
+<li>
+<p><code>AnimatedVisibility</code> and <code>AnimatedContent</code> for content transitions</p>
+</li>
+<li>
+<p><code>updateTransition</code> for coordinated multi-property animations</p>
+</li>
+<li>
+<p>infinite/repeatable animations for decorative motion</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/animation-in-compose/#animations-compose">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3243,10 +3583,18 @@ typography, shapes) and consumed by Material components.</p>
 and targeted integration/end-to-end flows.</p>
 <p>Interview-ready points:</p>
 <ul>
-<li>verify semantics, not implementation details</li>
-<li>inject fake state/data for deterministic tests</li>
-<li>isolate flaky async behavior with test dispatchers</li>
-<li>keep UI tests focused on high-value user journeys</li>
+<li>
+<p>verify semantics, not implementation details</p>
+</li>
+<li>
+<p>inject fake state/data for deterministic tests</p>
+</li>
+<li>
+<p>isolate flaky async behavior with test dispatchers</p>
+</li>
+<li>
+<p>keep UI tests focused on high-value user journeys</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-testing-strategy">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3267,9 +3615,15 @@ and targeted integration/end-to-end flows.</p>
 <p><code>Modifier.testTag()</code> and semantic properties provide stable selectors.</p>
 <p>Best practices:</p>
 <ul>
-<li>prefer meaningful semantics for accessibility + tests</li>
-<li>avoid brittle text-only selectors when dynamic</li>
-<li>keep tags unique within test scope</li>
+<li>
+<p>prefer meaningful semantics for accessibility + tests</p>
+</li>
+<li>
+<p>avoid brittle text-only selectors when dynamic</p>
+</li>
+<li>
+<p>keep tags unique within test scope</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#semantics-and-test-tags">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3290,9 +3644,15 @@ and targeted integration/end-to-end flows.</p>
 <p>Use it for incremental migration or SDK widgets not available in Compose.</p>
 <p>Interview cautions:</p>
 <ul>
-<li>manage View lifecycle and state sync carefully</li>
-<li>avoid frequent View recreation</li>
-<li>keep interop boundaries explicit and temporary when possible</li>
+<li>
+<p>manage View lifecycle and state sync carefully</p>
+</li>
+<li>
+<p>avoid frequent View recreation</p>
+</li>
+<li>
+<p>keep interop boundaries explicit and temporary when possible</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#androidview-interop">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3312,11 +3672,21 @@ and targeted integration/end-to-end flows.</p>
 <p>A strong answer balances architecture and runtime-level tuning.</p>
 <p>Quick checklist:</p>
 <ul>
-<li>stabilize data models and parameters</li>
-<li>reduce unnecessary recomposition scopes</li>
-<li>optimize lazy list item content and keys</li>
-<li>move heavy work off main thread</li>
-<li>measure with tracing, profiler, and macrobenchmark</li>
+<li>
+<p>stabilize data models and parameters</p>
+</li>
+<li>
+<p>reduce unnecessary recomposition scopes</p>
+</li>
+<li>
+<p>optimize lazy list item content and keys</p>
+</li>
+<li>
+<p>move heavy work off main thread</p>
+</li>
+<li>
+<p>measure with tracing, profiler, and macrobenchmark</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/testing-interop-and-performance/#compose-performance-checklist">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3334,13 +3704,23 @@ and targeted integration/end-to-end flows.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Each Compose coroutine-launching API has a different lifecycle and cancellation owner; mixing them incorrectly leads to leaks or effects that run at the wrong time.
-In interviews, cover:
-- LaunchedEffect(key): side effect tied to composition — launches on entry and cancels/relaunches when key changes or composition leaves; correct for data loading, animations, event observation
-- rememberCoroutineScope(): returns a CoroutineScope tied to the current composition lifecycle; used for user-triggered one-shot actions (button tap launches network call) where you need manual control over when a coroutine starts
-- ViewModel scope (viewModelScope): survives recomposition and configuration changes; the right place for data loading and business logic that outlives a composable
-Strong answer tip:
-- anti-pattern: launching network calls inside LaunchedEffect(Unit) that directly mutates ViewModel state from the composable layer — move the logic to ViewModel and collect resulting state in the composable</p>
+<p>Each Compose coroutine-launching API has a different lifecycle and cancellation owner; mixing them incorrectly leads to leaks or effects that run at the wrong time.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>LaunchedEffect(key): side effect tied to composition — launches on entry and cancels/relaunches when key changes or composition leaves; correct for data loading, animations, event observation</p>
+</li>
+<li>
+<p>rememberCoroutineScope(): returns a CoroutineScope tied to the current composition lifecycle; used for user-triggered one-shot actions (button tap launches network call) where you need manual control over when a coroutine starts</p>
+</li>
+<li>
+<p>ViewModel scope (viewModelScope): survives recomposition and configuration changes; the right place for data loading and business logic that outlives a composable</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>anti-pattern: launching network calls inside LaunchedEffect(Unit) that directly mutates ViewModel state from the composable layer — move the logic to ViewModel and collect resulting state in the composable</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#compare-remembercoroutinescope-launchedeffect-and-viewmodel-scope-when">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3358,14 +3738,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>One-off events (navigation, snackbars, toasts) cannot use StateFlow because recomposition or rotation would re-trigger them; they need a single-delivery mechanism.
-In interviews, cover:
-- SharedFlow(replay=0, extraBufferCapacity=1) in ViewModel; collect in LaunchedEffect(viewModel) in the composable; each emission is consumed once
-- Channel.receiveAsFlow() is an alternative with FIFO ordering and back-pressure awareness; choose based on whether you need buffering
-- do NOT put navigation events in a StateFlow — new collectors (after recomposition) receive the last value and may navigate again (double navigation bug)
-- the "event wrapper" pattern (one-shot wrappers like Event<T>) is a workaround that adds complexity; prefer proper flow primitives
-Strong answer tip:
-- demonstrate the double-navigation bug: StateFlow<NavRoute?> initialized with null, ViewModel sets it to Route.Details, user rotates, Compose re-collects state and navigates again — fix: clear after consuming or use SharedFlow</p>
+<p>One-off events (navigation, snackbars, toasts) cannot use StateFlow because recomposition or rotation would re-trigger them; they need a single-delivery mechanism.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>SharedFlow(replay=0, extraBufferCapacity=1) in ViewModel; collect in LaunchedEffect(viewModel) in the composable; each emission is consumed once</p>
+</li>
+<li>
+<p>Channel.receiveAsFlow() is an alternative with FIFO ordering and back-pressure awareness; choose based on whether you need buffering</p>
+</li>
+<li>
+<p>do NOT put navigation events in a StateFlow — new collectors (after recomposition) receive the last value and may navigate again (double navigation bug)</p>
+</li>
+<li>
+<p>the "event wrapper" pattern (one-shot wrappers like Event<T>) is a workaround that adds complexity; prefer proper flow primitives</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>demonstrate the double-navigation bug: StateFlow<NavRoute?> initialized with null, ViewModel sets it to Route.Details, user rotates, Compose re-collects state and navigates again — fix: clear after consuming or use SharedFlow</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#how-do-you-model-one-off-events-in-compose-navigation-snackbar-and-toa">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3382,14 +3774,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>derivedStateOf creates a computed snapshot state that only notifies observers when its output changes, not every time its inputs change — preventing unnecessary recompositions.
-In interviews, cover:
-- problem: reading a LazyListState.firstVisibleItemIndex in a composable to show a "scroll to top" FAB causes recomposition on every scroll pixel because the MutableState backing firstVisibleItemIndex changes constantly
-- solution: val showFab by remember { derivedStateOf { listState.firstVisibleItemIndex &gt; 0 } } — only recomposes when the Boolean flips, not on every index change
-- semantics: derivedStateOf creates a new snapshot state; reads inside it are tracked; when inputs change the output is recomputed but observers are only invalidated if the output is different (by equals)
-- remember wrapping is required: without remember, a new derivedStateOf computation is created every recomposition, defeating the purpose
-Strong answer tip:
-- derivedStateOf is NOT free — it adds computation overhead; only use it when input state changes much more frequently than the output would change</p>
+<p>derivedStateOf creates a computed snapshot state that only notifies observers when its output changes, not every time its inputs change — preventing unnecessary recompositions.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>problem: reading a LazyListState.firstVisibleItemIndex in a composable to show a "scroll to top" FAB causes recomposition on every scroll pixel because the MutableState backing firstVisibleItemIndex changes constantly</p>
+</li>
+<li>
+<p>solution: val showFab by remember { derivedStateOf { listState.firstVisibleItemIndex &gt; 0 } } — only recomposes when the Boolean flips, not on every index change</p>
+</li>
+<li>
+<p>semantics: derivedStateOf creates a new snapshot state; reads inside it are tracked; when inputs change the output is recomputed but observers are only invalidated if the output is different (by equals)</p>
+</li>
+<li>
+<p>remember wrapping is required: without remember, a new derivedStateOf computation is created every recomposition, defeating the purpose</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>derivedStateOf is NOT free — it adds computation overhead; only use it when input state changes much more frequently than the output would change</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#explain-derivedstateof-and-how-to-avoid-unnecessary-recompositions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3406,14 +3810,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Compose builds an accessibility semantics tree parallel to the composition tree; TalkBack reads from the semantics tree, so incorrect or missing semantics cause silent accessibility failures.
-In interviews, cover:
-- Modifier.semantics { contentDescription = "..." } sets what TalkBack announces; without it, composables with no text content are silent or read their raw structure
-- clickable {} automatically adds Role.Button semantics unless overridden; ensure custom interactive composables include role and stateDescription
-- mergeDescendants = true on a parent semantics block collapses a card's children into one accessibility node — essential for list items with multiple interactive elements
-- focus traversal: use Modifier.focusRequester() and FocusManager.moveFocus(FocusDirection.Next) to control keyboard/D-pad navigation order; default order follows layout but can diverge in RTL or multi-column layouts
-Strong answer tip:
-- test with TalkBack enabled and a physical device; the Compose semantics inspector in Android Studio shows the accessibility tree but does not fully simulate real TalkBack exploration behavior</p>
+<p>Compose builds an accessibility semantics tree parallel to the composition tree; TalkBack reads from the semantics tree, so incorrect or missing semantics cause silent accessibility failures.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>Modifier.semantics { contentDescription = "..." } sets what TalkBack announces; without it, composables with no text content are silent or read their raw structure</p>
+</li>
+<li>
+<p>clickable {} automatically adds Role.Button semantics unless overridden; ensure custom interactive composables include role and stateDescription</p>
+</li>
+<li>
+<p>mergeDescendants = true on a parent semantics block collapses a card's children into one accessibility node — essential for list items with multiple interactive elements</p>
+</li>
+<li>
+<p>focus traversal: use Modifier.focusRequester() and FocusManager.moveFocus(FocusDirection.Next) to control keyboard/D-pad navigation order; default order follows layout but can diverge in RTL or multi-column layouts</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>test with TalkBack enabled and a physical device; the Compose semantics inspector in Android Studio shows the accessibility tree but does not fully simulate real TalkBack exploration behavior</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#explain-compose-accessibility-and-semantics-correctness-for-talkback-a">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3430,13 +3846,23 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>This is almost always caused by collecting a one-shot event from StateFlow (which replays to new collectors) or a LaunchedEffect with the wrong key (causing restart on recomposition).
-In interviews, cover:
-- root cause A: event in StateFlow<NavRoute?> — when the composable recomposes (reattachment, rotation), the new collector sees the last emitted value and acts on it again; fix: use SharedFlow(replay=0) or clear the state after consuming it
-- root cause B: LaunchedEffect(someState) — if someState changes during the operation (e.g. loading becomes done), the effect cancels and relaunches, triggering the action twice; fix: key the effect on a stable trigger like a UUID or use a Channel
-- root cause C: Composable in a NavBackStackEntry is briefly composed twice during transitions; guard events with a lifecycle check using Lifecycle.currentState.isAtLeast(RESUMED)
-Strong answer tip:
-- add logging at the point of event emission and collection to count invocations; use Layout Inspector + Recomposition Counts to see which composable is re-entering</p>
+<p>This is almost always caused by collecting a one-shot event from StateFlow (which replays to new collectors) or a LaunchedEffect with the wrong key (causing restart on recomposition).</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>root cause A: event in StateFlow<NavRoute?> — when the composable recomposes (reattachment, rotation), the new collector sees the last emitted value and acts on it again; fix: use SharedFlow(replay=0) or clear the state after consuming it</p>
+</li>
+<li>
+<p>root cause B: LaunchedEffect(someState) — if someState changes during the operation (e.g. loading becomes done), the effect cancels and relaunches, triggering the action twice; fix: key the effect on a stable trigger like a UUID or use a Channel</p>
+</li>
+<li>
+<p>root cause C: Composable in a NavBackStackEntry is briefly composed twice during transitions; guard events with a lifecycle check using Lifecycle.currentState.isAtLeast(RESUMED)</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>add logging at the point of event emission and collection to count invocations; use Layout Inspector + Recomposition Counts to see which composable is re-entering</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#debug-snackbar-toast-or-navigation-event-triggers-twice-in-compose">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3453,14 +3879,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>LaunchedEffect re-runs when its key changes; unexpected re-runs mean an unstable value is being used as the key.
-In interviews, cover:
-- LaunchedEffect(someObject) where someObject is a new instance every recomposition (e.g. a lambda, a non-stable data class) causes the effect to cancel and restart each time
-- fix: use a stable key — Unit (run once), viewModel (stable instance), a primitive ID, or a remember { } value
-- Lambda captures: if the effect body captures a var or an unstable object, and you use rememberUpdatedState incorrectly, state inside the effect can become stale; use rememberUpdatedState for values that should update without restarting the effect
-- derived keys: if the key is computed from multiple derived states, wrap it in a stable holder or derive a primitive (e.g. the item ID integer rather than the item object)
-Strong answer tip:
-- use Compose Compiler Metrics (./gradlew assembleDebug -PcomposeCompilerMetrics) to identify unstable classes being passed as keys</p>
+<p>LaunchedEffect re-runs when its key changes; unexpected re-runs mean an unstable value is being used as the key.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>LaunchedEffect(someObject) where someObject is a new instance every recomposition (e.g. a lambda, a non-stable data class) causes the effect to cancel and restart each time</p>
+</li>
+<li>
+<p>fix: use a stable key — Unit (run once), viewModel (stable instance), a primitive ID, or a remember { } value</p>
+</li>
+<li>
+<p>Lambda captures: if the effect body captures a var or an unstable object, and you use rememberUpdatedState incorrectly, state inside the effect can become stale; use rememberUpdatedState for values that should update without restarting the effect</p>
+</li>
+<li>
+<p>derived keys: if the key is computed from multiple derived states, wrap it in a stable holder or derive a primitive (e.g. the item ID integer rather than the item object)</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>use Compose Compiler Metrics (./gradlew assembleDebug -PcomposeCompilerMetrics) to identify unstable classes being passed as keys</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#debug-launchedeffect-re-runs-unexpectedly-on-recomposition">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3478,14 +3916,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>LazyColumn recycles composables across items by position; without stable keys, local state (checkboxes, expansion) transfers to the wrong item when the list scrolls.
-In interviews, cover:
-- default behavior: LazyColumn keys items by index; when an item scrolls off-screen, its composable slot is reused for a new item at the same position — any remembered state from the old item survives
-- fix: provide stable keys via items(list, key = { it.id }) { ... }; this allows Compose to correctly associate remembered state with the logical item identity, not its position
-- animated item placement also requires keys: without them, insertions and deletions look like mutations of existing items rather than smooth additions/removals
-- avoid using index as key: if items are reordered or inserted, index-based keys are effectively unstable
-Strong answer tip:
-- keys must be stable across recompositions AND unique within the list; if two items share a key, Compose will throw an IllegalArgumentException in debug builds</p>
+<p>LazyColumn recycles composables across items by position; without stable keys, local state (checkboxes, expansion) transfers to the wrong item when the list scrolls.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>default behavior: LazyColumn keys items by index; when an item scrolls off-screen, its composable slot is reused for a new item at the same position — any remembered state from the old item survives</p>
+</li>
+<li>
+<p>fix: provide stable keys via items(list, key = { it.id }) { ... }; this allows Compose to correctly associate remembered state with the logical item identity, not its position</p>
+</li>
+<li>
+<p>animated item placement also requires keys: without them, insertions and deletions look like mutations of existing items rather than smooth additions/removals</p>
+</li>
+<li>
+<p>avoid using index as key: if items are reordered or inserted, index-based keys are effectively unstable</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>keys must be stable across recompositions AND unique within the list; if two items share a key, Compose will throw an IllegalArgumentException in debug builds</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#debug-list-item-state-jumps-between-rows-in-lazycolumn">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3503,14 +3953,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>TextField with an unstable onValueChange lambda or state read inside a parent composable causes the entire tree above the field to recompose on every keystroke.
-In interviews, cover:
-- root cause: if onValueChange = { viewModel.onInput(it) } is defined inline in a composable that isn't skippable, the lambda is a new object every recomposition — this makes TextField's parameter comparison fail and triggers recomposition of the parent
-- fix A: hoist TextField state into a ViewModel; expose a single StateFlow<String> for the text value and collect it; the parent composable becomes stable because it only depends on the collected string
-- fix B: wrap the lambda with rememberUpdatedState or use a @Stable callback holder
-- fix C: ensure the parent composable receives stable parameters so it is skippable — use the Compose compiler metrics report to confirm it is marked as skippable
-Strong answer tip:
-- reproduce with Layout Inspector Recomposition Counts; counts incrementing by 1 per keystroke at the TextField level is expected; counts at multiple parent levels indicate the parent is incorrectly non-skippable</p>
+<p>TextField with an unstable onValueChange lambda or state read inside a parent composable causes the entire tree above the field to recompose on every keystroke.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>root cause: if onValueChange = { viewModel.onInput(it) } is defined inline in a composable that isn't skippable, the lambda is a new object every recomposition — this makes TextField's parameter comparison fail and triggers recomposition of the parent</p>
+</li>
+<li>
+<p>fix A: hoist TextField state into a ViewModel; expose a single StateFlow<String> for the text value and collect it; the parent composable becomes stable because it only depends on the collected string</p>
+</li>
+<li>
+<p>fix B: wrap the lambda with rememberUpdatedState or use a @Stable callback holder</p>
+</li>
+<li>
+<p>fix C: ensure the parent composable receives stable parameters so it is skippable — use the Compose compiler metrics report to confirm it is marked as skippable</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>reproduce with Layout Inspector Recomposition Counts; counts incrementing by 1 per keystroke at the TextField level is expected; counts at multiple parent levels indicate the parent is incorrectly non-skippable</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#debug-excessive-recompositions-while-typing-in-a-textfield">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3528,15 +3990,29 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Jank in LazyColumn/LazyRow during scrolling is almost always caused by expensive work during item composition, unstable item types, or image loading on the main thread.
-In interviews, cover:
-- expensive item composition: if itemContent creates complex View trees, performs non-trivial calculations, or loads data synchronously during composition, the main thread frame budget (16ms at 60fps) is exceeded
-- fix: move any non-trivial data derivation to ViewModel or a background thread; only read pre-computed values in the composable
-- unstable item types: if the Item class is not considered stable by the Compose compiler (has mutable fields or non-stable type parameters), the compiler cannot skip recomposition on scroll — annotate with @Stable or use immutable data classes with stable types only
-- image loading: ensure Coil/Glide is used with AsyncImage which loads off the main thread; never load bitmaps synchronously in composition
-- item height: if item height is not known, Compose must measure during scroll; provide fixed height via Modifier.height() or .fillParentMaxHeight() where possible
-Strong answer tip:
-- profile with System Tracing (Perfetto) and look for long slices on the Main thread labeled with composable names — this identifies the expensive items precisely</p>
+<p>Jank in LazyColumn/LazyRow during scrolling is almost always caused by expensive work during item composition, unstable item types, or image loading on the main thread.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>expensive item composition: if itemContent creates complex View trees, performs non-trivial calculations, or loads data synchronously during composition, the main thread frame budget (16ms at 60fps) is exceeded</p>
+</li>
+<li>
+<p>fix: move any non-trivial data derivation to ViewModel or a background thread; only read pre-computed values in the composable</p>
+</li>
+<li>
+<p>unstable item types: if the Item class is not considered stable by the Compose compiler (has mutable fields or non-stable type parameters), the compiler cannot skip recomposition on scroll — annotate with @Stable or use immutable data classes with stable types only</p>
+</li>
+<li>
+<p>image loading: ensure Coil/Glide is used with AsyncImage which loads off the main thread; never load bitmaps synchronously in composition</p>
+</li>
+<li>
+<p>item height: if item height is not known, Compose must measure during scroll; provide fixed height via Modifier.height() or .fillParentMaxHeight() where possible</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>profile with System Tracing (Perfetto) and look for long slices on the Main thread labeled with composable names — this identifies the expensive items precisely</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#debug-and-fix-slow-scrolling-and-jank-in-compose-lazy-lists">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3553,15 +4029,29 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Paging 3 exposes Flow<PagingData\<T>> which must be collected as LazyPagingItems using collectAsLazyPagingItems() — direct collection with collectAsState() breaks paging internals.
-In interviews, cover:
-- val items = pager.flow.collectAsLazyPagingItems(): this correctly hooks into Paging 3's internal load state tracking and triggers prefetch at correct thresholds
-- LazyColumn { items(items) { item -&gt; ... } } combines with itemKey { it.id } to maintain stable identity across page loads and list animations
-- invalidation: call items.refresh() to trigger full invalidation; partial invalidation from Room is automatic when the backing source table changes and the PagingSource emits a new snapshot
-- load state: items.loadState.refresh, .append, .prepend expose loading/error/done states; display shimmer or error UI based on these, not an external loading flag
-- avoid collecting PagingData as a raw list — PagingData is a one-shot token; re-collecting it causes duplicate content or crashes
-Strong answer tip:
-- cachedIn(viewModelScope) on the flow prevents new page loads on every recomposition or screen rotation — always apply it in the ViewModel before exposing the flow to the UI</p>
+<p>Paging 3 exposes Flow<PagingData\<T>> which must be collected as LazyPagingItems using collectAsLazyPagingItems() — direct collection with collectAsState() breaks paging internals.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>val items = pager.flow.collectAsLazyPagingItems(): this correctly hooks into Paging 3's internal load state tracking and triggers prefetch at correct thresholds</p>
+</li>
+<li>
+<p>LazyColumn { items(items) { item -&gt; ... } } combines with itemKey { it.id } to maintain stable identity across page loads and list animations</p>
+</li>
+<li>
+<p>invalidation: call items.refresh() to trigger full invalidation; partial invalidation from Room is automatic when the backing source table changes and the PagingSource emits a new snapshot</p>
+</li>
+<li>
+<p>load state: items.loadState.refresh, .append, .prepend expose loading/error/done states; display shimmer or error UI based on these, not an external loading flag</p>
+</li>
+<li>
+<p>avoid collecting PagingData as a raw list — PagingData is a one-shot token; re-collecting it causes duplicate content or crashes</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>cachedIn(viewModelScope) on the flow prevents new page loads on every recomposition or screen rotation — always apply it in the ViewModel before exposing the flow to the UI</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#explain-paging-3-integration-with-compose-and-correct-invalidation-con">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3578,14 +4068,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Modifier chains in Compose are order-dependent; the sequence of modifiers determines both correctness and the cost incurred in layout and draw passes.
-In interviews, cover:
-- Modifier.padding().clickable() vs Modifier.clickable().padding(): padding first means the click target is smaller (padding is outside clickable area); clickable first means the expanded padded area is clickable — this is a layout vs input behavior difference
-- draw modifiers (background, border) are applied in chain order; background().padding() draws background then adds padding inside it; padding().background() draws the background inside the padding
-- each Modifier adds a LayoutNode; long chains add traversal cost in measure and layout passes; prefer combining composites over chaining many individual modifiers when layout performance is critical
-- Modifier.then() merges two modifier chains; use foldIn/foldOut for custom modifier extensions that must preserve order
-Strong answer tip:
-- a common composability bug: writing extension modifiers that assume a fixed internal ordering of layout vs semantics modifiers; use Modifier.Node API (the new stable API from Compose 1.3+) for correct low-level modifier implementation</p>
+<p>Modifier chains in Compose are order-dependent; the sequence of modifiers determines both correctness and the cost incurred in layout and draw passes.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>Modifier.padding().clickable() vs Modifier.clickable().padding(): padding first means the click target is smaller (padding is outside clickable area); clickable first means the expanded padded area is clickable — this is a layout vs input behavior difference</p>
+</li>
+<li>
+<p>draw modifiers (background, border) are applied in chain order; background().padding() draws background then adds padding inside it; padding().background() draws the background inside the padding</p>
+</li>
+<li>
+<p>each Modifier adds a LayoutNode; long chains add traversal cost in measure and layout passes; prefer combining composites over chaining many individual modifiers when layout performance is critical</p>
+</li>
+<li>
+<p>Modifier.then() merges two modifier chains; use foldIn/foldOut for custom modifier extensions that must preserve order</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>a common composability bug: writing extension modifiers that assume a fixed internal ordering of layout vs semantics modifiers; use Modifier.Node API (the new stable API from Compose 1.3+) for correct low-level modifier implementation</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/compose/compose-basics-and-composable-contract/#explain-compose-modifier-chains-ordering-performance-cost-and-correctn">🚀 See Full Deep Dive</a></p>
 </details>
 

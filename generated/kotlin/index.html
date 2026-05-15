@@ -2144,15 +2144,27 @@
 <details class="question">
 <summary>View Answer</summary>
 <p>Kotlin is a modern JVM language designed to improve safety,
-readability, and developer productivity.
-Key advantages for Android:
-- null safety support
-- concise syntax
-- strong IDE tooling
-- Java interoperability
-- coroutine support
+readability, and developer productivity.</p>
+<p>Key advantages for Android:</p>
+<ul>
+<li>
+<p>null safety support</p>
+</li>
+<li>
+<p>concise syntax</p>
+</li>
+<li>
+<p>strong IDE tooling</p>
+</li>
+<li>
+<p>Java interoperability</p>
+</li>
+<li>
+<p>coroutine support
 In interviews, mention that Kotlin reduces boilerplate while still
 compiling to JVM bytecode and working well with existing Java code.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#kotlin-language-features">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2169,14 +2181,26 @@ compiling to JVM bytecode and working well with existing Java code.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p><code>val</code> defines a read-only reference.
-<code>var</code> defines a mutable reference.
-Key distinction:
-- <code>val</code> cannot be reassigned after initialization
-- <code>var</code> can be reassigned
-Important interview nuance:
-- <code>val</code> does NOT make the object itself immutable
-- it only makes the reference stable
+<code>var</code> defines a mutable reference.</p>
+<p>Key distinction:</p>
+<ul>
+<li>
+<p><code>val</code> cannot be reassigned after initialization</p>
+</li>
+<li>
+<p><code>var</code> can be reassigned</p>
+</li>
+</ul>
+<p>Important interview nuance:</p>
+<ul>
+<li>
+<p><code>val</code> does NOT make the object itself immutable</p>
+</li>
+<li>
+<p>it only makes the reference stable
 Prefer <code>val</code> by default and use <code>var</code> only when mutation is required.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#val-vs-var">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2192,19 +2216,41 @@ Prefer <code>val</code> by default and use <code>var</code> only when mutation i
 
 <details class="question">
 <summary>View Answer</summary>
-<p>A data class is a class optimized for holding data.
-Kotlin automatically generates:
-- <code>equals()</code>
-- <code>hashCode()</code>
-- <code>toString()</code>
-- <code>copy()</code>
-- <code>componentN()</code> functions
-Use data classes for:
-- UI models
-- DTOs
-- state holders
-- domain values
+<p>A data class is a class optimized for holding data.</p>
+<p>Kotlin automatically generates:</p>
+<ul>
+<li>
+<p><code>equals()</code></p>
+</li>
+<li>
+<p><code>hashCode()</code></p>
+</li>
+<li>
+<p><code>toString()</code></p>
+</li>
+<li>
+<p><code>copy()</code></p>
+</li>
+<li>
+<p><code>componentN()</code> functions</p>
+</li>
+</ul>
+<p>Use data classes for:</p>
+<ul>
+<li>
+<p>UI models</p>
+</li>
+<li>
+<p>DTOs</p>
+</li>
+<li>
+<p>state holders</p>
+</li>
+<li>
+<p>domain values
 They are ideal when value equality matters more than identity.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-classes">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2220,15 +2266,31 @@ They are ideal when value equality matters more than identity.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin generates several members from primary constructor properties:
-- <code>equals()</code> and <code>hashCode()</code>
-- <code>toString()</code>
-- <code>copy()</code>
-- <code>componentN()</code> destructuring functions
-Interview detail:
-- only properties in the primary constructor participate
-- body properties are excluded from generated equality/copy behavior
+<p>Kotlin generates several members from primary constructor properties:</p>
+<ul>
+<li>
+<p><code>equals()</code> and <code>hashCode()</code></p>
+</li>
+<li>
+<p><code>toString()</code></p>
+</li>
+<li>
+<p><code>copy()</code></p>
+</li>
+<li>
+<p><code>componentN()</code> destructuring functions</p>
+</li>
+</ul>
+<p>Interview detail:</p>
+<ul>
+<li>
+<p>only properties in the primary constructor participate</p>
+</li>
+<li>
+<p>body properties are excluded from generated equality/copy behavior
 This is important for state modeling and JVM behavior discussions.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/data-classes-and-generated-code/#data-class-generated-members">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2244,11 +2306,19 @@ This is important for state modeling and JVM behavior discussions.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>The <code>object</code> keyword has multiple uses in Kotlin:
-- object declaration → singleton
-- object expression → anonymous object
-- companion object → class-level members
-Interview point:
+<p>The <code>object</code> keyword has multiple uses in Kotlin:</p>
+<ul>
+<li>
+<p>object declaration → singleton</p>
+</li>
+<li>
+<p>object expression → anonymous object</p>
+</li>
+<li>
+<p>companion object → class-level members</p>
+</li>
+</ul>
+<p>Interview point:
 Kotlin uses one keyword for several object creation patterns,
 but each compiles differently on the JVM.
 Always clarify which form of <code>object</code> you mean.</p>
@@ -2267,16 +2337,32 @@ Always clarify which form of <code>object</code> you mean.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>A companion object is an object tied to a class definition.
-It is commonly used for:
-- factory methods
-- constants
-- static-like APIs
-- interface implementations
-Important interview nuance:
-- Kotlin has no true <code>static</code> keyword
-- companion objects are regular objects with special syntax support
+<p>A companion object is an object tied to a class definition.</p>
+<p>It is commonly used for:</p>
+<ul>
+<li>
+<p>factory methods</p>
+</li>
+<li>
+<p>constants</p>
+</li>
+<li>
+<p>static-like APIs</p>
+</li>
+<li>
+<p>interface implementations</p>
+</li>
+</ul>
+<p>Important interview nuance:</p>
+<ul>
+<li>
+<p>Kotlin has no true <code>static</code> keyword</p>
+</li>
+<li>
+<p>companion objects are regular objects with special syntax support
 On the JVM, they are not identical to Java static members.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#companion-objects">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2292,16 +2378,28 @@ On the JVM, they are not identical to Java static members.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Object declaration:
-- defines a named singleton
-- initialized lazily on first access
-Object expression:
-- creates an anonymous object immediately
-- often used for one-off implementations
+<p>Object declaration:</p>
+<ul>
+<li>
+<p>defines a named singleton</p>
+</li>
+<li>
+<p>initialized lazily on first access</p>
+</li>
+</ul>
+<p>Object expression:</p>
+<ul>
+<li>
+<p>creates an anonymous object immediately</p>
+</li>
+<li>
+<p>often used for one-off implementations
 Use declaration for shared singleton behavior.
 Use expression for local, ad-hoc object creation.
 Interview detail: visibility and inferred type behavior differ,
 especially when returning anonymous objects from APIs.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/object-and-companion-objects/#object-declaration-vs-object-expression">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2317,13 +2415,23 @@ especially when returning anonymous objects from APIs.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>A sealed class restricts inheritance to a known set of subclasses.
-It is useful for:
-- UI state modeling
-- result wrappers
-- finite state machines
-- exhaustive <code>when</code> expressions
-Key benefit:
+<p>A sealed class restricts inheritance to a known set of subclasses.</p>
+<p>It is useful for:</p>
+<ul>
+<li>
+<p>UI state modeling</p>
+</li>
+<li>
+<p>result wrappers</p>
+</li>
+<li>
+<p>finite state machines</p>
+</li>
+<li>
+<p>exhaustive <code>when</code> expressions</p>
+</li>
+</ul>
+<p>Key benefit:
 the compiler knows all valid subtypes at compile time.
 This makes sealed hierarchies safer than open inheritance for
 closed-domain modeling.</p>
@@ -2344,13 +2452,23 @@ closed-domain modeling.</p>
 <summary>View Answer</summary>
 <p>Use an enum when you need a fixed set of simple constants.
 Use a sealed class when each case may carry different data
-or behavior.
-Quick comparison:
-- enum → single instance per constant
-- sealed class → richer subtype hierarchy
-- enum → good for flags/statuses
-- sealed class → good for UI states/results/events
+or behavior.</p>
+<p>Quick comparison:</p>
+<ul>
+<li>
+<p>enum → single instance per constant</p>
+</li>
+<li>
+<p>sealed class → richer subtype hierarchy</p>
+</li>
+<li>
+<p>enum → good for flags/statuses</p>
+</li>
+<li>
+<p>sealed class → good for UI states/results/events
 In interviews, emphasize flexibility vs simplicity.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#sealed-vs-enum">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2366,18 +2484,36 @@ In interviews, emphasize flexibility vs simplicity.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Enum classes represent a fixed set of named constants.
-Common uses:
-- screen modes
-- status values
-- sorting types
-- feature flags with limited states
-They can also contain:
-- properties
-- functions
-- interface implementations
+<p>Enum classes represent a fixed set of named constants.</p>
+<p>Common uses:</p>
+<ul>
+<li>
+<p>screen modes</p>
+</li>
+<li>
+<p>status values</p>
+</li>
+<li>
+<p>sorting types</p>
+</li>
+<li>
+<p>feature flags with limited states</p>
+</li>
+</ul>
+<p>They can also contain:</p>
+<ul>
+<li>
+<p>properties</p>
+</li>
+<li>
+<p>functions</p>
+</li>
+<li>
+<p>interface implementations
 Use enums when the domain is fixed and each value is conceptually
 a singleton.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/sealed-classes-and-enums/#enum-class-use-cases">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2394,12 +2530,20 @@ a singleton.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Kotlin supports class delegation using the <code>by</code> keyword.
-It lets one class forward interface implementation to another object.
-Benefits:
-- reduces boilerplate
-- favors composition over inheritance
-- keeps behavior reusable
-Interview angle:
+It lets one class forward interface implementation to another object.</p>
+<p>Benefits:</p>
+<ul>
+<li>
+<p>reduces boilerplate</p>
+</li>
+<li>
+<p>favors composition over inheritance</p>
+</li>
+<li>
+<p>keeps behavior reusable</p>
+</li>
+</ul>
+<p>Interview angle:
 delegation is language-level support for composition patterns that
 would be more verbose in Java.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#class-delegation">🚀 See Full Deep Dive</a></p>
@@ -2417,18 +2561,38 @@ would be more verbose in Java.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Delegated properties outsource getter/setter logic to another object.
-Common delegates:
-- <code>lazy</code>
-- <code>observable</code>
-- <code>vetoable</code>
-- custom delegates
-This is useful when property behavior includes:
-- caching
-- validation
-- logging
-- lifecycle-aware initialization
+<p>Delegated properties outsource getter/setter logic to another object.</p>
+<p>Common delegates:</p>
+<ul>
+<li>
+<p><code>lazy</code></p>
+</li>
+<li>
+<p><code>observable</code></p>
+</li>
+<li>
+<p><code>vetoable</code></p>
+</li>
+<li>
+<p>custom delegates</p>
+</li>
+</ul>
+<p>This is useful when property behavior includes:</p>
+<ul>
+<li>
+<p>caching</p>
+</li>
+<li>
+<p>validation</p>
+</li>
+<li>
+<p>logging</p>
+</li>
+<li>
+<p>lifecycle-aware initialization
 Delegation is one of Kotlin's most practical language features.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/delegation-and-delegated-properties/#delegated-properties">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2444,12 +2608,20 @@ Delegation is one of Kotlin's most practical language features.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p><code>lazy</code> delays object creation until first access.
-Benefits:
-- avoids unnecessary work
-- reduces startup cost
-- makes expensive initialization demand-driven
-Interview nuance:
+<p><code>lazy</code> delays object creation until first access.</p>
+<p>Benefits:</p>
+<ul>
+<li>
+<p>avoids unnecessary work</p>
+</li>
+<li>
+<p>reduces startup cost</p>
+</li>
+<li>
+<p>makes expensive initialization demand-driven</p>
+</li>
+</ul>
+<p>Interview nuance:
 Kotlin offers thread-safety modes for <code>lazy</code>, and behavior differs
 depending on synchronization strategy.
 Use <code>lazy</code> when initialization is expensive and not always needed.</p>
@@ -2469,13 +2641,23 @@ Use <code>lazy</code> when initialization is expensive and not always needed.</p
 <details class="question">
 <summary>View Answer</summary>
 <p>Extension functions let you add callable functions to an existing type
-without modifying its source code.
-They are useful for:
-- utility APIs
-- cleaner call sites
-- DSL-like helpers
-- Android-specific convenience methods
-Important interview point:
+without modifying its source code.</p>
+<p>They are useful for:</p>
+<ul>
+<li>
+<p>utility APIs</p>
+</li>
+<li>
+<p>cleaner call sites</p>
+</li>
+<li>
+<p>DSL-like helpers</p>
+</li>
+<li>
+<p>Android-specific convenience methods</p>
+</li>
+</ul>
+<p>Important interview point:
 extensions do not actually modify the class.
 They are resolved statically by the compiler.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-functions">🚀 See Full Deep Dive</a></p>
@@ -2495,12 +2677,20 @@ They are resolved statically by the compiler.</p>
 <summary>View Answer</summary>
 <p>Extension functions are resolved statically.
 That means dispatch is based on the compile-time type,
-not the runtime type.
-Implications:
-- they do not truly override members
-- member functions always win over extensions
-- polymorphism does not work like normal virtual dispatch
+not the runtime type.</p>
+<p>Implications:</p>
+<ul>
+<li>
+<p>they do not truly override members</p>
+</li>
+<li>
+<p>member functions always win over extensions</p>
+</li>
+<li>
+<p>polymorphism does not work like normal virtual dispatch
 This is a common Kotlin interview trap.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/extension-functions/#extension-function-resolution">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2516,19 +2706,41 @@ This is a common Kotlin interview trap.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Scope functions execute a block in the context of an object.
-The main ones are:
-- <code>let</code>
-- <code>run</code>
-- <code>with</code>
-- <code>apply</code>
-- <code>also</code>
-They help with:
-- object configuration
-- null-safe chaining
-- side effects
-- expression-style code
+<p>Scope functions execute a block in the context of an object.</p>
+<p>The main ones are:</p>
+<ul>
+<li>
+<p><code>let</code></p>
+</li>
+<li>
+<p><code>run</code></p>
+</li>
+<li>
+<p><code>with</code></p>
+</li>
+<li>
+<p><code>apply</code></p>
+</li>
+<li>
+<p><code>also</code></p>
+</li>
+</ul>
+<p>They help with:</p>
+<ul>
+<li>
+<p>object configuration</p>
+</li>
+<li>
+<p>null-safe chaining</p>
+</li>
+<li>
+<p>side effects</p>
+</li>
+<li>
+<p>expression-style code
 Use them carefully; overuse can reduce readability.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/scope-functions/#scope-functions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2544,16 +2756,34 @@ Use them carefully; overuse can reduce readability.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>The main differences are:
-- receiver name (<code>this</code> vs <code>it</code>)
-- return value (context object vs lambda result)
-Quick guide:
-- <code>let</code> → null-safe transforms
-- <code>run</code> → compute result with receiver
-- <code>apply</code> → configure object, return object
-- <code>also</code> → side effects, return object
-- <code>with</code> → grouped calls on receiver
+<p>The main differences are:</p>
+<ul>
+<li>
+<p>receiver name (<code>this</code> vs <code>it</code>)</p>
+</li>
+<li>
+<p>return value (context object vs lambda result)</p>
+</li>
+</ul>
+<p>Quick guide:</p>
+<ul>
+<li>
+<p><code>let</code> → null-safe transforms</p>
+</li>
+<li>
+<p><code>run</code> → compute result with receiver</p>
+</li>
+<li>
+<p><code>apply</code> → configure object, return object</p>
+</li>
+<li>
+<p><code>also</code> → side effects, return object</p>
+</li>
+<li>
+<p><code>with</code> → grouped calls on receiver
 Interviewers care more about when to use them than memorizing a table.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/scope-functions/#let-vs-run-vs-apply-vs-also">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2569,15 +2799,31 @@ Interviewers care more about when to use them than memorizing a table.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>A higher-order function is a function that:
-- takes another function as a parameter, or
-- returns a function
-They are heavily used in Kotlin APIs such as:
-- collection operators
-- coroutines
-- Flow
-- DSL builders
+<p>A higher-order function is a function that:</p>
+<ul>
+<li>
+<p>takes another function as a parameter, or</p>
+</li>
+<li>
+<p>returns a function</p>
+</li>
+</ul>
+<p>They are heavily used in Kotlin APIs such as:</p>
+<ul>
+<li>
+<p>collection operators</p>
+</li>
+<li>
+<p>coroutines</p>
+</li>
+<li>
+<p>Flow</p>
+</li>
+<li>
+<p>DSL builders
 This style enables concise, reusable, expressive APIs.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#higher-order-functions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2594,13 +2840,23 @@ This style enables concise, reusable, expressive APIs.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>A lambda with receiver gives the lambda an implicit receiver object,
-so members can be called without qualification.
-This powers:
-- builders
-- DSLs
-- <code>apply</code>-style APIs
-- Compose-style declarative patterns
-Interview point:
+so members can be called without qualification.</p>
+<p>This powers:</p>
+<ul>
+<li>
+<p>builders</p>
+</li>
+<li>
+<p>DSLs</p>
+</li>
+<li>
+<p><code>apply</code>-style APIs</p>
+</li>
+<li>
+<p>Compose-style declarative patterns</p>
+</li>
+</ul>
+<p>Interview point:
 it improves fluency, but can make scope and receiver resolution harder
 to follow if overused.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/higher-order-functions-and-lambdas/#lambdas-with-receiver">🚀 See Full Deep Dive</a></p>
@@ -2619,12 +2875,20 @@ to follow if overused.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>An inline function asks the compiler to copy the function body to the
-call site instead of generating a normal call.
-Benefits:
-- reduces lambda allocation overhead
-- enables non-local returns in some cases
-- works well for higher-order utility APIs
-Tradeoff:
+call site instead of generating a normal call.</p>
+<p>Benefits:</p>
+<ul>
+<li>
+<p>reduces lambda allocation overhead</p>
+</li>
+<li>
+<p>enables non-local returns in some cases</p>
+</li>
+<li>
+<p>works well for higher-order utility APIs</p>
+</li>
+</ul>
+<p>Tradeoff:
 too much inlining can increase bytecode size.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-functions">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2641,14 +2905,28 @@ too much inlining can increase bytecode size.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>These modifiers control lambda behavior inside inline functions.
-- <code>noinline</code> → do not inline this lambda
-- <code>crossinline</code> → inline it, but forbid non-local return
-Use them when an inline function mixes:
-- direct invocation
-- storage/passing of lambdas
-- callback wrapping
+<p>These modifiers control lambda behavior inside inline functions.</p>
+<ul>
+<li>
+<p><code>noinline</code> → do not inline this lambda</p>
+</li>
+<li>
+<p><code>crossinline</code> → inline it, but forbid non-local return</p>
+</li>
+</ul>
+<p>Use them when an inline function mixes:</p>
+<ul>
+<li>
+<p>direct invocation</p>
+</li>
+<li>
+<p>storage/passing of lambdas</p>
+</li>
+<li>
+<p>callback wrapping
 This is a common advanced Kotlin interview topic.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/inline-functions/#crossinline-vs-noinline">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2665,12 +2943,20 @@ This is a common advanced Kotlin interview topic.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Inline functions help when they remove overhead from small,
-frequently-called higher-order functions.
-They can hurt when:
-- function bodies are large
-- too much code is duplicated
-- bytecode size grows significantly
-Interview takeaway:
+frequently-called higher-order functions.</p>
+<p>They can hurt when:</p>
+<ul>
+<li>
+<p>function bodies are large</p>
+</li>
+<li>
+<p>too much code is duplicated</p>
+</li>
+<li>
+<p>bytecode size grows significantly</p>
+</li>
+</ul>
+<p>Interview takeaway:
 inline is a targeted optimization, not something to apply everywhere.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/inline-functions/#inline-performance-considerations">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2690,13 +2976,23 @@ inline is a targeted optimization, not something to apply everywhere.</p>
 <p>Reified type parameters let inline functions access generic type
 information at runtime.
 Normally, JVM type erasure removes generic type details.
-Reified types work because the function is inlined at the call site.
-This is useful for:
-- type-safe factories
-- serialization helpers
-- navigation/util APIs
-- reflection-light APIs
+Reified types work because the function is inlined at the call site.</p>
+<p>This is useful for:</p>
+<ul>
+<li>
+<p>type-safe factories</p>
+</li>
+<li>
+<p>serialization helpers</p>
+</li>
+<li>
+<p>navigation/util APIs</p>
+</li>
+<li>
+<p>reflection-light APIs
 Reified works only in inline functions.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/reified-generics/#reified-generics">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2712,17 +3008,33 @@ Reified works only in inline functions.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin separates nullable and non-nullable types.
-Example:
-- <code>String</code> → cannot hold null
-- <code>String?</code> → can hold null
-Core null-safety tools:
-- safe call <code>?.</code>
-- Elvis operator <code>?:</code>
-- smart casts
-- not-null assertion <code>!!</code>
+<p>Kotlin separates nullable and non-nullable types.</p>
+<p>Example:</p>
+<ul>
+<li>
+<p><code>String</code> → cannot hold null</p>
+</li>
+<li>
+<p><code>String?</code> → can hold null</p>
+</li>
+</ul>
+<p>Core null-safety tools:</p>
+<ul>
+<li>
+<p>safe call <code>?.</code></p>
+</li>
+<li>
+<p>Elvis operator <code>?:</code></p>
+</li>
+<li>
+<p>smart casts</p>
+</li>
+<li>
+<p>not-null assertion <code>!!</code>
 Kotlin reduces null bugs, but interop and unsafe operators can still
 reintroduce them.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#null-safety">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2738,14 +3050,28 @@ reintroduce them.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Common null-safety operators:
-- <code>?.</code> → call only if value is non-null
-- <code>?:</code> → provide fallback when value is null
-- <code>!!</code> → assert non-null and throw if wrong
-Interview advice:
-- prefer <code>?.</code> and <code>?:</code>
-- avoid <code>!!</code> unless failure is truly acceptable
+<p>Common null-safety operators:</p>
+<ul>
+<li>
+<p><code>?.</code> → call only if value is non-null</p>
+</li>
+<li>
+<p><code>?:</code> → provide fallback when value is null</p>
+</li>
+<li>
+<p><code>!!</code> → assert non-null and throw if wrong</p>
+</li>
+</ul>
+<p>Interview advice:</p>
+<ul>
+<li>
+<p>prefer <code>?.</code> and <code>?:</code></p>
+</li>
+<li>
+<p>avoid <code>!!</code> unless failure is truly acceptable
 Overuse of <code>!!</code> is often treated as a code smell.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#safe-call-elvis-not-null">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2762,16 +3088,30 @@ Overuse of <code>!!</code> is often treated as a code smell.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Smart casts let the compiler automatically cast a value after a
-successful type or null check.
-Example cases:
-- <code>if (x is String)</code>
-- <code>if (value != null)</code>
-They work when the compiler can prove the reference is stable.
-They may fail for:
-- mutable properties
-- custom getters
-- shared state with uncertain mutation
+successful type or null check.</p>
+<p>Example cases:</p>
+<ul>
+<li>
+<p><code>if (x is String)</code></p>
+</li>
+<li>
+<p><code>if (value != null)</code>
+They work when the compiler can prove the reference is stable.</p>
+</li>
+</ul>
+<p>They may fail for:</p>
+<ul>
+<li>
+<p>mutable properties</p>
+</li>
+<li>
+<p>custom getters</p>
+</li>
+<li>
+<p>shared state with uncertain mutation
 This reflects Kotlin's flow-sensitive type analysis.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/null-safety-and-smart-casts/#smart-casts">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2788,15 +3128,25 @@ This reflects Kotlin's flow-sensitive type analysis.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Generics let classes and functions operate on types abstractly while
-preserving type safety.
-Common uses:
-- collections
-- repositories
-- wrappers like <code>Result&lt;T&gt;</code>
-- API abstractions
+preserving type safety.</p>
+<p>Common uses:</p>
+<ul>
+<li>
+<p>collections</p>
+</li>
+<li>
+<p>repositories</p>
+</li>
+<li>
+<p>wrappers like <code>Result&lt;T&gt;</code></p>
+</li>
+<li>
+<p>API abstractions
 On the JVM, Kotlin generics are mostly erased at runtime,
 just like Java generics.
 That is why some runtime generic checks are limited.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#generics-in-kotlin">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2812,11 +3162,17 @@ That is why some runtime generic checks are limited.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Variance controls how generic types relate to each other.
-- <code>out</code> = producer / covariance
-- <code>in</code> = consumer / contravariance
-Use them to express safe subtype substitution.
-Interview tip:
+<p>Variance controls how generic types relate to each other.</p>
+<ul>
+<li>
+<p><code>out</code> = producer / covariance</p>
+</li>
+<li>
+<p><code>in</code> = consumer / contravariance
+Use them to express safe subtype substitution.</p>
+</li>
+</ul>
+<p>Interview tip:
 explain variance in terms of whether the type only produces values,
 consumes values, or does both.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#variance-in-out">🚀 See Full Deep Dive</a></p>
@@ -2836,12 +3192,20 @@ consumes values, or does both.</p>
 <summary>View Answer</summary>
 <p>A star projection (<code>*</code>) represents an unknown type argument while still
 preserving safe usage rules.
-It is Kotlin's safer alternative to raw types.
-Use it when:
-- the exact generic type is irrelevant
-- you only need read-safe access
-- API flexibility matters more than precision
+It is Kotlin's safer alternative to raw types.</p>
+<p>Use it when:</p>
+<ul>
+<li>
+<p>the exact generic type is irrelevant</p>
+</li>
+<li>
+<p>you only need read-safe access</p>
+</li>
+<li>
+<p>API flexibility matters more than precision
 It is useful in reflection-heavy or framework-style code.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/generics-and-variance/#star-projection">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2857,18 +3221,38 @@ It is useful in reflection-heavy or framework-style code.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin's collections API is expressive and functional in style.
-Common operations:
-- <code>map</code>
-- <code>filter</code>
-- <code>flatMap</code>
-- <code>groupBy</code>
-- <code>associate</code>
-Interview focus:
-- readability vs performance
-- eager evaluation of collections
-- choosing the right operator chain
+<p>Kotlin's collections API is expressive and functional in style.</p>
+<p>Common operations:</p>
+<ul>
+<li>
+<p><code>map</code></p>
+</li>
+<li>
+<p><code>filter</code></p>
+</li>
+<li>
+<p><code>flatMap</code></p>
+</li>
+<li>
+<p><code>groupBy</code></p>
+</li>
+<li>
+<p><code>associate</code></p>
+</li>
+</ul>
+<p>Interview focus:</p>
+<ul>
+<li>
+<p>readability vs performance</p>
+</li>
+<li>
+<p>eager evaluation of collections</p>
+</li>
+<li>
+<p>choosing the right operator chain
 It is powerful, but misuse can create unnecessary allocations.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#collections-api">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2884,14 +3268,26 @@ It is powerful, but misuse can create unnecessary allocations.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin distinguishes read-only collection interfaces from mutable ones.
-Important nuance:
-- read-only does not always mean truly immutable
-- it may only restrict mutation through that reference
-Interviewers often want you to understand the difference between:
-- API-level immutability
-- actual object immutability
+<p>Kotlin distinguishes read-only collection interfaces from mutable ones.</p>
+<p>Important nuance:</p>
+<ul>
+<li>
+<p>read-only does not always mean truly immutable</p>
+</li>
+<li>
+<p>it may only restrict mutation through that reference</p>
+</li>
+</ul>
+<p>Interviewers often want you to understand the difference between:</p>
+<ul>
+<li>
+<p>API-level immutability</p>
+</li>
+<li>
+<p>actual object immutability
 This matters when sharing state across layers or threads.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#immutable-vs-mutable-collections">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2907,13 +3303,21 @@ This matters when sharing state across layers or threads.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p><code>Sequence</code> evaluates operations lazily.
-Use it when:
-- processing large datasets
-- chaining many transformations
-- avoiding intermediate collection allocations matters
-Regular collections are often simpler and faster for small datasets.
-Interview answer:
+<p><code>Sequence</code> evaluates operations lazily.</p>
+<p>Use it when:</p>
+<ul>
+<li>
+<p>processing large datasets</p>
+</li>
+<li>
+<p>chaining many transformations</p>
+</li>
+<li>
+<p>avoiding intermediate collection allocations matters
+Regular collections are often simpler and faster for small datasets.</p>
+</li>
+</ul>
+<p>Interview answer:
 choose <code>Sequence</code> for allocation-sensitive pipelines,
 not automatically for every chain.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/collections-and-sequences/#sequences-vs-collections">🚀 See Full Deep Dive</a></p>
@@ -2932,18 +3336,38 @@ not automatically for every chain.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Kotlin Coroutines are lightweight concurrency primitives for writing
-asynchronous code in a sequential style.
-They help simplify:
-- background work
-- async operations
-- structured concurrency
-- cancellation-aware code
-Core concepts:
-- <code>suspend</code> functions
-- <code>CoroutineScope</code>
-- <code>Dispatcher</code>
-- <code>Job</code>
+asynchronous code in a sequential style.</p>
+<p>They help simplify:</p>
+<ul>
+<li>
+<p>background work</p>
+</li>
+<li>
+<p>async operations</p>
+</li>
+<li>
+<p>structured concurrency</p>
+</li>
+<li>
+<p>cancellation-aware code</p>
+</li>
+</ul>
+<p>Core concepts:</p>
+<ul>
+<li>
+<p><code>suspend</code> functions</p>
+</li>
+<li>
+<p><code>CoroutineScope</code></p>
+</li>
+<li>
+<p><code>Dispatcher</code></p>
+</li>
+<li>
+<p><code>Job</code>
 Coroutines are cheaper than threads but still require careful design.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#coroutines-what-are">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2959,15 +3383,29 @@ Coroutines are cheaper than threads but still require careful design.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>A <code>suspend</code> function can pause and resume without blocking the thread.
-Important clarification:
-- <code>suspend</code> does not automatically mean background thread
-- it means the function can cooperate with coroutine suspension
-Suspend functions are the building blocks of coroutine-based APIs.
-They usually compose with:
-- structured concurrency
-- cancellation
-- dispatcher switching</p>
+<p>A <code>suspend</code> function can pause and resume without blocking the thread.</p>
+<p>Important clarification:</p>
+<ul>
+<li>
+<p><code>suspend</code> does not automatically mean background thread</p>
+</li>
+<li>
+<p>it means the function can cooperate with coroutine suspension
+Suspend functions are the building blocks of coroutine-based APIs.</p>
+</li>
+</ul>
+<p>They usually compose with:</p>
+<ul>
+<li>
+<p>structured concurrency</p>
+</li>
+<li>
+<p>cancellation</p>
+</li>
+<li>
+<p>dispatcher switching</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#suspend-functions">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -2983,12 +3421,20 @@ They usually compose with:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Suspend functions are compiled into continuation-passing style (CPS).
-Internally, the compiler:
-- adds a <code>Continuation</code> parameter
-- rewrites code into resumable steps
-- builds a state machine for suspension points
-Interview takeaway:
+<p>Suspend functions are compiled into continuation-passing style (CPS).</p>
+<p>Internally, the compiler:</p>
+<ul>
+<li>
+<p>adds a <code>Continuation</code> parameter</p>
+</li>
+<li>
+<p>rewrites code into resumable steps</p>
+</li>
+<li>
+<p>builds a state machine for suspension points</p>
+</li>
+</ul>
+<p>Interview takeaway:
 coroutines look sequential in source code, but compile into a very
 different lower-level form.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/coroutines-foundations/#continuation-and-cps">🚀 See Full Deep Dive</a></p>
@@ -3006,13 +3452,23 @@ different lower-level form.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Dispatchers decide what thread or thread pool a coroutine runs on.
-Common ones:
-- <code>Dispatchers.Main</code>
-- <code>Dispatchers.IO</code>
-- <code>Dispatchers.Default</code>
-- <code>Dispatchers.Unconfined</code> (special case)
-Interview point:
+<p>Dispatchers decide what thread or thread pool a coroutine runs on.</p>
+<p>Common ones:</p>
+<ul>
+<li>
+<p><code>Dispatchers.Main</code></p>
+</li>
+<li>
+<p><code>Dispatchers.IO</code></p>
+</li>
+<li>
+<p><code>Dispatchers.Default</code></p>
+</li>
+<li>
+<p><code>Dispatchers.Unconfined</code> (special case)</p>
+</li>
+</ul>
+<p>Interview point:
 dispatchers affect execution context, scheduling, and performance.
 Choosing the wrong dispatcher can hurt responsiveness or waste threads.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#dispatchers">🚀 See Full Deep Dive</a></p>
@@ -3030,16 +3486,32 @@ Choosing the wrong dispatcher can hurt responsiveness or waste threads.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p><code>CoroutineScope</code> defines the lifecycle boundary for launched coroutines.
-It matters because it controls:
-- cancellation ownership
-- structured concurrency
-- parent-child relationships
-- leak prevention
-Android examples:
-- <code>viewModelScope</code>
-- <code>lifecycleScope</code>
+<p><code>CoroutineScope</code> defines the lifecycle boundary for launched coroutines.</p>
+<p>It matters because it controls:</p>
+<ul>
+<li>
+<p>cancellation ownership</p>
+</li>
+<li>
+<p>structured concurrency</p>
+</li>
+<li>
+<p>parent-child relationships</p>
+</li>
+<li>
+<p>leak prevention</p>
+</li>
+</ul>
+<p>Android examples:</p>
+<ul>
+<li>
+<p><code>viewModelScope</code></p>
+</li>
+<li>
+<p><code>lifecycleScope</code>
 A coroutine without the right scope is often a lifecycle bug.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/dispatchers-and-coroutine-scope/#coroutine-scope">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3056,13 +3528,23 @@ A coroutine without the right scope is often a lifecycle bug.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Structured concurrency means coroutines are launched within a scope that
-defines ownership and lifetime.
-Benefits:
-- child coroutines are tracked
-- cancellation propagates predictably
-- errors are easier to manage
-- work does not leak silently
-Interview summary:
+defines ownership and lifetime.</p>
+<p>Benefits:</p>
+<ul>
+<li>
+<p>child coroutines are tracked</p>
+</li>
+<li>
+<p>cancellation propagates predictably</p>
+</li>
+<li>
+<p>errors are easier to manage</p>
+</li>
+<li>
+<p>work does not leak silently</p>
+</li>
+</ul>
+<p>Interview summary:
 concurrency should be tied to a parent lifecycle, not launched freely.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#structured-concurrency">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3080,12 +3562,18 @@ concurrency should be tied to a parent lifecycle, not launched freely.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p><code>Job</code> and <code>SupervisorJob</code> both manage coroutine lifecycle,
-but failure propagation differs.
-- <code>Job</code> → child failure cancels siblings/parent hierarchy
-- <code>SupervisorJob</code> → child failure is isolated
+but failure propagation differs.</p>
+<ul>
+<li>
+<p><code>Job</code> → child failure cancels siblings/parent hierarchy</p>
+</li>
+<li>
+<p><code>SupervisorJob</code> → child failure is isolated
 Use <code>SupervisorJob</code> when independent child tasks should not take each
 other down.
 This is a common senior-level coroutine interview question.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-vs-supervisorjob">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3102,11 +3590,17 @@ This is a common senior-level coroutine interview question.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p><code>launch</code> starts a coroutine that returns <code>Job</code>.
-<code>async</code> starts a coroutine that returns <code>Deferred&lt;T&gt;</code>.
-Use:
-- <code>launch</code> for fire-and-join style work
-- <code>async</code> when a result is needed
-Interview nuance:
+<code>async</code> starts a coroutine that returns <code>Deferred&lt;T&gt;</code>.</p>
+<p>Use:</p>
+<ul>
+<li>
+<p><code>launch</code> for fire-and-join style work</p>
+</li>
+<li>
+<p><code>async</code> when a result is needed</p>
+</li>
+</ul>
+<p>Interview nuance:
 <code>async</code> is not automatically better for parallelism.
 It should be used when structured result handling is needed.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#async-vs-launch">🚀 See Full Deep Dive</a></p>
@@ -3124,15 +3618,29 @@ It should be used when structured result handling is needed.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Every coroutine has a <code>Job</code> in its context.
-Parent-child hierarchy controls:
-- cancellation propagation
-- completion waiting
-- exception handling behavior
-In structured concurrency:
-- parent waits for children
-- child cancellation can affect parent depending on job type
+<p>Every coroutine has a <code>Job</code> in its context.</p>
+<p>Parent-child hierarchy controls:</p>
+<ul>
+<li>
+<p>cancellation propagation</p>
+</li>
+<li>
+<p>completion waiting</p>
+</li>
+<li>
+<p>exception handling behavior</p>
+</li>
+</ul>
+<p>In structured concurrency:</p>
+<ul>
+<li>
+<p>parent waits for children</p>
+</li>
+<li>
+<p>child cancellation can affect parent depending on job type
 Understanding job hierarchy is key to debugging coroutine behavior.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/structured-concurrency-and-jobs/#job-hierarchy">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3150,13 +3658,23 @@ Understanding job hierarchy is key to debugging coroutine behavior.</p>
 <summary>View Answer</summary>
 <p>Coroutine cancellation is cooperative.
 That means code must reach suspension points or explicitly check for
-cancellation to stop promptly.
-Common tools:
-- <code>isActive</code>
-- <code>ensureActive()</code>
-- <code>yield()</code>
-- cancellable suspending functions
+cancellation to stop promptly.</p>
+<p>Common tools:</p>
+<ul>
+<li>
+<p><code>isActive</code></p>
+</li>
+<li>
+<p><code>ensureActive()</code></p>
+</li>
+<li>
+<p><code>yield()</code></p>
+</li>
+<li>
+<p>cancellable suspending functions
 Blocking code that ignores cancellation is a common production bug.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-cancellation">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3172,13 +3690,23 @@ Blocking code that ignores cancellation is a common production bug.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Exception handling depends on coroutine builder type and hierarchy.
-Key ideas:
-- <code>launch</code> surfaces failures differently than <code>async</code>
-- parent-child structure matters
-- <code>CoroutineExceptionHandler</code> only handles uncaught exceptions
-- supervisor-style scopes isolate failures
+<p>Exception handling depends on coroutine builder type and hierarchy.</p>
+<p>Key ideas:</p>
+<ul>
+<li>
+<p><code>launch</code> surfaces failures differently than <code>async</code></p>
+</li>
+<li>
+<p>parent-child structure matters</p>
+</li>
+<li>
+<p><code>CoroutineExceptionHandler</code> only handles uncaught exceptions</p>
+</li>
+<li>
+<p>supervisor-style scopes isolate failures
 Interview answer should focus on propagation rules, not just try/catch.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/cancellation-and-exception-handling/#coroutine-exception-handling">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3194,18 +3722,38 @@ Interview answer should focus on propagation rules, not just try/catch.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Flow is Kotlin's cold asynchronous stream API.
-It is used for:
-- reactive pipelines
-- database observation
-- UI state transformation
-- incremental async values
-Important properties:
-- cold by default
-- sequential by default
-- coroutine-based
-- cancellation-aware
+<p>Flow is Kotlin's cold asynchronous stream API.</p>
+<p>It is used for:</p>
+<ul>
+<li>
+<p>reactive pipelines</p>
+</li>
+<li>
+<p>database observation</p>
+</li>
+<li>
+<p>UI state transformation</p>
+</li>
+<li>
+<p>incremental async values</p>
+</li>
+</ul>
+<p>Important properties:</p>
+<ul>
+<li>
+<p>cold by default</p>
+</li>
+<li>
+<p>sequential by default</p>
+</li>
+<li>
+<p>coroutine-based</p>
+</li>
+<li>
+<p>cancellation-aware
 Flow is central to modern Android state handling.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#flow-what-is">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3222,11 +3770,17 @@ Flow is central to modern Android state handling.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Cold streams start producing values per collector.
-Hot streams can emit independently of collectors.
-In Kotlin:
-- <code>Flow</code> is usually cold
-- <code>StateFlow</code> and <code>SharedFlow</code> are hot
-Interview framing:
+Hot streams can emit independently of collectors.</p>
+<p>In Kotlin:</p>
+<ul>
+<li>
+<p><code>Flow</code> is usually cold</p>
+</li>
+<li>
+<p><code>StateFlow</code> and <code>SharedFlow</code> are hot</p>
+</li>
+</ul>
+<p>Interview framing:
 the difference is about producer lifecycle and sharing behavior,
 not just API names.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/flow-fundamentals/#cold-vs-hot-flow">🚀 See Full Deep Dive</a></p>
@@ -3245,13 +3799,23 @@ not just API names.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p><code>StateFlow</code> is for holding and exposing current state.
-<code>SharedFlow</code> is for broadcasting events or shared emissions.
-Quick comparison:
-- <code>StateFlow</code> always has a current value
-- <code>SharedFlow</code> can be configured for replay/buffering
-- <code>StateFlow</code> is state-oriented
-- <code>SharedFlow</code> is event/broadcast-oriented
+<code>SharedFlow</code> is for broadcasting events or shared emissions.</p>
+<p>Quick comparison:</p>
+<ul>
+<li>
+<p><code>StateFlow</code> always has a current value</p>
+</li>
+<li>
+<p><code>SharedFlow</code> can be configured for replay/buffering</p>
+</li>
+<li>
+<p><code>StateFlow</code> is state-oriented</p>
+</li>
+<li>
+<p><code>SharedFlow</code> is event/broadcast-oriented
 Choosing the wrong one often causes UI event bugs.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#stateflow-vs-sharedflow">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3268,12 +3832,20 @@ Choosing the wrong one often causes UI event bugs.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Channels are point-to-point communication primitives.
-SharedFlow is a broadcast-style hot stream.
-Use Channel when:
-- send/receive semantics matter
-- backpressure and buffering behavior are central
-- you need queue-like communication
+SharedFlow is a broadcast-style hot stream.</p>
+<p>Use Channel when:</p>
+<ul>
+<li>
+<p>send/receive semantics matter</p>
+</li>
+<li>
+<p>backpressure and buffering behavior are central</p>
+</li>
+<li>
+<p>you need queue-like communication
 Use SharedFlow when multiple collectors should observe emissions.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#channels-vs-sharedflow">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3290,12 +3862,20 @@ Use SharedFlow when multiple collectors should observe emissions.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p><code>Mutex</code> is a coroutine-friendly mutual exclusion primitive.
-It is used to protect shared mutable state without blocking a thread.
-Use it when:
-- multiple coroutines update shared data
-- atomic updates are needed
-- thread-safe state transitions matter
-Interview detail:
+It is used to protect shared mutable state without blocking a thread.</p>
+<p>Use it when:</p>
+<ul>
+<li>
+<p>multiple coroutines update shared data</p>
+</li>
+<li>
+<p>atomic updates are needed</p>
+</li>
+<li>
+<p>thread-safe state transitions matter</p>
+</li>
+</ul>
+<p>Interview detail:
 <code>Mutex</code> suspends waiting coroutines instead of blocking a thread.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/stateflow-sharedflow-and-channels/#mutex-in-kotlin">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3312,18 +3892,38 @@ Interview detail:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin is designed for strong Java interoperability.
-It supports:
-- calling Java code directly
-- exposing Kotlin APIs to Java
-- sharing JVM libraries and tooling
-Common interop concerns:
-- nullability
-- checked exceptions
-- default arguments
-- static-like APIs
-- SAM conversions
+<p>Kotlin is designed for strong Java interoperability.</p>
+<p>It supports:</p>
+<ul>
+<li>
+<p>calling Java code directly</p>
+</li>
+<li>
+<p>exposing Kotlin APIs to Java</p>
+</li>
+<li>
+<p>sharing JVM libraries and tooling</p>
+</li>
+</ul>
+<p>Common interop concerns:</p>
+<ul>
+<li>
+<p>nullability</p>
+</li>
+<li>
+<p>checked exceptions</p>
+</li>
+<li>
+<p>default arguments</p>
+</li>
+<li>
+<p>static-like APIs</p>
+</li>
+<li>
+<p>SAM conversions
 Good Kotlin interview answers usually mention both syntax and JVM impact.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-jvm-interoperability">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3340,14 +3940,26 @@ Good Kotlin interview answers usually mention both syntax and JVM impact.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>Kotlin source compiles to JVM bytecode, often with generated helper
-classes and methods that do not appear in source code.
-Important interview topics:
-- null-check generation
-- synthetic/default helper methods
-- lambda class generation
-- inline call-site expansion
-- suspend state machine generation
+classes and methods that do not appear in source code.</p>
+<p>Important interview topics:</p>
+<ul>
+<li>
+<p>null-check generation</p>
+</li>
+<li>
+<p>synthetic/default helper methods</p>
+</li>
+<li>
+<p>lambda class generation</p>
+</li>
+<li>
+<p>inline call-site expansion</p>
+</li>
+<li>
+<p>suspend state machine generation
 Bytecode knowledge helps explain performance and interoperability.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#kotlin-bytecode-basics">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3364,12 +3976,20 @@ Bytecode knowledge helps explain performance and interoperability.</p>
 <details class="question">
 <summary>View Answer</summary>
 <p>The compiler rewrites suspend code into a state machine that tracks the
-current execution label and continuation.
-At each suspension point:
-- local state may be stored
-- execution label is updated
-- continuation resumes later from the right state
+current execution label and continuation.</p>
+<p>At each suspension point:</p>
+<ul>
+<li>
+<p>local state may be stored</p>
+</li>
+<li>
+<p>execution label is updated</p>
+</li>
+<li>
+<p>continuation resumes later from the right state
 This explains how coroutines appear sequential while remaining resumable.</p>
+</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/jvm-interop-and-bytecode/#suspend-state-machine">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3385,14 +4005,26 @@ This explains how coroutines appear sequential while remaining resumable.</p>
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin splits every type into non-nullable (String) and nullable (String?), enforcing null safety at compile time through safe-call (?.),  Elvis (?:), and non-null assertion (!!) operators.
-In interviews, cover:
-- non-null types prevent NullPointerExceptions at compile time; ? variants must be explicitly unwrapped
-- platform types (String!) arise when consuming Java APIs with no nullability annotation — the compiler allows assignment to String but a null return still causes a runtime NPE
-- Nothing is the bottom type with no values; it models code paths that never return (throw, error(), TODO(), infinite loops) and enables exhaustive type-checking in expressions like: val s: String = intent.getStringExtra("k") ?: error("Missing k")
-- on Android, wrap all Java API boundaries immediately: convert T! to T? at the call site and validate before propagating deeper
-Strong answer tip:
-- demonstrate the trap: <code>val x: String = javaMethod()</code> compiles even when javaMethod() returns a platform type — you can still get a Kotlin-generated NPE at runtime if Java returns null</p>
+<p>Kotlin splits every type into non-nullable (String) and nullable (String?), enforcing null safety at compile time through safe-call (?.),  Elvis (?:), and non-null assertion (!!) operators.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>non-null types prevent NullPointerExceptions at compile time; ? variants must be explicitly unwrapped</p>
+</li>
+<li>
+<p>platform types (String!) arise when consuming Java APIs with no nullability annotation — the compiler allows assignment to String but a null return still causes a runtime NPE</p>
+</li>
+<li>
+<p>Nothing is the bottom type with no values; it models code paths that never return (throw, error(), TODO(), infinite loops) and enables exhaustive type-checking in expressions like: val s: String = intent.getStringExtra("k") ?: error("Missing k")</p>
+</li>
+<li>
+<p>on Android, wrap all Java API boundaries immediately: convert T! to T? at the call site and validate before propagating deeper</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>demonstrate the trap: <code>val x: String = javaMethod()</code> compiles even when javaMethod() returns a platform type — you can still get a Kotlin-generated NPE at runtime if Java returns null</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-the-kotlin-type-system-nullable-vs-non-nullable-platform-types">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3408,14 +4040,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>By default Kotlin generics are invariant: List<String> is not a subtype of List<Any> even though String is Any.
-In interviews, cover:
-- out T (covariant / producer): you can read T but not write it; Kotlin's List<out T> means List<String> is a subtype of List<Any>; maps to Java ? extends T
-- in T (contravariant / consumer): you can write T but not read it; Comparator<in T> is the canonical example; maps to Java ? super T
-- use-site variance: apply out/in at the call site on a declaration that didn't use it: fun f(xs: MutableList<out Number>)
-- star projection (List&lt;*&gt;): means "list of unknown type"; prevents unsafe writes to mutable collections unlike List<Any?> which would permit them
-Strong answer tip:
-- MutableList<String> is NOT a subtype of MutableList<Any> (invariant) because that would allow inserting a non-String; but List<String> IS a subtype of List<Any> because List is declared out</p>
+<p>By default Kotlin generics are invariant: List<String> is not a subtype of List<Any> even though String is Any.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>out T (covariant / producer): you can read T but not write it; Kotlin's List<out T> means List<String> is a subtype of List<Any>; maps to Java ? extends T</p>
+</li>
+<li>
+<p>in T (contravariant / consumer): you can write T but not read it; Comparator<in T> is the canonical example; maps to Java ? super T</p>
+</li>
+<li>
+<p>use-site variance: apply out/in at the call site on a declaration that didn't use it: fun f(xs: MutableList<out Number>)</p>
+</li>
+<li>
+<p>star projection (List&lt;*&gt;): means "list of unknown type"; prevents unsafe writes to mutable collections unlike List<Any?> which would permit them</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>MutableList<String> is NOT a subtype of MutableList<Any> (invariant) because that would allow inserting a non-String; but List<String> IS a subtype of List<Any> because List is declared out</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-generics-variance-out-in-and-star-projections">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3432,14 +4076,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>inline copies the function body into every call site, which eliminates lambda allocation on Android hot paths and enables reified type parameters.
-In interviews, cover:
-- without inline, lambdas passed as function parameters cause an object allocation per call; inline removes this overhead for critical inner loops
-- reified T works because the compiler substitutes the real type at each inlined call site, enabling T::class, is T, as T, filterIsInstance<T>() — none of which work in regular generics due to JVM type erasure
-- Java equivalent: Class<T> parameter or TypeToken patterns (Gson TypeToken); reified is cleaner but restricted to inline functions
-- costs: every call site grows in bytecode (code size); DEX method count impact is minor in modern builds but library authors must be careful since changing an inline function body forces all consumers to recompile
-Strong answer tip:
-- you cannot have reified without inline — the two are inseparable; also, complex nested generic structure still hits type erasure unless the compiler substitutes enough info</p>
+<p>inline copies the function body into every call site, which eliminates lambda allocation on Android hot paths and enables reified type parameters.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>without inline, lambdas passed as function parameters cause an object allocation per call; inline removes this overhead for critical inner loops</p>
+</li>
+<li>
+<p>reified T works because the compiler substitutes the real type at each inlined call site, enabling T::class, is T, as T, filterIsInstance<T>() — none of which work in regular generics due to JVM type erasure</p>
+</li>
+<li>
+<p>Java equivalent: Class<T> parameter or TypeToken patterns (Gson TypeToken); reified is cleaner but restricted to inline functions</p>
+</li>
+<li>
+<p>costs: every call site grows in bytecode (code size); DEX method count impact is minor in modern builds but library authors must be careful since changing an inline function body forces all consumers to recompile</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>you cannot have reified without inline — the two are inseparable; also, complex nested generic structure still hits type erasure unless the compiler substitutes enough info</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-inline-functions-and-reified-type-parameters-capabiliti">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3455,14 +4111,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Extension functions are statically dispatched at compile time based on the declared type of the receiver — they are not virtual.
-In interviews, cover:
-- open class A; class B : A(); fun A.f() = "A"; fun B.f() = "B"; val x: A = B(); x.f() returns "A" not "B" — no polymorphism
-- extensions are compiled to static methods in a generated class; they cannot access private members of the extended class
-- naming conflicts with member functions: member always wins; add an import alias if shadowing is genuinely intended
-- extension properties cannot have backing fields; they are equivalent to getter-only computed properties
-Strong answer tip:
-- common Android misuse: extending a class to add behavior that belongs inside it — prefer refactoring if you own the class; extensions shine for utility on third-party or platform types</p>
+<p>Extension functions are statically dispatched at compile time based on the declared type of the receiver — they are not virtual.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>open class A; class B : A(); fun A.f() = "A"; fun B.f() = "B"; val x: A = B(); x.f() returns "A" not "B" — no polymorphism</p>
+</li>
+<li>
+<p>extensions are compiled to static methods in a generated class; they cannot access private members of the extended class</p>
+</li>
+<li>
+<p>naming conflicts with member functions: member always wins; add an import alias if shadowing is genuinely intended</p>
+</li>
+<li>
+<p>extension properties cannot have backing fields; they are equivalent to getter-only computed properties</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>common Android misuse: extending a class to add behavior that belongs inside it — prefer refactoring if you own the class; extensions shine for utility on third-party or platform types</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-extension-functions-dispatch-rules-and-common-pitfalls">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3479,14 +4147,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin object declarations are thread-safe lazy singletons backed by a class with static INSTANCE; initialization happens on first access.
-In interviews, cover:
-- object Foo is initialized the first time any property or function on it is accessed; this is JVM class-loading laziness with guaranteed thread safety
-- companion object { } compiles to a nested INSTANCE class; annotate with @JvmStatic to expose members as true static methods to Java callers
-- initialization order traps: if an object accesses another object during its own init block and that second object also reads back the first, you can get partial initialization or deadlock
-- testability: singletons are hard to swap in tests; prefer injecting an interface rather than referencing the object directly, or use a factory behind the companion
-Strong answer tip:
-- never do heavy I/O or complex logic in an object's init block — it runs on first access which may be the main thread at app startup</p>
+<p>Kotlin object declarations are thread-safe lazy singletons backed by a class with static INSTANCE; initialization happens on first access.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>object Foo is initialized the first time any property or function on it is accessed; this is JVM class-loading laziness with guaranteed thread safety</p>
+</li>
+<li>
+<p>companion object { } compiles to a nested INSTANCE class; annotate with @JvmStatic to expose members as true static methods to Java callers</p>
+</li>
+<li>
+<p>initialization order traps: if an object accesses another object during its own init block and that second object also reads back the first, you can get partial initialization or deadlock</p>
+</li>
+<li>
+<p>testability: singletons are hard to swap in tests; prefer injecting an interface rather than referencing the object directly, or use a factory behind the companion</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>never do heavy I/O or complex logic in an object's init block — it runs on first access which may be the main thread at app startup</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-object-declarations-companion-objects-and-singleton-ini">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3503,14 +4183,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin delegation separates interface from implementation (class delegation) or defers property access logic to a delegate object (property delegates).
-In interviews, cover:
-- class C(val base: Base) : Base by base: all methods of Base are automatically forwarded to base; useful for decoration without inheritance
-- lazy { ... } defers initialization until first read; default mode is LazyThreadSafetyMode.SYNCHRONIZED (double-checked locking); use LazyThreadSafetyMode.NONE on single-thread access for less overhead
-- Delegates.observable() calls a callback on every set — useful for triggering UI update logic without a separate setter
-- custom delegates implement getValue/setValue (for var) or just getValue (for val); commonly used for ViewBinding, SharedPreferences, SavedStateHandle wrappers
-Strong answer tip:
-- lazy is NOT automatically correct on multiple threads unless the LazyThreadSafetyMode is appropriate; and the delegate captures the lambda, so avoid capturing stale context</p>
+<p>Kotlin delegation separates interface from implementation (class delegation) or defers property access logic to a delegate object (property delegates).</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>class C(val base: Base) : Base by base: all methods of Base are automatically forwarded to base; useful for decoration without inheritance</p>
+</li>
+<li>
+<p>lazy { ... } defers initialization until first read; default mode is LazyThreadSafetyMode.SYNCHRONIZED (double-checked locking); use LazyThreadSafetyMode.NONE on single-thread access for less overhead</p>
+</li>
+<li>
+<p>Delegates.observable() calls a callback on every set — useful for triggering UI update logic without a separate setter</p>
+</li>
+<li>
+<p>custom delegates implement getValue/setValue (for var) or just getValue (for val); commonly used for ViewBinding, SharedPreferences, SavedStateHandle wrappers</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>lazy is NOT automatically correct on multiple threads unless the LazyThreadSafetyMode is appropriate; and the delegate captures the lambda, so avoid capturing stale context</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-delegation-and-property-delegates-by-lazy-observable-an">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3527,14 +4219,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Value classes wrap a single property and are represented as the raw type at runtime wherever the compiler can avoid boxing, eliminating the allocation cost of wrapper types.
-In interviews, cover:
-- @JvmInline value class UserId(val id: String) — at call sites where the type is known, the compiler uses String directly; boxing occurs at generic boundaries, interface use, or nullable value class references
-- primary use cases on Android: type-safe wrappers around primitives (Dp, Px, UserId, SessionToken) with zero runtime cost in the happy path
-- limitations: only one property, no additional state fields, cannot be used as generic type arguments in all positions without boxing
-- Compose uses value classes extensively: AnnotatedString, Color (backed by ULong), etc.
-Strong answer tip:
-- box vs no-box: if you store a value class in a List<UserId>, it boxes; if you call a fun that accepts UserId directly, it is unboxed — describe this tradeoff for interview depth</p>
+<p>Value classes wrap a single property and are represented as the raw type at runtime wherever the compiler can avoid boxing, eliminating the allocation cost of wrapper types.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>@JvmInline value class UserId(val id: String) — at call sites where the type is known, the compiler uses String directly; boxing occurs at generic boundaries, interface use, or nullable value class references</p>
+</li>
+<li>
+<p>primary use cases on Android: type-safe wrappers around primitives (Dp, Px, UserId, SessionToken) with zero runtime cost in the happy path</p>
+</li>
+<li>
+<p>limitations: only one property, no additional state fields, cannot be used as generic type arguments in all positions without boxing</p>
+</li>
+<li>
+<p>Compose uses value classes extensively: AnnotatedString, Color (backed by ULong), etc.</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>box vs no-box: if you store a value class in a List<UserId>, it boxes; if you call a fun that accepts UserId directly, it is unboxed — describe this tradeoff for interview depth</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-value-classes-inline-classes-runtime-representation-box">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3551,15 +4255,29 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin and Java interop requires understanding of how each compiles to bytecode and the adaptation layer between them.
-In interviews, cover:
-- SAM conversions: a Kotlin lambda can be passed where Java expects a Single Abstract Method interface (Runnable, Callable); in Kotlin-defined interfaces this requires the fun interface keyword
-- default methods: Kotlin interface default implementations compile to static helper methods; Java 8+ callers can use them directly, older bytecode-targets need @JvmDefault or the DefaultImpls workaround
-- @JvmOverloads: generates Java overloads for each combination of default parameter values; without it, Java callers must pass all arguments
-- @JvmStatic: makes companion object members accessible as true static methods in Java bytecode
-- suspend functions appear to Java as blocking methods with an extra Continuation<T> parameter; wrap them with CoroutineScope.launch or use runBlocking in Java-entry-point code
-Strong answer tip:
-- describe how Kotlin's @JvmField avoids getter/setter generation — useful when Java code needs direct field access</p>
+<p>Kotlin and Java interop requires understanding of how each compiles to bytecode and the adaptation layer between them.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>SAM conversions: a Kotlin lambda can be passed where Java expects a Single Abstract Method interface (Runnable, Callable); in Kotlin-defined interfaces this requires the fun interface keyword</p>
+</li>
+<li>
+<p>default methods: Kotlin interface default implementations compile to static helper methods; Java 8+ callers can use them directly, older bytecode-targets need @JvmDefault or the DefaultImpls workaround</p>
+</li>
+<li>
+<p>@JvmOverloads: generates Java overloads for each combination of default parameter values; without it, Java callers must pass all arguments</p>
+</li>
+<li>
+<p>@JvmStatic: makes companion object members accessible as true static methods in Java bytecode</p>
+</li>
+<li>
+<p>suspend functions appear to Java as blocking methods with an extra Continuation<T> parameter; wrap them with CoroutineScope.launch or use runBlocking in Java-entry-point code</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>describe how Kotlin's @JvmField avoids getter/setter generation — useful when Java code needs direct field access</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-kotlin-jvm-interop-sam-conversions-default-methods-and-jvmover">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3577,14 +4295,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin's collection API is expressive but can create significant intermediate allocations in chains of operators; sequences and careful operator choice reduce this cost.
-In interviews, cover:
-- list.filter{}.map{}: each operator creates a new List; with Sequence, operators are lazy and fused — a single pass emits each element through the full pipeline before moving to the next
-- use asSequence() when the chain has 3+ operators and the list is large; for small lists the sequence overhead (lambda allocation, boxing) outweighs the benefit
-- String concatenation in loops: compile to StringBuilder internally when the loop is simple; complex patterns may generate temporary strings — use buildString
-- persistent/immutable data structures (e.g. Kotlin's kotlinx.collections.immutable): structural sharing avoids full copies on update; useful for Compose state where copy() on data classes creates throwaway allocations
-Strong answer tip:
-- profile first — measure with Android Profiler or Perfetto before optimizing; the savings from sequence over a list of 10 items are negligible, but on a list of 10,000 items in a RecyclerView bind() call they matter</p>
+<p>Kotlin's collection API is expressive but can create significant intermediate allocations in chains of operators; sequences and careful operator choice reduce this cost.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>list.filter{}.map{}: each operator creates a new List; with Sequence, operators are lazy and fused — a single pass emits each element through the full pipeline before moving to the next</p>
+</li>
+<li>
+<p>use asSequence() when the chain has 3+ operators and the list is large; for small lists the sequence overhead (lambda allocation, boxing) outweighs the benefit</p>
+</li>
+<li>
+<p>String concatenation in loops: compile to StringBuilder internally when the loop is simple; complex patterns may generate temporary strings — use buildString</p>
+</li>
+<li>
+<p>persistent/immutable data structures (e.g. Kotlin's kotlinx.collections.immutable): structural sharing avoids full copies on update; useful for Compose state where copy() on data classes creates throwaway allocations</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>profile first — measure with Android Profiler or Perfetto before optimizing; the savings from sequence over a list of 10 items are negligible, but on a list of 10,000 items in a RecyclerView bind() call they matter</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#discuss-kotlin-performance-traps-sequences-vs-collections-allocation-a">🚀 See Full Deep Dive</a></p>
 </details>
 <hr />
@@ -3601,14 +4331,26 @@ Strong answer tip:
 
 <details class="question">
 <summary>View Answer</summary>
-<p>Kotlin reflection on Android uses kotlin-reflect.jar which is 2–3 MB and adds initialization latency; it should be avoided on hot paths.
-In interviews, cover:
-- KClass<T> and ::class give compile-time access to class metadata; simple operations (::class.java, is T) are fine without kotlin-reflect
-- heavy reflection (KClass.memberProperties, KFunction.call, KType introspection) requires kotlin-reflect and adds method count and startup time to the DEX
-- alternatives: code generation at compile time (kapt/KSP with annotation processors), sealed class hierarchies for known types, kotlinx.serialization which uses codegen not runtime reflection
-- R8/ProGuard strips reflective access unless you add keep rules, causing runtime ClassNotFoundException or missing fields; this is a common production surprise
-Strong answer tip:
-- for Gson specifically: replace with kotlinx.serialization or Moshi with codegen adapters; both eliminate runtime reflection on Android data models</p>
+<p>Kotlin reflection on Android uses kotlin-reflect.jar which is 2–3 MB and adds initialization latency; it should be avoided on hot paths.</p>
+<p>In interviews, cover:</p>
+<ul>
+<li>
+<p>KClass<T> and ::class give compile-time access to class metadata; simple operations (::class.java, is T) are fine without kotlin-reflect</p>
+</li>
+<li>
+<p>heavy reflection (KClass.memberProperties, KFunction.call, KType introspection) requires kotlin-reflect and adds method count and startup time to the DEX</p>
+</li>
+<li>
+<p>alternatives: code generation at compile time (kapt/KSP with annotation processors), sealed class hierarchies for known types, kotlinx.serialization which uses codegen not runtime reflection</p>
+</li>
+<li>
+<p>R8/ProGuard strips reflective access unless you add keep rules, causing runtime ClassNotFoundException or missing fields; this is a common production surprise</p>
+</li>
+</ul>
+<p>Strong answer tip:</p>
+<ul>
+<li>for Gson specifically: replace with kotlinx.serialization or Moshi with codegen adapters; both eliminate runtime reflection on Android data models</li>
+</ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/kotlin/kotlin-basics/#explain-reflection-and-kclass-on-android-costs-risks-and-alternatives">🚀 See Full Deep Dive</a></p>
 </details>
 

@@ -1640,17 +1640,33 @@
 <p>Retrofit is a type-safe HTTP client for Android built on top of OkHttp.</p>
 <p>Retrofit simplifies:</p>
 <ul>
-<li>REST API integration</li>
-<li>request creation</li>
-<li>response parsing</li>
-<li>serialization/deserialization</li>
+<li>
+<p>REST API integration</p>
+</li>
+<li>
+<p>request creation</p>
+</li>
+<li>
+<p>response parsing</p>
+</li>
+<li>
+<p>serialization/deserialization</p>
+</li>
 </ul>
 <p>Core concepts:</p>
 <ul>
-<li>interface-based APIs</li>
-<li>annotations</li>
-<li>converters</li>
-<li>coroutine support</li>
+<li>
+<p>interface-based APIs</p>
+</li>
+<li>
+<p>annotations</p>
+</li>
+<li>
+<p>converters</p>
+</li>
+<li>
+<p>coroutine support</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/retrofit-fundamentals/#retrofit-fundamentals">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1671,16 +1687,30 @@
 JSON and Kotlin objects.</p>
 <p>Popular converters:</p>
 <ul>
-<li>GsonConverterFactory</li>
-<li>MoshiConverterFactory</li>
-<li>kotlinx.serialization</li>
+<li>
+<p>GsonConverterFactory</p>
+</li>
+<li>
+<p>MoshiConverterFactory</p>
+</li>
+<li>
+<p>kotlinx.serialization</p>
+</li>
 </ul>
 <p>Converter responsibility:</p>
 <ul>
-<li>parse response body to objects</li>
-<li>serialize objects to request body</li>
-<li>handle content types</li>
-<li>raise parsing exceptions</li>
+<li>
+<p>parse response body to objects</p>
+</li>
+<li>
+<p>serialize objects to request body</p>
+</li>
+<li>
+<p>handle content types</p>
+</li>
+<li>
+<p>raise parsing exceptions</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/serialization-strategies/#retrofit-converters">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1701,17 +1731,33 @@ JSON and Kotlin objects.</p>
 eliminating the need for Callback-based APIs.</p>
 <p>Advantages:</p>
 <ul>
-<li>no callback hell</li>
-<li>structured concurrency</li>
-<li>cancellation support</li>
-<li>exception propagation</li>
+<li>
+<p>no callback hell</p>
+</li>
+<li>
+<p>structured concurrency</p>
+</li>
+<li>
+<p>cancellation support</p>
+</li>
+<li>
+<p>exception propagation</p>
+</li>
 </ul>
 <p>Under the hood:</p>
 <ul>
-<li>adapters convert suspend to Call</li>
-<li>Retrofit wraps in coroutine adapters</li>
-<li>exceptions throw to caller</li>
-<li>automatic cancellation on scope exit</li>
+<li>
+<p>adapters convert suspend to Call</p>
+</li>
+<li>
+<p>Retrofit wraps in coroutine adapters</p>
+</li>
+<li>
+<p>exceptions throw to caller</p>
+</li>
+<li>
+<p>automatic cancellation on scope exit</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/retrofit-fundamentals/#coroutines-retrofit">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1731,16 +1777,30 @@ eliminating the need for Callback-based APIs.</p>
 <p>Interceptors are OkHttp components that observe/modify HTTP requests/responses.</p>
 <p>Two types:</p>
 <ul>
-<li>Application interceptors: see application code logic</li>
-<li>Network interceptors: see actual network traffic</li>
+<li>
+<p>Application interceptors: see application code logic</p>
+</li>
+<li>
+<p>Network interceptors: see actual network traffic</p>
+</li>
 </ul>
 <p>Common uses:</p>
 <ul>
-<li>logging</li>
-<li>authentication (token injection)</li>
-<li>request modification</li>
-<li>response transformation</li>
-<li>error handling</li>
+<li>
+<p>logging</p>
+</li>
+<li>
+<p>authentication (token injection)</p>
+</li>
+<li>
+<p>request modification</p>
+</li>
+<li>
+<p>response transformation</p>
+</li>
+<li>
+<p>error handling</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/okhttp-internals/#okhttp-interceptors">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1761,17 +1821,33 @@ eliminating the need for Callback-based APIs.</p>
 expensive reconnections.</p>
 <p>Benefits:</p>
 <ul>
-<li>reduced latency</li>
-<li>better throughput</li>
-<li>lower CPU/battery usage</li>
-<li>automatic reuse</li>
+<li>
+<p>reduced latency</p>
+</li>
+<li>
+<p>better throughput</p>
+</li>
+<li>
+<p>lower CPU/battery usage</p>
+</li>
+<li>
+<p>automatic reuse</p>
+</li>
 </ul>
 <p>How it works:</p>
 <ul>
-<li>connections cached by host:port:scheme</li>
-<li>TTL enforced by keep-alive timeout</li>
-<li>stale connections pruned</li>
-<li>pool size configurable</li>
+<li>
+<p>connections cached by host:port:scheme</p>
+</li>
+<li>
+<p>TTL enforced by keep-alive timeout</p>
+</li>
+<li>
+<p>stale connections pruned</p>
+</li>
+<li>
+<p>pool size configurable</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/okhttp-internals/#okhttp-connection-pooling">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1792,19 +1868,39 @@ expensive reconnections.</p>
 for building scalable web services.</p>
 <p>Core principles:</p>
 <ul>
-<li>resource-oriented URLs</li>
-<li>standard HTTP methods</li>
-<li>stateless communication</li>
-<li>cacheable representations</li>
-<li>client-server separation</li>
+<li>
+<p>resource-oriented URLs</p>
+</li>
+<li>
+<p>standard HTTP methods</p>
+</li>
+<li>
+<p>stateless communication</p>
+</li>
+<li>
+<p>cacheable representations</p>
+</li>
+<li>
+<p>client-server separation</p>
+</li>
 </ul>
 <p>HTTP methods:</p>
 <ul>
-<li>GET: retrieve</li>
-<li>POST: create</li>
-<li>PUT: replace</li>
-<li>PATCH: partial update</li>
-<li>DELETE: remove</li>
+<li>
+<p>GET: retrieve</p>
+</li>
+<li>
+<p>POST: create</p>
+</li>
+<li>
+<p>PUT: replace</p>
+</li>
+<li>
+<p>PATCH: partial update</p>
+</li>
+<li>
+<p>DELETE: remove</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/rest-api-principles/#rest-principles">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1824,18 +1920,36 @@ for building scalable web services.</p>
 <p>PUT and PATCH both modify resources but behave differently.</p>
 <p>PUT (complete replacement):</p>
 <ul>
-<li>replaces entire resource</li>
-<li>requires full new state</li>
-<li>idempotent</li>
-<li>typically 200/204 response</li>
+<li>
+<p>replaces entire resource</p>
+</li>
+<li>
+<p>requires full new state</p>
+</li>
+<li>
+<p>idempotent</p>
+</li>
+<li>
+<p>typically 200/204 response</p>
+</li>
 </ul>
 <p>PATCH (partial update):</p>
 <ul>
-<li>modifies only specified fields</li>
-<li>doesn't require full state</li>
-<li>idempotent (with conditionals)</li>
-<li>more bandwidth-efficient</li>
-<li>typically 200/204 response</li>
+<li>
+<p>modifies only specified fields</p>
+</li>
+<li>
+<p>doesn't require full state</p>
+</li>
+<li>
+<p>idempotent (with conditionals)</p>
+</li>
+<li>
+<p>more bandwidth-efficient</p>
+</li>
+<li>
+<p>typically 200/204 response</p>
+</li>
 </ul>
 <p>Generally: use PATCH for Android to save bandwidth.</p>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/rest-api-principles/#http-methods">🚀 See Full Deep Dive</a></p>
@@ -1856,24 +1970,48 @@ for building scalable web services.</p>
 <p>Three popular JSON serialization libraries for Android.</p>
 <p>Gson:</p>
 <ul>
-<li>reflection-based (slower)</li>
-<li>no compile-time checks</li>
-<li>flexible with malformed JSON</li>
-<li>mature ecosystem</li>
+<li>
+<p>reflection-based (slower)</p>
+</li>
+<li>
+<p>no compile-time checks</p>
+</li>
+<li>
+<p>flexible with malformed JSON</p>
+</li>
+<li>
+<p>mature ecosystem</p>
+</li>
 </ul>
 <p>Moshi:</p>
 <ul>
-<li>reflection + adapters</li>
-<li>customizable</li>
-<li>faster than Gson</li>
-<li>better error messages</li>
+<li>
+<p>reflection + adapters</p>
+</li>
+<li>
+<p>customizable</p>
+</li>
+<li>
+<p>faster than Gson</p>
+</li>
+<li>
+<p>better error messages</p>
+</li>
 </ul>
 <p>Kotlin Serialization:</p>
 <ul>
-<li>compiler plugin (fastest)</li>
-<li>compile-time safety</li>
-<li>no reflection needed</li>
-<li>newer but growing adoption</li>
+<li>
+<p>compiler plugin (fastest)</p>
+</li>
+<li>
+<p>compile-time safety</p>
+</li>
+<li>
+<p>no reflection needed</p>
+</li>
+<li>
+<p>newer but growing adoption</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/serialization-strategies/#json-serialization">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1893,24 +2031,48 @@ for building scalable web services.</p>
 <p>Authentication secures API access. Common strategies:</p>
 <p>JWT (JSON Web Tokens):</p>
 <ul>
-<li>token-based (not session-based)</li>
-<li>include in Authorization header</li>
-<li>exp claim for expiration</li>
-<li>refresh token for renewal</li>
+<li>
+<p>token-based (not session-based)</p>
+</li>
+<li>
+<p>include in Authorization header</p>
+</li>
+<li>
+<p>exp claim for expiration</p>
+</li>
+<li>
+<p>refresh token for renewal</p>
+</li>
 </ul>
 <p>OAuth 2.0:</p>
 <ul>
-<li>delegated access</li>
-<li>third-party sign-in</li>
-<li>symmetric exchange flows</li>
-<li>authorization code flow (mobile)</li>
+<li>
+<p>delegated access</p>
+</li>
+<li>
+<p>third-party sign-in</p>
+</li>
+<li>
+<p>symmetric exchange flows</p>
+</li>
+<li>
+<p>authorization code flow (mobile)</p>
+</li>
 </ul>
 <p>Best practices:</p>
 <ul>
-<li>store tokens securely (EncryptedSharedPreferences)</li>
-<li>use refresh mechanism</li>
-<li>never hardcode secrets</li>
-<li>use interceptors for injection</li>
+<li>
+<p>store tokens securely (EncryptedSharedPreferences)</p>
+</li>
+<li>
+<p>use refresh mechanism</p>
+</li>
+<li>
+<p>never hardcode secrets</p>
+</li>
+<li>
+<p>use interceptors for injection</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/authentication-security/#authentication">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1930,22 +2092,42 @@ for building scalable web services.</p>
 <p>HTTPS encrypts HTTP traffic using TLS (Transport Layer Security).</p>
 <p>Benefits:</p>
 <ul>
-<li>confidentiality (data cannot be read)</li>
-<li>integrity (data cannot be modified)</li>
-<li>authentication (server verified)</li>
-<li>prevents man-in-the-middle attacks</li>
+<li>
+<p>confidentiality (data cannot be read)</p>
+</li>
+<li>
+<p>integrity (data cannot be modified)</p>
+</li>
+<li>
+<p>authentication (server verified)</p>
+</li>
+<li>
+<p>prevents man-in-the-middle attacks</p>
+</li>
 </ul>
 <p>How it works:</p>
 <ul>
-<li>client initiates TLS handshake</li>
-<li>server shares certificate</li>
-<li>symmetric key negotiated</li>
-<li>encrypted connection established</li>
+<li>
+<p>client initiates TLS handshake</p>
+</li>
+<li>
+<p>server shares certificate</p>
+</li>
+<li>
+<p>symmetric key negotiated</p>
+</li>
+<li>
+<p>encrypted connection established</p>
+</li>
 </ul>
 <p>On Android:</p>
 <ul>
-<li>HTTPS enforced by default (Network Security Config)</li>
-<li>certificate validation automatic</li>
+<li>
+<p>HTTPS enforced by default (Network Security Config)</p>
+</li>
+<li>
+<p>certificate validation automatic</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/authentication-security/#https-tls">🚀 See Full Deep Dive</a></p>
 </details>
@@ -1966,22 +2148,42 @@ for building scalable web services.</p>
 in a specific certificate rather than the entire CA hierarchy.</p>
 <p>Benefits:</p>
 <ul>
-<li>prevents compromised CAs</li>
-<li>blocks rogue certificates</li>
-<li>cryptographic trust anchoring</li>
+<li>
+<p>prevents compromised CAs</p>
+</li>
+<li>
+<p>blocks rogue certificates</p>
+</li>
+<li>
+<p>cryptographic trust anchoring</p>
+</li>
 </ul>
 <p>How it works:</p>
 <ul>
-<li>app stores certificate public key</li>
-<li>validates server cert against pinned key</li>
-<li>fails if mismatch</li>
+<li>
+<p>app stores certificate public key</p>
+</li>
+<li>
+<p>validates server cert against pinned key</p>
+</li>
+<li>
+<p>fails if mismatch</p>
+</li>
 </ul>
 <p>OkHttp implementation:</p>
 <ul>
-<li>CertificatePinner class</li>
-<li>configure pins in build</li>
-<li>specify host(s) to pin</li>
-<li>use wildcard domains if needed</li>
+<li>
+<p>CertificatePinner class</p>
+</li>
+<li>
+<p>configure pins in build</p>
+</li>
+<li>
+<p>specify host(s) to pin</p>
+</li>
+<li>
+<p>use wildcard domains if needed</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/certificate-pinning/#certificate-pinning">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2001,23 +2203,45 @@ in a specific certificate rather than the entire CA hierarchy.</p>
 <p>Retry logic handles transient network failures automatically.</p>
 <p>When to retry:</p>
 <ul>
-<li>network timeouts</li>
-<li>5xx server errors</li>
-<li>connection resets</li>
-<li>DNS failures</li>
+<li>
+<p>network timeouts</p>
+</li>
+<li>
+<p>5xx server errors</p>
+</li>
+<li>
+<p>connection resets</p>
+</li>
+<li>
+<p>DNS failures</p>
+</li>
 </ul>
 <p>Do NOT retry:</p>
 <ul>
-<li>4xx client errors (except 429 rate limit)</li>
-<li>authentication failures</li>
-<li>payload errors</li>
+<li>
+<p>4xx client errors (except 429 rate limit)</p>
+</li>
+<li>
+<p>authentication failures</p>
+</li>
+<li>
+<p>payload errors</p>
+</li>
 </ul>
 <p>Implementation patterns:</p>
 <ul>
-<li>simple retry with delay</li>
-<li>exponential backoff</li>
-<li>jitter to prevent thundering herd</li>
-<li>max retry limit</li>
+<li>
+<p>simple retry with delay</p>
+</li>
+<li>
+<p>exponential backoff</p>
+</li>
+<li>
+<p>jitter to prevent thundering herd</p>
+</li>
+<li>
+<p>max retry limit</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/retry-exponential-backoff/#retry-strategies">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2040,24 +2264,48 @@ to prevent server overload.</p>
 <p>delay = base * (2 ^ attempt) + jitter</p>
 <p>Benefits:</p>
 <ul>
-<li>reduces server load</li>
-<li>prevents thundering herd</li>
-<li>increases success rate</li>
-<li>network stabilization</li>
+<li>
+<p>reduces server load</p>
+</li>
+<li>
+<p>prevents thundering herd</p>
+</li>
+<li>
+<p>increases success rate</p>
+</li>
+<li>
+<p>network stabilization</p>
+</li>
 </ul>
 <p>Example:</p>
 <ul>
-<li>attempt 1: 1s</li>
-<li>attempt 2: 2s</li>
-<li>attempt 3: 4s</li>
-<li>attempt 4: 8s</li>
+<li>
+<p>attempt 1: 1s</p>
+</li>
+<li>
+<p>attempt 2: 2s</p>
+</li>
+<li>
+<p>attempt 3: 4s</p>
+</li>
+<li>
+<p>attempt 4: 8s</p>
+</li>
 </ul>
 <p>Best practices:</p>
 <ul>
-<li>add random jitter</li>
-<li>set maximum delay</li>
-<li>set maximum retries</li>
-<li>respect Retry-After header</li>
+<li>
+<p>add random jitter</p>
+</li>
+<li>
+<p>set maximum delay</p>
+</li>
+<li>
+<p>set maximum retries</p>
+</li>
+<li>
+<p>respect Retry-After header</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/retry-exponential-backoff/#exponential-backoff">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2078,28 +2326,54 @@ to prevent server overload.</p>
 to reduce memory/bandwidth.</p>
 <p>Common approaches:</p>
 <ul>
-<li>Offset/Limit: offset + limit query params</li>
-<li>Cursor-based: opaque cursor token</li>
-<li>Keyset: last ID from previous page</li>
+<li>
+<p>Offset/Limit: offset + limit query params</p>
+</li>
+<li>
+<p>Cursor-based: opaque cursor token</p>
+</li>
+<li>
+<p>Keyset: last ID from previous page</p>
+</li>
 </ul>
 <p>Pagination parameters:</p>
 <ul>
-<li>page or offset</li>
-<li>limit or pageSize</li>
-<li>cursor or pageToken</li>
-<li>totalCount (optional)</li>
+<li>
+<p>page or offset</p>
+</li>
+<li>
+<p>limit or pageSize</p>
+</li>
+<li>
+<p>cursor or pageToken</p>
+</li>
+<li>
+<p>totalCount (optional)</p>
+</li>
 </ul>
 <p>Response:</p>
 <ul>
-<li>items array</li>
-<li>hasMore boolean</li>
-<li>nextPageToken</li>
-<li>totalCount (optional)</li>
+<li>
+<p>items array</p>
+</li>
+<li>
+<p>hasMore boolean</p>
+</li>
+<li>
+<p>nextPageToken</p>
+</li>
+<li>
+<p>totalCount (optional)</p>
+</li>
 </ul>
 <p>When to use:</p>
 <ul>
-<li>offset/limit: simple, not ideal for real-time</li>
-<li>cursor: recommended, handles inserts/deletes</li>
+<li>
+<p>offset/limit: simple, not ideal for real-time</p>
+</li>
+<li>
+<p>cursor: recommended, handles inserts/deletes</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/pagination-architecture/#pagination">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2120,23 +2394,45 @@ to reduce memory/bandwidth.</p>
 built on Flow for seamless list loading.</p>
 <p>Core components:</p>
 <ul>
-<li>PagingSource: provides page data</li>
-<li>Pager: creates PagingData Flow</li>
-<li>PagingDataAdapter: RecyclerView adapter</li>
+<li>
+<p>PagingSource: provides page data</p>
+</li>
+<li>
+<p>Pager: creates PagingData Flow</p>
+</li>
+<li>
+<p>PagingDataAdapter: RecyclerView adapter</p>
+</li>
 </ul>
 <p>Benefits:</p>
 <ul>
-<li>automatic caching</li>
-<li>cancellation support</li>
-<li>separation of concerns</li>
-<li>Flow-based reactive</li>
-<li>handles duplicate loads</li>
+<li>
+<p>automatic caching</p>
+</li>
+<li>
+<p>cancellation support</p>
+</li>
+<li>
+<p>separation of concerns</p>
+</li>
+<li>
+<p>Flow-based reactive</p>
+</li>
+<li>
+<p>handles duplicate loads</p>
+</li>
 </ul>
 <p>Architecture:</p>
 <ul>
-<li>repository provides PagingSource</li>
-<li>viewmodel exposes Pager.flow</li>
-<li>UI subscribes and displays</li>
+<li>
+<p>repository provides PagingSource</p>
+</li>
+<li>
+<p>viewmodel exposes Pager.flow</p>
+</li>
+<li>
+<p>UI subscribes and displays</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/pagination-architecture/#paging-3">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2156,24 +2452,48 @@ built on Flow for seamless list loading.</p>
 <p>HTTP caching reduces bandwidth by reusing responses.</p>
 <p>Cache control headers:</p>
 <ul>
-<li>Cache-Control: max-age (seconds)</li>
-<li>Expires: absolute time</li>
-<li>ETag: version identifier</li>
-<li>Last-Modified: resource timestamp</li>
+<li>
+<p>Cache-Control: max-age (seconds)</p>
+</li>
+<li>
+<p>Expires: absolute time</p>
+</li>
+<li>
+<p>ETag: version identifier</p>
+</li>
+<li>
+<p>Last-Modified: resource timestamp</p>
+</li>
 </ul>
 <p>Caching types:</p>
 <ul>
-<li>private (browser cache only)</li>
-<li>public (shared cache)</li>
-<li>no-cache (validate always)</li>
-<li>no-store (never cache)</li>
+<li>
+<p>private (browser cache only)</p>
+</li>
+<li>
+<p>public (shared cache)</p>
+</li>
+<li>
+<p>no-cache (validate always)</p>
+</li>
+<li>
+<p>no-store (never cache)</p>
+</li>
 </ul>
 <p>OkHttp caching:</p>
 <ul>
-<li>automatic by default</li>
-<li>configurable cache size</li>
-<li>respects Cache-Control headers</li>
-<li>offline page fallback possible</li>
+<li>
+<p>automatic by default</p>
+</li>
+<li>
+<p>configurable cache size</p>
+</li>
+<li>
+<p>respects Cache-Control headers</p>
+</li>
+<li>
+<p>offline page fallback possible</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/caching-strategies/#http-caching">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2194,24 +2514,48 @@ built on Flow for seamless list loading.</p>
 by validating cached responses.</p>
 <p>ETags:</p>
 <ul>
-<li>unique identifier for resource version</li>
-<li>server sends with response</li>
-<li>client includes in future requests</li>
-<li>server returns 304 Not Modified if unchanged</li>
+<li>
+<p>unique identifier for resource version</p>
+</li>
+<li>
+<p>server sends with response</p>
+</li>
+<li>
+<p>client includes in future requests</p>
+</li>
+<li>
+<p>server returns 304 Not Modified if unchanged</p>
+</li>
 </ul>
 <p>Conditional requests:</p>
 <ul>
-<li>If-None-Match: ETag validation</li>
-<li>If-Modified-Since: timestamp validation</li>
-<li>server responds 304 Not Modified</li>
-<li>client reuses cached response</li>
+<li>
+<p>If-None-Match: ETag validation</p>
+</li>
+<li>
+<p>If-Modified-Since: timestamp validation</p>
+</li>
+<li>
+<p>server responds 304 Not Modified</p>
+</li>
+<li>
+<p>client reuses cached response</p>
+</li>
 </ul>
 <p>Benefits:</p>
 <ul>
-<li>save bandwidth</li>
-<li>validate without full transfer</li>
-<li>handle resource updates</li>
-<li>prevent stale data</li>
+<li>
+<p>save bandwidth</p>
+</li>
+<li>
+<p>validate without full transfer</p>
+</li>
+<li>
+<p>handle resource updates</p>
+</li>
+<li>
+<p>prevent stale data</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/caching-strategies/#etags-conditional">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2232,24 +2576,48 @@ by validating cached responses.</p>
 syncing when network available.</p>
 <p>Principles:</p>
 <ul>
-<li>always use local database first</li>
-<li>sync to server when connected</li>
-<li>seamless online/offline transitions</li>
-<li>user experience consistency</li>
+<li>
+<p>always use local database first</p>
+</li>
+<li>
+<p>sync to server when connected</p>
+</li>
+<li>
+<p>seamless online/offline transitions</p>
+</li>
+<li>
+<p>user experience consistency</p>
+</li>
 </ul>
 <p>Architecture:</p>
 <ul>
-<li>local Room database</li>
-<li>repository handles sync</li>
-<li>background sync workers</li>
-<li>conflict resolution</li>
+<li>
+<p>local Room database</p>
+</li>
+<li>
+<p>repository handles sync</p>
+</li>
+<li>
+<p>background sync workers</p>
+</li>
+<li>
+<p>conflict resolution</p>
+</li>
 </ul>
 <p>Benefits:</p>
 <ul>
-<li>instant UI responsiveness</li>
-<li>works without network</li>
-<li>resilient to connection loss</li>
-<li>better battery life</li>
+<li>
+<p>instant UI responsiveness</p>
+</li>
+<li>
+<p>works without network</p>
+</li>
+<li>
+<p>resilient to connection loss</p>
+</li>
+<li>
+<p>better battery life</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/offline-first-architecture/#offline-first">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2269,25 +2637,51 @@ syncing when network available.</p>
 <p>A sync engine keeps local and remote data consistent.</p>
 <p>Components:</p>
 <ul>
-<li>sync worker: runs on schedule</li>
-<li>local database: source of truth</li>
-<li>remote API: server state</li>
-<li>conflict resolver: handles mismatches</li>
+<li>
+<p>sync worker: runs on schedule</p>
+</li>
+<li>
+<p>local database: source of truth</p>
+</li>
+<li>
+<p>remote API: server state</p>
+</li>
+<li>
+<p>conflict resolver: handles mismatches</p>
+</li>
 </ul>
 <p>Sync flow:</p>
 <ul>
-<li>fetch remote changes (pull)</li>
-<li>apply to local database</li>
-<li>upload local changes (push)</li>
-<li>resolve conflicts</li>
-<li>mark synced</li>
+<li>
+<p>fetch remote changes (pull)</p>
+</li>
+<li>
+<p>apply to local database</p>
+</li>
+<li>
+<p>upload local changes (push)</p>
+</li>
+<li>
+<p>resolve conflicts</p>
+</li>
+<li>
+<p>mark synced</p>
+</li>
 </ul>
 <p>Challenges:</p>
 <ul>
-<li>conflict resolution</li>
-<li>duplicate prevention</li>
-<li>partial sync recovery</li>
-<li>offline queue management</li>
+<li>
+<p>conflict resolution</p>
+</li>
+<li>
+<p>duplicate prevention</p>
+</li>
+<li>
+<p>partial sync recovery</p>
+</li>
+<li>
+<p>offline queue management</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/offline-first-architecture/#sync-engine">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2308,25 +2702,51 @@ syncing when network available.</p>
 both local and remote changes exist.</p>
 <p>Strategies:</p>
 <ul>
-<li>last-write-wins: use timestamp</li>
-<li>remote-wins: server always correct</li>
-<li>local-wins: device always correct</li>
-<li>merge: combine changes intelligently</li>
-<li>manual: show UI for user choice</li>
+<li>
+<p>last-write-wins: use timestamp</p>
+</li>
+<li>
+<p>remote-wins: server always correct</p>
+</li>
+<li>
+<p>local-wins: device always correct</p>
+</li>
+<li>
+<p>merge: combine changes intelligently</p>
+</li>
+<li>
+<p>manual: show UI for user choice</p>
+</li>
 </ul>
 <p>Implementation:</p>
 <ul>
-<li>version vectors: track causality</li>
-<li>timestamps: simple but flawed</li>
-<li>operation-based: log changes</li>
-<li>state-based: full state comparison</li>
+<li>
+<p>version vectors: track causality</p>
+</li>
+<li>
+<p>timestamps: simple but flawed</p>
+</li>
+<li>
+<p>operation-based: log changes</p>
+</li>
+<li>
+<p>state-based: full state comparison</p>
+</li>
 </ul>
 <p>Production patterns:</p>
 <ul>
-<li>merge non-conflicting fields</li>
-<li>use timestamps wisely</li>
-<li>log conflicts for debugging</li>
-<li>expose unresolved conflicts in UI</li>
+<li>
+<p>merge non-conflicting fields</p>
+</li>
+<li>
+<p>use timestamps wisely</p>
+</li>
+<li>
+<p>log conflicts for debugging</p>
+</li>
+<li>
+<p>expose unresolved conflicts in UI</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/conflict-resolution/#conflict-resolution">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2347,24 +2767,48 @@ both local and remote changes exist.</p>
 enabling real-time bidirectional messaging.</p>
 <p>Benefits:</p>
 <ul>
-<li>persistent connection</li>
-<li>low latency</li>
-<li>bidirectional messaging</li>
-<li>event-driven</li>
-<li>better than polling</li>
+<li>
+<p>persistent connection</p>
+</li>
+<li>
+<p>low latency</p>
+</li>
+<li>
+<p>bidirectional messaging</p>
+</li>
+<li>
+<p>event-driven</p>
+</li>
+<li>
+<p>better than polling</p>
+</li>
 </ul>
 <p>Use cases:</p>
 <ul>
-<li>chat applications</li>
-<li>live notifications</li>
-<li>real-time dashboards</li>
-<li>multiplayer games</li>
+<li>
+<p>chat applications</p>
+</li>
+<li>
+<p>live notifications</p>
+</li>
+<li>
+<p>real-time dashboards</p>
+</li>
+<li>
+<p>multiplayer games</p>
+</li>
 </ul>
 <p>Libraries:</p>
 <ul>
-<li>OkHttp WebSocket support</li>
-<li>Scarlet library</li>
-<li>Kotlin Flows for events</li>
+<li>
+<p>OkHttp WebSocket support</p>
+</li>
+<li>
+<p>Scarlet library</p>
+</li>
+<li>
+<p>Kotlin Flows for events</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/websockets-streaming/#websockets">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2385,25 +2829,51 @@ enabling real-time bidirectional messaging.</p>
 memory issues and provide progress feedback.</p>
 <p>Streaming approaches:</p>
 <ul>
-<li>ResponseBody streaming</li>
-<li>byte[] chunking</li>
-<li>reactive publishers</li>
-<li>progress callbacks</li>
+<li>
+<p>ResponseBody streaming</p>
+</li>
+<li>
+<p>byte[] chunking</p>
+</li>
+<li>
+<p>reactive publishers</p>
+</li>
+<li>
+<p>progress callbacks</p>
+</li>
 </ul>
 <p>Best practices:</p>
 <ul>
-<li>write to disk, not memory</li>
-<li>implement progress listener</li>
-<li>handle pause/resume</li>
-<li>validate downloaded file</li>
-<li>use download manager</li>
+<li>
+<p>write to disk, not memory</p>
+</li>
+<li>
+<p>implement progress listener</p>
+</li>
+<li>
+<p>handle pause/resume</p>
+</li>
+<li>
+<p>validate downloaded file</p>
+</li>
+<li>
+<p>use download manager</p>
+</li>
 </ul>
 <p>Implementation:</p>
 <ul>
-<li>Retrofit ResponseBody</li>
-<li>OkHttp interceptors for progress</li>
-<li>WorkManager for background jobs</li>
-<li>MediaStore for saved files</li>
+<li>
+<p>Retrofit ResponseBody</p>
+</li>
+<li>
+<p>OkHttp interceptors for progress</p>
+</li>
+<li>
+<p>WorkManager for background jobs</p>
+</li>
+<li>
+<p>MediaStore for saved files</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/websockets-streaming/#streaming-downloads">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2424,26 +2894,54 @@ memory issues and provide progress feedback.</p>
 connectivity issues and API errors.</p>
 <p>Error types:</p>
 <ul>
-<li>no connectivity</li>
-<li>timeouts</li>
-<li>4xx client errors</li>
-<li>5xx server errors</li>
-<li>parsing errors</li>
+<li>
+<p>no connectivity</p>
+</li>
+<li>
+<p>timeouts</p>
+</li>
+<li>
+<p>4xx client errors</p>
+</li>
+<li>
+<p>5xx server errors</p>
+</li>
+<li>
+<p>parsing errors</p>
+</li>
 </ul>
 <p>Handling strategies:</p>
 <ul>
-<li>retry transient errors</li>
-<li>show user-friendly errors</li>
-<li>log for debugging</li>
-<li>fallback to cached data</li>
-<li>offline queue for sync</li>
+<li>
+<p>retry transient errors</p>
+</li>
+<li>
+<p>show user-friendly errors</p>
+</li>
+<li>
+<p>log for debugging</p>
+</li>
+<li>
+<p>fallback to cached data</p>
+</li>
+<li>
+<p>offline queue for sync</p>
+</li>
 </ul>
 <p>Response codes:</p>
 <ul>
-<li>401: authentication failure</li>
-<li>403: permission denied</li>
-<li>429: rate limited</li>
-<li>5xx: server error (retry)</li>
+<li>
+<p>401: authentication failure</p>
+</li>
+<li>
+<p>403: permission denied</p>
+</li>
+<li>
+<p>429: rate limited</p>
+</li>
+<li>
+<p>5xx: server error (retry)</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/error-handling-resilience/#network-error-handling">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2463,25 +2961,51 @@ connectivity issues and API errors.</p>
 <p>Resiliency patterns make apps robust to network failures.</p>
 <p>Patterns:</p>
 <ul>
-<li>Circuit breaker: stop retries on repeated failure</li>
-<li>Bulkhead: isolate failures</li>
-<li>Timeout: prevent hanging requests</li>
-<li>Retry: automatic failure recovery</li>
-<li>Fallback: use cached/default data</li>
+<li>
+<p>Circuit breaker: stop retries on repeated failure</p>
+</li>
+<li>
+<p>Bulkhead: isolate failures</p>
+</li>
+<li>
+<p>Timeout: prevent hanging requests</p>
+</li>
+<li>
+<p>Retry: automatic failure recovery</p>
+</li>
+<li>
+<p>Fallback: use cached/default data</p>
+</li>
 </ul>
 <p>Implementation:</p>
 <ul>
-<li>OkHttp timeouts</li>
-<li>exponential backoff</li>
-<li>health checks</li>
-<li>circuit breaker library (Resilience4j)</li>
+<li>
+<p>OkHttp timeouts</p>
+</li>
+<li>
+<p>exponential backoff</p>
+</li>
+<li>
+<p>health checks</p>
+</li>
+<li>
+<p>circuit breaker library (Resilience4j)</p>
+</li>
 </ul>
 <p>Benefits:</p>
 <ul>
-<li>improved user experience</li>
-<li>reduced server load</li>
-<li>cascading failure prevention</li>
-<li>automatic recovery</li>
+<li>
+<p>improved user experience</p>
+</li>
+<li>
+<p>reduced server load</p>
+</li>
+<li>
+<p>cascading failure prevention</p>
+</li>
+<li>
+<p>automatic recovery</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/error-handling-resilience/#resiliency-patterns">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2501,23 +3025,45 @@ connectivity issues and API errors.</p>
 <p>Compression reduces bandwidth by encoding data.</p>
 <p>HTTP compression:</p>
 <ul>
-<li>gzip: most common</li>
-<li>deflate: less common</li>
-<li>brotli: newer, better ratio</li>
+<li>
+<p>gzip: most common</p>
+</li>
+<li>
+<p>deflate: less common</p>
+</li>
+<li>
+<p>brotli: newer, better ratio</p>
+</li>
 </ul>
 <p>How it works:</p>
 <ul>
-<li>client sends Accept-Encoding header</li>
-<li>server compresses with matching algorithm</li>
-<li>server sends Content-Encoding header</li>
-<li>client decompresses</li>
+<li>
+<p>client sends Accept-Encoding header</p>
+</li>
+<li>
+<p>server compresses with matching algorithm</p>
+</li>
+<li>
+<p>server sends Content-Encoding header</p>
+</li>
+<li>
+<p>client decompresses</p>
+</li>
 </ul>
 <p>OkHttp:</p>
 <ul>
-<li>automatic by default</li>
-<li>transparent to application</li>
-<li>reduces bandwidth 60-80%</li>
-<li>minimal CPU overhead</li>
+<li>
+<p>automatic by default</p>
+</li>
+<li>
+<p>transparent to application</p>
+</li>
+<li>
+<p>reduces bandwidth 60-80%</p>
+</li>
+<li>
+<p>minimal CPU overhead</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/compression-optimization/#compression">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2537,25 +3083,51 @@ connectivity issues and API errors.</p>
 <p>Battery optimization reduces networking's power consumption.</p>
 <p>Techniques:</p>
 <ul>
-<li>batch requests (not individual)</li>
-<li>use connection pooling</li>
-<li>compress responses</li>
-<li>avoid polling</li>
-<li>use WorkManager</li>
-<li>sync intelligently</li>
+<li>
+<p>batch requests (not individual)</p>
+</li>
+<li>
+<p>use connection pooling</p>
+</li>
+<li>
+<p>compress responses</p>
+</li>
+<li>
+<p>avoid polling</p>
+</li>
+<li>
+<p>use WorkManager</p>
+</li>
+<li>
+<p>sync intelligently</p>
+</li>
 </ul>
 <p>DON'Ts:</p>
 <ul>
-<li>frequent network requests</li>
-<li>polling background services</li>
-<li>large uncompressed payloads</li>
-<li>excessive logging</li>
+<li>
+<p>frequent network requests</p>
+</li>
+<li>
+<p>polling background services</p>
+</li>
+<li>
+<p>large uncompressed payloads</p>
+</li>
+<li>
+<p>excessive logging</p>
+</li>
 </ul>
 <p>Tools:</p>
 <ul>
-<li>Battery Historian</li>
-<li>Perfetto for tracing</li>
-<li>NetworkProfiler in Studio</li>
+<li>
+<p>Battery Historian</p>
+</li>
+<li>
+<p>Perfetto for tracing</p>
+</li>
+<li>
+<p>NetworkProfiler in Studio</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/compression-optimization/#battery-optimization">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2575,27 +3147,51 @@ connectivity issues and API errors.</p>
 <p>GraphQL and REST are different API design philosophies.</p>
 <p>REST:</p>
 <ul>
-<li>resource-oriented</li>
-<li>multiple endpoints per domain</li>
-<li>fixed response structures</li>
-<li>over/under fetching common</li>
+<li>
+<p>resource-oriented</p>
+</li>
+<li>
+<p>multiple endpoints per domain</p>
+</li>
+<li>
+<p>fixed response structures</p>
+</li>
+<li>
+<p>over/under fetching common</p>
+</li>
 </ul>
 <p>GraphQL:</p>
 <ul>
-<li>query-oriented</li>
-<li>single endpoint</li>
-<li>client specifies fields</li>
-<li>exact data fetching</li>
-<li>supports subscriptions</li>
+<li>
+<p>query-oriented</p>
+</li>
+<li>
+<p>single endpoint</p>
+</li>
+<li>
+<p>client specifies fields</p>
+</li>
+<li>
+<p>exact data fetching</p>
+</li>
+<li>
+<p>supports subscriptions</p>
+</li>
 </ul>
 <p>Trade-offs:</p>
 <p>REST: simpler caching, broader tooling
 GraphQL: flexible queries, reduced over-fetching</p>
 <p>For Android:</p>
 <ul>
-<li>REST simpler for mobile</li>
-<li>GraphQL better for diverse clients</li>
-<li>Apollo Kotlin library for GraphQL</li>
+<li>
+<p>REST simpler for mobile</p>
+</li>
+<li>
+<p>GraphQL better for diverse clients</p>
+</li>
+<li>
+<p>Apollo Kotlin library for GraphQL</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/graphql-advanced/#graphql-rest">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2616,24 +3212,48 @@ GraphQL: flexible queries, reduced over-fetching</p>
 and HTTP/2 for efficient communication.</p>
 <p>Benefits:</p>
 <ul>
-<li>faster than JSON/REST</li>
-<li>strongly typed via protobuf</li>
-<li>multiplexing with HTTP/2</li>
-<li>streaming support</li>
-<li>language-independent</li>
+<li>
+<p>faster than JSON/REST</p>
+</li>
+<li>
+<p>strongly typed via protobuf</p>
+</li>
+<li>
+<p>multiplexing with HTTP/2</p>
+</li>
+<li>
+<p>streaming support</p>
+</li>
+<li>
+<p>language-independent</p>
+</li>
 </ul>
 <p>Use cases:</p>
 <ul>
-<li>microservices</li>
-<li>high-performance APIs</li>
-<li>streaming data</li>
-<li>real-time communication</li>
+<li>
+<p>microservices</p>
+</li>
+<li>
+<p>high-performance APIs</p>
+</li>
+<li>
+<p>streaming data</p>
+</li>
+<li>
+<p>real-time communication</p>
+</li>
 </ul>
 <p>Complexity:</p>
 <ul>
-<li>steeper learning curve</li>
-<li>less browser-friendly</li>
-<li>newer ecosystem</li>
+<li>
+<p>steeper learning curve</p>
+</li>
+<li>
+<p>less browser-friendly</p>
+</li>
+<li>
+<p>newer ecosystem</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/graphql-advanced/#grpc-basics">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2653,28 +3273,60 @@ and HTTP/2 for efficient communication.</p>
 <p>Network debugging reveals actual traffic and helps diagnose issues.</p>
 <p>Tools:</p>
 <ul>
-<li>OkHttp logging interceptor</li>
-<li>Android Studio Network Profiler</li>
-<li>Chucker library</li>
-<li>Stetho library</li>
-<li>Charles proxy</li>
-<li>Wireshark</li>
+<li>
+<p>OkHttp logging interceptor</p>
+</li>
+<li>
+<p>Android Studio Network Profiler</p>
+</li>
+<li>
+<p>Chucker library</p>
+</li>
+<li>
+<p>Stetho library</p>
+</li>
+<li>
+<p>Charles proxy</p>
+</li>
+<li>
+<p>Wireshark</p>
+</li>
 </ul>
 <p>What to log:</p>
 <ul>
-<li>URL and method</li>
-<li>request headers</li>
-<li>response status</li>
-<li>response time</li>
-<li>response size</li>
-<li>errors</li>
+<li>
+<p>URL and method</p>
+</li>
+<li>
+<p>request headers</p>
+</li>
+<li>
+<p>response status</p>
+</li>
+<li>
+<p>response time</p>
+</li>
+<li>
+<p>response size</p>
+</li>
+<li>
+<p>errors</p>
+</li>
 </ul>
 <p>Chucker features:</p>
 <ul>
-<li>intercepts HTTP requests</li>
-<li>in-app notification</li>
-<li>request/response inspection</li>
-<li>replay requests</li>
+<li>
+<p>intercepts HTTP requests</p>
+</li>
+<li>
+<p>in-app notification</p>
+</li>
+<li>
+<p>request/response inspection</p>
+</li>
+<li>
+<p>replay requests</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/network-monitoring-debugging/#network-monitoring">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2694,24 +3346,48 @@ and HTTP/2 for efficient communication.</p>
 <p>Rate limiting controls request frequency per API.</p>
 <p>Server communicates limits via headers:</p>
 <ul>
-<li>X-RateLimit-Limit: max requests</li>
-<li>X-RateLimit-Remaining: quota left</li>
-<li>X-RateLimit-Reset: reset timestamp</li>
-<li>Retry-After: wait before retry</li>
+<li>
+<p>X-RateLimit-Limit: max requests</p>
+</li>
+<li>
+<p>X-RateLimit-Remaining: quota left</p>
+</li>
+<li>
+<p>X-RateLimit-Reset: reset timestamp</p>
+</li>
+<li>
+<p>Retry-After: wait before retry</p>
+</li>
 </ul>
 <p>Client-side handling:</p>
 <ul>
-<li>predict when limit reached</li>
-<li>queue requests</li>
-<li>exponential backoff</li>
-<li>respect Retry-After</li>
-<li>show user feedback</li>
+<li>
+<p>predict when limit reached</p>
+</li>
+<li>
+<p>queue requests</p>
+</li>
+<li>
+<p>exponential backoff</p>
+</li>
+<li>
+<p>respect Retry-After</p>
+</li>
+<li>
+<p>show user feedback</p>
+</li>
 </ul>
 <p>Implementation:</p>
 <ul>
-<li>track rate-limit headers</li>
-<li>use CircuitBreaker pattern</li>
-<li>queue strategy (FIFO/priority)</li>
+<li>
+<p>track rate-limit headers</p>
+</li>
+<li>
+<p>use CircuitBreaker pattern</p>
+</li>
+<li>
+<p>queue strategy (FIFO/priority)</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/rate-limiting-idempotency/#rate-limiting">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2732,27 +3408,51 @@ and HTTP/2 for efficient communication.</p>
 as single request, crucial for reliability.</p>
 <p>Idempotent methods:</p>
 <ul>
-<li>GET: always safe</li>
-<li>DELETE: delete again = 204</li>
-<li>PUT: replace again = same result</li>
+<li>
+<p>GET: always safe</p>
+</li>
+<li>
+<p>DELETE: delete again = 204</p>
+</li>
+<li>
+<p>PUT: replace again = same result</p>
+</li>
 </ul>
 <p>Non-idempotent:</p>
 <ul>
-<li>POST: create again = duplicate</li>
-<li>PATCH: sometimes idempotent</li>
+<li>
+<p>POST: create again = duplicate</p>
+</li>
+<li>
+<p>PATCH: sometimes idempotent</p>
+</li>
 </ul>
 <p>Implementation:</p>
 <ul>
-<li>Idempotency-Key header (UUID)</li>
-<li>server deduplicates by key</li>
-<li>caches result with key</li>
-<li>returns cached on retry</li>
+<li>
+<p>Idempotency-Key header (UUID)</p>
+</li>
+<li>
+<p>server deduplicates by key</p>
+</li>
+<li>
+<p>caches result with key</p>
+</li>
+<li>
+<p>returns cached on retry</p>
+</li>
 </ul>
 <p>Benefits:</p>
 <ul>
-<li>safe retries</li>
-<li>conflict prevention</li>
-<li>exactly-once semantics</li>
+<li>
+<p>safe retries</p>
+</li>
+<li>
+<p>conflict prevention</p>
+</li>
+<li>
+<p>exactly-once semantics</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/rate-limiting-idempotency/#idempotency">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2773,25 +3473,51 @@ as single request, crucial for reliability.</p>
 in single request.</p>
 <p>Retrofit multipart:</p>
 <ul>
-<li>@Multipart annotation</li>
-<li>@Part for file field</li>
-<li>@Part for text fields</li>
-<li>RequestBody wrapping</li>
+<li>
+<p>@Multipart annotation</p>
+</li>
+<li>
+<p>@Part for file field</p>
+</li>
+<li>
+<p>@Part for text fields</p>
+</li>
+<li>
+<p>RequestBody wrapping</p>
+</li>
 </ul>
 <p>Best practices:</p>
 <ul>
-<li>compress before upload</li>
-<li>show progress indicator</li>
-<li>handle upload resume</li>
-<li>validate after upload</li>
-<li>background worker for large</li>
+<li>
+<p>compress before upload</p>
+</li>
+<li>
+<p>show progress indicator</p>
+</li>
+<li>
+<p>handle upload resume</p>
+</li>
+<li>
+<p>validate after upload</p>
+</li>
+<li>
+<p>background worker for large</p>
+</li>
 </ul>
 <p>Chunks:</p>
 <ul>
-<li>upload in chunks</li>
-<li>resumable upload</li>
-<li>verify integrity</li>
-<li>range requests</li>
+<li>
+<p>upload in chunks</p>
+</li>
+<li>
+<p>resumable upload</p>
+</li>
+<li>
+<p>verify integrity</p>
+</li>
+<li>
+<p>range requests</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/multipart-uploads/#multipart-uploads">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2811,25 +3537,51 @@ in single request.</p>
 <p>API versioning enables evolution without breaking clients.</p>
 <p>Strategies:</p>
 <ul>
-<li>URL path: /v1/users /v2/users</li>
-<li>header: Accept: application/vnd.api+v2+json</li>
-<li>query param: /users?version=2</li>
-<li>custom header: X-API-Version: 2</li>
+<li>
+<p>URL path: /v1/users /v2/users</p>
+</li>
+<li>
+<p>header: Accept: application/vnd.api+v2+json</p>
+</li>
+<li>
+<p>query param: /users?version=2</p>
+</li>
+<li>
+<p>custom header: X-API-Version: 2</p>
+</li>
 </ul>
 <p>Best practices:</p>
 <ul>
-<li>support 2-3 versions simultaneously</li>
-<li>provide migration guide</li>
-<li>deprecate with warning</li>
-<li>sunset timeline</li>
-<li>clear documentation</li>
+<li>
+<p>support 2-3 versions simultaneously</p>
+</li>
+<li>
+<p>provide migration guide</p>
+</li>
+<li>
+<p>deprecate with warning</p>
+</li>
+<li>
+<p>sunset timeline</p>
+</li>
+<li>
+<p>clear documentation</p>
+</li>
 </ul>
 <p>Client-side:</p>
 <ul>
-<li>respect API version</li>
-<li>handle version changes</li>
-<li>migrate gradually</li>
-<li>test against versions</li>
+<li>
+<p>respect API version</p>
+</li>
+<li>
+<p>handle version changes</p>
+</li>
+<li>
+<p>migrate gradually</p>
+</li>
+<li>
+<p>test against versions</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/api-versioning-scalability/#api-versioning">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2850,24 +3602,48 @@ in single request.</p>
 for lower latency and bandwidth savings.</p>
 <p>Benefits:</p>
 <ul>
-<li>geographically distributed</li>
-<li>reduced latency</li>
-<li>bandwidth savings</li>
-<li>offload server load</li>
-<li>DDoS protection</li>
+<li>
+<p>geographically distributed</p>
+</li>
+<li>
+<p>reduced latency</p>
+</li>
+<li>
+<p>bandwidth savings</p>
+</li>
+<li>
+<p>offload server load</p>
+</li>
+<li>
+<p>DDoS protection</p>
+</li>
 </ul>
 <p>Use cases:</p>
 <ul>
-<li>static assets (images, JS)</li>
-<li>video/media streaming</li>
-<li>mobile app updates</li>
-<li>download packages</li>
+<li>
+<p>static assets (images, JS)</p>
+</li>
+<li>
+<p>video/media streaming</p>
+</li>
+<li>
+<p>mobile app updates</p>
+</li>
+<li>
+<p>download packages</p>
+</li>
 </ul>
 <p>For Android:</p>
 <ul>
-<li>CDN for APK/updates</li>
-<li>asset CDN for images</li>
-<li>API gateway CDN</li>
+<li>
+<p>CDN for APK/updates</p>
+</li>
+<li>
+<p>asset CDN for images</p>
+</li>
+<li>
+<p>API gateway CDN</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/api-versioning-scalability/#scalability-cdn">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2888,23 +3664,45 @@ for lower latency and bandwidth savings.</p>
 and improves responsiveness.</p>
 <p>Retrofit with coroutines:</p>
 <ul>
-<li>automatic cancellation on scope exit</li>
-<li>respects job.cancel()</li>
-<li>cleans up OkHttp Call</li>
+<li>
+<p>automatic cancellation on scope exit</p>
+</li>
+<li>
+<p>respects job.cancel()</p>
+</li>
+<li>
+<p>cleans up OkHttp Call</p>
+</li>
 </ul>
 <p>OkHttp Call:</p>
 <ul>
-<li>.cancel() method</li>
-<li>prevents further progress</li>
-<li>saves bandwidth</li>
-<li>closes connections</li>
+<li>
+<p>.cancel() method</p>
+</li>
+<li>
+<p>prevents further progress</p>
+</li>
+<li>
+<p>saves bandwidth</p>
+</li>
+<li>
+<p>closes connections</p>
+</li>
 </ul>
 <p>Use cases:</p>
 <ul>
-<li>navigation away (view destroyed)</li>
-<li>user explicitly cancels</li>
-<li>timeout exceeded</li>
-<li>parent scope cancelled</li>
+<li>
+<p>navigation away (view destroyed)</p>
+</li>
+<li>
+<p>user explicitly cancels</p>
+</li>
+<li>
+<p>timeout exceeded</p>
+</li>
+<li>
+<p>parent scope cancelled</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/rate-limiting-idempotency/#request-cancellation">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2925,25 +3723,51 @@ and improves responsiveness.</p>
 HTTPS/TLS settings per domain.</p>
 <p>Features:</p>
 <ul>
-<li>enforce HTTPS</li>
-<li>certificate pinning</li>
-<li>custom CA certificates</li>
-<li>domain-specific rules</li>
-<li>development vs production</li>
+<li>
+<p>enforce HTTPS</p>
+</li>
+<li>
+<p>certificate pinning</p>
+</li>
+<li>
+<p>custom CA certificates</p>
+</li>
+<li>
+<p>domain-specific rules</p>
+</li>
+<li>
+<p>development vs production</p>
+</li>
 </ul>
 <p>Configuration:</p>
 <ul>
-<li>XML file in res/xml/</li>
-<li>applied system-wide</li>
-<li>per-domain override</li>
-<li>certificate pins</li>
+<li>
+<p>XML file in res/xml/</p>
+</li>
+<li>
+<p>applied system-wide</p>
+</li>
+<li>
+<p>per-domain override</p>
+</li>
+<li>
+<p>certificate pins</p>
+</li>
 </ul>
 <p>Benefits:</p>
 <ul>
-<li>prevents MITM attacks</li>
-<li>gradual certificate migration</li>
-<li>dev shortcuts (cleartext HTTP)</li>
-<li>centralized security policy</li>
+<li>
+<p>prevents MITM attacks</p>
+</li>
+<li>
+<p>gradual certificate migration</p>
+</li>
+<li>
+<p>dev shortcuts (cleartext HTTP)</p>
+</li>
+<li>
+<p>centralized security policy</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/production-networking-patterns/#network-security-config">🚀 See Full Deep Dive</a></p>
 </details>
@@ -2963,24 +3787,48 @@ HTTPS/TLS settings per domain.</p>
 <p>Timeouts prevent indefinite waiting for network responses.</p>
 <p>OkHttp timeout types:</p>
 <ul>
-<li>connectTimeout: TCP connection</li>
-<li>readTimeout: data arrival</li>
-<li>writeTimeout: data upload</li>
-<li>callTimeout: entire call</li>
+<li>
+<p>connectTimeout: TCP connection</p>
+</li>
+<li>
+<p>readTimeout: data arrival</p>
+</li>
+<li>
+<p>writeTimeout: data upload</p>
+</li>
+<li>
+<p>callTimeout: entire call</p>
+</li>
 </ul>
 <p>Configuration:</p>
 <ul>
-<li>HttpClient.newBuilder().connectTimeout(30, SECONDS)</li>
-<li>per-request overrides possible</li>
-<li>consider network conditions</li>
-<li>balance UX vs resource usage</li>
+<li>
+<p>HttpClient.newBuilder().connectTimeout(30, SECONDS)</p>
+</li>
+<li>
+<p>per-request overrides possible</p>
+</li>
+<li>
+<p>consider network conditions</p>
+</li>
+<li>
+<p>balance UX vs resource usage</p>
+</li>
 </ul>
 <p>Android best practices:</p>
 <ul>
-<li>connection: 10-30 seconds</li>
-<li>read: 20-60 seconds</li>
-<li>write: 20-60 seconds</li>
-<li>retry on timeout</li>
+<li>
+<p>connection: 10-30 seconds</p>
+</li>
+<li>
+<p>read: 20-60 seconds</p>
+</li>
+<li>
+<p>write: 20-60 seconds</p>
+</li>
+<li>
+<p>retry on timeout</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/production-networking-patterns/#timeouts">🚀 See Full Deep Dive</a></p>
 </details>
@@ -3001,25 +3849,51 @@ HTTPS/TLS settings per domain.</p>
 and resource usage.</p>
 <p>Metrics to track:</p>
 <ul>
-<li>response time distribution</li>
-<li>success/failure rates</li>
-<li>error types</li>
-<li>payload sizes</li>
-<li>request throughput</li>
+<li>
+<p>response time distribution</p>
+</li>
+<li>
+<p>success/failure rates</p>
+</li>
+<li>
+<p>error types</p>
+</li>
+<li>
+<p>payload sizes</p>
+</li>
+<li>
+<p>request throughput</p>
+</li>
 </ul>
 <p>Tools:</p>
 <ul>
-<li>Firebase Performance Monitoring</li>
-<li>Crashlytics for errors</li>
-<li>custom analytics</li>
-<li>server logs</li>
+<li>
+<p>Firebase Performance Monitoring</p>
+</li>
+<li>
+<p>Crashlytics for errors</p>
+</li>
+<li>
+<p>custom analytics</p>
+</li>
+<li>
+<p>server logs</p>
+</li>
 </ul>
 <p>Implementation:</p>
 <ul>
-<li>timing instrumentation</li>
-<li>error categorization</li>
-<li>network state detection</li>
-<li>batch reporting</li>
+<li>
+<p>timing instrumentation</p>
+</li>
+<li>
+<p>error categorization</p>
+</li>
+<li>
+<p>network state detection</p>
+</li>
+<li>
+<p>batch reporting</p>
+</li>
 </ul>
 <p><a class="question-dive-link" href="/android-interview-prep/deep-dives/networking/production-networking-patterns/#performance-monitoring">🚀 See Full Deep Dive</a></p>
 </details>

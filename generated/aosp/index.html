@@ -1461,7 +1461,7 @@
 
 
 
-<h1 id="aosp">Aosp<a class="headerlink" href="#aosp" title="Permanent link">&para;</a></h1>
+<h1 id="aosp">AOSP<a class="headerlink" href="#aosp" title="Permanent link">&para;</a></h1>
 <script>
 (function () {
   function openQuestionFromHash() {
@@ -1510,11 +1510,21 @@
 across process boundaries with kernel arbitration.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>client proxy marshals args into Parcel and calls ioctl on /dev/binder</li>
-<li>Binder driver routes transaction to target process work queue</li>
-<li>target process Binder thread pool dequeues and dispatches to stub</li>
-<li>reply travels back over same kernel-managed transaction context</li>
-<li>latency cost comes from context switch, marshalling, and queue contention</li>
+<li>
+<p>client proxy marshals args into Parcel and calls ioctl on /dev/binder</p>
+</li>
+<li>
+<p>Binder driver routes transaction to target process work queue</p>
+</li>
+<li>
+<p>target process Binder thread pool dequeues and dispatches to stub</p>
+</li>
+<li>
+<p>reply travels back over same kernel-managed transaction context</p>
+</li>
+<li>
+<p>latency cost comes from context switch, marshalling, and queue contention</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1541,11 +1551,21 @@ across process boundaries with kernel arbitration.</p>
 service can process concurrently before queueing delay explodes.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>every process has binder worker threads plus caller thread handoff rules</li>
-<li>undersized pool causes head-of-line blocking for unrelated requests</li>
-<li>oversized pool can increase CPU contention and lock pressure</li>
-<li>long-running calls should be offloaded from binder thread quickly</li>
-<li>instrumentation should track queue depth, p95 call time, timeout rates</li>
+<li>
+<p>every process has binder worker threads plus caller thread handoff rules</p>
+</li>
+<li>
+<p>undersized pool causes head-of-line blocking for unrelated requests</p>
+</li>
+<li>
+<p>oversized pool can increase CPU contention and lock pressure</p>
+</li>
+<li>
+<p>long-running calls should be offloaded from binder thread quickly</p>
+</li>
+<li>
+<p>instrumentation should track queue depth, p95 call time, timeout rates</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1572,11 +1592,21 @@ service can process concurrently before queueing delay explodes.</p>
 stale state instead of silently using a dead binder handle.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>register linkToDeath on remote binder interface</li>
-<li>binderDied callback signals remote object is no longer valid</li>
-<li>client must drop cached interface and trigger reconnection flow</li>
-<li>avoid memory leaks by unlinking recipients on normal teardown</li>
-<li>use idempotent recovery paths to survive rapid process restarts</li>
+<li>
+<p>register linkToDeath on remote binder interface</p>
+</li>
+<li>
+<p>binderDied callback signals remote object is no longer valid</p>
+</li>
+<li>
+<p>client must drop cached interface and trigger reconnection flow</p>
+</li>
+<li>
+<p>avoid memory leaks by unlinking recipients on normal teardown</p>
+</li>
+<li>
+<p>use idempotent recovery paths to survive rapid process restarts</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1603,11 +1633,21 @@ stale state instead of silently using a dead binder handle.</p>
 kernel binder events, and server-side critical sections.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>capture Perfetto with binder, sched, freq, and userspace slices enabled</li>
-<li>identify long binder transaction slices and waiting states</li>
-<li>separate marshalling overhead from server execution time</li>
-<li>inspect lock contention and synchronous call chains in service process</li>
-<li>validate fix with before/after p95 and p99 binder latency metrics</li>
+<li>
+<p>capture Perfetto with binder, sched, freq, and userspace slices enabled</p>
+</li>
+<li>
+<p>identify long binder transaction slices and waiting states</p>
+</li>
+<li>
+<p>separate marshalling overhead from server execution time</p>
+</li>
+<li>
+<p>inspect lock contention and synchronous call chains in service process</p>
+</li>
+<li>
+<p>validate fix with before/after p95 and p99 binder latency metrics</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1634,11 +1674,21 @@ kernel binder events, and server-side critical sections.</p>
 on visible components, foreground work, and dependency chains.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>state classes: top, foreground service, visible, service, cached</li>
-<li>transition triggers: activity visibility, bindings, broadcasts, jobs</li>
-<li>OOM adj influences LMKD victim selection under memory pressure</li>
-<li>cached processes improve warm start performance but are expendable</li>
-<li>policy differs by API level for background execution restrictions</li>
+<li>
+<p>state classes: top, foreground service, visible, service, cached</p>
+</li>
+<li>
+<p>transition triggers: activity visibility, bindings, broadcasts, jobs</p>
+</li>
+<li>
+<p>OOM adj influences LMKD victim selection under memory pressure</p>
+</li>
+<li>
+<p>cached processes improve warm start performance but are expendable</p>
+</li>
+<li>
+<p>policy differs by API level for background execution restrictions</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1665,11 +1715,21 @@ on visible components, foreground work, and dependency chains.</p>
 enforces pressure-based kills when reclaim is insufficient.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>AMS computes OOM score adjustment from component importance</li>
-<li>LMKD monitors PSI and memory watermarks to trigger eviction</li>
-<li>cached/background processes are preferred kill targets</li>
-<li>kill decisions balance reclaim speed against restart churn</li>
-<li>repeated kill loops indicate bad memory budget or background policy</li>
+<li>
+<p>AMS computes OOM score adjustment from component importance</p>
+</li>
+<li>
+<p>LMKD monitors PSI and memory watermarks to trigger eviction</p>
+</li>
+<li>
+<p>cached/background processes are preferred kill targets</p>
+</li>
+<li>
+<p>kill decisions balance reclaim speed against restart churn</p>
+</li>
+<li>
+<p>repeated kill loops indicate bad memory budget or background policy</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1696,11 +1756,21 @@ enforces pressure-based kills when reclaim is insufficient.</p>
 state changes interleave in ways app code did not model safely.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>stale callback updating destroyed Activity or Fragment view</li>
-<li>service bind/unbind timing races around configuration change</li>
-<li>broadcast receiver work running after process priority dropped</li>
-<li>mitigation with lifecycle-aware scopes and state guards</li>
-<li>idempotent cleanup paths to handle duplicate teardown events</li>
+<li>
+<p>stale callback updating destroyed Activity or Fragment view</p>
+</li>
+<li>
+<p>service bind/unbind timing races around configuration change</p>
+</li>
+<li>
+<p>broadcast receiver work running after process priority dropped</p>
+</li>
+<li>
+<p>mitigation with lifecycle-aware scopes and state guards</p>
+</li>
+<li>
+<p>idempotent cleanup paths to handle duplicate teardown events</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1727,11 +1797,21 @@ state changes interleave in ways app code did not model safely.</p>
 background services toward explicit scheduled or foreground paths.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>API 26 service limits and broadcast restrictions</li>
-<li>JobScheduler and WorkManager as policy-compliant execution paths</li>
-<li>foreground service requirements and user-visible notifications</li>
-<li>app standby buckets and quota effects on deferred work</li>
-<li>compatibility strategy for mixed minSdk and targetSdk population</li>
+<li>
+<p>API 26 service limits and broadcast restrictions</p>
+</li>
+<li>
+<p>JobScheduler and WorkManager as policy-compliant execution paths</p>
+</li>
+<li>
+<p>foreground service requirements and user-visible notifications</p>
+</li>
+<li>
+<p>app standby buckets and quota effects on deferred work</p>
+</li>
+<li>
+<p>compatibility strategy for mixed minSdk and targetSdk population</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1758,11 +1838,21 @@ background services toward explicit scheduled or foreground paths.</p>
 buffers and SurfaceFlinger composes them under vsync deadlines.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>app UI thread records display list and RenderThread submits GPU work</li>
-<li>buffers queued via BufferQueue from producer to consumer side</li>
-<li>SurfaceFlinger latches latest ready buffers per layer</li>
-<li>Hardware Composer composes layers and presents to display</li>
-<li>misses in any stage create jank or frame drop at display boundary</li>
+<li>
+<p>app UI thread records display list and RenderThread submits GPU work</p>
+</li>
+<li>
+<p>buffers queued via BufferQueue from producer to consumer side</p>
+</li>
+<li>
+<p>SurfaceFlinger latches latest ready buffers per layer</p>
+</li>
+<li>
+<p>Hardware Composer composes layers and presents to display</p>
+</li>
+<li>
+<p>misses in any stage create jank or frame drop at display boundary</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1789,11 +1879,21 @@ buffers and SurfaceFlinger composes them under vsync deadlines.</p>
 by WindowManager and consumed by InputDispatcher.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>focused window token determines primary key event target</li>
-<li>touch routing respects hit-test, obscured windows, split focus rules</li>
-<li>policy checks prevent taps into blocked or secure overlay scenarios</li>
-<li>ANR in input target can trigger dispatcher timeout diagnostics</li>
-<li>window transitions must keep focus updates atomic to avoid ghost input</li>
+<li>
+<p>focused window token determines primary key event target</p>
+</li>
+<li>
+<p>touch routing respects hit-test, obscured windows, split focus rules</p>
+</li>
+<li>
+<p>policy checks prevent taps into blocked or secure overlay scenarios</p>
+</li>
+<li>
+<p>ANR in input target can trigger dispatcher timeout diagnostics</p>
+</li>
+<li>
+<p>window transitions must keep focus updates atomic to avoid ghost input</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1820,11 +1920,21 @@ by WindowManager and consumed by InputDispatcher.</p>
 interference; trace correlation is required before optimizing.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>app misses: expensive layout, overdraw, sync binder waits</li>
-<li>GPU misses: shader cost, texture upload spikes, driver stalls</li>
-<li>compositor misses: late buffer latch, composition complexity</li>
-<li>scheduler effects: CPU throttling, frequency scaling, thread preemption</li>
-<li>use FrameTimeline and Perfetto to attribute missed deadlines accurately</li>
+<li>
+<p>app misses: expensive layout, overdraw, sync binder waits</p>
+</li>
+<li>
+<p>GPU misses: shader cost, texture upload spikes, driver stalls</p>
+</li>
+<li>
+<p>compositor misses: late buffer latch, composition complexity</p>
+</li>
+<li>
+<p>scheduler effects: CPU throttling, frequency scaling, thread preemption</p>
+</li>
+<li>
+<p>use FrameTimeline and Perfetto to attribute missed deadlines accurately</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1851,11 +1961,21 @@ interference; trace correlation is required before optimizing.</p>
 delivery, but increase end-to-end input-to-photon latency.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>double buffering minimizes latency but risks producer stalls</li>
-<li>triple buffering increases tolerance to jitter under variable workload</li>
-<li>deep queueing can hide jitter while making interaction feel delayed</li>
-<li>ideal setting depends on refresh rate, workload burstiness, UX goals</li>
-<li>validate with frame pacing plus touch latency measurements</li>
+<li>
+<p>double buffering minimizes latency but risks producer stalls</p>
+</li>
+<li>
+<p>triple buffering increases tolerance to jitter under variable workload</p>
+</li>
+<li>
+<p>deep queueing can hide jitter while making interaction feel delayed</p>
+</li>
+<li>
+<p>ideal setting depends on refresh rate, workload burstiness, UX goals</p>
+</li>
+<li>
+<p>validate with frame pacing plus touch latency measurements</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1881,11 +2001,21 @@ delivery, but increase end-to-end input-to-photon latency.</p>
 processes so they share clean pages via copy-on-write.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>preload phase amortizes class/resource initialization cost</li>
-<li>fork creates child quickly with shared read-only memory pages</li>
-<li>dirty pages become private when app mutates state</li>
-<li>startup gains come from less initialization and fewer page faults</li>
-<li>wrong preload choices can bloat baseline memory for all apps</li>
+<li>
+<p>preload phase amortizes class/resource initialization cost</p>
+</li>
+<li>
+<p>fork creates child quickly with shared read-only memory pages</p>
+</li>
+<li>
+<p>dirty pages become private when app mutates state</p>
+</li>
+<li>
+<p>startup gains come from less initialization and fewer page faults</p>
+</li>
+<li>
+<p>wrong preload choices can bloat baseline memory for all apps</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1911,11 +2041,21 @@ processes so they share clean pages via copy-on-write.</p>
 startup speed, and steady-state throughput.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>baseline profile driven compilation for hot startup paths</li>
-<li>JIT for dynamic hotspots during normal execution</li>
-<li>AOT artifacts used where profile confidence is high</li>
-<li>dex2oat mode and profile quality impact startup variance</li>
-<li>stale or missing profiles regress first-run and cold start metrics</li>
+<li>
+<p>baseline profile driven compilation for hot startup paths</p>
+</li>
+<li>
+<p>JIT for dynamic hotspots during normal execution</p>
+</li>
+<li>
+<p>AOT artifacts used where profile confidence is high</p>
+</li>
+<li>
+<p>dex2oat mode and profile quality impact startup variance</p>
+</li>
+<li>
+<p>stale or missing profiles regress first-run and cold start metrics</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1942,11 +2082,21 @@ startup speed, and steady-state throughput.</p>
 code review but blocks critical startup path.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>class verifier and linker work triggered by first touch</li>
-<li>static initializers doing I/O or heavy object graph construction</li>
-<li>dependency chains that pull many classes into startup path</li>
-<li>lazy initialization or deferral after first frame where acceptable</li>
-<li>startup tracing to map class load events to frame misses</li>
+<li>
+<p>class verifier and linker work triggered by first touch</p>
+</li>
+<li>
+<p>static initializers doing I/O or heavy object graph construction</p>
+</li>
+<li>
+<p>dependency chains that pull many classes into startup path</p>
+</li>
+<li>
+<p>lazy initialization or deferral after first frame where acceptable</p>
+</li>
+<li>
+<p>startup tracing to map class load events to frame misses</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -1973,11 +2123,21 @@ code review but blocks critical startup path.</p>
 critical interactions, reducing JIT warmup penalties.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>profile captures method hot paths from representative journeys</li>
-<li>install-time compilation uses profile to pre-optimize selected methods</li>
-<li>improves cold start and first-use latency after install/update</li>
-<li>poor coverage leaves startup paths interpreted or JIT-compiled</li>
-<li>must be regenerated when navigation and hot paths evolve</li>
+<li>
+<p>profile captures method hot paths from representative journeys</p>
+</li>
+<li>
+<p>install-time compilation uses profile to pre-optimize selected methods</p>
+</li>
+<li>
+<p>improves cold start and first-use latency after install/update</p>
+</li>
+<li>
+<p>poor coverage leaves startup paths interpreted or JIT-compiled</p>
+</li>
+<li>
+<p>must be regenerated when navigation and hot paths evolve</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2003,11 +2163,21 @@ critical interactions, reducing JIT warmup penalties.</p>
 the next runtime layer until framework services can launch home.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>bootloader verifies and loads kernel plus ramdisk</li>
-<li>init parses rc scripts, mounts filesystems, starts core daemons</li>
-<li>zygote and system_server start framework service graph</li>
-<li>package and activity services prepare app/runtime state</li>
-<li>launcher intent starts once core readiness conditions are satisfied</li>
+<li>
+<p>bootloader verifies and loads kernel plus ramdisk</p>
+</li>
+<li>
+<p>init parses rc scripts, mounts filesystems, starts core daemons</p>
+</li>
+<li>
+<p>zygote and system_server start framework service graph</p>
+</li>
+<li>
+<p>package and activity services prepare app/runtime state</p>
+</li>
+<li>
+<p>launcher intent starts once core readiness conditions are satisfied</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2034,11 +2204,21 @@ the next runtime layer until framework services can launch home.</p>
 across the entire user experience and can force device restart loops.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>contains ActivityManager, PackageManager, WindowManager, etc.</li>
-<li>services communicate heavily over binder with app processes</li>
-<li>crash in critical service can trigger watchdog recovery actions</li>
-<li>strict threading and watchdog boundaries prevent global stalls</li>
-<li>service startup order and dependencies affect boot reliability</li>
+<li>
+<p>contains ActivityManager, PackageManager, WindowManager, etc.</p>
+</li>
+<li>
+<p>services communicate heavily over binder with app processes</p>
+</li>
+<li>
+<p>crash in critical service can trigger watchdog recovery actions</p>
+</li>
+<li>
+<p>strict threading and watchdog boundaries prevent global stalls</p>
+</li>
+<li>
+<p>service startup order and dependencies affect boot reliability</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2065,11 +2245,21 @@ across the entire user experience and can force device restart loops.</p>
 making them a high-leverage reliability and security control point.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>service class and trigger conditions control startup ordering</li>
-<li>wrong permissions or context labels can break service bring-up</li>
-<li>restart policies can hide flapping failures or amplify boot loops</li>
-<li>property-triggered actions must avoid unsafe race-prone sequencing</li>
-<li>rc audits should include least privilege and deterministic ordering</li>
+<li>
+<p>service class and trigger conditions control startup ordering</p>
+</li>
+<li>
+<p>wrong permissions or context labels can break service bring-up</p>
+</li>
+<li>
+<p>restart policies can hide flapping failures or amplify boot loops</p>
+</li>
+<li>
+<p>property-triggered actions must avoid unsafe race-prone sequencing</p>
+</li>
+<li>
+<p>rc audits should include least privilege and deterministic ordering</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2096,11 +2286,21 @@ making them a high-leverage reliability and security control point.</p>
 stalls beyond thresholds, it triggers diagnostics and recovery actions.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>monitored loopers and handler checkpoints in core processes</li>
-<li>timeout policy distinguishes transient load from hard deadlock</li>
-<li>capture traces/tombstones before restart to preserve root-cause data</li>
-<li>avoid false positives via bounded work and asynchronous design</li>
-<li>recurring watchdog resets indicate architecture or lock-order defects</li>
+<li>
+<p>monitored loopers and handler checkpoints in core processes</p>
+</li>
+<li>
+<p>timeout policy distinguishes transient load from hard deadlock</p>
+</li>
+<li>
+<p>capture traces/tombstones before restart to preserve root-cause data</p>
+</li>
+<li>
+<p>avoid false positives via bounded work and asynchronous design</p>
+</li>
+<li>
+<p>recurring watchdog resets indicate architecture or lock-order defects</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2127,11 +2327,21 @@ stalls beyond thresholds, it triggers diagnostics and recovery actions.</p>
 mediation, and SELinux mandatory access control on top of DAC.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>per-app UID/process isolation limits direct data access</li>
-<li>binder and permission checks gate privileged capabilities</li>
-<li>SELinux policy constrains even privileged process behavior</li>
-<li>denials can block exploit chains that pass app-level checks</li>
-<li>security posture depends on policy quality and update hygiene</li>
+<li>
+<p>per-app UID/process isolation limits direct data access</p>
+</li>
+<li>
+<p>binder and permission checks gate privileged capabilities</p>
+</li>
+<li>
+<p>SELinux policy constrains even privileged process behavior</p>
+</li>
+<li>
+<p>denials can block exploit chains that pass app-level checks</p>
+</li>
+<li>
+<p>security posture depends on policy quality and update hygiene</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2158,11 +2368,21 @@ mediation, and SELinux mandatory access control on top of DAC.</p>
 preserving least privilege and preventing policy drift.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>collect avc logs and map source-target class permissions</li>
-<li>verify labeling and domain transition correctness first</li>
-<li>prefer fixing context/type assignment over broad allow rule</li>
-<li>test policy in realistic scenarios and regression suites</li>
-<li>reject permissive shortcuts in release builds</li>
+<li>
+<p>collect avc logs and map source-target class permissions</p>
+</li>
+<li>
+<p>verify labeling and domain transition correctness first</p>
+</li>
+<li>
+<p>prefer fixing context/type assignment over broad allow rule</p>
+</li>
+<li>
+<p>test policy in realistic scenarios and regression suites</p>
+</li>
+<li>
+<p>reject permissive shortcuts in release builds</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2189,11 +2409,21 @@ preserving least privilege and preventing policy drift.</p>
 binder interfaces, and privileged service operations.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>missing caller identity validation in binder service methods</li>
-<li>confused deputy flows where privileged service executes untrusted intent</li>
-<li>exported component abuse forwarding into privileged code path</li>
-<li>insufficient input validation on file, URI, or command parameters</li>
-<li>mitigate with identity checks, allowlists, and capability minimization</li>
+<li>
+<p>missing caller identity validation in binder service methods</p>
+</li>
+<li>
+<p>confused deputy flows where privileged service executes untrusted intent</p>
+</li>
+<li>
+<p>exported component abuse forwarding into privileged code path</p>
+</li>
+<li>
+<p>insufficient input validation on file, URI, or command parameters</p>
+</li>
+<li>
+<p>mitigate with identity checks, allowlists, and capability minimization</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2220,11 +2450,21 @@ binder interfaces, and privileged service operations.</p>
 enforced at API entry points before lower-level operations execute.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>package manager stores grant state per UID and user profile</li>
-<li>framework APIs check permission state on privileged operations</li>
-<li>app ops can add finer-grained runtime policy gates</li>
-<li>kernel/SELinux still enforce final access constraints independently</li>
-<li>revocation and one-time grants require robust app fallback behavior</li>
+<li>
+<p>package manager stores grant state per UID and user profile</p>
+</li>
+<li>
+<p>framework APIs check permission state on privileged operations</p>
+</li>
+<li>
+<p>app ops can add finer-grained runtime policy gates</p>
+</li>
+<li>
+<p>kernel/SELinux still enforce final access constraints independently</p>
+</li>
+<li>
+<p>revocation and one-time grants require robust app fallback behavior</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2251,11 +2491,21 @@ enforced at API entry points before lower-level operations execute.</p>
 frame timing, especially when allocation rate spikes on UI paths.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>stop-the-world pause windows still exist despite concurrent collectors</li>
-<li>allocation churn in UI path increases GC frequency and pause risk</li>
-<li>large object and bitmap patterns stress heap fragmentation</li>
-<li>tune by reducing allocations, pooling wisely, deferring heavy work</li>
-<li>verify with frame metrics plus GC event correlation in traces</li>
+<li>
+<p>stop-the-world pause windows still exist despite concurrent collectors</p>
+</li>
+<li>
+<p>allocation churn in UI path increases GC frequency and pause risk</p>
+</li>
+<li>
+<p>large object and bitmap patterns stress heap fragmentation</p>
+</li>
+<li>
+<p>tune by reducing allocations, pooling wisely, deferring heavy work</p>
+</li>
+<li>
+<p>verify with frame metrics plus GC event correlation in traces</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2281,11 +2531,21 @@ frame timing, especially when allocation rate spikes on UI paths.</p>
 fairly while protecting interactive responsiveness.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>runnable threads compete by virtual runtime under CFS</li>
-<li>priority and cgroup class influence CPU share and latency</li>
-<li>foreground UI/render threads need predictable scheduling budget</li>
-<li>background compute can starve interaction if priorities are misused</li>
-<li>scheduler tuning must be validated with end-user latency metrics</li>
+<li>
+<p>runnable threads compete by virtual runtime under CFS</p>
+</li>
+<li>
+<p>priority and cgroup class influence CPU share and latency</p>
+</li>
+<li>
+<p>foreground UI/render threads need predictable scheduling budget</p>
+</li>
+<li>
+<p>background compute can starve interaction if priorities are misused</p>
+</li>
+<li>
+<p>scheduler tuning must be validated with end-user latency metrics</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2312,11 +2572,21 @@ fairly while protecting interactive responsiveness.</p>
 causing starvation, lock contention, and thermal instability.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>over-prioritizing background workers near UI priority classes</li>
-<li>long CPU bursts on inherited high-priority threads</li>
-<li>binder handler doing blocking I/O at elevated priority</li>
-<li>lock inversion between high and low priority threads</li>
-<li>use bounded executors, priority discipline, and trace validation</li>
+<li>
+<p>over-prioritizing background workers near UI priority classes</p>
+</li>
+<li>
+<p>long CPU bursts on inherited high-priority threads</p>
+</li>
+<li>
+<p>binder handler doing blocking I/O at elevated priority</p>
+</li>
+<li>
+<p>lock inversion between high and low priority threads</p>
+</li>
+<li>
+<p>use bounded executors, priority discipline, and trace validation</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2343,11 +2613,21 @@ causing starvation, lock contention, and thermal instability.</p>
 overhead rather than business logic.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>quantify voluntary and involuntary context switches per request</li>
-<li>identify synchronous call chains crossing many processes</li>
-<li>collapse unnecessary hops or batch operations to reduce transitions</li>
-<li>co-locate tightly coupled services where practical</li>
-<li>verify gains with CPU time, tail latency, and energy impact metrics</li>
+<li>
+<p>quantify voluntary and involuntary context switches per request</p>
+</li>
+<li>
+<p>identify synchronous call chains crossing many processes</p>
+</li>
+<li>
+<p>collapse unnecessary hops or batch operations to reduce transitions</p>
+</li>
+<li>
+<p>co-locate tightly coupled services where practical</p>
+</li>
+<li>
+<p>verify gains with CPU time, tail latency, and energy impact metrics</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2373,11 +2653,21 @@ overhead rather than business logic.</p>
 allowing periodic maintenance windows for batched background work.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>trigger conditions and progressive idle state deepening</li>
-<li>maintenance window cadence and work batching semantics</li>
-<li>high-priority FCM and alarms with explicit policy exceptions</li>
-<li>reliability strategy for tasks delayed by long idle periods</li>
-<li>battery-user trust tradeoff when requesting exemptions</li>
+<li>
+<p>trigger conditions and progressive idle state deepening</p>
+</li>
+<li>
+<p>maintenance window cadence and work batching semantics</p>
+</li>
+<li>
+<p>high-priority FCM and alarms with explicit policy exceptions</p>
+</li>
+<li>
+<p>reliability strategy for tasks delayed by long idle periods</p>
+</li>
+<li>
+<p>battery-user trust tradeoff when requesting exemptions</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2404,11 +2694,21 @@ allowing periodic maintenance windows for batched background work.</p>
 network access frequency for less-used apps.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>bucket states from active to restricted with tighter quotas</li>
-<li>job and alarm throttling behavior by bucket assignment</li>
-<li>user interaction can promote bucket and relax constraints</li>
-<li>WorkManager should be used with resilient retry/backoff policies</li>
-<li>observability needs bucket-aware failure analysis in production</li>
+<li>
+<p>bucket states from active to restricted with tighter quotas</p>
+</li>
+<li>
+<p>job and alarm throttling behavior by bucket assignment</p>
+</li>
+<li>
+<p>user interaction can promote bucket and relax constraints</p>
+</li>
+<li>
+<p>WorkManager should be used with resilient retry/backoff policies</p>
+</li>
+<li>
+<p>observability needs bucket-aware failure analysis in production</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2435,11 +2735,21 @@ network access frequency for less-used apps.</p>
 and policy constraints under modern Android background limits.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>WorkManager for durable deferrable work with constraint awareness</li>
-<li>JobScheduler as underlying scheduler on modern API levels</li>
-<li>ForegroundService for user-visible ongoing work requiring immediacy</li>
-<li>misuse of foreground service harms UX and policy compliance</li>
-<li>choose by SLA, user visibility, and platform policy eligibility</li>
+<li>
+<p>WorkManager for durable deferrable work with constraint awareness</p>
+</li>
+<li>
+<p>JobScheduler as underlying scheduler on modern API levels</p>
+</li>
+<li>
+<p>ForegroundService for user-visible ongoing work requiring immediacy</p>
+</li>
+<li>
+<p>misuse of foreground service harms UX and policy compliance</p>
+</li>
+<li>
+<p>choose by SLA, user visibility, and platform policy eligibility</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
@@ -2466,11 +2776,21 @@ and policy constraints under modern Android background limits.</p>
 drain battery quickly and increase thermal throttling risk.</p>
 <p>In interviews, cover:</p>
 <ul>
-<li>partial wakelock held across slow network or retry loops</li>
-<li>missing timeout or release path in failure branches</li>
-<li>chaining wakelock with frequent alarms compounds drain</li>
-<li>use WorkManager constraints and opportunistic batching instead</li>
-<li>validate with batterystats and thermal event correlation</li>
+<li>
+<p>partial wakelock held across slow network or retry loops</p>
+</li>
+<li>
+<p>missing timeout or release path in failure branches</p>
+</li>
+<li>
+<p>chaining wakelock with frequent alarms compounds drain</p>
+</li>
+<li>
+<p>use WorkManager constraints and opportunistic batching instead</p>
+</li>
+<li>
+<p>validate with batterystats and thermal event correlation</p>
+</li>
 </ul>
 <p>Strong answer tip:</p>
 <ul>
