@@ -40,7 +40,7 @@ hide:
 
 <div id="advanced-01"></div>
 
-## How do you approach android runtime internals in production Android systems
+## Explain the Android Runtime (ART) internals and how to optimize it in production
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
@@ -51,18 +51,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach android runtime internals in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Android Runtime (ART) is the JVM executing app code, with JIT compilation, GC, and instrumentation built in.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Compilation modes:** Ahead-of-Time (AOT) at install, Just-in-Time (JIT) at runtime, Interpreter for cold code
+    - **GC behavior:** concurrent mark-sweep, generational GC, GC pauses tune-able via heap size
+    - **Why it matters:** slow app startup = bad UX; GC pauses = frame drops; incorrect GC tuning = memory crashes
+    - **Real tradeoff:** larger heap reduces GC frequency but increases pause times; smaller heap = frequent GCs but faster pauses
+    - **Debug vs release:** release uses AOT (faster, deterministic), debug uses Interpreter + JIT (flexible for iteration)
     Strong answer tip:
+    - Explain when you'd profile ART: startup time bottleneck? Use systrace to see compilation phases; frame drops? Check GC timings
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-runtime-internals/#advanced-01">🚀 See Full Deep Dive</a>
 
@@ -71,7 +69,7 @@ hide:
 
 <div id="advanced-02"></div>
 
-## How do you approach binder and ipc at scale in production Android systems
+## Discuss Binder IPC design choices and scaling challenges in system_server
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -82,18 +80,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach binder and ipc at scale in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Binder is Android's cross-process IPC: synchronous by default, uses shared memory, enforces capability-based security.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Binder transaction limit:** 1 MB buffer per process (shared pool); exceeding it ≈ transaction failure without warning
+    - **Thread pool sizing:** system_server has 32 binder threads; each thread blocks until response; too few = deadlock, too many = memory spike
+    - **Synchronous calls:** A→B→C chain can deadlock if threads exhaust; common in framework (WindowManager, ActivityManager)
+    - **Real scale issue:** batch transactions vs individual calls—1000 individual calls = 1000 round trips; batch + parse = 1 round trip
+    - **Observable symptom:** "binder thread exhausted" ANR; fix is either parallelize responses or batch callers
     Strong answer tip:
+    - Walk through why system_server can deadlock: A waits for B, B waits for A; how you'd detect this in tombstones
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/binder-and-ipc-at-scale/#advanced-02">🚀 See Full Deep Dive</a>
 
@@ -102,7 +98,7 @@ hide:
 
 <div id="advanced-03"></div>
 
-## How do you approach zygote art and startup in production Android systems
+## Explain Zygote's role in app startup and memory efficiency via Copy-on-Write
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -113,18 +109,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach zygote art and startup in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Zygote is a master process forking new app processes, sharing ART state + preloaded classes to speed startup.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Preloading**: Zygote loads ~4000 classes at boot (android.*, java.*, framework); fork copies memory, saves re-parsing + verification
+    - **COW (Copy-on-Write)**: forked app pages are initially shared with zygote; only written pages copied, saving memory footprint
+    - **Startup sequence**: Zygote fork → set UID/GID → bindApplication() → onCreate chain; each step measurable
+    - **Tradeoff**: more preloading = faster cold start but larger zygote heap; less preloading = smaller zygote but slower apps
+    - **Real bottleneck**: classes that can't be preloaded (have static state) must be loaded per-app; timing = startup latency
     Strong answer tip:
+    - Explain why your app's onCreate is slow: did you load large libraries or do I/O? Is it unpre-loadable? How you'd profile with perfetto
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/zygote-art-and-startup/#advanced-03">🚀 See Full Deep Dive</a>
 
@@ -133,7 +127,7 @@ hide:
 
 <div id="advanced-04"></div>
 
-## How do you approach renderthread and gpu pipeline in production Android systems
+## Walk through frame pipelining, triple buffering, and jank diagnosis on RenderThread
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
@@ -144,18 +138,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach renderthread and gpu pipeline in production Android systems is primarily about making reliable engineering decisions in production.
-
+    RenderThread (RT) is a worker thread executing GPU commands decoupled from main thread; vsync synchronizes frame output.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Frame pipelining**: Main thread prepares frame N+1 while RT renders N; vsync fires every 16.67ms (60Hz), blocking present
+    - **Triple buffering**: 3 buffers cycle to prevent tearing; if frame misses vsync, 16.67ms penalty (jank spike visible)
+    - **Synchronization**: main→RT hand-off via sync tokens; if main slower than RT can consume, RT sits idle (GPU under-utilized)
+    - **Tradeoff**: reduce redraw area = less GPU work but more CPU overhead computing bounds; full invalidate = GPU full-screen but simple CPU
+    - **Real bottleneck**: RecyclerView item bind on main blocks RT; if bind takes 10ms, RT can't dequeue next work in 16.67ms window
     Strong answer tip:
+    - Walk through a jank frame: main thread slow due to GC pause → RT sits idle → next frame misses vsync → dropped frame visible
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/renderthread-and-gpu-pipeline/#advanced-04">🚀 See Full Deep Dive</a>
 
@@ -164,7 +156,7 @@ hide:
 
 <div id="advanced-05"></div>
 
-## How do you approach memory model and gc tuning in production Android systems
+## What factors influence GC tuning decisions in ART and how do you measure them
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
@@ -175,18 +167,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach memory model and gc tuning in production Android systems is primarily about making reliable engineering decisions in production.
-
+    ART heap is generational: young gen (fast collections) + old gen (full GC); tuning balances pause time vs memory bloat.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Heap sizing**: VM max heap in manifest; exceeding = OutOfMemoryError; too small = frequent GC; too large = long pause times
+    - **Generational GC**: young gen holds short-lived objects (quick collections); old gen rare collections but longer pauses
+    - **Concurrent vs full**: concurrent GC pauses ~5-20ms; full marks+sweeps stops world, can pause 100+ms (visible jank)
+    - **Tradeoff**: increasing young gen ratio (more fast GCs) = lower pause time but more CPU; decreasing = fewer GCs but longer pauses
+    - **Real tuning**: apps with bursts of allocation (JSON parsing, view inflation) benefit from larger young gen; steady-state apps not so much
     Strong answer tip:
+    - Profile with Logcat GC messages: if you see "Explicit concurrent copying" every 1s, young gen is too small; explain sizing strategy
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/memory-model-and-gc-tuning/#advanced-05">🚀 See Full Deep Dive</a>
 
@@ -195,7 +185,7 @@ hide:
 
 <div id="advanced-06"></div>
 
-## How do you approach aosp framework layering in production Android systems
+## Describe the AOSP layered architecture from kernel through apps and its constraints
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
@@ -206,18 +196,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach aosp framework layering in production Android systems is primarily about making reliable engineering decisions in production.
-
+    AOSP is layered: Linux kernel ← HAL ← Framework (Java services) ← Apps; each layer provides abstractions & isolation.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Kernel**: device drivers, scheduling, memory management; interface via syscalls
+    - **HAL**: hardware abstraction layer (cameras, audio, sensors); allows ODMs to keep drivers closed-source
+    - **Framework**: system_server with WindowManager, ActivityManager, PackageManager; orchestrates system policies
+    - **App layer**: uses context + manager objects (getSystemService) to access framework
+    - **Why it matters**: adding a feature (e.g., new sensor type) requires HAL module + framework service + app permissions
     Strong answer tip:
+    - Explain how an app accesses camera: Camera2 API → framework → HAL → kernel driver; which layer encodes permissions?
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/aosp-framework-layering/#advanced-06">🚀 See Full Deep Dive</a>
 
@@ -226,7 +214,7 @@ hide:
 
 <div id="advanced-07"></div>
 
-## How do you approach system services and lifecycle in production Android systems
+## Explain how system services enforce lifecycle and manage resource contention across apps
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -237,18 +225,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach system services and lifecycle in production Android systems is primarily about making reliable engineering decisions in production.
-
+    System services (WindowManager, ActivityManager, etc.) manage device resources & enforce lifecycle across apps via binder.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **System services**: run in system_server process; app-facing APIs (e.g., startActivity) → service impl → enforces policy
+    - **Lifecycle callbacks**: framework intercepts lifecycle (onPause, onDestroy); unwinds cleanly or ANRs if service unresponsive
+    - **Resource conflicts**: two apps request same hardware (camera) → framework arbitrates (focus, permissions); older app loses access
+    - **Tradeoff**: strict lifecycle enforcement = predictable but may denying older apps; lenient = backward-compatible but leaky
+    - **Real issue**: app never calls onDestroy properly → services accumulate → memory leak or resource starvation
     Strong answer tip:
+    - Explain how ActivityManager enforces lifecycle: if onPause doesn't complete in 5s, ANR; how you'd catch this in profiler
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/system-services-and-lifecycle/#advanced-07">🚀 See Full Deep Dive</a>
 
@@ -257,7 +243,7 @@ hide:
 
 <div id="advanced-08"></div>
 
-## How do you approach input window and surfaceflinger in production Android systems
+## Discuss input dispatch routing and SurfaceFlinger composition; when do deadlocks occur
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -268,18 +254,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach input window and surfaceflinger in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Input dispatch (touch events) is decoupled from rendering (SurfaceFlinger); WindowManager coordinates focus & gesture routing.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Touch dispatch**: InputManager receives kernel events → WindowManager determines focus-owning window → delivers to app
+    - **ANRs on input**: if app's input handler blocks >5s (e.g., doing I/O in onTouchEvent), system kills it; deadlock risk
+    - **SurfaceFlinger**: compositor combining app surfaces → display buffer via vsync; runs on RT, not main thread
+    - **Tradeoff**: synchronous dispatch = responsive but easy to deadlock; async = resilient but adds perceived latency
+    - **Real issue**: modal dialogs consume all touch events; app behind modal is unresponsive; framework must timeout
     Strong answer tip:
+    - Walk through slow onTouchEvent: if it blocks, dispatch timeout fires, ANR dialog shown; how you'd detect in crash logs
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/input-window-and-surfaceflinger/#advanced-08">🚀 See Full Deep Dive</a>
 
@@ -288,7 +272,7 @@ hide:
 
 <div id="advanced-09"></div>
 
-## How do you approach android security model in production Android systems
+## Explain Android's defense-in-depth security layers and how privilege escalation exploits work
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
@@ -299,18 +283,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach android security model in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Android's security model is layered: Linux DAC (file permissions) + SELinux MAC (mandatory access control) + app-level permissions + capability dropping.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Linux kernel layer:** DAC (user/group IDs), process isolation, file permissions; why apps run as separate UIDs
+    - **SELinux (Mandatory Access Control):** type enforcement (TE), role-based access control (RBAC); confines what even root can do
+    - **Android permission system:** declared at install time, checked at runtime; coarse-grained (not a replacement for OS isolation)
+    - **Privilege separation:** system_server, mediaserver, adbd each confined by SEPolicy; privilege escalation exploits chain multiple layers
+    - **Real example:** why a compromised app can't read another app's private dir (UID isolation) AND can't escalate via kernel even if it gains root (SELinux)
     Strong answer tip:
+    - Explain how you'd investigate a privilege escalation exploit: which layers failed, what SEPolicy rule was missing, how you'd harden it
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-security-model/#advanced-09">🚀 See Full Deep Dive</a>
 
@@ -319,7 +301,7 @@ hide:
 
 <div id="advanced-10"></div>
 
-## How do you approach sepolicy and sandboxing in production Android systems
+## What is SEPolicy Type Enforcement and how do you debug sandboxing violations in production
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
@@ -330,18 +312,20 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach sepolicy and sandboxing in production Android systems is primarily about making reliable engineering decisions in production.
-
+    SEPolicy (SELinux policy) defines which domains (processes/services) can access which resources (files, sockets, devices) on Android.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Type Enforcement (TE):** every file/process has a type; rules allow/deny (type A can read type B); denials are logged
+    - **domains vs types:** domains are types for processes (e.g., `system_server`, `mediaserver`); confines what that service can do
+    - **attribute grouping:** allows policies to say "all untrusted_app* can read shared_libs but not credentials"
+    - **common sandboxing patterns:**
+      - untrusted_app: restricted, only sees its own app dir and shared data
+      - priv_app: privileged system apps, elevated but still confined
+      - system_server: all-powerful in absense of SEPolicy, now divided into modules
+    - **audit mode vs enforcing:** audit logs all denials without blocking; enforcing blocks and logs; gradual rollout prevents breakage
+    - **real example:** how adding a deny rule for a vendor daemon prevents it from reading /data/local/tmp without breaking functionality
     Strong answer tip:
+    - Walk through a policy rule: `allow untrusted_app app_data_file:file {read write};` means untrusted apps can read/write their own data files; explain what blocks them from other paths
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/sepolicy-and-sandboxing/#advanced-10">🚀 See Full Deep Dive</a>
 
@@ -350,7 +334,7 @@ hide:
 
 <div id="advanced-11"></div>
 
-## How do you approach native interop and ndk in production Android systems
+## When should you use NDK and how do you measure performance gains vs complexity costs
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
@@ -361,18 +345,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach native interop and ndk in production Android systems is primarily about making reliable engineering decisions in production.
-
+    NDK allows writing performance-critical code in C/C++, interfaced via JNI; requires careful memory + thread management.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **JNI bridge**: Java calls native code via nativeMethod(); native accesses Java heap via JNI env; marshalling has overhead
+    - **When to use**: tight loops (crypto, image processing), leverage system libraries (OpenSSL), real-time requirements
+    - **When to avoid**: simple business logic (extra complexity), frequent calls (marshalling overhead per call), string/array copying
+    - **Tradeoff**: native = 2-10x faster for compute but harder to debug, memory crashes kill process, cross-platform complexity
+    - **Real issue**: native leaking Java objects (missing DeleteLocalRef) → GC can't collect → memory bloat
     Strong answer tip:
+    - Estimate speedup: if 10% of CPU time in tight Java loop, native gains ~10% overall; if 50%, gains ~50%; understand which bottleneck
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/native-interop-and-ndk/#advanced-11">🚀 See Full Deep Dive</a>
 
@@ -381,7 +363,7 @@ hide:
 
 <div id="advanced-12"></div>
 
-## How do you approach jni performance and safety in production Android systems
+## Explain JNI reference management, critical sections, and their GC interaction
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -392,18 +374,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach jni performance and safety in production Android systems is primarily about making reliable engineering decisions in production.
-
+    JNI has hidden costs: method lookup overhead, local/global reference management, GC interaction if referencing Java objects.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Local vs global refs**: locals valid only in current call scope; globals survive but must be freed or leak; each ref is 4 bytes memory
+    - **Critical sections**: holding a reference to Java array while in native requires pinning (prevents GC relocation); heavyweight
+    - **GC interaction**: if native holds Java refs, GC must scan native frames; large ref tables = slower GC
+    - **Marshalling cost**: copying strings/arrays Java→native = O(n) per call; reuse buffers when possible
+    - **Tradeoff**: minimize JNI crossings = fewer local-ref pressure but larger native batches; frequent calls = easier to audit but slower
     Strong answer tip:
+    - Explain why copying large arrays in each JNI call is bad: 1000 calls × 1MB copy = 1GB moved; suggest GetDirectBufferAddress bypass
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/jni-performance-and-safety/#advanced-12">🚀 See Full Deep Dive</a>
 
@@ -412,7 +392,7 @@ hide:
 
 <div id="advanced-13"></div>
 
-## How do you approach power management doze and jobs in production Android systems
+## Design a background sync strategy balancing battery life, data freshness, and reliability
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -423,18 +403,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach power management doze and jobs in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Doze and JobScheduler restrict background activity when battery low or screen off; tradeoff is reliability vs battery life.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Doze mode**: triggered after 1h+ idle; suspends most alarms & wakelocks; battery can last 2-5x longer but apps can't sync
+    - **JobScheduler**: app declares work (network fetch, sync); OS schedules it optimally (batched, plugged in or low battery); adaptive
+    - **Foreground services**: exempt from Doze (as long as notification shown); but users see "X is draining battery" warning
+    - **Tradeoff**: strict Doze = battery longevity but users get stale data; lenient = responsive but battery drains; JobScheduler finds middle
+    - **Real issue**: app waits for background sync but Doze deferred it 8 hours → user perceives data is stale; poor UX
     Strong answer tip:
+    - Explain your app's sync strategy: if critical, use foreground service; if batch-OK, use JobScheduler; explain why to PM
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/power-management-doze-and-jobs/#advanced-13">🚀 See Full Deep Dive</a>
 
@@ -443,7 +421,7 @@ hide:
 
 <div id="advanced-14"></div>
 
-## How do you approach storage stack and filesystems in production Android systems
+## Discuss scoped storage constraints and tradeoffs when migrating legacy apps
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
@@ -454,18 +432,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach storage stack and filesystems in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Android storage spans internal (ext4/F2FS) + external (SD card); scoped storage restricts direct file access for privacy & security.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Scoped Storage**: app can only access its own directory (/data/data/pkg) + shared media via MediaStore; prevents privacy leaks
+    - **Filesystems**: internal uses ext4 or F2FS (flash-friendly, no journal overhead); choice impacts performance & longevity
+    - **Tradeoff**: scoped storage protects privacy but makes file sharing harder (MediaStore overhead); older targeting allows old perms but security risk
+    - **Real bottleneck**: MediaStore queries are slow if index stale; batching large file ops can timeout or ANR the UI
+    - **Encryption**: full-disk or file-level; full-disk cheaper but all-or-nothing; file-level flexible but slower I/O
     Strong answer tip:
+    - Explain why scoped storage forces apps to migrate: old apps had blanket READ_EXTERNAL_STORAGE access; now must use MediaStore or SAF
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/storage-stack-and-filesystems/#advanced-14">🚀 See Full Deep Dive</a>
 
@@ -474,7 +450,7 @@ hide:
 
 <div id="advanced-15"></div>
 
-## How do you approach network stack and connectivity in production Android systems
+## Analyze connection pooling, DNS caching, and radio state transitions for battery optimization
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
@@ -485,18 +461,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach network stack and connectivity in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Network stack handles TCP/IP, DNS, connection pooling; Android adds Doze restrictions, multi-SIM support, and radio state transitions.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Connection pooling**: HTTP/2 reuses TCP connections; creates new when old closed; Doze can close sockets → connection churn
+    - **DNS resolution**: blocking in many libraries; resolve off main thread or cache heavily; system resolver caches 10s
+    - **Radio state**: cellular radio state transitions (active→idle) cost battery; batching requests into one window saves 90% radio energy
+    - **Tradeoff**: aggressive connection reuse = faster but risks stale connections; eager new = resilient but connection ramp-up latency
+    - **Real issue**: app makes 100 HTTP requests sequentially on main thread → blocks 5+ seconds → ANR / perceived unresponsiveness
     Strong answer tip:
+    - Explain radio state: app request triggers radio active state (~3s); each request = ~500μJ; batching 10 requests = 1 active window, ~50μJ per request
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/network-stack-and-connectivity/#advanced-15">🚀 See Full Deep Dive</a>
 
@@ -505,7 +479,7 @@ hide:
 
 <div id="advanced-16"></div>
 
-## How do you approach boot flow and init in production Android systems
+## Explain the Android boot sequence and init.rc scripting language with failure modes
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
@@ -516,18 +490,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach boot flow and init in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Android boot: bootloader → kernel → init (PID 1) → property service + socket listeners → Zygote → system_server → apps.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **init process**: runs init.rc scripts (parsed DSL); spawns system_server, Zygote; manages socket listeners (recovery, property)
+    - **Property service**: key-value system; "ro.build.fingerprint" immutable after boot, others writable; apps can't set ro.* properties
+    - **init.rc language**: service blocks, on events (boot, charger), imports; allows platform customization pre-boot
+    - **Tradeoff**: early script execution = control but complex debugging; late (in app) = simpler but less control
+    - **Real issue**: modified init.rc breaks boot (infinite loop); recovery mode + adb shell only way out
     Strong answer tip:
+    - Explain why Zygote start happens in init: needs privileges (UIDs), isolation; app process fork inherits only heap (security boundary)
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/boot-flow-and-init/#advanced-16">🚀 See Full Deep Dive</a>
 
@@ -536,7 +508,7 @@ hide:
 
 <div id="advanced-17"></div>
 
-## How do you approach instrumentation tracing and profiler internals in production Android systems
+## Compare systrace, Perfetto, and method tracing; when would you use each one
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -547,18 +519,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach instrumentation tracing and profiler internals in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Android profiling spans kernel (ftrace) → userspace samplers (Perfetto, systrace) → runtime instrumentation (method tracing).
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Systrace**: kernel + framework events; shows thread state, I/O, GC over time; 64ms buffering latency, low overhead
+    - **Perfetto**: background service + data sink; captures CPU, memory, battery; more comprehensive but heavier than systrace
+    - **Method tracing**: ART instrumentation; logs entry/exit per method; 100x slower than running code; use on 1% of sessions
+    - **Tradeoff**: systrace = fast + direct but requires interpreting events; method tracing = explicit but overhead distorts measurements
+    - **Real usage**: jank suspected → run systrace (60s) → view on perfeto UI → see which frame missed vsync → dig frame-by-frame
     Strong answer tip:
+    - Walk through a systrace: find vsync markers → identify frames that miss deadline → backtrace to main/RT thread doing work
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/instrumentation-tracing-and-profiler-internals/#advanced-17">🚀 See Full Deep Dive</a>
 
@@ -567,7 +537,7 @@ hide:
 
 <div id="advanced-18"></div>
 
-## How do you approach multithreading and scheduler behavior in production Android systems
+## Explain the CFS scheduler and Android thread priority model; when does starvation occur
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
@@ -578,18 +548,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach multithreading and scheduler behavior in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Linux kernel CFS scheduler allocates CPU share per-process/thread; Android adds priority boosting, task affinity, and cgroup limits.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **CFS (Completely Fair Scheduler)**: divides CPU time proportionally; nice level affects vruntime weight; lower nice = gets more CPU
+    - **Thread priorities**: Looper threads set priority via Process.setThreadPriority(); main thread = THREAD_PRIORITY_DEFAULT (-4)
+    - **RT scheduling**: realtime threads use FIFO/RR policy (not CFS); reserved for system_server components (not app code normally)
+    - **Tradeoff**: high priority = lower latency but may starve normal work; background priority = battery but may miss deadlines
+    - **Real issue**: custom background thread at default priority competes with main; if doing I/O, blocks main waiting for result
     Strong answer tip:
+    - Explain: if custom thread does heavy work (file I/O) at default priority, it may preempt main, reducing frame rate; use BACKGROUND priority
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/multithreading-and-scheduler-behavior/#advanced-18">🚀 See Full Deep Dive</a>
 
@@ -598,7 +566,7 @@ hide:
 
 <div id="advanced-19"></div>
 
-## How do you approach modularization at scale in production Android systems
+## Design a modular app architecture; why is the dependency graph acyclic and what breaks
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
@@ -609,18 +577,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach modularization at scale in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Modularization breaks monolithic app into feature modules; reduces build time, enables on-demand delivery, isolates teams & risk.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Dynamic feature modules**: delivered via Play Core; on-demand (user clicks purchase) or install-time (part of base APK)
+    - **Communication**: modules talk via NavigationActivity intents or shared interfaces (extracted to :core module); avoids hard deps
+    - **Tradeoff**: modularity = slower builds initially (more compile steps) but faster iteration (rebuild 1 module); also harder testing
+    - **Real scale issue**: 500+ screens in monolith = 10min builds; split into 30 modules = 90s per module = parallel gains 3-5x speedup
+    - **Dependency cycles**: A→B→A breaks modularization; force acyclic graph via code review or static analysis tool
     Strong answer tip:
+    - Explain module graph design: feature modules depend on :core (API), never on each other; core is thin (navigation, utils, models)
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/modularization-at-scale/#advanced-19">🚀 See Full Deep Dive</a>
 
@@ -629,7 +595,7 @@ hide:
 
 <div id="advanced-20"></div>
 
-## How do you approach advanced tradeoffs and interview strategy in production Android systems
+## When facing an architectural decision, what factors matter most and how do you measure
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
@@ -640,18 +606,16 @@ hide:
 
 ??? question "View Answer"
 
-    How do you approach advanced tradeoffs and interview strategy in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Advanced topics require balancing technical depth, team readiness, and business value; strong candidates articulate tradeoffs clearly.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Technical depth vs pragmatism**: why you'd NOT use native for everything (complexity, debugging, maintenance cost)
+    - **Team capability**: if team unfamiliar with Binder, modularity overhead >> benefit; upskilling needed
+    - **Measurement discipline**: never assume—profile systrace, measure before/after; anecdote ≠ data
+    - **Risk tolerance**: Doze strict = safer battery but may break critical syncs; tiered approach (foreground service for critical) balances both
+    - **Interview signal**: candidates who say "it depends" + explain factors (data size, team, release timeline) rank higher than "always use X"
     Strong answer tip:
+    - When asked "should we use NDK?", answer: "depends on CPU profile. If top-10 functions consume >50% time, measure speedup. If <20%, probably no."
 
-    - connect `advanced` choices to measurable outcomes
 
     <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/advanced-tradeoffs-and-interview-strategy/#advanced-20">🚀 See Full Deep Dive</a>
 
@@ -660,928 +624,288 @@ hide:
 
 <div id="advanced-21"></div>
 
-## How do you approach android runtime internals in production Android systems
+## Design a reactive architecture using RxJava; explain backpressure and operator fusion
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">reactive</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach android runtime internals in production Android systems is primarily about making reliable engineering decisions in production.
-
+    RxJava enables declarative, composable async data streams; backpressure prevents memory overflow when source outpaces consumer.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Observable vs Flowable**: Observable ignores backpressure (easy but risky); Flowable respects it (safe but overhead); choose by data volume
+    - **Backpressure strategies**: drop (lose data), buffer (memory risk), latest (emit only newest), pause upstream (blocks producer)
+    - **Operator fusion**: RxJava 2 inlines operators to avoid allocation; chaining map→filter→map creates single loop, not 3 passes
+    - **Cancellation**: Disposable prevents memory leaks; if subscription doesn't unsubscribe, resources leak; CompositeDisposable aggregates many
+    - **Tradeoff**: reactive = elegant async but steeper learning curve; testing needs TestScheduler; imperative may be clearer for simple cases
     Strong answer tip:
+    - Explain OutOfMemoryError from unbackpressured Observable: if source emits 1M items/sec but consumer takes 1ms each, buffer grows infinitely
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-runtime-internals/#advanced-21">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/reactive-programming-and-rxjava/#advanced-21">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-22"></div>
 
-## How do you approach binder and ipc at scale in production Android systems
+## Architect dependency injection at scale using Dagger/Hilt; when do circular deps occur
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">binder</span>
+  <span class="question-badge question-badge--tag">architecture</span>
+  <span class="question-badge question-badge--tag">di</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach binder and ipc at scale in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Dependency injection decouples code through inversion of control; Dagger generates code to wire dependencies at compile-time, preventing circular loops.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Dagger dependency graph**: DAG (directed acyclic) enforced at compile time; circular A→B→A fails with error (prevents runtime surprises)
+    - **Scopes**: @Singleton caches instance lifetime (module level); @ActivityScoped per-activity; unscoped creates new instance each time
+    - **Lazy vs Provider**: Lazy<T> delays creation until .get(); Provider<T> creates fresh on each .get(); tradeoff between memory and initialization
+    - **Real scale issue**: monolith with 100+ modules → Dagger build time can spike (seconds); need hierarchical graphs or library modules
+    - **Hilt auto-wiring**: reduces boilerplate vs raw Dagger; but less explicit = harder to debug non-obvious wiring
     Strong answer tip:
+    - Why circular deps fail at compile-time (not runtime): A @Provides B, B @Provides A → Dagger sees cycle, errors before code runs; detection is free
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/binder-and-ipc-at-scale/#advanced-22">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/dependency-injection-at-scale/#advanced-22">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-23"></div>
 
-## How do you approach zygote art and startup in production Android systems
+## Explain Jetpack Compose recomposition triggers and how to prevent excessive redraws
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">zygote</span>
+  <span class="question-badge question-badge--tag">compose</span>
+  <span class="question-badge question-badge--tag">performance</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach zygote art and startup in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Compose tracks state changes; recomposition reruns composables when inputs change; smart structuring prevents cascading recomposes.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **State stability**: if parameter immutable reference never changes, Compose skips recomposition of that subtree; use data classes with sensible equals
+    - **Recomposition scope**: changes to State<T> only recompose that scope downward (not entire tree); fine-grained control is key
+    - **Remember & derivedStateOf**: remember caches computed value across recompositions; derivedStateOf skips child recompose if result unchanged
+    - **Key optimization**: wrapping subtree in key { } forces recomposition only if key changes; prevents implicit dependency creep
+    - **Tradeoff**: lazy recomposition = fast but requires careful state modeling; too much remember logic = hard to reason about data flow
     Strong answer tip:
+    - Explain LazyColumn jank: if item composition expensive (complex layout), 100 items → lag on scroll; fix with content key + memoization
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/zygote-art-and-startup/#advanced-23">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/jetpack-compose-performance/#advanced-23">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-24"></div>
 
-## How do you approach renderthread and gpu pipeline in production Android systems
+## Walk through custom view measurement, layout, and drawing phases; how do invalidations cascade
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">renderthread</span>
+  <span class="question-badge question-badge--tag">rendering</span>
+  <span class="question-badge question-badge--tag">performance</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach renderthread and gpu pipeline in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Custom views must implement onMeasure (size negotiation), onLayout (position children), onDraw (render); invalidation triggers recalculation.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Measure phase**: parent offers constraints (width spec + height spec); child returns size (exact, at-most, or unspecified); two-pass negotiation
+    - **Layout phase**: parent calls child.layout() with actual bounds; child positions children recursively; coordinates are relative to parent
+    - **Draw phase**: onDraw() receives Canvas; drawing commands (drawRect, drawText) rendered to framebuffer; occluded areas still drawn (waste)
+    - **Invalidation cascade**: calling invalidate() queues layout/draw pass; if called in onDraw (recursive), ANR possible; use Choreographer for throttling
+    - **Real bottleneck**: measuring unspecified children in loop → O(n²) layouts; wrap in MeasureSpec.makeMeasureSpec to avoid re-negotiation
     Strong answer tip:
+    - Explain nested RecyclerView jank: parent measures child with unspecified height → child measures all items → O(n) per scroll frame
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/renderthread-and-gpu-pipeline/#advanced-24">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/custom-view-rendering-and-invalidation/#advanced-24">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-25"></div>
 
-## How do you approach memory model and gc tuning in production Android systems
+## Explain Choreographer frame pacing callbacks and how animations sync to display vsync
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">memory</span>
+  <span class="question-badge question-badge--tag">animation</span>
+  <span class="question-badge question-badge--tag">rendering</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach memory model and gc tuning in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Choreographer schedules frame callbacks synchronized to display refresh rate (60Hz = 16.67ms); callbacks orchestrate animation timing.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Vsync sync**: Choreographer.postFrameCallback() queued at next vsync pulse; all callbacks fired before frame deadline (preserves 60fps)
+    - **Three types**: input callbacks (touch dispatch), animation callbacks (property animators), traversal callbacks (measure/layout/draw)
+    - **Frame pacing**: if animation frame takes 18ms (exceeds 16.67ms), vsync drops frame → visible stutter; Choreographer helps but can't fix slow code
+    - **Interpolation**: animation value = interpolator.getInterpolation(elapsed/duration); linear (constant speed) vs ease-in (acceleration)
+    - **Tradeoff**: tight animation loop (fast cadence) = smooth but CPU overhead; loose cadence (sparse callbacks) = jank but power efficient
     Strong answer tip:
+    - Why animated PropertyAnimator is smoother than custom Handler loop: Choreographer syncs with display; Handler has no vsync awareness, may miss deadlines
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/memory-model-and-gc-tuning/#advanced-25">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/choreographer-and-animation-timing/#advanced-25">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-26"></div>
 
-## How do you approach aosp framework layering in production Android systems
+## Design a Room database strategy avoiding N+1 queries and slow index misses
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">aosp</span>
+  <span class="question-badge question-badge--tag">database</span>
+  <span class="question-badge question-badge--tag">persistence</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach aosp framework layering in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Room provides compile-time SQL checking; N+1 (loading parent then looping children) kills performance; indices prevent table scans.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **N+1 pattern**: query users (1 query) → loop each user → query their posts (N queries) = N+1 total; solution is JOIN in single query
+    - **Indices**: @Index on frequently queried columns (user_id, timestamp) reduces table scan; adds write overhead, saves read time per query
+    - **RxJava integration**: @Query returns Observable<List<User>>; Room emits new list on any table change; can cause jank if listener does work
+    - **Transaction safety**: @Transaction ensures query completes atomically; long transactions block other writes (lock contention); tune retention
+    - **Real scale**: app with 1M posts, no index on user_id → table scan reads all 1M rows for each query; adding index = O(log n) instead
     Strong answer tip:
+    - Explain slow queries: SELECT * FROM users WHERE user_id = ? without index → full table scan (1M+ rows); add @Index(['user_id'])
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/aosp-framework-layering/#advanced-26">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/room-database-query-optimization/#advanced-26">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-27"></div>
 
-## How do you approach system services and lifecycle in production Android systems
+## Compare WorkManager, periodic JobScheduler, and foreground services; which guarantees work executes
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">system</span>
+  <span class="question-badge question-badge--tag">background</span>
+  <span class="question-badge question-badge--tag">reliability</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach system services and lifecycle in production Android systems is primarily about making reliable engineering decisions in production.
-
+    WorkManager provides work scheduling with persistence + retry; JobScheduler offers periodic jobs; foreground services stay alive but visible to user.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **WorkManager**: survives app restart (persistent); retries with exponential backoff; respects Doze + battery saver constraints
+    - **Periodic jobs**: JobScheduler schedules aligned to window (batched with others); WorkManager PeriodicWorkRequest can't guarantee exact timing
+    - **Foreground services**: exempt from Doze & cachekill; but users see "X is draining battery" → acceptable only for user-initiated work (music, nav)
+    - **Guarantee levels**: WorkManager ≈ "eventually" (may delay hours); JobScheduler "optimized timing" (batched); foreground = immediate but intrusive
+    - **Tradeoff**: WorkManager = reliable but deferred; periodic jobs = adaptive but imprecise; foreground = immediate but battery impact + permission risk
     Strong answer tip:
+    - Why WorkManager over JobScheduler for analytics: flaky network → WorkManager auto-retries across app restarts; JobScheduler discards on reboot
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/system-services-and-lifecycle/#advanced-27">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/workmanager-and-background-execution/#advanced-27">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-28"></div>
 
-## How do you approach input window and surfaceflinger in production Android systems
+## Design a Gradle plugin architecture; explain incremental tasks and caching for build performance
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
+  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">input</span>
+  <span class="question-badge question-badge--tag">build</span>
+  <span class="question-badge question-badge--tag">gradle</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach input window and surfaceflinger in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Gradle plugins customize build with custom tasks; incremental tasks only process changed inputs; build caching skips unchanged task outputs.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Custom tasks**: extend DefaultTask, define @Input/@Output properties; Gradle uses these to detect stale inputs and skip re-execution
+    - **Incremental tasks**: if only 1 file changed, process only that file (not whole source tree); incremental build = 10-100x faster than clean
+    - **Build caching**: if task run was cached in CI, local build skips re-execution; but caching can silently hide bugs if cache keying wrong
+    - **Real scale issue**: 500 modules × 30s compile = 250min full build; parallel + incremental = 1-2min (100x speedup) but requires task isolation
+    - **Tradeoff**: fine-grained @Input/@Output = proper caching but complex; coarse-grained = simple but cache misses, full rebuilds
     Strong answer tip:
+    - Explain build slowdown: all tasks rerun despite no source changes? Check task inputs—probably reading system properties or time which aren't cached
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/input-window-and-surfaceflinger/#advanced-28">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/gradle-plugin-architecture/#advanced-28">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-29"></div>
 
-## How do you approach android security model in production Android systems
+## Compare Protobuf vs JSON serialization; when do you use each and what are evolution risks
 
 <div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
+  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">android</span>
+  <span class="question-badge question-badge--tag">serialization</span>
+  <span class="question-badge question-badge--tag">data</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach android security model in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Protobuf provides compact binary encoding with schema evolution; JSON is human-readable but larger; choice depends on bandwidth vs developer velocity.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Protobuf size**: binary encoding ≈ 30% of JSON for same data; saves bandwidth on mobile (cellular cost ≈ $5-10/GB in many regions)
+    - **Code generation**: Protobuf generates setters/getters (strict); JSON uses reflection (slower but flexible); mismatch in field type catches at compile
+    - **Schema evolution**: adding optional field to Protobuf is safe (old clients ignore new field); JSON schemas must be versioned (v1, v2 endpoints)
+    - **Developer experience**: Protobuf = verbose schema + generated code; JSON = any editor but no schema validation until runtime
+    - **Real tradeoff**: Protobuf = 3-5ms encode time + 3MB binary; JSON = 15-20ms encode + 10MB; for 1M requests/day, Protobuf saves 200 CPU-cores
     Strong answer tip:
+    - When to choose: high-frequency APIs (>1M req/day) → Protobuf; internal tools/webhooks → JSON; hybrid = Protobuf over-wire, JSON for logging
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-security-model/#advanced-29">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/data-serialization-tradeoffs/#advanced-29">🚀 See Full Deep Dive</a>
 
 
 ---
 
 <div id="advanced-30"></div>
 
-## How do you approach sepolicy and sandboxing in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">sepolicy</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach sepolicy and sandboxing in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/sepolicy-and-sandboxing/#advanced-30">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-31"></div>
-
-## How do you approach native interop and ndk in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">native</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach native interop and ndk in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/native-interop-and-ndk/#advanced-31">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-32"></div>
-
-## How do you approach jni performance and safety in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">jni</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach jni performance and safety in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/jni-performance-and-safety/#advanced-32">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-33"></div>
-
-## How do you approach power management doze and jobs in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">power</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach power management doze and jobs in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/power-management-doze-and-jobs/#advanced-33">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-34"></div>
-
-## How do you approach storage stack and filesystems in production Android systems
+## Architect Firebase offline sync; explain conflict resolution when device and cloud both write
 
 <div class="question-meta">
   <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
   <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">storage</span>
+  <span class="question-badge question-badge--tag">firebase</span>
+  <span class="question-badge question-badge--tag">sync</span>
 </div>
 
 ??? question "View Answer"
 
-    How do you approach storage stack and filesystems in production Android systems is primarily about making reliable engineering decisions in production.
-
+    Firebase Realtime Database syncs offline writes to cloud; conflicts arise when device and cloud both modify same record; resolution requires strategy.
     In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
+    - **Offline writes**: Firebase queues writes locally; syncs when reconnected; but if cloud wrote same field, last-write-wins (data loss risk)
+    - **Conflict strategies**: last-write-wins (simple but lossy); timestamp comparison (clock skew risks); vector clocks (complex but safe)
+    - **Real issue**: user edits note offline, cloud has newer version (another device), sync → user's edit discarded silently
+    - **Firestore transactions**: multi-document ACID semantics; but offline writes don't participate—only synced at reconnect, breaking atomicity
+    - **Tradeoff**: optimistic sync = responsive UX but conflict risk; pessimistic (require online) = safe but poor offline experience
     Strong answer tip:
+    - Explain CRDTs (conflict-free types): instead of last-write-wins, use append-only logs (all edits preserved); merge can reconcile divergent branches
 
-    - connect `advanced` choices to measurable outcomes
 
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/storage-stack-and-filesystems/#advanced-34">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-35"></div>
-
-## How do you approach network stack and connectivity in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">network</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach network stack and connectivity in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/network-stack-and-connectivity/#advanced-35">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-36"></div>
-
-## How do you approach boot flow and init in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">boot</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach boot flow and init in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/boot-flow-and-init/#advanced-36">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-37"></div>
-
-## How do you approach instrumentation tracing and profiler internals in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">instrumentation</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach instrumentation tracing and profiler internals in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/instrumentation-tracing-and-profiler-internals/#advanced-37">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-38"></div>
-
-## How do you approach multithreading and scheduler behavior in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">multithreading</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach multithreading and scheduler behavior in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/multithreading-and-scheduler-behavior/#advanced-38">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-39"></div>
-
-## How do you approach modularization at scale in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">modularization</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach modularization at scale in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/modularization-at-scale/#advanced-39">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-40"></div>
-
-## How do you approach advanced tradeoffs and interview strategy in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach advanced tradeoffs and interview strategy in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/advanced-tradeoffs-and-interview-strategy/#advanced-40">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-41"></div>
-
-## How do you approach android runtime internals in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">android</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach android runtime internals in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-runtime-internals/#advanced-41">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-42"></div>
-
-## How do you approach binder and ipc at scale in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">binder</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach binder and ipc at scale in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/binder-and-ipc-at-scale/#advanced-42">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-43"></div>
-
-## How do you approach zygote art and startup in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">zygote</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach zygote art and startup in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/zygote-art-and-startup/#advanced-43">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-44"></div>
-
-## How do you approach renderthread and gpu pipeline in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">renderthread</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach renderthread and gpu pipeline in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/renderthread-and-gpu-pipeline/#advanced-44">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-45"></div>
-
-## How do you approach memory model and gc tuning in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">memory</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach memory model and gc tuning in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/memory-model-and-gc-tuning/#advanced-45">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-46"></div>
-
-## How do you approach aosp framework layering in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--beginner">beginner</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">aosp</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach aosp framework layering in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/aosp-framework-layering/#advanced-46">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-47"></div>
-
-## How do you approach system services and lifecycle in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">system</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach system services and lifecycle in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/system-services-and-lifecycle/#advanced-47">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-48"></div>
-
-## How do you approach input window and surfaceflinger in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--intermediate">intermediate</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">input</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach input window and surfaceflinger in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/input-window-and-surfaceflinger/#advanced-48">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-49"></div>
-
-## How do you approach android security model in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--senior">senior</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">android</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach android security model in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/android-security-model/#advanced-49">🚀 See Full Deep Dive</a>
-
-
----
-
-<div id="advanced-50"></div>
-
-## How do you approach sepolicy and sandboxing in production Android systems
-
-<div class="question-meta">
-  <span class="question-badge question-badge--difficulty question-badge--advanced">advanced</span>
-  <span class="question-badge question-badge--tag">advanced</span>
-  <span class="question-badge question-badge--tag">internals</span>
-  <span class="question-badge question-badge--tag">sepolicy</span>
-</div>
-
-??? question "View Answer"
-
-    How do you approach sepolicy and sandboxing in production Android systems is primarily about making reliable engineering decisions in production.
-
-    In interviews, cover:
-
-    - one-line definition and context
-    - when to apply it and when to avoid it
-    - key tradeoffs (latency, reliability, complexity, cost)
-    - one real implementation example
-
-    Strong answer tip:
-
-    - connect `advanced` choices to measurable outcomes
-
-    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/sepolicy-and-sandboxing/#advanced-50">🚀 See Full Deep Dive</a>
+    <a class="question-dive-link" href="/android-interview-prep/deep-dives/advanced/firebase-offline-sync-and-conflicts/#advanced-30">🚀 See Full Deep Dive</a>
 

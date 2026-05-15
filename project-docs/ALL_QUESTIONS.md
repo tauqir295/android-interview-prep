@@ -1,5 +1,5 @@
 # Complete Question List - Android Interview Prep
-Generated: 643 interview questions across 280 deep dive topics
+Generated: 623 interview questions across 290 deep dive topics
 ---
 ## Fundamentals Questions
 ## Activity Lifecycle (6 questions -> 1 deep dive)
@@ -611,377 +611,367 @@ Generated: 643 interview questions across 280 deep dive topics
 ---
 
 ## Advanced Questions
-## Android Runtime Internals (3 questions -> 1 deep dive)
-394. `advanced-01` - How do you approach android runtime internals in production Android systems
-395. `advanced-21` - How do you approach android runtime internals in production Android systems
-396. `advanced-41` - How do you approach android runtime internals in production Android systems
-## Binder And Ipc At Scale (3 questions -> 1 deep dive)
-397. `advanced-02` - How do you approach binder and ipc at scale in production Android systems
-398. `advanced-22` - How do you approach binder and ipc at scale in production Android systems
-399. `advanced-42` - How do you approach binder and ipc at scale in production Android systems
-## Zygote Art And Startup (3 questions -> 1 deep dive)
-400. `advanced-03` - How do you approach zygote art and startup in production Android systems
-401. `advanced-23` - How do you approach zygote art and startup in production Android systems
-402. `advanced-43` - How do you approach zygote art and startup in production Android systems
-## Renderthread And Gpu Pipeline (3 questions -> 1 deep dive)
-403. `advanced-04` - How do you approach renderthread and gpu pipeline in production Android systems
-404. `advanced-24` - How do you approach renderthread and gpu pipeline in production Android systems
-405. `advanced-44` - How do you approach renderthread and gpu pipeline in production Android systems
-## Memory Model And Gc Tuning (3 questions -> 1 deep dive)
-406. `advanced-05` - How do you approach memory model and gc tuning in production Android systems
-407. `advanced-25` - How do you approach memory model and gc tuning in production Android systems
-408. `advanced-45` - How do you approach memory model and gc tuning in production Android systems
-## Aosp Framework Layering (3 questions -> 1 deep dive)
-409. `advanced-06` - How do you approach aosp framework layering in production Android systems
-410. `advanced-26` - How do you approach aosp framework layering in production Android systems
-411. `advanced-46` - How do you approach aosp framework layering in production Android systems
-## System Services And Lifecycle (3 questions -> 1 deep dive)
-412. `advanced-07` - How do you approach system services and lifecycle in production Android systems
-413. `advanced-27` - How do you approach system services and lifecycle in production Android systems
-414. `advanced-47` - How do you approach system services and lifecycle in production Android systems
-## Input Window And Surfaceflinger (3 questions -> 1 deep dive)
-415. `advanced-08` - How do you approach input window and surfaceflinger in production Android systems
-416. `advanced-28` - How do you approach input window and surfaceflinger in production Android systems
-417. `advanced-48` - How do you approach input window and surfaceflinger in production Android systems
-## Android Security Model (3 questions -> 1 deep dive)
-418. `advanced-09` - How do you approach android security model in production Android systems
-419. `advanced-29` - How do you approach android security model in production Android systems
-420. `advanced-49` - How do you approach android security model in production Android systems
-## Sepolicy And Sandboxing (3 questions -> 1 deep dive)
-421. `advanced-10` - How do you approach sepolicy and sandboxing in production Android systems
-422. `advanced-30` - How do you approach sepolicy and sandboxing in production Android systems
-423. `advanced-50` - How do you approach sepolicy and sandboxing in production Android systems
-## Native Interop And Ndk (2 questions -> 1 deep dive)
-424. `advanced-11` - How do you approach native interop and ndk in production Android systems
-425. `advanced-31` - How do you approach native interop and ndk in production Android systems
-## Jni Performance And Safety (2 questions -> 1 deep dive)
-426. `advanced-12` - How do you approach jni performance and safety in production Android systems
-427. `advanced-32` - How do you approach jni performance and safety in production Android systems
-## Power Management Doze And Jobs (2 questions -> 1 deep dive)
-428. `advanced-13` - How do you approach power management doze and jobs in production Android systems
-429. `advanced-33` - How do you approach power management doze and jobs in production Android systems
-## Storage Stack And Filesystems (2 questions -> 1 deep dive)
-430. `advanced-14` - How do you approach storage stack and filesystems in production Android systems
-431. `advanced-34` - How do you approach storage stack and filesystems in production Android systems
-## Network Stack And Connectivity (2 questions -> 1 deep dive)
-432. `advanced-15` - How do you approach network stack and connectivity in production Android systems
-433. `advanced-35` - How do you approach network stack and connectivity in production Android systems
-## Boot Flow And Init (2 questions -> 1 deep dive)
-434. `advanced-16` - How do you approach boot flow and init in production Android systems
-435. `advanced-36` - How do you approach boot flow and init in production Android systems
-## Instrumentation Tracing And Profiler Internals (2 questions -> 1 deep dive)
-436. `advanced-17` - How do you approach instrumentation tracing and profiler internals in production Android systems
-437. `advanced-37` - How do you approach instrumentation tracing and profiler internals in production Android systems
-## Multithreading And Scheduler Behavior (2 questions -> 1 deep dive)
-438. `advanced-18` - How do you approach multithreading and scheduler behavior in production Android systems
-439. `advanced-38` - How do you approach multithreading and scheduler behavior in production Android systems
-## Modularization At Scale (2 questions -> 1 deep dive)
-440. `advanced-19` - How do you approach modularization at scale in production Android systems
-441. `advanced-39` - How do you approach modularization at scale in production Android systems
-## Advanced Tradeoffs And Interview Strategy (2 questions -> 1 deep dive)
-442. `advanced-20` - How do you approach advanced tradeoffs and interview strategy in production Android systems
-443. `advanced-40` - How do you approach advanced tradeoffs and interview strategy in production Android systems
+## Android Runtime Internals (1 questions -> 1 deep dive)
+394. `advanced-01` - Explain the Android Runtime (ART) internals and how to optimize it in production
+## Binder And Ipc At Scale (1 questions -> 1 deep dive)
+395. `advanced-02` - Discuss Binder IPC design choices and scaling challenges in system_server
+## Zygote Art And Startup (1 questions -> 1 deep dive)
+396. `advanced-03` - Explain Zygote's role in app startup and memory efficiency via Copy-on-Write
+## Renderthread And Gpu Pipeline (1 questions -> 1 deep dive)
+397. `advanced-04` - Walk through frame pipelining, triple buffering, and jank diagnosis on RenderThread
+## Memory Model And Gc Tuning (1 questions -> 1 deep dive)
+398. `advanced-05` - What factors influence GC tuning decisions in ART and how do you measure them
+## Aosp Framework Layering (1 questions -> 1 deep dive)
+399. `advanced-06` - Describe the AOSP layered architecture from kernel through apps and its constraints
+## System Services And Lifecycle (1 questions -> 1 deep dive)
+400. `advanced-07` - Explain how system services enforce lifecycle and manage resource contention across apps
+## Input Window And Surfaceflinger (1 questions -> 1 deep dive)
+401. `advanced-08` - Discuss input dispatch routing and SurfaceFlinger composition; when do deadlocks occur
+## Android Security Model (1 questions -> 1 deep dive)
+402. `advanced-09` - Explain Android's defense-in-depth security layers and how privilege escalation exploits work
+## Sepolicy And Sandboxing (1 questions -> 1 deep dive)
+403. `advanced-10` - What is SEPolicy Type Enforcement and how do you debug sandboxing violations in production
+## Native Interop And Ndk (1 questions -> 1 deep dive)
+404. `advanced-11` - When should you use NDK and how do you measure performance gains vs complexity costs
+## Jni Performance And Safety (1 questions -> 1 deep dive)
+405. `advanced-12` - Explain JNI reference management, critical sections, and their GC interaction
+## Power Management Doze And Jobs (1 questions -> 1 deep dive)
+406. `advanced-13` - Design a background sync strategy balancing battery life, data freshness, and reliability
+## Storage Stack And Filesystems (1 questions -> 1 deep dive)
+407. `advanced-14` - Discuss scoped storage constraints and tradeoffs when migrating legacy apps
+## Network Stack And Connectivity (1 questions -> 1 deep dive)
+408. `advanced-15` - Analyze connection pooling, DNS caching, and radio state transitions for battery optimization
+## Boot Flow And Init (1 questions -> 1 deep dive)
+409. `advanced-16` - Explain the Android boot sequence and init.rc scripting language with failure modes
+## Instrumentation Tracing And Profiler Internals (1 questions -> 1 deep dive)
+410. `advanced-17` - Compare systrace, Perfetto, and method tracing; when would you use each one
+## Multithreading And Scheduler Behavior (1 questions -> 1 deep dive)
+411. `advanced-18` - Explain the CFS scheduler and Android thread priority model; when does starvation occur
+## Modularization At Scale (1 questions -> 1 deep dive)
+412. `advanced-19` - Design a modular app architecture; why is the dependency graph acyclic and what breaks
+## Advanced Tradeoffs And Interview Strategy (1 questions -> 1 deep dive)
+413. `advanced-20` - When facing an architectural decision, what factors matter most and how do you measure
+## Reactive Programming And Rxjava (1 questions -> 1 deep dive)
+414. `advanced-21` - Design a reactive architecture using RxJava; explain backpressure and operator fusion
+## Dependency Injection At Scale (1 questions -> 1 deep dive)
+415. `advanced-22` - Architect dependency injection at scale using Dagger/Hilt; when do circular deps occur
+## Jetpack Compose Performance (1 questions -> 1 deep dive)
+416. `advanced-23` - Explain Jetpack Compose recomposition triggers and how to prevent excessive redraws
+## Custom View Rendering And Invalidation (1 questions -> 1 deep dive)
+417. `advanced-24` - Walk through custom view measurement, layout, and drawing phases; how do invalidations cascade
+## Choreographer And Animation Timing (1 questions -> 1 deep dive)
+418. `advanced-25` - Explain Choreographer frame pacing callbacks and how animations sync to display vsync
+## Room Database Query Optimization (1 questions -> 1 deep dive)
+419. `advanced-26` - Design a Room database strategy avoiding N+1 queries and slow index misses
+## Workmanager And Background Execution (1 questions -> 1 deep dive)
+420. `advanced-27` - Compare WorkManager, periodic JobScheduler, and foreground services; which guarantees work executes
+## Gradle Plugin Architecture (1 questions -> 1 deep dive)
+421. `advanced-28` - Design a Gradle plugin architecture; explain incremental tasks and caching for build performance
+## Data Serialization Tradeoffs (1 questions -> 1 deep dive)
+422. `advanced-29` - Compare Protobuf vs JSON serialization; when do you use each and what are evolution risks
+## Firebase Offline Sync And Conflicts (1 questions -> 1 deep dive)
+423. `advanced-30` - Architect Firebase offline sync; explain conflict resolution when device and cloud both write
 
 ---
 
 ## Future Tech Questions
 ## Mobile Ai Foundations (3 questions -> 1 deep dive)
-444. `future-tech-01` - How do you approach mobile ai foundations in production Android systems
-445. `future-tech-21` - How do you approach mobile ai foundations in production Android systems
-446. `future-tech-41` - How do you approach mobile ai foundations in production Android systems
+424. `future-tech-01` - How do you approach mobile ai foundations in production Android systems
+425. `future-tech-21` - How do you approach mobile ai foundations in production Android systems
+426. `future-tech-41` - How do you approach mobile ai foundations in production Android systems
 ## On Device Ml Inference (3 questions -> 1 deep dive)
-447. `future-tech-02` - How do you approach on device ml inference in production Android systems
-448. `future-tech-22` - How do you approach on device ml inference in production Android systems
-449. `future-tech-42` - How do you approach on device ml inference in production Android systems
+427. `future-tech-02` - How do you approach on device ml inference in production Android systems
+428. `future-tech-22` - How do you approach on device ml inference in production Android systems
+429. `future-tech-42` - How do you approach on device ml inference in production Android systems
 ## Edge Ai Privacy And Governance (3 questions -> 1 deep dive)
-450. `future-tech-03` - How do you approach edge ai privacy and governance in production Android systems
-451. `future-tech-23` - How do you approach edge ai privacy and governance in production Android systems
-452. `future-tech-43` - How do you approach edge ai privacy and governance in production Android systems
+430. `future-tech-03` - How do you approach edge ai privacy and governance in production Android systems
+431. `future-tech-23` - How do you approach edge ai privacy and governance in production Android systems
+432. `future-tech-43` - How do you approach edge ai privacy and governance in production Android systems
 ## Ai Assisted Development Workflows (3 questions -> 1 deep dive)
-453. `future-tech-04` - How do you approach ai assisted development workflows in production Android systems
-454. `future-tech-24` - How do you approach ai assisted development workflows in production Android systems
-455. `future-tech-44` - How do you approach ai assisted development workflows in production Android systems
+433. `future-tech-04` - How do you approach ai assisted development workflows in production Android systems
+434. `future-tech-24` - How do you approach ai assisted development workflows in production Android systems
+435. `future-tech-44` - How do you approach ai assisted development workflows in production Android systems
 ## Agentic Mobile Experiences (3 questions -> 1 deep dive)
-456. `future-tech-05` - How do you approach agentic mobile experiences in production Android systems
-457. `future-tech-25` - How do you approach agentic mobile experiences in production Android systems
-458. `future-tech-45` - How do you approach agentic mobile experiences in production Android systems
+436. `future-tech-05` - How do you approach agentic mobile experiences in production Android systems
+437. `future-tech-25` - How do you approach agentic mobile experiences in production Android systems
+438. `future-tech-45` - How do you approach agentic mobile experiences in production Android systems
 ## Foldables And Adaptive Ui (3 questions -> 1 deep dive)
-459. `future-tech-06` - How do you approach foldables and adaptive ui in production Android systems
-460. `future-tech-26` - How do you approach foldables and adaptive ui in production Android systems
-461. `future-tech-46` - How do you approach foldables and adaptive ui in production Android systems
+439. `future-tech-06` - How do you approach foldables and adaptive ui in production Android systems
+440. `future-tech-26` - How do you approach foldables and adaptive ui in production Android systems
+441. `future-tech-46` - How do you approach foldables and adaptive ui in production Android systems
 ## Large Screen And Multi Window Strategy (3 questions -> 1 deep dive)
-462. `future-tech-07` - How do you approach large screen and multi window strategy in production Android systems
-463. `future-tech-27` - How do you approach large screen and multi window strategy in production Android systems
-464. `future-tech-47` - How do you approach large screen and multi window strategy in production Android systems
+442. `future-tech-07` - How do you approach large screen and multi window strategy in production Android systems
+443. `future-tech-27` - How do you approach large screen and multi window strategy in production Android systems
+444. `future-tech-47` - How do you approach large screen and multi window strategy in production Android systems
 ## Wearables And Health Tech (3 questions -> 1 deep dive)
-465. `future-tech-08` - How do you approach wearables and health tech in production Android systems
-466. `future-tech-28` - How do you approach wearables and health tech in production Android systems
-467. `future-tech-48` - How do you approach wearables and health tech in production Android systems
+445. `future-tech-08` - How do you approach wearables and health tech in production Android systems
+446. `future-tech-28` - How do you approach wearables and health tech in production Android systems
+447. `future-tech-48` - How do you approach wearables and health tech in production Android systems
 ## Xr Ar Vr Mobile Platforms (3 questions -> 1 deep dive)
-468. `future-tech-09` - How do you approach xr ar vr mobile platforms in production Android systems
-469. `future-tech-29` - How do you approach xr ar vr mobile platforms in production Android systems
-470. `future-tech-49` - How do you approach xr ar vr mobile platforms in production Android systems
+448. `future-tech-09` - How do you approach xr ar vr mobile platforms in production Android systems
+449. `future-tech-29` - How do you approach xr ar vr mobile platforms in production Android systems
+450. `future-tech-49` - How do you approach xr ar vr mobile platforms in production Android systems
 ## Ambient Computing And Context Awareness (3 questions -> 1 deep dive)
-471. `future-tech-10` - How do you approach ambient computing and context awareness in production Android systems
-472. `future-tech-30` - How do you approach ambient computing and context awareness in production Android systems
-473. `future-tech-50` - How do you approach ambient computing and context awareness in production Android systems
+451. `future-tech-10` - How do you approach ambient computing and context awareness in production Android systems
+452. `future-tech-30` - How do you approach ambient computing and context awareness in production Android systems
+453. `future-tech-50` - How do you approach ambient computing and context awareness in production Android systems
 ## Multimodal Interfaces Voice Vision (2 questions -> 1 deep dive)
-474. `future-tech-11` - How do you approach multimodal interfaces voice vision in production Android systems
-475. `future-tech-31` - How do you approach multimodal interfaces voice vision in production Android systems
+454. `future-tech-11` - How do you approach multimodal interfaces voice vision in production Android systems
+455. `future-tech-31` - How do you approach multimodal interfaces voice vision in production Android systems
 ## Offline Intelligence Patterns (2 questions -> 1 deep dive)
-476. `future-tech-12` - How do you approach offline intelligence patterns in production Android systems
-477. `future-tech-32` - How do you approach offline intelligence patterns in production Android systems
+456. `future-tech-12` - How do you approach offline intelligence patterns in production Android systems
+457. `future-tech-32` - How do you approach offline intelligence patterns in production Android systems
 ## Federated Learning And Personalization (2 questions -> 1 deep dive)
-478. `future-tech-13` - How do you approach federated learning and personalization in production Android systems
-479. `future-tech-33` - How do you approach federated learning and personalization in production Android systems
+458. `future-tech-13` - How do you approach federated learning and personalization in production Android systems
+459. `future-tech-33` - How do you approach federated learning and personalization in production Android systems
 ## Kmp And Cross Platform Architecture (2 questions -> 1 deep dive)
-480. `future-tech-14` - How do you approach kmp and cross platform architecture in production Android systems
-481. `future-tech-34` - How do you approach kmp and cross platform architecture in production Android systems
+460. `future-tech-14` - How do you approach kmp and cross platform architecture in production Android systems
+461. `future-tech-34` - How do you approach kmp and cross platform architecture in production Android systems
 ## Modern Android Hardware Acceleration (2 questions -> 1 deep dive)
-482. `future-tech-15` - How do you approach modern android hardware acceleration in production Android systems
-483. `future-tech-35` - How do you approach modern android hardware acceleration in production Android systems
+462. `future-tech-15` - How do you approach modern android hardware acceleration in production Android systems
+463. `future-tech-35` - How do you approach modern android hardware acceleration in production Android systems
 ## Energy Efficient Ai On Mobile (2 questions -> 1 deep dive)
-484. `future-tech-16` - How do you approach energy efficient ai on mobile in production Android systems
-485. `future-tech-36` - How do you approach energy efficient ai on mobile in production Android systems
+464. `future-tech-16` - How do you approach energy efficient ai on mobile in production Android systems
+465. `future-tech-36` - How do you approach energy efficient ai on mobile in production Android systems
 ## Mobile Security For Ai Features (2 questions -> 1 deep dive)
-486. `future-tech-17` - How do you approach mobile security for ai features in production Android systems
-487. `future-tech-37` - How do you approach mobile security for ai features in production Android systems
+466. `future-tech-17` - How do you approach mobile security for ai features in production Android systems
+467. `future-tech-37` - How do you approach mobile security for ai features in production Android systems
 ## Future Networking 5G Edge (2 questions -> 1 deep dive)
-488. `future-tech-18` - How do you approach future networking 5g edge in production Android systems
-489. `future-tech-38` - How do you approach future networking 5g edge in production Android systems
+468. `future-tech-18` - How do you approach future networking 5g edge in production Android systems
+469. `future-tech-38` - How do you approach future networking 5g edge in production Android systems
 ## Emerging Product Strategy And Experimentation (2 questions -> 1 deep dive)
-490. `future-tech-19` - How do you approach emerging product strategy and experimentation in production Android systems
-491. `future-tech-39` - How do you approach emerging product strategy and experimentation in production Android systems
+470. `future-tech-19` - How do you approach emerging product strategy and experimentation in production Android systems
+471. `future-tech-39` - How do you approach emerging product strategy and experimentation in production Android systems
 ## Future Tech Tradeoffs And Interview Strategy (2 questions -> 1 deep dive)
-492. `future-tech-20` - How do you approach future tech tradeoffs and interview strategy in production Android systems
-493. `future-tech-40` - How do you approach future tech tradeoffs and interview strategy in production Android systems
+472. `future-tech-20` - How do you approach future tech tradeoffs and interview strategy in production Android systems
+473. `future-tech-40` - How do you approach future tech tradeoffs and interview strategy in production Android systems
 
 ---
 
 ## System Design Questions
 ## System Design Fundamentals (2 questions -> 1 deep dive)
-494. `system-design` - What is Android system design in interviews?
-495. `design-round-structure` - What is a strong structure for solving design rounds?
+474. `system-design` - What is Android system design in interviews?
+475. `design-round-structure` - What is a strong structure for solving design rounds?
 ## Requirements And Scope (2 questions -> 1 deep dive)
-496. `functional-vs-nonfunctional-requirements` - How do you separate functional vs non-functional requirements?
-497. `scope-definition` - How do you define scope for a system design round?
+476. `functional-vs-nonfunctional-requirements` - How do you separate functional vs non-functional requirements?
+477. `scope-definition` - How do you define scope for a system design round?
 ## Scalability And Capacity Planning (2 questions -> 1 deep dive)
-498. `estimations` - How do you do quick capacity estimations?
-499. `horizontal-scaling` - How do you scale a system horizontally?
+478. `estimations` - How do you do quick capacity estimations?
+479. `horizontal-scaling` - How do you scale a system horizontally?
 ## High Level Architecture (3 questions -> 1 deep dive)
-500. `high-level-components` - How do you structure high-level components?
-501. `service-boundaries` - How do you define service boundaries?
-502. `load-balancing` - How do load balancers fit into architecture design?
+480. `high-level-components` - How do you structure high-level components?
+481. `service-boundaries` - How do you define service boundaries?
+482. `load-balancing` - How do load balancers fit into architecture design?
 ## Data Modeling And Storage (2 questions -> 1 deep dive)
-503. `data-modeling` - How do you approach data modeling in system design?
-504. `sql-vs-nosql` - When do you choose SQL vs NoSQL?
+483. `data-modeling` - How do you approach data modeling in system design?
+484. `sql-vs-nosql` - When do you choose SQL vs NoSQL?
 ## Search And Indexing (3 questions -> 1 deep dive)
-505. `indexing-strategy` - How do indexes affect read and write performance?
-506. `search-architecture` - How do you design search for low-latency queries?
-507. `eventual-consistency-search` - Why is search often eventually consistent?
+485. `indexing-strategy` - How do indexes affect read and write performance?
+486. `search-architecture` - How do you design search for low-latency queries?
+487. `eventual-consistency-search` - Why is search often eventually consistent?
 ## Consistency And Transactions (2 questions -> 1 deep dive)
-508. `consistency-models` - What consistency models should you discuss in interviews?
-509. `transactions-and-sagas` - When should you use transactions vs sagas?
+488. `consistency-models` - What consistency models should you discuss in interviews?
+489. `transactions-and-sagas` - When should you use transactions vs sagas?
 ## Caching Strategies (2 questions -> 1 deep dive)
-510. `cache-aside` - What is cache-aside and when is it useful?
-511. `cache-invalidation` - Why is cache invalidation hard?
+490. `cache-aside` - What is cache-aside and when is it useful?
+491. `cache-invalidation` - Why is cache invalidation hard?
 ## Queueing And Async Processing (3 questions -> 1 deep dive)
-512. `message-queues` - When do you add a message queue?
-513. `event-driven-design` - What are event-driven architecture tradeoffs?
-514. `backpressure-in-systems` - What is backpressure in distributed systems?
+492. `message-queues` - When do you add a message queue?
+493. `event-driven-design` - What are event-driven architecture tradeoffs?
+494. `backpressure-in-systems` - What is backpressure in distributed systems?
 ## Api Design And Gateways (4 questions -> 1 deep dive)
-515. `api-gateway` - What role does an API gateway play?
-516. `rest-vs-grpc-design` - How do you choose REST vs gRPC for internal APIs?
-517. `versioning-strategy` - How do you version APIs safely?
-518. `rate-limiting` - How do you design rate limiting?
+495. `api-gateway` - What role does an API gateway play?
+496. `rest-vs-grpc-design` - How do you choose REST vs gRPC for internal APIs?
+497. `versioning-strategy` - How do you version APIs safely?
+498. `rate-limiting` - How do you design rate limiting?
 ## Security And Compliance (4 questions -> 1 deep dive)
-519. `authn-vs-authz` - How do you model authentication vs authorization?
-520. `security-hardening` - What security hardening do you mention in interviews?
-521. `tenant-isolation` - How do you design multi-tenant isolation?
-522. `data-retention` - How do retention policies affect architecture?
+499. `authn-vs-authz` - How do you model authentication vs authorization?
+500. `security-hardening` - What security hardening do you mention in interviews?
+501. `tenant-isolation` - How do you design multi-tenant isolation?
+502. `data-retention` - How do retention policies affect architecture?
 ## Observability And Slos (2 questions -> 1 deep dive)
-523. `slos-and-slas` - How do SLOs/SLAs shape architecture decisions?
-524. `logging-metrics-tracing` - Why are logs, metrics, and traces all needed?
+503. `slos-and-slas` - How do SLOs/SLAs shape architecture decisions?
+504. `logging-metrics-tracing` - Why are logs, metrics, and traces all needed?
 ## Resilience And Failure Handling (3 questions -> 1 deep dive)
-525. `circuit-breaker` - What is a circuit breaker and why use it?
-526. `bulkheads-and-timeouts` - How do timeouts, retries, and bulkheads work together?
-527. `idempotency` - Why is idempotency important in distributed systems?
+505. `circuit-breaker` - What is a circuit breaker and why use it?
+506. `bulkheads-and-timeouts` - How do timeouts, retries, and bulkheads work together?
+507. `idempotency` - Why is idempotency important in distributed systems?
 ## Multi Region And Disaster Recovery (2 questions -> 1 deep dive)
-528. `multi-region` - When do you move to multi-region architecture?
-529. `disaster-recovery-rpo-rto` - How do RPO and RTO influence disaster recovery design?
+508. `multi-region` - When do you move to multi-region architecture?
+509. `disaster-recovery-rpo-rto` - How do RPO and RTO influence disaster recovery design?
 ## Cost Optimization (2 questions -> 1 deep dive)
-530. `cost-vs-latency` - How do you balance cost vs latency?
-531. `capacity-headroom` - How much capacity headroom should a production system keep?
+510. `cost-vs-latency` - How do you balance cost vs latency?
+511. `capacity-headroom` - How much capacity headroom should a production system keep?
 ## Mobile Backend For Frontend (2 questions -> 1 deep dive)
-532. `bff-pattern` - What is Backend-for-Frontend (BFF) and when should Android use it?
-533. `edge-caching-mobile` - How does edge caching improve mobile user experience?
+512. `bff-pattern` - What is Backend-for-Frontend (BFF) and when should Android use it?
+513. `edge-caching-mobile` - How does edge caching improve mobile user experience?
 ## Real Time Systems (2 questions -> 1 deep dive)
-534. `realtime-chat-design` - How would you design a real-time chat backend?
-535. `fanout-problem` - How do you handle fan-out at scale?
+514. `realtime-chat-design` - How would you design a real-time chat backend?
+515. `fanout-problem` - How do you handle fan-out at scale?
 ## Analytics Pipeline Design (2 questions -> 1 deep dive)
-536. `analytics-pipeline` - How do you design analytics ingestion pipelines?
-537. `batch-vs-stream` - When do you choose batch vs stream processing?
+516. `analytics-pipeline` - How do you design analytics ingestion pipelines?
+517. `batch-vs-stream` - When do you choose batch vs stream processing?
 ## Migration And Evolution Strategies (2 questions -> 1 deep dive)
-538. `migration-strangler` - What is the strangler pattern for migrations?
-539. `schema-evolution` - How do you manage schema evolution safely?
+518. `migration-strangler` - What is the strangler pattern for migrations?
+519. `schema-evolution` - How do you manage schema evolution safely?
 ## Tradeoffs And Decision Frameworks (4 questions -> 1 deep dive)
-540. `tradeoff-framework` - How do you present tradeoffs clearly in interviews?
-541. `cap-theorem-practical` - How do you explain CAP theorem pragmatically?
-542. `read-heavy-vs-write-heavy` - How does workload shape architecture choices?
-543. `availability-vs-consistency` - How do you choose availability vs consistency?
+520. `tradeoff-framework` - How do you present tradeoffs clearly in interviews?
+521. `cap-theorem-practical` - How do you explain CAP theorem pragmatically?
+522. `read-heavy-vs-write-heavy` - How does workload shape architecture choices?
+523. `availability-vs-consistency` - How do you choose availability vs consistency?
 
 ---
 
 ## Testing Questions
 ## Testing Fundamentals (2 questions -> 1 deep dive)
-544. `testing-strategy` - How do you define an Android testing strategy?
-545. `qa-dev-collaboration` - How should QA and dev collaborate on automation?
+524. `testing-strategy` - How do you define an Android testing strategy?
+525. `qa-dev-collaboration` - How should QA and dev collaborate on automation?
 ## Test Pyramid And Strategy (4 questions -> 1 deep dive)
-546. `test-pyramid` - What is the test pyramid and why does it matter?
-547. `unit-vs-integration` - What is the difference between unit and integration tests?
-548. `hermetic-tests` - What are hermetic tests and why are they valuable?
-549. `risk-based-testing` - What is risk-based testing?
+526. `test-pyramid` - What is the test pyramid and why does it matter?
+527. `unit-vs-integration` - What is the difference between unit and integration tests?
+528. `hermetic-tests` - What are hermetic tests and why are they valuable?
+529. `risk-based-testing` - What is risk-based testing?
 ## Unit Testing Viewmodel (3 questions -> 1 deep dive)
-550. `viewmodel-unit-tests` - How do you unit test a ViewModel?
-551. `usecase-tests` - How should use cases be tested?
-552. `clock-abstraction` - How does clock abstraction improve test reliability?
+530. `viewmodel-unit-tests` - How do you unit test a ViewModel?
+531. `usecase-tests` - How should use cases be tested?
+532. `clock-abstraction` - How does clock abstraction improve test reliability?
 ## Repository And Data Layer Testing (2 questions -> 1 deep dive)
-553. `repository-tests` - How do you test repository logic with multiple data sources?
-554. `datasource-tests` - How do you test remote and local data sources?
+533. `repository-tests` - How do you test repository logic with multiple data sources?
+534. `datasource-tests` - How do you test remote and local data sources?
 ## Integration Testing (1 questions -> 1 deep dive)
-555. `integration-boundary` - When should you add integration tests?
+535. `integration-boundary` - When should you add integration tests?
 ## Ui Testing With Compose (2 questions -> 1 deep dive)
-556. `compose-ui-tests` - How do Compose UI tests differ from View UI tests?
-557. `semantics-testing` - Why are semantics important in Compose tests?
+536. `compose-ui-tests` - How do Compose UI tests differ from View UI tests?
+537. `semantics-testing` - Why are semantics important in Compose tests?
 ## Espresso And Ui Automation (3 questions -> 1 deep dive)
-558. `espresso-basics` - When do you still use Espresso?
-559. `idling-resources` - What are idling resources and when are they needed?
-560. `android-test-runner` - How do you structure instrumentation test modules?
+538. `espresso-basics` - When do you still use Espresso?
+539. `idling-resources` - What are idling resources and when are they needed?
+540. `android-test-runner` - How do you structure instrumentation test modules?
 ## Mocking Fakes And Stubs (3 questions -> 1 deep dive)
-561. `mocks-vs-fakes` - When should you use mocks vs fakes?
-562. `stub-vs-spy` - What is the difference between stubs and spies?
-563. `test-data-builders` - Why use test data builders?
+541. `mocks-vs-fakes` - When should you use mocks vs fakes?
+542. `stub-vs-spy` - What is the difference between stubs and spies?
+543. `test-data-builders` - Why use test data builders?
 ## Coroutine And Flow Testing (3 questions -> 1 deep dive)
-564. `coroutine-test` - How do you test coroutines deterministically?
-565. `virtual-time` - Why is virtual time important for async tests?
-566. `flow-test-patterns` - How do you test Flow emissions?
+544. `coroutine-test` - How do you test coroutines deterministically?
+545. `virtual-time` - Why is virtual time important for async tests?
+546. `flow-test-patterns` - How do you test Flow emissions?
 ## Stateflow Sharedflow Testing (2 questions -> 1 deep dive)
-567. `stateflow-testing` - How do you test StateFlow UI state?
-568. `sharedflow-events-testing` - How do you test one-off SharedFlow events?
+547. `stateflow-testing` - How do you test StateFlow UI state?
+548. `sharedflow-events-testing` - How do you test one-off SharedFlow events?
 ## Network Testing And Mockwebserver (1 questions -> 1 deep dive)
-569. `mockwebserver` - Why use MockWebServer for networking tests?
+549. `mockwebserver` - Why use MockWebServer for networking tests?
 ## Contract Testing (3 questions -> 1 deep dive)
-570. `api-contract-tests` - How do you keep API tests resilient to server changes?
-571. `consumer-contract` - What is consumer-driven contract testing?
-572. `contract-mocks` - How do contracts reduce mock drift?
+550. `api-contract-tests` - How do you keep API tests resilient to server changes?
+551. `consumer-contract` - What is consumer-driven contract testing?
+552. `contract-mocks` - How do contracts reduce mock drift?
 ## Database Testing Room (2 questions -> 1 deep dive)
-573. `room-inmemory-tests` - How do you test Room with in-memory databases?
-574. `migration-tests` - Why are Room migration tests critical?
+553. `room-inmemory-tests` - How do you test Room with in-memory databases?
+554. `migration-tests` - Why are Room migration tests critical?
 ## Testability And Architecture (3 questions -> 1 deep dive)
-575. `testable-architecture` - What makes Android architecture testable?
-576. `dependency-injection-testing` - How does DI improve testability?
-577. `test-maintenance-cost` - How do you manage long-term test maintenance cost?
+555. `testable-architecture` - What makes Android architecture testable?
+556. `dependency-injection-testing` - How does DI improve testability?
+557. `test-maintenance-cost` - How do you manage long-term test maintenance cost?
 ## Flaky Test Diagnostics (3 questions -> 1 deep dive)
-578. `flaky-tests` - What causes flaky tests?
-579. `stabilize-ui-tests` - How do you stabilize flaky UI tests?
-580. `retry-in-tests` - Should flaky tests be fixed with retries?
+558. `flaky-tests` - What causes flaky tests?
+559. `stabilize-ui-tests` - How do you stabilize flaky UI tests?
+560. `retry-in-tests` - Should flaky tests be fixed with retries?
 ## Performance And Benchmark Testing (2 questions -> 1 deep dive)
-581. `benchmark-tests` - When should you add benchmark tests?
-582. `macrobenchmark` - What does Macrobenchmark validate?
+561. `benchmark-tests` - When should you add benchmark tests?
+562. `macrobenchmark` - What does Macrobenchmark validate?
 ## Snapshot And Golden Testing (2 questions -> 1 deep dive)
-583. `golden-tests` - What are snapshot or golden tests?
-584. `visual-regression` - How do visual regression tests fit release safety?
+563. `golden-tests` - What are snapshot or golden tests?
+564. `visual-regression` - How do visual regression tests fit release safety?
 ## E2E Testing And Release Gates (2 questions -> 1 deep dive)
-585. `e2e-tests` - What are good use cases for end-to-end tests?
-586. `release-gates` - How should tests gate production releases?
+565. `e2e-tests` - What are good use cases for end-to-end tests?
+566. `release-gates` - How should tests gate production releases?
 ## Ci Cd Test Pipelines (3 questions -> 1 deep dive)
-587. `ci-pipeline` - How do you design a fast CI test pipeline?
-588. `sharding-tests` - When should you shard test suites?
-589. `test-environments` - How do you manage test environments across teams?
+567. `ci-pipeline` - How do you design a fast CI test pipeline?
+568. `sharding-tests` - When should you shard test suites?
+569. `test-environments` - How do you manage test environments across teams?
 ## Test Metrics And Quality Governance (4 questions -> 1 deep dive)
-590. `test-reporting` - What metrics should test reports include?
-591. `quality-gates` - How do quality gates prevent regressions?
-592. `mutation-testing` - Where does mutation testing fit in Android?
-593. `postmortem-regression-tests` - How do you turn incidents into regression tests?
+570. `test-reporting` - What metrics should test reports include?
+571. `quality-gates` - How do quality gates prevent regressions?
+572. `mutation-testing` - Where does mutation testing fit in Android?
+573. `postmortem-regression-tests` - How do you turn incidents into regression tests?
 
 ---
 
 ## Behavioral Questions
 ## Behavioral Fundamentals (1 questions -> 1 deep dive)
-594. `behavioral-interviews` - What do interviewers evaluate in behavioral rounds?
+574. `behavioral-interviews` - What do interviewers evaluate in behavioral rounds?
 ## Interview Story Frameworks (2 questions -> 1 deep dive)
-595. `star-method` - How should you use STAR effectively?
-596. `story-selection` - How do you select strong interview stories quickly?
+575. `star-method` - How should you use STAR effectively?
+576. `story-selection` - How do you select strong interview stories quickly?
 ## Ownership And Accountability (2 questions -> 1 deep dive)
-597. `ownership-example` - How do you present a strong ownership story?
-598. `accountability-vs-ownership` - What is the difference between accountability and ownership?
+577. `ownership-example` - How do you present a strong ownership story?
+578. `accountability-vs-ownership` - What is the difference between accountability and ownership?
 ## Conflict Resolution (2 questions -> 1 deep dive)
-599. `handling-conflict` - How do you discuss conflict with a teammate?
-600. `disagree-and-commit` - How do you answer "tell me about a disagreement"?
+579. `handling-conflict` - How do you discuss conflict with a teammate?
+580. `disagree-and-commit` - How do you answer "tell me about a disagreement"?
 ## Stakeholder Management (2 questions -> 1 deep dive)
-601. `stakeholder-alignment` - How do you align engineering and product stakeholders?
-602. `influence-roadmap` - How do you influence roadmap decisions?
+581. `stakeholder-alignment` - How do you align engineering and product stakeholders?
+582. `influence-roadmap` - How do you influence roadmap decisions?
 ## Prioritization And Tradeoffs (3 questions -> 1 deep dive)
-603. `tradeoff-prioritization` - How do you prioritize under tight deadlines?
-604. `saying-no` - How do you say no to low-impact requests?
-605. `tradeoff-communication` - How do you communicate tradeoffs to non-technical stakeholders?
+583. `tradeoff-prioritization` - How do you prioritize under tight deadlines?
+584. `saying-no` - How do you say no to low-impact requests?
+585. `tradeoff-communication` - How do you communicate tradeoffs to non-technical stakeholders?
 ## Mentorship And Team Growth (3 questions -> 1 deep dive)
-606. `mentoring-juniors` - How do you describe mentoring junior engineers?
-607. `growing-senior-engineers` - How do you grow senior engineers on your team?
-608. `dealing-with-low-performer` - How do you support a struggling teammate?
+586. `mentoring-juniors` - How do you describe mentoring junior engineers?
+587. `growing-senior-engineers` - How do you grow senior engineers on your team?
+588. `dealing-with-low-performer` - How do you support a struggling teammate?
 ## Leadership Without Authority (2 questions -> 1 deep dive)
-609. `lead-without-authority` - How do you lead without formal authority?
-610. `driving-adoption` - How do you drive adoption of technical standards?
+589. `lead-without-authority` - How do you lead without formal authority?
+590. `driving-adoption` - How do you drive adoption of technical standards?
 ## Incident Management And Postmortems (3 questions -> 1 deep dive)
-611. `incident-response-story` - How do you explain your role during a production incident?
-612. `blameless-postmortem` - What makes a postmortem blameless and actionable?
-613. `production-accountability` - How do you show accountability after production issues?
+591. `incident-response-story` - How do you explain your role during a production incident?
+592. `blameless-postmortem` - What makes a postmortem blameless and actionable?
+593. `production-accountability` - How do you show accountability after production issues?
 ## Delivery And Execution (2 questions -> 1 deep dive)
-614. `execution-under-pressure` - How do you deliver under pressure without burnout?
-615. `missed-deadline` - How do you answer questions about missing deadlines?
+594. `execution-under-pressure` - How do you deliver under pressure without burnout?
+595. `missed-deadline` - How do you answer questions about missing deadlines?
 ## Decision Making Under Ambiguity (3 questions -> 1 deep dive)
-616. `ambiguity` - How do you make decisions under ambiguity?
-617. `insufficient-data-decisions` - How do you decide with incomplete data?
-618. `unpopular-decision` - How do you defend an unpopular decision?
+596. `ambiguity` - How do you make decisions under ambiguity?
+597. `insufficient-data-decisions` - How do you decide with incomplete data?
+598. `unpopular-decision` - How do you defend an unpopular decision?
 ## Feedback Culture (3 questions -> 1 deep dive)
-619. `giving-feedback` - How do you give difficult feedback?
-620. `receiving-feedback` - How do you respond to critical feedback?
-621. `upward-feedback` - How do you give respectful upward feedback?
+599. `giving-feedback` - How do you give difficult feedback?
+600. `receiving-feedback` - How do you respond to critical feedback?
+601. `upward-feedback` - How do you give respectful upward feedback?
 ## Cross Functional Collaboration (3 questions -> 1 deep dive)
-622. `cross-functional-collab` - How do you collaborate with design and QA?
-623. `product-engineering-partnership` - How do you build trust with product managers?
-624. `partner-with-ops` - How do you partner with SRE/ops teams effectively?
+602. `cross-functional-collab` - How do you collaborate with design and QA?
+603. `product-engineering-partnership` - How do you build trust with product managers?
+604. `partner-with-ops` - How do you partner with SRE/ops teams effectively?
 ## Career Growth And Self Reflection (3 questions -> 1 deep dive)
-625. `career-growth-plan` - How do you discuss your growth plan?
-626. `failure-story` - How do you tell a failure story well?
-627. `self-awareness` - How do you demonstrate self-awareness in interviews?
+605. `career-growth-plan` - How do you discuss your growth plan?
+606. `failure-story` - How do you tell a failure story well?
+607. `self-awareness` - How do you demonstrate self-awareness in interviews?
 ## Managing Up (3 questions -> 1 deep dive)
-628. `manage-up` - How do you manage up effectively?
-629. `escalation` - When and how should you escalate issues?
-630. `expectation-alignment-manager` - How do you align expectations with your manager?
+608. `manage-up` - How do you manage up effectively?
+609. `escalation` - When and how should you escalate issues?
+610. `expectation-alignment-manager` - How do you align expectations with your manager?
 ## Staff Level Behavioral Signals (3 questions -> 1 deep dive)
-631. `staff-scope` - What behavioral signals are expected at staff level?
-632. `org-impact` - How do you show organization-level impact?
-633. `staff-cross-team-conflict` - How do staff engineers resolve cross-team conflict?
+611. `staff-scope` - What behavioral signals are expected at staff level?
+612. `org-impact` - How do you show organization-level impact?
+613. `staff-cross-team-conflict` - How do staff engineers resolve cross-team conflict?
 ## Ethical Decision Making (3 questions -> 1 deep dive)
-634. `ethical-tradeoff` - How do you handle ethical tradeoffs in product decisions?
-635. `privacy-vs-growth` - How do you discuss privacy vs growth tension?
-636. `ethical-escalation` - When should ethical concerns be escalated?
+614. `ethical-tradeoff` - How do you handle ethical tradeoffs in product decisions?
+615. `privacy-vs-growth` - How do you discuss privacy vs growth tension?
+616. `ethical-escalation` - When should ethical concerns be escalated?
 ## Remote And Distributed Teams (3 questions -> 1 deep dive)
-637. `remote-collaboration` - How do you maintain alignment in remote teams?
-638. `async-communication` - What does strong async communication look like?
-639. `remote-trust-building` - How do you build trust in distributed teams?
+617. `remote-collaboration` - How do you maintain alignment in remote teams?
+618. `async-communication` - What does strong async communication look like?
+619. `remote-trust-building` - How do you build trust in distributed teams?
 ## Behavioral Anti Patterns (2 questions -> 1 deep dive)
-640. `behavioral-red-flags` - What behavioral anti-patterns hurt candidates?
-641. `blame-language` - Why is blame language risky in interviews?
+620. `behavioral-red-flags` - What behavioral anti-patterns hurt candidates?
+621. `blame-language` - Why is blame language risky in interviews?
 ## Communication And Clarity (2 questions -> 1 deep dive)
-642. `clarity-structure` - How do you keep answers concise and structured?
-643. `executive-summary` - How do you open answers with an executive summary?
+622. `clarity-structure` - How do you keep answers concise and structured?
+623. `executive-summary` - How do you open answers with an executive summary?
 
 ---
 ## Statistics
-- **Total Questions:** 643
-- **Total Deep Dives:** 280
+- **Total Questions:** 623
+- **Total Deep Dives:** 290
 - **Fundamentals:** 54 questions
 - **Kotlin:** 51 questions
 - **Compose:** 50 questions
@@ -991,15 +981,15 @@ Generated: 643 interview questions across 280 deep dive topics
 - **Security:** 12 questions
 - **Performance:** 38 questions
 - **Cicd:** 50 questions
-- **Advanced:** 50 questions
+- **Advanced:** 30 questions
 - **Future Tech:** 50 questions
 - **System Design:** 50 questions
 - **Testing:** 50 questions
 - **Behavioral:** 50 questions
-- **Beginner:** 84 questions
-- **Intermediate:** 307 questions
-- **Advanced:** 66 questions
-- **Senior:** 160 questions
+- **Beginner:** 78 questions
+- **Intermediate:** 300 questions
+- **Advanced:** 60 questions
+- **Senior:** 159 questions
 - **Staff:** 26 questions
 
 ## By Category Difficulty
@@ -1052,10 +1042,10 @@ Generated: 643 interview questions across 280 deep dive topics
 - Senior: 10
 
 ### Advanced
-- Beginner: 10
-- Intermediate: 20
-- Advanced: 10
-- Senior: 10
+- Beginner: 4
+- Intermediate: 13
+- Advanced: 4
+- Senior: 9
 
 ### Future Tech
 - Beginner: 10
@@ -1082,15 +1072,13 @@ Generated: 643 interview questions across 280 deep dive topics
 - Staff: 6
 
 ## Quick Tags Reference
-- **android:** 77 questions
-- **architecture:** 75 questions
+- **architecture:** 77 questions
+- **android:** 73 questions
 - **testing:** 57 questions
 - **kotlin:** 56 questions
-- **internals:** 54 questions
-- **compose:** 53 questions
-- **performance:** 52 questions
+- **performance:** 54 questions
+- **compose:** 54 questions
 - **release:** 52 questions
-- **advanced:** 52 questions
 - **cicd:** 50 questions
 - **future-tech:** 50 questions
 - **innovation:** 50 questions
@@ -1098,19 +1086,21 @@ Generated: 643 interview questions across 280 deep dive topics
 - **behavioral:** 50 questions
 - **coroutines:** 47 questions
 - **networking:** 36 questions
+- **advanced:** 31 questions
+- **internals:** 24 questions
 - **state:** 23 questions
 - **security:** 21 questions
 - **flow:** 21 questions
 - **concurrency:** 19 questions
 - **optimization:** 18 questions
 - **lifecycle:** 17 questions
-- **memory:** 16 questions
+- **memory:** 14 questions
 - **threading:** 14 questions
 - **runtime:** 14 questions
 - **communication:** 13 questions
 - **scalability:** 13 questions
+- **rendering:** 10 questions
 - **compiler:** 9 questions
 - **caching:** 9 questions
-- **resilience:** 9 questions
 ---
 **Next Step:** Regenerate docs and validate navigation for Fundamentals, Kotlin, Compose, Concurrency, Architecture, Networking, Security, Performance, Cicd, Advanced, Future Tech, System Design, Testing, Behavioral sections.
